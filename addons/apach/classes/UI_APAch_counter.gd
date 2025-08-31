@@ -10,7 +10,7 @@ func set_show_max(new:bool):
 	update_counter()
 
 func set_achievements(new):
-	print('set_achievements, new:',new)
+	#print('set_achievements, new:',new)
 	for ach in achievements:
 		if ach and ach.changed.is_connected(update_counter):
 			ach.changed.disconnect(update_counter)

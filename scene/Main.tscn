@@ -1,29 +1,45 @@
-[gd_scene load_steps=10 format=3 uid="uid://dhgo7ujbqhqoi"]
+[gd_scene load_steps=16 format=3 uid="uid://dhgo7ujbqhqoi"]
 
 [ext_resource type="Script" uid="uid://mjk4ctyfa82r" path="res://scene/main.gd" id="1_nbc6x"]
 [ext_resource type="Resource" uid="uid://dc27m5ne6k4oj" path="res://test_ach/apach-gold-1.tres" id="2_h6nst"]
-[ext_resource type="Script" uid="uid://3jnbiwi3gh5x" path="res://addons/apach/classes/UI_APAch.gd" id="3_hr7lf"]
+[ext_resource type="Resource" uid="uid://bad72qp0q03km" path="res://test_ach/gold-spent.tres" id="2_x4yfu"]
 [ext_resource type="Script" uid="uid://c2tbw2m1fey28" path="res://addons/apach/classes/UI_APAch_counter.gd" id="3_o6q0f"]
+[ext_resource type="Script" uid="uid://dama1fmr65g35" path="res://addons/VarRes/classes/VaRQuantity.gd" id="4_764rb"]
 [ext_resource type="Script" uid="uid://d2qqt04qepoj2" path="res://addons/apach/classes/APAch.gd" id="4_s5yxy"]
 [ext_resource type="Texture2D" uid="uid://cybbdvgqf1fci" path="res://icon.svg" id="4_yiwpq"]
+[ext_resource type="Script" uid="uid://8myr58nwfvfg" path="res://addons/VarRes/classes/numbers/VaRInt.gd" id="6_aex65"]
+[ext_resource type="Resource" uid="uid://d20muus16atvb" path="res://test_ach/apach-gold-2.tres" id="11_764rb"]
+[ext_resource type="Resource" uid="uid://cfg3akadcd27x" path="res://test_ach/apach-map-levels-1.tres" id="11_tuai4"]
+[ext_resource type="PackedScene" uid="uid://bgsega3pav46q" path="res://addons/apach/UI_demo/UI_ach_1.tscn" id="12_aex65"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yiwpq"]
-bg_color = Color(0, 0, 0, 0.3529412)
-corner_radius_top_left = 3
-corner_radius_top_right = 3
-corner_radius_bottom_right = 3
-corner_radius_bottom_left = 3
+[sub_resource type="Resource" id="Resource_ob58h"]
+script = ExtResource("6_aex65")
+value = 1000
+metadata/_custom_type_script = "uid://8myr58nwfvfg"
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mnmej"]
-corner_radius_top_left = 4
-corner_radius_top_right = 4
-corner_radius_bottom_right = 4
-corner_radius_bottom_left = 4
+[sub_resource type="Resource" id="Resource_3hqfm"]
+script = ExtResource("4_s5yxy")
+icon = ExtResource("4_yiwpq")
+name = "Состоятельный"
+description = "Потратьте 100 золота"
+target_value = SubResource("Resource_ob58h")
+current_value = ExtResource("2_x4yfu")
+is_completed = true
+metadata/_custom_type_script = "uid://d2qqt04qepoj2"
 
-[sub_resource type="Theme" id="Theme_o6q0f"]
-ProgressBar/font_sizes/font_size = 12
-ProgressBar/styles/background = SubResource("StyleBoxFlat_yiwpq")
-ProgressBar/styles/fill = SubResource("StyleBoxFlat_mnmej")
+[sub_resource type="Resource" id="Resource_lgj07"]
+script = ExtResource("6_aex65")
+value = 1000
+metadata/_custom_type_script = "uid://8myr58nwfvfg"
+
+[sub_resource type="Resource" id="Resource_x4yfu"]
+script = ExtResource("4_s5yxy")
+icon = ExtResource("4_yiwpq")
+name = "Щедрый"
+description = "Потратьте 1000 золота"
+target_value = SubResource("Resource_lgj07")
+current_value = ExtResource("2_x4yfu")
+metadata/_custom_type_script = "uid://d2qqt04qepoj2"
 
 [node name="Main" type="Control"]
 layout_mode = 3
@@ -33,7 +49,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_nbc6x")
-ach = ExtResource("2_h6nst")
+ach = SubResource("Resource_3hqfm")
 
 [node name="CenterContainer" type="CenterContainer" parent="."]
 layout_mode = 1
@@ -56,6 +72,7 @@ theme_override_constants/margin_bottom = 11
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="CenterContainer/PanelContainer/MarginContainer"]
 layout_mode = 2
+theme_override_constants/separation = 10
 
 [node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer2"]
 layout_mode = 2
@@ -67,66 +84,47 @@ text = "Достижения"
 [node name="LabelAchCounter" type="Label" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer2/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
-text = "1/1"
+text = "2/4"
 horizontal_alignment = 2
 script = ExtResource("3_o6q0f")
-achievements = Array[ExtResource("4_s5yxy")]([ExtResource("2_h6nst")])
+achievements = Array[ExtResource("4_s5yxy")]([ExtResource("2_h6nst"), SubResource("Resource_x4yfu"), ExtResource("11_764rb"), ExtResource("11_tuai4")])
 show_max = true
 metadata/_custom_type_script = "uid://c2tbw2m1fey28"
 
-[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer2"]
+[node name="TabContainer" type="TabContainer" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer2"]
+custom_minimum_size = Vector2(0, 190)
 layout_mode = 2
+current_tab = 0
 
-[node name="ach_Состоятельный" type="PanelContainer" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer2/VBoxContainer"]
-custom_minimum_size = Vector2(0, 75)
+[node name="📃All" type="ScrollContainer" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer2/TabContainer"]
 layout_mode = 2
+metadata/_tab_index = 0
 
-[node name="Node" type="Node" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer2/VBoxContainer/ach_Состоятельный"]
-script = ExtResource("3_hr7lf")
-achievement = ExtResource("2_h6nst")
-
-[node name="MarginContainer" type="MarginContainer" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer2/VBoxContainer/ach_Состоятельный"]
-layout_mode = 2
-theme_override_constants/margin_left = 8
-theme_override_constants/margin_top = 8
-theme_override_constants/margin_right = 8
-theme_override_constants/margin_bottom = 8
-
-[node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer2/VBoxContainer/ach_Состоятельный/MarginContainer"]
-layout_mode = 2
-
-[node name="TextureRect" type="TextureRect" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer2/VBoxContainer/ach_Состоятельный/MarginContainer/HBoxContainer"]
-custom_minimum_size = Vector2(32, 32)
-layout_mode = 2
-texture = ExtResource("4_yiwpq")
-expand_mode = 3
-stretch_mode = 5
-
-[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer2/VBoxContainer/ach_Состоятельный/MarginContainer/HBoxContainer"]
+[node name="VBox" type="VBoxContainer" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer2/TabContainer/📃All"]
 layout_mode = 2
 size_flags_horizontal = 3
-theme_override_constants/separation = -2
 
-[node name="name" type="Label" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer2/VBoxContainer/ach_Состоятельный/MarginContainer/HBoxContainer/VBoxContainer"]
+[node name="ach_Щедрый" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer2/TabContainer/📃All/VBox" instance=ExtResource("12_aex65")]
 layout_mode = 2
-text = "text"
+achievement = ExtResource("2_h6nst")
 
-[node name="description" type="Label" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer2/VBoxContainer/ach_Состоятельный/MarginContainer/HBoxContainer/VBoxContainer"]
+[node name="ach_Путешественник" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer2/TabContainer/📃All/VBox" instance=ExtResource("12_aex65")]
 layout_mode = 2
-size_flags_vertical = 3
-theme_override_constants/line_spacing = -5
-theme_override_font_sizes/font_size = 13
-text = "text text text text text text text text text text text"
-autowrap_mode = 3
-clip_text = true
-text_overrun_behavior = 5
+achievement = ExtResource("11_tuai4")
 
-[node name="ProgressBar" type="ProgressBar" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer2/VBoxContainer/ach_Состоятельный/MarginContainer/HBoxContainer/VBoxContainer"]
+[node name="ach_Состоятельный" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer2/TabContainer/📃All/VBox" instance=ExtResource("12_aex65")]
 layout_mode = 2
-theme = SubResource("Theme_o6q0f")
-value = 22.0
+achievement = ExtResource("11_764rb")
 
-[node name="players_percent" type="Label" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer2/VBoxContainer/ach_Состоятельный/MarginContainer/HBoxContainer"]
+[node name="🗺Map" type="ScrollContainer" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer2/TabContainer"]
 visible = false
 layout_mode = 2
-text = "0.0%"
+metadata/_tab_index = 1
+
+[node name="VBox" type="VBoxContainer" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer2/TabContainer/🗺Map"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="ach_Путешественник" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer2/TabContainer/🗺Map/VBox" instance=ExtResource("12_aex65")]
+layout_mode = 2
+achievement = ExtResource("11_tuai4")

@@ -1,17 +1,22 @@
-[gd_resource type="Resource" script_class="APAch" load_steps=6 format=3 uid="uid://dqvdcetr24cw6"]
+[gd_resource type="Resource" script_class="APAch" load_steps=7 format=3 uid="uid://d20muus16atvb"]
 
 [ext_resource type="Resource" uid="uid://bad72qp0q03km" path="res://test_ach/gold-spent.tres" id="1_d7qmt"]
 [ext_resource type="Texture2D" uid="uid://cybbdvgqf1fci" path="res://icon.svg" id="2_lgj07"]
 [ext_resource type="Script" uid="uid://dama1fmr65g35" path="res://addons/VarRes/classes/VaRQuantity.gd" id="3_iwtlm"]
 [ext_resource type="Script" uid="uid://d2qqt04qepoj2" path="res://addons/apach/classes/APAch.gd" id="4_yln4u"]
-[ext_resource type="Resource" uid="uid://bwnx1lvkldkog" path="res://test_ach/ach-gold-1.tres" id="5_5xmkc"]
+[ext_resource type="Script" uid="uid://8myr58nwfvfg" path="res://addons/VarRes/classes/numbers/VaRInt.gd" id="5_d7qmt"]
+
+[sub_resource type="Resource" id="Resource_34aef"]
+script = ExtResource("5_d7qmt")
+value = 10000
+metadata/_custom_type_script = "uid://8myr58nwfvfg"
 
 [resource]
 script = ExtResource("4_yln4u")
 icon = ExtResource("2_lgj07")
 name = "Состоятельный"
-description = "Потратьте 100 золота"
-target_value = ExtResource("5_5xmkc")
+description = "Потратьте 10000 золота"
+target_value = SubResource("Resource_34aef")
 current_value = ExtResource("1_d7qmt")
 is_completed = true
 metadata/_custom_type_script = "uid://d2qqt04qepoj2"

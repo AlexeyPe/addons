@@ -49,7 +49,7 @@ func set_current_value(new:VaRNumber):
 		current_value_changed()
 
 func set_completed(new:bool):
-	print("set_completed ", new)
+	#print("%s, set_completed "%[self, new])
 	if not is_completed or Engine.is_editor_hint():
 		is_completed = new
 		completed_timestamp = Time.get_unix_time_from_datetime_dict(Time.get_datetime_dict_from_system(true))

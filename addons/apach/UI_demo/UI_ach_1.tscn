@@ -1,0 +1,84 @@
+[gd_scene load_steps=5 format=3 uid="uid://bgsega3pav46q"]
+
+[ext_resource type="Script" uid="uid://3jnbiwi3gh5x" path="res://addons/apach/classes/UI_APAch.gd" id="1_uenlk"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yiwpq"]
+bg_color = Color(0, 0, 0, 0.3529412)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mnmej"]
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="Theme" id="Theme_uenlk"]
+ProgressBar/font_sizes/font_size = 12
+ProgressBar/styles/background = SubResource("StyleBoxFlat_yiwpq")
+ProgressBar/styles/fill = SubResource("StyleBoxFlat_mnmej")
+
+[node name="UiAch1" type="PanelContainer" node_paths=PackedStringArray("node_name", "node_description", "node_progressbar", "node_icon")]
+custom_minimum_size = Vector2(0, 75)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -906.0
+offset_bottom = -559.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_uenlk")
+node_name = NodePath("MarginContainer/HBoxContainer/VBoxContainer/name")
+node_description = NodePath("MarginContainer/HBoxContainer/VBoxContainer/description")
+node_progressbar = NodePath("MarginContainer/HBoxContainer/VBoxContainer/ProgressBar")
+node_icon = NodePath("MarginContainer/HBoxContainer/AspectRatioContainer/icon")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="AspectRatioContainer" type="AspectRatioContainer" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+stretch_mode = 1
+
+[node name="icon" type="TextureRect" parent="MarginContainer/HBoxContainer/AspectRatioContainer"]
+layout_mode = 2
+expand_mode = 2
+stretch_mode = 5
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = -2
+
+[node name="name" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "text1"
+
+[node name="description" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/line_spacing = -5
+theme_override_font_sizes/font_size = 13
+text = "text text text text text text text text text text text"
+autowrap_mode = 3
+clip_text = true
+text_overrun_behavior = 5
+
+[node name="ProgressBar" type="ProgressBar" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme = SubResource("Theme_uenlk")
+value = 22.0
+
+[node name="players_percent" type="Label" parent="MarginContainer/HBoxContainer"]
+visible = false
+layout_mode = 2
+text = "0.0%"
