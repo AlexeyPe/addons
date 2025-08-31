@@ -2,35 +2,55 @@
 extends Resource
 class_name APAch
 
-@export var icon:Texture
-@export var name:String
-@export var description:String
+@export var icon:Texture : set = set_icon
+@export var name:String : set = set_name
+@export var description:String : set = set_description
 
 @export var target_value:VaRNumber : set = set_target_value
-@export var current_value:VaRNumber
+@export var current_value:VaRNumber : set = set_current_value
 
 @export var rewards_value:Array[VaRQuantity]
 @export var is_completed:bool : set = set_completed
 var completed_timestamp:int = 0
 
+func set_icon(new:Texture): icon = new; emit_changed();
+func set_name(new:String): name = new; emit_changed();
+func set_description(new:String): description = new; emit_changed();
+
+func _to_string() -> String:
+	return "[%s, %s]"%[name, resource_path]
+
 func target_value_changed():
-	print("target_value_changed, value:",target_value.get_value())
+	#print("target_value_changed, value:",target_value.get_value())
+	emit_changed()
 	pass
 
 func set_target_value(new:VaRNumber):
-	print("set_target_value")
 	if target_value != null:
 		if target_value.changed.is_connected(target_value_changed):
 			target_value.changed.disconnect(target_value_changed)
 	target_value = new
-	pass
+	if target_value != null:
+		target_value.changed.connect(target_value_changed)
+		target_value_changed()
 
 func current_value_changed():
-	print("current_value_changed, value:",current_value.get_value())
+	#print("current_value_changed, value:",current_value.get_value())
+	emit_changed()
 	pass
+
+func set_current_value(new:VaRNumber):
+	if current_value != null:
+		if current_value.changed.is_connected(current_value_changed):
+			current_value.changed.disconnect(current_value_changed)
+	current_value = new
+	if current_value != null:
+		current_value.changed.connect(current_value_changed)
+		current_value_changed()
 
 func set_completed(new:bool):
 	print("set_completed ", new)
 	if not is_completed or Engine.is_editor_hint():
 		is_completed = new
 		completed_timestamp = Time.get_unix_time_from_datetime_dict(Time.get_datetime_dict_from_system(true))
+		emit_changed()
