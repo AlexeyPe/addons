@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="VaRFloat" load_steps=2 format=3 uid="uid://bn7a88fyyfswm"]
+
+[ext_resource type="Script" uid="uid://msh8p6ojhxex" path="res://addons/VarRes/classes/numbers/VaRFloat.gd" id="1_plcyc"]
+
+[resource]
+script = ExtResource("1_plcyc")
+metadata/_custom_type_script = "uid://msh8p6ojhxex"
