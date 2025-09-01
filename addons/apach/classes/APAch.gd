@@ -45,7 +45,9 @@ func set_target_value(new:VaRNumber):
 func current_value_changed():
 	#print("current_value_changed, value:",current_value.get_value())
 	emit_changed()
-	pass
+	if current_value and target_value \
+		and current_value.get_value() >= target_value.get_value():
+		set_state(STATE.COMPLETED)
 
 func set_current_value(new:VaRNumber):
 	if current_value != null:

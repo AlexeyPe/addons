@@ -27,5 +27,5 @@ name = "Щедрый"
 description = "Потратьте 100 золота"
 target_value = SubResource("Resource_o03vw")
 current_value = ExtResource("1_v8mtn")
-state = 1
+state_skip_completed = true
 metadata/_custom_type_script = "uid://d2qqt04qepoj2"
