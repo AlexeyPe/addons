@@ -1,6 +1,43 @@
-[gd_scene load_steps=5 format=3 uid="uid://bgsega3pav46q"]
+[gd_scene load_steps=16 format=3 uid="uid://bgsega3pav46q"]
 
 [ext_resource type="Script" uid="uid://3jnbiwi3gh5x" path="res://addons/apach/classes/UI_APAch.gd" id="1_uenlk"]
+[ext_resource type="Script" uid="uid://8myr58nwfvfg" path="res://addons/VarRes/classes/numbers/VaRInt.gd" id="2_3gdxd"]
+[ext_resource type="Script" uid="uid://dama1fmr65g35" path="res://addons/VarRes/classes/VaRQuantity.gd" id="3_03a7h"]
+[ext_resource type="Script" uid="uid://d2qqt04qepoj2" path="res://addons/apach/classes/APAch.gd" id="4_vg5dd"]
+[ext_resource type="Shader" uid="uid://cum4ymjsojjjn" path="res://addons/apach/UI_demo/Highlight.gdshader" id="5_03a7h"]
+[ext_resource type="Texture2D" uid="uid://durmpbvmk15x4" path="res://addons/apach/UI_demo/res/wpf--checkmark.svg" id="5_vg5dd"]
+
+[sub_resource type="Resource" id="Resource_52lko"]
+script = ExtResource("2_3gdxd")
+metadata/_custom_type_script = "uid://8myr58nwfvfg"
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_ibjd2"]
+
+[sub_resource type="Resource" id="Resource_0tbv8"]
+script = ExtResource("2_3gdxd")
+value = 100
+metadata/_custom_type_script = "uid://8myr58nwfvfg"
+
+[sub_resource type="Resource" id="Resource_cof18"]
+script = ExtResource("4_vg5dd")
+icon = SubResource("PlaceholderTexture2D_ibjd2")
+name = "test"
+description = "test desc"
+target_value = SubResource("Resource_0tbv8")
+current_value = SubResource("Resource_52lko")
+metadata/_custom_type_script = "uid://d2qqt04qepoj2"
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_52lko"]
+content_margin_left = 4.0
+content_margin_top = 2.0
+content_margin_right = 4.0
+content_margin_bottom = 2.0
+bg_color = Color(0.1, 0.1, 0.1, 0.6)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yiwpq"]
 bg_color = Color(0, 0, 0, 0.3529412)
@@ -16,11 +53,26 @@ corner_radius_bottom_right = 4
 corner_radius_bottom_left = 4
 
 [sub_resource type="Theme" id="Theme_uenlk"]
+Button/font_sizes/font_size = 12
+Button/styles/normal = SubResource("StyleBoxFlat_52lko")
 ProgressBar/font_sizes/font_size = 12
 ProgressBar/styles/background = SubResource("StyleBoxFlat_yiwpq")
 ProgressBar/styles/fill = SubResource("StyleBoxFlat_mnmej")
 
-[node name="UiAch1" type="PanelContainer" node_paths=PackedStringArray("node_name", "node_description", "node_progressbar", "node_icon")]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_vg5dd"]
+shader = ExtResource("5_03a7h")
+shader_parameter/Line_Smoothness = 0.045
+shader_parameter/Line_Width = 0.09
+shader_parameter/Brightness = 3.0
+shader_parameter/Rotation_deg = 30.0
+shader_parameter/Distortion = 1.8
+shader_parameter/Speed = 0.7
+shader_parameter/Position = 0.0
+shader_parameter/Position_Min = 0.25
+shader_parameter/Position_Max = 0.5
+shader_parameter/Alpha = 1.0
+
+[node name="UiAch1" type="PanelContainer" node_paths=PackedStringArray("node_name", "node_description", "node_progressbar", "node_icon", "node_visible_when_not_completed", "node_visible_when_completed", "node_visible_when_collected", "node_collect_button")]
 custom_minimum_size = Vector2(0, 75)
 anchors_preset = 15
 anchor_right = 1.0
@@ -30,55 +82,90 @@ offset_bottom = -559.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_uenlk")
-node_name = NodePath("MarginContainer/HBoxContainer/VBoxContainer/name")
-node_description = NodePath("MarginContainer/HBoxContainer/VBoxContainer/description")
-node_progressbar = NodePath("MarginContainer/HBoxContainer/VBoxContainer/ProgressBar")
-node_icon = NodePath("MarginContainer/HBoxContainer/AspectRatioContainer/icon")
+achievement = SubResource("Resource_cof18")
+node_name = NodePath("margin/HBoxContainer/VBoxContainer/name")
+node_description = NodePath("margin/HBoxContainer/VBoxContainer/description")
+node_progressbar = NodePath("margin/HBoxContainer/VBoxContainer/ProgressBar")
+node_icon = NodePath("margin/HBoxContainer/AspectRatioContainer/icon")
+node_visible_when_not_completed = [NodePath("margin/HBoxContainer/VBoxContainer/ProgressBar")]
+node_visible_when_completed = [NodePath("Highlight"), NodePath("margin/HBoxContainer/VBoxContainer/HBoxCompleted"), NodePath("margin/HBoxContainer/VBoxContainer/HBoxCompleted/ButtonCollect")]
+node_visible_when_collected = [NodePath("margin/HBoxContainer/VBoxContainer/HBoxCompleted")]
+node_collect_button = NodePath("margin/HBoxContainer/VBoxContainer/HBoxCompleted/ButtonCollect")
 
-[node name="MarginContainer" type="MarginContainer" parent="."]
+[node name="margin" type="MarginContainer" parent="."]
 layout_mode = 2
 theme_override_constants/margin_left = 8
 theme_override_constants/margin_top = 8
 theme_override_constants/margin_right = 8
 theme_override_constants/margin_bottom = 8
 
-[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="margin"]
 layout_mode = 2
 
-[node name="AspectRatioContainer" type="AspectRatioContainer" parent="MarginContainer/HBoxContainer"]
+[node name="AspectRatioContainer" type="AspectRatioContainer" parent="margin/HBoxContainer"]
 layout_mode = 2
 stretch_mode = 1
 
-[node name="icon" type="TextureRect" parent="MarginContainer/HBoxContainer/AspectRatioContainer"]
+[node name="icon" type="TextureRect" parent="margin/HBoxContainer/AspectRatioContainer"]
 layout_mode = 2
+texture = SubResource("PlaceholderTexture2D_ibjd2")
 expand_mode = 2
 stretch_mode = 5
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="margin/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_constants/separation = -2
 
-[node name="name" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+[node name="name" type="Label" parent="margin/HBoxContainer/VBoxContainer"]
 layout_mode = 2
-text = "text1"
+text = "test"
 
-[node name="description" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+[node name="description" type="Label" parent="margin/HBoxContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_constants/line_spacing = -5
 theme_override_font_sizes/font_size = 13
-text = "text text text text text text text text text text text"
+text = "test desc"
 autowrap_mode = 3
 clip_text = true
 text_overrun_behavior = 5
 
-[node name="ProgressBar" type="ProgressBar" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+[node name="HBoxCompleted" type="HBoxContainer" parent="margin/HBoxContainer/VBoxContainer"]
+visible = false
+custom_minimum_size = Vector2(0, 17)
+layout_mode = 2
+
+[node name="ButtonCollect" type="Button" parent="margin/HBoxContainer/VBoxContainer/HBoxCompleted"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+mouse_default_cursor_shape = 2
+theme = SubResource("Theme_uenlk")
+text = "Collect rewards"
+
+[node name="TextureRect" type="TextureRect" parent="margin/HBoxContainer/VBoxContainer/HBoxCompleted"]
+custom_minimum_size = Vector2(17, 17)
+layout_mode = 2
+size_flags_horizontal = 10
+size_flags_vertical = 4
+texture = ExtResource("5_vg5dd")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="ProgressBar" type="ProgressBar" parent="margin/HBoxContainer/VBoxContainer"]
 layout_mode = 2
 theme = SubResource("Theme_uenlk")
-value = 22.0
+value = 42.0
 
-[node name="players_percent" type="Label" parent="MarginContainer/HBoxContainer"]
+[node name="players_percent" type="Label" parent="margin/HBoxContainer"]
 visible = false
 layout_mode = 2
 text = "0.0%"
+
+[node name="Highlight" type="ColorRect" parent="."]
+visible = false
+material = SubResource("ShaderMaterial_vg5dd")
+layout_mode = 2
+mouse_filter = 2

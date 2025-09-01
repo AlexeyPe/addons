@@ -25,7 +25,7 @@ func update_counter():
 	var counter_max:int = 0
 	for ach in achievements:
 		if ach:
-			if ach.is_completed:
+			if ach.state == ach.STATE.COMPLETED or ach.state == ach.STATE.COLLECTED:
 				counter += 1
 			counter_max += 1
 	if show_max:

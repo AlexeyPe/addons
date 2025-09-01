@@ -1,0 +1,31 @@
+[gd_resource type="Resource" script_class="APAch" load_steps=8 format=3 uid="uid://dc27m5ne6k4oj"]
+
+[ext_resource type="Resource" uid="uid://bad72qp0q03km" path="res://addons/apach/UI_demo/res/gold-spent.tres" id="1_v8mtn"]
+[ext_resource type="Script" uid="uid://dama1fmr65g35" path="res://addons/VarRes/classes/VaRQuantity.gd" id="2_h7dvd"]
+[ext_resource type="Script" uid="uid://d2qqt04qepoj2" path="res://addons/apach/classes/APAch.gd" id="3_u62lm"]
+[ext_resource type="Script" uid="uid://8myr58nwfvfg" path="res://addons/VarRes/classes/numbers/VaRInt.gd" id="4_k4s5y"]
+
+[sub_resource type="Gradient" id="Gradient_abc74"]
+offsets = PackedFloat32Array(0, 0.4092827, 0.51898736, 0.6371308, 1)
+colors = PackedColorArray(0.577894, 0.48379213, 0, 1, 1, 0.84313726, 0, 1, 0.99999624, 0.94059217, 0.71459854, 1, 0.9636071, 0.8086696, 0.00088150817, 1, 0.5839742, 0.4889683, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_eyhjc"]
+gradient = SubResource("Gradient_abc74")
+fill_from = Vector2(0.10000001, 0.3)
+fill_to = Vector2(0.9000001, 0.7)
+metadata/_snap_enabled = true
+
+[sub_resource type="Resource" id="Resource_o03vw"]
+script = ExtResource("4_k4s5y")
+value = 100
+metadata/_custom_type_script = "uid://8myr58nwfvfg"
+
+[resource]
+script = ExtResource("3_u62lm")
+icon = SubResource("GradientTexture2D_eyhjc")
+name = "Щедрый"
+description = "Потратьте 100 золота"
+target_value = SubResource("Resource_o03vw")
+current_value = ExtResource("1_v8mtn")
+state = 1
+metadata/_custom_type_script = "uid://d2qqt04qepoj2"

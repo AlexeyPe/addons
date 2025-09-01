@@ -2,6 +2,8 @@
 extends Resource
 class_name APAch
 
+enum STATE { NOT_COMPLETED, COMPLETED, COLLECTED }
+
 @export var icon:Texture : set = set_icon
 @export var name:String : set = set_name
 @export var description:String : set = set_description
@@ -10,7 +12,8 @@ class_name APAch
 @export var current_value:VaRNumber : set = set_current_value
 
 @export var rewards_value:Array[VaRQuantity]
-@export var is_completed:bool : set = set_completed
+@export var state_skip_completed:bool = false : set = set_state_skip_completed
+@export var state:STATE = STATE.NOT_COMPLETED : set = set_state
 var completed_timestamp:int = 0
 
 func set_icon(new:Texture): icon = new; emit_changed();
@@ -19,6 +22,11 @@ func set_description(new:String): description = new; emit_changed();
 
 func _to_string() -> String:
 	return "[%s, %s]"%[name, resource_path]
+
+func set_state_skip_completed(new:bool):
+	state_skip_completed = new
+	if state == STATE.COMPLETED and state_skip_completed:
+		state = STATE.COLLECTED
 
 func target_value_changed():
 	#print("target_value_changed, value:",target_value.get_value())
@@ -48,9 +56,10 @@ func set_current_value(new:VaRNumber):
 		current_value.changed.connect(current_value_changed)
 		current_value_changed()
 
-func set_completed(new:bool):
-	#print("%s, set_completed "%[self, new])
-	if not is_completed or Engine.is_editor_hint():
-		is_completed = new
+func set_state(new:STATE):
+	state = new
+	if state == STATE.COMPLETED:
 		completed_timestamp = Time.get_unix_time_from_datetime_dict(Time.get_datetime_dict_from_system(true))
-		emit_changed()
+		if state_skip_completed:
+			state = STATE.COLLECTED
+	emit_changed()
