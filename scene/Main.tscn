@@ -1,27 +1,10 @@
-[gd_scene load_steps=10 format=3 uid="uid://dhgo7ujbqhqoi"]
+[gd_scene load_steps=6 format=3 uid="uid://dhgo7ujbqhqoi"]
 
 [ext_resource type="Script" uid="uid://mjk4ctyfa82r" path="res://scene/main.gd" id="1_nbc6x"]
 [ext_resource type="Resource" uid="uid://bad72qp0q03km" path="res://addons/apach/UI_demo/res/gold-spent.tres" id="2_x4yfu"]
-[ext_resource type="Script" uid="uid://dama1fmr65g35" path="res://addons/VarRes/classes/VaRQuantity.gd" id="4_764rb"]
-[ext_resource type="Script" uid="uid://d2qqt04qepoj2" path="res://addons/apach/classes/APAch.gd" id="4_s5yxy"]
-[ext_resource type="Texture2D" uid="uid://cybbdvgqf1fci" path="res://icon.svg" id="4_yiwpq"]
-[ext_resource type="Script" uid="uid://8myr58nwfvfg" path="res://addons/VarRes/classes/numbers/VaRInt.gd" id="6_aex65"]
-[ext_resource type="PackedScene" uid="uid://brgu1wss4gdmw" path="res://addons/apach/UI_demo/panel_achievements.tscn" id="7_s5yxy"]
-
-[sub_resource type="Resource" id="Resource_ob58h"]
-script = ExtResource("6_aex65")
-value = 1000
-metadata/_custom_type_script = "uid://8myr58nwfvfg"
-
-[sub_resource type="Resource" id="Resource_3hqfm"]
-script = ExtResource("4_s5yxy")
-icon = ExtResource("4_yiwpq")
-name = "Состоятельный"
-description = "Потратьте 100 золота"
-target_value = SubResource("Resource_ob58h")
-current_value = ExtResource("2_x4yfu")
-is_completed = true
-metadata/_custom_type_script = "uid://d2qqt04qepoj2"
+[ext_resource type="Script" uid="uid://bsqxqxasuhg01" path="res://addons/VarRes/classes/UI/VaResSpinBox.gd" id="3_hr7lf"]
+[ext_resource type="Resource" uid="uid://d220q6y3vwy1e" path="res://addons/apach/UI_demo/res/map-levels-complete.tres" id="5_mnmej"]
+[ext_resource type="PackedScene" uid="uid://brgu1wss4gdmw" path="res://addons/apach/UI_demo/UI_panel_achievements_1.tscn" id="7_s5yxy"]
 
 [node name="Main" type="Control"]
 layout_mode = 3
@@ -31,7 +14,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_nbc6x")
-ach = SubResource("Resource_3hqfm")
 
 [node name="CenterContainer" type="CenterContainer" parent="."]
 layout_mode = 1
@@ -41,5 +23,30 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Panel-Achievements" parent="CenterContainer" instance=ExtResource("7_s5yxy")]
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer"]
 layout_mode = 2
+
+[node name="Panel-Achievements" parent="CenterContainer/VBoxContainer" instance=ExtResource("7_s5yxy")]
+layout_mode = 2
+
+[node name="VaResSpinBox" type="SpinBox" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+min_value = -999900000000000.0
+max_value = 999900000000000.0
+value = 12.0
+prefix = "gold-spent"
+script = ExtResource("3_hr7lf")
+var_res = ExtResource("2_x4yfu")
+prefix_is_var_res = true
+metadata/_custom_type_script = "uid://bsqxqxasuhg01"
+
+[node name="VaResSpinBox2" type="SpinBox" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+min_value = -999900000000000.0
+max_value = 999900000000000.0
+value = 1.0
+prefix = "map-levels-complete"
+script = ExtResource("3_hr7lf")
+var_res = ExtResource("5_mnmej")
+prefix_is_var_res = true
+metadata/_custom_type_script = "uid://bsqxqxasuhg01"
