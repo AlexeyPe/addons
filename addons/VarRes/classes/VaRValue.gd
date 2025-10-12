@@ -1,4 +1,4 @@
-@tool
+@tool @abstract
 extends VarRes
 class_name VaRValue
 

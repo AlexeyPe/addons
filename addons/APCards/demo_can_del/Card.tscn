@@ -1,0 +1,197 @@
+[gd_scene load_steps=14 format=3 uid="uid://hn6sogho0cth"]
+
+[ext_resource type="Material" uid="uid://cng6xvwnavr0s" path="res://addons/APCards/shaders/Card.tres" id="1_2wi2b"]
+[ext_resource type="Script" uid="uid://qgft63fv0g22" path="res://addons/APChain/classes/chain/drag_and_drop/APDragDataControl.gd" id="2_6018q"]
+[ext_resource type="Script" uid="uid://dc4j1c7cfcp1n" path="res://addons/VarRes/classes/UI/LabelName.gd" id="2_yx64x"]
+[ext_resource type="Script" uid="uid://bxgs3dw2ym11j" path="res://addons/APChain/classes/chain/drag_and_drop/APDragDataRes.gd" id="3_2wi2b"]
+[ext_resource type="Script" uid="uid://ba4djel70nxp6" path="res://addons/APCards/classes/APCard2DPersp.gd" id="3_6018q"]
+[ext_resource type="Script" uid="uid://dfnv5lgi83cdo" path="res://addons/APChain/classes/chain/APChainAnimPlay.gd" id="4_2wi2b"]
+[ext_resource type="Script" uid="uid://cpilgm747sne6" path="res://addons/APChain/classes/chain/set/APChainSetZ.gd" id="4_smtru"]
+
+[sub_resource type="Resource" id="Resource_34j44"]
+script = ExtResource("3_2wi2b")
+metadata/_custom_type_script = "uid://bxgs3dw2ym11j"
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_s1pa1"]
+content_margin_left = 2.0
+content_margin_top = 2.0
+content_margin_right = 2.0
+content_margin_bottom = 2.0
+bg_color = Color(0.061926693, 0.061926708, 0.061926648, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(1, 1, 1, 0.47843137)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+corner_detail = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yx64x"]
+content_margin_left = 1.0
+bg_color = Color(1, 0.84313726, 0, 1)
+border_width_bottom = 1
+border_color = Color(0.75686276, 0, 0, 1)
+corner_radius_top_left = 44
+corner_radius_top_right = 44
+corner_radius_bottom_right = 44
+corner_radius_bottom_left = 44
+
+[sub_resource type="Animation" id="Animation_1miy5"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_a8avr"]
+resource_name = "mouse_eneted"
+length = 0.3
+step = 0.016666668
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.1, 1.1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_vy0d5"]
+_data = {
+&"RESET": SubResource("Animation_1miy5"),
+&"mouse_eneted": SubResource("Animation_a8avr")
+}
+
+[node name="Card" type="SubViewportContainer"]
+material = ExtResource("1_2wi2b")
+custom_minimum_size = Vector2(66, 88)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -33.0
+offset_top = -49.5
+offset_right = 33.0
+offset_bottom = 49.5
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(33, 49.5)
+size_flags_horizontal = 4
+size_flags_vertical = 4
+script = ExtResource("2_6018q")
+drag_data = SubResource("Resource_34j44")
+
+[node name="SubViewport" type="SubViewport" parent="."]
+transparent_bg = true
+handle_input_locally = false
+msaa_2d = 1
+gui_snap_controls_to_pixels = false
+size = Vector2i(66, 99)
+render_target_update_mode = 4
+
+[node name="PanelContainer" type="PanelContainer" parent="SubViewport"]
+z_index = 2
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+mouse_default_cursor_shape = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_s1pa1")
+
+[node name="LabelName" type="Label" parent="SubViewport/PanelContainer" node_paths=PackedStringArray("target_node")]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_font_sizes/font_size = 14
+text = "Card"
+script = ExtResource("2_yx64x")
+target_node = NodePath("../../..")
+metadata/_custom_type_script = "uid://dc4j1c7cfcp1n"
+
+[node name="Label" type="Label" parent="SubViewport/PanelContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Text"
+
+[node name="PanelContainer" type="PanelContainer" parent="SubViewport/PanelContainer"]
+custom_minimum_size = Vector2(23, 23)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 8
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_yx64x")
+
+[node name="Label3" type="Label" parent="SubViewport/PanelContainer/PanelContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_shadow_color = Color(1, 0, 0, 0.5647059)
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_offset_y = 1
+theme_override_constants/outline_size = 3
+theme_override_constants/shadow_outline_size = 4
+text = "11"
+
+[node name="APChainAnimPlay" type="Node" parent="." node_paths=PackedStringArray("animation_player", "node_emitter")]
+script = ExtResource("4_2wi2b")
+animation_player = NodePath("../AnimationPlayer")
+speed = 1.6
+anim_name = 1
+node_emitter = NodePath("..")
+watch_signal = 4
+metadata/_custom_type_script = "uid://dfnv5lgi83cdo"
+
+[node name="APChainAnimPlay2" type="Node" parent="." node_paths=PackedStringArray("animation_player", "node_emitter")]
+script = ExtResource("4_2wi2b")
+animation_player = NodePath("../AnimationPlayer")
+speed = 2.0
+from_end = true
+anim_name = 1
+node_emitter = NodePath("..")
+watch_signal = 5
+metadata/_custom_type_script = "uid://dfnv5lgi83cdo"
+
+[node name="APChainSetZ" type="Node" parent="." node_paths=PackedStringArray("target", "node_emitter")]
+script = ExtResource("4_smtru")
+target = NodePath("..")
+new_z_index = 2
+node_emitter = NodePath("..")
+watch_signal = 4
+metadata/_custom_type_script = "uid://cpilgm747sne6"
+
+[node name="APChainSetZ2" type="Node" parent="." node_paths=PackedStringArray("target", "node_emitter")]
+script = ExtResource("4_smtru")
+target = NodePath("..")
+node_emitter = NodePath("..")
+watch_signal = 5
+metadata/_custom_type_script = "uid://cpilgm747sne6"
+
+[node name="APCard2DPersp" type="Node" parent="." node_paths=PackedStringArray("card_body")]
+script = ExtResource("3_6018q")
+card_body = NodePath("..")
+angle_max_x = 0.1
+angle_max_y = 0.1
+metadata/_custom_type_script = "uid://ba4djel70nxp6"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_vy0d5")
+}

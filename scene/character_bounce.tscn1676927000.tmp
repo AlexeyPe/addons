@@ -1,0 +1,51 @@
+[gd_scene load_steps=6 format=3 uid="uid://cpg3dt1td0tlq"]
+
+[ext_resource type="Script" uid="uid://c5x87hwpn5tr0" path="res://addons/APController/classes/APContBounce.gd" id="1_x3td3"]
+[ext_resource type="Script" uid="uid://cufexgntlgtlo" path="res://addons/APChain/classes/APChain.gd" id="2_hy3ai"]
+[ext_resource type="Script" uid="uid://dry52bwfefjw0" path="res://addons/APController/classes/APContDirTarget2D.gd" id="2_x3td3"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_mnmej"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_mnmej"]
+radius = 0.5
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+scale = Vector2(33, 33)
+metadata/_edit_group_ = true
+
+[node name="APContBounce" type="Node" parent="." node_paths=PackedStringArray("body_2d")]
+script = ExtResource("1_x3td3")
+body_2d = NodePath("..")
+metadata/_custom_type_script = "uid://c5x87hwpn5tr0"
+
+[node name="APChain" type="Node" parent="APContBounce" node_paths=PackedStringArray("node_emitter")]
+script = ExtResource("2_hy3ai")
+node_emitter = NodePath("..")
+metadata/_custom_type_script = "uid://cufexgntlgtlo"
+
+[node name="Body" type="MeshInstance2D" parent="."]
+texture_filter = 4
+mesh = SubResource("SphereMesh_mnmej")
+
+[node name="eye1" type="MeshInstance2D" parent="Body"]
+modulate = Color(0, 0, 0, 1)
+texture_filter = 4
+position = Vector2(0.030303955, 0.12121582)
+scale = Vector2(0.11348218, 0.24999958)
+mesh = SubResource("SphereMesh_mnmej")
+
+[node name="eye2" type="MeshInstance2D" parent="Body"]
+modulate = Color(0, 0, 0, 1)
+texture_filter = 4
+position = Vector2(0.33333588, 0.06060791)
+scale = Vector2(0.11348218, 0.24999958)
+mesh = SubResource("SphereMesh_mnmej")
+
+[node name="APContDirTarget2D" type="Node" parent="Body" node_paths=PackedStringArray("body_2d", "node_scale")]
+script = ExtResource("2_x3td3")
+body_2d = NodePath("../..")
+node_scale = NodePath("..")
+metadata/_custom_type_script = "uid://dry52bwfefjw0"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_mnmej")

@@ -1,0 +1,40 @@
+[gd_scene load_steps=6 format=3 uid="uid://cj53tnqi6uwe0"]
+
+[ext_resource type="PackedScene" uid="uid://cpprsnw4qtbbj" path="res://scene/balls/ball_red.tscn" id="1_0s07m"]
+[ext_resource type="Script" uid="uid://djmnu1e55mp0j" path="res://addons/VarRes/classes/bool/VaRBool.gd" id="2_t7r6g"]
+[ext_resource type="Resource" uid="uid://cvmmidd5uwfbn" path="res://scene/balls/data/units_yellow.tres" id="3_5hq5e"]
+
+[sub_resource type="Resource" id="Resource_5hq5e"]
+resource_local_to_scene = true
+script = ExtResource("2_t7r6g")
+metadata/_custom_type_script = "uid://djmnu1e55mp0j"
+
+[sub_resource type="Resource" id="Resource_t7r6g"]
+resource_local_to_scene = true
+resource_name = "is_die"
+script = ExtResource("2_t7r6g")
+metadata/_custom_type_script = "uid://djmnu1e55mp0j"
+
+[node name="ball_yellow" instance=ExtResource("1_0s07m")]
+collision_layer = 4273
+collision_mask = 4273
+metadata/is_die = SubResource("Resource_5hq5e")
+
+[node name="chain_ball" parent="." index="0"]
+unit_type = "yellow"
+
+[node name="APChainNumOpUnitAdd" parent="." index="1"]
+vares_target = ExtResource("3_5hq5e")
+
+[node name="Body" parent="." index="5"]
+self_modulate = Color(1, 0.9490196, 0.21176471, 1)
+
+[node name="is_die=now_true" parent="." index="6"]
+resource = SubResource("Resource_t7r6g")
+call_init = false
+
+[node name="APChainNumOp2" parent="is_die=now_true" index="4"]
+vares_target = ExtResource("3_5hq5e")
+
+[node name="is_die=now_false" parent="." index="7"]
+resource = SubResource("Resource_t7r6g")

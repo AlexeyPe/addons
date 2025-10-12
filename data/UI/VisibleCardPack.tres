@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="VaRBool" load_steps=2 format=3 uid="uid://lt145sa8tr3"]
+
+[ext_resource type="Script" uid="uid://djmnu1e55mp0j" path="res://addons/VarRes/classes/bool/VaRBool.gd" id="1_ncvxc"]
+
+[resource]
+resource_name = "VisibleCardPack"
+script = ExtResource("1_ncvxc")
+metadata/_custom_type_script = "uid://djmnu1e55mp0j"

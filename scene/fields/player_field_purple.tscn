@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://r0oloojfa3hw"]
+
+[ext_resource type="PackedScene" uid="uid://b1dthv2qurwnx" path="res://scene/fields/player_field_red.tscn" id="1_3ukmj"]
+
+[node name="PlayerField-Purple" instance=ExtResource("1_3ukmj")]
+modulate = Color(0.7411765, 0.42745098, 0.9490196, 1)
+collision_layer = 32
+collision_mask = 32
+metadata/field_type = &"purple"
+
+[node name="Area2D" parent="." index="1"]
+collision_layer = 208
+collision_mask = 208

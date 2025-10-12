@@ -1,0 +1,460 @@
+[gd_scene load_steps=31 format=4 uid="uid://dhgo7ujbqhqoi"]
+
+[ext_resource type="Script" uid="uid://mjk4ctyfa82r" path="res://scene/main.gd" id="1_nbc6x"]
+[ext_resource type="Texture2D" uid="uid://8yci6v355lg4" path="res://imgs/icons/tabler--zoom-in.svg" id="2_764rb"]
+[ext_resource type="Script" uid="uid://c3wuwsellg33l" path="res://addons/apbuild/classes/APBuildManager2D.gd" id="2_eik88"]
+[ext_resource type="Resource" uid="uid://bad72qp0q03km" path="res://addons/apach/UI_demo/res/gold-spent.tres" id="2_x4yfu"]
+[ext_resource type="Texture2D" uid="uid://daomt631r6qw0" path="res://addons/apbuild/res/Tilemap3.png" id="3_3sxgj"]
+[ext_resource type="Texture2D" uid="uid://cv0mjwnyvtu6f" path="res://imgs/icons/tabler--zoom-out.svg" id="3_aex65"]
+[ext_resource type="Script" uid="uid://bsqxqxasuhg01" path="res://addons/VarRes/classes/UI/VaResSpinBox.gd" id="3_hr7lf"]
+[ext_resource type="Script" uid="uid://uh8e7y0n0t5e" path="res://addons/APChain/classes/APChainNumOp.gd" id="4_764rb"]
+[ext_resource type="Script" uid="uid://msh8p6ojhxex" path="res://addons/VarRes/classes/numbers/VaRFloat.gd" id="5_aex65"]
+[ext_resource type="Resource" uid="uid://cwbslfwrc5pwx" path="res://test_VarRes/camera/CameraZoom.tres" id="5_hrl0l"]
+[ext_resource type="Resource" uid="uid://d220q6y3vwy1e" path="res://addons/apach/UI_demo/res/map-levels-complete.tres" id="5_mnmej"]
+[ext_resource type="PackedScene" uid="uid://cpg3dt1td0tlq" path="res://scene/character_bounce.tscn" id="7_eik88"]
+[ext_resource type="PackedScene" uid="uid://brgu1wss4gdmw" path="res://addons/apach/UI_demo/UI_panel_achievements_1.tscn" id="7_s5yxy"]
+[ext_resource type="Script" uid="uid://beulpxkd70k21" path="res://addons/APController/classes/AP_WASD_2D.gd" id="8_pnqar"]
+[ext_resource type="Script" uid="uid://dikax674203i8" path="res://addons/VarRes/classes/camera/APCameraZoomIsNum.gd" id="14_tuai4"]
+[ext_resource type="Script" uid="uid://dvoxncb42t31a" path="res://addons/APController/classes/APContCamera2D.gd" id="15_ob58h"]
+
+[sub_resource type="Resource" id="Resource_tuai4"]
+script = ExtResource("5_aex65")
+value = 0.2
+metadata/_custom_type_script = "uid://msh8p6ojhxex"
+
+[sub_resource type="Resource" id="Resource_hrl0l"]
+script = ExtResource("5_aex65")
+value = -0.2
+metadata/_custom_type_script = "uid://msh8p6ojhxex"
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_x4yfu"]
+texture = ExtResource("3_3sxgj")
+0:0/next_alternative_id = 4
+0:0/0 = 0
+0:0/0/terrain_set = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, -8, 8, 8, 8, 8, 1.1428566, 1.1428576, -1.1428576, -1.1428566, -8)
+0:0/0/terrains_peering_bit/top_right_corner = 0
+0:0/1 = 1
+0:0/1/flip_h = true
+0:0/1/terrain_set = 0
+0:0/1/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 8, 8, 8, 8, -8, 1.1428566, -8, -1.1428576, -1.1428576, -8, 1.1428566)
+0:0/1/terrains_peering_bit/top_left_corner = 0
+0:0/2 = 2
+0:0/2/flip_v = true
+0:0/2/terrain_set = 0
+0:0/2/physics_layer_0/polygon_0/points = PackedVector2Array(8, -8, -8, -8, -8, 8, -1.1428566, 8, 1.1428576, 1.1428576, 8, -1.1428566)
+0:0/2/terrains_peering_bit/bottom_right_corner = 0
+0:0/3 = 3
+0:0/3/flip_h = true
+0:0/3/flip_v = true
+0:0/3/terrain_set = 0
+0:0/3/physics_layer_0/polygon_0/points = PackedVector2Array(8, 8, 8, -8, -8, -8, -8, -1.1428566, -1.1428576, 1.1428576, 1.1428566, 8)
+0:0/3/terrains_peering_bit/bottom_left_corner = 0
+1:0/next_alternative_id = 4
+1:0/0 = 0
+1:0/0/terrain_set = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(8, 8, 8, -1.1428566, -8, -1.1428566, -8, 8)
+1:0/0/terrains_peering_bit/top_left_corner = 0
+1:0/0/terrains_peering_bit/top_side = 0
+1:0/0/terrains_peering_bit/top_right_corner = 0
+1:0/1 = 1
+1:0/1/flip_v = true
+1:0/1/terrain_set = 0
+1:0/1/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, -8, 1.1428566, 8, 1.1428566, 8, -8)
+1:0/1/terrains_peering_bit/bottom_right_corner = 0
+1:0/1/terrains_peering_bit/bottom_side = 0
+1:0/1/terrains_peering_bit/bottom_left_corner = 0
+1:0/2 = 2
+1:0/2/flip_h = true
+1:0/2/transpose = true
+1:0/2/terrain_set = 0
+1:0/2/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 8, 1.1428576, 8, 1.1428576, -8, -8, -8)
+1:0/2/terrains_peering_bit/right_side = 0
+1:0/2/terrains_peering_bit/bottom_right_corner = 0
+1:0/2/terrains_peering_bit/top_right_corner = 0
+1:0/3 = 3
+1:0/3/transpose = true
+1:0/3/terrain_set = 0
+1:0/3/physics_layer_0/polygon_0/points = PackedVector2Array(8, -8, -1.1428576, -8, -1.1428576, 8, 8, 8)
+1:0/3/terrains_peering_bit/bottom_left_corner = 0
+1:0/3/terrains_peering_bit/left_side = 0
+1:0/3/terrains_peering_bit/top_left_corner = 0
+0:1/next_alternative_id = 2
+0:1/0 = 0
+0:1/0/terrain_set = 0
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 1.1428576, 1.1428576, 1.1428576, 1.1428576, -8, -8, -8)
+0:1/0/physics_layer_0/polygon_1/points = PackedVector2Array(-1.1428566, 8, 8, 8, 8, -1.1428566, -1.1428566, -1.1428566)
+0:1/0/terrains_peering_bit/bottom_left_corner = 0
+0:1/0/terrains_peering_bit/top_right_corner = 0
+0:1/1 = 1
+0:1/1/flip_h = true
+0:1/1/terrain_set = 0
+0:1/1/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 1.1428576, -8, 8, -1.1428576, 8, -1.1428576, 3.4285717, 3.4285712, -1.1428566, 8, -1.1428566, 8, -8, 1.1428566, -8, 1.1428566, -3.4285712, -3.4285717, 1.1428576)
+0:1/1/terrains_peering_bit/bottom_right_corner = 0
+0:1/1/terrains_peering_bit/top_left_corner = 0
+1:1/0 = 0
+1:1/0/terrain_set = 0
+1:1/0/terrain = 0
+1:1/0/terrains_peering_bit/right_side = 0
+1:1/0/terrains_peering_bit/bottom_right_corner = 0
+1:1/0/terrains_peering_bit/bottom_side = 0
+1:1/0/terrains_peering_bit/bottom_left_corner = 0
+1:1/0/terrains_peering_bit/left_side = 0
+1:1/0/terrains_peering_bit/top_left_corner = 0
+1:1/0/terrains_peering_bit/top_side = 0
+1:1/0/terrains_peering_bit/top_right_corner = 0
+2:0/next_alternative_id = 4
+2:0/0 = 0
+2:0/0/terrain_set = 0
+2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(8, 8, 8, -1.1428576, 1.1428576, 1.1428566, -1.1428566, 8)
+2:0/0/terrains_peering_bit/bottom_left_corner = 0
+2:0/0/terrains_peering_bit/left_side = 0
+2:0/0/terrains_peering_bit/top_left_corner = 0
+2:0/0/terrains_peering_bit/top_side = 0
+2:0/0/terrains_peering_bit/top_right_corner = 0
+2:0/1 = 1
+2:0/1/flip_h = true
+2:0/1/terrain_set = 0
+2:0/1/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 8, 1.1428576, 8, -1.1428566, 1.1428576, -8, -1.1428566)
+2:0/1/terrains_peering_bit/right_side = 0
+2:0/1/terrains_peering_bit/bottom_right_corner = 0
+2:0/1/terrains_peering_bit/top_left_corner = 0
+2:0/1/terrains_peering_bit/top_side = 0
+2:0/1/terrains_peering_bit/top_right_corner = 0
+2:0/2 = 2
+2:0/2/flip_h = true
+2:0/2/flip_v = true
+2:0/2/terrain_set = 0
+2:0/2/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, -8, 1.1428576, -1.1428576, -1.1428566, 1.1428566, -8)
+2:0/2/terrains_peering_bit/right_side = 0
+2:0/2/terrains_peering_bit/bottom_right_corner = 0
+2:0/2/terrains_peering_bit/bottom_side = 0
+2:0/2/terrains_peering_bit/bottom_left_corner = 0
+2:0/2/terrains_peering_bit/top_right_corner = 0
+2:0/3 = 3
+2:0/3/flip_v = true
+2:0/3/terrain_set = 0
+2:0/3/physics_layer_0/polygon_0/points = PackedVector2Array(8, -8, -1.1428576, -8, 1.1428566, -1.1428576, 8, 1.1428566)
+2:0/3/terrains_peering_bit/bottom_right_corner = 0
+2:0/3/terrains_peering_bit/bottom_side = 0
+2:0/3/terrains_peering_bit/bottom_left_corner = 0
+2:0/3/terrains_peering_bit/left_side = 0
+2:0/3/terrains_peering_bit/top_left_corner = 0
+2:1/next_alternative_id = 4
+2:1/0 = 0
+2:1/0/terrain_set = 0
+2:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(8, 8, 8, -1.1428566, -1.1428566, 8)
+2:1/0/terrains_peering_bit/bottom_left_corner = 0
+2:1/0/terrains_peering_bit/left_side = 0
+2:1/0/terrains_peering_bit/top_left_corner = 0
+2:1/0/terrains_peering_bit/top_side = 0
+2:1/0/terrains_peering_bit/top_right_corner = 0
+2:1/1 = 1
+2:1/1/flip_h = true
+2:1/1/terrain_set = 0
+2:1/1/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 8, 1.1428576, 8, -8, -1.1428566)
+2:1/1/terrains_peering_bit/right_side = 0
+2:1/1/terrains_peering_bit/bottom_right_corner = 0
+2:1/1/terrains_peering_bit/top_left_corner = 0
+2:1/1/terrains_peering_bit/top_side = 0
+2:1/1/terrains_peering_bit/top_right_corner = 0
+2:1/2 = 2
+2:1/2/flip_h = true
+2:1/2/flip_v = true
+2:1/2/terrain_set = 0
+2:1/2/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, -8, 1.1428576, 1.1428566, -8)
+2:1/2/terrains_peering_bit/right_side = 0
+2:1/2/terrains_peering_bit/bottom_right_corner = 0
+2:1/2/terrains_peering_bit/bottom_side = 0
+2:1/2/terrains_peering_bit/bottom_left_corner = 0
+2:1/2/terrains_peering_bit/top_right_corner = 0
+2:1/3 = 3
+2:1/3/flip_v = true
+2:1/3/terrain_set = 0
+2:1/3/physics_layer_0/polygon_0/points = PackedVector2Array(8, -8, -1.1428576, -8, 8, 1.1428566)
+2:1/3/terrains_peering_bit/bottom_right_corner = 0
+2:1/3/terrains_peering_bit/bottom_side = 0
+2:1/3/terrains_peering_bit/bottom_left_corner = 0
+2:1/3/terrains_peering_bit/left_side = 0
+2:1/3/terrains_peering_bit/top_left_corner = 0
+
+[sub_resource type="TileSet" id="TileSet_764rb"]
+physics_layer_0/collision_layer = 1
+terrain_set_0/mode = 0
+terrain_set_0/terrain_0/name = "Terrain 0"
+terrain_set_0/terrain_0/color = Color(0.5, 0.34375, 0.25, 1)
+sources/4 = SubResource("TileSetAtlasSource_x4yfu")
+
+[sub_resource type="TileSet" id="TileSet_3sxgj"]
+
+[sub_resource type="Resource" id="Resource_08k7p"]
+script = ExtResource("5_aex65")
+value = 300.0
+metadata/_custom_type_script = "uid://msh8p6ojhxex"
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_pnqar"]
+radius = 200.0
+
+[sub_resource type="Resource" id="Resource_ob58h"]
+script = ExtResource("5_aex65")
+value = 0.1
+metadata/_custom_type_script = "uid://msh8p6ojhxex"
+
+[sub_resource type="InputEventAction" id="InputEventAction_tuai4"]
+action = &"zoom_plus"
+
+[sub_resource type="Resource" id="Resource_3hqfm"]
+script = ExtResource("5_aex65")
+value = -0.1
+metadata/_custom_type_script = "uid://msh8p6ojhxex"
+
+[sub_resource type="InputEventAction" id="InputEventAction_3hqfm"]
+action = &"zoom_minus"
+
+[sub_resource type="InputEventAction" id="InputEventAction_ob58h"]
+action = &"move_camera"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_x4yfu"]
+size = Vector2(2300, 100)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_764rb"]
+size = Vector2(100, 1400)
+
+[node name="Main" type="Node"]
+script = ExtResource("1_nbc6x")
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="Control" type="Control" parent="UI"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/Control"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="VaResSpinBox" type="SpinBox" parent="UI/Control/VBoxContainer"]
+layout_mode = 2
+focus_behavior_recursive = 1
+theme_override_constants/buttons_width = 16
+min_value = 0.4
+max_value = 1.6
+step = 0.001
+value = 0.8
+script = ExtResource("3_hr7lf")
+var_res = ExtResource("5_hrl0l")
+metadata/_custom_type_script = "uid://bsqxqxasuhg01"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="UI/Control/VBoxContainer"]
+layout_mode = 2
+
+[node name="ButtonZoomPlus" type="Button" parent="UI/Control/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(26, 26)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+focus_mode = 0
+mouse_default_cursor_shape = 2
+icon = ExtResource("2_764rb")
+expand_icon = true
+
+[node name="APChainNumOp" type="Node" parent="UI/Control/VBoxContainer/HBoxContainer/ButtonZoomPlus" node_paths=PackedStringArray("node_emitter")]
+script = ExtResource("4_764rb")
+vares_target = ExtResource("5_hrl0l")
+vares_b = SubResource("Resource_tuai4")
+node_emitter = NodePath("..")
+watch_signal = 0
+metadata/_custom_type_script = "uid://uh8e7y0n0t5e"
+
+[node name="ButtonZoomMinus" type="Button" parent="UI/Control/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(26, 26)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+focus_mode = 0
+mouse_default_cursor_shape = 2
+icon = ExtResource("3_aex65")
+expand_icon = true
+
+[node name="APChainNumOp" type="Node" parent="UI/Control/VBoxContainer/HBoxContainer/ButtonZoomMinus" node_paths=PackedStringArray("node_emitter")]
+script = ExtResource("4_764rb")
+vares_target = ExtResource("5_hrl0l")
+vares_b = SubResource("Resource_hrl0l")
+node_emitter = NodePath("..")
+watch_signal = 0
+metadata/_custom_type_script = "uid://uh8e7y0n0t5e"
+
+[node name="APBuildManager2D" type="Node2D" parent="." node_paths=PackedStringArray("tilemap")]
+position = Vector2(1456, -573)
+scale = Vector2(3, 3)
+script = ExtResource("2_eik88")
+cell_size_px = 64
+tilemap = NodePath("Visual")
+metadata/_custom_type_script = "uid://c3wuwsellg33l"
+
+[node name="ColorRect" type="ColorRect" parent="APBuildManager2D"]
+offset_left = -453.0
+offset_top = 176.0
+offset_right = -335.33334
+offset_bottom = 275.0
+color = Color(4.428029e-06, 0.71770066, 0.9363188, 1)
+
+[node name="Visual" type="TileMapLayer" parent="APBuildManager2D"]
+modulate = Color(0.1760028, 0.9230832, 0.34097162, 1)
+texture_filter = 1
+tile_map_data = PackedByteArray("AADo/wUABAABAAAAAADp/wUABAABAAAAAADn/wUABAAAAAAAAADn/wQABAAAAAAAAgDo/wQABAACAAAAAgDp/wQABAABAAEAAADq/wUABAABAAAAAADq/wQABAACAAAAAwDr/wUABAABAAAAAADr/wQABAABAAAAAQDs/wUABAAAAAAAAQDs/wQABAAAAAEAAADt/wQABAAAAAAAAQDt/wMABAABAAAAAwDs/wMABAACAAAAAQDs/wIABAABAAEAAADt/wIABAABAAAAAwDs/wEABAABAAAAAQDt/wEABAAAAAAAAwDp/wMABAABAAEAAADo/wMABAABAAAAAgDq/wMABAACAAAAAADo/wIABAABAAAAAgDp/wIABAABAAEAAADq/wIABAABAAEAAADo/wEABAAAAAAAAgDp/wEABAABAAAAAQDq/wEABAABAAAAAQDr/wIABAABAAEAAADr/wEABAABAAAAAQDr/wMABAABAAAAAADm/wkABAABAAEAAADn/wkABAACAAAAAwDn/woABAABAAEAAADm/woABAABAAEAAADl/woABAACAAAAAgDl/wkABAABAAAAAgDl/wgABAAAAAAAAgDm/wgABAABAAAAAQDn/wgABAAAAAAAAwDo/woABAABAAEAAADo/wsABAABAAEAAADn/wsABAACAAAAAQDm/wsABAACAAAAAADo/wkABAABAAAAAQDp/woABAACAAAAAwDp/wsABAABAAEAAADp/wkABAAAAAAAAwDp/wwABAABAAEAAADo/wwABAACAAAAAQDn/wwABAAAAAAAAADq/wwABAABAAEAAADq/w0ABAACAAAAAQDp/w0ABAABAAAAAADo/w0ABAAAAAAAAADq/wsABAABAAEAAADr/wwABAABAAEAAADr/w0ABAABAAEAAADr/wsABAACAAEAAwDs/w0ABAABAAEAAADs/w4ABAABAAEAAADr/w4ABAABAAEAAADq/w4ABAACAAAAAgDs/wwABAABAAEAAADt/w0ABAABAAEAAADt/w4ABAACAAEAAADt/wwABAABAAEAAADu/w0ABAACAAEAAADu/w4ABAAAAAAAAQDu/wwABAABAAEAAADv/wwABAACAAEAAADv/w0ABAAAAAAAAQDt/wsABAABAAAAAQDu/wsABAACAAAAAgDv/wsABAABAAEAAADw/wsABAABAAEAAADw/wwABAABAAAAAADu/woABAAAAAAAAgDv/woABAABAAAAAQDw/woABAACAAAAAgDx/wsABAABAAEAAADx/wwABAABAAAAAADx/woABAABAAEAAADy/wsABAABAAAAAwDy/wwABAAAAAAAAQDy/woABAABAAAAAwDw/wkABAAAAAAAAgDx/wkABAABAAAAAQDy/wkABAAAAAAAAwDt/w8ABAAAAAAAAQDs/w8ABAACAAEAAADr/w8ABAABAAEAAADq/w8ABAABAAEAAADs/xAABAAAAAEAAQDr/xAABAACAAAAAADq/xAABAABAAEAAADp/xAABAABAAEAAADp/w8ABAACAAAAAgDp/w4ABAAAAAAAAgDq/xEABAABAAEAAADp/xEABAABAAEAAADo/xEABAABAAEAAADo/xAABAACAAAAAgDo/w8ABAAAAAAAAgDn/xEABAABAAEAAADn/xAABAACAAAAAwDn/w8ABAAAAAAAAwDm/xAABAABAAEAAADm/xEABAABAAEAAADm/w8ABAABAAAAAQDl/xEABAABAAEAAADl/xAABAABAAEAAADl/w8ABAABAAAAAQDk/xEABAABAAEAAADk/xAABAABAAEAAADk/w8ABAACAAAAAwDj/xAABAABAAEAAADj/xEABAABAAEAAADj/w8ABAABAAEAAADi/xEABAACAAAAAQDi/xAABAABAAEAAADi/w8ABAABAAEAAADh/xEABAABAAAAAADh/xAABAABAAEAAADh/w8ABAABAAEAAADg/xEABAAAAAAAAADg/xAABAABAAAAAgDg/w8ABAABAAAAAgDi/w4ABAABAAEAAADj/w4ABAABAAEAAADk/w4ABAABAAAAAwDi/w0ABAABAAEAAADj/w0ABAABAAEAAADk/w0ABAACAAAAAADi/wwABAABAAEAAADj/wwABAABAAEAAADk/wwABAABAAEAAADi/wsABAABAAEAAADj/wsABAABAAEAAADk/wsABAABAAEAAADl/wwABAACAAAAAADl/w0ABAAAAAAAAQDl/wsABAABAAEAAADm/wwABAAAAAAAAQDk/woABAABAAAAAQDe/wwABAACAAAAAgDf/wwABAABAAAAAwDf/w0ABAAAAAAAAQDe/w0ABAABAAAAAADd/w0ABAABAAAAAADd/wwABAACAAAAAwDe/wsABAACAAAAAQDf/wsABAABAAAAAwDd/wsABAACAAAAAADc/wwABAACAAAAAgDc/wsABAABAAAAAgDc/woABAAAAAAAAgDd/woABAABAAAAAQDe/woABAABAAAAAQDf/woABAAAAAAAAwDc/w0ABAABAAAAAADZ/w0ABAACAAAAAwDa/w0ABAACAAAAAgDa/w4ABAABAAAAAADZ/w4ABAABAAAAAADY/w4ABAAAAAAAAADY/w0ABAABAAAAAgDY/wwABAABAAAAAgDZ/wwABAACAAAAAADa/wwABAACAAAAAQDb/wwABAACAAAAAwDb/w0ABAACAAAAAADZ/wsABAABAAAAAQDa/wsABAABAAAAAQDb/wsABAAAAAAAAwDb/w4ABAAAAAAAAQDY/wsABAAAAAAAAgDo/xIABAABAAEAAADn/xIABAACAAAAAQDm/xIABAABAAAAAADl/xIABAABAAAAAADk/xIABAACAAAAAADj/xIABAABAAEAAADi/xIABAABAAAAAgDk/xMABAAAAAAAAQDj/xMABAABAAAAAADi/xMABAAAAAAAAADq/xIABAACAAAAAADp/xIABAABAAEAAADq/xMABAAAAAAAAQDp/xMABAABAAAAAADo/xMABAABAAAAAADn/xMABAAAAAAAAADr/xEABAACAAAAAwDr/xIABAABAAAAAADs/xEABAACAAAAAgDs/xIABAACAAAAAQDt/xEABAACAAAAAwDt/xIABAABAAEAAADt/xAABAAAAAAAAwDu/xIABAABAAEAAADu/xMABAABAAAAAADt/xMABAABAAAAAADs/xMABAAAAAAAAADu/xEABAABAAAAAQDv/xIABAABAAAAAwDv/xMABAAAAAAAAQDv/xEABAAAAAAAAwDd/xAABAAAAAAAAQDd/w8ABAAAAAAAAwDc/xAABAAAAAAAAADc/w8ABAAAAAAAAgDh/w4ABAABAAEAAADh/w0ABAABAAEAAADh/wwABAABAAEAAADh/wsABAACAAAAAgDh/woABAAAAAAAAgDi/woABAABAAAAAQDj/woABAABAAAAAQDg/w0ABAABAAAAAgDg/wwABAABAAAAAgDg/wsABAAAAAAAAgDg/w4ABAABAAAAAgDs/wsABAABAAAAAQD1/w4ABAABAAEAAAD2/w4ABAABAAEAAAD2/w8ABAABAAEAAAD1/w8ABAABAAEAAAD0/w8ABAABAAAAAgD0/w4ABAABAAAAAgD0/w0ABAAAAAAAAgD1/w0ABAACAAAAAgD2/w0ABAABAAEAAAD2/xAABAABAAEAAAD1/xAABAABAAEAAAD0/xAABAABAAAAAgD2/xEABAABAAEAAAD1/xEABAABAAEAAAD0/xEABAABAAAAAgD2/xIABAACAAEAAAD1/xIABAABAAEAAAD0/xIABAABAAAAAgD2/xMABAAAAAAAAQD1/xMABAABAAAAAAD0/xMABAAAAAAAAAD3/xEABAACAAAAAAD3/xIABAAAAAAAAQD3/xAABAABAAEAAAD3/w8ABAABAAEAAAD3/w4ABAABAAEAAAD3/w0ABAACAAEAAwD1/wwABAAAAAAAAgD2/wwABAABAAAAAQD3/wwABAAAAAAAAwD4/w4ABAABAAAAAwD4/w8ABAACAAAAAwD4/w0ABAAAAAAAAwD4/xAABAABAAEAAAD4/xEABAABAAAAAAD5/xAABAABAAEAAAD5/xEABAABAAAAAAD5/w8ABAACAAAAAgD6/xAABAACAAEAAAD6/xEABAAAAAAAAQD6/w8ABAABAAEAAAD7/w8ABAACAAEAAAD7/xAABAAAAAAAAQD5/w4ABAABAAAAAgD6/w4ABAABAAEAAAD7/w4ABAABAAEAAAD5/w0ABAAAAAAAAgD6/w0ABAABAAAAAQD7/w0ABAABAAAAAQD8/w4ABAABAAAAAwD8/w8ABAAAAAAAAQD8/w0ABAAAAAAAAwDq/woABAABAAAAAQDr/woABAAAAAAAAwA=")
+tile_set = SubResource("TileSet_764rb")
+navigation_enabled = false
+
+[node name="Build" type="TileMapLayer" parent="APBuildManager2D"]
+position = Vector2(-8, -8)
+tile_set = SubResource("TileSet_3sxgj")
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer"]
+layout_mode = 2
+
+[node name="Panel-Achievements" parent="CenterContainer/VBoxContainer" instance=ExtResource("7_s5yxy")]
+layout_mode = 2
+
+[node name="VaResSpinBox" type="SpinBox" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+min_value = -999900000000000.0
+max_value = 999900000000000.0
+value = 9.0
+prefix = "gold-spent"
+script = ExtResource("3_hr7lf")
+var_res = ExtResource("2_x4yfu")
+prefix_is_var_res = true
+metadata/_custom_type_script = "uid://bsqxqxasuhg01"
+
+[node name="VaResSpinBox2" type="SpinBox" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+min_value = -999900000000000.0
+max_value = 999900000000000.0
+value = 1.0
+prefix = "map-levels-complete"
+script = ExtResource("3_hr7lf")
+var_res = ExtResource("5_mnmej")
+prefix_is_var_res = true
+metadata/_custom_type_script = "uid://bsqxqxasuhg01"
+
+[node name="World" type="Node2D" parent="."]
+
+[node name="Camera" type="CharacterBody2D" parent="World"]
+position = Vector2(353, 85)
+collision_layer = 4
+collision_mask = 8
+
+[node name="AP_WASD_2D" type="Node" parent="World/Camera" node_paths=PackedStringArray("character_body")]
+script = ExtResource("8_pnqar")
+character_body = NodePath("..")
+move_speed = SubResource("Resource_08k7p")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Camera"]
+visible = false
+shape = SubResource("CircleShape2D_pnqar")
+
+[node name="Camera2D" type="Camera2D" parent="World/Camera"]
+zoom = Vector2(0.8, 0.8)
+limit_left = -700
+limit_top = -600
+limit_right = 1400
+limit_bottom = 700
+position_smoothing_speed = 9.0
+editor_draw_limits = true
+
+[node name="APCameraZoomIsNum" type="Node" parent="World/Camera/Camera2D" node_paths=PackedStringArray("camera")]
+script = ExtResource("14_tuai4")
+camera = NodePath("..")
+vares_target = ExtResource("5_hrl0l")
+metadata/_custom_type_script = "uid://dikax674203i8"
+
+[node name="APChainNumOp" type="Node" parent="World/Camera/Camera2D"]
+script = ExtResource("4_764rb")
+vares_target = ExtResource("5_hrl0l")
+vares_b = SubResource("Resource_ob58h")
+action_emitter = SubResource("InputEventAction_tuai4")
+metadata/_custom_type_script = "uid://uh8e7y0n0t5e"
+
+[node name="APChainNumOp2" type="Node" parent="World/Camera/Camera2D"]
+script = ExtResource("4_764rb")
+vares_target = ExtResource("5_hrl0l")
+vares_b = SubResource("Resource_3hqfm")
+action_emitter = SubResource("InputEventAction_3hqfm")
+metadata/_custom_type_script = "uid://uh8e7y0n0t5e"
+
+[node name="APContCamera2D" type="Node" parent="World/Camera/Camera2D" node_paths=PackedStringArray("camera")]
+script = ExtResource("15_ob58h")
+camera = NodePath("..")
+action_move = SubResource("InputEventAction_ob58h")
+metadata/_custom_type_script = "uid://dvoxncb42t31a"
+
+[node name="CameraLimit" type="StaticBody2D" parent="World"]
+collision_layer = 8
+
+[node name="Top" type="CollisionShape2D" parent="World/CameraLimit"]
+position = Vector2(300, -600)
+shape = SubResource("RectangleShape2D_x4yfu")
+
+[node name="Bottom" type="CollisionShape2D" parent="World/CameraLimit"]
+position = Vector2(300, 700)
+shape = SubResource("RectangleShape2D_x4yfu")
+
+[node name="Left" type="CollisionShape2D" parent="World/CameraLimit"]
+position = Vector2(-700, 92)
+shape = SubResource("RectangleShape2D_764rb")
+
+[node name="Right" type="CollisionShape2D" parent="World/CameraLimit"]
+position = Vector2(1400, 99)
+shape = SubResource("RectangleShape2D_764rb")
+
+[node name="CharacterBounce" parent="World" instance=ExtResource("7_eik88")]
+position = Vector2(98, 219)
+
+[node name="CharacterBounce2" parent="World" instance=ExtResource("7_eik88")]
+position = Vector2(162, 219)
+
+[node name="CharacterBounce3" parent="World" instance=ExtResource("7_eik88")]
+position = Vector2(242, 219)
+
+[node name="CharacterBounce4" parent="World" instance=ExtResource("7_eik88")]
+position = Vector2(420, 30)
+
+[node name="CharacterBounce5" parent="World" instance=ExtResource("7_eik88")]
+position = Vector2(484, 30)
+
+[node name="CharacterBounce6" parent="World" instance=ExtResource("7_eik88")]
+position = Vector2(564, 30)
+
+[node name="CharacterBounce7" parent="World" instance=ExtResource("7_eik88")]
+position = Vector2(638, -15)
+
+[node name="CharacterBounce8" parent="World" instance=ExtResource("7_eik88")]
+position = Vector2(702, -15)
+
+[node name="CharacterBounce9" parent="World" instance=ExtResource("7_eik88")]
+position = Vector2(782, -15)
+
+[node name="CursorCross" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+mouse_default_cursor_shape = 3

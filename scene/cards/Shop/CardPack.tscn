@@ -1,0 +1,506 @@
+[gd_scene load_steps=33 format=3 uid="uid://dyof3d0s47yns"]
+
+[ext_resource type="Shader" uid="uid://bso165sdn2g37" path="res://addons/APCards/shaders/2D-perspective.gdshader" id="1_rfrjs"]
+[ext_resource type="Shader" uid="uid://b4xocinxdwelf" path="res://addons/shadercollectionap/shader/outline/Outline.gdshader" id="2_5al3e"]
+[ext_resource type="Script" uid="uid://cccrm8vuks5fs" path="res://addons/VarRes/classes/UI/VaResLabel.gd" id="2_ins63"]
+[ext_resource type="Texture2D" uid="uid://qsswuo3ibt17" path="res://imgs/grid_16.png" id="2_lxu4h"]
+[ext_resource type="Script" uid="uid://8myr58nwfvfg" path="res://addons/VarRes/classes/numbers/VaRInt.gd" id="3_ctlec"]
+[ext_resource type="Script" uid="uid://dfnv5lgi83cdo" path="res://addons/APChain/classes/chain/APChainAnimPlay.gd" id="4_1wd18"]
+[ext_resource type="Script" uid="uid://cpilgm747sne6" path="res://addons/APChain/classes/chain/set/APChainSetZ.gd" id="5_md1t2"]
+[ext_resource type="Script" uid="uid://ba4djel70nxp6" path="res://addons/APCards/classes/APCard2DPersp.gd" id="6_iehtc"]
+[ext_resource type="Resource" uid="uid://lt145sa8tr3" path="res://data/UI/VisibleCardPack.tres" id="6_q1eso"]
+[ext_resource type="Script" uid="uid://dj04ffy0nu74n" path="res://addons/APChain/classes/chain/audio/APChainAudioPlay.gd" id="7_6ax32"]
+[ext_resource type="Texture2D" uid="uid://ge7pio3hlki4" path="res://imgs/icons/mynaui--message-solid-flip.svg" id="7_ins63"]
+[ext_resource type="Script" uid="uid://dbfncad3tlfox" path="res://addons/VarRes/classes/bool/APChainSetBoolIfNum.gd" id="7_q1eso"]
+[ext_resource type="Script" uid="uid://ofk03pmu1sfo" path="res://addons/VarRes/classes/UI/VaRNumberBBCode.gd" id="8_ctlec"]
+[ext_resource type="Script" uid="uid://ck2yuex0aket8" path="res://addons/VarRes/classes/numbers/VaRNumber.gd" id="9_md1t2"]
+[ext_resource type="Resource" uid="uid://bsffv80g8tfye" path="res://data/Price/PriceCardPack.tres" id="10_m2x0b"]
+[ext_resource type="Resource" uid="uid://c0dxxiatt4dlo" path="res://data/CardPack/CardsPerPack.tres" id="11_iehtc"]
+[ext_resource type="Resource" uid="uid://le4nnyijbcxw" path="res://data/CardPack/PickCardsPerPack.tres" id="12_m2x0b"]
+[ext_resource type="AudioStream" uid="uid://c1n0fnjtn6fmr" path="res://audio/error.mp3" id="16_q1eso"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_6018q"]
+resource_local_to_scene = true
+shader = ExtResource("1_rfrjs")
+shader_parameter/fov = 80.0
+shader_parameter/cull_back = true
+shader_parameter/y_rot = 0.0
+shader_parameter/x_rot = 0.0
+shader_parameter/inset = 0.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_0dj3i"]
+shader = ExtResource("2_5al3e")
+shader_parameter/allow_out_of_bounds = true
+shader_parameter/outline_thickness = 4.0
+shader_parameter/outline_color = Color(1, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_m2x0b"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+anti_aliasing_size = 2.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_lxu4h"]
+texture = ExtResource("2_lxu4h")
+axis_stretch_horizontal = 2
+axis_stretch_vertical = 2
+modulate_color = Color(1, 0.29000002, 0.29000002, 1)
+
+[sub_resource type="Resource" id="Resource_y03xo"]
+script = ExtResource("3_ctlec")
+metadata/_custom_type_script = "uid://8myr58nwfvfg"
+
+[sub_resource type="Resource" id="Resource_q1eso"]
+script = ExtResource("3_ctlec")
+metadata/_custom_type_script = "uid://8myr58nwfvfg"
+
+[sub_resource type="Resource" id="Resource_6ax32"]
+script = ExtResource("3_ctlec")
+metadata/_custom_type_script = "uid://8myr58nwfvfg"
+
+[sub_resource type="Animation" id="Animation_1miy5"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../Hint:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../Hint:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../Hint/PanelContainer/MarginContainer/RichTextLabel:visible_ratio")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../Hint:scale")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_a8avr"]
+resource_name = "mouse_eneted"
+length = 0.30000252
+step = 0.025
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.1, 1.1)]
+}
+
+[sub_resource type="Animation" id="Animation_ins63"]
+resource_name = "mouse_eneted_hint"
+length = 0.5000025
+step = 0.025
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../Hint:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0125),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../Hint:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.025, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../Hint/PanelContainer/MarginContainer/RichTextLabel:visible_ratio")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.075, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../Hint:scale")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.05, 0.175, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0.8, 0.8), Vector2(1, 1), Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_ctlec"]
+resource_name = "mouse_exited_hint"
+length = 0.5000025
+step = 0.025
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../Hint:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5000025),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../Hint:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.45),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../Hint:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.45),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(0.6, 0.6)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_vy0d5"]
+_data = {
+&"RESET": SubResource("Animation_1miy5"),
+&"mouse_eneted": SubResource("Animation_a8avr"),
+&"mouse_eneted_hint": SubResource("Animation_ins63"),
+&"mouse_exited_hint": SubResource("Animation_ctlec")
+}
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ins63"]
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_q1eso"]
+random_pitch = 1.05
+random_volume_offset_db = 1.0
+streams_count = 1
+stream_0/stream = ExtResource("16_q1eso")
+
+[node name="CardPack" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CardPack" type="SubViewportContainer" parent="."]
+material = SubResource("ShaderMaterial_6018q")
+custom_minimum_size = Vector2(66, 88)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -33.0
+offset_top = -49.5
+offset_right = 33.0
+offset_bottom = 49.5
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(33, 49.5)
+
+[node name="SubViewport" type="SubViewport" parent="CardPack"]
+transparent_bg = true
+handle_input_locally = false
+msaa_2d = 1
+gui_snap_controls_to_pixels = false
+size = Vector2i(66, 99)
+size_2d_override_stretch = true
+render_target_update_mode = 4
+
+[node name="PanelContainer" type="PanelContainer" parent="CardPack/SubViewport"]
+clip_children = 2
+z_index = 2
+material = SubResource("ShaderMaterial_0dj3i")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+mouse_default_cursor_shape = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_m2x0b")
+
+[node name="Panel" type="Panel" parent="CardPack/SubViewport/PanelContainer"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_lxu4h")
+
+[node name="Label" type="Label" parent="CardPack/SubViewport/PanelContainer"]
+layout_mode = 2
+theme_override_constants/line_spacing = -7
+theme_override_constants/outline_size = 1
+text = "Набор карт"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CardPack/SubViewport/PanelContainer"]
+layout_mode = 2
+size_flags_vertical = 8
+theme_override_constants/separation = 3
+alignment = 1
+
+[node name="Label" type="Label" parent="CardPack/SubViewport/PanelContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_offset_y = 1
+theme_override_constants/outline_size = 7
+theme_override_constants/shadow_outline_size = 12
+theme_override_font_sizes/font_size = 13
+text = "💎"
+
+[node name="Label2" type="Label" parent="CardPack/SubViewport/PanelContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_offset_y = 1
+theme_override_constants/outline_size = 7
+theme_override_constants/shadow_outline_size = 12
+text = "42"
+script = ExtResource("2_ins63")
+var_res = SubResource("Resource_y03xo")
+metadata/_custom_type_script = "uid://cccrm8vuks5fs"
+
+[node name="Button" type="Button" parent="CardPack/SubViewport/PanelContainer"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+mouse_default_cursor_shape = 2
+
+[node name="SET_VisibleCardPack=true_IfNum" type="Node" parent="CardPack/SubViewport/PanelContainer/Button" node_paths=PackedStringArray("node_emitter")]
+script = ExtResource("7_q1eso")
+num_a = SubResource("Resource_q1eso")
+num_b = SubResource("Resource_6ax32")
+condition = 1
+var_bool = ExtResource("6_q1eso")
+node_emitter = NodePath("..")
+watch_signal = 0
+metadata/_custom_type_script = "uid://dbfncad3tlfox"
+
+[node name="APChainAudioPlay" type="Node" parent="CardPack/SubViewport/PanelContainer/Button/SET_VisibleCardPack=true_IfNum" node_paths=PackedStringArray("player", "node_emitter")]
+script = ExtResource("7_6ax32")
+player = NodePath("../../../../../../ErrorBalance")
+node_emitter = NodePath("..")
+watch_signal = 3
+metadata/_custom_type_script = "uid://dj04ffy0nu74n"
+
+[node name="APChainAnimPlayScale" type="Node" parent="CardPack" node_paths=PackedStringArray("animation_player", "node_emitter")]
+script = ExtResource("4_1wd18")
+animation_player = NodePath("../AnimationPlayer")
+speed = 1.6
+anim_name = 1
+node_emitter = NodePath("..")
+watch_signal = 4
+metadata/_custom_type_script = "uid://dfnv5lgi83cdo"
+
+[node name="APChainAnimPlayHint" type="Node" parent="CardPack" node_paths=PackedStringArray("animation_player", "node_emitter")]
+script = ExtResource("4_1wd18")
+animation_player = NodePath("../AnimationPlayerHint")
+speed = 0.5
+anim_name = 2
+node_emitter = NodePath("..")
+watch_signal = 4
+metadata/_custom_type_script = "uid://dfnv5lgi83cdo"
+
+[node name="APChainAnimPlayScaleEnd" type="Node" parent="CardPack" node_paths=PackedStringArray("animation_player", "node_emitter")]
+script = ExtResource("4_1wd18")
+animation_player = NodePath("../AnimationPlayer")
+speed = 1.3
+from_end = true
+anim_name = 1
+node_emitter = NodePath("..")
+watch_signal = 5
+metadata/_custom_type_script = "uid://dfnv5lgi83cdo"
+
+[node name="APChainAnimPlayHintEnd" type="Node" parent="CardPack" node_paths=PackedStringArray("animation_player", "node_emitter")]
+script = ExtResource("4_1wd18")
+animation_player = NodePath("../AnimationPlayerHint")
+speed = 1.6
+anim_name = 3
+node_emitter = NodePath("..")
+watch_signal = 5
+metadata/_custom_type_script = "uid://dfnv5lgi83cdo"
+
+[node name="APChainSetZ" type="Node" parent="CardPack" node_paths=PackedStringArray("target", "node_emitter")]
+script = ExtResource("5_md1t2")
+target = NodePath("..")
+new_z_index = 2
+node_emitter = NodePath("..")
+watch_signal = 4
+metadata/_custom_type_script = "uid://cpilgm747sne6"
+
+[node name="APChainSetZ2" type="Node" parent="CardPack" node_paths=PackedStringArray("target", "node_emitter")]
+script = ExtResource("5_md1t2")
+target = NodePath("..")
+node_emitter = NodePath("..")
+watch_signal = 5
+metadata/_custom_type_script = "uid://cpilgm747sne6"
+
+[node name="APCard2DPersp" type="Node" parent="CardPack" node_paths=PackedStringArray("card_body")]
+script = ExtResource("6_iehtc")
+card_body = NodePath("..")
+angle_max_x = 0.1
+angle_max_y = 0.1
+metadata/_custom_type_script = "uid://ba4djel70nxp6"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CardPack"]
+libraries = {
+&"": SubResource("AnimationLibrary_vy0d5")
+}
+
+[node name="AnimationPlayerHint" type="AnimationPlayer" parent="CardPack"]
+reset_on_save = false
+libraries = {
+&"": SubResource("AnimationLibrary_vy0d5")
+}
+speed_scale = 2.0
+
+[node name="Hint" type="Control" parent="."]
+visible = false
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -398.0
+offset_top = -259.0
+offset_right = -23.0
+offset_bottom = -59.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(375, 200)
+
+[node name="PanelContainer" type="PanelContainer" parent="Hint"]
+clip_contents = true
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -281.0
+offset_top = -58.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxEmpty_ins63")
+metadata/_edit_group_ = true
+
+[node name="NinePatchRect" type="NinePatchRect" parent="Hint/PanelContainer"]
+layout_mode = 2
+texture = ExtResource("7_ins63")
+region_rect = Rect2(3, 6, 58, 52)
+patch_margin_left = 16
+patch_margin_top = 16
+patch_margin_right = 28
+patch_margin_bottom = 20
+
+[node name="MarginContainer" type="MarginContainer" parent="Hint/PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 2
+theme_override_constants/margin_right = 4
+theme_override_constants/margin_bottom = 12
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Hint/PanelContainer/MarginContainer"]
+layout_mode = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+bbcode_enabled = true
+text = "Вы получите [color=red]{CardsPerPack}[/color] случайные карты и сможете выбрать [color=red]{PickCardsPerPack}[/color] из них.
+Цена: 💎[color=blue]{PriceCardPack}[/color]"
+fit_content = true
+visible_characters = 0
+visible_ratio = 0.0
+
+[node name="VaRNumberBBCode" type="Node" parent="Hint/PanelContainer/MarginContainer/RichTextLabel"]
+script = ExtResource("8_ctlec")
+res = Array[ExtResource("9_md1t2")]([ExtResource("10_m2x0b"), ExtResource("11_iehtc"), ExtResource("12_m2x0b")])
+metadata/_custom_type_script = "uid://ofk03pmu1sfo"
+
+[node name="ErrorBalance" type="AudioStreamPlayer" parent="."]
+stream = SubResource("AudioStreamRandomizer_q1eso")
+volume_db = -4.0
+pitch_scale = 0.6
+bus = &"Error"

@@ -1,0 +1,18 @@
+[gd_resource type="TileSet" load_steps=7 format=3 uid="uid://ctx1yx25gyv50"]
+
+[ext_resource type="PackedScene" uid="uid://b1dthv2qurwnx" path="res://scene/fields/player_field_red.tscn" id="1_lom5w"]
+[ext_resource type="PackedScene" uid="uid://dgichot42emfv" path="res://scene/fields/player_field_white.tscn" id="2_yi3o1"]
+[ext_resource type="PackedScene" uid="uid://cmkm76vsh55r0" path="res://scene/fields/player_field_yellow.tscn" id="3_xysng"]
+[ext_resource type="PackedScene" uid="uid://cwpjcvf3t4yos" path="res://scene/fields/free_field.tscn" id="4_k33yu"]
+[ext_resource type="PackedScene" uid="uid://r0oloojfa3hw" path="res://scene/fields/player_field_purple.tscn" id="5_5tb0x"]
+
+[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_fh3cp"]
+scenes/1/scene = ExtResource("1_lom5w")
+scenes/2/scene = ExtResource("2_yi3o1")
+scenes/3/scene = ExtResource("3_xysng")
+scenes/4/scene = ExtResource("4_k33yu")
+scenes/5/scene = ExtResource("5_5tb0x")
+
+[resource]
+tile_size = Vector2i(48, 48)
+sources/0 = SubResource("TileSetScenesCollectionSource_fh3cp")

@@ -1,0 +1,70 @@
+[gd_scene load_steps=6 format=3 uid="uid://c2e3w8j1ygywa"]
+
+[ext_resource type="PackedScene" uid="uid://hn6sogho0cth" path="res://addons/APCards/demo_can_del/Card.tscn" id="1_lryhg"]
+[ext_resource type="Shader" uid="uid://bso165sdn2g37" path="res://addons/APCards/shaders/2D-perspective.gdshader" id="2_xh6nx"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_kdbs6"]
+resource_local_to_scene = true
+shader = ExtResource("2_xh6nx")
+shader_parameter/fov = 80.0
+shader_parameter/cull_back = true
+shader_parameter/y_rot = 0.0
+shader_parameter/x_rot = 0.0
+shader_parameter/inset = 0.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_0d5bx"]
+resource_local_to_scene = true
+shader = ExtResource("2_xh6nx")
+shader_parameter/fov = 80.0
+shader_parameter/cull_back = true
+shader_parameter/y_rot = 0.0
+shader_parameter/x_rot = 0.0
+shader_parameter/inset = 0.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ahfcq"]
+resource_local_to_scene = true
+shader = ExtResource("2_xh6nx")
+shader_parameter/fov = 80.0
+shader_parameter/cull_back = true
+shader_parameter/y_rot = 0.0
+shader_parameter/x_rot = 0.0
+shader_parameter/inset = 0.0
+
+[node name="Cards" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -105.0
+offset_top = -47.0
+offset_right = 105.0
+offset_bottom = 47.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 0
+alignment = 1
+
+[node name="Card" parent="HBoxContainer" instance=ExtResource("1_lryhg")]
+material = SubResource("ShaderMaterial_kdbs6")
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="Card2" parent="HBoxContainer" instance=ExtResource("1_lryhg")]
+material = SubResource("ShaderMaterial_0d5bx")
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="Card3" parent="HBoxContainer" instance=ExtResource("1_lryhg")]
+material = SubResource("ShaderMaterial_ahfcq")
+layout_mode = 2
+size_flags_horizontal = 4

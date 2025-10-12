@@ -1,0 +1,13 @@
+[gd_resource type="LabelSettings" format=3 uid="uid://ddumoq23eo4bw"]
+
+[resource]
+font_size = 33
+font_color = Color(0.99999994, 0.09796805, 0.109894775, 1)
+outline_size = 4
+outline_color = Color(1, 0.55, 0.55, 1)
+stacked_shadow_count = 2
+stacked_shadow_0/offset = Vector2(0, 1)
+stacked_shadow_0/color = Color(0.8122813, 0.019058261, 0.13267201, 1)
+stacked_shadow_0/outline_size = 7
+stacked_shadow_1/offset = Vector2(0, 1)
+stacked_shadow_1/outline_size = 12

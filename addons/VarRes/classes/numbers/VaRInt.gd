@@ -6,6 +6,9 @@ class_name VaRInt
 @export var max_value_res:VaRInt : set = set_max_value_res
 @export var value:int = 42 : set = set_value
 
+func _to_string() -> String:
+	return "%s %s"%[resource_path.get_basename().get_file(), value]
+
 func on_update_min_value_res(): emit_changed()
 func set_min_value_res(new:VaRInt):
 	if min_value_res and min_value_res.changed.is_connected(on_update_min_value_res):

@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="VaRInt" load_steps=2 format=3 uid="uid://le4nnyijbcxw"]
+
+[ext_resource type="Script" uid="uid://8myr58nwfvfg" path="res://addons/VarRes/classes/numbers/VaRInt.gd" id="1_d0swb"]
+
+[resource]
+resource_name = "PickCardsPerPack"
+script = ExtResource("1_d0swb")
+value = 1
+metadata/_custom_type_script = "uid://8myr58nwfvfg"

@@ -1,0 +1,467 @@
+[gd_scene load_steps=28 format=3 uid="uid://cpprsnw4qtbbj"]
+
+[ext_resource type="Script" uid="uid://uh8e7y0n0t5e" path="res://addons/APChain/classes/chain/APChainNumOp.gd" id="1_dvgan"]
+[ext_resource type="Script" uid="uid://c8qjdf1iq8aup" path="res://chain_ball.gd" id="1_g1m40"]
+[ext_resource type="Script" uid="uid://djmnu1e55mp0j" path="res://addons/VarRes/classes/bool/VaRBool.gd" id="1_ntt2y"]
+[ext_resource type="Script" uid="uid://7mbjsugg8t15" path="res://addons/APController/classes/APContDirTargetRB2D.gd" id="1_vrtbt"]
+[ext_resource type="Texture2D" uid="uid://78e3w1wem3mv" path="res://imgs/circle-outline-32.svg" id="2_mbpoi"]
+[ext_resource type="Script" uid="uid://du8j36g8pf8k8" path="res://addons/APChain/classes/chain/APChainShake.gd" id="2_mmkjt"]
+[ext_resource type="Script" uid="uid://8myr58nwfvfg" path="res://addons/VarRes/classes/numbers/VaRInt.gd" id="3_24a84"]
+[ext_resource type="Texture2D" uid="uid://dj1k42jvxdnen" path="res://imgs/circle.svg" id="3_mmkjt"]
+[ext_resource type="Resource" uid="uid://q6vmqvs7sa6j" path="res://scene/balls/data/units_red.tres" id="4_60vfn"]
+[ext_resource type="Texture2D" uid="uid://dook4ekcmjdkj" path="res://scene/balls/foundation--plus.svg" id="9_2cgad"]
+[ext_resource type="Script" uid="uid://bqn6e76istclq" path="res://addons/APChain/classes/chain/set/APChainSetVisible.gd" id="11_yv52f"]
+[ext_resource type="Script" uid="uid://u1gglou2n5jq" path="res://addons/APChain/classes/chain_activator/APActivatorResource.gd" id="12_a1sw8"]
+[ext_resource type="Script" uid="uid://duly1h7lf3u3o" path="res://addons/APChain/classes/chain/set/APChainSetPhysics2D.gd" id="13_we3cd"]
+[ext_resource type="Texture2D" uid="uid://cx7fttq7ienoo" path="res://scene/balls/imgs/mingcute--ghost-fill.svg" id="14_h6r1o"]
+[ext_resource type="Script" uid="uid://dfnv5lgi83cdo" path="res://addons/APChain/classes/chain/APChainAnimPlay.gd" id="14_xhvql"]
+[ext_resource type="Resource" uid="uid://dtkw5uacj3oc5" path="res://scene/balls/data/unit_deaths.tres" id="15_4xn3i"]
+[ext_resource type="Texture2D" uid="uid://n4dics7e7f7l" path="res://scene/balls/imgs/game-icons--ring.svg" id="15_bdpl3"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_6xsba"]
+friction = 0.0
+bounce = 1.0
+
+[sub_resource type="Resource" id="Resource_ntt2y"]
+resource_local_to_scene = true
+resource_name = "is_die_red"
+script = ExtResource("1_ntt2y")
+metadata/_custom_type_script = "uid://djmnu1e55mp0j"
+
+[sub_resource type="Resource" id="Resource_u1ywn"]
+script = ExtResource("3_24a84")
+value = 1
+metadata/_custom_type_script = "uid://8myr58nwfvfg"
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_ws0sv"]
+frequency = 0.0433
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_fh3cp"]
+radius = 15.0
+
+[sub_resource type="Resource" id="Resource_4xn3i"]
+script = ExtResource("3_24a84")
+value = 1
+metadata/_custom_type_script = "uid://8myr58nwfvfg"
+
+[sub_resource type="Resource" id="Resource_60vfn"]
+script = ExtResource("3_24a84")
+value = -1
+metadata/_custom_type_script = "uid://8myr58nwfvfg"
+
+[sub_resource type="Animation" id="Animation_h6r1o"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Body/LiveEye2:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Body/LiveEye:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Body/DieEye:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Body/DieEye2:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/4/type = "bezier"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Body:self_modulate:a")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.0005, 0, 0.0005, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("MingcuteGhostFill:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("MingcuteGhostFill:modulate")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("MingcuteGhostFill:visible")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Body:z_index")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+
+[sub_resource type="Animation" id="Animation_we3cd"]
+resource_name = "on_die"
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Body/LiveEye2:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Body/LiveEye:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Body/DieEye:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Body/DieEye2:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/4/type = "bezier"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Body:self_modulate:a")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0.7254902, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("MingcuteGhostFill:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.33, 0.66, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(-3, -8), Vector2(3, -16), Vector2(0, -24)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("MingcuteGhostFill:modulate")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.82, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("MingcuteGhostFill:visible")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Body:z_index")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_h6r1o"]
+_data = {
+&"RESET": SubResource("Animation_h6r1o"),
+&"on_die": SubResource("Animation_we3cd")
+}
+
+[node name="ball_red" type="RigidBody2D"]
+collision_layer = 4209
+collision_mask = 4209
+input_pickable = true
+physics_material_override = SubResource("PhysicsMaterial_6xsba")
+gravity_scale = 0.0
+contact_monitor = true
+max_contacts_reported = 6
+linear_velocity = Vector2(200, 0)
+linear_damp_mode = 1
+angular_damp_mode = 1
+angular_damp = 100.0
+metadata/is_die = SubResource("Resource_ntt2y")
+
+[node name="chain_ball" type="Node" parent="." node_paths=PackedStringArray("node_emitter")]
+script = ExtResource("1_g1m40")
+meta_to_field_id = Dictionary[String, int]({
+"free": 4,
+"purple": 5,
+"red": 1,
+"white": 2,
+"yellow": 3
+})
+unit_type = "red"
+node_emitter = NodePath("..")
+watch_signal = 2
+metadata/_custom_type_script = "uid://c8qjdf1iq8aup"
+
+[node name="APChainNumOpUnitAdd" type="Node" parent="." node_paths=PackedStringArray("node_emitter")]
+script = ExtResource("1_dvgan")
+vares_target = ExtResource("4_60vfn")
+vares_b = SubResource("Resource_u1ywn")
+node_emitter = NodePath("..")
+watch_signal = 14
+metadata/_custom_type_script = "uid://uh8e7y0n0t5e"
+
+[node name="APContDirTargetRB2D" type="Node" parent="." node_paths=PackedStringArray("body_2d", "node_scale")]
+script = ExtResource("1_vrtbt")
+body_2d = NodePath("..")
+node_scale = NodePath("../Body")
+metadata/_custom_type_script = "uid://7mbjsugg8t15"
+
+[node name="APChainShake2D" type="Node" parent="." node_paths=PackedStringArray("target_node_shake", "node_emitter")]
+script = ExtResource("2_mmkjt")
+target_node_shake = NodePath("../Body")
+decay = 0.9
+max_offset = Vector2(2, 2)
+max_roll = 0.4
+trauma_power = 1.5
+add_trauma = 0.9
+noise = SubResource("FastNoiseLite_ws0sv")
+node_emitter = NodePath("..")
+watch_signal = 2
+metadata/_custom_type_script = "uid://du8j36g8pf8k8"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+shape = SubResource("CircleShape2D_fh3cp")
+
+[node name="Body" type="Sprite2D" parent="."]
+self_modulate = Color(1, 0.23921569, 0.3019608, 1)
+z_index = 1
+texture_filter = 4
+texture = ExtResource("2_mbpoi")
+
+[node name="LiveEye" type="Sprite2D" parent="Body"]
+modulate = Color(0, 0, 0, 1)
+self_modulate = Color(0, 0, 0, 1)
+texture_filter = 4
+position = Vector2(9.230304, 1.0303032)
+scale = Vector2(0.15, 0.283)
+texture = ExtResource("3_mmkjt")
+
+[node name="LiveEye2" type="Sprite2D" parent="Body"]
+self_modulate = Color(0, 0, 0, 1)
+texture_filter = 4
+position = Vector2(1.3333334, 3.060605)
+scale = Vector2(0.15, 0.283)
+texture = ExtResource("3_mmkjt")
+
+[node name="DieEye" type="Sprite2D" parent="Body"]
+visible = false
+self_modulate = Color(0, 0, 0, 0.87058824)
+position = Vector2(-5.0000005, 5.0000005)
+rotation = 0.7853982
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("9_2cgad")
+
+[node name="DieEye2" type="Sprite2D" parent="Body"]
+visible = false
+self_modulate = Color(0, 0, 0, 0.87058824)
+position = Vector2(5.0000005, 5.0000005)
+rotation = 0.7853982
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("9_2cgad")
+
+[node name="is_die=now_true" type="Node" parent="."]
+script = ExtResource("12_a1sw8")
+_signal = "now_true"
+resource = SubResource("Resource_ntt2y")
+call_init = true
+signal = "now_true"
+metadata/_custom_type_script = "uid://u1gglou2n5jq"
+
+[node name="APChainSetVisible" type="Node" parent="is_die=now_true" node_paths=PackedStringArray("nodes_visible_true", "nodes_visible_false", "node_emitter")]
+script = ExtResource("11_yv52f")
+nodes_visible_true = [NodePath("../../Body/DieEye"), NodePath("../../Body/DieEye2")]
+nodes_visible_false = [NodePath("../../Body/LiveEye"), NodePath("../../Body/LiveEye2")]
+enable = false
+node_emitter = NodePath("..")
+watch_signal = 0
+metadata/_custom_type_script = "uid://bqn6e76istclq"
+
+[node name="APChainSetPhysics2D" type="Node" parent="is_die=now_true" node_paths=PackedStringArray("target_node", "node_emitter")]
+script = ExtResource("13_we3cd")
+target_node = NodePath("../..")
+set_collision = true
+input_pickable = true
+set_linear = true
+node_emitter = NodePath("..")
+watch_signal = 0
+metadata/_custom_type_script = "uid://duly1h7lf3u3o"
+
+[node name="APChainAnimPlay" type="Node" parent="is_die=now_true" node_paths=PackedStringArray("animation_player", "node_emitter")]
+script = ExtResource("14_xhvql")
+animation_player = NodePath("../../AnimationPlayer")
+anim_name = 1
+node_emitter = NodePath("..")
+watch_signal = 0
+metadata/_custom_type_script = "uid://dfnv5lgi83cdo"
+
+[node name="APChainNumOp" type="Node" parent="is_die=now_true" node_paths=PackedStringArray("node_emitter")]
+script = ExtResource("1_dvgan")
+vares_target = ExtResource("15_4xn3i")
+vares_b = SubResource("Resource_4xn3i")
+node_emitter = NodePath("..")
+watch_signal = 0
+metadata/_custom_type_script = "uid://uh8e7y0n0t5e"
+
+[node name="APChainNumOp2" type="Node" parent="is_die=now_true" node_paths=PackedStringArray("node_emitter")]
+script = ExtResource("1_dvgan")
+vares_target = ExtResource("4_60vfn")
+vares_b = SubResource("Resource_60vfn")
+node_emitter = NodePath("..")
+watch_signal = 0
+metadata/_custom_type_script = "uid://uh8e7y0n0t5e"
+
+[node name="is_die=now_false" type="Node" parent="."]
+script = ExtResource("12_a1sw8")
+_signal = "now_false"
+resource = SubResource("Resource_ntt2y")
+call_init = true
+signal = "now_false"
+metadata/_custom_type_script = "uid://u1gglou2n5jq"
+
+[node name="APChainSetVisible" type="Node" parent="is_die=now_false" node_paths=PackedStringArray("nodes_visible_true", "nodes_visible_false", "node_emitter")]
+script = ExtResource("11_yv52f")
+nodes_visible_true = [NodePath("../../Body/LiveEye"), NodePath("../../Body/LiveEye2")]
+nodes_visible_false = [NodePath("../../Body/DieEye"), NodePath("../../Body/DieEye2")]
+enable = false
+node_emitter = NodePath("..")
+watch_signal = 0
+metadata/_custom_type_script = "uid://bqn6e76istclq"
+
+[node name="APChainAnimPlay2" type="Node" parent="is_die=now_false" node_paths=PackedStringArray("animation_player", "node_emitter")]
+script = ExtResource("14_xhvql")
+animation_player = NodePath("../../AnimationPlayer")
+anim_name = 0
+node_emitter = NodePath("..")
+watch_signal = 0
+metadata/_custom_type_script = "uid://dfnv5lgi83cdo"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+reset_on_save = false
+libraries = {
+&"": SubResource("AnimationLibrary_h6r1o")
+}
+
+[node name="MingcuteGhostFill" type="Sprite2D" parent="."]
+visible = false
+modulate = Color(1, 1, 1, 0)
+scale = Vector2(0.78125, 0.78125)
+texture = ExtResource("14_h6r1o")
+
+[node name="GameIconsRing" type="Sprite2D" parent="MingcuteGhostFill"]
+modulate = Color(1, 1, 0.25490198, 1)
+position = Vector2(0, -17.92)
+scale = Vector2(1.28, 1.28)
+texture = ExtResource("15_bdpl3")

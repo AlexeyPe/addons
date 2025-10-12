@@ -1,0 +1,591 @@
+[gd_scene load_steps=79 format=3 uid="uid://dnxe3vhvxsoum"]
+
+[ext_resource type="Shader" uid="uid://34vuvr16u6om" path="res://addons/shadercollectionap/shader/starfield/eclmist.gdshader" id="1_w8vxg"]
+[ext_resource type="Texture2D" uid="uid://cybbdvgqf1fci" path="res://icon.svg" id="2_7eqmx"]
+[ext_resource type="Shader" uid="uid://d2gvbyyv0vm43" path="res://addons/shadercollectionap/shader/transform/wave.gdshader" id="3_pe3d1"]
+[ext_resource type="Shader" uid="uid://d4ctmlx5h5jxs" path="res://addons/shadercollectionap/shader/hue-control.gdshader" id="4_5j1ui"]
+[ext_resource type="Shader" uid="uid://c505wag4jkvyc" path="res://addons/shadercollectionap/shader/progress/progress-burn.gdshader" id="5_fxorn"]
+[ext_resource type="Shader" uid="uid://bui5c7jp3qdky" path="res://addons/shadercollectionap/shader/progress/progress-burn2.gdshader" id="6_hkxm1"]
+[ext_resource type="Shader" uid="uid://bmfoiqbsgt8oc" path="res://addons/shadercollectionap/shader/shine2.gdshader" id="7_f53hn"]
+[ext_resource type="Shader" uid="uid://ch6lv3atwrt0e" path="res://addons/shadercollectionap/shader/load/load-ring.gdshader" id="8_t36y0"]
+[ext_resource type="Shader" uid="uid://dxxl7e1o2nd40" path="res://addons/shadercollectionap/shader/solid-color-mask.gdshader" id="9_ba1da"]
+[ext_resource type="Shader" uid="uid://bvkt7ofkv86y8" path="res://addons/shadercollectionap/shader/electric_ball.gdshader" id="10_uboqy"]
+[ext_resource type="Shader" uid="uid://cou17oqo242ir" path="res://addons/shadercollectionap/shader/pulse.gdshader" id="11_tpb81"]
+[ext_resource type="Shader" uid="uid://b8m65vdrfbdee" path="res://addons/shadercollectionap/shader/transparent-double.gdshader" id="12_malrb"]
+[ext_resource type="Shader" uid="uid://bputtxwfelh2b" path="res://addons/shadercollectionap/shader/progress/progres-circle.gdshader" id="13_nmjwx"]
+[ext_resource type="Shader" uid="uid://w48ipbx50tw" path="res://addons/shadercollectionap/shader/progress/progres-circle2.gdshader" id="14_gdsgs"]
+[ext_resource type="Shader" uid="uid://bohmhaij0ravd" path="res://addons/shadercollectionap/shader/transform/levitating.gdshader" id="15_uohxh"]
+[ext_resource type="Shader" uid="uid://ccfjtmuqhylrj" path="res://addons/shadercollectionap/shader/shine.gdshader" id="16_gclcv"]
+[ext_resource type="Shader" uid="uid://da4hxmt7r1gtn" path="res://addons/shadercollectionap/shader/transform/effect/outline.gdshader" id="17_agefn"]
+[ext_resource type="Shader" uid="uid://hujvlwnhsjnw" path="res://addons/shadercollectionap/shader/transform/effect/effect-whirl.gdshader" id="18_jb0kc"]
+[ext_resource type="Shader" uid="uid://c3jw5mu3vfld8" path="res://addons/shadercollectionap/shader/fade/fade-squares.gdshader" id="19_2r14v"]
+[ext_resource type="Shader" uid="uid://1sssruy5evl4" path="res://addons/shadercollectionap/shader/transform/perspective.gdshader" id="20_hef8y"]
+[ext_resource type="Shader" uid="uid://c8dj32blo0qgp" path="res://addons/shadercollectionap/shader/load/load-ps2.gdshader" id="21_qqo4x"]
+[ext_resource type="Shader" uid="uid://cdu1qerlvnw7a" path="res://addons/shadercollectionap/shader/transform/effect/effect-fisheye .gdshader" id="22_2a4mr"]
+[ext_resource type="Shader" uid="uid://5q1cerexjkao" path="res://addons/shadercollectionap/shader/EdgeGradientBorder.gdshader" id="22_7eqmx"]
+[ext_resource type="Shader" uid="uid://df1qj3jd0wxjs" path="res://addons/shadercollectionap/shader/hand_drawn-hatch_lines.gdshader" id="23_njbe8"]
+[ext_resource type="Shader" uid="uid://b4xocinxdwelf" path="res://addons/shadercollectionap/shader/outline/Outline.gdshader" id="23_pe3d1"]
+[ext_resource type="Shader" uid="uid://bablj8w4a2s11" path="res://addons/shadercollectionap/shader/Shake.gdshader" id="24_5j1ui"]
+[ext_resource type="Shader" uid="uid://h6lcg3a2x62n" path="res://addons/shadercollectionap/shader/transform/random-displacement.gdshader" id="24_18yic"]
+[ext_resource type="Shader" uid="uid://hjaushroino1" path="res://addons/shadercollectionap/shader/view.gdshader" id="25_ihitu"]
+[ext_resource type="Shader" uid="uid://k4a8ylb5cenv" path="res://addons/shadercollectionap/shader/starfield/starfield.gdshader" id="26_txere"]
+[ext_resource type="Shader" uid="uid://cqunkxivlqmr8" path="res://addons/shadercollectionap/shader/starfield/starfield2.gdshader" id="27_0xktr"]
+[ext_resource type="Shader" uid="uid://bj7svbnmcawap" path="res://addons/shadercollectionap/shader/starfield/starfield3.gdshader" id="28_sn1h2"]
+[ext_resource type="Shader" uid="uid://dmlj5iytq51ty" path="res://addons/shadercollectionap/shader/starfield/starfield4.gdshader" id="29_ulr44"]
+[ext_resource type="Shader" uid="uid://dx7whj84nioxe" path="res://addons/shadercollectionap/shader/starfield/starfield5.gdshader" id="30_lmdls"]
+[ext_resource type="Shader" uid="uid://dp57401gew5ih" path="res://addons/shadercollectionap/shader/starfield/starfield6.gdshader" id="31_y7mtm"]
+[ext_resource type="Shader" uid="uid://brb8gngm3snua" path="res://addons/shadercollectionap/shader/starfield/starfield7.gdshader" id="32_dcv4l"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_1dr5g"]
+shader = ExtResource("1_w8vxg")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_wosyn"]
+shader = ExtResource("3_pe3d1")
+shader_parameter/speed = 2.0
+shader_parameter/height = 44.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_tgqhd"]
+shader = ExtResource("4_5j1ui")
+shader_parameter/shift_amount = 271.0
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_lcaa3"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_vq81u"]
+noise = SubResource("FastNoiseLite_lcaa3")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_vq81u"]
+shader = ExtResource("5_fxorn")
+shader_parameter/progress = -0.165
+shader_parameter/noiseForce = 0.185
+shader_parameter/noiseTexture = SubResource("NoiseTexture2D_vq81u")
+shader_parameter/burnColor = Color(0.9999928, 0.39468893, 0.25151202, 1)
+shader_parameter/borderWidth = 0.05
+shader_parameter/direction = 180.0
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_vq81u"]
+noise_type = 2
+seed = 2
+frequency = 0.005
+fractal_type = 3
+fractal_octaves = 4
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_cg3r1"]
+noise = SubResource("FastNoiseLite_vq81u")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_cg3r1"]
+shader = ExtResource("6_hkxm1")
+shader_parameter/dissolve_texture = SubResource("NoiseTexture2D_cg3r1")
+shader_parameter/dissolve_value = 0.5550000263625
+shader_parameter/burn_size = 0.03999999910592
+shader_parameter/burn_color = Color(1, 0.4666667, 0, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_crx51"]
+shader = ExtResource("7_f53hn")
+shader_parameter/shine_color = Color(1, 1, 1, 1)
+shader_parameter/shine_angle = 45.0
+shader_parameter/shine_speed = 0.3
+shader_parameter/shine_delay = 0.0
+shader_parameter/shine_reverse = false
+shader_parameter/Line_Width = 0.09
+shader_parameter/Line_Smoothness = 0.045
+shader_parameter/Brightness = 3.0
+shader_parameter/Distortion = 2.0
+shader_parameter/LensStrength = 0.05
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_puvaq"]
+shader = ExtResource("8_t36y0")
+shader_parameter/radius = 0.10000000405148
+shader_parameter/ring_radius = 0.29000001051512003
+shader_parameter/speed = 1.0
+shader_parameter/count = 8
+shader_parameter/fade_power = 3.00000011875
+shader_parameter/circle_color = Color(1, 1, 1, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_uiejy"]
+shader = ExtResource("9_ba1da")
+shader_parameter/tint_color = Color(0.21176471, 0.23921569, 0.32156864, 1)
+shader_parameter/intensity = 0.9010000427975
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_wosyn"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_uiejy"]
+noise = SubResource("FastNoiseLite_wosyn")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_dq3mc"]
+shader = ExtResource("10_uboqy")
+shader_parameter/noise = SubResource("NoiseTexture2D_uiejy")
+shader_parameter/noise2 = SubResource("NoiseTexture2D_uiejy")
+shader_parameter/brightness = 2.5
+shader_parameter/time_scale = 2.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_lcaa3"]
+shader = ExtResource("11_tpb81")
+shader_parameter/circle_width = 0.15
+shader_parameter/wait_time = 0.5
+shader_parameter/speed = 1.0
+shader_parameter/alpha_boost = 2.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_65lg3"]
+shader = ExtResource("12_malrb")
+shader_parameter/divide = 0.125
+shader_parameter/blur = 0.265
+shader_parameter/fade_width = 0.825
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_pn0cg"]
+shader = ExtResource("13_nmjwx")
+shader_parameter/progress = 0.9210000437475
+shader_parameter/ring_thickness = 0.1
+shader_parameter/ring_radius = 0.4
+shader_parameter/progress_color = Color(1, 0.5, 1, 1)
+shader_parameter/background_color = Color(0.11, 0.11, 0.11, 1)
+shader_parameter/gradient_color = Color(0.19999999, 0.2800001, 1, 1)
+shader_parameter/smoothness = 0.0050000002375
+shader_parameter/gradient_strength = 1.0
+shader_parameter/use_gradient = true
+shader_parameter/rotation_offset = 0.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ftvp4"]
+shader = ExtResource("14_gdsgs")
+shader_parameter/primary_color = Color(1, 1, 1, 1)
+shader_parameter/outline_color = Color(0, 0, 0, 1)
+shader_parameter/unfilled_color = Color(0.443, 0.443, 0.443, 1)
+shader_parameter/value = 0.77999998256544
+shader_parameter/smooth_ = 0.005
+shader_parameter/width_in = 0.8
+shader_parameter/width_out = 0.95
+shader_parameter/border_width = 0.02
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_wren1"]
+shader = ExtResource("15_uohxh")
+shader_parameter/do_abs = false
+shader_parameter/do_quantize = false
+shader_parameter/quantize_to = 1.0
+shader_parameter/sine_amplitude = Vector2(0, 6)
+shader_parameter/sine_speed = Vector2(1, 2)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_2h030"]
+shader = ExtResource("16_gclcv")
+shader_parameter/Line_Smoothness = 0.045
+shader_parameter/Line_Width = 0.09
+shader_parameter/Brightness = 3.0
+shader_parameter/Rotation_deg = 30.0
+shader_parameter/Distortion = 1.8
+shader_parameter/Speed = 0.7
+shader_parameter/Position = 0.0
+shader_parameter/Position_Min = 0.25
+shader_parameter/Position_Max = 0.5
+shader_parameter/Alpha = 1.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_wuire"]
+shader = ExtResource("17_agefn")
+shader_parameter/line_color = Vector4(1, 1, 1, 1)
+shader_parameter/line_thickness = 1.0
+shader_parameter/frequency = 4.0
+shader_parameter/phase_speed = 1.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_7kf0j"]
+shader = ExtResource("18_jb0kc")
+shader_parameter/amount = -90.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_nnk1c"]
+shader = ExtResource("19_2r14v")
+shader_parameter/fade = 0.28999999351792
+shader_parameter/tiling = 5.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_1ihg2"]
+shader = ExtResource("20_hef8y")
+shader_parameter/up_left = Vector2(0.05, 0.11)
+shader_parameter/up_right = Vector2(1, 0)
+shader_parameter/down_right = Vector2(1, 1.21)
+shader_parameter/down_left = Vector2(-0.09, 0.98)
+shader_parameter/plane_size = Vector2(0.59, 0.28)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_32nmk"]
+shader = ExtResource("21_qqo4x")
+shader_parameter/iTime = 6.0
+shader_parameter/scale_modifier = 0.4
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_pe3d1"]
+shader = ExtResource("22_7eqmx")
+shader_parameter/corner_scale = 1.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_5j1ui"]
+shader = ExtResource("23_pe3d1")
+shader_parameter/allow_out_of_bounds = true
+shader_parameter/outline_thickness = 2.0
+shader_parameter/outline_color = Color(1, 0, 0, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_fxorn"]
+shader = ExtResource("24_5j1ui")
+shader_parameter/hit_effect = 0.32800001558
+shader_parameter/shake_intensity = 10.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_r5aow"]
+shader = ExtResource("22_2a4mr")
+shader_parameter/amount = 60.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_goqcv"]
+shader = ExtResource("23_njbe8")
+shader_parameter/spacing = 0.08
+shader_parameter/thickness = 0.02
+shader_parameter/freq = 57.0
+shader_parameter/amp = -0.012
+shader_parameter/hatch_angle = 314.18
+shader_parameter/progress = 0.845
+shader_parameter/bound_width_a = 0.015
+shader_parameter/corner_a = 0.085
+shader_parameter/uv_scale = Vector2(1, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ene7r"]
+shader = ExtResource("24_18yic")
+shader_parameter/interval = 0.5
+shader_parameter/intensity = Vector2(20, 20)
+shader_parameter/seed = 42.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_lk2p4"]
+shader = ExtResource("25_ihitu")
+shader_parameter/cone_angle = 90.0
+shader_parameter/start_angle = 270.0
+shader_parameter/fade_intensity = 1.4950000710125
+shader_parameter/circle_radius = 0.5
+shader_parameter/inner_circle_alpha = 0.2850000135375
+shader_parameter/outline_thickness = 0.0250000011875
+shader_parameter/custom_color = Color(1, 1, 1, 1)
+shader_parameter/cone_scale = 1.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_kxuod"]
+shader = ExtResource("26_txere")
+shader_parameter/density = 150.0
+shader_parameter/layer_parascale = 2
+shader_parameter/speedx = 0.2
+shader_parameter/speedy = 0.0
+shader_parameter/star_horizontal_wave = 0.3
+shader_parameter/star_size = 3.0
+shader_parameter/twinkle_effect = 0.6
+shader_parameter/twinkle_speed = 0.3
+shader_parameter/fbm_strength = 0.12
+shader_parameter/fbm_mix = 0.07
+shader_parameter/fbm_freq = 4.0
+shader_parameter/fbm_amp = 1.5
+shader_parameter/fbm_speed = 5.0
+shader_parameter/warp_scale = 2.0
+shader_parameter/cloud_freq = 40.0
+shader_parameter/cloud_amp = 0.02
+shader_parameter/cloud_speed = 5.0
+shader_parameter/cloud_color_ci1 = 0.75
+shader_parameter/cloud_color_ci2 = 0.45
+shader_parameter/cloud_color_ci3 = 0.9
+shader_parameter/cloud_color_shiftx = 0.0
+shader_parameter/cloud_color_shifty = 0.0
+shader_parameter/background_color = Color(0.02, 0.04, 0.12, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_hmh3n"]
+shader = ExtResource("27_0xktr")
+shader_parameter/VIEWPORT_SIZE = Vector2(1280, 720)
+
+[sub_resource type="Gradient" id="Gradient_cg3r1"]
+offsets = PackedFloat32Array(0.00625, 0.11875, 0.36875, 0.50625, 1)
+colors = PackedColorArray(0.8275225, 0, 0.3118985, 1, 0.74477077, 0.070424676, 0.35747758, 1, 0.12413263, 0.5986098, 0.6993207, 1, 5.0055983e-06, 0.7042468, 0.7676893, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_72c0u"]
+gradient = SubResource("Gradient_cg3r1")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_72c0u"]
+shader = ExtResource("28_sn1h2")
+shader_parameter/gradientA = SubResource("GradientTexture2D_72c0u")
+shader_parameter/horizontalMovement = 0.1
+shader_parameter/verticalMovement = 0.1
+shader_parameter/frequencyStar = 0.1
+shader_parameter/sizeStar = 100.0
+shader_parameter/brightnessStar = 3.0
+shader_parameter/shineFrequencyStar = 8.0
+shader_parameter/transparencyStar = 0.0
+shader_parameter/starIterations = 3
+shader_parameter/frequencyBgStar = 0.996
+shader_parameter/shineFrequencyBgStar = 1.0
+shader_parameter/transparencyBgStar = 0.0
+shader_parameter/colorBackground = Color(0.05, 0.04, 0.2, 1)
+shader_parameter/transparencyBackground = 0.0
+shader_parameter/seed = 0.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_1qtut"]
+shader = ExtResource("29_ulr44")
+shader_parameter/iterations = 17
+shader_parameter/formuparam = 0.53
+shader_parameter/volsteps = 10
+shader_parameter/stepsize = 0.1
+shader_parameter/zoom = 0.8
+shader_parameter/tile = 0.85
+shader_parameter/speed = 0.001
+shader_parameter/brightness = 0.0015
+shader_parameter/darkmatter = 0.3
+shader_parameter/distfading = 0.73
+shader_parameter/saturation = 0.85
+shader_parameter/rotation = Vector2(0, 0)
+shader_parameter/colorampMix = 0.5
+shader_parameter/isColoramp = false
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_6xsba"]
+shader = ExtResource("30_lmdls")
+shader_parameter/mouse = Vector2(-0.185, 3.875)
+shader_parameter/time = 14.365
+shader_parameter/speed2 = -0.43
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ia2xj"]
+shader = ExtResource("31_y7mtm")
+shader_parameter/anim_speed = 0.10000024225000016
+shader_parameter/star_brightness = 0.0850000040375
+shader_parameter/dust = 0.0
+shader_parameter/dist_fade = 0.4390000208525
+shader_parameter/pixelation = 1000.0
+shader_parameter/quantization_levels = 256
+shader_parameter/dust_color = Color(1.1484581e-07, 0.10061056, 0.13058378, 1)
+shader_parameter/saturation = 1.0
+shader_parameter/layers = 9.0
+shader_parameter/iterations = 6
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_fh3cp"]
+shader = ExtResource("31_y7mtm")
+shader_parameter/anim_speed = 0.10000024225000016
+shader_parameter/star_brightness = 0.0850000040375
+shader_parameter/dust = 0.0150000007125
+shader_parameter/dist_fade = 0.4090000194275
+shader_parameter/pixelation = 1000.0
+shader_parameter/quantization_levels = 256
+shader_parameter/dust_color = Color(0.52019477, 0.15465394, 0.017526427, 1)
+shader_parameter/saturation = 1.0
+shader_parameter/layers = 8.9210003762475
+shader_parameter/iterations = 11
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_dk2pn"]
+shader = ExtResource("32_dcv4l")
+shader_parameter/OCTAVE = 6
+shader_parameter/timescale = 1.0
+shader_parameter/CLOUD1_COL = Color(0.41, 0.64, 0.78, 0.4)
+shader_parameter/CLOUD2_COL = Color(0.99, 0.79, 0.46, 0.2)
+shader_parameter/CLOUD3_COL = Color(0.81, 0.31, 0.59, 1)
+shader_parameter/CLOUD4_COL = Color(0.27, 0.15, 0.33, 1)
+shader_parameter/SPACE = Color(0.09, 0.06, 0.28, 0.3)
+shader_parameter/zoomScale = 6.0
+shader_parameter/size = 10.0
+shader_parameter/starscale = 20.0
+shader_parameter/prob = 0.98
+
+[node name="Shaders" type="Node2D"]
+
+[node name="eclmist" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_1dr5g")
+position = Vector2(213.9997, -482.99988)
+scale = Vector2(3.36, 1)
+texture = ExtResource("2_7eqmx")
+
+[node name="wave" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_wosyn")
+position = Vector2(62, -347)
+texture = ExtResource("2_7eqmx")
+
+[node name="hue-control" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_tgqhd")
+position = Vector2(62, -211)
+texture = ExtResource("2_7eqmx")
+
+[node name="progress-burn" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_vq81u")
+position = Vector2(62, -75)
+texture = ExtResource("2_7eqmx")
+
+[node name="progress-burn2" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_cg3r1")
+position = Vector2(198, -75)
+texture = ExtResource("2_7eqmx")
+
+[node name="progress-burn3" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_crx51")
+position = Vector2(335, -75)
+texture = ExtResource("2_7eqmx")
+
+[node name="load-ring" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_puvaq")
+position = Vector2(198, -211)
+texture = ExtResource("2_7eqmx")
+
+[node name="solid-color-mask" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_uiejy")
+position = Vector2(198, -347)
+texture = ExtResource("2_7eqmx")
+
+[node name="electric_ball" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_dq3mc")
+custom_minimum_size = Vector2(100, 100)
+offset_left = 272.0
+offset_top = -408.0
+offset_right = 400.0
+offset_bottom = -280.0
+
+[node name="electric_ball2" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_lcaa3")
+custom_minimum_size = Vector2(100, 100)
+offset_left = 272.0
+offset_top = -275.0
+offset_right = 400.0
+offset_bottom = -147.0
+
+[node name="progress-burn4" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_65lg3")
+position = Vector2(479, -75)
+texture = ExtResource("2_7eqmx")
+
+[node name="progres-circle" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_pn0cg")
+custom_minimum_size = Vector2(100, 100)
+offset_left = 416.0
+offset_top = -408.0
+offset_right = 544.0
+offset_bottom = -280.0
+
+[node name="progres-circle12" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_ftvp4")
+custom_minimum_size = Vector2(100, 100)
+offset_left = 560.0
+offset_top = -408.0
+offset_right = 688.0
+offset_bottom = -280.0
+
+[node name="progres-circle2" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_wren1")
+position = Vector2(1048, -344)
+texture = ExtResource("2_7eqmx")
+
+[node name="progres-circle4" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_2h030")
+position = Vector2(768, -344)
+texture = ExtResource("2_7eqmx")
+
+[node name="progres-circle7" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_wuire")
+position = Vector2(904, -344)
+texture = ExtResource("2_7eqmx")
+region_enabled = true
+region_rect = Rect2(0, 0, 128, 136)
+region_filter_clip_enabled = true
+
+[node name="progres-circle5" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_7kf0j")
+position = Vector2(768, -208)
+texture = ExtResource("2_7eqmx")
+
+[node name="progres-circle8" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_nnk1c")
+position = Vector2(904, -208)
+texture = ExtResource("2_7eqmx")
+
+[node name="progres-circle10" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_1ihg2")
+position = Vector2(1040, -208)
+texture = ExtResource("2_7eqmx")
+
+[node name="progres-circle9" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_32nmk")
+position = Vector2(904, -72)
+texture = ExtResource("2_7eqmx")
+
+[node name="progres-circle11" type="TextureRect" parent="."]
+material = SubResource("ShaderMaterial_pe3d1")
+custom_minimum_size = Vector2(100, 100)
+offset_left = 980.0
+offset_top = -136.0
+offset_right = 1108.0
+offset_bottom = -8.0
+texture = ExtResource("2_7eqmx")
+
+[node name="progres-circle13" type="TextureRect" parent="."]
+material = SubResource("ShaderMaterial_5j1ui")
+custom_minimum_size = Vector2(100, 100)
+offset_left = 1116.0
+offset_top = -136.0
+offset_right = 1244.0
+offset_bottom = -8.0
+texture = ExtResource("2_7eqmx")
+
+[node name="progres-circle14" type="TextureRect" parent="."]
+material = SubResource("ShaderMaterial_fxorn")
+custom_minimum_size = Vector2(100, 100)
+offset_left = 1118.0
+offset_top = -274.0
+offset_right = 1246.0
+offset_bottom = -146.0
+texture = ExtResource("2_7eqmx")
+
+[node name="progres-circle6" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_r5aow")
+position = Vector2(768, -72)
+texture = ExtResource("2_7eqmx")
+
+[node name="electric_ball4" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_goqcv")
+custom_minimum_size = Vector2(100, 100)
+offset_left = 429.0
+offset_top = -255.0
+offset_right = 529.0
+offset_bottom = -155.0
+
+[node name="progress-burn5" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_ene7r")
+position = Vector2(623, -75)
+texture = ExtResource("2_7eqmx")
+
+[node name="progres-circle3" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_lk2p4")
+custom_minimum_size = Vector2(100, 100)
+offset_left = 560.0
+offset_top = -267.0
+offset_right = 688.0
+offset_bottom = -139.0
+
+[node name="starfield" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_kxuod")
+position = Vector2(213.9997, -610.9998)
+scale = Vector2(3.36, 1)
+texture = ExtResource("2_7eqmx")
+
+[node name="starfield2" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_hmh3n")
+position = Vector2(213.9997, -739)
+scale = Vector2(3.36, 1)
+texture = ExtResource("2_7eqmx")
+
+[node name="starfield3" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_72c0u")
+position = Vector2(643.9995, -739)
+scale = Vector2(3.36, 1)
+texture = ExtResource("2_7eqmx")
+
+[node name="starfield4" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_1qtut")
+position = Vector2(643.9995, -611)
+scale = Vector2(3.36, 1)
+texture = ExtResource("2_7eqmx")
+
+[node name="starfield5" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_6xsba")
+position = Vector2(643.9995, -483.00006)
+scale = Vector2(3.36, 1)
+texture = ExtResource("2_7eqmx")
+
+[node name="starfield6" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_ia2xj")
+position = Vector2(1074.0001, -483)
+scale = Vector2(3.36, 1)
+texture = ExtResource("2_7eqmx")
+
+[node name="starfield7" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_fh3cp")
+position = Vector2(1074, -610.00006)
+scale = Vector2(3.36, 1)
+texture = ExtResource("2_7eqmx")
+
+[node name="starfield8" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_dk2pn")
+position = Vector2(1074, -739.00006)
+scale = Vector2(3.36, 1)
+texture = ExtResource("2_7eqmx")

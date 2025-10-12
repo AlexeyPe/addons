@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="VaRInt" load_steps=3 format=3 uid="uid://cvmmidd5uwfbn"]
+
+[ext_resource type="Script" uid="uid://8myr58nwfvfg" path="res://addons/VarRes/classes/numbers/VaRInt.gd" id="1_oea7h"]
+
+[sub_resource type="Resource" id="Resource_6h4vb"]
+script = ExtResource("1_oea7h")
+value = 0
+metadata/_custom_type_script = "uid://8myr58nwfvfg"
+
+[resource]
+script = ExtResource("1_oea7h")
+min_value_res = SubResource("Resource_6h4vb")
+value = 0
+metadata/_custom_type_script = "uid://8myr58nwfvfg"

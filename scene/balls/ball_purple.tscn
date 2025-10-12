@@ -1,0 +1,38 @@
+[gd_scene load_steps=5 format=3 uid="uid://8e48k70ehvv5"]
+
+[ext_resource type="PackedScene" uid="uid://cj53tnqi6uwe0" path="res://scene/balls/ball_yellow.tscn" id="1_e308b"]
+[ext_resource type="Script" uid="uid://djmnu1e55mp0j" path="res://addons/VarRes/classes/bool/VaRBool.gd" id="2_eu7j5"]
+[ext_resource type="Resource" uid="uid://c4bpyilbpdmw" path="res://scene/balls/data/units_purple.tres" id="3_u2ddp"]
+
+[sub_resource type="Resource" id="Resource_eu7j5"]
+resource_local_to_scene = true
+resource_name = "is_die_purple"
+script = ExtResource("2_eu7j5")
+metadata/_custom_type_script = "uid://djmnu1e55mp0j"
+
+[node name="ball_purple" instance=ExtResource("1_e308b")]
+collision_layer = 4305
+collision_mask = 4305
+linear_velocity = Vector2(0, 0)
+metadata/is_die = SubResource("Resource_eu7j5")
+
+[node name="chain_ball" parent="." index="0"]
+unit_type = "purple"
+
+[node name="APChainNumOpUnitAdd" parent="." index="1"]
+vares_target = ExtResource("3_u2ddp")
+
+[node name="CollisionShape2D" parent="." index="4"]
+visible = true
+
+[node name="Body" parent="." index="5"]
+self_modulate = Color(0.654902, 0.47843137, 1, 1)
+
+[node name="is_die=now_true" parent="." index="6"]
+resource = SubResource("Resource_eu7j5")
+
+[node name="APChainNumOp2" parent="is_die=now_true" index="4"]
+vares_target = ExtResource("3_u2ddp")
+
+[node name="is_die=now_false" parent="." index="7"]
+resource = SubResource("Resource_eu7j5")

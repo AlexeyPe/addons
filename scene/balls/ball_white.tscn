@@ -1,0 +1,39 @@
+[gd_scene load_steps=6 format=3 uid="uid://bxunj00q8ifrt"]
+
+[ext_resource type="PackedScene" uid="uid://cpprsnw4qtbbj" path="res://scene/balls/ball_red.tscn" id="1_epa8h"]
+[ext_resource type="Script" uid="uid://djmnu1e55mp0j" path="res://addons/VarRes/classes/bool/VaRBool.gd" id="2_0t4l4"]
+[ext_resource type="Resource" uid="uid://ccq6dphbjbpf6" path="res://scene/balls/data/units_white.tres" id="3_idjpq"]
+
+[sub_resource type="Resource" id="Resource_idjpq"]
+resource_local_to_scene = true
+script = ExtResource("2_0t4l4")
+metadata/_custom_type_script = "uid://djmnu1e55mp0j"
+
+[sub_resource type="Resource" id="Resource_0t4l4"]
+resource_local_to_scene = true
+resource_name = "is_die"
+script = ExtResource("2_0t4l4")
+metadata/_custom_type_script = "uid://djmnu1e55mp0j"
+
+[node name="ball_white" instance=ExtResource("1_epa8h")]
+collision_layer = 4321
+collision_mask = 4321
+metadata/is_die = SubResource("Resource_idjpq")
+
+[node name="chain_ball" parent="." index="0"]
+unit_type = "white"
+
+[node name="APChainNumOpUnitAdd" parent="." index="1"]
+vares_target = ExtResource("3_idjpq")
+
+[node name="Body" parent="." index="5"]
+self_modulate = Color(1, 1, 1, 1)
+
+[node name="is_die=now_true" parent="." index="6"]
+resource = SubResource("Resource_0t4l4")
+
+[node name="APChainNumOp2" parent="is_die=now_true" index="4"]
+vares_target = ExtResource("3_idjpq")
+
+[node name="is_die=now_false" parent="." index="7"]
+resource = SubResource("Resource_0t4l4")

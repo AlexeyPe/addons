@@ -1,0 +1,108 @@
+[gd_scene load_steps=2 format=3 uid="uid://buepr23aehxhi"]
+
+[sub_resource type="Shortcut" id="Shortcut_uchyk"]
+
+[node name="Control" type="HBoxContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+focus_mode = 2
+focus_behavior_recursive = 2
+alignment = 1
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "btn1"
+
+[node name="Button2" type="Button" parent="."]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+focus_next = NodePath("../SubViewportContainer/SubViewport/MarginContainer/Button3")
+text = "btn2"
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="." node_paths=PackedStringArray("shortcut_context")]
+custom_minimum_size = Vector2(60, 30)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+focus_mode = 2
+focus_behavior_recursive = 2
+shortcut_context = NodePath("..")
+mouse_target = true
+
+[node name="SubViewport" type="SubViewport" parent="SubViewportContainer"]
+transparent_bg = true
+handle_input_locally = false
+size = Vector2i(60, 30)
+render_target_update_mode = 4
+
+[node name="MarginContainer" type="MarginContainer" parent="SubViewportContainer/SubViewport"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+focus_mode = 2
+focus_behavior_recursive = 2
+theme_override_constants/margin_left = 1
+theme_override_constants/margin_top = 1
+theme_override_constants/margin_right = 1
+theme_override_constants/margin_bottom = 1
+
+[node name="Button3" type="Button" parent="SubViewportContainer/SubViewport/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+focus_next = NodePath("../../../../SubViewportContainer2/SubViewport/MarginContainer/Button4")
+focus_previous = NodePath("../../../../Button2")
+text = "btn3"
+
+[node name="SubViewportContainer2" type="SubViewportContainer" parent="." node_paths=PackedStringArray("shortcut_context")]
+custom_minimum_size = Vector2(60, 30)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+focus_mode = 2
+focus_behavior_recursive = 2
+shortcut_context = NodePath("..")
+mouse_target = true
+
+[node name="SubViewport" type="SubViewport" parent="SubViewportContainer2"]
+transparent_bg = true
+handle_input_locally = false
+size = Vector2i(60, 30)
+render_target_update_mode = 4
+
+[node name="MarginContainer" type="MarginContainer" parent="SubViewportContainer2/SubViewport"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+focus_mode = 2
+focus_behavior_recursive = 2
+theme_override_constants/margin_left = 1
+theme_override_constants/margin_top = 1
+theme_override_constants/margin_right = 1
+theme_override_constants/margin_bottom = 1
+
+[node name="Button4" type="Button" parent="SubViewportContainer2/SubViewport/MarginContainer" node_paths=PackedStringArray("shortcut_context")]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+focus_next = NodePath("../../../../Button")
+focus_previous = NodePath("../../../../SubViewportContainer/SubViewport/MarginContainer/Button3")
+shortcut_context = NodePath("../../../..")
+shortcut = SubResource("Shortcut_uchyk")
+text = "btn4"
