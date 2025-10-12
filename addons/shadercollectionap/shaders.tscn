@@ -1,4 +1,4 @@
-[gd_scene load_steps=79 format=3 uid="uid://dnxe3vhvxsoum"]
+[gd_scene load_steps=83 format=3 uid="uid://dnxe3vhvxsoum"]
 
 [ext_resource type="Shader" uid="uid://34vuvr16u6om" path="res://addons/shadercollectionap/shader/starfield/eclmist.gdshader" id="1_w8vxg"]
 [ext_resource type="Texture2D" uid="uid://cybbdvgqf1fci" path="res://icon.svg" id="2_7eqmx"]
@@ -25,9 +25,11 @@
 [ext_resource type="Shader" uid="uid://5q1cerexjkao" path="res://addons/shadercollectionap/shader/EdgeGradientBorder.gdshader" id="22_7eqmx"]
 [ext_resource type="Shader" uid="uid://df1qj3jd0wxjs" path="res://addons/shadercollectionap/shader/hand_drawn-hatch_lines.gdshader" id="23_njbe8"]
 [ext_resource type="Shader" uid="uid://b4xocinxdwelf" path="res://addons/shadercollectionap/shader/outline/Outline.gdshader" id="23_pe3d1"]
-[ext_resource type="Shader" uid="uid://bablj8w4a2s11" path="res://addons/shadercollectionap/shader/Shake.gdshader" id="24_5j1ui"]
+[ext_resource type="Shader" uid="uid://bablj8w4a2s11" path="res://addons/shadercollectionap/shader/shake/Shake.gdshader" id="24_5j1ui"]
 [ext_resource type="Shader" uid="uid://h6lcg3a2x62n" path="res://addons/shadercollectionap/shader/transform/random-displacement.gdshader" id="24_18yic"]
+[ext_resource type="Shader" uid="uid://bmoj4s5ic3q7i" path="res://addons/shadercollectionap/shader/transform/Slice.gdshader" id="25_fxorn"]
 [ext_resource type="Shader" uid="uid://hjaushroino1" path="res://addons/shadercollectionap/shader/view.gdshader" id="25_ihitu"]
+[ext_resource type="Shader" uid="uid://c7ihfh4tgq50c" path="res://addons/shadercollectionap/shader/transform/Slice2.gdshader" id="26_hkxm1"]
 [ext_resource type="Shader" uid="uid://k4a8ylb5cenv" path="res://addons/shadercollectionap/shader/starfield/starfield.gdshader" id="26_txere"]
 [ext_resource type="Shader" uid="uid://cqunkxivlqmr8" path="res://addons/shadercollectionap/shader/starfield/starfield2.gdshader" id="27_0xktr"]
 [ext_resource type="Shader" uid="uid://bj7svbnmcawap" path="res://addons/shadercollectionap/shader/starfield/starfield3.gdshader" id="28_sn1h2"]
@@ -219,6 +221,21 @@ shader_parameter/outline_color = Color(1, 0, 0, 1)
 shader = ExtResource("24_5j1ui")
 shader_parameter/hit_effect = 0.32800001558
 shader_parameter/shake_intensity = 10.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_hkxm1"]
+shader = ExtResource("25_fxorn")
+shader_parameter/direction = Vector2(1, 0)
+shader_parameter/strip = 66.0
+shader_parameter/factor = 0.25
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_f53hn"]
+shader = ExtResource("26_hkxm1")
+shader_parameter/slice_center = Vector2(0.5, 0.5)
+shader_parameter/slice_angle = 3.14
+shader_parameter/slice_distance = -0.205
+shader_parameter/pixel_size = 100.0
+shader_parameter/expansion_factor = 0.0
+shader_parameter/border_color = Vector4(0, 0, 0, 0)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_r5aow"]
 shader = ExtResource("22_2a4mr")
@@ -514,6 +531,26 @@ offset_left = 1118.0
 offset_top = -274.0
 offset_right = 1246.0
 offset_bottom = -146.0
+texture = ExtResource("2_7eqmx")
+
+[node name="progres-circle15" type="TextureRect" parent="."]
+texture_repeat = 1
+material = SubResource("ShaderMaterial_hkxm1")
+custom_minimum_size = Vector2(100, 100)
+offset_left = 1118.0
+offset_top = -410.0
+offset_right = 1246.0
+offset_bottom = -282.0
+texture = ExtResource("2_7eqmx")
+
+[node name="progres-circle17" type="TextureRect" parent="."]
+texture_repeat = 1
+material = SubResource("ShaderMaterial_f53hn")
+custom_minimum_size = Vector2(100, 100)
+offset_left = 1268.0
+offset_top = -411.0
+offset_right = 1396.0
+offset_bottom = -283.0
 texture = ExtResource("2_7eqmx")
 
 [node name="progres-circle6" type="Sprite2D" parent="."]

@@ -1,38 +1,35 @@
 [gd_scene load_steps=33 format=3 uid="uid://dyof3d0s47yns"]
 
-[ext_resource type="Shader" uid="uid://bso165sdn2g37" path="res://addons/APCards/shaders/2D-perspective.gdshader" id="1_rfrjs"]
-[ext_resource type="Shader" uid="uid://b4xocinxdwelf" path="res://addons/shadercollectionap/shader/outline/Outline.gdshader" id="2_5al3e"]
+[ext_resource type="Shader" uid="uid://xo02xcx6gxf5" path="res://addons/APCards/shaders/2D-perspective-shake.gdshader" id="1_5al3e"]
 [ext_resource type="Script" uid="uid://cccrm8vuks5fs" path="res://addons/VarRes/classes/UI/VaResLabel.gd" id="2_ins63"]
 [ext_resource type="Texture2D" uid="uid://qsswuo3ibt17" path="res://imgs/grid_16.png" id="2_lxu4h"]
-[ext_resource type="Script" uid="uid://8myr58nwfvfg" path="res://addons/VarRes/classes/numbers/VaRInt.gd" id="3_ctlec"]
 [ext_resource type="Script" uid="uid://dfnv5lgi83cdo" path="res://addons/APChain/classes/chain/APChainAnimPlay.gd" id="4_1wd18"]
 [ext_resource type="Script" uid="uid://cpilgm747sne6" path="res://addons/APChain/classes/chain/set/APChainSetZ.gd" id="5_md1t2"]
 [ext_resource type="Script" uid="uid://ba4djel70nxp6" path="res://addons/APCards/classes/APCard2DPersp.gd" id="6_iehtc"]
 [ext_resource type="Resource" uid="uid://lt145sa8tr3" path="res://data/UI/VisibleCardPack.tres" id="6_q1eso"]
+[ext_resource type="Resource" uid="uid://4ok8jqiesqsv" path="res://data/gameplay/Money.tres" id="7_0dj3i"]
 [ext_resource type="Script" uid="uid://dj04ffy0nu74n" path="res://addons/APChain/classes/chain/audio/APChainAudioPlay.gd" id="7_6ax32"]
 [ext_resource type="Texture2D" uid="uid://ge7pio3hlki4" path="res://imgs/icons/mynaui--message-solid-flip.svg" id="7_ins63"]
 [ext_resource type="Script" uid="uid://dbfncad3tlfox" path="res://addons/VarRes/classes/bool/APChainSetBoolIfNum.gd" id="7_q1eso"]
 [ext_resource type="Script" uid="uid://ofk03pmu1sfo" path="res://addons/VarRes/classes/UI/VaRNumberBBCode.gd" id="8_ctlec"]
+[ext_resource type="Script" uid="uid://ckk721qdedapu" path="res://addons/APChain/classes/chain/APChainShakeUI.gd" id="9_0dj3i"]
 [ext_resource type="Script" uid="uid://ck2yuex0aket8" path="res://addons/VarRes/classes/numbers/VaRNumber.gd" id="9_md1t2"]
-[ext_resource type="Resource" uid="uid://bsffv80g8tfye" path="res://data/Price/PriceCardPack.tres" id="10_m2x0b"]
+[ext_resource type="Resource" uid="uid://bsffv80g8tfye" path="res://data/CardPack/PriceCardPack.tres" id="10_m2x0b"]
 [ext_resource type="Resource" uid="uid://c0dxxiatt4dlo" path="res://data/CardPack/CardsPerPack.tres" id="11_iehtc"]
 [ext_resource type="Resource" uid="uid://le4nnyijbcxw" path="res://data/CardPack/PickCardsPerPack.tres" id="12_m2x0b"]
 [ext_resource type="AudioStream" uid="uid://c1n0fnjtn6fmr" path="res://audio/error.mp3" id="16_q1eso"]
+[ext_resource type="AudioStream" uid="uid://dajiviab7nxdl" path="res://audio/701070__8bitmyketison__ripping-a-pair-of-pants.mp3" id="19_0dj3i"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_6018q"]
 resource_local_to_scene = true
-shader = ExtResource("1_rfrjs")
+shader = ExtResource("1_5al3e")
 shader_parameter/fov = 80.0
 shader_parameter/cull_back = true
 shader_parameter/y_rot = 0.0
 shader_parameter/x_rot = 0.0
 shader_parameter/inset = 0.0
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_0dj3i"]
-shader = ExtResource("2_5al3e")
-shader_parameter/allow_out_of_bounds = true
-shader_parameter/outline_thickness = 4.0
-shader_parameter/outline_color = Color(1, 0, 0, 1)
+shader_parameter/hit_effect = 0.0
+shader_parameter/shake_intensity = 5.0
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_m2x0b"]
 bg_color = Color(1, 1, 1, 1)
@@ -47,18 +44,6 @@ texture = ExtResource("2_lxu4h")
 axis_stretch_horizontal = 2
 axis_stretch_vertical = 2
 modulate_color = Color(1, 0.29000002, 0.29000002, 1)
-
-[sub_resource type="Resource" id="Resource_y03xo"]
-script = ExtResource("3_ctlec")
-metadata/_custom_type_script = "uid://8myr58nwfvfg"
-
-[sub_resource type="Resource" id="Resource_q1eso"]
-script = ExtResource("3_ctlec")
-metadata/_custom_type_script = "uid://8myr58nwfvfg"
-
-[sub_resource type="Resource" id="Resource_6ax32"]
-script = ExtResource("3_ctlec")
-metadata/_custom_type_script = "uid://8myr58nwfvfg"
 
 [sub_resource type="Animation" id="Animation_1miy5"]
 length = 0.001
@@ -250,6 +235,89 @@ random_volume_offset_db = 1.0
 streams_count = 1
 stream_0/stream = ExtResource("16_q1eso")
 
+[sub_resource type="Animation" id="Animation_5al3e"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CardPack/SubViewport/PanelContainer:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CardPack:mouse_filter")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+
+[sub_resource type="Animation" id="Animation_0dj3i"]
+resource_name = "on_success"
+length = 0.5
+tracks/0/type = "animation"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimationPlayerHint")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"clips": PackedStringArray("mouse_exited_hint"),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CardPack/SubViewport/PanelContainer:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.33333334),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CardPack:mouse_filter")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.33333334, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [2, 2, 2]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Purchase:playing")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_qym5l"]
+_data = {
+&"RESET": SubResource("Animation_5al3e"),
+&"on_success": SubResource("Animation_0dj3i")
+}
+
 [node name="CardPack" type="Control"]
 layout_mode = 3
 anchors_preset = 15
@@ -287,7 +355,6 @@ render_target_update_mode = 4
 [node name="PanelContainer" type="PanelContainer" parent="CardPack/SubViewport"]
 clip_children = 2
 z_index = 2
-material = SubResource("ShaderMaterial_0dj3i")
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -338,9 +405,9 @@ theme_override_constants/shadow_offset_x = 0
 theme_override_constants/shadow_offset_y = 1
 theme_override_constants/outline_size = 7
 theme_override_constants/shadow_outline_size = 12
-text = "42"
+text = "5"
 script = ExtResource("2_ins63")
-var_res = SubResource("Resource_y03xo")
+var_res = ExtResource("10_m2x0b")
 metadata/_custom_type_script = "uid://cccrm8vuks5fs"
 
 [node name="Button" type="Button" parent="CardPack/SubViewport/PanelContainer"]
@@ -350,9 +417,9 @@ mouse_default_cursor_shape = 2
 
 [node name="SET_VisibleCardPack=true_IfNum" type="Node" parent="CardPack/SubViewport/PanelContainer/Button" node_paths=PackedStringArray("node_emitter")]
 script = ExtResource("7_q1eso")
-num_a = SubResource("Resource_q1eso")
-num_b = SubResource("Resource_6ax32")
-condition = 1
+num_a = ExtResource("7_0dj3i")
+num_b = ExtResource("10_m2x0b")
+condition = 4
 var_bool = ExtResource("6_q1eso")
 node_emitter = NodePath("..")
 watch_signal = 0
@@ -360,10 +427,26 @@ metadata/_custom_type_script = "uid://dbfncad3tlfox"
 
 [node name="APChainAudioPlay" type="Node" parent="CardPack/SubViewport/PanelContainer/Button/SET_VisibleCardPack=true_IfNum" node_paths=PackedStringArray("player", "node_emitter")]
 script = ExtResource("7_6ax32")
-player = NodePath("../../../../../../ErrorBalance")
+player = NodePath("../../../../../../ErrorLowBalance")
 node_emitter = NodePath("..")
 watch_signal = 3
 metadata/_custom_type_script = "uid://dj04ffy0nu74n"
+
+[node name="APChainShakeUI" type="Node" parent="CardPack/SubViewport/PanelContainer/Button/SET_VisibleCardPack=true_IfNum" node_paths=PackedStringArray("target", "node_emitter")]
+script = ExtResource("9_0dj3i")
+target = NodePath("../../../../..")
+node_emitter = NodePath("..")
+watch_signal = 3
+metadata/_custom_type_script = "uid://ckk721qdedapu"
+
+[node name="APChainAnimPlay" type="Node" parent="CardPack/SubViewport/PanelContainer/Button/SET_VisibleCardPack=true_IfNum" node_paths=PackedStringArray("animation_player", "node_emitter")]
+script = ExtResource("4_1wd18")
+animation_player = NodePath("../../../../../../PurchaseSuccess")
+speed = 1.5
+anim_name = 1
+node_emitter = NodePath("..")
+watch_signal = 2
+metadata/_custom_type_script = "uid://dfnv5lgi83cdo"
 
 [node name="APChainAnimPlayScale" type="Node" parent="CardPack" node_paths=PackedStringArray("animation_player", "node_emitter")]
 script = ExtResource("4_1wd18")
@@ -376,7 +459,7 @@ metadata/_custom_type_script = "uid://dfnv5lgi83cdo"
 
 [node name="APChainAnimPlayHint" type="Node" parent="CardPack" node_paths=PackedStringArray("animation_player", "node_emitter")]
 script = ExtResource("4_1wd18")
-animation_player = NodePath("../AnimationPlayerHint")
+animation_player = NodePath("../../AnimationPlayerHint")
 speed = 0.5
 anim_name = 2
 node_emitter = NodePath("..")
@@ -395,7 +478,7 @@ metadata/_custom_type_script = "uid://dfnv5lgi83cdo"
 
 [node name="APChainAnimPlayHintEnd" type="Node" parent="CardPack" node_paths=PackedStringArray("animation_player", "node_emitter")]
 script = ExtResource("4_1wd18")
-animation_player = NodePath("../AnimationPlayerHint")
+animation_player = NodePath("../../AnimationPlayerHint")
 speed = 1.6
 anim_name = 3
 node_emitter = NodePath("..")
@@ -428,13 +511,6 @@ metadata/_custom_type_script = "uid://ba4djel70nxp6"
 libraries = {
 &"": SubResource("AnimationLibrary_vy0d5")
 }
-
-[node name="AnimationPlayerHint" type="AnimationPlayer" parent="CardPack"]
-reset_on_save = false
-libraries = {
-&"": SubResource("AnimationLibrary_vy0d5")
-}
-speed_scale = 2.0
 
 [node name="Hint" type="Control" parent="."]
 visible = false
@@ -499,8 +575,27 @@ script = ExtResource("8_ctlec")
 res = Array[ExtResource("9_md1t2")]([ExtResource("10_m2x0b"), ExtResource("11_iehtc"), ExtResource("12_m2x0b")])
 metadata/_custom_type_script = "uid://ofk03pmu1sfo"
 
-[node name="ErrorBalance" type="AudioStreamPlayer" parent="."]
+[node name="ErrorLowBalance" type="AudioStreamPlayer" parent="."]
 stream = SubResource("AudioStreamRandomizer_q1eso")
 volume_db = -4.0
 pitch_scale = 0.6
 bus = &"Error"
+
+[node name="Purchase" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("19_0dj3i")
+volume_db = 9.043
+pitch_scale = 0.96
+bus = &"OpenPack"
+
+[node name="PurchaseSuccess" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_qym5l")
+}
+
+[node name="AnimationPlayerHint" type="AnimationPlayer" parent="."]
+reset_on_save = false
+root_node = NodePath("../CardPack")
+libraries = {
+&"": SubResource("AnimationLibrary_vy0d5")
+}
+speed_scale = 2.0
