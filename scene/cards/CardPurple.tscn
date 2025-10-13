@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://c1g87ftb2c4si"]
+
+[ext_resource type="PackedScene" uid="uid://bcap7c1i87f30" path="res://scene/cards/Card.tscn" id="1_xp3h1"]
+[ext_resource type="Shader" uid="uid://bso165sdn2g37" path="res://addons/APCards/shaders/2D-perspective.gdshader" id="2_w17oy"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_uh80b"]
+resource_local_to_scene = true
+shader = ExtResource("2_w17oy")
+shader_parameter/fov = 80.0
+shader_parameter/cull_back = true
+shader_parameter/y_rot = 0.0
+shader_parameter/x_rot = 0.0
+shader_parameter/inset = 0.0
+
+[node name="Card" instance=ExtResource("1_xp3h1")]
+material = SubResource("ShaderMaterial_uh80b")
+
+[node name="PanelContainer" parent="SubViewport" index="0"]
+modulate = Color(1, 0, 1, 1)

@@ -27,7 +27,7 @@
 [ext_resource type="PackedScene" uid="uid://csgbo46w4e1c5" path="res://scene/UI/CardHand.tscn" id="15_65lg3"]
 [ext_resource type="Resource" uid="uid://c4i68asmn7hno" path="res://data/CardPack/RerolQTY.tres" id="15_ene7r"]
 [ext_resource type="Texture2D" uid="uid://cylt0yccij071" path="res://imgs/icons/types-outline.png" id="15_fh3cp"]
-[ext_resource type="LabelSettings" uid="uid://bs3a6ff5awow6" path="res://scene/UI/MainLabel.tres" id="15_goqcv"]
+[ext_resource type="LabelSettings" uid="uid://bs3a6ff5awow6" path="res://scene/UI/LabelSettings/MainLabel.tres" id="15_goqcv"]
 [ext_resource type="Script" uid="uid://dvoxncb42t31a" path="res://addons/APController/classes/APContMouseDrag2D.gd" id="15_ob58h"]
 [ext_resource type="Script" uid="uid://cicas0bkgf1up" path="res://addons/apbuild/classes/cell_info/APCellInfoNode.gd" id="18_a6847"]
 [ext_resource type="Script" uid="uid://co8mhqm73w3ve" path="res://addons/apbuild/classes/cell_info/APCellInfoRes.gd" id="19_d5i4e"]

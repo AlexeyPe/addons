@@ -17,8 +17,8 @@
 [ext_resource type="Resource" uid="uid://bsffv80g8tfye" path="res://data/CardPack/PriceCardPack.tres" id="10_m2x0b"]
 [ext_resource type="Resource" uid="uid://c0dxxiatt4dlo" path="res://data/CardPack/CardsPerPack.tres" id="11_iehtc"]
 [ext_resource type="Resource" uid="uid://le4nnyijbcxw" path="res://data/CardPack/PickCardsPerPack.tres" id="12_m2x0b"]
-[ext_resource type="AudioStream" uid="uid://c1n0fnjtn6fmr" path="res://audio/error.mp3" id="16_q1eso"]
-[ext_resource type="AudioStream" uid="uid://dajiviab7nxdl" path="res://audio/701070__8bitmyketison__ripping-a-pair-of-pants.mp3" id="19_0dj3i"]
+[ext_resource type="AudioStream" uid="uid://c1n0fnjtn6fmr" path="res://audio/src/error.mp3" id="16_q1eso"]
+[ext_resource type="AudioStream" uid="uid://dajiviab7nxdl" path="res://audio/src/701070__8bitmyketison__ripping-a-pair-of-pants.mp3" id="19_0dj3i"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_6018q"]
 resource_local_to_scene = true
@@ -583,7 +583,7 @@ bus = &"Error"
 
 [node name="Purchase" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("19_0dj3i")
-volume_db = 9.043
+volume_db = 2.0
 pitch_scale = 0.96
 bus = &"OpenPack"
 
