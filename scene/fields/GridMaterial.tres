@@ -1,0 +1,10 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://svr62spjy8px"]
+
+[ext_resource type="Shader" uid="uid://b2jj5oyepx0n3" path="res://addons/shadercollectionap/shader/tilemap/grid/tilemap-grid-world-optimization2.gdshader" id="1_wbqrt"]
+
+[resource]
+shader = ExtResource("1_wbqrt")
+shader_parameter/grid_size = 48.0
+shader_parameter/line_color = Color(0.0885599, 0.0885599, 0.0885599, 0.15686275)
+shader_parameter/offset = Vector2(24, 24)
+shader_parameter/line_thickness = 2.5

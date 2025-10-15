@@ -1,4 +1,4 @@
-[gd_scene load_steps=87 format=3 uid="uid://dnxe3vhvxsoum"]
+[gd_scene load_steps=96 format=3 uid="uid://dnxe3vhvxsoum"]
 
 [ext_resource type="Shader" uid="uid://34vuvr16u6om" path="res://addons/shadercollectionap/shader/starfield/eclmist.gdshader" id="1_w8vxg"]
 [ext_resource type="Texture2D" uid="uid://cybbdvgqf1fci" path="res://icon.svg" id="2_7eqmx"]
@@ -13,6 +13,7 @@
 [ext_resource type="Shader" uid="uid://cou17oqo242ir" path="res://addons/shadercollectionap/shader/pulse.gdshader" id="11_tpb81"]
 [ext_resource type="Shader" uid="uid://b8m65vdrfbdee" path="res://addons/shadercollectionap/shader/transparent-double.gdshader" id="12_malrb"]
 [ext_resource type="Shader" uid="uid://bputtxwfelh2b" path="res://addons/shadercollectionap/shader/progress/progres-circle.gdshader" id="13_nmjwx"]
+[ext_resource type="Shader" uid="uid://blb2bqonlb02a" path="res://addons/shadercollectionap/shader/fade.gdshader" id="13_tpb81"]
 [ext_resource type="Shader" uid="uid://w48ipbx50tw" path="res://addons/shadercollectionap/shader/progress/progres-circle2.gdshader" id="14_gdsgs"]
 [ext_resource type="Shader" uid="uid://bohmhaij0ravd" path="res://addons/shadercollectionap/shader/transform/levitating.gdshader" id="15_uohxh"]
 [ext_resource type="Shader" uid="uid://ccfjtmuqhylrj" path="res://addons/shadercollectionap/shader/shine.gdshader" id="16_gclcv"]
@@ -34,11 +35,14 @@
 [ext_resource type="Shader" uid="uid://k4a8ylb5cenv" path="res://addons/shadercollectionap/shader/starfield/starfield.gdshader" id="26_txere"]
 [ext_resource type="Shader" uid="uid://cqunkxivlqmr8" path="res://addons/shadercollectionap/shader/starfield/starfield2.gdshader" id="27_0xktr"]
 [ext_resource type="Shader" uid="uid://bj7svbnmcawap" path="res://addons/shadercollectionap/shader/starfield/starfield3.gdshader" id="28_sn1h2"]
+[ext_resource type="Shader" uid="uid://cwogfu8vk8ie" path="res://addons/shadercollectionap/shader/outline/border_triangle.gdshader" id="29_tpb81"]
 [ext_resource type="Shader" uid="uid://dmlj5iytq51ty" path="res://addons/shadercollectionap/shader/starfield/starfield4.gdshader" id="29_ulr44"]
 [ext_resource type="Shader" uid="uid://dx7whj84nioxe" path="res://addons/shadercollectionap/shader/starfield/starfield5.gdshader" id="30_lmdls"]
+[ext_resource type="Shader" uid="uid://if45daxdf1uf" path="res://addons/shadercollectionap/shader/outline/border_triangle-2.gdshader" id="30_malrb"]
 [ext_resource type="Shader" uid="uid://dp57401gew5ih" path="res://addons/shadercollectionap/shader/starfield/starfield6.gdshader" id="31_y7mtm"]
 [ext_resource type="Shader" uid="uid://brb8gngm3snua" path="res://addons/shadercollectionap/shader/starfield/starfield7.gdshader" id="32_dcv4l"]
 [ext_resource type="Shader" uid="uid://bvvll4jp3kavo" path="res://addons/shadercollectionap/shader/outline/outline-dotted.gdshader" id="38_f53hn"]
+[ext_resource type="Shader" uid="uid://ddqbpi2esrsgw" path="res://addons/shadercollectionap/shader/outline/outline-dotted2.gdshader" id="40_ba1da"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_1dr5g"]
 shader = ExtResource("1_w8vxg")
@@ -131,9 +135,15 @@ shader_parameter/alpha_boost = 2.0
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_65lg3"]
 shader = ExtResource("12_malrb")
-shader_parameter/divide = 0.125
-shader_parameter/blur = 0.265
-shader_parameter/fade_width = 0.825
+shader_parameter/divide = 0.23
+shader_parameter/blur = 0.395
+shader_parameter/fade_width = 0.655
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_nmjwx"]
+shader = ExtResource("13_tpb81")
+shader_parameter/divide = 0.19
+shader_parameter/blur = 0.53
+shader_parameter/fade_width = 0.61
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_pn0cg"]
 shader = ExtResource("13_nmjwx")
@@ -243,6 +253,20 @@ shader_parameter/slice_distance = -0.205
 shader_parameter/pixel_size = 100.0
 shader_parameter/expansion_factor = 0.0
 shader_parameter/border_color = Vector4(0, 0, 0, 0)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_malrb"]
+shader = ExtResource("29_tpb81")
+shader_parameter/block_color = Color(0, 3.308989e-08, 0.12247535, 1)
+shader_parameter/block_width = 0.2410000114475
+shader_parameter/triangle_size_pixels = 50.500002351250004
+shader_parameter/wave_offset = 0.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_gdsgs"]
+shader = ExtResource("30_malrb")
+shader_parameter/block_color = Color(0, 3.308989e-08, 0.12247535, 1)
+shader_parameter/block_width = 0.058000002755
+shader_parameter/triangle_size_pixels = 32.350001489125
+shader_parameter/wave_offset = 1.0
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_r5aow"]
 shader = ExtResource("22_2a4mr")
@@ -404,6 +428,26 @@ shader_parameter/speed = 3.0
 shader_parameter/radius = 1.0
 shader_parameter/line_thickness = 0.06999999843536
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_uboqy"]
+shader = ExtResource("40_ba1da")
+shader_parameter/border_width = 0.02
+shader_parameter/blur = 0.01
+shader_parameter/corner_radius = 0.05
+shader_parameter/dash_length = 0.1
+shader_parameter/dash_gap = 0.05
+shader_parameter/speed = 0.1
+shader_parameter/border_color = Color(1, 1, 1, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_tpb81"]
+shader = ExtResource("40_ba1da")
+shader_parameter/border_width = 0.05
+shader_parameter/blur = 0.01
+shader_parameter/corner_radius = 0.05
+shader_parameter/dash_length = 0.1
+shader_parameter/dash_gap = 0.05
+shader_parameter/speed = 0.1
+shader_parameter/border_color = Color(1, 1, 1, 1)
+
 [node name="Shaders" type="Node2D"]
 
 [node name="eclmist" type="Sprite2D" parent="."]
@@ -466,6 +510,11 @@ offset_bottom = -147.0
 [node name="progress-burn4" type="Sprite2D" parent="."]
 material = SubResource("ShaderMaterial_65lg3")
 position = Vector2(479, -75)
+texture = ExtResource("2_7eqmx")
+
+[node name="progress-burn6" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_nmjwx")
+position = Vector2(1327, -75)
 texture = ExtResource("2_7eqmx")
 
 [node name="progres-circle" type="ColorRect" parent="."]
@@ -578,6 +627,26 @@ offset_right = 1388.0
 offset_bottom = -283.0
 texture = ExtResource("2_7eqmx")
 
+[node name="progres-circle18" type="TextureRect" parent="."]
+texture_repeat = 1
+material = SubResource("ShaderMaterial_malrb")
+custom_minimum_size = Vector2(100, 100)
+offset_left = 1396.0
+offset_top = -411.0
+offset_right = 1524.0
+offset_bottom = -283.0
+texture = ExtResource("2_7eqmx")
+
+[node name="progres-circle19" type="TextureRect" parent="."]
+texture_repeat = 1
+material = SubResource("ShaderMaterial_gdsgs")
+custom_minimum_size = Vector2(100, 100)
+offset_left = 1396.0
+offset_top = -275.0
+offset_right = 1524.0
+offset_bottom = -147.0
+texture = ExtResource("2_7eqmx")
+
 [node name="progres-circle6" type="Sprite2D" parent="."]
 material = SubResource("ShaderMaterial_r5aow")
 position = Vector2(768, -72)
@@ -658,3 +727,17 @@ offset_left = 1216.0
 offset_top = -184.0
 offset_right = 1303.0
 offset_bottom = -101.0
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_uboqy")
+offset_left = 1064.0
+offset_top = -184.0
+offset_right = 1151.0
+offset_bottom = -101.0
+
+[node name="ColorRect3" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_tpb81")
+offset_left = 1064.0
+offset_top = -272.0
+offset_right = 1151.0
+offset_bottom = -189.0

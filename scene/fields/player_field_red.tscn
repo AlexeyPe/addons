@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://b1dthv2qurwnx"]
 
-[ext_resource type="Material" uid="uid://c1a0yqd8g15k8" path="res://scene/cell_mat.tres" id="1_fpfk7"]
-[ext_resource type="Texture2D" uid="uid://b4dqq6o88p517" path="res://scene/fields/field2.svg" id="2_ok0d1"]
+[ext_resource type="Material" uid="uid://svr62spjy8px" path="res://scene/fields/GridMaterial.tres" id="1_fpfk7"]
+[ext_resource type="Texture2D" uid="uid://1rw0438kebug" path="res://scene/fields/frame-spikes-2-fill-16px.png" id="2_fpfk7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_j64cy"]
 size = Vector2(48, 48)
@@ -11,10 +11,6 @@ modulate = Color(1, 0.2901961, 0.2901961, 1)
 collision_layer = 128
 collision_mask = 128
 metadata/field_type = &"red"
-
-[node name="Field2" type="Sprite2D" parent="."]
-material = ExtResource("1_fpfk7")
-texture = ExtResource("2_ok0d1")
 
 [node name="Area2D" type="Area2D" parent="."]
 collision_layer = 112
@@ -29,3 +25,26 @@ shape = SubResource("RectangleShape2D_j64cy")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 visible = false
 shape = SubResource("RectangleShape2D_j64cy")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+material = ExtResource("1_fpfk7")
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -66.0
+offset_top = -66.0
+offset_right = 66.0
+offset_bottom = 66.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.5, 0.5)
+pivot_offset = Vector2(66, 66)
+texture = ExtResource("2_fpfk7")
+patch_margin_left = 32
+patch_margin_top = 32
+patch_margin_right = 32
+patch_margin_bottom = 32
+axis_stretch_horizontal = 2
+axis_stretch_vertical = 2

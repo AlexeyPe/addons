@@ -3,9 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://b1dthv2qurwnx" path="res://scene/fields/player_field_red.tscn" id="1_ggerw"]
 
 [node name="FreeField" instance=ExtResource("1_ggerw")]
+modulate = Color(1, 0.2901961, 0.2901961, 0)
 collision_layer = 4096
 collision_mask = 4096
 metadata/field_type = &"free"
-
-[node name="Field2" parent="." index="0"]
-visible = false

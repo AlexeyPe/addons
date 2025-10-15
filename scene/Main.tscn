@@ -1,4 +1,4 @@
-[gd_scene load_steps=63 format=4 uid="uid://dhgo7ujbqhqoi"]
+[gd_scene load_steps=74 format=4 uid="uid://dhgo7ujbqhqoi"]
 
 [ext_resource type="Script" uid="uid://mjk4ctyfa82r" path="res://scene/main.gd" id="1_nbc6x"]
 [ext_resource type="Texture2D" uid="uid://8yci6v355lg4" path="res://imgs/icons/tabler--zoom-in.svg" id="2_764rb"]
@@ -18,7 +18,6 @@
 [ext_resource type="Script" uid="uid://cccrm8vuks5fs" path="res://addons/VarRes/classes/UI/VaResLabel.gd" id="9_ia2xj"]
 [ext_resource type="Resource" uid="uid://ccq6dphbjbpf6" path="res://scene/balls/data/units_white.tres" id="9_v1evy"]
 [ext_resource type="Resource" uid="uid://q6vmqvs7sa6j" path="res://scene/balls/data/units_red.tres" id="10_u8yls"]
-[ext_resource type="Shader" uid="uid://b2jj5oyepx0n3" path="res://addons/shadercollectionap/shader/tilemap/grid/tilemap-grid-world-optimization2.gdshader" id="10_ya7da"]
 [ext_resource type="Resource" uid="uid://c4bpyilbpdmw" path="res://scene/balls/data/units_purple.tres" id="11_rwiys"]
 [ext_resource type="Resource" uid="uid://cvmmidd5uwfbn" path="res://scene/balls/data/units_yellow.tres" id="12_fohba"]
 [ext_resource type="TileSet" uid="uid://ctx1yx25gyv50" path="res://scene/fields/fields_tileset.tres" id="13_fh3cp"]
@@ -32,6 +31,7 @@
 [ext_resource type="Script" uid="uid://cicas0bkgf1up" path="res://addons/apbuild/classes/cell_info/APCellInfoNode.gd" id="18_a6847"]
 [ext_resource type="Script" uid="uid://co8mhqm73w3ve" path="res://addons/apbuild/classes/cell_info/APCellInfoRes.gd" id="19_d5i4e"]
 [ext_resource type="Script" uid="uid://db7sp186hj8oq" path="res://addons/APChain/classes/chain_activator/APActivatorAction.gd" id="19_fh3cp"]
+[ext_resource type="Material" uid="uid://svr62spjy8px" path="res://scene/fields/GridMaterial.tres" id="19_goqcv"]
 [ext_resource type="PackedScene" uid="uid://cpprsnw4qtbbj" path="res://scene/balls/ball_red.tscn" id="56_bp33t"]
 [ext_resource type="Script" uid="uid://djmnu1e55mp0j" path="res://addons/VarRes/classes/bool/VaRBool.gd" id="57_a6847"]
 [ext_resource type="PackedScene" uid="uid://8e48k70ehvv5" path="res://scene/balls/ball_purple.tscn" id="58_a6847"]
@@ -59,13 +59,6 @@ shader_parameter/coarse_grid_line_width = Vector2(0.03, 0.03)
 shader_parameter/fine_grid_color = Color(0.8, 0.8, 0.8, 0.8)
 shader_parameter/fine_grid_subdivisions = 1.0
 shader_parameter/fine_grid_line_width = Vector2(0.03, 0.03)
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_8cuns"]
-shader = ExtResource("10_ya7da")
-shader_parameter/grid_size = 48.0
-shader_parameter/line_color = Color(0.129, 0.129, 0.129, 0.157)
-shader_parameter/offset = Vector2(24, 24)
-shader_parameter/line_thickness = 2.5
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_ia2xj"]
 friction = 0.0
@@ -188,44 +181,6 @@ texture = ExtResource("3_3sxgj")
 2:0/3/terrains_peering_bit/bottom_left_corner = 0
 2:0/3/terrains_peering_bit/left_side = 0
 2:0/3/terrains_peering_bit/top_left_corner = 0
-2:1/next_alternative_id = 4
-2:1/0 = 0
-2:1/0/terrain_set = 0
-2:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(8, 8, 8, -1.1428566, -1.1428566, 8)
-2:1/0/terrains_peering_bit/bottom_left_corner = 0
-2:1/0/terrains_peering_bit/left_side = 0
-2:1/0/terrains_peering_bit/top_left_corner = 0
-2:1/0/terrains_peering_bit/top_side = 0
-2:1/0/terrains_peering_bit/top_right_corner = 0
-2:1/0/custom_data_0 = 1
-2:1/1 = 1
-2:1/1/flip_h = true
-2:1/1/terrain_set = 0
-2:1/1/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 8, 1.1428576, 8, -8, -1.1428566)
-2:1/1/terrains_peering_bit/right_side = 0
-2:1/1/terrains_peering_bit/bottom_right_corner = 0
-2:1/1/terrains_peering_bit/top_left_corner = 0
-2:1/1/terrains_peering_bit/top_side = 0
-2:1/1/terrains_peering_bit/top_right_corner = 0
-2:1/2 = 2
-2:1/2/flip_h = true
-2:1/2/flip_v = true
-2:1/2/terrain_set = 0
-2:1/2/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, -8, 1.1428576, 1.1428566, -8)
-2:1/2/terrains_peering_bit/right_side = 0
-2:1/2/terrains_peering_bit/bottom_right_corner = 0
-2:1/2/terrains_peering_bit/bottom_side = 0
-2:1/2/terrains_peering_bit/bottom_left_corner = 0
-2:1/2/terrains_peering_bit/top_right_corner = 0
-2:1/3 = 3
-2:1/3/flip_v = true
-2:1/3/terrain_set = 0
-2:1/3/physics_layer_0/polygon_0/points = PackedVector2Array(8, -8, -1.1428576, -8, 8, 1.1428566)
-2:1/3/terrains_peering_bit/bottom_right_corner = 0
-2:1/3/terrains_peering_bit/bottom_side = 0
-2:1/3/terrains_peering_bit/bottom_left_corner = 0
-2:1/3/terrains_peering_bit/left_side = 0
-2:1/3/terrains_peering_bit/top_left_corner = 0
 
 [sub_resource type="TileSet" id="TileSet_764rb"]
 physics_layer_0/collision_layer = 1
@@ -250,6 +205,47 @@ texture_region_size = Vector2i(48, 48)
 [sub_resource type="TileSet" id="TileSet_ia2xj"]
 tile_size = Vector2i(48, 48)
 sources/1 = SubResource("TileSetAtlasSource_dk2pn")
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_goqcv"]
+blend_mode = 2
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_goqcv"]
+load_path = "res://.godot/imported/Tilemap3.png-77c3b284ce1e1ecf55d4a1febd280250.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_goqcv"]
+atlas = SubResource("CompressedTexture2D_goqcv")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_lk2p4"]
+load_path = "res://.godot/imported/Tilemap3.png-77c3b284ce1e1ecf55d4a1febd280250.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wren1"]
+atlas = SubResource("CompressedTexture2D_lk2p4")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_wren1"]
+load_path = "res://.godot/imported/Tilemap3.png-77c3b284ce1e1ecf55d4a1febd280250.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2h030"]
+atlas = SubResource("CompressedTexture2D_wren1")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_crx51"]
+load_path = "res://.godot/imported/Tilemap3.png-77c3b284ce1e1ecf55d4a1febd280250.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7kf0j"]
+atlas = SubResource("CompressedTexture2D_crx51")
+region = Rect2(32, 16, 16, 16)
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_lk2p4"]
+blend_mode = 2
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_2h030"]
+load_path = "res://.godot/imported/Tilemap3.png-77c3b284ce1e1ecf55d4a1febd280250.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_crx51"]
+atlas = SubResource("CompressedTexture2D_2h030")
+region = Rect2(0, 16, 16, 16)
 
 [sub_resource type="Resource" id="Resource_ph3ti"]
 script = ExtResource("19_d5i4e")
@@ -342,6 +338,7 @@ theme_override_constants/margin_left = 4
 theme_override_constants/margin_top = 4
 theme_override_constants/margin_right = 4
 theme_override_constants/margin_bottom = 4
+metadata/_edit_group_ = true
 
 [node name="Counters" type="VBoxContainer" parent="UI/Counters"]
 layout_mode = 2
@@ -517,7 +514,7 @@ label_settings = ExtResource("15_goqcv")
 
 [node name="Label2" type="Label" parent="UI/Counters/Counters/Money"]
 layout_mode = 2
-text = "5"
+text = "16"
 label_settings = ExtResource("15_goqcv")
 script = ExtResource("9_ia2xj")
 var_res = ExtResource("14_u8yls")
@@ -548,6 +545,7 @@ var_res = ExtResource("15_ene7r")
 metadata/_custom_type_script = "uid://cccrm8vuks5fs"
 
 [node name="CardHand" parent="UI" instance=ExtResource("15_65lg3")]
+metadata/_edit_group_ = true
 
 [node name="ColorRectGrid1" type="ColorRect" parent="."]
 visible = false
@@ -567,10 +565,11 @@ color = Color(4.428029e-06, 0.71770066, 0.9363188, 1)
 
 [node name="Visual" type="TileMapLayer" parent="Tilemaps"]
 modulate = Color(0.1760028, 0.9230832, 0.34097162, 1)
+clip_children = 2
 texture_filter = 1
-material = SubResource("ShaderMaterial_8cuns")
+material = ExtResource("19_goqcv")
 scale = Vector2(3, 3)
-tile_map_data = PackedByteArray("AAD0//7/BAAAAAAAAgD0////BAABAAAAAgD0/wAABAABAAAAAgD0/wEABAAAAAAAAAD1//7/BAABAAAAAQD1////BAACAAAAAAD1/wAABAACAAAAAwD1/wEABAABAAAAAAD2//7/BAABAAAAAQD2////BAACAAAAAQD2/wAABAACAAAAAgD2/wEABAABAAAAAAD3//7/BAAAAAAAAwD3////BAACAAAAAwD3/wAABAACAAAAAAD3/wEABAAAAAAAAQD4//3/BAAAAAAAAgD4//7/BAABAAAAAgD4////BAACAAAAAgD4/wAABAABAAAAAAD4/wIABAAAAAAAAgD4/wMABAAAAAAAAAD5//3/BAABAAAAAQD5//7/BAACAAAAAAD5////BAACAAAAAwD5/wAABAABAAAAAAD5/wIABAAAAAAAAwD5/wMABAAAAAAAAQD6//3/BAABAAAAAQD6//7/BAACAAAAAQD6////BAACAAAAAgD6/wAABAABAAAAAAD7//3/BAAAAAAAAwD7//7/BAABAAAAAwD7////BAABAAAAAwD7/wAABAAAAAAAAQD8//7/BAAAAAAAAgD8////BAABAAAAAgD8/wAABAABAAAAAgD8/wEABAABAAAAAgD8/wIABAABAAAAAgD8/wMABAABAAAAAgD8/wQABAAAAAAAAAD9//3/BAAAAAAAAgD9//7/BAACAAAAAgD9////BAABAAEAAAD9/wAABAABAAEAAAD9/wEABAABAAEAAAD9/wIABAABAAEAAAD9/wMABAABAAEAAAD9/wQABAABAAAAAAD+//3/BAABAAAAAQD+//7/BAABAAEAAAD+////BAABAAEAAAD+/wAABAABAAEAAAD+/wEABAABAAEAAAD+/wIABAABAAEAAAD+/wMABAABAAEAAAD+/wQABAACAAAAAQD+/wUABAABAAAAAgD+/wYABAAAAAAAAAD///3/BAABAAAAAQD///7/BAABAAEAAAD/////BAABAAEAAAD//wAABAABAAEAAAD//wEABAABAAEAAAD//wIABAABAAEAAAD//wMABAABAAEAAAD//wQABAABAAEAAAD//wUABAABAAEAAAAAAP3/BAABAAAAAQAAAP7/BAABAAEAAAAAAP//BAABAAEAAAAAAAAABAACAAAAAAAAAAEABAABAAAAAwAAAAIABAACAAAAAwAAAAMABAABAAEAAAAAAAQABAABAAEAAAAAAAUABAACAAAAAAAAAAYABAAAAAAAAQABAPv/BAAAAAAAAgABAPz/BAABAAAAAgABAP3/BAACAAAAAgABAP7/BAABAAEAAAABAP//BAACAAAAAAABAAAABAAAAAAAAQABAAIABAABAAAAAQABAAMABAABAAEAAAABAAQABAABAAEAAAABAAUABAABAAAAAAACAPv/BAABAAAAAQACAPz/BAABAAEAAAACAP7/BAACAAAAAAACAP//BAAAAAAAAQACAAIABAABAAAAAQACAAMABAABAAEAAAACAAQABAABAAEAAAACAAUABAABAAAAAAADAPf/BAAAAAAAAgADAPj/BAAAAAAAAAADAPv/BAAAAAAAAwADAPz/BAACAAAAAwADAP7/BAACAAAAAQADAP//BAAAAAAAAAADAAIABAAAAAAAAwADAAMABAACAAAAAwADAAQABAABAAEAAAADAAUABAACAAAAAQADAAYABAAAAAAAAAAEAPT/BAAAAAAAAgAEAPX/BAABAAAAAgAEAPb/BAABAAAAAgAEAPf/BAACAAAAAgAEAPj/BAABAAAAAAAEAPz/BAABAAAAAQAEAP3/BAABAAEAAAAEAP7/BAABAAEAAAAEAP//BAACAAAAAQAEAAAABAAAAAAAAAAEAAIABAAAAAAAAgAEAAMABAACAAAAAgAEAAQABAABAAEAAAAEAAUABAABAAEAAAAEAAYABAABAAAAAAAFAPT/BAABAAAAAQAFAPX/BAABAAEAAAAFAPb/BAABAAEAAAAFAPf/BAABAAEAAAAFAPj/BAABAAAAAAAFAPz/BAAAAAAAAwAFAP3/BAACAAAAAwAFAP7/BAABAAEAAAAFAP//BAABAAEAAAAFAAAABAABAAAAAAAFAAEABAAAAAAAAgAFAAIABAACAAAAAgAFAAMABAABAAEAAAAFAAQABAABAAEAAAAFAAUABAABAAEAAAAFAAYABAABAAAAAAAGAPT/BAABAAAAAQAGAPX/BAABAAEAAAAGAPb/BAACAAAAAAAGAPf/BAACAAAAAwAGAPj/BAABAAAAAAAGAP3/BAABAAAAAQAGAP7/BAABAAEAAAAGAP//BAABAAEAAAAGAAAABAACAAAAAQAGAAEABAACAAAAAgAGAAIABAABAAEAAAAGAAMABAABAAEAAAAGAAQABAABAAEAAAAGAAUABAACAAAAAAAGAAYABAAAAAAAAQAHAPT/BAABAAAAAQAHAPX/BAABAAEAAAAHAPb/BAABAAAAAAAHAPf/BAABAAAAAQAHAPj/BAABAAAAAAAHAP3/BAAAAAAAAwAHAP7/BAACAAEAAwAHAP//BAABAAEAAAAHAAAABAABAAEAAAAHAAEABAABAAEAAAAHAAIABAABAAEAAAAHAAMABAACAAAAAAAHAAQABAACAAAAAwAHAAUABAABAAAAAAAIAPT/BAABAAAAAQAIAPX/BAABAAEAAAAIAPb/BAACAAAAAQAIAPf/BAAAAAEAAAAIAPj/BAAAAAAAAQAIAP7/BAABAAAAAQAIAP//BAABAAEAAAAIAAAABAABAAEAAAAIAAEABAABAAEAAAAIAAIABAACAAEAAAAIAAMABAAAAAEAAQAIAAQABAACAAAAAgAIAAUABAACAAAAAQAIAAYABAAAAAAAAAAJAPT/BAAAAAAAAwAJAPX/BAABAAAAAwAJAPb/BAABAAAAAwAJAPf/BAAAAAAAAQAJAP7/BAABAAAAAQAJAP//BAABAAEAAAAJAAAABAABAAEAAAAJAAEABAACAAEAAAAJAAIABAAAAAAAAQAJAAMABAAAAAAAAwAJAAQABAACAAAAAwAJAAUABAABAAEAAAAJAAYABAABAAAAAAAKAP3/BAAAAAAAAgAKAP7/BAACAAAAAgAKAP//BAABAAEAAAAKAAAABAACAAEAAAAKAAEABAAAAAAAAQAKAAQABAABAAAAAQAKAAUABAABAAEAAAAKAAYABAABAAAAAAALAP3/BAABAAAAAQALAP7/BAABAAEAAAALAP//BAACAAEAAAALAAAABAAAAAAAAQALAAQABAAAAAAAAwALAAUABAABAAAAAwALAAYABAAAAAAAAQAMAPz/BAAAAAAAAgAMAP3/BAACAAAAAgAMAP7/BAABAAEAAAAMAP//BAABAAAAAAANAPz/BAABAAAAAQANAP3/BAABAAEAAAANAP7/BAABAAEAAAANAP//BAABAAAAAAAOAPz/BAAAAAAAAwAOAP3/BAABAAAAAwAOAP7/BAABAAAAAwAOAP//BAAAAAAAAQAQAAAABAAAAAAAAgAQAAEABAABAAAAAgAQAAIABAABAAAAAgAQAAMABAABAAAAAgAQAAQABAABAAAAAgAQAAUABAABAAAAAgAQAAYABAAAAAAAAAARAP//BAAAAAAAAgARAAAABAACAAAAAgARAAEABAABAAEAAAARAAIABAABAAEAAAARAAMABAABAAEAAAARAAQABAABAAEAAAARAAUABAABAAEAAAARAAYABAABAAAAAAASAP//BAABAAAAAQASAAAABAABAAEAAAASAAEABAABAAEAAAASAAIABAABAAEAAAASAAMABAABAAEAAAASAAQABAABAAEAAAASAAUABAACAAEAAAASAAYABAAAAAAAAQATAP//BAAAAAAAAwATAAAABAACAAEAAwATAAEABAABAAEAAAATAAIABAABAAEAAAATAAMABAABAAEAAAATAAQABAACAAAAAAATAAUABAAAAAAAAQAUAAAABAAAAAAAAwAUAAEABAABAAAAAwAUAAIABAACAAAAAwAUAAMABAABAAEAAAAUAAQABAABAAAAAAAVAAAABAAAAAAAAgAVAAEABAABAAAAAgAVAAIABAACAAAAAgAVAAMABAABAAEAAAAVAAQABAABAAAAAAAWAAAABAABAAAAAQAWAAEABAABAAEAAAAWAAIABAABAAEAAAAWAAMABAACAAEAAAAWAAQABAAAAAAAAQAXAAAABAABAAAAAQAXAAEABAABAAEAAAAXAAIABAACAAEAAAAXAAMABAAAAAAAAQAYAAAABAAAAAAAAwAYAAEABAABAAAAAwAYAAIABAAAAAAAAQADAP3/BAABAAEAAAACAP3/BAABAAEAAAD//wYABAABAAAAAAAMAAMABAAAAAAAAgANAAMABAAAAAAAAwANAAQABAAAAAAAAQAMAAQABAAAAAAAAAA=")
+tile_map_data = PackedByteArray("AAD0//7/BAAAAAAAAgD0////BAABAAAAAgD0/wAABAABAAAAAgD0/wEABAAAAAAAAAD1//7/BAABAAAAAQD1////BAACAAAAAAD1/wAABAACAAAAAwD1/wEABAABAAAAAAD2//7/BAABAAAAAQD2////BAACAAAAAQD2/wAABAACAAAAAgD2/wEABAABAAAAAAD3//7/BAAAAAAAAwD3////BAACAAAAAwD3/wAABAACAAAAAAD3/wEABAAAAAAAAQD4//3/BAAAAAAAAgD4//7/BAABAAAAAgD4////BAACAAAAAgD4/wAABAABAAAAAAD4/wIABAAAAAAAAgD4/wMABAAAAAAAAAD5//3/BAABAAAAAQD5//7/BAACAAAAAAD5////BAACAAAAAwD5/wAABAABAAAAAAD5/wIABAAAAAAAAwD5/wMABAAAAAAAAQD6//3/BAABAAAAAQD6//7/BAACAAAAAQD6////BAACAAAAAgD6/wAABAABAAAAAAD7//3/BAAAAAAAAwD7//7/BAABAAAAAwD7////BAABAAAAAwD7/wAABAAAAAAAAQD8//7/BAAAAAAAAgD8////BAABAAAAAgD8/wAABAABAAAAAgD8/wEABAABAAAAAgD8/wIABAABAAAAAgD8/wMABAABAAAAAgD8/wQABAAAAAAAAAD9//3/BAAAAAAAAgD9//7/BAACAAAAAgD9////BAABAAEAAAD9/wAABAABAAEAAAD9/wEABAABAAEAAAD9/wIABAABAAEAAAD9/wMABAABAAEAAAD9/wQABAABAAAAAAD+//3/BAABAAAAAQD+//7/BAABAAEAAAD+////BAABAAEAAAD+/wAABAABAAEAAAD+/wEABAABAAEAAAD+/wIABAABAAEAAAD+/wMABAABAAEAAAD+/wQABAACAAAAAQD+/wUABAABAAAAAgD+/wYABAAAAAAAAAD///3/BAABAAAAAQD///7/BAABAAEAAAD/////BAABAAEAAAD//wAABAABAAEAAAD//wEABAABAAEAAAD//wIABAABAAEAAAD//wMABAABAAEAAAD//wQABAABAAEAAAD//wUABAABAAEAAAAAAP3/BAABAAAAAQAAAP7/BAABAAEAAAAAAP//BAABAAEAAAAAAAAABAACAAAAAAAAAAEABAABAAAAAwAAAAIABAACAAAAAwAAAAMABAABAAEAAAAAAAQABAABAAEAAAAAAAUABAACAAAAAAAAAAYABAAAAAAAAQABAPv/BAAAAAAAAgABAPz/BAABAAAAAgABAP3/BAACAAAAAgABAP7/BAABAAEAAAABAP//BAACAAAAAAABAAAABAAAAAAAAQABAAIABAABAAAAAQABAAMABAABAAEAAAABAAQABAABAAEAAAABAAUABAABAAAAAAACAPv/BAABAAAAAQACAPz/BAABAAEAAAACAP7/BAACAAAAAAACAP//BAAAAAAAAQACAAIABAABAAAAAQACAAMABAABAAEAAAACAAQABAABAAEAAAACAAUABAABAAAAAAADAPf/BAAAAAAAAgADAPj/BAAAAAAAAAADAPv/BAAAAAAAAwADAPz/BAACAAAAAwADAP7/BAACAAAAAQADAP//BAAAAAAAAAADAAIABAAAAAAAAwADAAMABAACAAAAAwADAAQABAABAAEAAAADAAUABAACAAAAAQADAAYABAAAAAAAAAAEAPT/BAAAAAAAAgAEAPX/BAABAAAAAgAEAPb/BAABAAAAAgAEAPf/BAACAAAAAgAEAPj/BAABAAAAAAAEAPz/BAABAAAAAQAEAP3/BAABAAEAAAAEAP7/BAABAAEAAAAEAP//BAACAAAAAQAEAAAABAAAAAAAAAAEAAIABAAAAAAAAgAEAAMABAACAAAAAgAEAAQABAABAAEAAAAEAAUABAABAAEAAAAEAAYABAABAAAAAAAFAPT/BAABAAAAAQAFAPX/BAABAAEAAAAFAPb/BAABAAEAAAAFAPf/BAABAAEAAAAFAPj/BAABAAAAAAAFAPz/BAAAAAAAAwAFAP3/BAACAAAAAwAFAP7/BAABAAEAAAAFAP//BAABAAEAAAAFAAAABAABAAAAAAAFAAEABAAAAAAAAgAFAAIABAACAAAAAgAFAAMABAABAAEAAAAFAAQABAABAAEAAAAFAAUABAABAAEAAAAFAAYABAABAAAAAAAGAPT/BAABAAAAAQAGAPX/BAABAAEAAAAGAPb/BAACAAAAAAAGAPf/BAACAAAAAwAGAPj/BAABAAAAAAAGAP3/BAABAAAAAQAGAP7/BAABAAEAAAAGAP//BAABAAEAAAAGAAAABAACAAAAAQAGAAEABAACAAAAAgAGAAIABAABAAEAAAAGAAMABAABAAEAAAAGAAQABAABAAEAAAAGAAUABAACAAAAAAAGAAYABAAAAAAAAQAHAPT/BAABAAAAAQAHAPX/BAABAAEAAAAHAPb/BAABAAAAAAAHAPf/BAABAAAAAQAHAPj/BAABAAAAAAAHAP3/BAAAAAAAAwAHAP7/BAACAAAAAwAHAP//BAABAAEAAAAHAAAABAABAAEAAAAHAAEABAABAAEAAAAHAAIABAABAAEAAAAHAAMABAACAAAAAAAHAAQABAACAAAAAwAHAAUABAABAAAAAAAIAPT/BAABAAAAAQAIAPX/BAABAAEAAAAIAPb/BAACAAAAAQAIAPf/BAAAAAEAAAAIAPj/BAAAAAAAAQAIAP7/BAABAAAAAQAIAP//BAABAAEAAAAIAAAABAABAAEAAAAIAAEABAABAAEAAAAIAAIABAACAAAAAAAIAAMABAAAAAEAAQAIAAQABAACAAAAAgAIAAUABAACAAAAAQAIAAYABAAAAAAAAAAJAPT/BAAAAAAAAwAJAPX/BAABAAAAAwAJAPb/BAABAAAAAwAJAPf/BAAAAAAAAQAJAP7/BAABAAAAAQAJAP//BAABAAEAAAAJAAAABAABAAEAAAAJAAEABAACAAAAAAAJAAIABAAAAAAAAQAJAAMABAAAAAAAAwAJAAQABAACAAAAAwAJAAUABAABAAEAAAAJAAYABAABAAAAAAAKAP3/BAAAAAAAAgAKAP7/BAACAAAAAgAKAP//BAABAAEAAAAKAAAABAACAAAAAAAKAAEABAAAAAAAAQAKAAQABAABAAAAAQAKAAUABAABAAEAAAAKAAYABAABAAAAAAALAP3/BAABAAAAAQALAP7/BAABAAEAAAALAP//BAACAAAAAAALAAAABAAAAAAAAQALAAQABAAAAAAAAwALAAUABAABAAAAAwALAAYABAAAAAAAAQAMAPz/BAAAAAAAAgAMAP3/BAACAAAAAgAMAP7/BAABAAEAAAAMAP//BAABAAAAAAANAPz/BAABAAAAAQANAP3/BAABAAEAAAANAP7/BAABAAEAAAANAP//BAABAAAAAAAOAPz/BAAAAAAAAwAOAP3/BAABAAAAAwAOAP7/BAABAAAAAwAOAP//BAAAAAAAAQAQAAAABAAAAAAAAgAQAAEABAABAAAAAgAQAAIABAABAAAAAgAQAAMABAABAAAAAgAQAAQABAABAAAAAgAQAAUABAABAAAAAgAQAAYABAAAAAAAAAARAP//BAAAAAAAAgARAAAABAACAAAAAgARAAEABAABAAEAAAARAAIABAABAAEAAAARAAMABAABAAEAAAARAAQABAABAAEAAAARAAUABAABAAEAAAARAAYABAABAAAAAAASAP//BAABAAAAAQASAAAABAABAAEAAAASAAEABAABAAEAAAASAAIABAABAAEAAAASAAMABAABAAEAAAASAAQABAABAAEAAAASAAUABAACAAEAAAASAAYABAAAAAAAAQATAP//BAAAAAAAAwATAAAABAACAAEAAwATAAEABAABAAEAAAATAAIABAABAAEAAAATAAMABAABAAEAAAATAAQABAACAAAAAAATAAUABAAAAAAAAQAUAAAABAAAAAAAAwAUAAEABAABAAAAAwAUAAIABAACAAAAAwAUAAMABAABAAEAAAAUAAQABAABAAAAAAAVAAAABAAAAAAAAgAVAAEABAABAAAAAgAVAAIABAACAAAAAgAVAAMABAABAAEAAAAVAAQABAABAAAAAAAWAAAABAABAAAAAQAWAAEABAABAAEAAAAWAAIABAABAAEAAAAWAAMABAACAAEAAAAWAAQABAAAAAAAAQAXAAAABAABAAAAAQAXAAEABAABAAEAAAAXAAIABAACAAEAAAAXAAMABAAAAAAAAQAYAAAABAAAAAAAAwAYAAEABAABAAAAAwAYAAIABAAAAAAAAQADAP3/BAABAAEAAAACAP3/BAABAAEAAAD//wYABAABAAAAAAAMAAMABAAAAAAAAgANAAMABAAAAAAAAwANAAQABAAAAAAAAQAMAAQABAAAAAAAAAA=")
 tile_set = SubResource("TileSet_764rb")
 navigation_enabled = false
 
@@ -581,10 +580,766 @@ position = Vector2(24, 24)
 tile_map_data = PackedByteArray("AAADAAIAAQAAAAAAAAADAAEAAQAAAAAAAAACAAEAAQAAAAAAAAABAAEAAQAAAAAAAAAAAAEAAQAAAAAAAAAAAAAAAQAAAAAAAAABAAAAAQAAAAAAAAACAAAAAQAAAAAAAAADAAAAAQAAAAAAAAAEAAAAAQAAAAAAAAAEAAEAAQAAAAAAAAAFAAAAAQAAAAAAAAADAP//AQAAAAAAAAACAP//AQAAAAAAAAABAP//AQAAAAAAAAACAP7/AQAAAAAAAAADAAQAAQABAAAAAAADAAUAAQABAAAAAAAEAAUAAQABAAAAAAAEAAQAAQABAAAAAAAEAAMAAQABAAAAAAAEAAIAAQABAAAAAAADAAMAAQABAAAAAAAFAAMAAQABAAAAAAAFAAQAAQABAAAAAAAFAAUAAQABAAAAAAAGAAQAAQABAAAAAAAHAAQAAQABAAAAAAAIAAQAAQABAAAAAAAIAAMAAQABAAAAAAAIAAUAAQABAAAAAAAJAAUAAQABAAAAAAAJAAQAAQABAAAAAAAKAAQAAQABAAAAAAAKAAUAAQABAAAAAAAMAAMAAQABAAAAAAD4/wIAAQABAAAAAAD//wUAAQABAAAAAAD+/wUAAQABAAAAAAD+/wQAAQABAAAAAAD//wQAAQABAAAAAAAAAAQAAQABAAAAAAABAAQAAQABAAAAAAACAAQAAQABAAAAAAACAAMAAQABAAAAAAABAAMAAQABAAAAAAAAAAMAAQABAAAAAAAAAAIAAQABAAAAAAABAAIAAQABAAAAAAACAAIAAQABAAAAAAD//wIAAQABAAAAAAD+/wIAAQABAAAAAAD+/wMAAQABAAAAAAD//wMAAQABAAAAAAD9/wMAAQABAAAAAAD8/wMAAQABAAAAAAD8/wIAAQABAAAAAAD9/wIAAQABAAAAAAD9/wEAAQABAAAAAAD8/wEAAQABAAAAAAD8/wAAAQABAAAAAAD9/wAAAQABAAAAAAD+/wEAAQABAAAAAAD//wEAAQABAAAAAAD//wAAAQABAAAAAAD+/wAAAQABAAAAAAD9////AQABAAAAAAD8////AQABAAAAAAD8//7/AQABAAAAAAD9//7/AQABAAAAAAD+//7/AQABAAAAAAD+////AQABAAAAAAD/////AQABAAAAAAD///7/AQABAAAAAAD///3/AQABAAAAAAD+//3/AQABAAAAAAD9//3/AQABAAAAAAAAAP3/AQABAAAAAAAAAP7/AQABAAAAAAAAAP//AQABAAAAAAABAP7/AQABAAAAAAABAP3/AQABAAAAAAABAPz/AQABAAAAAAABAPv/AQABAAAAAAACAPv/AQABAAAAAAACAPz/AQABAAAAAAACAP3/AQABAAAAAAADAP3/AQABAAAAAAADAPz/AQABAAAAAAADAP7/AQABAAAAAAAEAP7/AQABAAAAAAAEAP3/AQABAAAAAAAEAPz/AQABAAAAAAAEAP//AQABAAAAAAAFAP//AQABAAAAAAAFAP7/AQABAAAAAAAFAP3/AQABAAAAAAAGAP3/AQABAAAAAAAGAP7/AQABAAAAAAAGAP//AQABAAAAAAAGAAAAAQABAAAAAAAGAAEAAQABAAAAAAAGAAIAAQABAAAAAAAFAAIAAQABAAAAAAAGAAMAAQABAAAAAAAFAAEAAQABAAAAAAAHAAIAAQABAAAAAAAHAAEAAQABAAAAAAAHAAAAAQABAAAAAAAHAP//AQABAAAAAAAHAP7/AQABAAAAAAAIAP7/AQABAAAAAAAIAP//AQABAAAAAAAIAAAAAQABAAAAAAAIAAEAAQABAAAAAAAJAAAAAQABAAAAAAAJAP//AQABAAAAAAAJAP7/AQABAAAAAAAKAP7/AQABAAAAAAAKAP//AQABAAAAAAAKAP3/AQABAAAAAAALAP3/AQABAAAAAAALAP7/AQABAAAAAAAMAP7/AQABAAAAAAAMAP3/AQABAAAAAAAMAPz/AQABAAAAAAANAP3/AQABAAAAAAANAP7/AQABAAAAAAANAPz/AQABAAAAAAD4////AQABAAAAAAD4//7/AQABAAAAAAD4//3/AQABAAAAAAD5//3/AQABAAAAAAD6//3/AQABAAAAAAD6//7/AQABAAAAAAD6////AQABAAAAAAD5////AQABAAAAAAD3////AQABAAAAAAD2////AQABAAAAAAD2/wAAAQABAAAAAAD1/wAAAQABAAAAAAD0/wAAAQABAAAAAAD0////AQABAAAAAAD0//7/AQABAAAAAAD1//7/AQABAAAAAAD2//7/AQABAAAAAAAQAAUAAQABAAAAAAARAAUAAQABAAAAAAARAAQAAQABAAAAAAAQAAQAAQABAAAAAAARAAMAAQABAAAAAAARAAIAAQABAAAAAAAQAAMAAQABAAAAAAAQAAIAAQABAAAAAAAQAAEAAQABAAAAAAAQAAAAAQABAAAAAAARAAAAAQABAAAAAAARAAEAAQABAAAAAAARAP//AQABAAAAAAASAP//AQABAAAAAAASAAAAAQABAAAAAAASAAEAAQABAAAAAAASAAIAAQABAAAAAAASAAMAAQABAAAAAAASAAQAAQABAAAAAAATAAMAAQABAAAAAAATAAIAAQABAAAAAAAUAAIAAQABAAAAAAATAAEAAQABAAAAAAATAAAAAQABAAAAAAAUAAMAAQABAAAAAAAVAAMAAQABAAAAAAAVAAIAAQABAAAAAAAVAAEAAQABAAAAAAAVAAAAAQABAAAAAAAWAAAAAQABAAAAAAAWAAEAAQABAAAAAAAWAAIAAQABAAAAAAAXAAEAAQABAAAAAAAXAAAAAQABAAAAAAADAPf/AQABAAAAAAAEAPf/AQABAAAAAAAFAPf/AQABAAAAAAAGAPf/AQABAAAAAAAHAPf/AQABAAAAAAAEAPT/AQABAAAAAAAEAPX/AQABAAAAAAAEAPb/AQABAAAAAAAFAPT/AQABAAAAAAAFAPX/AQABAAAAAAAFAPb/AQABAAAAAAAGAPT/AQABAAAAAAAGAPX/AQABAAAAAAAHAPT/AQABAAAAAAAHAPX/AQABAAAAAAAIAPT/AQABAAAAAAAIAPX/AQABAAAAAAAIAPb/AQABAAAAAAA=")
 tile_set = SubResource("TileSet_ia2xj")
 
-[node name="Fields" type="TileMapLayer" parent="Tilemaps"]
+[node name="Clip" type="CanvasGroup" parent="Tilemaps"]
+clip_children = 1
+
+[node name="Fields" type="TileMapLayer" parent="Tilemaps/Clip"]
 position = Vector2(24, 24)
-tile_map_data = PackedByteArray("AAAGAAMAAAAAAAAAAQAGAAIAAAAAAAAAAQAFAAIAAAAAAAAAAQAFAAEAAAAAAAAAAQAGAAEAAAAAAAAAAQAHAAEAAAAAAAAAAQAHAAIAAAAAAAAAAQAIAAEAAAAAAAAAAQAIAAAAAAAAAAAAAQAHAAAAAAAAAAAAAQAGAAAAAAAAAAAABQD//wUAAAAAAAAAAgD//wQAAAAAAAAAAgD//wMAAAAAAAAAAgD//wIAAAAAAAAAAgAAAAMAAAAAAAAAAgAAAAQAAAAAAAAAAgABAAQAAAAAAAAAAgD+/wQAAAAAAAAAAgD+/wMAAAAAAAAAAgD+/wIAAAAAAAAAAgD9/wIAAAAAAAAAAgD9/wMAAAAAAAAAAgD8//7/AAAAAAAAAwD8////AAAAAAAAAwD9////AAAAAAAAAwD+////AAAAAAAAAwD+//7/AAAAAAAAAwD9//7/AAAAAAAAAwD9//3/AAAAAAAAAwD+//3/AAAAAAAAAwD///3/AAAAAAAAAwD///7/AAAAAAAAAwADAPz/AAAAAAAABQADAP3/AAAAAAAABQAEAP3/AAAAAAAABQAEAPz/AAAAAAAABQAFAP3/AAAAAAAABQAFAP7/AAAAAAAABQAEAP7/AAAAAAAABQAGAP7/AAAAAAAABQAGAP3/AAAAAAAAAQAFAAQAAAAAAAAABAAFAAMAAAAAAAAABAAEAAMAAAAAAAAABAAEAAQAAAAAAAAABAAEAAUAAAAAAAAABAAFAAUAAAAAAAAABAADAAUAAAAAAAAABAADAAQAAAAAAAAABAADAAMAAAAAAAAABAAEAAIAAAAAAAAABAACAAMAAAAAAAAABAACAAIAAAAAAAAABAABAAIAAAAAAAAABAABAAMAAAAAAAAABAACAAQAAAAAAAAABAAHAAQAAAAAAAAABAAGAAQAAAAAAAAABAAIAAQAAAAAAAAABAAIAAUAAAAAAAAABAAJAAUAAAAAAAAABAAKAAUAAAAAAAAABAAKAAQAAAAAAAAABAAJAAQAAAAAAAAABAAIAAMAAAAAAAAABAAAAAIAAAAAAAAABAD+/wUAAAAAAAAABAD8/wMAAAAAAAAABAD8/wIAAAAAAAAABAD8/wEAAAAAAAAABAD8/wAAAAAAAAAABAD9/wAAAAAAAAAABAD9/wEAAAAAAAAABAD+/wEAAAAAAAAABAD+/wAAAAAAAAAABAD//wAAAAAAAAAABAD//wEAAAAAAAAABAD/////AAAAAAAABAAAAP//AAAAAAAABAAAAP7/AAAAAAAABAAAAP3/AAAAAAAABQABAP3/AAAAAAAABQABAP7/AAAAAAAABAABAPz/AAAAAAAABAABAPv/AAAAAAAABAACAPv/AAAAAAAABAACAPz/AAAAAAAABAACAP3/AAAAAAAABQADAP7/AAAAAAAABAAFAP//AAAAAAAABQAGAP//AAAAAAAABQAHAP//AAAAAAAABQAIAP//AAAAAAAABQAJAAAAAAAAAAAABAAJAP7/AAAAAAAABAAIAP7/AAAAAAAABQAHAP7/AAAAAAAABQAKAP7/AAAAAAAABAAKAP3/AAAAAAAABAALAP7/AAAAAAAABAALAP3/AAAAAAAABAAMAP7/AAAAAAAABAAMAP3/AAAAAAAABAAMAPz/AAAAAAAABAANAPz/AAAAAAAABAANAP3/AAAAAAAABAANAP7/AAAAAAAABAAEAP//AAAAAAAABAAJAP//AAAAAAAABAAKAP//AAAAAAAABAA=")
+tile_map_data = PackedByteArray("AAAGAAMAAAAAAAAAAQAGAAIAAAAAAAAAAQAFAAIAAAAAAAAAAQAFAAEAAAAAAAAAAQAGAAEAAAAAAAAAAQAHAAEAAAAAAAAAAQAHAAIAAAAAAAAAAQAIAAEAAAAAAAAAAQAIAAAAAAAAAAAAAQAHAAAAAAAAAAAAAQAGAAAAAAAAAAAABQD//wUAAAAAAAAAAgD//wQAAAAAAAAAAgD//wMAAAAAAAAAAgD//wIAAAAAAAAAAgAAAAMAAAAAAAAAAgAAAAQAAAAAAAAAAgABAAQAAAAAAAAAAgD+/wQAAAAAAAAAAgD+/wMAAAAAAAAAAgD+/wIAAAAAAAAAAgD9/wIAAAAAAAAAAgD9/wMAAAAAAAAAAgD8//7/AAAAAAAAAwD8////AAAAAAAAAwD9////AAAAAAAAAwD+////AAAAAAAAAwD+//7/AAAAAAAAAwD9//7/AAAAAAAAAwD9//3/AAAAAAAAAwD+//3/AAAAAAAAAwD///3/AAAAAAAAAwD///7/AAAAAAAAAwADAPz/AAAAAAAABQADAP3/AAAAAAAABQAEAP3/AAAAAAAABQAEAPz/AAAAAAAABQAFAP3/AAAAAAAABQAFAP7/AAAAAAAABQAEAP7/AAAAAAAABQAGAP7/AAAAAAAABQAGAP3/AAAAAAAAAQAFAAQAAAAAAAAABAAFAAMAAAAAAAAABAAEAAMAAAAAAAAABAAEAAQAAAAAAAAABAAEAAUAAAAAAAAABAAFAAUAAAAAAAAABAADAAUAAAAAAAAABAADAAQAAAAAAAAABAADAAMAAAAAAAAABAAEAAIAAAAAAAAABAACAAMAAAAAAAAABAACAAIAAAAAAAAABAABAAIAAAAAAAAABAABAAMAAAAAAAAABAACAAQAAAAAAAAAAQAHAAQAAAAAAAAABAAGAAQAAAAAAAAABAAIAAQAAAAAAAAABAAIAAUAAAAAAAAABAAJAAUAAAAAAAAABAAKAAUAAAAAAAAABAAKAAQAAAAAAAAABAAJAAQAAAAAAAAABAAIAAMAAAAAAAAABAAAAAIAAAAAAAAABAD+/wUAAAAAAAAABAD8/wMAAAAAAAAABAD8/wIAAAAAAAAABAD8/wEAAAAAAAAABAD8/wAAAAAAAAAABAD9/wAAAAAAAAAABAD9/wEAAAAAAAAABAD+/wEAAAAAAAAABAD+/wAAAAAAAAAABAD//wAAAAAAAAAABAD//wEAAAAAAAAABAD/////AAAAAAAABAAAAP//AAAAAAAABAAAAP7/AAAAAAAABAAAAP3/AAAAAAAABQABAP3/AAAAAAAABQABAP7/AAAAAAAABAABAPz/AAAAAAAABAABAPv/AAAAAAAABAACAPv/AAAAAAAABAACAPz/AAAAAAAABAACAP3/AAAAAAAABQADAP7/AAAAAAAABAAFAP//AAAAAAAABQAGAP//AAAAAAAABQAHAP//AAAAAAAABQAIAP//AAAAAAAABQAJAAAAAAAAAAAABAAJAP7/AAAAAAAABAAIAP7/AAAAAAAABQAHAP7/AAAAAAAABQAKAP7/AAAAAAAABAAKAP3/AAAAAAAABAALAP7/AAAAAAAABAALAP3/AAAAAAAABAAMAP7/AAAAAAAABAAMAP3/AAAAAAAABAAMAPz/AAAAAAAABAANAPz/AAAAAAAABAANAP3/AAAAAAAABAANAP7/AAAAAAAABAAEAP//AAAAAAAABAAJAP//AAAAAAAABAAKAP//AAAAAAAABAA=")
 tile_set = ExtResource("13_fh3cp")
+
+[node name="corner-ru-1" type="Sprite2D" parent="Tilemaps/Clip"]
+texture_filter = 1
+material = SubResource("CanvasItemMaterial_goqcv")
+position = Vector2(-71.999985, 216.00002)
+rotation = -3.1415925
+scale = Vector2(3, 3)
+texture = SubResource("AtlasTexture_goqcv")
+
+[node name="corner-ru-4" type="Sprite2D" parent="Tilemaps/Clip"]
+texture_filter = 1
+material = SubResource("CanvasItemMaterial_goqcv")
+position = Vector2(168.00003, -72.00001)
+rotation = -3.1415925
+scale = Vector2(3, 3)
+texture = SubResource("AtlasTexture_goqcv")
+
+[node name="corner-ru-5" type="Sprite2D" parent="Tilemaps/Clip"]
+texture_filter = 1
+material = SubResource("CanvasItemMaterial_goqcv")
+position = Vector2(216.00005, -24.00001)
+rotation = -3.1415925
+scale = Vector2(3, 3)
+texture = SubResource("AtlasTexture_goqcv")
+
+[node name="corner-ru-6" type="Sprite2D" parent="Tilemaps/Clip"]
+texture_filter = 1
+material = SubResource("CanvasItemMaterial_goqcv")
+position = Vector2(312.00006, 23.999992)
+rotation = -3.1415925
+scale = Vector2(3, 3)
+texture = SubResource("AtlasTexture_goqcv")
+
+[node name="wall-r-1" type="Sprite2D" parent="Tilemaps/Clip"]
+texture_filter = 1
+material = SubResource("CanvasItemMaterial_goqcv")
+position = Vector2(-71.999985, 264)
+rotation = -1.5707964
+scale = Vector2(3, 3)
+texture = SubResource("AtlasTexture_wren1")
+
+[node name="wall-r-2" type="Sprite2D" parent="Tilemaps/Clip"]
+texture_filter = 1
+material = SubResource("CanvasItemMaterial_goqcv")
+position = Vector2(-168, 167.99998)
+rotation = -1.5707964
+scale = Vector2(3, 3)
+texture = SubResource("AtlasTexture_wren1")
+
+[node name="wall-r-3" type="Sprite2D" parent="Tilemaps/Clip"]
+texture_filter = 1
+material = SubResource("CanvasItemMaterial_goqcv")
+position = Vector2(-168.00002, 120)
+rotation = -1.5707964
+scale = Vector2(3, 3)
+texture = SubResource("AtlasTexture_wren1")
+
+[node name="wall-r-4" type="Sprite2D" parent="Tilemaps/Clip"]
+texture_filter = 1
+material = SubResource("CanvasItemMaterial_goqcv")
+position = Vector2(-168, 71.99999)
+rotation = -1.5707964
+scale = Vector2(3, 3)
+texture = SubResource("AtlasTexture_wren1")
+
+[node name="wall-r-5" type="Sprite2D" parent="Tilemaps/Clip"]
+texture_filter = 1
+material = SubResource("CanvasItemMaterial_goqcv")
+position = Vector2(-168, 23.999992)
+rotation = -1.5707964
+scale = Vector2(3, 3)
+texture = SubResource("AtlasTexture_wren1")
+
+[node name="wall-r-6" type="Sprite2D" parent="Tilemaps/Clip"]
+texture_filter = 1
+material = SubResource("CanvasItemMaterial_goqcv")
+position = Vector2(-168, -24.000008)
+rotation = -1.5707964
+scale = Vector2(3, 3)
+texture = SubResource("AtlasTexture_wren1")
+
+[node name="wall-r-7" type="Sprite2D" parent="Tilemaps/Clip"]
+texture_filter = 1
+material = SubResource("CanvasItemMaterial_goqcv")
+position = Vector2(72, -168)
+rotation = -1.5707964
+scale = Vector2(3, 3)
+texture = SubResource("AtlasTexture_wren1")
+
+[node name="wall-l-1" type="Sprite2D" parent="Tilemaps/Clip"]
+texture_filter = 1
+material = SubResource("CanvasItemMaterial_goqcv")
+position = Vector2(696, -72)
+rotation = 1.5707964
+scale = Vector2(3, 3)
+texture = SubResource("AtlasTexture_wren1")
+
+[node name="wall-l-3" type="Sprite2D" parent="Tilemaps/Clip"]
+texture_filter = 1
+material = SubResource("CanvasItemMaterial_goqcv")
+position = Vector2(552, 264)
+rotation = 1.5707964
+scale = Vector2(3, 3)
+texture = SubResource("AtlasTexture_wren1")
+
+[node name="wall-l-4" type="Sprite2D" parent="Tilemaps/Clip"]
+texture_filter = 1
+material = SubResource("CanvasItemMaterial_goqcv")
+position = Vector2(23.999992, 71.999985)
+rotation = 1.5707964
+scale = Vector2(3, 3)
+texture = SubResource("AtlasTexture_wren1")
+
+[node name="wall-l-2" type="Sprite2D" parent="Tilemaps/Clip"]
+texture_filter = 1
+material = SubResource("CanvasItemMaterial_goqcv")
+position = Vector2(696, -120)
+rotation = 1.5707964
+scale = Vector2(3, 3)
+texture = SubResource("AtlasTexture_wren1")
+
+[node name="wall-u-1" type="Sprite2D" parent="Tilemaps/Clip"]
+texture_filter = 1
+material = SubResource("CanvasItemMaterial_goqcv")
+position = Vector2(24, -120)
+scale = Vector2(3, 3)
+texture = SubResource("AtlasTexture_wren1")
+
+[node name="wall-u-2" type="Sprite2D" parent="Tilemaps/Clip"]
+texture_filter = 1
+material = SubResource("CanvasItemMaterial_goqcv")
+position = Vector2(-24, -120)
+scale = Vector2(3, 3)
+texture = SubResource("AtlasTexture_wren1")
+
+[node name="wall-u-8" type="Sprite2D" parent="Tilemaps/Clip"]
+texture_filter = 1
+material = SubResource("CanvasItemMaterial_goqcv")
+position = Vector2(72, 120)
+scale = Vector2(3, 3)
+texture = SubResource("AtlasTexture_wren1")
+
+[node name="wall-u-9" type="Sprite2D" parent="Tilemaps/Clip"]
+texture_filter = 1
+material = SubResource("CanvasItemMaterial_goqcv")
+position = Vector2(120, 120)
+scale = Vector2(3, 3)
+texture = SubResource("AtlasTexture_wren1")
+
+[node name="wall-u-4" type="Sprite2D" parent="Tilemaps/Clip"]
+texture_filter = 1
+material = SubResource("CanvasItemMaterial_goqcv")
+position = Vector2(120, -216)
+scale = Vector2(3, 3)
+texture = SubResource("AtlasTexture_wren1")
+
+[node name="wall-u-6" type="Sprite2D" parent="Tilemaps/Clip"]
+texture_filter = 1
+material = SubResource("CanvasItemMaterial_goqcv")
+position = Vector2(216, -168)
+scale = Vector2(3, 3)
+texture = SubResource("AtlasTexture_wren1")
+
+[node name="wall-u-7" type="Sprite2D" parent="Tilemaps/Clip"]
+texture_filter = 1
+material = SubResource("CanvasItemMaterial_goqcv")
+position = Vector2(312, -120)
+scale = Vector2(3, 3)
+texture = SubResource("AtlasTexture_wren1")
+
+[node name="wall-u-10" type="Sprite2D" parent="Tilemaps/Clip"]
+texture_filter = 1
+material = SubResource("CanvasItemMaterial_goqcv")
+position = Vector2(408, -72)
+scale = Vector2(3, 3)
+texture = SubResource("AtlasTexture_wren1")
+
+[node name="wall-u-11" type="Sprite2D" parent="Tilemaps/Clip"]
+texture_filter = 1
+material = SubResource("CanvasItemMaterial_goqcv")
+position = Vector2(456, -72)
+scale = Vector2(3, 3)
+texture = SubResource("AtlasTexture_wren1")
+
+[node name="wall-u-12" type="Sprite2D" parent="Tilemaps/Clip"]
+texture_filter = 1
+material = SubResource("CanvasItemMaterial_goqcv")
+position = Vector2(552, -120)
+scale = Vector2(3, 3)
+texture = SubResource("AtlasTexture_wren1")
+
+[node name="wall-u-13" type="Sprite2D" parent="Tilemaps/Clip"]
+texture_filter = 1
+material = SubResource("CanvasItemMaterial_goqcv")
+position = Vector2(648, -168)
+scale = Vector2(3, 3)
+texture = SubResource("AtlasTexture_wren1")
+
+[node name="wall-u-5" type="Sprite2D" parent="Tilemaps/Clip"]
+texture_filter = 1
+material = SubResource("CanvasItemMaterial_goqcv")
+position = Vector2(504, 216)
+scale = Vector2(3, 3)
+texture = SubResource("AtlasTexture_wren1")
+
+[node name="wall-u-3" type="Sprite2D" parent="Tilemaps/Clip"]
+texture_filter = 1
+material = SubResource("CanvasItemMaterial_goqcv")
+position = Vector2(-72, -120)
+scale = Vector2(3, 3)
+texture = SubResource("AtlasTexture_wren1")
+
+[node name="corner2-lu-1" type="Sprite2D" parent="Tilemaps/Clip"]
+texture_filter = 1
+material = SubResource("CanvasItemMaterial_goqcv")
+position = Vector2(-120, -120)
+scale = Vector2(3, 3)
+texture = SubResource("AtlasTexture_2h030")
+
+[node name="corner2-lu-4" type="Sprite2D" parent="Tilemaps/Clip"]
+texture_filter = 1
+material = SubResource("CanvasItemMaterial_goqcv")
+position = Vector2(504, -120)
+scale = Vector2(3, 3)
+texture = SubResource("AtlasTexture_2h030")
+
+[node name="corner2-lu-6" type="Sprite2D" parent="Tilemaps/Clip"]
+texture_filter = 1
+material = SubResource("CanvasItemMaterial_goqcv")
+position = Vector2(216, 120)
+scale = Vector2(3, 3)
+texture = SubResource("AtlasTexture_2h030")
+
+[node name="corner2-lu-7" type="Sprite2D" parent="Tilemaps/Clip"]
+texture_filter = 1
+material = SubResource("CanvasItemMaterial_goqcv")
+position = Vector2(264, 72)
+scale = Vector2(3, 3)
+texture = SubResource("AtlasTexture_2h030")
+
+[node name="corner2-lu-5" type="Sprite2D" parent="Tilemaps/Clip"]
+texture_filter = 1
+material = SubResource("CanvasItemMaterial_goqcv")
+position = Vector2(600, -168)
+scale = Vector2(3, 3)
+texture = SubResource("AtlasTexture_2h030")
+
+[node name="corner2-lu-2" type="Sprite2D" parent="Tilemaps/Clip"]
+texture_filter = 1
+material = SubResource("CanvasItemMaterial_goqcv")
+position = Vector2(-168, -72)
+scale = Vector2(3, 3)
+texture = SubResource("AtlasTexture_2h030")
+
+[node name="corner2-lu-3" type="Sprite2D" parent="Tilemaps/Clip"]
+texture_filter = 1
+material = SubResource("CanvasItemMaterial_goqcv")
+position = Vector2(72, -216)
+scale = Vector2(3, 3)
+texture = SubResource("AtlasTexture_2h030")
+
+[node name="corner2-ld-1" type="Sprite2D" parent="Tilemaps/Clip"]
+texture_filter = 1
+material = SubResource("CanvasItemMaterial_goqcv")
+position = Vector2(-168, 216)
+rotation = -1.5707964
+scale = Vector2(3, 3)
+texture = SubResource("AtlasTexture_2h030")
+
+[node name="corner2-ld-2" type="Sprite2D" parent="Tilemaps/Clip"]
+texture_filter = 1
+material = SubResource("CanvasItemMaterial_goqcv")
+position = Vector2(-72, 312)
+rotation = -1.5707964
+scale = Vector2(3, 3)
+texture = SubResource("AtlasTexture_2h030")
+
+[node name="corner2-ld-3" type="Sprite2D" parent="Tilemaps/Clip"]
+texture_filter = 1
+material = SubResource("CanvasItemMaterial_goqcv")
+position = Vector2(168, 312)
+rotation = -1.5707964
+scale = Vector2(3, 3)
+texture = SubResource("AtlasTexture_2h030")
+
+[node name="corner2-ld-5" type="Sprite2D" parent="Tilemaps/Clip"]
+texture_filter = 1
+material = SubResource("CanvasItemMaterial_goqcv")
+position = Vector2(167.99998, -23.999977)
+rotation = -1.5707964
+scale = Vector2(3, 3)
+texture = SubResource("AtlasTexture_2h030")
+
+[node name="corner2-ld-6" type="Sprite2D" parent="Tilemaps/Clip"]
+texture_filter = 1
+material = SubResource("CanvasItemMaterial_goqcv")
+position = Vector2(215.99998, 24.000023)
+rotation = -1.5707964
+scale = Vector2(3, 3)
+texture = SubResource("AtlasTexture_2h030")
+
+[node name="corner2-ld-4" type="Sprite2D" parent="Tilemaps/Clip"]
+texture_filter = 1
+material = SubResource("CanvasItemMaterial_goqcv")
+position = Vector2(407.99997, 312)
+rotation = -1.5707964
+scale = Vector2(3, 3)
+texture = SubResource("AtlasTexture_2h030")
+
+[node name="corner2-rd-1" type="Sprite2D" parent="Tilemaps/Clip"]
+texture_filter = 1
+material = SubResource("CanvasItemMaterial_goqcv")
+position = Vector2(24, 312)
+rotation = -3.1415927
+scale = Vector2(3, 3)
+texture = SubResource("AtlasTexture_2h030")
+
+[node name="corner2-rd-2" type="Sprite2D" parent="Tilemaps/Clip"]
+texture_filter = 1
+material = SubResource("CanvasItemMaterial_goqcv")
+position = Vector2(312, 312.00003)
+rotation = -3.1415927
+scale = Vector2(3, 3)
+texture = SubResource("AtlasTexture_2h030")
+
+[node name="corner2-rd-5" type="Sprite2D" parent="Tilemaps/Clip"]
+texture_filter = 1
+material = SubResource("CanvasItemMaterial_goqcv")
+position = Vector2(119.999985, -23.999971)
+rotation = -3.1415927
+scale = Vector2(3, 3)
+texture = SubResource("AtlasTexture_2h030")
+
+[node name="corner2-rd-6" type="Sprite2D" parent="Tilemaps/Clip"]
+texture_filter = 1
+material = SubResource("CanvasItemMaterial_goqcv")
+position = Vector2(71.999985, 24.000029)
+rotation = -3.1415927
+scale = Vector2(3, 3)
+texture = SubResource("AtlasTexture_2h030")
+
+[node name="corner2-rd-3" type="Sprite2D" parent="Tilemaps/Clip"]
+texture_filter = 1
+material = SubResource("CanvasItemMaterial_goqcv")
+position = Vector2(552, 312)
+rotation = -3.1415927
+scale = Vector2(3, 3)
+texture = SubResource("AtlasTexture_2h030")
+
+[node name="corner2-rd-7" type="Sprite2D" parent="Tilemaps/Clip"]
+texture_filter = 1
+material = SubResource("CanvasItemMaterial_goqcv")
+position = Vector2(456, 119.999985)
+rotation = -3.1415927
+scale = Vector2(3, 3)
+texture = SubResource("AtlasTexture_2h030")
+
+[node name="corner2-rd-8" type="Sprite2D" parent="Tilemaps/Clip"]
+texture_filter = 1
+material = SubResource("CanvasItemMaterial_goqcv")
+position = Vector2(504, 71.999985)
+rotation = -3.1415927
+scale = Vector2(3, 3)
+texture = SubResource("AtlasTexture_2h030")
+
+[node name="corner2-rd-10" type="Sprite2D" parent="Tilemaps/Clip"]
+texture_filter = 1
+material = SubResource("CanvasItemMaterial_goqcv")
+position = Vector2(408, 167.99998)
+rotation = -4.712389
+scale = Vector2(3, 3)
+texture = SubResource("AtlasTexture_7kf0j")
+
+[node name="corner2-rd-9" type="Sprite2D" parent="Tilemaps/Clip"]
+texture_filter = 1
+material = SubResource("CanvasItemMaterial_goqcv")
+position = Vector2(552, 23.999985)
+rotation = -3.1415927
+scale = Vector2(3, 3)
+texture = SubResource("AtlasTexture_2h030")
+
+[node name="corner2-rd-4" type="Sprite2D" parent="Tilemaps/Clip"]
+texture_filter = 1
+material = SubResource("CanvasItemMaterial_goqcv")
+position = Vector2(695.99994, -23.999977)
+rotation = -3.1415927
+scale = Vector2(3, 3)
+texture = SubResource("AtlasTexture_2h030")
+
+[node name="corner2-ru-1" type="Sprite2D" parent="Tilemaps/Clip"]
+texture_filter = 1
+material = SubResource("CanvasItemMaterial_goqcv")
+position = Vector2(552, 216)
+rotation = -4.712389
+scale = Vector2(3, 3)
+texture = SubResource("AtlasTexture_2h030")
+
+[node name="corner2-ru-7" type="Sprite2D" parent="Tilemaps/Clip"]
+texture_filter = 1
+material = SubResource("CanvasItemMaterial_goqcv")
+position = Vector2(456, 168.00003)
+rotation = -4.712389
+scale = Vector2(3, 3)
+texture = SubResource("AtlasTexture_2h030")
+
+[node name="corner3-1-1" type="Sprite2D" parent="Tilemaps/Clip"]
+texture_filter = 1
+material = SubResource("CanvasItemMaterial_lk2p4")
+position = Vector2(408, 167.99998)
+rotation = -3.1415927
+scale = Vector2(3, 3)
+texture = SubResource("AtlasTexture_crx51")
+
+[node name="corner2-ru-3" type="Sprite2D" parent="Tilemaps/Clip"]
+texture_filter = 1
+material = SubResource("CanvasItemMaterial_goqcv")
+position = Vector2(696, -167.99998)
+rotation = -4.712389
+scale = Vector2(3, 3)
+texture = SubResource("AtlasTexture_2h030")
+
+[node name="corner2-ru-2" type="Sprite2D" parent="Tilemaps/Clip"]
+texture_filter = 1
+material = SubResource("CanvasItemMaterial_goqcv")
+position = Vector2(168, -215.99997)
+rotation = -4.712389
+scale = Vector2(3, 3)
+texture = SubResource("AtlasTexture_2h030")
+
+[node name="corner2-ru-4" type="Sprite2D" parent="Tilemaps/Clip"]
+texture_filter = 1
+material = SubResource("CanvasItemMaterial_goqcv")
+position = Vector2(264, -167.99997)
+rotation = -4.712389
+scale = Vector2(3, 3)
+texture = SubResource("AtlasTexture_2h030")
+
+[node name="corner2-ru-6" type="Sprite2D" parent="Tilemaps/Clip"]
+texture_filter = 1
+material = SubResource("CanvasItemMaterial_goqcv")
+position = Vector2(168, 120.00002)
+rotation = -4.712389
+scale = Vector2(3, 3)
+texture = SubResource("AtlasTexture_2h030")
+
+[node name="corner2-ru-5" type="Sprite2D" parent="Tilemaps/Clip"]
+texture_filter = 1
+material = SubResource("CanvasItemMaterial_goqcv")
+position = Vector2(360, -119.99999)
+rotation = -4.712389
+scale = Vector2(3, 3)
+texture = SubResource("AtlasTexture_2h030")
+
+[node name="wall-d-1" type="Sprite2D" parent="Tilemaps/Clip"]
+texture_filter = 1
+material = SubResource("CanvasItemMaterial_goqcv")
+position = Vector2(-119.999985, 216)
+rotation = -3.1415927
+scale = Vector2(3, 3)
+texture = SubResource("AtlasTexture_wren1")
+
+[node name="wall-d-2" type="Sprite2D" parent="Tilemaps/Clip"]
+texture_filter = 1
+material = SubResource("CanvasItemMaterial_goqcv")
+position = Vector2(-23.999994, 312)
+rotation = -3.1415927
+scale = Vector2(3, 3)
+texture = SubResource("AtlasTexture_wren1")
+
+[node name="wall-d-3" type="Sprite2D" parent="Tilemaps/Clip"]
+texture_filter = 1
+material = SubResource("CanvasItemMaterial_goqcv")
+position = Vector2(72.00001, 264)
+rotation = -3.1415927
+scale = Vector2(3, 3)
+texture = SubResource("AtlasTexture_wren1")
+
+[node name="wall-d-4" type="Sprite2D" parent="Tilemaps/Clip"]
+texture_filter = 1
+material = SubResource("CanvasItemMaterial_goqcv")
+position = Vector2(120.00001, 264)
+rotation = -3.1415927
+scale = Vector2(3, 3)
+texture = SubResource("AtlasTexture_wren1")
+
+[node name="wall-d-12" type="Sprite2D" parent="Tilemaps/Clip"]
+texture_filter = 1
+material = SubResource("CanvasItemMaterial_goqcv")
+position = Vector2(264, 23.99997)
+rotation = -3.1415927
+scale = Vector2(3, 3)
+texture = SubResource("AtlasTexture_wren1")
+
+[node name="wall-d-5" type="Sprite2D" parent="Tilemaps/Clip"]
+texture_filter = 1
+material = SubResource("CanvasItemMaterial_goqcv")
+position = Vector2(216, 312.00003)
+rotation = -3.1415927
+scale = Vector2(3, 3)
+texture = SubResource("AtlasTexture_wren1")
+
+[node name="wall-d-6" type="Sprite2D" parent="Tilemaps/Clip"]
+texture_filter = 1
+material = SubResource("CanvasItemMaterial_goqcv")
+position = Vector2(264, 312.00003)
+rotation = -3.1415927
+scale = Vector2(3, 3)
+texture = SubResource("AtlasTexture_wren1")
+
+[node name="wall-d-7" type="Sprite2D" parent="Tilemaps/Clip"]
+texture_filter = 1
+material = SubResource("CanvasItemMaterial_goqcv")
+position = Vector2(360, 264.00003)
+rotation = -3.1415927
+scale = Vector2(3, 3)
+texture = SubResource("AtlasTexture_wren1")
+
+[node name="wall-d-8" type="Sprite2D" parent="Tilemaps/Clip"]
+texture_filter = 1
+material = SubResource("CanvasItemMaterial_goqcv")
+position = Vector2(455.99997, 312.00003)
+rotation = -3.1415927
+scale = Vector2(3, 3)
+texture = SubResource("AtlasTexture_wren1")
+
+[node name="wall-d-10" type="Sprite2D" parent="Tilemaps/Clip"]
+texture_filter = 1
+material = SubResource("CanvasItemMaterial_goqcv")
+position = Vector2(647.99994, -24.000013)
+rotation = -3.1415927
+scale = Vector2(3, 3)
+texture = SubResource("AtlasTexture_wren1")
+
+[node name="wall-d-11" type="Sprite2D" parent="Tilemaps/Clip"]
+texture_filter = 1
+material = SubResource("CanvasItemMaterial_goqcv")
+position = Vector2(599.99994, -24.000011)
+rotation = -3.1415927
+scale = Vector2(3, 3)
+texture = SubResource("AtlasTexture_wren1")
+
+[node name="wall-d-9" type="Sprite2D" parent="Tilemaps/Clip"]
+texture_filter = 1
+material = SubResource("CanvasItemMaterial_goqcv")
+position = Vector2(503.99997, 312)
+rotation = -3.1415927
+scale = Vector2(3, 3)
+texture = SubResource("AtlasTexture_wren1")
+
+[node name="corner-ld-1" type="Sprite2D" parent="Tilemaps/Clip"]
+texture_filter = 1
+material = SubResource("CanvasItemMaterial_goqcv")
+position = Vector2(-119.999985, -72)
+rotation = 4.712389
+scale = Vector2(3, 3)
+texture = SubResource("AtlasTexture_goqcv")
+
+[node name="corner-rd-1" type="Sprite2D" parent="Tilemaps/Clip"]
+texture_filter = 1
+material = SubResource("CanvasItemMaterial_goqcv")
+position = Vector2(168, -168)
+rotation = 6.2831855
+scale = Vector2(3, 3)
+texture = SubResource("AtlasTexture_goqcv")
+
+[node name="corner-rd-6" type="Sprite2D" parent="Tilemaps/Clip"]
+texture_filter = 1
+material = SubResource("CanvasItemMaterial_goqcv")
+position = Vector2(359.99997, 216.00002)
+rotation = 6.2831855
+scale = Vector2(3, 3)
+texture = SubResource("AtlasTexture_goqcv")
+
+[node name="corner-rd-3" type="Sprite2D" parent="Tilemaps/Clip"]
+texture_filter = 1
+material = SubResource("CanvasItemMaterial_goqcv")
+position = Vector2(455.99997, 216)
+rotation = 6.2831855
+scale = Vector2(3, 3)
+texture = SubResource("AtlasTexture_goqcv")
+
+[node name="corner-rd-2" type="Sprite2D" parent="Tilemaps/Clip"]
+texture_filter = 1
+material = SubResource("CanvasItemMaterial_goqcv")
+position = Vector2(264, -120)
+rotation = 6.2831855
+scale = Vector2(3, 3)
+texture = SubResource("AtlasTexture_goqcv")
+
+[node name="corner-rd-7" type="Sprite2D" parent="Tilemaps/Clip"]
+texture_filter = 1
+material = SubResource("CanvasItemMaterial_goqcv")
+position = Vector2(360, -72)
+rotation = 6.2831855
+scale = Vector2(3, 3)
+texture = SubResource("AtlasTexture_goqcv")
+
+[node name="corner-rd-4" type="Sprite2D" parent="Tilemaps/Clip"]
+texture_filter = 1
+material = SubResource("CanvasItemMaterial_goqcv")
+position = Vector2(167.99997, 168)
+rotation = 6.2831855
+scale = Vector2(3, 3)
+texture = SubResource("AtlasTexture_goqcv")
+
+[node name="corner-rd-5" type="Sprite2D" parent="Tilemaps/Clip"]
+texture_filter = 1
+material = SubResource("CanvasItemMaterial_goqcv")
+position = Vector2(23.999977, 120)
+rotation = 6.2831855
+scale = Vector2(3, 3)
+texture = SubResource("AtlasTexture_goqcv")
+
+[node name="corner-ld-2" type="Sprite2D" parent="Tilemaps/Clip"]
+texture_filter = 1
+material = SubResource("CanvasItemMaterial_goqcv")
+position = Vector2(72.000015, -120)
+rotation = 4.712389
+scale = Vector2(3, 3)
+texture = SubResource("AtlasTexture_goqcv")
+
+[node name="corner-ld-5" type="Sprite2D" parent="Tilemaps/Clip"]
+texture_filter = 1
+material = SubResource("CanvasItemMaterial_goqcv")
+position = Vector2(216, 168)
+rotation = 4.712389
+scale = Vector2(3, 3)
+texture = SubResource("AtlasTexture_goqcv")
+
+[node name="corner-ld-6" type="Sprite2D" parent="Tilemaps/Clip"]
+texture_filter = 1
+material = SubResource("CanvasItemMaterial_goqcv")
+position = Vector2(264, 120)
+rotation = 4.712389
+scale = Vector2(3, 3)
+texture = SubResource("AtlasTexture_goqcv")
+
+[node name="corner-ld-7" type="Sprite2D" parent="Tilemaps/Clip"]
+texture_filter = 1
+material = SubResource("CanvasItemMaterial_goqcv")
+position = Vector2(312, 71.99999)
+rotation = 4.712389
+scale = Vector2(3, 3)
+texture = SubResource("AtlasTexture_goqcv")
+
+[node name="corner-ld-3" type="Sprite2D" parent="Tilemaps/Clip"]
+texture_filter = 1
+material = SubResource("CanvasItemMaterial_goqcv")
+position = Vector2(504, -71.99999)
+rotation = 4.712389
+scale = Vector2(3, 3)
+texture = SubResource("AtlasTexture_goqcv")
+
+[node name="corner-ld-8" type="Sprite2D" parent="Tilemaps/Clip"]
+texture_filter = 1
+material = SubResource("CanvasItemMaterial_goqcv")
+position = Vector2(408, 215.99998)
+rotation = 4.712389
+scale = Vector2(3, 3)
+texture = SubResource("AtlasTexture_goqcv")
+
+[node name="corner-ld-4" type="Sprite2D" parent="Tilemaps/Clip"]
+texture_filter = 1
+material = SubResource("CanvasItemMaterial_goqcv")
+position = Vector2(600, -119.99999)
+rotation = 4.712389
+scale = Vector2(3, 3)
+texture = SubResource("AtlasTexture_goqcv")
+
+[node name="corner-ru-2" type="Sprite2D" parent="Tilemaps/Clip"]
+texture_filter = 1
+material = SubResource("CanvasItemMaterial_goqcv")
+position = Vector2(168.00002, 264)
+rotation = -3.1415925
+scale = Vector2(3, 3)
+texture = SubResource("AtlasTexture_goqcv")
+
+[node name="corner-ru-3" type="Sprite2D" parent="Tilemaps/Clip"]
+texture_filter = 1
+material = SubResource("CanvasItemMaterial_goqcv")
+position = Vector2(408, 263.99997)
+rotation = -3.1415925
+scale = Vector2(3, 3)
+texture = SubResource("AtlasTexture_goqcv")
+
+[node name="corner-lu-2" type="Sprite2D" parent="Tilemaps/Clip"]
+texture_filter = 1
+material = SubResource("CanvasItemMaterial_goqcv")
+position = Vector2(24.000015, 264)
+rotation = 1.5707964
+scale = Vector2(3, 3)
+texture = SubResource("AtlasTexture_goqcv")
+
+[node name="corner-lu-8" type="Sprite2D" parent="Tilemaps/Clip"]
+texture_filter = 1
+material = SubResource("CanvasItemMaterial_goqcv")
+position = Vector2(408.00006, 119.99999)
+rotation = 1.5707964
+scale = Vector2(3, 3)
+texture = SubResource("AtlasTexture_goqcv")
+
+[node name="corner-lu-9" type="Sprite2D" parent="Tilemaps/Clip"]
+texture_filter = 1
+material = SubResource("CanvasItemMaterial_goqcv")
+position = Vector2(456.0001, 71.99999)
+rotation = 1.5707964
+scale = Vector2(3, 3)
+texture = SubResource("AtlasTexture_goqcv")
+
+[node name="corner-lu-4" type="Sprite2D" parent="Tilemaps/Clip"]
+texture_filter = 1
+material = SubResource("CanvasItemMaterial_goqcv")
+position = Vector2(120.00003, -71.99999)
+rotation = 1.5707964
+scale = Vector2(3, 3)
+texture = SubResource("AtlasTexture_goqcv")
+
+[node name="corner-lu-5" type="Sprite2D" parent="Tilemaps/Clip"]
+texture_filter = 1
+material = SubResource("CanvasItemMaterial_goqcv")
+position = Vector2(72.00003, -23.99999)
+rotation = 1.5707964
+scale = Vector2(3, 3)
+texture = SubResource("AtlasTexture_goqcv")
+
+[node name="corner-lu-6" type="Sprite2D" parent="Tilemaps/Clip"]
+texture_filter = 1
+material = SubResource("CanvasItemMaterial_goqcv")
+position = Vector2(24.00003, 24.000008)
+rotation = 1.5707964
+scale = Vector2(3, 3)
+texture = SubResource("AtlasTexture_goqcv")
+
+[node name="corner-lu-3" type="Sprite2D" parent="Tilemaps/Clip"]
+texture_filter = 1
+material = SubResource("CanvasItemMaterial_goqcv")
+position = Vector2(312.00003, 263.99997)
+rotation = 1.5707964
+scale = Vector2(3, 3)
+texture = SubResource("AtlasTexture_goqcv")
+
+[node name="corner-lu-7" type="Sprite2D" parent="Tilemaps/Clip"]
+texture_filter = 1
+material = SubResource("CanvasItemMaterial_goqcv")
+position = Vector2(360, 167.99998)
+rotation = 1.5707964
+scale = Vector2(3, 3)
+texture = SubResource("AtlasTexture_goqcv")
+
+[node name="Polygon2D" type="Polygon2D" parent="Tilemaps"]
+visible = false
+clip_children = 1
+polygon = PackedVector2Array(-162, 212, -148, 216, -89, 215, -72, 231, -73, 297, -54, 312, 12, 311, 23, 298, 23, 278, 40, 263, 156, 265, 165, 278, 167, 301, 183, 311, 298, 311, 311, 296, 315, 275, 329, 264, 395, 266, 408, 280, 409, 298, 422, 310, 531, 311, 546, 305, 552, 294, 553, 235, 538, 217, 469, 216, 456, 201, 450, 171, 418, 170, 407, 181, 406, 203, 394, 214, 372, 214, 362, 200, 361, 183, 368, 171, 389, 169, 406, 160, 407, 143, -105, -119, -119, -105, -123, -85, -141, -74, -159, -69, -168, -53, -169, 197)
 
 [node name="APCellInfoNode" type="Node" parent="Tilemaps"]
 script = ExtResource("18_a6847")

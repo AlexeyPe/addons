@@ -588,6 +588,7 @@ _data = {
 }
 
 [node name="CardHand" type="Panel"]
+self_modulate = Color(1, 1, 1, 0)
 texture_filter = 2
 anchors_preset = 15
 anchor_right = 1.0
@@ -608,6 +609,7 @@ alignment = 2
 
 [node name="CardPack" type="Control" parent="VBoxContainer"]
 visible = false
+modulate = Color(1, 1, 1, 0)
 layout_mode = 2
 size_flags_vertical = 3
 
@@ -626,6 +628,7 @@ offset_right = 64.0
 offset_bottom = 64.0
 grow_horizontal = 2
 grow_vertical = 2
+scale = Vector2(0.4, 0.4)
 pivot_offset = Vector2(64, 64)
 
 [node name="Panel" type="PanelContainer" parent="VBoxContainer/CardPack/PanelContainer"]

@@ -9,7 +9,7 @@ metadata/_custom_type_script = "uid://msh8p6ojhxex"
 
 [sub_resource type="Resource" id="Resource_tivld"]
 script = ExtResource("1_mykbf")
-value = 0.4
+value = 0.6
 metadata/_custom_type_script = "uid://msh8p6ojhxex"
 
 [resource]
