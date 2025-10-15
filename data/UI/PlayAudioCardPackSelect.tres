@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="VaRBool" load_steps=2 format=3 uid="uid://fdc37uony7ts"]
+
+[ext_resource type="Script" uid="uid://djmnu1e55mp0j" path="res://addons/VarRes/classes/bool/VaRBool.gd" id="1_mqnj1"]
+
+[resource]
+resource_name = "PlayAudioCardPackSelect"
+script = ExtResource("1_mqnj1")
+value = true
+metadata/_custom_type_script = "uid://djmnu1e55mp0j"

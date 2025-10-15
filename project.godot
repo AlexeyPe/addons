@@ -29,6 +29,7 @@ enabled=PackedStringArray("res://addons/APCards/plugin.cfg", "res://addons/APCha
 [file_customization]
 
 folder_colors={
+"res://UI_Resources/": "yellow",
 "res://audio/": "red",
 "res://data/": "orange",
 "res://imgs/": "blue",

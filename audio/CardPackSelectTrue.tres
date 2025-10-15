@@ -1,0 +1,9 @@
+[gd_resource type="AudioStreamRandomizer" load_steps=2 format=3 uid="uid://c6ktfn7vyk0tn"]
+
+[ext_resource type="AudioStream" uid="uid://cllqmluspovx0" path="res://audio/src/African2-cut.mp3" id="1_yeoh6"]
+
+[resource]
+random_pitch = 1.04
+random_volume_offset_db = 1.0
+streams_count = 1
+stream_0/stream = ExtResource("1_yeoh6")

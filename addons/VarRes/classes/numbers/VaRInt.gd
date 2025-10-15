@@ -6,6 +6,9 @@ class_name VaRInt
 @export var max_value_res:VaRInt : set = set_max_value_res
 @export var value:int = 42 : set = set_value
 
+func is_max() -> bool:
+	return value == get_max_value()
+
 func _to_string() -> String:
 	return "%s %s"%[resource_path.get_basename().get_file(), value]
 
@@ -42,7 +45,13 @@ func get_max_value() -> int:
 
 func get_value() -> int: return value
 func set_value(new: int):
+	if value == new: return
 	if new >= get_min_value() and new <= get_max_value():
-		#print('set_value = new:',new)
-		value = new
-		emit_changed()
+		if value < new:
+			value = new
+			emit_changed()
+			now_more.emit()
+		else:
+			value = new
+			emit_changed()
+			now_less.emit()

@@ -1,4 +1,5 @@
 extends Control
+class_name APDragDataControl
 
 @export var drag_data:APDragDataRes
 

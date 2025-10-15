@@ -1,4 +1,4 @@
-[gd_scene load_steps=83 format=3 uid="uid://dnxe3vhvxsoum"]
+[gd_scene load_steps=87 format=3 uid="uid://dnxe3vhvxsoum"]
 
 [ext_resource type="Shader" uid="uid://34vuvr16u6om" path="res://addons/shadercollectionap/shader/starfield/eclmist.gdshader" id="1_w8vxg"]
 [ext_resource type="Texture2D" uid="uid://cybbdvgqf1fci" path="res://icon.svg" id="2_7eqmx"]
@@ -29,6 +29,7 @@
 [ext_resource type="Shader" uid="uid://h6lcg3a2x62n" path="res://addons/shadercollectionap/shader/transform/random-displacement.gdshader" id="24_18yic"]
 [ext_resource type="Shader" uid="uid://bmoj4s5ic3q7i" path="res://addons/shadercollectionap/shader/transform/Slice.gdshader" id="25_fxorn"]
 [ext_resource type="Shader" uid="uid://hjaushroino1" path="res://addons/shadercollectionap/shader/view.gdshader" id="25_ihitu"]
+[ext_resource type="Shader" uid="uid://jnylkexsql1w" path="res://addons/shadercollectionap/shader/shake/Wiggle.gdshader" id="25_t36y0"]
 [ext_resource type="Shader" uid="uid://c7ihfh4tgq50c" path="res://addons/shadercollectionap/shader/transform/Slice2.gdshader" id="26_hkxm1"]
 [ext_resource type="Shader" uid="uid://k4a8ylb5cenv" path="res://addons/shadercollectionap/shader/starfield/starfield.gdshader" id="26_txere"]
 [ext_resource type="Shader" uid="uid://cqunkxivlqmr8" path="res://addons/shadercollectionap/shader/starfield/starfield2.gdshader" id="27_0xktr"]
@@ -37,6 +38,7 @@
 [ext_resource type="Shader" uid="uid://dx7whj84nioxe" path="res://addons/shadercollectionap/shader/starfield/starfield5.gdshader" id="30_lmdls"]
 [ext_resource type="Shader" uid="uid://dp57401gew5ih" path="res://addons/shadercollectionap/shader/starfield/starfield6.gdshader" id="31_y7mtm"]
 [ext_resource type="Shader" uid="uid://brb8gngm3snua" path="res://addons/shadercollectionap/shader/starfield/starfield7.gdshader" id="32_dcv4l"]
+[ext_resource type="Shader" uid="uid://bvvll4jp3kavo" path="res://addons/shadercollectionap/shader/outline/outline-dotted.gdshader" id="38_f53hn"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_1dr5g"]
 shader = ExtResource("1_w8vxg")
@@ -222,6 +224,11 @@ shader = ExtResource("24_5j1ui")
 shader_parameter/hit_effect = 0.32800001558
 shader_parameter/shake_intensity = 10.0
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ba1da"]
+shader = ExtResource("25_t36y0")
+shader_parameter/Strength = 8.2800003933
+shader_parameter/RandomOffset = 1.0
+
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_hkxm1"]
 shader = ExtResource("25_fxorn")
 shader_parameter/direction = Vector2(1, 0)
@@ -388,6 +395,15 @@ shader_parameter/size = 10.0
 shader_parameter/starscale = 20.0
 shader_parameter/prob = 0.98
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_t36y0"]
+shader = ExtResource("38_f53hn")
+shader_parameter/color = Color(1, 1, 1, 1)
+shader_parameter/direction = -1.0
+shader_parameter/frequency = 15.0
+shader_parameter/speed = 3.0
+shader_parameter/radius = 1.0
+shader_parameter/line_thickness = 0.06999999843536
+
 [node name="Shaders" type="Node2D"]
 
 [node name="eclmist" type="Sprite2D" parent="."]
@@ -533,6 +549,15 @@ offset_right = 1246.0
 offset_bottom = -146.0
 texture = ExtResource("2_7eqmx")
 
+[node name="progres-circle16" type="TextureRect" parent="."]
+material = SubResource("ShaderMaterial_ba1da")
+custom_minimum_size = Vector2(100, 100)
+offset_left = 1262.0
+offset_top = -274.0
+offset_right = 1390.0
+offset_bottom = -146.0
+texture = ExtResource("2_7eqmx")
+
 [node name="progres-circle15" type="TextureRect" parent="."]
 texture_repeat = 1
 material = SubResource("ShaderMaterial_hkxm1")
@@ -547,9 +572,9 @@ texture = ExtResource("2_7eqmx")
 texture_repeat = 1
 material = SubResource("ShaderMaterial_f53hn")
 custom_minimum_size = Vector2(100, 100)
-offset_left = 1268.0
+offset_left = 1260.0
 offset_top = -411.0
-offset_right = 1396.0
+offset_right = 1388.0
 offset_bottom = -283.0
 texture = ExtResource("2_7eqmx")
 
@@ -626,3 +651,10 @@ material = SubResource("ShaderMaterial_dk2pn")
 position = Vector2(1074, -739.00006)
 scale = Vector2(3.36, 1)
 texture = ExtResource("2_7eqmx")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_t36y0")
+offset_left = 1216.0
+offset_top = -184.0
+offset_right = 1303.0
+offset_bottom = -101.0

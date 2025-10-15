@@ -2,6 +2,8 @@
 extends APChain
 class_name APChainAnimPlay
 
+signal anim_finished
+
 @export var animation_player:AnimationPlayer : set = set_animation_player
 @export var speed:float = 1.0
 @export var from_end:bool = false
@@ -44,7 +46,11 @@ func _execute(...args:Array):
 		#prints("play from_end anim:", _anims[_anim_name], "speed:", speed)
 		animation_player.play_backwards(_anims[_anim_name])
 		animation_player.speed_scale = speed
+		await animation_player.animation_finished
+		anim_finished.emit()
 	else:
 		#prints("play anim:", _anims[_anim_name], "speed:", speed)
 		animation_player.play(_anims[_anim_name], -1, speed)
 		animation_player.seek(0)
+		await animation_player.animation_finished
+		anim_finished.emit()

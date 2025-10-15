@@ -1,0 +1,8 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://7bw764b16gya"]
+
+[ext_resource type="Shader" uid="uid://bablj8w4a2s11" path="res://addons/shadercollectionap/shader/shake/Shake.gdshader" id="1_kyocq"]
+
+[resource]
+shader = ExtResource("1_kyocq")
+shader_parameter/hit_effect = 1.0
+shader_parameter/shake_intensity = 1.0

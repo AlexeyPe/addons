@@ -67,7 +67,6 @@ void fragment() {
 
 			if (1.0 - alpha < 0.0001) break;
 		}
-
 		COLOR.rgb = blend(vec4(outline_color.rgb, alpha * outline_color.a), texture_color).rgb;
 	}
 }

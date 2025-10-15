@@ -6,6 +6,9 @@ class_name VaRFloat
 @export var max_value_res:VaRFloat : set = set_max_value_res
 @export var value:float = 42.0 : set = set_value
 
+func is_max() -> bool:
+	return value == get_max_value()
+
 func _to_string() -> String:
 	return "%s %.3f"%[resource_path.get_basename().get_file(), value]
 

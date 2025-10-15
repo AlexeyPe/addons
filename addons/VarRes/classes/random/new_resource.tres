@@ -8,17 +8,17 @@
 
 [sub_resource type="Resource" id="Resource_1wt67"]
 script = ExtResource("1_3xoup")
-value = 6
+value = 5
 metadata/_custom_type_script = "uid://8myr58nwfvfg"
 
 [sub_resource type="Resource" id="Resource_vkrvk"]
 script = ExtResource("1_3xoup")
-value = 3
+value = 5
 metadata/_custom_type_script = "uid://8myr58nwfvfg"
 
 [sub_resource type="Resource" id="Resource_yy7j4"]
 script = ExtResource("1_3xoup")
-value = 1
+value = 3
 metadata/_custom_type_script = "uid://8myr58nwfvfg"
 
 [resource]

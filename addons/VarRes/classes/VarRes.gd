@@ -3,4 +3,4 @@
 extends Resource
 class_name VarRes
 
-#@abstract func get_value()->Variant
+## Variable Resource / Переменная ресурс [br]

@@ -1,10 +1,11 @@
-[gd_scene load_steps=52 format=3 uid="uid://csgbo46w4e1c5"]
+[gd_scene load_steps=91 format=3 uid="uid://csgbo46w4e1c5"]
 
-[ext_resource type="Texture2D" uid="uid://qsswuo3ibt17" path="res://imgs/grid_16.png" id="1_ka15h"]
 [ext_resource type="PackedScene" uid="uid://dyof3d0s47yns" path="res://scene/UI/CardPack.tscn" id="1_mngf1"]
 [ext_resource type="Texture2D" uid="uid://b7r717imcw7y8" path="res://imgs/icons/input/icon-park-solid--enter-key.svg" id="2_6e6x1"]
+[ext_resource type="Texture2D" uid="uid://bsxyx76fssova" path="res://imgs/UI/frame/CardPack.png" id="2_ab62b"]
 [ext_resource type="LabelSettings" uid="uid://b244nxw7eexv6" path="res://scene/UI/LabelSettings/MainLabelH1_3.tres" id="2_i5yr4"]
 [ext_resource type="Texture2D" uid="uid://b55ulf7hqxpdb" path="res://imgs/icons/input/mdi--arrow-left-thin.svg" id="2_i6qmb"]
+[ext_resource type="Texture2D" uid="uid://x473kv2by7g5" path="res://imgs/UI/frame/banner_hanging.png" id="2_jrwam"]
 [ext_resource type="Script" uid="uid://dn354cgweyjxg" path="res://addons/APCards/classes/APDeckContainer.gd" id="2_jtq55"]
 [ext_resource type="PackedScene" uid="uid://bcap7c1i87f30" path="res://scene/cards/Card.tscn" id="3_hblv7"]
 [ext_resource type="Texture2D" uid="uid://bs6wwydvpnun8" path="res://imgs/icons/input/ph--mouse-left-click-fill.svg" id="4_1dhve"]
@@ -19,30 +20,41 @@
 [ext_resource type="Texture2D" uid="uid://dd3juvjg64sk2" path="res://imgs/icons/ic--round-skip-next.svg" id="10_rykh1"]
 [ext_resource type="Material" uid="uid://bf67q38umn8tu" path="res://scene/UI/LabelSettings/outline_1.tres" id="11_i5yr4"]
 [ext_resource type="Script" uid="uid://ofk03pmu1sfo" path="res://addons/VarRes/classes/UI/VaRNumberBBCode.gd" id="11_vsgyk"]
+[ext_resource type="Script" uid="uid://djmnu1e55mp0j" path="res://addons/VarRes/classes/bool/VaRBool.gd" id="13_3r0al"]
 [ext_resource type="Resource" uid="uid://c4i68asmn7hno" path="res://data/CardPack/RerolQTY.tres" id="13_noonn"]
 [ext_resource type="Resource" uid="uid://ctiftfwgikae6" path="res://data/CardPack/SkipAddRerolQTY.tres" id="13_qf1oa"]
 [ext_resource type="Script" uid="uid://ck2yuex0aket8" path="res://addons/VarRes/classes/numbers/VaRNumber.gd" id="13_vsgyk"]
-[ext_resource type="Resource" uid="uid://52d1jlke16py" path="res://data/CardPack/RerolRemRerolQTY.tres" id="15_qf1oa"]
-[ext_resource type="Theme" uid="uid://cs3pyhnlnyjwg" path="res://scene/UI/LabelSettings/RichTextLabel.tres" id="18_2841o"]
+[ext_resource type="Resource" uid="uid://52d1jlke16py" path="res://data/CardPack/RemRerolQTY.tres" id="15_qf1oa"]
+[ext_resource type="Script" uid="uid://xv7plkxnebcm" path="res://addons/APChain/classes/chain/set/vares/APChainSetBool.gd" id="17_ipcpg"]
+[ext_resource type="Theme" uid="uid://cjnu6wdil2hgp" path="res://scene/UI/Theme.tres" id="18_2841o"]
+[ext_resource type="Texture2D" uid="uid://cglxi3v4nei02" path="res://imgs/UI/button/button_red.png" id="19_ab62b"]
+[ext_resource type="Script" uid="uid://j7rvso2o4yet" path="res://addons/APChain/classes/chain/childs/APChainMoveChilds.gd" id="20_3r0al"]
+[ext_resource type="Script" uid="uid://cldopw0r4n1wj" path="res://addons/APChain/classes/chain/set/vares/APChainSetNum.gd" id="21_kkd5q"]
 [ext_resource type="Script" uid="uid://bx1dlto0sni15" path="res://addons/APChain/classes/chain/APChainCaller.gd" id="22_3d4an"]
+[ext_resource type="Resource" uid="uid://le4nnyijbcxw" path="res://data/CardPack/PickCardsPerPack.tres" id="22_pti7k"]
 [ext_resource type="Curve" uid="uid://u4kqmfutxavu" path="res://data/CardPack/DropCardsPerSecond.tres" id="23_24223"]
+[ext_resource type="Script" uid="uid://8myr58nwfvfg" path="res://addons/VarRes/classes/numbers/VaRInt.gd" id="23_ab62b"]
 [ext_resource type="Resource" uid="uid://c0dxxiatt4dlo" path="res://data/CardPack/CardsPerPack.tres" id="23_dtumk"]
+[ext_resource type="Script" uid="uid://bxgs3dw2ym11j" path="res://addons/APChain/classes/chain/drag_and_drop/APDragDataRes.gd" id="26_6vyr0"]
+[ext_resource type="Texture2D" uid="uid://decg5levc7kjv" path="res://imgs/UI/button/button_grey.png" id="26_ab62b"]
 [ext_resource type="Script" uid="uid://dj04ffy0nu74n" path="res://addons/APChain/classes/chain/audio/APChainAudioPlay.gd" id="28_8cou2"]
+[ext_resource type="Script" uid="uid://up8up6hch40i" path="res://addons/APChain/classes/chain/if/APChainIfNum.gd" id="28_37ebo"]
 [ext_resource type="AudioStream" uid="uid://c5mqql67k6dsl" path="res://audio/CardSpawn.tres" id="28_spr8g"]
+[ext_resource type="Script" uid="uid://bqn6e76istclq" path="res://addons/APChain/classes/chain/set/APChainSetVisible.gd" id="29_aw5u7"]
 [ext_resource type="Script" uid="uid://c6lf3egn1f263" path="res://addons/APChain/classes/chain/childs/APChainDelChilds.gd" id="29_k3mva"]
-[ext_resource type="Script" uid="uid://dg3tbem26ogr7" path="res://addons/APChain/classes/chain/childs/APChainAddChild.gd" id="30_kryo7"]
-[ext_resource type="PackedScene" uid="uid://c1g87ftb2c4si" path="res://scene/cards/CardPurple.tscn" id="31_047eh"]
+[ext_resource type="Script" uid="uid://b4dffbr30waq" path="res://addons/APChain/classes/chain/childs/APChainAddChildRand.gd" id="30_kryo7"]
+[ext_resource type="Resource" uid="uid://bcc8rafbxkkes" path="res://addons/VarRes/classes/random/new_resource.tres" id="31_047eh"]
+[ext_resource type="Resource" uid="uid://fdc37uony7ts" path="res://data/UI/PlayAudioCardPackSelect.tres" id="35_kpoiw"]
+[ext_resource type="AudioStream" uid="uid://dr3yimv6j8o3x" path="res://audio/ButtonError.tres" id="44_fc40o"]
+[ext_resource type="AudioStream" uid="uid://c38v7gxandina" path="res://audio/Rerol.tres" id="45_mh6vc"]
+[ext_resource type="Script" uid="uid://dhamqitbrimqh" path="res://addons/APChain/classes/chain/if/APChainIfBool.gd" id="47_sxktb"]
+[ext_resource type="AudioStream" uid="uid://dridsfo8apuj7" path="res://audio/SelectCardsPack.tres" id="48_8m7k3"]
+[ext_resource type="AudioStream" uid="uid://bs0dt6d64esl7" path="res://audio/CardPackSelectFalse.tres" id="48_kpoiw"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hwbwf"]
 bg_color = Color(0, 0, 0, 0.6862745)
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qf1oa"]
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_28ymf"]
-texture = ExtResource("1_ka15h")
-axis_stretch_horizontal = 2
-axis_stretch_vertical = 2
-modulate_color = Color(0.39688924, 0.39688927, 0.3968891, 1)
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_pti7k"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_28ymf"]
 bg_color = Color(1, 1, 1, 1)
@@ -60,6 +72,19 @@ shader_parameter/y_rot = 0.0
 shader_parameter/x_rot = 0.0
 shader_parameter/inset = 0.0
 
+[sub_resource type="Resource" id="Resource_6vyr0"]
+resource_local_to_scene = true
+resource_name = "is_pack_card"
+script = ExtResource("13_3r0al")
+value = true
+metadata/_custom_type_script = "uid://djmnu1e55mp0j"
+
+[sub_resource type="Resource" id="Resource_mnmi3"]
+resource_local_to_scene = true
+resource_name = "is_active_pack_card"
+script = ExtResource("13_3r0al")
+metadata/_custom_type_script = "uid://djmnu1e55mp0j"
+
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ka15h"]
 resource_local_to_scene = true
 shader = ExtResource("4_6px0d")
@@ -68,6 +93,19 @@ shader_parameter/cull_back = true
 shader_parameter/y_rot = 0.0
 shader_parameter/x_rot = 0.0
 shader_parameter/inset = 0.0
+
+[sub_resource type="Resource" id="Resource_m1dll"]
+resource_local_to_scene = true
+resource_name = "is_pack_card"
+script = ExtResource("13_3r0al")
+value = true
+metadata/_custom_type_script = "uid://djmnu1e55mp0j"
+
+[sub_resource type="Resource" id="Resource_3r0al"]
+resource_local_to_scene = true
+resource_name = "is_active_pack_card"
+script = ExtResource("13_3r0al")
+metadata/_custom_type_script = "uid://djmnu1e55mp0j"
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_6e6x1"]
 resource_local_to_scene = true
@@ -78,7 +116,35 @@ shader_parameter/y_rot = 0.0
 shader_parameter/x_rot = 0.0
 shader_parameter/inset = 0.0
 
+[sub_resource type="Resource" id="Resource_rvtym"]
+resource_local_to_scene = true
+resource_name = "is_pack_card"
+script = ExtResource("13_3r0al")
+value = true
+metadata/_custom_type_script = "uid://djmnu1e55mp0j"
+
+[sub_resource type="Resource" id="Resource_jrwam"]
+resource_local_to_scene = true
+resource_name = "is_active_pack_card"
+script = ExtResource("13_3r0al")
+metadata/_custom_type_script = "uid://djmnu1e55mp0j"
+
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_k50lw"]
+
+[sub_resource type="Resource" id="Resource_oqeg1"]
+script = ExtResource("23_ab62b")
+value = 0
+metadata/_custom_type_script = "uid://8myr58nwfvfg"
+
+[sub_resource type="Resource" id="Resource_t7ygc"]
+script = ExtResource("23_ab62b")
+value = 0
+metadata/_custom_type_script = "uid://8myr58nwfvfg"
+
+[sub_resource type="Resource" id="Resource_4cst2"]
+script = ExtResource("23_ab62b")
+value = 0
+metadata/_custom_type_script = "uid://8myr58nwfvfg"
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2h030"]
 
@@ -98,6 +164,22 @@ shader_parameter/y_rot = 0.0
 shader_parameter/x_rot = 0.0
 shader_parameter/inset = 0.0
 
+[sub_resource type="Resource" id="Resource_8m7k3"]
+script = ExtResource("26_6vyr0")
+metadata/_custom_type_script = "uid://bxgs3dw2ym11j"
+
+[sub_resource type="Resource" id="Resource_kkd5q"]
+resource_local_to_scene = true
+resource_name = "is_pack_card"
+script = ExtResource("13_3r0al")
+metadata/_custom_type_script = "uid://djmnu1e55mp0j"
+
+[sub_resource type="Resource" id="Resource_fc40o"]
+resource_local_to_scene = true
+resource_name = "is_active_pack_card"
+script = ExtResource("13_3r0al")
+metadata/_custom_type_script = "uid://djmnu1e55mp0j"
+
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_dp0h7"]
 resource_local_to_scene = true
 shader = ExtResource("4_6px0d")
@@ -106,6 +188,18 @@ shader_parameter/cull_back = true
 shader_parameter/y_rot = 0.0
 shader_parameter/x_rot = 0.0
 shader_parameter/inset = 0.0
+
+[sub_resource type="Resource" id="Resource_pti7k"]
+resource_local_to_scene = true
+resource_name = "is_pack_card"
+script = ExtResource("13_3r0al")
+metadata/_custom_type_script = "uid://djmnu1e55mp0j"
+
+[sub_resource type="Resource" id="Resource_mh6vc"]
+resource_local_to_scene = true
+resource_name = "is_active_pack_card"
+script = ExtResource("13_3r0al")
+metadata/_custom_type_script = "uid://djmnu1e55mp0j"
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_oin8c"]
 resource_local_to_scene = true
@@ -116,6 +210,18 @@ shader_parameter/y_rot = 0.0
 shader_parameter/x_rot = 0.0
 shader_parameter/inset = 0.0
 
+[sub_resource type="Resource" id="Resource_ab62b"]
+resource_local_to_scene = true
+resource_name = "is_pack_card"
+script = ExtResource("13_3r0al")
+metadata/_custom_type_script = "uid://djmnu1e55mp0j"
+
+[sub_resource type="Resource" id="Resource_eikqv"]
+resource_local_to_scene = true
+resource_name = "is_active_pack_card"
+script = ExtResource("13_3r0al")
+metadata/_custom_type_script = "uid://djmnu1e55mp0j"
+
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_dt2wr"]
 resource_local_to_scene = true
 shader = ExtResource("4_6px0d")
@@ -125,6 +231,18 @@ shader_parameter/y_rot = 0.0
 shader_parameter/x_rot = 0.0
 shader_parameter/inset = 0.0
 
+[sub_resource type="Resource" id="Resource_37ebo"]
+resource_local_to_scene = true
+resource_name = "is_pack_card"
+script = ExtResource("13_3r0al")
+metadata/_custom_type_script = "uid://djmnu1e55mp0j"
+
+[sub_resource type="Resource" id="Resource_sxktb"]
+resource_local_to_scene = true
+resource_name = "is_active_pack_card"
+script = ExtResource("13_3r0al")
+metadata/_custom_type_script = "uid://djmnu1e55mp0j"
+
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_kryo7"]
 resource_local_to_scene = true
 shader = ExtResource("4_6px0d")
@@ -133,6 +251,18 @@ shader_parameter/cull_back = true
 shader_parameter/y_rot = 0.0
 shader_parameter/x_rot = 0.0
 shader_parameter/inset = 0.0
+
+[sub_resource type="Resource" id="Resource_aw5u7"]
+resource_local_to_scene = true
+resource_name = "is_pack_card"
+script = ExtResource("13_3r0al")
+metadata/_custom_type_script = "uid://djmnu1e55mp0j"
+
+[sub_resource type="Resource" id="Resource_kpoiw"]
+resource_local_to_scene = true
+resource_name = "is_active_pack_card"
+script = ExtResource("13_3r0al")
+metadata/_custom_type_script = "uid://djmnu1e55mp0j"
 
 [sub_resource type="Animation" id="Animation_a6oyl"]
 length = 0.001
@@ -211,19 +341,134 @@ tracks/5/keys = {
 tracks/6/type = "value"
 tracks/6/imported = false
 tracks/6/enabled = true
-tracks/6/path = NodePath("VBoxContainer/CardPack/PanelContainer/Panel/MarginContainer/VBoxContainer/Header:modulate")
+tracks/6/path = NodePath("VBoxContainer/CardPack/PanelContainer/Panel/MarginContainer/VBoxContainer/APDeckCardPack:modulate")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Color(1, 1, 1, 0)]
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_mh6vc"]
+resource_name = "hide_fast"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.06666667, 0.36666667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("VBoxContainer/CardPack:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.06666667, 0.36666667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("VBoxContainer/CardPack:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.06666667, 0.36666667, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [true, true, false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("VBoxContainer/CardPack/PanelContainer:scale")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.33333334),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(0.4, 0.4)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("SelectCards:playing")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_eikqv"]
+resource_name = "hide_slow"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.7, 0.96666664),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("VBoxContainer/CardPack:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.7, 0.96666664),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("VBoxContainer/CardPack:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.7, 0.96666664, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [true, true, true, false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("VBoxContainer/CardPack/PanelContainer:scale")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.6333333, 0.93333334),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1, 1), Vector2(0.4, 0.4)]
 }
 
 [sub_resource type="Animation" id="Animation_4om43"]
 resource_name = "show_cardpack_2"
-length = 2.5
+length = 2.2
 step = 0.05
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -276,47 +521,47 @@ tracks/3/keys = {
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("VBoxContainer/CardPack/PanelContainer/Panel/MarginContainer/VBoxContainer/HBoxContainer/HBoxContainer/Label:visible_ratio")
+tracks/4/path = NodePath("VBoxContainer/CardPack/PanelContainer/Panel/MarginContainer/VBoxContainer/APDeckCardPack:clip_contents")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [1.0]
-}
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("VBoxContainer/CardPack/PanelContainer/Panel/MarginContainer/VBoxContainer/APDeckCardPack:clip_contents")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
 "times": PackedFloat32Array(0, 0.9),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [true, false]
 }
-tracks/6/type = "value"
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/path = NodePath("VBoxContainer/CardPack/PanelContainer:scale")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/keys = {
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("VBoxContainer/CardPack/PanelContainer:scale")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
 "times": PackedFloat32Array(0, 0.4),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Vector2(0.4, 0.4), Vector2(1, 1)]
 }
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("VBoxContainer/CardPack/PanelContainer/Panel/MarginContainer/VBoxContainer/HBoxContainer:modulate")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 1.6, 2.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
 tracks/7/type = "value"
 tracks/7/imported = false
 tracks/7/enabled = true
-tracks/7/path = NodePath("VBoxContainer/CardPack/PanelContainer/Panel/MarginContainer/VBoxContainer/HBoxContainer:modulate")
+tracks/7/path = NodePath("VBoxContainer/CardPack/PanelContainer/Panel/MarginContainer/VBoxContainer/VBoxContainer:modulate")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/keys = {
-"times": PackedFloat32Array(0, 1.6, 2.2),
+"times": PackedFloat32Array(0, 1.6000001, 2.2),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
@@ -324,31 +569,21 @@ tracks/7/keys = {
 tracks/8/type = "value"
 tracks/8/imported = false
 tracks/8/enabled = true
-tracks/8/path = NodePath("VBoxContainer/CardPack/PanelContainer/Panel/MarginContainer/VBoxContainer/VBoxContainer:modulate")
+tracks/8/path = NodePath("VBoxContainer/CardPack/PanelContainer/Panel/MarginContainer/VBoxContainer/APDeckCardPack:modulate")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
 tracks/8/keys = {
-"times": PackedFloat32Array(0, 1.6000001, 2.2),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
-}
-tracks/9/type = "value"
-tracks/9/imported = false
-tracks/9/enabled = true
-tracks/9/path = NodePath("VBoxContainer/CardPack/PanelContainer/Panel/MarginContainer/VBoxContainer/Header:modulate")
-tracks/9/interp = 1
-tracks/9/loop_wrap = true
-tracks/9/keys = {
-"times": PackedFloat32Array(0, 0.35, 0.65000004),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+"values": [Color(1, 1, 1, 1)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_4qkwv"]
 _data = {
 &"RESET": SubResource("Animation_a6oyl"),
+&"hide_fast": SubResource("Animation_mh6vc"),
+&"hide_slow": SubResource("Animation_eikqv"),
 &"show_cardpack_2": SubResource("Animation_4om43")
 }
 
@@ -372,26 +607,26 @@ grow_vertical = 2
 alignment = 2
 
 [node name="CardPack" type="Control" parent="VBoxContainer"]
+visible = false
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="PanelContainer" type="Panel" parent="VBoxContainer/CardPack"]
+[node name="PanelContainer" type="Control" parent="VBoxContainer/CardPack"]
 clip_children = 1
-custom_minimum_size = Vector2(512, 288)
+custom_minimum_size = Vector2(128, 128)
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -256.0
-offset_top = -144.0
-offset_right = 256.0
-offset_bottom = 144.0
+offset_left = -64.0
+offset_top = -64.0
+offset_right = 64.0
+offset_bottom = 64.0
 grow_horizontal = 2
 grow_vertical = 2
-pivot_offset = Vector2(256, 288)
-theme_override_styles/panel = SubResource("StyleBoxEmpty_qf1oa")
+pivot_offset = Vector2(64, 64)
 
 [node name="Panel" type="PanelContainer" parent="VBoxContainer/CardPack/PanelContainer"]
 layout_mode = 1
@@ -400,30 +635,65 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_styles/panel = SubResource("StyleBoxTexture_28ymf")
+theme_override_styles/panel = SubResource("StyleBoxEmpty_pti7k")
 
-[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/CardPack/PanelContainer/Panel"]
+[node name="Frame" type="NinePatchRect" parent="VBoxContainer/CardPack/PanelContainer/Panel"]
 layout_mode = 2
-theme_override_constants/margin_left = 16
-theme_override_constants/margin_top = 12
-theme_override_constants/margin_right = 16
-theme_override_constants/margin_bottom = 10
+texture = ExtResource("2_ab62b")
+region_rect = Rect2(0, 0, 128, 128)
+patch_margin_left = 60
+patch_margin_top = 60
+patch_margin_right = 58
+patch_margin_bottom = 58
 
-[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/CardPack/PanelContainer/Panel/MarginContainer"]
-layout_mode = 2
-alignment = 1
+[node name="Banner" type="NinePatchRect" parent="VBoxContainer/CardPack/PanelContainer/Panel/Frame"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -177.0
+offset_top = -12.0
+offset_right = 177.0
+offset_bottom = 69.0
+grow_horizontal = 2
+texture = ExtResource("2_jrwam")
+region_rect = Rect2(0, 0, 256, 64)
+patch_margin_left = 100
+patch_margin_top = 40
+patch_margin_right = 116
+patch_margin_bottom = 34
+metadata/_edit_group_ = true
 
-[node name="Header" type="Label" parent="VBoxContainer/CardPack/PanelContainer/Panel/MarginContainer/VBoxContainer"]
-layout_mode = 2
+[node name="Header" type="Label" parent="VBoxContainer/CardPack/PanelContainer/Panel/Frame/Banner"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 theme_override_constants/outline_size = 1
 theme_override_font_sizes/font_size = 1
 text = "Набор карт"
 label_settings = ExtResource("2_i5yr4")
 horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/CardPack/PanelContainer/Panel"]
+layout_mode = 2
+theme_override_constants/margin_left = 33
+theme_override_constants/margin_top = 72
+theme_override_constants/margin_right = 33
+theme_override_constants/margin_bottom = 22
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/CardPack/PanelContainer/Panel/MarginContainer"]
+layout_mode = 2
+alignment = 1
 
 [node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/CardPack/PanelContainer/Panel/MarginContainer/VBoxContainer"]
-custom_minimum_size = Vector2(0, 35)
+modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(0, 20)
 layout_mode = 2
+size_flags_vertical = 8
 
 [node name="Panel" type="Panel" parent="VBoxContainer/CardPack/PanelContainer/Panel/MarginContainer/VBoxContainer/HBoxContainer"]
 visible = false
@@ -466,9 +736,10 @@ expand_mode = 1
 stretch_mode = 5
 
 [node name="TextureRect2" type="TextureRect" parent="VBoxContainer/CardPack/PanelContainer/Panel/MarginContainer/VBoxContainer/HBoxContainer/HBoxContainer"]
-material = ExtResource("11_i5yr4")
-custom_minimum_size = Vector2(16, 16)
+modulate = Color(0.14767182, 0.14767179, 0.14767179, 1)
+custom_minimum_size = Vector2(18, 18)
 layout_mode = 2
+size_flags_horizontal = 4
 texture = ExtResource("4_1dhve")
 expand_mode = 1
 stretch_mode = 5
@@ -497,31 +768,41 @@ stretch_mode = 5
 custom_minimum_size = Vector2(0, 120)
 layout_mode = 2
 script = ExtResource("2_jtq55")
+add_child_alignment = 1
 alignment = 1
 separation = 8.0
 speed_move = 0.35
+transition_type = 0
+can_drop = false
 metadata/_custom_type_script = "uid://dn354cgweyjxg"
 
 [node name="Card" parent="VBoxContainer/CardPack/PanelContainer/Panel/MarginContainer/VBoxContainer/APDeckCardPack" instance=ExtResource("3_hblv7")]
 material = SubResource("ShaderMaterial_hwbwf")
 layout_mode = 2
+metadata/is_pack_card = SubResource("Resource_6vyr0")
+metadata/is_active_pack_card = SubResource("Resource_mnmi3")
 
 [node name="Card2" parent="VBoxContainer/CardPack/PanelContainer/Panel/MarginContainer/VBoxContainer/APDeckCardPack" instance=ExtResource("3_hblv7")]
 material = SubResource("ShaderMaterial_ka15h")
 layout_mode = 2
+metadata/is_pack_card = SubResource("Resource_m1dll")
+metadata/is_active_pack_card = SubResource("Resource_3r0al")
 
 [node name="Card3" parent="VBoxContainer/CardPack/PanelContainer/Panel/MarginContainer/VBoxContainer/APDeckCardPack" instance=ExtResource("3_hblv7")]
 material = SubResource("ShaderMaterial_6e6x1")
 layout_mode = 2
+metadata/is_pack_card = SubResource("Resource_rvtym")
+metadata/is_active_pack_card = SubResource("Resource_jrwam")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/CardPack/PanelContainer/Panel/MarginContainer/VBoxContainer"]
+modulate = Color(1, 1, 1, 0)
 custom_minimum_size = Vector2(0, 100)
 layout_mode = 2
 theme_override_constants/separation = 12
 alignment = 1
 
 [node name="ControlBtns" type="HBoxContainer" parent="VBoxContainer/CardPack/PanelContainer/Panel/MarginContainer/VBoxContainer/VBoxContainer"]
-custom_minimum_size = Vector2(0, 30)
+custom_minimum_size = Vector2(0, 40)
 layout_mode = 2
 theme_override_constants/separation = 8
 alignment = 1
@@ -530,29 +811,74 @@ alignment = 1
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxEmpty_k50lw")
 
+[node name="NinePatchRect4" type="NinePatchRect" parent="VBoxContainer/CardPack/PanelContainer/Panel/MarginContainer/VBoxContainer/VBoxContainer/ControlBtns/Skip"]
+layout_mode = 2
+texture = ExtResource("26_ab62b")
+region_rect = Rect2(0, 0, 48, 24)
+patch_margin_left = 8
+patch_margin_top = 16
+patch_margin_right = 8
+patch_margin_bottom = 16
+
 [node name="ButtonSkip" type="Button" parent="VBoxContainer/CardPack/PanelContainer/Panel/MarginContainer/VBoxContainer/VBoxContainer/ControlBtns/Skip"]
 layout_mode = 2
 mouse_default_cursor_shape = 2
+flat = true
 
-[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/CardPack/PanelContainer/Panel/MarginContainer/VBoxContainer/VBoxContainer/ControlBtns/Skip"]
+[node name="APChainSetNum" type="Node" parent="VBoxContainer/CardPack/PanelContainer/Panel/MarginContainer/VBoxContainer/VBoxContainer/ControlBtns/Skip/ButtonSkip" node_paths=PackedStringArray("node_emitter")]
+script = ExtResource("21_kkd5q")
+num_a = ExtResource("13_noonn")
+num_b = ExtResource("13_qf1oa")
+operation = 1
+node_emitter = NodePath("..")
+watch_signal = 0
+metadata/_custom_type_script = "uid://cldopw0r4n1wj"
+
+[node name="APChainAnimPlay" type="Node" parent="VBoxContainer/CardPack/PanelContainer/Panel/MarginContainer/VBoxContainer/VBoxContainer/ControlBtns/Skip/ButtonSkip" node_paths=PackedStringArray("animation_player", "node_emitter")]
+script = ExtResource("7_0o5b8")
+animation_player = NodePath("../../../../../../../../../../../CardPack")
+speed = 2.0
+anim_name = 1
+node_emitter = NodePath("..")
+watch_signal = 0
+metadata/_custom_type_script = "uid://dfnv5lgi83cdo"
+
+[node name="APChainSetBool" type="Node" parent="VBoxContainer/CardPack/PanelContainer/Panel/MarginContainer/VBoxContainer/VBoxContainer/ControlBtns/Skip/ButtonSkip/APChainAnimPlay" node_paths=PackedStringArray("node_emitter")]
+script = ExtResource("17_ipcpg")
+var_bool = ExtResource("6_5gjnk")
+new_value = false
+node_emitter = NodePath("..")
+watch_signal = 0
+metadata/_custom_type_script = "uid://xv7plkxnebcm"
+
+[node name="APChainDelChilds" type="Node" parent="VBoxContainer/CardPack/PanelContainer/Panel/MarginContainer/VBoxContainer/VBoxContainer/ControlBtns/Skip/ButtonSkip" node_paths=PackedStringArray("node_parent", "node_emitter")]
+script = ExtResource("29_k3mva")
+node_parent = NodePath("../../../../../APDeckCardPack")
+delete_all = true
+node_emitter = NodePath("..")
+watch_signal = 0
+metadata/_custom_type_script = "uid://c6lf3egn1f263"
+
+[node name="Content" type="MarginContainer" parent="VBoxContainer/CardPack/PanelContainer/Panel/MarginContainer/VBoxContainer/VBoxContainer/ControlBtns/Skip"]
 layout_mode = 2
 mouse_filter = 2
 theme_override_constants/margin_left = 4
-theme_override_constants/margin_right = 4
+theme_override_constants/margin_right = 6
+metadata/_edit_group_ = true
 
-[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/CardPack/PanelContainer/Panel/MarginContainer/VBoxContainer/VBoxContainer/ControlBtns/Skip/MarginContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/CardPack/PanelContainer/Panel/MarginContainer/VBoxContainer/VBoxContainer/ControlBtns/Skip/Content"]
 layout_mode = 2
 mouse_filter = 2
 theme_override_constants/separation = 0
 
-[node name="TextureRect" type="TextureRect" parent="VBoxContainer/CardPack/PanelContainer/Panel/MarginContainer/VBoxContainer/VBoxContainer/ControlBtns/Skip/MarginContainer/HBoxContainer"]
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/CardPack/PanelContainer/Panel/MarginContainer/VBoxContainer/VBoxContainer/ControlBtns/Skip/Content/HBoxContainer"]
 material = ExtResource("11_i5yr4")
 layout_mode = 2
 mouse_filter = 2
 texture = ExtResource("10_rykh1")
 stretch_mode = 5
 
-[node name="RichTextLabel" type="RichTextLabel" parent="VBoxContainer/CardPack/PanelContainer/Panel/MarginContainer/VBoxContainer/VBoxContainer/ControlBtns/Skip/MarginContainer/HBoxContainer"]
+[node name="RichTextLabel" type="RichTextLabel" parent="VBoxContainer/CardPack/PanelContainer/Panel/MarginContainer/VBoxContainer/VBoxContainer/ControlBtns/Skip/Content/HBoxContainer"]
 custom_minimum_size = Vector2(50, 0)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -567,38 +893,147 @@ autowrap_mode = 0
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="VaRNumberBBCode" type="Node" parent="VBoxContainer/CardPack/PanelContainer/Panel/MarginContainer/VBoxContainer/VBoxContainer/ControlBtns/Skip/MarginContainer/HBoxContainer/RichTextLabel"]
+[node name="VaRNumberBBCode" type="Node" parent="VBoxContainer/CardPack/PanelContainer/Panel/MarginContainer/VBoxContainer/VBoxContainer/ControlBtns/Skip/Content/HBoxContainer/RichTextLabel"]
 script = ExtResource("11_vsgyk")
 res = Array[ExtResource("13_vsgyk")]([ExtResource("13_qf1oa")])
 metadata/_custom_type_script = "uid://ofk03pmu1sfo"
 
 [node name="Select" type="PanelContainer" parent="VBoxContainer/CardPack/PanelContainer/Panel/MarginContainer/VBoxContainer/VBoxContainer/ControlBtns"]
+custom_minimum_size = Vector2(85, 0)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxEmpty_k50lw")
 
-[node name="ButtonSelect" type="Button" parent="VBoxContainer/CardPack/PanelContainer/Panel/MarginContainer/VBoxContainer/VBoxContainer/ControlBtns/Select"]
+[node name="CanSelect" type="NinePatchRect" parent="VBoxContainer/CardPack/PanelContainer/Panel/MarginContainer/VBoxContainer/VBoxContainer/ControlBtns/Select"]
+visible = false
 layout_mode = 2
-mouse_default_cursor_shape = 2
+texture = ExtResource("26_ab62b")
+region_rect = Rect2(0, 0, 48, 24)
+patch_margin_left = 8
+patch_margin_top = 16
+patch_margin_right = 8
+patch_margin_bottom = 16
 
-[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/CardPack/PanelContainer/Panel/MarginContainer/VBoxContainer/VBoxContainer/ControlBtns/Select"]
+[node name="ButtonCanSelect" type="Button" parent="VBoxContainer/CardPack/PanelContainer/Panel/MarginContainer/VBoxContainer/VBoxContainer/ControlBtns/Select/CanSelect"]
+layout_mode = 0
+offset_right = 85.0
+offset_bottom = 40.0
+mouse_default_cursor_shape = 2
+flat = true
+
+[node name="APChainMoveChilds" type="Node" parent="VBoxContainer/CardPack/PanelContainer/Panel/MarginContainer/VBoxContainer/VBoxContainer/ControlBtns/Select/CanSelect/ButtonCanSelect" node_paths=PackedStringArray("parent", "new_parent", "node_emitter")]
+script = ExtResource("20_3r0al")
+parent = NodePath("../../../../../../APDeckCardPack")
+new_parent = NodePath("../../../../../../../../../../../Panel/Panel/APDeckHand")
+with_metadata = Dictionary[String, Variant]({
+"is_active_pack_card": true
+})
+new_metadata = Dictionary[String, Variant]({
+"is_active_pack_card": false,
+"is_pack_card": false
+})
+node_emitter = NodePath("..")
+watch_signal = 0
+metadata/_custom_type_script = "uid://j7rvso2o4yet"
+
+[node name="APChainDelChilds" type="Node" parent="VBoxContainer/CardPack/PanelContainer/Panel/MarginContainer/VBoxContainer/VBoxContainer/ControlBtns/Select/CanSelect/ButtonCanSelect/APChainMoveChilds" node_paths=PackedStringArray("node_parent", "node_emitter")]
+script = ExtResource("29_k3mva")
+node_parent = NodePath("../../../../../../../APDeckCardPack")
+delete_all = true
+node_emitter = NodePath("..")
+watch_signal = 2
+metadata/_custom_type_script = "uid://c6lf3egn1f263"
+
+[node name="APChainAnimPlay2" type="Node" parent="VBoxContainer/CardPack/PanelContainer/Panel/MarginContainer/VBoxContainer/VBoxContainer/ControlBtns/Select/CanSelect/ButtonCanSelect" node_paths=PackedStringArray("animation_player", "node_emitter")]
+script = ExtResource("7_0o5b8")
+animation_player = NodePath("../../../../../../../../../../../../CardPack")
+speed = 1.8
+anim_name = 2
+node_emitter = NodePath("..")
+watch_signal = 0
+metadata/_custom_type_script = "uid://dfnv5lgi83cdo"
+
+[node name="APChainSetBool" type="Node" parent="VBoxContainer/CardPack/PanelContainer/Panel/MarginContainer/VBoxContainer/VBoxContainer/ControlBtns/Select/CanSelect/ButtonCanSelect/APChainAnimPlay2" node_paths=PackedStringArray("node_emitter")]
+script = ExtResource("17_ipcpg")
+var_bool = ExtResource("6_5gjnk")
+new_value = false
+node_emitter = NodePath("..")
+watch_signal = 0
+metadata/_custom_type_script = "uid://xv7plkxnebcm"
+
+[node name="APChainSetNum" type="Node" parent="VBoxContainer/CardPack/PanelContainer/Panel/MarginContainer/VBoxContainer/VBoxContainer/ControlBtns/Select/CanSelect/ButtonCanSelect/APChainAnimPlay2/APChainSetBool" node_paths=PackedStringArray("node_emitter")]
+script = ExtResource("21_kkd5q")
+num_a = ExtResource("22_pti7k")
+num_b = SubResource("Resource_oqeg1")
+node_emitter = NodePath("..")
+watch_signal = 1
+metadata/_custom_type_script = "uid://cldopw0r4n1wj"
+
+[node name="APChainCaller" type="Node" parent="VBoxContainer/CardPack/PanelContainer/Panel/MarginContainer/VBoxContainer/VBoxContainer/ControlBtns/Select/CanSelect/ButtonCanSelect" node_paths=PackedStringArray("node_emitter")]
+script = ExtResource("22_3d4an")
+time_boost = 0.6
+num_x = ExtResource("22_pti7k")
+calls_per_second = ExtResource("23_24223")
+test_num_x = 4
+start_delay = 0.05
+node_emitter = NodePath("..")
+watch_signal = 0
+metadata/_custom_type_script = "uid://bx1dlto0sni15"
+
+[node name="APChainAudioPlay" type="Node" parent="VBoxContainer/CardPack/PanelContainer/Panel/MarginContainer/VBoxContainer/VBoxContainer/ControlBtns/Select/CanSelect/ButtonCanSelect/APChainCaller" node_paths=PackedStringArray("player", "node_emitter")]
+script = ExtResource("28_8cou2")
+player = NodePath("../../../../../../../../../../../../../CardSpawn")
+node_emitter = NodePath("..")
+watch_signal = 0
+metadata/_custom_type_script = "uid://dj04ffy0nu74n"
+
+[node name="CantSelect" type="NinePatchRect" parent="VBoxContainer/CardPack/PanelContainer/Panel/MarginContainer/VBoxContainer/VBoxContainer/ControlBtns/Select"]
 layout_mode = 2
+mouse_default_cursor_shape = 8
+texture = ExtResource("19_ab62b")
+region_rect = Rect2(0, 0, 48, 24)
+patch_margin_left = 8
+patch_margin_top = 16
+patch_margin_right = 8
+patch_margin_bottom = 16
+
+[node name="ButtonCantSelect" type="Button" parent="VBoxContainer/CardPack/PanelContainer/Panel/MarginContainer/VBoxContainer/VBoxContainer/ControlBtns/Select/CantSelect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_default_cursor_shape = 8
+flat = true
+
+[node name="APChainAudioPlay" type="Node" parent="VBoxContainer/CardPack/PanelContainer/Panel/MarginContainer/VBoxContainer/VBoxContainer/ControlBtns/Select/CantSelect/ButtonCantSelect" node_paths=PackedStringArray("player", "node_emitter")]
+script = ExtResource("28_8cou2")
+player = NodePath("../../../../../../../../../../../../ButtonError")
+node_emitter = NodePath("..")
+watch_signal = 0
+metadata/_custom_type_script = "uid://dj04ffy0nu74n"
+
+[node name="Content" type="MarginContainer" parent="VBoxContainer/CardPack/PanelContainer/Panel/MarginContainer/VBoxContainer/VBoxContainer/ControlBtns/Select"]
+layout_mode = 2
+size_flags_horizontal = 4
 mouse_filter = 2
 theme_override_constants/margin_left = 4
 theme_override_constants/margin_right = 4
+metadata/_edit_group_ = true
 
-[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/CardPack/PanelContainer/Panel/MarginContainer/VBoxContainer/VBoxContainer/ControlBtns/Select/MarginContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/CardPack/PanelContainer/Panel/MarginContainer/VBoxContainer/VBoxContainer/ControlBtns/Select/Content"]
 layout_mode = 2
 mouse_filter = 2
 theme_override_constants/separation = 0
 
-[node name="TextureRect" type="TextureRect" parent="VBoxContainer/CardPack/PanelContainer/Panel/MarginContainer/VBoxContainer/VBoxContainer/ControlBtns/Select/MarginContainer/HBoxContainer"]
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/CardPack/PanelContainer/Panel/MarginContainer/VBoxContainer/VBoxContainer/ControlBtns/Select/Content/HBoxContainer"]
 material = ExtResource("11_i5yr4")
 layout_mode = 2
 mouse_filter = 2
 texture = ExtResource("9_4om43")
 stretch_mode = 5
 
-[node name="RichTextLabel" type="RichTextLabel" parent="VBoxContainer/CardPack/PanelContainer/Panel/MarginContainer/VBoxContainer/VBoxContainer/ControlBtns/Select/MarginContainer/HBoxContainer"]
+[node name="RichTextLabel" type="RichTextLabel" parent="VBoxContainer/CardPack/PanelContainer/Panel/MarginContainer/VBoxContainer/VBoxContainer/ControlBtns/Select/Content/HBoxContainer"]
 custom_minimum_size = Vector2(50, 0)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -613,33 +1048,184 @@ autowrap_mode = 0
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="PickCardsPerPack=changed" type="Node" parent="VBoxContainer/CardPack/PanelContainer/Panel/MarginContainer/VBoxContainer/VBoxContainer/ControlBtns/Select"]
+script = ExtResource("5_6px0d")
+_signal = "changed"
+resource = ExtResource("22_pti7k")
+signal = "changed"
+metadata/_custom_type_script = "uid://u1gglou2n5jq"
+
+[node name="APChainIfNum" type="Node" parent="VBoxContainer/CardPack/PanelContainer/Panel/MarginContainer/VBoxContainer/VBoxContainer/ControlBtns/Select/PickCardsPerPack=changed" node_paths=PackedStringArray("node_emitter")]
+script = ExtResource("28_37ebo")
+num_a = ExtResource("22_pti7k")
+num_b = SubResource("Resource_t7ygc")
+node_emitter = NodePath("..")
+watch_signal = 0
+metadata/_custom_type_script = "uid://up8up6hch40i"
+
+[node name="HideCanSelect" type="Node" parent="VBoxContainer/CardPack/PanelContainer/Panel/MarginContainer/VBoxContainer/VBoxContainer/ControlBtns/Select/PickCardsPerPack=changed/APChainIfNum" node_paths=PackedStringArray("nodes_visible_true", "nodes_visible_false", "node_emitter")]
+script = ExtResource("29_aw5u7")
+nodes_visible_true = [NodePath("../../../CantSelect")]
+nodes_visible_false = [NodePath("../../../CanSelect")]
+node_emitter = NodePath("..")
+watch_signal = 0
+metadata/_custom_type_script = "uid://bqn6e76istclq"
+
+[node name="ShowCanSelect" type="Node" parent="VBoxContainer/CardPack/PanelContainer/Panel/MarginContainer/VBoxContainer/VBoxContainer/ControlBtns/Select/PickCardsPerPack=changed/APChainIfNum" node_paths=PackedStringArray("nodes_visible_true", "nodes_visible_false", "node_emitter")]
+script = ExtResource("29_aw5u7")
+nodes_visible_true = [NodePath("../../../CanSelect")]
+nodes_visible_false = [NodePath("../../../CantSelect")]
+node_emitter = NodePath("..")
+watch_signal = 1
+metadata/_custom_type_script = "uid://bqn6e76istclq"
+
 [node name="Rerol" type="PanelContainer" parent="VBoxContainer/CardPack/PanelContainer/Panel/MarginContainer/VBoxContainer/VBoxContainer/ControlBtns"]
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxEmpty_k50lw")
 
-[node name="ButtonRerol" type="Button" parent="VBoxContainer/CardPack/PanelContainer/Panel/MarginContainer/VBoxContainer/VBoxContainer/ControlBtns/Rerol"]
+[node name="CanRerol" type="NinePatchRect" parent="VBoxContainer/CardPack/PanelContainer/Panel/MarginContainer/VBoxContainer/VBoxContainer/ControlBtns/Rerol"]
 layout_mode = 2
-mouse_default_cursor_shape = 2
+texture = ExtResource("26_ab62b")
+region_rect = Rect2(0, 0, 48, 24)
+patch_margin_left = 8
+patch_margin_top = 16
+patch_margin_right = 8
+patch_margin_bottom = 16
 
-[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/CardPack/PanelContainer/Panel/MarginContainer/VBoxContainer/VBoxContainer/ControlBtns/Rerol"]
+[node name="ButtonCanRerol" type="Button" parent="VBoxContainer/CardPack/PanelContainer/Panel/MarginContainer/VBoxContainer/VBoxContainer/ControlBtns/Rerol/CanRerol"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_default_cursor_shape = 2
+theme = ExtResource("18_2841o")
+theme_type_variation = &"ButtonLong"
+flat = true
+
+[node name="SET_PlayAudioCardPackSelect=false" type="Node" parent="VBoxContainer/CardPack/PanelContainer/Panel/MarginContainer/VBoxContainer/VBoxContainer/ControlBtns/Rerol/CanRerol/ButtonCanRerol" node_paths=PackedStringArray("node_emitter")]
+script = ExtResource("17_ipcpg")
+var_bool = ExtResource("35_kpoiw")
+new_value = false
+node_emitter = NodePath("..")
+watch_signal = 0
+metadata/_custom_type_script = "uid://xv7plkxnebcm"
+
+[node name="SET_PickCardsPerPack" type="Node" parent="VBoxContainer/CardPack/PanelContainer/Panel/MarginContainer/VBoxContainer/VBoxContainer/ControlBtns/Rerol/CanRerol/ButtonCanRerol/SET_PlayAudioCardPackSelect=false" node_paths=PackedStringArray("node_emitter")]
+script = ExtResource("21_kkd5q")
+num_a = ExtResource("22_pti7k")
+num_b = SubResource("Resource_4cst2")
+node_emitter = NodePath("..")
+watch_signal = 1
+metadata/_custom_type_script = "uid://cldopw0r4n1wj"
+
+[node name="SET_PlayAudioCardPackSelect=true" type="Node" parent="VBoxContainer/CardPack/PanelContainer/Panel/MarginContainer/VBoxContainer/VBoxContainer/ControlBtns/Rerol/CanRerol/ButtonCanRerol/SET_PlayAudioCardPackSelect=false/SET_PickCardsPerPack" node_paths=PackedStringArray("node_emitter")]
+script = ExtResource("17_ipcpg")
+var_bool = ExtResource("35_kpoiw")
+node_emitter = NodePath("..")
+watch_signal = 1
+metadata/_custom_type_script = "uid://xv7plkxnebcm"
+
+[node name="SET_RerolQTY" type="Node" parent="VBoxContainer/CardPack/PanelContainer/Panel/MarginContainer/VBoxContainer/VBoxContainer/ControlBtns/Rerol/CanRerol/ButtonCanRerol" node_paths=PackedStringArray("node_emitter")]
+script = ExtResource("21_kkd5q")
+num_a = ExtResource("13_noonn")
+num_b = ExtResource("15_qf1oa")
+operation = 2
+node_emitter = NodePath("..")
+watch_signal = 0
+metadata/_custom_type_script = "uid://cldopw0r4n1wj"
+
+[node name="APChainDelChilds" type="Node" parent="VBoxContainer/CardPack/PanelContainer/Panel/MarginContainer/VBoxContainer/VBoxContainer/ControlBtns/Rerol/CanRerol/ButtonCanRerol" node_paths=PackedStringArray("node_parent", "node_emitter")]
+script = ExtResource("29_k3mva")
+node_parent = NodePath("../../../../../../APDeckCardPack")
+delete_all = true
+node_emitter = NodePath("..")
+watch_signal = 0
+metadata/_custom_type_script = "uid://c6lf3egn1f263"
+
+[node name="APChainAudioPlay" type="Node" parent="VBoxContainer/CardPack/PanelContainer/Panel/MarginContainer/VBoxContainer/VBoxContainer/ControlBtns/Rerol/CanRerol/ButtonCanRerol/APChainDelChilds" node_paths=PackedStringArray("player", "node_emitter")]
+script = ExtResource("28_8cou2")
+player = NodePath("../../../../../../../../../../../../../ButtonRerol")
+node_emitter = NodePath("..")
+watch_signal = 1
+metadata/_custom_type_script = "uid://dj04ffy0nu74n"
+
+[node name="APChainCaller2" type="Node" parent="VBoxContainer/CardPack/PanelContainer/Panel/MarginContainer/VBoxContainer/VBoxContainer/ControlBtns/Rerol/CanRerol/ButtonCanRerol/APChainDelChilds" node_paths=PackedStringArray("node_emitter")]
+script = ExtResource("22_3d4an")
+num_x = ExtResource("23_dtumk")
+calls_per_second = ExtResource("23_24223")
+test_num_x = 4
+start_delay = 0.5
+node_emitter = NodePath("..")
+watch_signal = 1
+metadata/_custom_type_script = "uid://bx1dlto0sni15"
+
+[node name="APChainAudioPlay" type="Node" parent="VBoxContainer/CardPack/PanelContainer/Panel/MarginContainer/VBoxContainer/VBoxContainer/ControlBtns/Rerol/CanRerol/ButtonCanRerol/APChainDelChilds/APChainCaller2" node_paths=PackedStringArray("player", "node_emitter")]
+script = ExtResource("28_8cou2")
+player = NodePath("../../../../../../../../../../../../../../CardSpawn")
+node_emitter = NodePath("..")
+watch_signal = 0
+metadata/_custom_type_script = "uid://dj04ffy0nu74n"
+
+[node name="APChainAddChildRand" type="Node" parent="VBoxContainer/CardPack/PanelContainer/Panel/MarginContainer/VBoxContainer/VBoxContainer/ControlBtns/Rerol/CanRerol/ButtonCanRerol/APChainDelChilds/APChainCaller2" node_paths=PackedStringArray("target_parent", "node_emitter")]
+script = ExtResource("30_kryo7")
+target_parent = NodePath("../../../../../../../../APDeckCardPack")
+random = ExtResource("31_047eh")
+force_readable_name = true
+node_emitter = NodePath("..")
+watch_signal = 0
+metadata/_custom_type_script = "uid://b4dffbr30waq"
+
+[node name="CantRerol" type="NinePatchRect" parent="VBoxContainer/CardPack/PanelContainer/Panel/MarginContainer/VBoxContainer/VBoxContainer/ControlBtns/Rerol"]
+visible = false
+layout_mode = 2
+texture = ExtResource("19_ab62b")
+region_rect = Rect2(0, 0, 48, 24)
+patch_margin_left = 8
+patch_margin_top = 16
+patch_margin_right = 8
+patch_margin_bottom = 16
+
+[node name="ButtonCantRerol" type="Button" parent="VBoxContainer/CardPack/PanelContainer/Panel/MarginContainer/VBoxContainer/VBoxContainer/ControlBtns/Rerol/CantRerol"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_default_cursor_shape = 8
+theme = ExtResource("18_2841o")
+theme_type_variation = &"ButtonLong"
+flat = true
+
+[node name="APChainAudioPlay" type="Node" parent="VBoxContainer/CardPack/PanelContainer/Panel/MarginContainer/VBoxContainer/VBoxContainer/ControlBtns/Rerol/CantRerol/ButtonCantRerol" node_paths=PackedStringArray("player", "node_emitter")]
+script = ExtResource("28_8cou2")
+player = NodePath("../../../../../../../../../../../../ButtonError")
+node_emitter = NodePath("..")
+watch_signal = 0
+metadata/_custom_type_script = "uid://dj04ffy0nu74n"
+
+[node name="Content" type="MarginContainer" parent="VBoxContainer/CardPack/PanelContainer/Panel/MarginContainer/VBoxContainer/VBoxContainer/ControlBtns/Rerol"]
 layout_mode = 2
 mouse_filter = 2
 theme_override_constants/margin_left = 4
-theme_override_constants/margin_right = 4
+theme_override_constants/margin_right = 6
+metadata/_edit_group_ = true
 
-[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/CardPack/PanelContainer/Panel/MarginContainer/VBoxContainer/VBoxContainer/ControlBtns/Rerol/MarginContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/CardPack/PanelContainer/Panel/MarginContainer/VBoxContainer/VBoxContainer/ControlBtns/Rerol/Content"]
 layout_mode = 2
 mouse_filter = 2
 theme_override_constants/separation = 0
 
-[node name="TextureRect" type="TextureRect" parent="VBoxContainer/CardPack/PanelContainer/Panel/MarginContainer/VBoxContainer/VBoxContainer/ControlBtns/Rerol/MarginContainer/HBoxContainer"]
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/CardPack/PanelContainer/Panel/MarginContainer/VBoxContainer/VBoxContainer/ControlBtns/Rerol/Content/HBoxContainer"]
 material = ExtResource("11_i5yr4")
 layout_mode = 2
 mouse_filter = 2
 texture = ExtResource("9_1dhve")
 stretch_mode = 5
 
-[node name="RichTextLabel" type="RichTextLabel" parent="VBoxContainer/CardPack/PanelContainer/Panel/MarginContainer/VBoxContainer/VBoxContainer/ControlBtns/Rerol/MarginContainer/HBoxContainer"]
+[node name="RichTextLabel" type="RichTextLabel" parent="VBoxContainer/CardPack/PanelContainer/Panel/MarginContainer/VBoxContainer/VBoxContainer/ControlBtns/Rerol/Content/HBoxContainer"]
 custom_minimum_size = Vector2(50, 0)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -648,16 +1234,48 @@ mouse_filter = 2
 theme = ExtResource("18_2841o")
 theme_type_variation = &"RTL_p_shad1"
 bbcode_enabled = true
-text = "Переброс (-{RerolRemRerolQTY}🎫)"
+text = "Переброс (-{RemRerolQTY}🎫)"
 fit_content = true
 autowrap_mode = 0
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="VaRNumberBBCode" type="Node" parent="VBoxContainer/CardPack/PanelContainer/Panel/MarginContainer/VBoxContainer/VBoxContainer/ControlBtns/Rerol/MarginContainer/HBoxContainer/RichTextLabel"]
+[node name="VaRNumberBBCode" type="Node" parent="VBoxContainer/CardPack/PanelContainer/Panel/MarginContainer/VBoxContainer/VBoxContainer/ControlBtns/Rerol/Content/HBoxContainer/RichTextLabel"]
 script = ExtResource("11_vsgyk")
 res = Array[ExtResource("13_vsgyk")]([ExtResource("15_qf1oa")])
 metadata/_custom_type_script = "uid://ofk03pmu1sfo"
+
+[node name="APActivatorResource" type="Node" parent="VBoxContainer/CardPack/PanelContainer/Panel/MarginContainer/VBoxContainer/VBoxContainer/ControlBtns/Rerol"]
+script = ExtResource("5_6px0d")
+_signal = "changed"
+resource = ExtResource("13_noonn")
+signal = "changed"
+metadata/_custom_type_script = "uid://u1gglou2n5jq"
+
+[node name="APChainIfNum" type="Node" parent="VBoxContainer/CardPack/PanelContainer/Panel/MarginContainer/VBoxContainer/VBoxContainer/ControlBtns/Rerol/APActivatorResource" node_paths=PackedStringArray("node_emitter")]
+script = ExtResource("28_37ebo")
+num_a = ExtResource("13_noonn")
+num_b = ExtResource("15_qf1oa")
+condition = 4
+node_emitter = NodePath("..")
+watch_signal = 0
+metadata/_custom_type_script = "uid://up8up6hch40i"
+
+[node name="APChainSetVisible" type="Node" parent="VBoxContainer/CardPack/PanelContainer/Panel/MarginContainer/VBoxContainer/VBoxContainer/ControlBtns/Rerol/APActivatorResource/APChainIfNum" node_paths=PackedStringArray("nodes_visible_true", "nodes_visible_false", "node_emitter")]
+script = ExtResource("29_aw5u7")
+nodes_visible_true = [NodePath("../../../CanRerol")]
+nodes_visible_false = [NodePath("../../../CantRerol")]
+node_emitter = NodePath("..")
+watch_signal = 0
+metadata/_custom_type_script = "uid://bqn6e76istclq"
+
+[node name="APChainSetVisible2" type="Node" parent="VBoxContainer/CardPack/PanelContainer/Panel/MarginContainer/VBoxContainer/VBoxContainer/ControlBtns/Rerol/APActivatorResource/APChainIfNum" node_paths=PackedStringArray("nodes_visible_true", "nodes_visible_false", "node_emitter")]
+script = ExtResource("29_aw5u7")
+nodes_visible_true = [NodePath("../../../CantRerol")]
+nodes_visible_false = [NodePath("../../../CanRerol")]
+node_emitter = NodePath("..")
+watch_signal = 1
+metadata/_custom_type_script = "uid://bqn6e76istclq"
 
 [node name="RichTextLabel" type="RichTextLabel" parent="VBoxContainer/CardPack/PanelContainer/Panel/MarginContainer/VBoxContainer/VBoxContainer"]
 layout_mode = 2
@@ -721,7 +1339,7 @@ grow_vertical = 0
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_lk2p4")
 
-[node name="APDeckContainer" type="Container" parent="VBoxContainer/Panel/Panel"]
+[node name="APDeckHand" type="Container" parent="VBoxContainer/Panel/Panel"]
 custom_minimum_size = Vector2(600, 0)
 layout_mode = 1
 anchors_preset = 7
@@ -741,29 +1359,44 @@ alignment = 1
 separation = -5.0
 metadata/_custom_type_script = "uid://dn354cgweyjxg"
 
-[node name="Card" parent="VBoxContainer/Panel/Panel/APDeckContainer" node_paths=PackedStringArray("shortcut_context") instance=ExtResource("3_hblv7")]
+[node name="Card" parent="VBoxContainer/Panel/Panel/APDeckHand" node_paths=PackedStringArray("shortcut_context") instance=ExtResource("3_hblv7")]
 material = SubResource("ShaderMaterial_75v45")
 layout_mode = 2
 shortcut_context = NodePath("..")
+drag_data = SubResource("Resource_8m7k3")
+metadata/is_pack_card = SubResource("Resource_kkd5q")
+metadata/is_active_pack_card = SubResource("Resource_fc40o")
 
-[node name="Card2" parent="VBoxContainer/Panel/Panel/APDeckContainer" node_paths=PackedStringArray("shortcut_context") instance=ExtResource("3_hblv7")]
+[node name="Card2" parent="VBoxContainer/Panel/Panel/APDeckHand" node_paths=PackedStringArray("shortcut_context") instance=ExtResource("3_hblv7")]
 material = SubResource("ShaderMaterial_dp0h7")
 layout_mode = 2
 shortcut_context = NodePath("..")
+drag_data = SubResource("Resource_8m7k3")
+metadata/is_pack_card = SubResource("Resource_pti7k")
+metadata/is_active_pack_card = SubResource("Resource_mh6vc")
 
-[node name="Card3" parent="VBoxContainer/Panel/Panel/APDeckContainer" node_paths=PackedStringArray("shortcut_context") instance=ExtResource("3_hblv7")]
+[node name="Card3" parent="VBoxContainer/Panel/Panel/APDeckHand" node_paths=PackedStringArray("shortcut_context") instance=ExtResource("3_hblv7")]
 material = SubResource("ShaderMaterial_oin8c")
 layout_mode = 2
 shortcut_context = NodePath("..")
+drag_data = SubResource("Resource_8m7k3")
+metadata/is_pack_card = SubResource("Resource_ab62b")
+metadata/is_active_pack_card = SubResource("Resource_eikqv")
 
-[node name="Card4" parent="VBoxContainer/Panel/Panel/APDeckContainer" node_paths=PackedStringArray("shortcut_context") instance=ExtResource("3_hblv7")]
+[node name="Card4" parent="VBoxContainer/Panel/Panel/APDeckHand" node_paths=PackedStringArray("shortcut_context") instance=ExtResource("3_hblv7")]
 material = SubResource("ShaderMaterial_dt2wr")
 layout_mode = 2
 shortcut_context = NodePath("..")
+drag_data = SubResource("Resource_8m7k3")
+metadata/is_pack_card = SubResource("Resource_37ebo")
+metadata/is_active_pack_card = SubResource("Resource_sxktb")
 
-[node name="Card5" parent="VBoxContainer/Panel/Panel/APDeckContainer" instance=ExtResource("3_hblv7")]
+[node name="Card5" parent="VBoxContainer/Panel/Panel/APDeckHand" instance=ExtResource("3_hblv7")]
 material = SubResource("ShaderMaterial_kryo7")
 layout_mode = 2
+drag_data = SubResource("Resource_8m7k3")
+metadata/is_pack_card = SubResource("Resource_aw5u7")
+metadata/is_active_pack_card = SubResource("Resource_kpoiw")
 
 [node name="CardPack" type="AnimationPlayer" parent="."]
 reset_on_save = false
@@ -783,7 +1416,7 @@ metadata/_custom_type_script = "uid://u1gglou2n5jq"
 script = ExtResource("7_0o5b8")
 animation_player = NodePath("../../CardPack")
 speed = 1.2
-anim_name = 1
+anim_name = 3
 node_emitter = NodePath("..")
 watch_signal = 0
 metadata/_custom_type_script = "uid://dfnv5lgi83cdo"
@@ -801,7 +1434,7 @@ script = ExtResource("22_3d4an")
 num_x = ExtResource("23_dtumk")
 calls_per_second = ExtResource("23_24223")
 test_num_x = 4
-start_delay = 0.7
+start_delay = 0.4
 node_emitter = NodePath("..")
 watch_signal = 1
 metadata/_custom_type_script = "uid://bx1dlto0sni15"
@@ -813,17 +1446,64 @@ node_emitter = NodePath("..")
 watch_signal = 0
 metadata/_custom_type_script = "uid://dj04ffy0nu74n"
 
-[node name="APChainAddChild" type="Node" parent="VisibleCardPack=now_true/APChainDelChilds/APChainCaller" node_paths=PackedStringArray("target_parent", "node_emitter")]
+[node name="APChainAddChildRand" type="Node" parent="VisibleCardPack=now_true/APChainDelChilds/APChainCaller" node_paths=PackedStringArray("target_parent", "node_emitter")]
 script = ExtResource("30_kryo7")
 target_parent = NodePath("../../../../VBoxContainer/CardPack/PanelContainer/Panel/MarginContainer/VBoxContainer/APDeckCardPack")
-scene = ExtResource("3_hblv7")
+random = ExtResource("31_047eh")
 force_readable_name = true
-test = ExtResource("31_047eh")
 node_emitter = NodePath("..")
 watch_signal = 0
-metadata/_custom_type_script = "uid://dg3tbem26ogr7"
+metadata/_custom_type_script = "uid://b4dffbr30waq"
+
+[node name="ButtonError" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("44_fc40o")
+volume_db = -5.0
+bus = &"Error"
+
+[node name="ButtonRerol" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("45_mh6vc")
+bus = &"Sounds"
 
 [node name="CardSpawn" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("28_spr8g")
 volume_db = 1.5
+bus = &"Sounds"
+
+[node name="SelectCards" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("48_8m7k3")
+volume_db = -3.0
+pitch_scale = 1.05
+bus = &"Sounds"
+
+[node name="SkipCards" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("28_spr8g")
+volume_db = 1.5
+bus = &"Sounds"
+
+[node name="PickCardsPerPack=now_less" type="Node" parent="."]
+script = ExtResource("5_6px0d")
+_signal = "now_less"
+resource = ExtResource("22_pti7k")
+signal = "now_less"
+metadata/_custom_type_script = "uid://u1gglou2n5jq"
+
+[node name="APChainIfBool" type="Node" parent="PickCardsPerPack=now_less" node_paths=PackedStringArray("node_emitter")]
+script = ExtResource("47_sxktb")
+bools = Array[ExtResource("13_3r0al")]([ExtResource("6_5gjnk"), ExtResource("35_kpoiw")])
+value = true
+node_emitter = NodePath("..")
+watch_signal = 0
+metadata/_custom_type_script = "uid://dhamqitbrimqh"
+
+[node name="APChainAudioPlay" type="Node" parent="PickCardsPerPack=now_less/APChainIfBool" node_paths=PackedStringArray("player", "node_emitter")]
+script = ExtResource("28_8cou2")
+player = NodePath("CardPackSelectFalse")
+node_emitter = NodePath("..")
+watch_signal = 0
+metadata/_custom_type_script = "uid://dj04ffy0nu74n"
+
+[node name="CardPackSelectFalse" type="AudioStreamPlayer" parent="PickCardsPerPack=now_less/APChainIfBool/APChainAudioPlay"]
+stream = ExtResource("48_kpoiw")
+volume_db = 4.0
+pitch_scale = 0.5
 bus = &"Sounds"

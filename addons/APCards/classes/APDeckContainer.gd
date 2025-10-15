@@ -3,8 +3,14 @@
 extends Container
 class_name APDeckContainer
 
+enum ADD_RULE {
+	DEFAULT,
+	CENTER_OFFSET,
+}
 enum ALIGNMENT {BEGIN, CENTER, END, END_REVERSE}
 
+## TODO
+@export var add_child_alignment:ADD_RULE
 @export var alignment:ALIGNMENT : 
 	set(new):
 		alignment = new
@@ -37,9 +43,22 @@ var fit_separation:float = 0.0
 func _ready() -> void:
 	sort_children.connect(_sort_children)
 	#pre_sort_children.connect(_pre_sort_children)
+	child_entered_tree.connect(on_child_entered_tree)
+	child_exiting_tree.connect(on_child_exiting_tree)
 	child_order_changed.connect(_child_order_changed)
 
 var drop_node:Control = null
+
+func on_child_exiting_tree(node:Node):
+	child_old_pos.erase(node)
+	child_new_pos.erase(node)
+
+func on_child_entered_tree(node: Node):
+	if node is Control:
+		match add_child_alignment:
+			ADD_RULE.CENTER_OFFSET:
+				var center:float = get_rect().size.x*0.5
+				node.position.x = childs_size_x+center-node.get_combined_minimum_size().x*0.5
 
 func _can_drop_data(at_position: Vector2, data: Variant) -> bool:
 	if drop_node == null:
@@ -53,7 +72,6 @@ func _drop_data(at_position: Vector2, data: Variant) -> void:
 		add_child(data.dragged_node)
 		data.dragged_node.position = at_position
 		_sort_children()
-
 
 func _child_order_changed():
 	#print("child_order_changed")
@@ -96,7 +114,6 @@ func _update_child_to_size():
 				ALIGNMENT.CENTER:
 					child_to_size[child] = c_size.x + separation
 					childs_size_x += c_size.x + separation
-		#prints("1 child.size", child.size)
 
 func _get_offset(_separation:float) -> float:
 	var offset:float = 0
