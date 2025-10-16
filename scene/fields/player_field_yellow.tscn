@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://cmkm76vsh55r0"]
+[gd_scene load_steps=3 format=3 uid="uid://cmkm76vsh55r0"]
 
 [ext_resource type="PackedScene" uid="uid://b1dthv2qurwnx" path="res://scene/fields/player_field_red.tscn" id="1_5xbmj"]
+[ext_resource type="Resource" uid="uid://x3id5dx3yucu" path="res://data/gameplay/field_counters/fields_yellow.tres" id="2_vqkoa"]
 
 [node name="PlayerField-Yellow" instance=ExtResource("1_5xbmj")]
 modulate = Color(0.9490196, 0.8980392, 0.3137255, 1)
@@ -11,3 +12,9 @@ metadata/field_type = &"yellow"
 [node name="Area2D" parent="." index="0"]
 collision_layer = 176
 collision_mask = 176
+
+[node name="APChainSetNum" parent="." index="4"]
+num_a = ExtResource("2_vqkoa")
+
+[node name="APChainSetNum2" parent="." index="5"]
+num_a = ExtResource("2_vqkoa")

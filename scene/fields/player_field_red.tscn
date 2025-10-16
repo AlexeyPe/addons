@@ -1,12 +1,20 @@
-[gd_scene load_steps=6 format=3 uid="uid://b1dthv2qurwnx"]
+[gd_scene load_steps=10 format=3 uid="uid://b1dthv2qurwnx"]
 
 [ext_resource type="Material" uid="uid://svr62spjy8px" path="res://scene/fields/GridMaterial.tres" id="1_fpfk7"]
 [ext_resource type="Texture2D" uid="uid://1rw0438kebug" path="res://scene/fields/frame-spikes-2-fill-16px.png" id="2_fpfk7"]
 [ext_resource type="Material" uid="uid://c1a0yqd8g15k8" path="res://scene/cell_mat.tres" id="3_a0px4"]
 [ext_resource type="Texture2D" uid="uid://b4dqq6o88p517" path="res://scene/fields/field2.svg" id="3_ok0d1"]
+[ext_resource type="Script" uid="uid://cldopw0r4n1wj" path="res://addons/APChain/classes/chain/set/vares/APChainSetNum.gd" id="5_8jpos"]
+[ext_resource type="Resource" uid="uid://cvpnw37xy7hya" path="res://data/gameplay/field_counters/fields_red.tres" id="6_n0r8l"]
+[ext_resource type="Script" uid="uid://8myr58nwfvfg" path="res://addons/VarRes/classes/numbers/VaRInt.gd" id="7_mkipr"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_j64cy"]
 size = Vector2(48, 48)
+
+[sub_resource type="Resource" id="Resource_b6lq4"]
+script = ExtResource("7_mkipr")
+value = 1
+metadata/_custom_type_script = "uid://8myr58nwfvfg"
 
 [node name="PlayerField-Red" type="StaticBody2D"]
 modulate = Color(1, 0.2901961, 0.2901961, 1)
@@ -55,3 +63,21 @@ texture = ExtResource("3_ok0d1")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 visible = false
 shape = SubResource("RectangleShape2D_j64cy")
+
+[node name="APChainSetNum" type="Node" parent="." node_paths=PackedStringArray("node_emitter")]
+script = ExtResource("5_8jpos")
+num_a = ExtResource("6_n0r8l")
+num_b = SubResource("Resource_b6lq4")
+operation = 1
+node_emitter = NodePath("..")
+watch_signal = 9
+metadata/_custom_type_script = "uid://cldopw0r4n1wj"
+
+[node name="APChainSetNum2" type="Node" parent="." node_paths=PackedStringArray("node_emitter")]
+script = ExtResource("5_8jpos")
+num_a = ExtResource("6_n0r8l")
+num_b = SubResource("Resource_b6lq4")
+operation = 2
+node_emitter = NodePath("..")
+watch_signal = 12
+metadata/_custom_type_script = "uid://cldopw0r4n1wj"

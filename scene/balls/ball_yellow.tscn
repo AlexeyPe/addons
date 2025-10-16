@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://cpprsnw4qtbbj" path="res://scene/balls/ball_red.tscn" id="1_0s07m"]
 [ext_resource type="Script" uid="uid://djmnu1e55mp0j" path="res://addons/VarRes/classes/bool/VaRBool.gd" id="2_t7r6g"]
-[ext_resource type="Resource" uid="uid://cvmmidd5uwfbn" path="res://scene/balls/data/units_yellow.tres" id="3_5hq5e"]
+[ext_resource type="Resource" uid="uid://cvmmidd5uwfbn" path="res://data/gameplay/units/units_yellow.tres" id="3_5hq5e"]
 
 [sub_resource type="Resource" id="Resource_5hq5e"]
 resource_local_to_scene = true

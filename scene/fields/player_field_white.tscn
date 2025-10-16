@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://dgichot42emfv"]
+[gd_scene load_steps=3 format=3 uid="uid://dgichot42emfv"]
 
 [ext_resource type="PackedScene" uid="uid://b1dthv2qurwnx" path="res://scene/fields/player_field_red.tscn" id="1_wl56a"]
+[ext_resource type="Resource" uid="uid://bbu6crs5k6ct6" path="res://data/gameplay/field_counters/fields_white.tres" id="2_budfs"]
 
 [node name="PlayerField-White" instance=ExtResource("1_wl56a")]
 modulate = Color(1, 1, 1, 1)
@@ -11,3 +12,9 @@ metadata/field_type = &"white"
 [node name="Area2D" parent="." index="0"]
 collision_layer = 224
 collision_mask = 224
+
+[node name="APChainSetNum" parent="." index="4"]
+num_a = ExtResource("2_budfs")
+
+[node name="APChainSetNum2" parent="." index="5"]
+num_a = ExtResource("2_budfs")

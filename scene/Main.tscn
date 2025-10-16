@@ -1,4 +1,4 @@
-[gd_scene load_steps=64 format=4 uid="uid://dhgo7ujbqhqoi"]
+[gd_scene load_steps=71 format=4 uid="uid://dhgo7ujbqhqoi"]
 
 [ext_resource type="Script" uid="uid://mjk4ctyfa82r" path="res://scene/main.gd" id="1_nbc6x"]
 [ext_resource type="Texture2D" uid="uid://8yci6v355lg4" path="res://imgs/icons/tabler--zoom-in.svg" id="2_764rb"]
@@ -11,17 +11,23 @@
 [ext_resource type="Resource" uid="uid://d220q6y3vwy1e" path="res://addons/apach/UI_demo/res/map-levels-complete.tres" id="5_mnmej"]
 [ext_resource type="PackedScene" uid="uid://brgu1wss4gdmw" path="res://addons/apach/UI_demo/UI_panel_achievements_1.tscn" id="7_s5yxy"]
 [ext_resource type="Shader" uid="uid://bnx70r4bgsw0y" path="res://addons/shadercollectionap/shader/grid/grid.gdshader" id="8_1ihg2"]
-[ext_resource type="Resource" uid="uid://bewvxbnhpn1k2" path="res://scene/balls/data/units.tres" id="8_6xsba"]
+[ext_resource type="Resource" uid="uid://bewvxbnhpn1k2" path="res://data/gameplay/units/units.tres" id="8_6xsba"]
 [ext_resource type="Script" uid="uid://beulpxkd70k21" path="res://addons/APController/classes/AP_WASD_2D.gd" id="8_pnqar"]
-[ext_resource type="Resource" uid="uid://dtkw5uacj3oc5" path="res://scene/balls/data/unit_deaths.tres" id="9_d5i4e"]
+[ext_resource type="Resource" uid="uid://dtkw5uacj3oc5" path="res://data/gameplay/units/unit_deaths.tres" id="9_d5i4e"]
 [ext_resource type="Script" uid="uid://cccrm8vuks5fs" path="res://addons/VarRes/classes/UI/VaResLabel.gd" id="9_ia2xj"]
-[ext_resource type="Resource" uid="uid://ccq6dphbjbpf6" path="res://scene/balls/data/units_white.tres" id="9_v1evy"]
-[ext_resource type="Resource" uid="uid://q6vmqvs7sa6j" path="res://scene/balls/data/units_red.tres" id="10_u8yls"]
-[ext_resource type="Resource" uid="uid://c4bpyilbpdmw" path="res://scene/balls/data/units_purple.tres" id="11_rwiys"]
-[ext_resource type="Resource" uid="uid://cvmmidd5uwfbn" path="res://scene/balls/data/units_yellow.tres" id="12_fohba"]
+[ext_resource type="Resource" uid="uid://ccq6dphbjbpf6" path="res://data/gameplay/units/units_white.tres" id="9_v1evy"]
+[ext_resource type="Resource" uid="uid://q6vmqvs7sa6j" path="res://data/gameplay/units/units_red.tres" id="10_u8yls"]
+[ext_resource type="Resource" uid="uid://c4bpyilbpdmw" path="res://data/gameplay/units/units_purple.tres" id="11_rwiys"]
+[ext_resource type="Resource" uid="uid://bbu6crs5k6ct6" path="res://data/gameplay/field_counters/fields_white.tres" id="12_1ihg2"]
+[ext_resource type="Resource" uid="uid://cvmmidd5uwfbn" path="res://data/gameplay/units/units_yellow.tres" id="12_fohba"]
+[ext_resource type="Resource" uid="uid://cvpnw37xy7hya" path="res://data/gameplay/field_counters/fields_red.tres" id="13_32nmk"]
 [ext_resource type="TileSet" uid="uid://ctx1yx25gyv50" path="res://scene/fields/fields_tileset.tres" id="13_fh3cp"]
+[ext_resource type="Texture2D" uid="uid://7d05gyikgro2" path="res://imgs/icons/openmoji--white-large-square.svg" id="14_7kf0j"]
+[ext_resource type="Resource" uid="uid://yjwdocjo8sh2" path="res://data/gameplay/field_counters/fields_purple.tres" id="14_ftvp4"]
+[ext_resource type="Shader" uid="uid://b4xocinxdwelf" path="res://addons/shadercollectionap/shader/outline/Outline.gdshader" id="14_r5aow"]
 [ext_resource type="Script" uid="uid://dikax674203i8" path="res://addons/VarRes/classes/camera/APCameraZoomIsNum.gd" id="14_tuai4"]
 [ext_resource type="Resource" uid="uid://4ok8jqiesqsv" path="res://data/gameplay/Money.tres" id="14_u8yls"]
+[ext_resource type="Resource" uid="uid://x3id5dx3yucu" path="res://data/gameplay/field_counters/fields_yellow.tres" id="15_1qtut"]
 [ext_resource type="PackedScene" uid="uid://csgbo46w4e1c5" path="res://scene/UI/CardHand.tscn" id="15_65lg3"]
 [ext_resource type="Resource" uid="uid://c4i68asmn7hno" path="res://data/CardPack/RerolQTY.tres" id="15_ene7r"]
 [ext_resource type="Texture2D" uid="uid://cylt0yccij071" path="res://imgs/icons/types-outline.png" id="15_fh3cp"]
@@ -51,6 +57,12 @@ metadata/_custom_type_script = "uid://msh8p6ojhxex"
 script = ExtResource("5_aex65")
 value = -0.2
 metadata/_custom_type_script = "uid://msh8p6ojhxex"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_r5aow"]
+shader = ExtResource("14_r5aow")
+shader_parameter/allow_out_of_bounds = true
+shader_parameter/outline_thickness = 5.0
+shader_parameter/outline_color = Color(1, 1, 1, 1)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_43j8o"]
 shader = ExtResource("8_1ihg2")
@@ -172,14 +184,15 @@ theme_override_constants/margin_left = 4
 theme_override_constants/margin_top = 4
 theme_override_constants/margin_right = 4
 theme_override_constants/margin_bottom = 4
-metadata/_edit_group_ = true
 
 [node name="Counters" type="VBoxContainer" parent="UI/Counters"]
 layout_mode = 2
+mouse_filter = 2
 
 [node name="Zoom" type="HBoxContainer" parent="UI/Counters/Counters"]
 layout_mode = 2
 size_flags_horizontal = 0
+metadata/_edit_group_ = true
 
 [node name="Label" type="Label" parent="UI/Counters/Counters/Zoom"]
 layout_mode = 2
@@ -234,6 +247,7 @@ metadata/_custom_type_script = "uid://uh8e7y0n0t5e"
 visible = false
 layout_mode = 2
 size_flags_horizontal = 0
+metadata/_edit_group_ = true
 
 [node name="Label" type="Label" parent="UI/Counters/Counters/UnitsAll"]
 layout_mode = 2
@@ -248,9 +262,87 @@ script = ExtResource("9_ia2xj")
 var_res = ExtResource("8_6xsba")
 metadata/_custom_type_script = "uid://cccrm8vuks5fs"
 
+[node name="Fields" type="HBoxContainer" parent="UI/Counters/Counters"]
+layout_mode = 2
+size_flags_horizontal = 0
+tooltip_text = "Количество захваченной земли"
+mouse_filter = 0
+metadata/_edit_group_ = true
+
+[node name="White" type="HBoxContainer" parent="UI/Counters/Counters/Fields"]
+layout_mode = 2
+size_flags_horizontal = 0
+
+[node name="Label" type="TextureRect" parent="UI/Counters/Counters/Fields/White"]
+material = SubResource("ShaderMaterial_r5aow")
+layout_mode = 2
+texture = ExtResource("14_7kf0j")
+expand_mode = 3
+
+[node name="Label2" type="Label" parent="UI/Counters/Counters/Fields/White"]
+layout_mode = 2
+text = "12"
+label_settings = ExtResource("15_goqcv")
+script = ExtResource("9_ia2xj")
+var_res = ExtResource("12_1ihg2")
+metadata/_custom_type_script = "uid://cccrm8vuks5fs"
+
+[node name="Red" type="HBoxContainer" parent="UI/Counters/Counters/Fields"]
+layout_mode = 2
+size_flags_horizontal = 0
+
+[node name="Label" type="Label" parent="UI/Counters/Counters/Fields/Red"]
+layout_mode = 2
+text = "🟥"
+label_settings = ExtResource("15_goqcv")
+
+[node name="Label2" type="Label" parent="UI/Counters/Counters/Fields/Red"]
+layout_mode = 2
+text = "19"
+label_settings = ExtResource("15_goqcv")
+script = ExtResource("9_ia2xj")
+var_res = ExtResource("13_32nmk")
+metadata/_custom_type_script = "uid://cccrm8vuks5fs"
+
+[node name="Purple" type="HBoxContainer" parent="UI/Counters/Counters/Fields"]
+layout_mode = 2
+size_flags_horizontal = 0
+
+[node name="Label" type="Label" parent="UI/Counters/Counters/Fields/Purple"]
+layout_mode = 2
+text = "🟪"
+label_settings = ExtResource("15_goqcv")
+
+[node name="Label2" type="Label" parent="UI/Counters/Counters/Fields/Purple"]
+layout_mode = 2
+text = "18"
+label_settings = ExtResource("15_goqcv")
+script = ExtResource("9_ia2xj")
+var_res = ExtResource("14_ftvp4")
+metadata/_custom_type_script = "uid://cccrm8vuks5fs"
+
+[node name="Yellow" type="HBoxContainer" parent="UI/Counters/Counters/Fields"]
+layout_mode = 2
+size_flags_horizontal = 0
+
+[node name="Label" type="Label" parent="UI/Counters/Counters/Fields/Yellow"]
+layout_mode = 2
+text = "🟨"
+label_settings = ExtResource("15_goqcv")
+
+[node name="Label2" type="Label" parent="UI/Counters/Counters/Fields/Yellow"]
+layout_mode = 2
+text = "10"
+label_settings = ExtResource("15_goqcv")
+script = ExtResource("9_ia2xj")
+var_res = ExtResource("15_1qtut")
+metadata/_custom_type_script = "uid://cccrm8vuks5fs"
+
 [node name="Units" type="HBoxContainer" parent="UI/Counters/Counters"]
 layout_mode = 2
 size_flags_horizontal = 0
+tooltip_text = "Количество юнитов"
+metadata/_edit_group_ = true
 
 [node name="White" type="HBoxContainer" parent="UI/Counters/Counters/Units"]
 layout_mode = 2
@@ -323,6 +415,8 @@ metadata/_custom_type_script = "uid://cccrm8vuks5fs"
 [node name="Deaths" type="HBoxContainer" parent="UI/Counters/Counters"]
 layout_mode = 2
 size_flags_horizontal = 0
+tooltip_text = "Количество смертей(общее)"
+metadata/_edit_group_ = true
 
 [node name="Label" type="Label" parent="UI/Counters/Counters/Deaths"]
 layout_mode = 2
@@ -340,9 +434,12 @@ metadata/_custom_type_script = "uid://cccrm8vuks5fs"
 [node name="Money" type="HBoxContainer" parent="UI/Counters/Counters"]
 layout_mode = 2
 size_flags_horizontal = 0
+tooltip_text = "Количество денег"
+metadata/_edit_group_ = true
 
 [node name="Label" type="Label" parent="UI/Counters/Counters/Money"]
 layout_mode = 2
+mouse_filter = 0
 text = "💎"
 label_settings = ExtResource("15_goqcv")
 
@@ -354,16 +451,18 @@ script = ExtResource("9_ia2xj")
 var_res = ExtResource("14_u8yls")
 metadata/_custom_type_script = "uid://cccrm8vuks5fs"
 
-[node name="Money2" type="HBoxContainer" parent="UI/Counters/Counters"]
+[node name="Tickets" type="HBoxContainer" parent="UI/Counters/Counters"]
 layout_mode = 2
 size_flags_horizontal = 0
+tooltip_text = "Количетсво билетов для переброса набора карточек"
+metadata/_edit_group_ = true
 
-[node name="Label" type="Label" parent="UI/Counters/Counters/Money2"]
+[node name="Label" type="Label" parent="UI/Counters/Counters/Tickets"]
 layout_mode = 2
 text = "🎫"
 label_settings = ExtResource("15_goqcv")
 
-[node name="Label2" type="Label" parent="UI/Counters/Counters/Money2"]
+[node name="Label2" type="Label" parent="UI/Counters/Counters/Tickets"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
@@ -379,7 +478,7 @@ var_res = ExtResource("15_ene7r")
 metadata/_custom_type_script = "uid://cccrm8vuks5fs"
 
 [node name="CardHand" parent="UI" instance=ExtResource("15_65lg3")]
-metadata/_edit_group_ = true
+metadata/_edit_lock_ = true
 
 [node name="ColorRectGrid1" type="ColorRect" parent="."]
 visible = false
@@ -388,6 +487,8 @@ offset_right = 480.0
 offset_bottom = 480.0
 
 [node name="Tilemaps" type="Node2D" parent="."]
+metadata/_edit_group_ = true
+metadata/_edit_lock_ = true
 
 [node name="ColorRect" type="ColorRect" parent="Tilemaps"]
 offset_left = -2.666667
