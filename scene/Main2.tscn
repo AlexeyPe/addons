@@ -1,59 +1,55 @@
-[gd_scene load_steps=64 format=4 uid="uid://dhgo7ujbqhqoi"]
+[gd_scene load_steps=69 format=4 uid="uid://cnqcv7oq5j5su"]
 
-[ext_resource type="Script" uid="uid://mjk4ctyfa82r" path="res://scene/main.gd" id="1_nbc6x"]
-[ext_resource type="Texture2D" uid="uid://8yci6v355lg4" path="res://imgs/icons/tabler--zoom-in.svg" id="2_764rb"]
-[ext_resource type="Resource" uid="uid://bad72qp0q03km" path="res://addons/apach/UI_demo/res/gold-spent.tres" id="2_x4yfu"]
-[ext_resource type="Texture2D" uid="uid://cv0mjwnyvtu6f" path="res://imgs/icons/tabler--zoom-out.svg" id="3_aex65"]
-[ext_resource type="Script" uid="uid://bsqxqxasuhg01" path="res://addons/VarRes/classes/UI/VaResSpinBox.gd" id="3_hr7lf"]
-[ext_resource type="Script" uid="uid://uh8e7y0n0t5e" path="res://addons/APChain/classes/chain/APChainNumOp.gd" id="4_764rb"]
-[ext_resource type="Script" uid="uid://msh8p6ojhxex" path="res://addons/VarRes/classes/numbers/VaRFloat.gd" id="5_aex65"]
-[ext_resource type="Resource" uid="uid://cwbslfwrc5pwx" path="res://data/CameraZoom.tres" id="5_hrl0l"]
-[ext_resource type="Resource" uid="uid://d220q6y3vwy1e" path="res://addons/apach/UI_demo/res/map-levels-complete.tres" id="5_mnmej"]
-[ext_resource type="PackedScene" uid="uid://brgu1wss4gdmw" path="res://addons/apach/UI_demo/UI_panel_achievements_1.tscn" id="7_s5yxy"]
-[ext_resource type="Shader" uid="uid://bnx70r4bgsw0y" path="res://addons/shadercollectionap/shader/grid/grid.gdshader" id="8_1ihg2"]
-[ext_resource type="Resource" uid="uid://bewvxbnhpn1k2" path="res://scene/balls/data/units.tres" id="8_6xsba"]
-[ext_resource type="Script" uid="uid://beulpxkd70k21" path="res://addons/APController/classes/AP_WASD_2D.gd" id="8_pnqar"]
-[ext_resource type="Resource" uid="uid://dtkw5uacj3oc5" path="res://scene/balls/data/unit_deaths.tres" id="9_d5i4e"]
-[ext_resource type="Script" uid="uid://cccrm8vuks5fs" path="res://addons/VarRes/classes/UI/VaResLabel.gd" id="9_ia2xj"]
-[ext_resource type="Resource" uid="uid://ccq6dphbjbpf6" path="res://scene/balls/data/units_white.tres" id="9_v1evy"]
-[ext_resource type="Resource" uid="uid://q6vmqvs7sa6j" path="res://scene/balls/data/units_red.tres" id="10_u8yls"]
-[ext_resource type="Resource" uid="uid://c4bpyilbpdmw" path="res://scene/balls/data/units_purple.tres" id="11_rwiys"]
-[ext_resource type="Resource" uid="uid://cvmmidd5uwfbn" path="res://scene/balls/data/units_yellow.tres" id="12_fohba"]
-[ext_resource type="TileSet" uid="uid://ctx1yx25gyv50" path="res://scene/fields/fields_tileset.tres" id="13_fh3cp"]
-[ext_resource type="Script" uid="uid://dikax674203i8" path="res://addons/VarRes/classes/camera/APCameraZoomIsNum.gd" id="14_tuai4"]
-[ext_resource type="Resource" uid="uid://4ok8jqiesqsv" path="res://data/gameplay/Money.tres" id="14_u8yls"]
-[ext_resource type="PackedScene" uid="uid://csgbo46w4e1c5" path="res://scene/UI/CardHand.tscn" id="15_65lg3"]
-[ext_resource type="Resource" uid="uid://c4i68asmn7hno" path="res://data/CardPack/RerolQTY.tres" id="15_ene7r"]
-[ext_resource type="Texture2D" uid="uid://cylt0yccij071" path="res://imgs/icons/types-outline.png" id="15_fh3cp"]
-[ext_resource type="LabelSettings" uid="uid://bs3a6ff5awow6" path="res://scene/UI/LabelSettings/MainLabel.tres" id="15_goqcv"]
-[ext_resource type="Script" uid="uid://dvoxncb42t31a" path="res://addons/APController/classes/APContMouseDrag2D.gd" id="15_ob58h"]
-[ext_resource type="Script" uid="uid://cicas0bkgf1up" path="res://addons/apbuild/classes/cell_info/APCellInfoNode.gd" id="18_a6847"]
-[ext_resource type="Script" uid="uid://co8mhqm73w3ve" path="res://addons/apbuild/classes/cell_info/APCellInfoRes.gd" id="19_d5i4e"]
-[ext_resource type="Script" uid="uid://db7sp186hj8oq" path="res://addons/APChain/classes/chain_activator/APActivatorAction.gd" id="19_fh3cp"]
-[ext_resource type="Material" uid="uid://svr62spjy8px" path="res://scene/fields/GridMaterial.tres" id="19_goqcv"]
-[ext_resource type="TileSet" uid="uid://dtotbe61qvlwk" path="res://scene/fields/VisualFields2.tres" id="20_goqcv"]
-[ext_resource type="Texture2D" uid="uid://cv5u50jtpbiqb" path="res://scene/fields/clip_texture/corner_1.tres" id="23_lk2p4"]
-[ext_resource type="Texture2D" uid="uid://dd0ws1t530ycd" path="res://scene/fields/clip_texture/wall.tres" id="24_crx51"]
-[ext_resource type="Texture2D" uid="uid://b4337huijb0tp" path="res://scene/fields/clip_texture/corner_2.tres" id="24_wren1"]
-[ext_resource type="Texture2D" uid="uid://bn3uq1k1c5qjv" path="res://scene/fields/clip_texture/corners_invert.tres" id="25_2h030"]
-[ext_resource type="PackedScene" uid="uid://cpprsnw4qtbbj" path="res://scene/balls/ball_red.tscn" id="56_bp33t"]
-[ext_resource type="Script" uid="uid://djmnu1e55mp0j" path="res://addons/VarRes/classes/bool/VaRBool.gd" id="57_a6847"]
-[ext_resource type="PackedScene" uid="uid://8e48k70ehvv5" path="res://scene/balls/ball_purple.tscn" id="58_a6847"]
-[ext_resource type="PackedScene" uid="uid://bxunj00q8ifrt" path="res://scene/balls/ball_white.tscn" id="60_qaqtq"]
-[ext_resource type="PackedScene" uid="uid://cj53tnqi6uwe0" path="res://scene/balls/ball_yellow.tscn" id="61_r1tel"]
+[ext_resource type="Script" uid="uid://mjk4ctyfa82r" path="res://scene/main.gd" id="1_4gdai"]
+[ext_resource type="LabelSettings" uid="uid://bs3a6ff5awow6" path="res://scene/UI/LabelSettings/MainLabel.tres" id="2_2x5nk"]
+[ext_resource type="Script" uid="uid://cccrm8vuks5fs" path="res://addons/VarRes/classes/UI/VaResLabel.gd" id="3_tkcw1"]
+[ext_resource type="Resource" uid="uid://cwbslfwrc5pwx" path="res://data/CameraZoom.tres" id="4_mfl3s"]
+[ext_resource type="Texture2D" uid="uid://8yci6v355lg4" path="res://imgs/icons/tabler--zoom-in.svg" id="5_iw3us"]
+[ext_resource type="Script" uid="uid://uh8e7y0n0t5e" path="res://addons/APChain/classes/chain/APChainNumOp.gd" id="6_aybfu"]
+[ext_resource type="Script" uid="uid://msh8p6ojhxex" path="res://addons/VarRes/classes/numbers/VaRFloat.gd" id="7_rh02w"]
+[ext_resource type="Texture2D" uid="uid://cv0mjwnyvtu6f" path="res://imgs/icons/tabler--zoom-out.svg" id="8_iei40"]
+[ext_resource type="Resource" uid="uid://bewvxbnhpn1k2" path="res://scene/balls/data/units.tres" id="9_llitb"]
+[ext_resource type="Resource" uid="uid://ccq6dphbjbpf6" path="res://scene/balls/data/units_white.tres" id="10_kuvhv"]
+[ext_resource type="Resource" uid="uid://q6vmqvs7sa6j" path="res://scene/balls/data/units_red.tres" id="11_4dh10"]
+[ext_resource type="Resource" uid="uid://c4bpyilbpdmw" path="res://scene/balls/data/units_purple.tres" id="12_dtmu0"]
+[ext_resource type="Resource" uid="uid://cvmmidd5uwfbn" path="res://scene/balls/data/units_yellow.tres" id="13_mmly5"]
+[ext_resource type="Resource" uid="uid://dtkw5uacj3oc5" path="res://scene/balls/data/unit_deaths.tres" id="14_u6l8h"]
+[ext_resource type="Resource" uid="uid://4ok8jqiesqsv" path="res://data/gameplay/Money.tres" id="15_ikbnx"]
+[ext_resource type="Resource" uid="uid://c4i68asmn7hno" path="res://data/CardPack/RerolQTY.tres" id="16_emtuh"]
+[ext_resource type="PackedScene" uid="uid://csgbo46w4e1c5" path="res://scene/UI/CardHand.tscn" id="17_jirj6"]
+[ext_resource type="Shader" uid="uid://bnx70r4bgsw0y" path="res://addons/shadercollectionap/shader/grid/grid.gdshader" id="18_0yu0p"]
+[ext_resource type="Material" uid="uid://svr62spjy8px" path="res://scene/fields/GridMaterial.tres" id="19_jhtfo"]
+[ext_resource type="TileSet" uid="uid://c61gak6nqteys" path="res://scene/fields/VisualFields.tres" id="20_4gdai"]
+[ext_resource type="Texture2D" uid="uid://cylt0yccij071" path="res://imgs/icons/types-outline.png" id="21_07sre"]
+[ext_resource type="TileSet" uid="uid://ctx1yx25gyv50" path="res://scene/fields/fields_tileset.tres" id="22_677ug"]
+[ext_resource type="Script" uid="uid://cicas0bkgf1up" path="res://addons/apbuild/classes/cell_info/APCellInfoNode.gd" id="23_iy33d"]
+[ext_resource type="Script" uid="uid://co8mhqm73w3ve" path="res://addons/apbuild/classes/cell_info/APCellInfoRes.gd" id="24_l1jks"]
+[ext_resource type="Script" uid="uid://dvoxncb42t31a" path="res://addons/APController/classes/APContMouseDrag2D.gd" id="25_37h3l"]
+[ext_resource type="Script" uid="uid://beulpxkd70k21" path="res://addons/APController/classes/AP_WASD_2D.gd" id="26_k2ftk"]
+[ext_resource type="Script" uid="uid://dikax674203i8" path="res://addons/VarRes/classes/camera/APCameraZoomIsNum.gd" id="27_5ds6a"]
+[ext_resource type="Script" uid="uid://db7sp186hj8oq" path="res://addons/APChain/classes/chain_activator/APActivatorAction.gd" id="28_6d0fn"]
+[ext_resource type="PackedScene" uid="uid://brgu1wss4gdmw" path="res://addons/apach/UI_demo/UI_panel_achievements_1.tscn" id="29_n0vfx"]
+[ext_resource type="Script" uid="uid://bsqxqxasuhg01" path="res://addons/VarRes/classes/UI/VaResSpinBox.gd" id="30_xx8up"]
+[ext_resource type="Resource" uid="uid://bad72qp0q03km" path="res://addons/apach/UI_demo/res/gold-spent.tres" id="31_job78"]
+[ext_resource type="Resource" uid="uid://d220q6y3vwy1e" path="res://addons/apach/UI_demo/res/map-levels-complete.tres" id="32_826sf"]
+[ext_resource type="PackedScene" uid="uid://cpprsnw4qtbbj" path="res://scene/balls/ball_red.tscn" id="33_hj5yx"]
+[ext_resource type="Script" uid="uid://djmnu1e55mp0j" path="res://addons/VarRes/classes/bool/VaRBool.gd" id="34_b6s8t"]
+[ext_resource type="PackedScene" uid="uid://8e48k70ehvv5" path="res://scene/balls/ball_purple.tscn" id="35_oa5rw"]
+[ext_resource type="PackedScene" uid="uid://bxunj00q8ifrt" path="res://scene/balls/ball_white.tscn" id="36_i8hpu"]
+[ext_resource type="PackedScene" uid="uid://cj53tnqi6uwe0" path="res://scene/balls/ball_yellow.tscn" id="37_vkmwy"]
 
 [sub_resource type="Resource" id="Resource_tuai4"]
-script = ExtResource("5_aex65")
+script = ExtResource("7_rh02w")
 value = 0.2
 metadata/_custom_type_script = "uid://msh8p6ojhxex"
 
 [sub_resource type="Resource" id="Resource_hrl0l"]
-script = ExtResource("5_aex65")
+script = ExtResource("7_rh02w")
 value = -0.2
 metadata/_custom_type_script = "uid://msh8p6ojhxex"
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_43j8o"]
-shader = ExtResource("8_1ihg2")
+shader = ExtResource("18_0yu0p")
 shader_parameter/scale = Vector2(0.2, 0.2)
 shader_parameter/offset = Vector2(0, 0)
 shader_parameter/background_color = Color(0.2, 0.2, 0.2, 1)
@@ -65,7 +61,7 @@ shader_parameter/fine_grid_subdivisions = 1.0
 shader_parameter/fine_grid_line_width = Vector2(0.03, 0.03)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dk2pn"]
-texture = ExtResource("15_fh3cp")
+texture = ExtResource("21_07sre")
 margins = Vector2i(2, 2)
 separation = Vector2i(0, 2)
 texture_region_size = Vector2i(48, 48)
@@ -81,8 +77,39 @@ sources/1 = SubResource("TileSetAtlasSource_dk2pn")
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_goqcv"]
 blend_mode = 2
 
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_goqcv"]
+load_path = "res://.godot/imported/Tilemap3.png-77c3b284ce1e1ecf55d4a1febd280250.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_goqcv"]
+atlas = SubResource("CompressedTexture2D_goqcv")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_lk2p4"]
+load_path = "res://.godot/imported/Tilemap3.png-77c3b284ce1e1ecf55d4a1febd280250.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wren1"]
+atlas = SubResource("CompressedTexture2D_lk2p4")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_wren1"]
+load_path = "res://.godot/imported/Tilemap3.png-77c3b284ce1e1ecf55d4a1febd280250.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2h030"]
+atlas = SubResource("CompressedTexture2D_wren1")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_lk2p4"]
+blend_mode = 2
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_2h030"]
+load_path = "res://.godot/imported/Tilemap3.png-77c3b284ce1e1ecf55d4a1febd280250.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_crx51"]
+atlas = SubResource("CompressedTexture2D_2h030")
+region = Rect2(32, 16, 16, 16)
+
 [sub_resource type="Resource" id="Resource_ph3ti"]
-script = ExtResource("19_d5i4e")
+script = ExtResource("24_l1jks")
 metadata/_custom_type_script = "uid://co8mhqm73w3ve"
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_x4yfu"]
@@ -95,7 +122,7 @@ size = Vector2(100, 1400)
 action = &"move_camera"
 
 [sub_resource type="Resource" id="Resource_08k7p"]
-script = ExtResource("5_aex65")
+script = ExtResource("7_rh02w")
 value = 300.0
 metadata/_custom_type_script = "uid://msh8p6ojhxex"
 
@@ -103,64 +130,63 @@ metadata/_custom_type_script = "uid://msh8p6ojhxex"
 radius = 200.0
 
 [sub_resource type="Resource" id="Resource_ob58h"]
-script = ExtResource("5_aex65")
+script = ExtResource("7_rh02w")
 value = 0.1
 metadata/_custom_type_script = "uid://msh8p6ojhxex"
 
 [sub_resource type="Resource" id="Resource_3hqfm"]
-script = ExtResource("5_aex65")
+script = ExtResource("7_rh02w")
 value = -0.1
 metadata/_custom_type_script = "uid://msh8p6ojhxex"
 
 [sub_resource type="Resource" id="Resource_bp33t"]
 resource_local_to_scene = true
 resource_name = "is_die"
-script = ExtResource("57_a6847")
+script = ExtResource("34_b6s8t")
 metadata/_custom_type_script = "uid://djmnu1e55mp0j"
 
 [sub_resource type="Resource" id="Resource_a6847"]
 resource_local_to_scene = true
 resource_name = "is_die"
-script = ExtResource("57_a6847")
+script = ExtResource("34_b6s8t")
 storage_value = true
 metadata/_custom_type_script = "uid://djmnu1e55mp0j"
 
 [sub_resource type="Resource" id="Resource_d5i4e"]
 resource_local_to_scene = true
-script = ExtResource("57_a6847")
+script = ExtResource("34_b6s8t")
 metadata/_custom_type_script = "uid://djmnu1e55mp0j"
 
 [sub_resource type="Resource" id="Resource_2hth1"]
 resource_local_to_scene = true
-script = ExtResource("57_a6847")
+script = ExtResource("34_b6s8t")
 metadata/_custom_type_script = "uid://djmnu1e55mp0j"
 
 [sub_resource type="Resource" id="Resource_ms5ap"]
 resource_local_to_scene = true
-script = ExtResource("57_a6847")
+script = ExtResource("34_b6s8t")
 metadata/_custom_type_script = "uid://djmnu1e55mp0j"
 
 [sub_resource type="Resource" id="Resource_v1evy"]
 resource_local_to_scene = true
-script = ExtResource("57_a6847")
+script = ExtResource("34_b6s8t")
 metadata/_custom_type_script = "uid://djmnu1e55mp0j"
 
 [sub_resource type="Resource" id="Resource_u8yls"]
 resource_local_to_scene = true
-script = ExtResource("57_a6847")
+script = ExtResource("34_b6s8t")
 metadata/_custom_type_script = "uid://djmnu1e55mp0j"
 
 [sub_resource type="Resource" id="Resource_rwiys"]
 resource_local_to_scene = true
 resource_name = "is_die_purple"
-script = ExtResource("57_a6847")
+script = ExtResource("34_b6s8t")
 metadata/_custom_type_script = "uid://djmnu1e55mp0j"
 
 [node name="Main" type="Node"]
-script = ExtResource("1_nbc6x")
+script = ExtResource("1_4gdai")
 
 [node name="UI" type="CanvasLayer" parent="."]
-visible = false
 
 [node name="Counters" type="MarginContainer" parent="UI"]
 anchors_preset = 15
@@ -185,14 +211,14 @@ size_flags_horizontal = 0
 [node name="Label" type="Label" parent="UI/Counters/Counters/Zoom"]
 layout_mode = 2
 text = "📹 Zoom"
-label_settings = ExtResource("15_goqcv")
+label_settings = ExtResource("2_2x5nk")
 
 [node name="Label2" type="Label" parent="UI/Counters/Counters/Zoom"]
 layout_mode = 2
 text = "0.8"
-label_settings = ExtResource("15_goqcv")
-script = ExtResource("9_ia2xj")
-var_res = ExtResource("5_hrl0l")
+label_settings = ExtResource("2_2x5nk")
+script = ExtResource("3_tkcw1")
+var_res = ExtResource("4_mfl3s")
 metadata/_custom_type_script = "uid://cccrm8vuks5fs"
 
 [node name="ButtonZoomPlus" type="Button" parent="UI/Counters/Counters/Zoom"]
@@ -202,12 +228,12 @@ size_flags_horizontal = 0
 size_flags_vertical = 0
 focus_mode = 0
 mouse_default_cursor_shape = 2
-icon = ExtResource("2_764rb")
+icon = ExtResource("5_iw3us")
 expand_icon = true
 
 [node name="APChainNumOp" type="Node" parent="UI/Counters/Counters/Zoom/ButtonZoomPlus" node_paths=PackedStringArray("node_emitter")]
-script = ExtResource("4_764rb")
-vares_target = ExtResource("5_hrl0l")
+script = ExtResource("6_aybfu")
+vares_target = ExtResource("4_mfl3s")
 vares_b = SubResource("Resource_tuai4")
 node_emitter = NodePath("..")
 watch_signal = 0
@@ -220,12 +246,12 @@ size_flags_horizontal = 0
 size_flags_vertical = 0
 focus_mode = 0
 mouse_default_cursor_shape = 2
-icon = ExtResource("3_aex65")
+icon = ExtResource("8_iei40")
 expand_icon = true
 
 [node name="APChainNumOp" type="Node" parent="UI/Counters/Counters/Zoom/ButtonZoomMinus" node_paths=PackedStringArray("node_emitter")]
-script = ExtResource("4_764rb")
-vares_target = ExtResource("5_hrl0l")
+script = ExtResource("6_aybfu")
+vares_target = ExtResource("4_mfl3s")
 vares_b = SubResource("Resource_hrl0l")
 node_emitter = NodePath("..")
 watch_signal = 0
@@ -239,14 +265,14 @@ size_flags_horizontal = 0
 [node name="Label" type="Label" parent="UI/Counters/Counters/UnitsAll"]
 layout_mode = 2
 text = "😶 Units"
-label_settings = ExtResource("15_goqcv")
+label_settings = ExtResource("2_2x5nk")
 
 [node name="Label2" type="Label" parent="UI/Counters/Counters/UnitsAll"]
 layout_mode = 2
 text = "0"
-label_settings = ExtResource("15_goqcv")
-script = ExtResource("9_ia2xj")
-var_res = ExtResource("8_6xsba")
+label_settings = ExtResource("2_2x5nk")
+script = ExtResource("3_tkcw1")
+var_res = ExtResource("9_llitb")
 metadata/_custom_type_script = "uid://cccrm8vuks5fs"
 
 [node name="Units" type="HBoxContainer" parent="UI/Counters/Counters"]
@@ -260,14 +286,14 @@ size_flags_horizontal = 0
 [node name="Label" type="Label" parent="UI/Counters/Counters/Units/White"]
 layout_mode = 2
 text = "⚪"
-label_settings = ExtResource("15_goqcv")
+label_settings = ExtResource("2_2x5nk")
 
 [node name="Label2" type="Label" parent="UI/Counters/Counters/Units/White"]
 layout_mode = 2
 text = "0"
-label_settings = ExtResource("15_goqcv")
-script = ExtResource("9_ia2xj")
-var_res = ExtResource("9_v1evy")
+label_settings = ExtResource("2_2x5nk")
+script = ExtResource("3_tkcw1")
+var_res = ExtResource("10_kuvhv")
 metadata/_custom_type_script = "uid://cccrm8vuks5fs"
 
 [node name="Red" type="HBoxContainer" parent="UI/Counters/Counters/Units"]
@@ -277,14 +303,14 @@ size_flags_horizontal = 0
 [node name="Label" type="Label" parent="UI/Counters/Counters/Units/Red"]
 layout_mode = 2
 text = "🔴"
-label_settings = ExtResource("15_goqcv")
+label_settings = ExtResource("2_2x5nk")
 
 [node name="Label2" type="Label" parent="UI/Counters/Counters/Units/Red"]
 layout_mode = 2
 text = "0"
-label_settings = ExtResource("15_goqcv")
-script = ExtResource("9_ia2xj")
-var_res = ExtResource("10_u8yls")
+label_settings = ExtResource("2_2x5nk")
+script = ExtResource("3_tkcw1")
+var_res = ExtResource("11_4dh10")
 metadata/_custom_type_script = "uid://cccrm8vuks5fs"
 
 [node name="Purple" type="HBoxContainer" parent="UI/Counters/Counters/Units"]
@@ -294,14 +320,14 @@ size_flags_horizontal = 0
 [node name="Label" type="Label" parent="UI/Counters/Counters/Units/Purple"]
 layout_mode = 2
 text = "🟣"
-label_settings = ExtResource("15_goqcv")
+label_settings = ExtResource("2_2x5nk")
 
 [node name="Label2" type="Label" parent="UI/Counters/Counters/Units/Purple"]
 layout_mode = 2
 text = "0"
-label_settings = ExtResource("15_goqcv")
-script = ExtResource("9_ia2xj")
-var_res = ExtResource("11_rwiys")
+label_settings = ExtResource("2_2x5nk")
+script = ExtResource("3_tkcw1")
+var_res = ExtResource("12_dtmu0")
 metadata/_custom_type_script = "uid://cccrm8vuks5fs"
 
 [node name="Yellow" type="HBoxContainer" parent="UI/Counters/Counters/Units"]
@@ -311,14 +337,14 @@ size_flags_horizontal = 0
 [node name="Label" type="Label" parent="UI/Counters/Counters/Units/Yellow"]
 layout_mode = 2
 text = "🟡"
-label_settings = ExtResource("15_goqcv")
+label_settings = ExtResource("2_2x5nk")
 
 [node name="Label2" type="Label" parent="UI/Counters/Counters/Units/Yellow"]
 layout_mode = 2
 text = "0"
-label_settings = ExtResource("15_goqcv")
-script = ExtResource("9_ia2xj")
-var_res = ExtResource("12_fohba")
+label_settings = ExtResource("2_2x5nk")
+script = ExtResource("3_tkcw1")
+var_res = ExtResource("13_mmly5")
 metadata/_custom_type_script = "uid://cccrm8vuks5fs"
 
 [node name="Deaths" type="HBoxContainer" parent="UI/Counters/Counters"]
@@ -328,14 +354,14 @@ size_flags_horizontal = 0
 [node name="Label" type="Label" parent="UI/Counters/Counters/Deaths"]
 layout_mode = 2
 text = "💀 Deaths"
-label_settings = ExtResource("15_goqcv")
+label_settings = ExtResource("2_2x5nk")
 
 [node name="Label2" type="Label" parent="UI/Counters/Counters/Deaths"]
 layout_mode = 2
 text = "0"
-label_settings = ExtResource("15_goqcv")
-script = ExtResource("9_ia2xj")
-var_res = ExtResource("9_d5i4e")
+label_settings = ExtResource("2_2x5nk")
+script = ExtResource("3_tkcw1")
+var_res = ExtResource("14_u6l8h")
 metadata/_custom_type_script = "uid://cccrm8vuks5fs"
 
 [node name="Money" type="HBoxContainer" parent="UI/Counters/Counters"]
@@ -345,14 +371,14 @@ size_flags_horizontal = 0
 [node name="Label" type="Label" parent="UI/Counters/Counters/Money"]
 layout_mode = 2
 text = "💎"
-label_settings = ExtResource("15_goqcv")
+label_settings = ExtResource("2_2x5nk")
 
 [node name="Label2" type="Label" parent="UI/Counters/Counters/Money"]
 layout_mode = 2
 text = "16"
-label_settings = ExtResource("15_goqcv")
-script = ExtResource("9_ia2xj")
-var_res = ExtResource("14_u8yls")
+label_settings = ExtResource("2_2x5nk")
+script = ExtResource("3_tkcw1")
+var_res = ExtResource("15_ikbnx")
 metadata/_custom_type_script = "uid://cccrm8vuks5fs"
 
 [node name="Money2" type="HBoxContainer" parent="UI/Counters/Counters"]
@@ -362,7 +388,7 @@ size_flags_horizontal = 0
 [node name="Label" type="Label" parent="UI/Counters/Counters/Money2"]
 layout_mode = 2
 text = "🎫"
-label_settings = ExtResource("15_goqcv")
+label_settings = ExtResource("2_2x5nk")
 
 [node name="Label2" type="Label" parent="UI/Counters/Counters/Money2"]
 layout_mode = 2
@@ -374,12 +400,12 @@ theme_override_constants/shadow_offset_y = 1
 theme_override_constants/outline_size = 7
 theme_override_constants/shadow_outline_size = 12
 text = "2"
-label_settings = ExtResource("15_goqcv")
-script = ExtResource("9_ia2xj")
-var_res = ExtResource("15_ene7r")
+label_settings = ExtResource("2_2x5nk")
+script = ExtResource("3_tkcw1")
+var_res = ExtResource("16_emtuh")
 metadata/_custom_type_script = "uid://cccrm8vuks5fs"
 
-[node name="CardHand" parent="UI" instance=ExtResource("15_65lg3")]
+[node name="CardHand" parent="UI" instance=ExtResource("17_jirj6")]
 metadata/_edit_group_ = true
 
 [node name="ColorRectGrid1" type="ColorRect" parent="."]
@@ -400,10 +426,12 @@ color = Color(4.428029e-06, 0.71770066, 0.9363188, 1)
 
 [node name="Visual" type="TileMapLayer" parent="Tilemaps"]
 modulate = Color(0.1760028, 0.9230832, 0.34097162, 1)
-texture_filter = 4
-material = ExtResource("19_goqcv")
-tile_map_data = PackedByteArray("AAD0//7/BAAAAAAAAgD0////BAADAAAAAgD0/wAABAADAAAAAgD0/wEABAAAAAAAAAD1//7/BAADAAAAAQD1////BAAGAAAAAAD1/wAABAAGAAAAAwD1/wEABAADAAAAAAD2//7/BAADAAAAAQD2////BAAGAAAAAQD2/wAABAAGAAAAAgD2/wEABAADAAAAAAD3//7/BAAAAAAAAwD3////BAAGAAAAAwD3/wAABAAGAAAAAAD3/wEABAAAAAAAAQD4//3/BAAAAAAAAgD4//7/BAADAAAAAgD4////BAAGAAAAAgD4/wAABAADAAAAAAD4/wIABAAAAAAAAgD4/wMABAAAAAAAAAD5//3/BAADAAAAAQD5//7/BAAGAAAAAAD5////BAAGAAAAAwD5/wAABAADAAAAAAD5/wIABAAAAAAAAwD5/wMABAAAAAAAAQD6//3/BAADAAAAAQD6//7/BAAGAAAAAQD6////BAAGAAAAAgD6/wAABAADAAAAAAD7//3/BAAAAAAAAwD7//7/BAADAAAAAwD7////BAADAAAAAwD7/wAABAAAAAAAAQD8//7/BAAAAAAAAgD8////BAADAAAAAgD8/wAABAADAAAAAgD8/wEABAADAAAAAgD8/wIABAADAAAAAgD8/wMABAADAAAAAgD8/wQABAAAAAAAAAD9//3/BAAAAAAAAgD9//7/BAAGAAAAAgD9////BAADAAMAAAD9/wAABAADAAMAAAD9/wEABAADAAMAAAD9/wIABAADAAMAAAD9/wMABAADAAMAAAD9/wQABAADAAAAAAD+//3/BAADAAAAAQD+//7/BAADAAMAAAD+////BAADAAMAAAD+/wAABAADAAMAAAD+/wEABAADAAMAAAD+/wIABAADAAMAAAD+/wMABAADAAMAAAD+/wQABAAGAAAAAQD+/wUABAADAAAAAgD+/wYABAAAAAAAAAD///3/BAADAAAAAQD///7/BAADAAMAAAD/////BAADAAMAAAD//wAABAADAAMAAAD//wEABAADAAMAAAD//wIABAADAAMAAAD//wMABAADAAMAAAD//wQABAADAAMAAAD//wUABAADAAMAAAAAAP3/BAADAAAAAQAAAP7/BAADAAMAAAAAAP//BAADAAMAAAAAAAAABAAGAAAAAAAAAAEABAADAAAAAwAAAAIABAAGAAAAAwAAAAMABAADAAMAAAAAAAQABAADAAMAAAAAAAUABAAGAAAAAAAAAAYABAAAAAAAAQABAPv/BAAAAAAAAgABAPz/BAADAAAAAgABAP3/BAAGAAAAAgABAP7/BAADAAMAAAABAP//BAAGAAAAAAABAAAABAAAAAAAAQABAAIABAADAAAAAQABAAMABAADAAMAAAABAAQABAADAAMAAAABAAUABAADAAAAAAACAPv/BAADAAAAAQACAPz/BAADAAMAAAACAP7/BAAGAAAAAAACAP//BAAAAAAAAQACAAIABAADAAAAAQACAAMABAADAAMAAAACAAQABAADAAMAAAACAAUABAADAAAAAAADAPf/BAAAAAAAAgADAPj/BAAAAAAAAAADAPv/BAAAAAAAAwADAPz/BAAGAAAAAwADAP7/BAAGAAAAAQADAP//BAAAAAAAAAADAAIABAAAAAAAAwADAAMABAAGAAAAAwADAAQABAADAAMAAAADAAUABAAGAAAAAQADAAYABAAAAAAAAAAEAPT/BAAAAAAAAgAEAPX/BAADAAAAAgAEAPb/BAADAAAAAgAEAPf/BAAGAAAAAgAEAPj/BAADAAAAAAAEAPz/BAADAAAAAQAEAP3/BAADAAMAAAAEAP7/BAADAAMAAAAEAP//BAAGAAAAAQAEAAAABAAAAAAAAAAEAAIABAAAAAAAAgAEAAMABAAGAAAAAgAEAAQABAADAAMAAAAEAAUABAADAAMAAAAEAAYABAADAAAAAAAFAPT/BAADAAAAAQAFAPX/BAADAAMAAAAFAPb/BAADAAMAAAAFAPf/BAADAAMAAAAFAPj/BAADAAAAAAAFAPz/BAAAAAAAAwAFAP3/BAAGAAAAAwAFAP7/BAADAAMAAAAFAP//BAADAAMAAAAFAAAABAADAAAAAAAFAAEABAAAAAAAAgAFAAIABAAGAAAAAgAFAAMABAADAAMAAAAFAAQABAADAAMAAAAFAAUABAADAAMAAAAFAAYABAADAAAAAAAGAPT/BAADAAAAAQAGAPX/BAADAAMAAAAGAPb/BAAGAAAAAAAGAPf/BAAGAAAAAwAGAPj/BAADAAAAAAAGAP3/BAADAAAAAQAGAP7/BAADAAMAAAAGAP//BAADAAMAAAAGAAAABAAGAAAAAQAGAAEABAAGAAAAAgAGAAIABAADAAMAAAAGAAMABAADAAMAAAAGAAQABAADAAMAAAAGAAUABAAGAAAAAAAGAAYABAAAAAAAAQAHAPT/BAADAAAAAQAHAPX/BAADAAMAAAAHAPb/BAADAAAAAAAHAPf/BAADAAAAAQAHAPj/BAADAAAAAAAHAP3/BAAAAAAAAwAHAP7/BAAGAAAAAwAHAP//BAADAAMAAAAHAAAABAADAAMAAAAHAAEABAADAAMAAAAHAAIABAADAAMAAAAHAAMABAAGAAAAAAAHAAQABAAGAAAAAwAHAAUABAADAAAAAAAIAPT/BAADAAAAAQAIAPX/BAADAAMAAAAIAPb/BAAGAAAAAQAIAPf/BAAAAAMAAAAIAPj/BAAAAAAAAQAIAP7/BAADAAAAAQAIAP//BAADAAMAAAAIAAAABAADAAMAAAAIAAEABAADAAMAAAAIAAIABAAGAAAAAAAIAAMABAAAAAMAAQAIAAQABAAGAAAAAgAIAAUABAAGAAAAAQAIAAYABAAAAAAAAAAJAPT/BAAAAAAAAwAJAPX/BAADAAAAAwAJAPb/BAADAAAAAwAJAPf/BAAAAAAAAQAJAP7/BAADAAAAAQAJAP//BAADAAMAAAAJAAAABAADAAMAAAAJAAEABAAGAAAAAAAJAAIABAAAAAAAAQAJAAMABAAAAAAAAwAJAAQABAAGAAAAAwAJAAUABAADAAMAAAAJAAYABAADAAAAAAAKAP3/BAAAAAAAAgAKAP7/BAAGAAAAAgAKAP//BAADAAMAAAAKAAAABAAGAAAAAAAKAAEABAAAAAAAAQAKAAQABAADAAAAAQAKAAUABAADAAMAAAAKAAYABAADAAAAAAALAP3/BAADAAAAAQALAP7/BAADAAMAAAALAP//BAAGAAAAAAALAAAABAAAAAAAAQALAAQABAAAAAAAAwALAAUABAADAAAAAwALAAYABAAAAAAAAQAMAPz/BAAAAAAAAgAMAP3/BAAGAAAAAgAMAP7/BAADAAMAAAAMAP//BAADAAAAAAANAPz/BAADAAAAAQANAP3/BAADAAMAAAANAP7/BAADAAMAAAANAP//BAADAAAAAAAOAPz/BAAAAAAAAwAOAP3/BAADAAAAAwAOAP7/BAADAAAAAwAOAP//BAAAAAAAAQAQAAAABAAAAAAAAgAQAAEABAADAAAAAgAQAAIABAADAAAAAgAQAAMABAADAAAAAgAQAAQABAADAAAAAgAQAAUABAADAAAAAgAQAAYABAAAAAAAAAARAP//BAAAAAAAAgARAAAABAAGAAAAAgARAAEABAADAAMAAAARAAIABAADAAMAAAARAAMABAADAAMAAAARAAQABAADAAMAAAARAAUABAADAAMAAAARAAYABAADAAAAAAASAP//BAADAAAAAQASAAAABAADAAMAAAASAAEABAADAAMAAAASAAIABAADAAMAAAASAAMABAADAAMAAAASAAQABAADAAMAAAASAAUABAAGAAAAAAASAAYABAAAAAAAAQATAP//BAAAAAAAAwATAAAABAAGAAAAAwATAAEABAADAAMAAAATAAIABAADAAMAAAATAAMABAADAAMAAAATAAQABAAGAAAAAAATAAUABAAAAAAAAQAUAAAABAAAAAAAAwAUAAEABAADAAAAAwAUAAIABAAGAAAAAwAUAAMABAADAAMAAAAUAAQABAADAAAAAAAVAAAABAAAAAAAAgAVAAEABAADAAAAAgAVAAIABAAGAAAAAgAVAAMABAADAAMAAAAVAAQABAADAAAAAAAWAAAABAADAAAAAQAWAAEABAADAAMAAAAWAAIABAADAAMAAAAWAAMABAAGAAAAAAAWAAQABAAAAAAAAQAXAAAABAADAAAAAQAXAAEABAADAAMAAAAXAAIABAAGAAAAAAAXAAMABAAAAAAAAQAYAAAABAAAAAAAAwAYAAEABAADAAAAAwAYAAIABAAAAAAAAQADAP3/BAADAAMAAAACAP3/BAADAAMAAAD//wYABAADAAAAAAAMAAMABAAAAAAAAgANAAMABAAAAAAAAwANAAQABAAAAAAAAQAMAAQABAAAAAAAAAA=")
-tile_set = ExtResource("20_goqcv")
+clip_children = 2
+texture_filter = 1
+material = ExtResource("19_jhtfo")
+scale = Vector2(3, 3)
+tile_map_data = PackedByteArray("AAD0//7/BAAAAAAAAgD0////BAABAAAAAgD0/wAABAABAAAAAgD0/wEABAAAAAAAAAD1//7/BAABAAAAAQD1////BAACAAAAAAD1/wAABAACAAAAAwD1/wEABAABAAAAAAD2//7/BAABAAAAAQD2////BAACAAAAAQD2/wAABAACAAAAAgD2/wEABAABAAAAAAD3//7/BAAAAAAAAwD3////BAACAAAAAwD3/wAABAACAAAAAAD3/wEABAAAAAAAAQD4//3/BAAAAAAAAgD4//7/BAABAAAAAgD4////BAACAAAAAgD4/wAABAABAAAAAAD4/wIABAAAAAAAAgD4/wMABAAAAAAAAAD5//3/BAABAAAAAQD5//7/BAACAAAAAAD5////BAACAAAAAwD5/wAABAABAAAAAAD5/wIABAAAAAAAAwD5/wMABAAAAAAAAQD6//3/BAABAAAAAQD6//7/BAACAAAAAQD6////BAACAAAAAgD6/wAABAABAAAAAAD7//3/BAAAAAAAAwD7//7/BAABAAAAAwD7////BAABAAAAAwD7/wAABAAAAAAAAQD8//7/BAAAAAAAAgD8////BAABAAAAAgD8/wAABAABAAAAAgD8/wEABAABAAAAAgD8/wIABAABAAAAAgD8/wMABAABAAAAAgD8/wQABAAAAAAAAAD9//3/BAAAAAAAAgD9//7/BAACAAAAAgD9////BAABAAEAAAD9/wAABAABAAEAAAD9/wEABAABAAEAAAD9/wIABAABAAEAAAD9/wMABAABAAEAAAD9/wQABAABAAAAAAD+//3/BAABAAAAAQD+//7/BAABAAEAAAD+////BAABAAEAAAD+/wAABAABAAEAAAD+/wEABAABAAEAAAD+/wIABAABAAEAAAD+/wMABAABAAEAAAD+/wQABAACAAAAAQD+/wUABAABAAAAAgD+/wYABAAAAAAAAAD///3/BAABAAAAAQD///7/BAABAAEAAAD/////BAABAAEAAAD//wAABAABAAEAAAD//wEABAABAAEAAAD//wIABAABAAEAAAD//wMABAABAAEAAAD//wQABAABAAEAAAD//wUABAABAAEAAAAAAP3/BAABAAAAAQAAAP7/BAABAAEAAAAAAP//BAABAAEAAAAAAAAABAACAAAAAAAAAAEABAABAAAAAwAAAAIABAACAAAAAwAAAAMABAABAAEAAAAAAAQABAABAAEAAAAAAAUABAACAAAAAAAAAAYABAAAAAAAAQABAPv/BAAAAAAAAgABAPz/BAABAAAAAgABAP3/BAACAAAAAgABAP7/BAABAAEAAAABAP//BAACAAAAAAABAAAABAAAAAAAAQABAAIABAABAAAAAQABAAMABAABAAEAAAABAAQABAABAAEAAAABAAUABAABAAAAAAACAPv/BAABAAAAAQACAPz/BAABAAEAAAACAP7/BAACAAAAAAACAP//BAAAAAAAAQACAAIABAABAAAAAQACAAMABAABAAEAAAACAAQABAABAAEAAAACAAUABAABAAAAAAADAPf/BAAAAAAAAgADAPj/BAAAAAAAAAADAPv/BAAAAAAAAwADAPz/BAACAAAAAwADAP7/BAACAAAAAQADAP//BAAAAAAAAAADAAIABAAAAAAAAwADAAMABAACAAAAAwADAAQABAABAAEAAAADAAUABAACAAAAAQADAAYABAAAAAAAAAAEAPT/BAAAAAAAAgAEAPX/BAABAAAAAgAEAPb/BAABAAAAAgAEAPf/BAACAAAAAgAEAPj/BAABAAAAAAAEAPz/BAABAAAAAQAEAP3/BAABAAEAAAAEAP7/BAABAAEAAAAEAP//BAACAAAAAQAEAAAABAAAAAAAAAAEAAIABAAAAAAAAgAEAAMABAACAAAAAgAEAAQABAABAAEAAAAEAAUABAABAAEAAAAEAAYABAABAAAAAAAFAPT/BAABAAAAAQAFAPX/BAABAAEAAAAFAPb/BAABAAEAAAAFAPf/BAABAAEAAAAFAPj/BAABAAAAAAAFAPz/BAAAAAAAAwAFAP3/BAACAAAAAwAFAP7/BAABAAEAAAAFAP//BAABAAEAAAAFAAAABAABAAAAAAAFAAEABAAAAAAAAgAFAAIABAACAAAAAgAFAAMABAABAAEAAAAFAAQABAABAAEAAAAFAAUABAABAAEAAAAFAAYABAABAAAAAAAGAPT/BAABAAAAAQAGAPX/BAABAAEAAAAGAPb/BAACAAAAAAAGAPf/BAACAAAAAwAGAPj/BAABAAAAAAAGAP3/BAABAAAAAQAGAP7/BAABAAEAAAAGAP//BAABAAEAAAAGAAAABAACAAAAAQAGAAEABAACAAAAAgAGAAIABAABAAEAAAAGAAMABAABAAEAAAAGAAQABAABAAEAAAAGAAUABAACAAAAAAAGAAYABAAAAAAAAQAHAPT/BAABAAAAAQAHAPX/BAABAAEAAAAHAPb/BAABAAAAAAAHAPf/BAABAAAAAQAHAPj/BAABAAAAAAAHAP3/BAAAAAAAAwAHAP7/BAACAAAAAwAHAP//BAABAAEAAAAHAAAABAABAAEAAAAHAAEABAABAAEAAAAHAAIABAABAAEAAAAHAAMABAACAAAAAAAHAAQABAACAAAAAwAHAAUABAABAAAAAAAIAPT/BAABAAAAAQAIAPX/BAABAAEAAAAIAPb/BAACAAAAAQAIAPf/BAAAAAEAAAAIAPj/BAAAAAAAAQAIAP7/BAABAAAAAQAIAP//BAABAAEAAAAIAAAABAABAAEAAAAIAAEABAABAAEAAAAIAAIABAACAAAAAAAIAAMABAAAAAEAAQAIAAQABAACAAAAAgAIAAUABAACAAAAAQAIAAYABAAAAAAAAAAJAPT/BAAAAAAAAwAJAPX/BAABAAAAAwAJAPb/BAABAAAAAwAJAPf/BAAAAAAAAQAJAP7/BAABAAAAAQAJAP//BAABAAEAAAAJAAAABAABAAEAAAAJAAEABAACAAAAAAAJAAIABAAAAAAAAQAJAAMABAAAAAAAAwAJAAQABAACAAAAAwAJAAUABAABAAEAAAAJAAYABAABAAAAAAAKAP3/BAAAAAAAAgAKAP7/BAACAAAAAgAKAP//BAABAAEAAAAKAAAABAACAAAAAAAKAAEABAAAAAAAAQAKAAQABAABAAAAAQAKAAUABAABAAEAAAAKAAYABAABAAAAAAALAP3/BAABAAAAAQALAP7/BAABAAEAAAALAP//BAACAAAAAAALAAAABAAAAAAAAQALAAQABAAAAAAAAwALAAUABAABAAAAAwALAAYABAAAAAAAAQAMAPz/BAAAAAAAAgAMAP3/BAACAAAAAgAMAP7/BAABAAEAAAAMAP//BAABAAAAAAANAPz/BAABAAAAAQANAP3/BAABAAEAAAANAP7/BAABAAEAAAANAP//BAABAAAAAAAOAPz/BAAAAAAAAwAOAP3/BAABAAAAAwAOAP7/BAABAAAAAwAOAP//BAAAAAAAAQAQAAAABAAAAAAAAgAQAAEABAABAAAAAgAQAAIABAABAAAAAgAQAAMABAABAAAAAgAQAAQABAABAAAAAgAQAAUABAABAAAAAgAQAAYABAAAAAAAAAARAP//BAAAAAAAAgARAAAABAACAAAAAgARAAEABAABAAEAAAARAAIABAABAAEAAAARAAMABAABAAEAAAARAAQABAABAAEAAAARAAUABAABAAEAAAARAAYABAABAAAAAAASAP//BAABAAAAAQASAAAABAABAAEAAAASAAEABAABAAEAAAASAAIABAABAAEAAAASAAMABAABAAEAAAASAAQABAABAAEAAAASAAUABAACAAAAAAASAAYABAAAAAAAAQATAP//BAAAAAAAAwATAAAABAACAAAAAwATAAEABAABAAEAAAATAAIABAABAAEAAAATAAMABAABAAEAAAATAAQABAACAAAAAAATAAUABAAAAAAAAQAUAAAABAAAAAAAAwAUAAEABAABAAAAAwAUAAIABAACAAAAAwAUAAMABAABAAEAAAAUAAQABAABAAAAAAAVAAAABAAAAAAAAgAVAAEABAABAAAAAgAVAAIABAACAAAAAgAVAAMABAABAAEAAAAVAAQABAABAAAAAAAWAAAABAABAAAAAQAWAAEABAABAAEAAAAWAAIABAABAAEAAAAWAAMABAACAAAAAAAWAAQABAAAAAAAAQAXAAAABAABAAAAAQAXAAEABAABAAEAAAAXAAIABAACAAAAAAAXAAMABAAAAAAAAQAYAAAABAAAAAAAAwAYAAEABAABAAAAAwAYAAIABAAAAAAAAQADAP3/BAABAAEAAAACAP3/BAABAAEAAAD//wYABAABAAAAAAAMAAMABAAAAAAAAgANAAMABAAAAAAAAwANAAQABAAAAAAAAQAMAAQABAAAAAAAAAA=")
+tile_set = ExtResource("20_4gdai")
 navigation_enabled = false
 
 [node name="Type" type="TileMapLayer" parent="Tilemaps"]
@@ -418,860 +446,764 @@ clip_children = 1
 
 [node name="Fields" type="TileMapLayer" parent="Tilemaps/Clip"]
 position = Vector2(24, 24)
-tile_map_data = PackedByteArray("AAAGAAMAAAAAAAAAAQAGAAIAAAAAAAAAAQAFAAIAAAAAAAAAAQAFAAEAAAAAAAAAAQAGAAEAAAAAAAAAAQAHAAEAAAAAAAAAAQAHAAIAAAAAAAAAAQAIAAEAAAAAAAAAAQAIAAAAAAAAAAAAAQAHAAAAAAAAAAAAAQAGAAAAAAAAAAAABQD//wUAAAAAAAAAAgD//wQAAAAAAAAAAgD//wMAAAAAAAAAAgD//wIAAAAAAAAAAgAAAAMAAAAAAAAAAgAAAAQAAAAAAAAAAgABAAQAAAAAAAAAAgD+/wQAAAAAAAAAAgD+/wMAAAAAAAAAAgD+/wIAAAAAAAAAAgD9/wIAAAAAAAAAAgD9/wMAAAAAAAAAAgD8//7/AAAAAAAAAwD8////AAAAAAAAAwD9////AAAAAAAAAwD+////AAAAAAAAAwD+//7/AAAAAAAAAwD9//7/AAAAAAAAAwD9//3/AAAAAAAAAwD+//3/AAAAAAAAAwD///3/AAAAAAAAAwD///7/AAAAAAAAAwADAPz/AAAAAAAABQADAP3/AAAAAAAABQAEAP3/AAAAAAAABQAEAPz/AAAAAAAABQAFAP3/AAAAAAAABQAFAP7/AAAAAAAABQAEAP7/AAAAAAAABQAGAP7/AAAAAAAABQAGAP3/AAAAAAAAAQAFAAQAAAAAAAAABAAFAAMAAAAAAAAABAAEAAMAAAAAAAAABAAEAAQAAAAAAAAABAAEAAUAAAAAAAAABAAFAAUAAAAAAAAABAADAAUAAAAAAAAABAADAAQAAAAAAAAABAADAAMAAAAAAAAABAAEAAIAAAAAAAAABAACAAMAAAAAAAAABAACAAIAAAAAAAAABAABAAIAAAAAAAAABAABAAMAAAAAAAAABAACAAQAAAAAAAAAAQAHAAQAAAAAAAAABAAGAAQAAAAAAAAABAAIAAQAAAAAAAAABAAIAAUAAAAAAAAABAAJAAUAAAAAAAAABAAKAAUAAAAAAAAABAAKAAQAAAAAAAAABAAJAAQAAAAAAAAABAAIAAMAAAAAAAAABAAAAAIAAAAAAAAABAD+/wUAAAAAAAAABAD8/wMAAAAAAAAABAD8/wIAAAAAAAAABAD8/wEAAAAAAAAABAD8/wAAAAAAAAAABAD9/wAAAAAAAAAABAD9/wEAAAAAAAAABAD+/wEAAAAAAAAABAD+/wAAAAAAAAAABAD//wAAAAAAAAAABAD//wEAAAAAAAAABAD/////AAAAAAAABAAAAP//AAAAAAAABAAAAP7/AAAAAAAABAAAAP3/AAAAAAAABQABAP3/AAAAAAAABQABAP7/AAAAAAAAAQABAPz/AAAAAAAAAQABAPv/AAAAAAAAAQACAPv/AAAAAAAABAACAPz/AAAAAAAABAACAP3/AAAAAAAABQADAP7/AAAAAAAABAAFAP//AAAAAAAABQAGAP//AAAAAAAABQAHAP//AAAAAAAABQAIAP//AAAAAAAABQAJAAAAAAAAAAAABAAJAP7/AAAAAAAABAAIAP7/AAAAAAAABQAHAP7/AAAAAAAABQAKAP7/AAAAAAAABAAKAP3/AAAAAAAABAALAP7/AAAAAAAABAALAP3/AAAAAAAABAAMAP7/AAAAAAAABAAMAP3/AAAAAAAABAAMAPz/AAAAAAAABAANAPz/AAAAAAAABAANAP3/AAAAAAAABAANAP7/AAAAAAAABAAEAP//AAAAAAAABAAJAP//AAAAAAAABAAKAP//AAAAAAAABAA=")
-tile_set = ExtResource("13_fh3cp")
+tile_map_data = PackedByteArray("AAAGAAMAAAAAAAAAAQAGAAIAAAAAAAAAAQAFAAIAAAAAAAAAAQAFAAEAAAAAAAAAAQAGAAEAAAAAAAAAAQAHAAEAAAAAAAAAAQAHAAIAAAAAAAAAAQAIAAEAAAAAAAAAAQAIAAAAAAAAAAAAAQAHAAAAAAAAAAAAAQAGAAAAAAAAAAAABQD//wUAAAAAAAAAAgD//wQAAAAAAAAAAgD//wMAAAAAAAAAAgD//wIAAAAAAAAAAgAAAAMAAAAAAAAAAgAAAAQAAAAAAAAAAgABAAQAAAAAAAAAAgD+/wQAAAAAAAAAAgD+/wMAAAAAAAAAAgD+/wIAAAAAAAAAAgD9/wIAAAAAAAAAAgD9/wMAAAAAAAAAAgD8//7/AAAAAAAAAwD8////AAAAAAAAAwD9////AAAAAAAAAwD+////AAAAAAAAAwD+//7/AAAAAAAAAwD9//7/AAAAAAAAAwD9//3/AAAAAAAAAwD+//3/AAAAAAAAAwD///3/AAAAAAAAAwD///7/AAAAAAAAAwADAPz/AAAAAAAABQADAP3/AAAAAAAABQAEAP3/AAAAAAAABQAEAPz/AAAAAAAABQAFAP3/AAAAAAAABQAFAP7/AAAAAAAABQAEAP7/AAAAAAAABQAGAP7/AAAAAAAABQAGAP3/AAAAAAAAAQAFAAQAAAAAAAAABAAFAAMAAAAAAAAABAAEAAMAAAAAAAAABAAEAAQAAAAAAAAABAAEAAUAAAAAAAAABAAFAAUAAAAAAAAABAADAAUAAAAAAAAABAADAAQAAAAAAAAABAADAAMAAAAAAAAABAAEAAIAAAAAAAAABAACAAMAAAAAAAAABAACAAIAAAAAAAAABAABAAIAAAAAAAAABAABAAMAAAAAAAAABAACAAQAAAAAAAAAAQAHAAQAAAAAAAAABAAGAAQAAAAAAAAABAAIAAQAAAAAAAAABAAIAAUAAAAAAAAABAAJAAUAAAAAAAAABAAKAAUAAAAAAAAABAAKAAQAAAAAAAAABAAJAAQAAAAAAAAABAAIAAMAAAAAAAAABAAAAAIAAAAAAAAABAD+/wUAAAAAAAAABAD8/wMAAAAAAAAABAD8/wIAAAAAAAAABAD8/wEAAAAAAAAABAD8/wAAAAAAAAAABAD9/wAAAAAAAAAABAD9/wEAAAAAAAAABAD+/wEAAAAAAAAABAD+/wAAAAAAAAAABAD//wAAAAAAAAAABAD//wEAAAAAAAAABAD/////AAAAAAAABAAAAP//AAAAAAAABAAAAP7/AAAAAAAABAAAAP3/AAAAAAAABQABAP3/AAAAAAAABQABAP7/AAAAAAAABAABAPz/AAAAAAAABAABAPv/AAAAAAAABAACAPv/AAAAAAAABAACAPz/AAAAAAAABAACAP3/AAAAAAAABQADAP7/AAAAAAAABAAFAP//AAAAAAAABQAGAP//AAAAAAAABQAHAP//AAAAAAAABQAIAP//AAAAAAAABQAJAAAAAAAAAAAABAAJAP7/AAAAAAAABAAIAP7/AAAAAAAABQAHAP7/AAAAAAAABQAKAP7/AAAAAAAABAAKAP3/AAAAAAAABAALAP7/AAAAAAAABAALAP3/AAAAAAAABAAMAP7/AAAAAAAABAAMAP3/AAAAAAAABAAMAPz/AAAAAAAABAANAPz/AAAAAAAABAANAP3/AAAAAAAABAANAP7/AAAAAAAABAAEAP//AAAAAAAABAAJAP//AAAAAAAABAAKAP//AAAAAAAABAA=")
+tile_set = ExtResource("22_677ug")
 
 [node name="corner-ru-1" type="Sprite2D" parent="Tilemaps/Clip"]
-modulate = Color(0, 0, 0, 1)
-self_modulate = Color(0, 0, 0, 1)
 texture_filter = 1
 material = SubResource("CanvasItemMaterial_goqcv")
 position = Vector2(-71.999985, 216.00002)
 rotation = -3.1415925
-texture = ExtResource("23_lk2p4")
+scale = Vector2(3, 3)
+texture = SubResource("AtlasTexture_goqcv")
 
 [node name="corner-ru-4" type="Sprite2D" parent="Tilemaps/Clip"]
-modulate = Color(0, 0, 0, 1)
-self_modulate = Color(0, 0, 0, 1)
 texture_filter = 1
 material = SubResource("CanvasItemMaterial_goqcv")
 position = Vector2(168.00003, -72.00001)
 rotation = -3.1415925
-texture = ExtResource("23_lk2p4")
+scale = Vector2(3, 3)
+texture = SubResource("AtlasTexture_goqcv")
 
 [node name="corner-ru-5" type="Sprite2D" parent="Tilemaps/Clip"]
-modulate = Color(0, 0, 0, 1)
-self_modulate = Color(0, 0, 0, 1)
 texture_filter = 1
 material = SubResource("CanvasItemMaterial_goqcv")
 position = Vector2(216.00005, -24.00001)
 rotation = -3.1415925
-texture = ExtResource("23_lk2p4")
+scale = Vector2(3, 3)
+texture = SubResource("AtlasTexture_goqcv")
 
 [node name="corner-ru-6" type="Sprite2D" parent="Tilemaps/Clip"]
-modulate = Color(0, 0, 0, 1)
-self_modulate = Color(0, 0, 0, 1)
 texture_filter = 1
 material = SubResource("CanvasItemMaterial_goqcv")
 position = Vector2(312.00006, 23.999992)
 rotation = -3.1415925
-texture = ExtResource("23_lk2p4")
+scale = Vector2(3, 3)
+texture = SubResource("AtlasTexture_goqcv")
 
 [node name="wall-r-1" type="Sprite2D" parent="Tilemaps/Clip"]
-modulate = Color(0, 0, 0, 1)
-self_modulate = Color(0, 0, 0, 1)
 texture_filter = 1
 material = SubResource("CanvasItemMaterial_goqcv")
 position = Vector2(-71.999985, 264)
 rotation = -1.5707964
-texture = ExtResource("24_crx51")
+scale = Vector2(3, 3)
+texture = SubResource("AtlasTexture_wren1")
 
 [node name="wall-r-2" type="Sprite2D" parent="Tilemaps/Clip"]
-modulate = Color(0, 0, 0, 1)
-self_modulate = Color(0, 0, 0, 1)
 texture_filter = 1
 material = SubResource("CanvasItemMaterial_goqcv")
 position = Vector2(-168, 167.99998)
 rotation = -1.5707964
-texture = ExtResource("24_crx51")
+scale = Vector2(3, 3)
+texture = SubResource("AtlasTexture_wren1")
 
 [node name="wall-r-3" type="Sprite2D" parent="Tilemaps/Clip"]
-modulate = Color(0, 0, 0, 1)
-self_modulate = Color(0, 0, 0, 1)
 texture_filter = 1
 material = SubResource("CanvasItemMaterial_goqcv")
 position = Vector2(-168.00002, 120)
 rotation = -1.5707964
-texture = ExtResource("24_crx51")
+scale = Vector2(3, 3)
+texture = SubResource("AtlasTexture_wren1")
 
 [node name="wall-r-4" type="Sprite2D" parent="Tilemaps/Clip"]
-modulate = Color(0, 0, 0, 1)
-self_modulate = Color(0, 0, 0, 1)
 texture_filter = 1
 material = SubResource("CanvasItemMaterial_goqcv")
 position = Vector2(-168, 71.99999)
 rotation = -1.5707964
-texture = ExtResource("24_crx51")
+scale = Vector2(3, 3)
+texture = SubResource("AtlasTexture_wren1")
 
 [node name="wall-r-5" type="Sprite2D" parent="Tilemaps/Clip"]
-modulate = Color(0, 0, 0, 1)
-self_modulate = Color(0, 0, 0, 1)
 texture_filter = 1
 material = SubResource("CanvasItemMaterial_goqcv")
 position = Vector2(-168, 23.999992)
 rotation = -1.5707964
-texture = ExtResource("24_crx51")
+scale = Vector2(3, 3)
+texture = SubResource("AtlasTexture_wren1")
 
 [node name="wall-r-6" type="Sprite2D" parent="Tilemaps/Clip"]
-modulate = Color(0, 0, 0, 1)
-self_modulate = Color(0, 0, 0, 1)
 texture_filter = 1
 material = SubResource("CanvasItemMaterial_goqcv")
 position = Vector2(-168, -24.000008)
 rotation = -1.5707964
-texture = ExtResource("24_crx51")
+scale = Vector2(3, 3)
+texture = SubResource("AtlasTexture_wren1")
 
 [node name="wall-r-7" type="Sprite2D" parent="Tilemaps/Clip"]
-modulate = Color(0, 0, 0, 1)
-self_modulate = Color(0, 0, 0, 1)
 texture_filter = 1
 material = SubResource("CanvasItemMaterial_goqcv")
 position = Vector2(72, -168)
 rotation = -1.5707964
-texture = ExtResource("24_crx51")
+scale = Vector2(3, 3)
+texture = SubResource("AtlasTexture_wren1")
 
 [node name="wall-l-1" type="Sprite2D" parent="Tilemaps/Clip"]
-modulate = Color(0, 0, 0, 1)
-self_modulate = Color(0, 0, 0, 1)
 texture_filter = 1
 material = SubResource("CanvasItemMaterial_goqcv")
 position = Vector2(696, -72)
 rotation = 1.5707964
-texture = ExtResource("24_crx51")
+scale = Vector2(3, 3)
+texture = SubResource("AtlasTexture_wren1")
 
 [node name="wall-l-3" type="Sprite2D" parent="Tilemaps/Clip"]
-modulate = Color(0, 0, 0, 1)
-self_modulate = Color(0, 0, 0, 1)
 texture_filter = 1
 material = SubResource("CanvasItemMaterial_goqcv")
 position = Vector2(552, 264)
 rotation = 1.5707964
-texture = ExtResource("24_crx51")
+scale = Vector2(3, 3)
+texture = SubResource("AtlasTexture_wren1")
 
 [node name="wall-l-4" type="Sprite2D" parent="Tilemaps/Clip"]
-modulate = Color(0, 0, 0, 1)
-self_modulate = Color(0, 0, 0, 1)
 texture_filter = 1
 material = SubResource("CanvasItemMaterial_goqcv")
 position = Vector2(23.999992, 71.999985)
 rotation = 1.5707964
-texture = ExtResource("24_crx51")
+scale = Vector2(3, 3)
+texture = SubResource("AtlasTexture_wren1")
 
 [node name="wall-l-2" type="Sprite2D" parent="Tilemaps/Clip"]
-modulate = Color(0, 0, 0, 1)
-self_modulate = Color(0, 0, 0, 1)
 texture_filter = 1
 material = SubResource("CanvasItemMaterial_goqcv")
 position = Vector2(696, -120)
 rotation = 1.5707964
-texture = ExtResource("24_crx51")
+scale = Vector2(3, 3)
+texture = SubResource("AtlasTexture_wren1")
 
 [node name="wall-u-1" type="Sprite2D" parent="Tilemaps/Clip"]
-modulate = Color(0, 0, 0, 1)
-self_modulate = Color(0, 0, 0, 1)
 texture_filter = 1
 material = SubResource("CanvasItemMaterial_goqcv")
 position = Vector2(24, -120)
-texture = ExtResource("24_crx51")
+scale = Vector2(3, 3)
+texture = SubResource("AtlasTexture_wren1")
 
 [node name="wall-u-2" type="Sprite2D" parent="Tilemaps/Clip"]
-modulate = Color(0, 0, 0, 1)
-self_modulate = Color(0, 0, 0, 1)
 texture_filter = 1
 material = SubResource("CanvasItemMaterial_goqcv")
 position = Vector2(-24, -120)
-texture = ExtResource("24_crx51")
+scale = Vector2(3, 3)
+texture = SubResource("AtlasTexture_wren1")
 
 [node name="wall-u-8" type="Sprite2D" parent="Tilemaps/Clip"]
-modulate = Color(0, 0, 0, 1)
-self_modulate = Color(0, 0, 0, 1)
 texture_filter = 1
 material = SubResource("CanvasItemMaterial_goqcv")
 position = Vector2(72, 120)
-texture = ExtResource("24_crx51")
+scale = Vector2(3, 3)
+texture = SubResource("AtlasTexture_wren1")
 
 [node name="wall-u-9" type="Sprite2D" parent="Tilemaps/Clip"]
-modulate = Color(0, 0, 0, 1)
-self_modulate = Color(0, 0, 0, 1)
 texture_filter = 1
 material = SubResource("CanvasItemMaterial_goqcv")
 position = Vector2(120, 120)
-texture = ExtResource("24_crx51")
+scale = Vector2(3, 3)
+texture = SubResource("AtlasTexture_wren1")
 
 [node name="wall-u-4" type="Sprite2D" parent="Tilemaps/Clip"]
-modulate = Color(0, 0, 0, 1)
-self_modulate = Color(0, 0, 0, 1)
 texture_filter = 1
 material = SubResource("CanvasItemMaterial_goqcv")
 position = Vector2(120, -216)
-texture = ExtResource("24_crx51")
+scale = Vector2(3, 3)
+texture = SubResource("AtlasTexture_wren1")
 
 [node name="wall-u-6" type="Sprite2D" parent="Tilemaps/Clip"]
-modulate = Color(0, 0, 0, 1)
-self_modulate = Color(0, 0, 0, 1)
 texture_filter = 1
 material = SubResource("CanvasItemMaterial_goqcv")
 position = Vector2(216, -168)
-texture = ExtResource("24_crx51")
+scale = Vector2(3, 3)
+texture = SubResource("AtlasTexture_wren1")
 
 [node name="wall-u-7" type="Sprite2D" parent="Tilemaps/Clip"]
-modulate = Color(0, 0, 0, 1)
-self_modulate = Color(0, 0, 0, 1)
 texture_filter = 1
 material = SubResource("CanvasItemMaterial_goqcv")
 position = Vector2(312, -120)
-texture = ExtResource("24_crx51")
+scale = Vector2(3, 3)
+texture = SubResource("AtlasTexture_wren1")
 
 [node name="wall-u-10" type="Sprite2D" parent="Tilemaps/Clip"]
-modulate = Color(0, 0, 0, 1)
-self_modulate = Color(0, 0, 0, 1)
 texture_filter = 1
 material = SubResource("CanvasItemMaterial_goqcv")
 position = Vector2(408, -72)
-texture = ExtResource("24_crx51")
+scale = Vector2(3, 3)
+texture = SubResource("AtlasTexture_wren1")
 
 [node name="wall-u-11" type="Sprite2D" parent="Tilemaps/Clip"]
-modulate = Color(0, 0, 0, 1)
-self_modulate = Color(0, 0, 0, 1)
 texture_filter = 1
 material = SubResource("CanvasItemMaterial_goqcv")
 position = Vector2(456, -72)
-texture = ExtResource("24_crx51")
+scale = Vector2(3, 3)
+texture = SubResource("AtlasTexture_wren1")
 
 [node name="wall-u-12" type="Sprite2D" parent="Tilemaps/Clip"]
-modulate = Color(0, 0, 0, 1)
-self_modulate = Color(0, 0, 0, 1)
 texture_filter = 1
 material = SubResource("CanvasItemMaterial_goqcv")
 position = Vector2(552, -120)
-texture = ExtResource("24_crx51")
+scale = Vector2(3, 3)
+texture = SubResource("AtlasTexture_wren1")
 
 [node name="wall-u-13" type="Sprite2D" parent="Tilemaps/Clip"]
-modulate = Color(0, 0, 0, 1)
-self_modulate = Color(0, 0, 0, 1)
 texture_filter = 1
 material = SubResource("CanvasItemMaterial_goqcv")
 position = Vector2(648, -168)
-texture = ExtResource("24_crx51")
+scale = Vector2(3, 3)
+texture = SubResource("AtlasTexture_wren1")
 
 [node name="wall-u-5" type="Sprite2D" parent="Tilemaps/Clip"]
-modulate = Color(0, 0, 0, 1)
-self_modulate = Color(0, 0, 0, 1)
 texture_filter = 1
 material = SubResource("CanvasItemMaterial_goqcv")
 position = Vector2(504, 216)
-texture = ExtResource("24_crx51")
+scale = Vector2(3, 3)
+texture = SubResource("AtlasTexture_wren1")
 
 [node name="wall-u-3" type="Sprite2D" parent="Tilemaps/Clip"]
-modulate = Color(0, 0, 0, 1)
-self_modulate = Color(0, 0, 0, 1)
 texture_filter = 1
 material = SubResource("CanvasItemMaterial_goqcv")
 position = Vector2(-72, -120)
-texture = ExtResource("24_crx51")
+scale = Vector2(3, 3)
+texture = SubResource("AtlasTexture_wren1")
 
 [node name="corner2-lu-1" type="Sprite2D" parent="Tilemaps/Clip"]
-modulate = Color(0, 0, 0, 1)
-self_modulate = Color(0, 0, 0, 1)
 texture_filter = 1
 material = SubResource("CanvasItemMaterial_goqcv")
 position = Vector2(-120, -120)
-texture = ExtResource("24_wren1")
+scale = Vector2(3, 3)
+texture = SubResource("AtlasTexture_2h030")
 
 [node name="corner2-lu-4" type="Sprite2D" parent="Tilemaps/Clip"]
-modulate = Color(0, 0, 0, 1)
-self_modulate = Color(0, 0, 0, 1)
 texture_filter = 1
 material = SubResource("CanvasItemMaterial_goqcv")
 position = Vector2(504, -120)
-texture = ExtResource("24_wren1")
+scale = Vector2(3, 3)
+texture = SubResource("AtlasTexture_2h030")
 
 [node name="corner2-lu-6" type="Sprite2D" parent="Tilemaps/Clip"]
-modulate = Color(0, 0, 0, 1)
-self_modulate = Color(0, 0, 0, 1)
 texture_filter = 1
 material = SubResource("CanvasItemMaterial_goqcv")
 position = Vector2(216, 120)
-texture = ExtResource("24_wren1")
+scale = Vector2(3, 3)
+texture = SubResource("AtlasTexture_2h030")
 
 [node name="corner2-lu-7" type="Sprite2D" parent="Tilemaps/Clip"]
-modulate = Color(0.39181867, 0.39181864, 0.39181864, 1)
 texture_filter = 1
 material = SubResource("CanvasItemMaterial_goqcv")
 position = Vector2(264, 72)
-texture = ExtResource("24_wren1")
+scale = Vector2(3, 3)
+texture = SubResource("AtlasTexture_2h030")
 
 [node name="corner2-lu-5" type="Sprite2D" parent="Tilemaps/Clip"]
-modulate = Color(0, 0, 0, 1)
-self_modulate = Color(0, 0, 0, 1)
 texture_filter = 1
 material = SubResource("CanvasItemMaterial_goqcv")
 position = Vector2(600, -168)
-texture = ExtResource("24_wren1")
+scale = Vector2(3, 3)
+texture = SubResource("AtlasTexture_2h030")
 
 [node name="corner2-lu-2" type="Sprite2D" parent="Tilemaps/Clip"]
-modulate = Color(0, 0, 0, 1)
-self_modulate = Color(0, 0, 0, 1)
 texture_filter = 1
 material = SubResource("CanvasItemMaterial_goqcv")
 position = Vector2(-168, -72)
-texture = ExtResource("24_wren1")
+scale = Vector2(3, 3)
+texture = SubResource("AtlasTexture_2h030")
 
 [node name="corner2-lu-3" type="Sprite2D" parent="Tilemaps/Clip"]
-modulate = Color(0, 0, 0, 1)
-self_modulate = Color(0, 0, 0, 1)
 texture_filter = 1
 material = SubResource("CanvasItemMaterial_goqcv")
 position = Vector2(72, -216)
-texture = ExtResource("24_wren1")
+scale = Vector2(3, 3)
+texture = SubResource("AtlasTexture_2h030")
 
 [node name="corner2-ld-1" type="Sprite2D" parent="Tilemaps/Clip"]
-modulate = Color(0, 0, 0, 1)
-self_modulate = Color(0, 0, 0, 1)
 texture_filter = 1
 material = SubResource("CanvasItemMaterial_goqcv")
 position = Vector2(-168, 216)
 rotation = -1.5707964
-texture = ExtResource("24_wren1")
+scale = Vector2(3, 3)
+texture = SubResource("AtlasTexture_2h030")
 
 [node name="corner2-ld-2" type="Sprite2D" parent="Tilemaps/Clip"]
-modulate = Color(0, 0, 0, 1)
-self_modulate = Color(0, 0, 0, 1)
 texture_filter = 1
 material = SubResource("CanvasItemMaterial_goqcv")
 position = Vector2(-72, 312)
 rotation = -1.5707964
-texture = ExtResource("24_wren1")
+scale = Vector2(3, 3)
+texture = SubResource("AtlasTexture_2h030")
 
 [node name="corner2-ld-3" type="Sprite2D" parent="Tilemaps/Clip"]
-modulate = Color(0, 0, 0, 1)
-self_modulate = Color(0, 0, 0, 1)
 texture_filter = 1
 material = SubResource("CanvasItemMaterial_goqcv")
 position = Vector2(168, 312)
 rotation = -1.5707964
-texture = ExtResource("24_wren1")
+scale = Vector2(3, 3)
+texture = SubResource("AtlasTexture_2h030")
 
 [node name="corner2-ld-5" type="Sprite2D" parent="Tilemaps/Clip"]
-modulate = Color(0, 0, 0, 1)
-self_modulate = Color(0, 0, 0, 1)
 texture_filter = 1
 material = SubResource("CanvasItemMaterial_goqcv")
 position = Vector2(167.99998, -23.999977)
 rotation = -1.5707964
-texture = ExtResource("24_wren1")
+scale = Vector2(3, 3)
+texture = SubResource("AtlasTexture_2h030")
 
 [node name="corner2-ld-6" type="Sprite2D" parent="Tilemaps/Clip"]
-modulate = Color(0, 0, 0, 1)
-self_modulate = Color(0, 0, 0, 1)
 texture_filter = 1
 material = SubResource("CanvasItemMaterial_goqcv")
 position = Vector2(215.99998, 24.000023)
 rotation = -1.5707964
-texture = ExtResource("24_wren1")
+scale = Vector2(3, 3)
+texture = SubResource("AtlasTexture_2h030")
 
 [node name="corner2-ld-4" type="Sprite2D" parent="Tilemaps/Clip"]
-modulate = Color(0, 0, 0, 1)
-self_modulate = Color(0, 0, 0, 1)
 texture_filter = 1
 material = SubResource("CanvasItemMaterial_goqcv")
 position = Vector2(407.99997, 312)
 rotation = -1.5707964
-texture = ExtResource("24_wren1")
+scale = Vector2(3, 3)
+texture = SubResource("AtlasTexture_2h030")
 
 [node name="corner2-rd-1" type="Sprite2D" parent="Tilemaps/Clip"]
-modulate = Color(0, 0, 0, 1)
-self_modulate = Color(0, 0, 0, 1)
 texture_filter = 1
 material = SubResource("CanvasItemMaterial_goqcv")
 position = Vector2(24, 312)
 rotation = -3.1415927
-texture = ExtResource("24_wren1")
+scale = Vector2(3, 3)
+texture = SubResource("AtlasTexture_2h030")
 
 [node name="corner2-rd-2" type="Sprite2D" parent="Tilemaps/Clip"]
-modulate = Color(0, 0, 0, 1)
-self_modulate = Color(0, 0, 0, 1)
 texture_filter = 1
 material = SubResource("CanvasItemMaterial_goqcv")
 position = Vector2(312, 312.00003)
 rotation = -3.1415927
-texture = ExtResource("24_wren1")
+scale = Vector2(3, 3)
+texture = SubResource("AtlasTexture_2h030")
 
 [node name="corner2-rd-5" type="Sprite2D" parent="Tilemaps/Clip"]
-modulate = Color(0, 0, 0, 1)
-self_modulate = Color(0, 0, 0, 1)
 texture_filter = 1
 material = SubResource("CanvasItemMaterial_goqcv")
 position = Vector2(119.999985, -23.999971)
 rotation = -3.1415927
-texture = ExtResource("24_wren1")
+scale = Vector2(3, 3)
+texture = SubResource("AtlasTexture_2h030")
 
 [node name="corner2-rd-6" type="Sprite2D" parent="Tilemaps/Clip"]
-modulate = Color(0, 0, 0, 1)
-self_modulate = Color(0, 0, 0, 1)
 texture_filter = 1
 material = SubResource("CanvasItemMaterial_goqcv")
 position = Vector2(71.999985, 24.000029)
 rotation = -3.1415927
-texture = ExtResource("24_wren1")
+scale = Vector2(3, 3)
+texture = SubResource("AtlasTexture_2h030")
 
 [node name="corner2-rd-3" type="Sprite2D" parent="Tilemaps/Clip"]
-modulate = Color(0, 0, 0, 1)
-self_modulate = Color(0, 0, 0, 1)
 texture_filter = 1
 material = SubResource("CanvasItemMaterial_goqcv")
 position = Vector2(552, 312)
 rotation = -3.1415927
-texture = ExtResource("24_wren1")
+scale = Vector2(3, 3)
+texture = SubResource("AtlasTexture_2h030")
 
 [node name="corner2-rd-7" type="Sprite2D" parent="Tilemaps/Clip"]
-modulate = Color(0, 0, 0, 1)
-self_modulate = Color(0, 0, 0, 1)
 texture_filter = 1
 material = SubResource("CanvasItemMaterial_goqcv")
 position = Vector2(456, 119.999985)
 rotation = -3.1415927
-texture = ExtResource("24_wren1")
+scale = Vector2(3, 3)
+texture = SubResource("AtlasTexture_2h030")
 
 [node name="corner2-rd-8" type="Sprite2D" parent="Tilemaps/Clip"]
-modulate = Color(0, 0, 0, 1)
-self_modulate = Color(0, 0, 0, 1)
 texture_filter = 1
 material = SubResource("CanvasItemMaterial_goqcv")
 position = Vector2(504, 71.999985)
 rotation = -3.1415927
-texture = ExtResource("24_wren1")
-
-[node name="corners_invert" type="Sprite2D" parent="Tilemaps/Clip"]
-modulate = Color(0, 0, 0, 1)
-self_modulate = Color(0, 0, 0, 1)
-texture_filter = 1
-material = SubResource("CanvasItemMaterial_goqcv")
-position = Vector2(408, 168)
-rotation = -4.712389
-texture = ExtResource("25_2h030")
+scale = Vector2(3, 3)
+texture = SubResource("AtlasTexture_2h030")
 
 [node name="corner2-rd-9" type="Sprite2D" parent="Tilemaps/Clip"]
-modulate = Color(0, 0, 0, 1)
-self_modulate = Color(0, 0, 0, 1)
 texture_filter = 1
 material = SubResource("CanvasItemMaterial_goqcv")
 position = Vector2(552, 23.999985)
 rotation = -3.1415927
-texture = ExtResource("24_wren1")
+scale = Vector2(3, 3)
+texture = SubResource("AtlasTexture_2h030")
 
 [node name="corner2-rd-4" type="Sprite2D" parent="Tilemaps/Clip"]
-modulate = Color(0, 0, 0, 1)
-self_modulate = Color(0, 0, 0, 1)
 texture_filter = 1
 material = SubResource("CanvasItemMaterial_goqcv")
 position = Vector2(695.99994, -23.999977)
 rotation = -3.1415927
-texture = ExtResource("24_wren1")
+scale = Vector2(3, 3)
+texture = SubResource("AtlasTexture_2h030")
 
 [node name="corner2-ru-1" type="Sprite2D" parent="Tilemaps/Clip"]
-modulate = Color(0, 0, 0, 1)
-self_modulate = Color(0, 0, 0, 1)
 texture_filter = 1
 material = SubResource("CanvasItemMaterial_goqcv")
 position = Vector2(552, 216)
 rotation = -4.712389
-texture = ExtResource("24_wren1")
+scale = Vector2(3, 3)
+texture = SubResource("AtlasTexture_2h030")
 
 [node name="corner2-ru-7" type="Sprite2D" parent="Tilemaps/Clip"]
-modulate = Color(0, 0, 0, 1)
-self_modulate = Color(0, 0, 0, 1)
 texture_filter = 1
 material = SubResource("CanvasItemMaterial_goqcv")
 position = Vector2(456, 168.00003)
 rotation = -4.712389
-texture = ExtResource("24_wren1")
+scale = Vector2(3, 3)
+texture = SubResource("AtlasTexture_2h030")
+
+[node name="corners_invert" type="Sprite2D" parent="Tilemaps/Clip"]
+texture_filter = 1
+material = SubResource("CanvasItemMaterial_lk2p4")
+position = Vector2(408, 167.99998)
+rotation = -4.712389
+scale = Vector2(3, 3)
+texture = SubResource("AtlasTexture_crx51")
 
 [node name="corner2-ru-3" type="Sprite2D" parent="Tilemaps/Clip"]
-modulate = Color(0, 0, 0, 1)
-self_modulate = Color(0, 0, 0, 1)
 texture_filter = 1
 material = SubResource("CanvasItemMaterial_goqcv")
 position = Vector2(696, -167.99998)
 rotation = -4.712389
-texture = ExtResource("24_wren1")
+scale = Vector2(3, 3)
+texture = SubResource("AtlasTexture_2h030")
 
 [node name="corner2-ru-2" type="Sprite2D" parent="Tilemaps/Clip"]
-modulate = Color(0, 0, 0, 1)
-self_modulate = Color(0, 0, 0, 1)
 texture_filter = 1
 material = SubResource("CanvasItemMaterial_goqcv")
 position = Vector2(168, -215.99997)
 rotation = -4.712389
-texture = ExtResource("24_wren1")
+scale = Vector2(3, 3)
+texture = SubResource("AtlasTexture_2h030")
 
 [node name="corner2-ru-4" type="Sprite2D" parent="Tilemaps/Clip"]
-modulate = Color(0, 0, 0, 1)
-self_modulate = Color(0, 0, 0, 1)
 texture_filter = 1
 material = SubResource("CanvasItemMaterial_goqcv")
 position = Vector2(264, -167.99997)
 rotation = -4.712389
-texture = ExtResource("24_wren1")
+scale = Vector2(3, 3)
+texture = SubResource("AtlasTexture_2h030")
 
 [node name="corner2-ru-6" type="Sprite2D" parent="Tilemaps/Clip"]
-modulate = Color(0, 0, 0, 1)
-self_modulate = Color(0, 0, 0, 1)
 texture_filter = 1
 material = SubResource("CanvasItemMaterial_goqcv")
 position = Vector2(168, 120.00002)
 rotation = -4.712389
-texture = ExtResource("24_wren1")
+scale = Vector2(3, 3)
+texture = SubResource("AtlasTexture_2h030")
 
 [node name="corner2-ru-5" type="Sprite2D" parent="Tilemaps/Clip"]
-modulate = Color(0, 0, 0, 1)
-self_modulate = Color(0, 0, 0, 1)
 texture_filter = 1
 material = SubResource("CanvasItemMaterial_goqcv")
 position = Vector2(360, -119.99999)
 rotation = -4.712389
-texture = ExtResource("24_wren1")
+scale = Vector2(3, 3)
+texture = SubResource("AtlasTexture_2h030")
 
 [node name="wall-d-1" type="Sprite2D" parent="Tilemaps/Clip"]
-modulate = Color(0, 0, 0, 1)
-self_modulate = Color(0, 0, 0, 1)
 texture_filter = 1
 material = SubResource("CanvasItemMaterial_goqcv")
 position = Vector2(-119.999985, 216)
 rotation = -3.1415927
-texture = ExtResource("24_crx51")
+scale = Vector2(3, 3)
+texture = SubResource("AtlasTexture_wren1")
 
 [node name="wall-d-2" type="Sprite2D" parent="Tilemaps/Clip"]
-modulate = Color(0, 0, 0, 1)
-self_modulate = Color(0, 0, 0, 1)
 texture_filter = 1
 material = SubResource("CanvasItemMaterial_goqcv")
 position = Vector2(-23.999994, 312)
 rotation = -3.1415927
-texture = ExtResource("24_crx51")
+scale = Vector2(3, 3)
+texture = SubResource("AtlasTexture_wren1")
 
 [node name="wall-d-3" type="Sprite2D" parent="Tilemaps/Clip"]
-modulate = Color(0, 0, 0, 1)
-self_modulate = Color(0, 0, 0, 1)
 texture_filter = 1
 material = SubResource("CanvasItemMaterial_goqcv")
 position = Vector2(72.00001, 264)
 rotation = -3.1415927
-texture = ExtResource("24_crx51")
+scale = Vector2(3, 3)
+texture = SubResource("AtlasTexture_wren1")
 
 [node name="wall-d-4" type="Sprite2D" parent="Tilemaps/Clip"]
-modulate = Color(0, 0, 0, 1)
-self_modulate = Color(0, 0, 0, 1)
 texture_filter = 1
 material = SubResource("CanvasItemMaterial_goqcv")
 position = Vector2(120.00001, 264)
 rotation = -3.1415927
-texture = ExtResource("24_crx51")
+scale = Vector2(3, 3)
+texture = SubResource("AtlasTexture_wren1")
 
 [node name="wall-d-12" type="Sprite2D" parent="Tilemaps/Clip"]
-modulate = Color(0, 0, 0, 1)
-self_modulate = Color(0, 0, 0, 1)
 texture_filter = 1
 material = SubResource("CanvasItemMaterial_goqcv")
 position = Vector2(264, 23.99997)
 rotation = -3.1415927
-texture = ExtResource("24_crx51")
+scale = Vector2(3, 3)
+texture = SubResource("AtlasTexture_wren1")
 
 [node name="wall-d-5" type="Sprite2D" parent="Tilemaps/Clip"]
-modulate = Color(0, 0, 0, 1)
-self_modulate = Color(0, 0, 0, 1)
 texture_filter = 1
 material = SubResource("CanvasItemMaterial_goqcv")
 position = Vector2(216, 312.00003)
 rotation = -3.1415927
-texture = ExtResource("24_crx51")
+scale = Vector2(3, 3)
+texture = SubResource("AtlasTexture_wren1")
 
 [node name="wall-d-6" type="Sprite2D" parent="Tilemaps/Clip"]
-modulate = Color(0, 0, 0, 1)
-self_modulate = Color(0, 0, 0, 1)
 texture_filter = 1
 material = SubResource("CanvasItemMaterial_goqcv")
 position = Vector2(264, 312.00003)
 rotation = -3.1415927
-texture = ExtResource("24_crx51")
+scale = Vector2(3, 3)
+texture = SubResource("AtlasTexture_wren1")
 
 [node name="wall-d-7" type="Sprite2D" parent="Tilemaps/Clip"]
-modulate = Color(0, 0, 0, 1)
-self_modulate = Color(0, 0, 0, 1)
 texture_filter = 1
 material = SubResource("CanvasItemMaterial_goqcv")
 position = Vector2(360, 264.00003)
 rotation = -3.1415927
-texture = ExtResource("24_crx51")
+scale = Vector2(3, 3)
+texture = SubResource("AtlasTexture_wren1")
 
 [node name="wall-d-8" type="Sprite2D" parent="Tilemaps/Clip"]
-modulate = Color(0, 0, 0, 1)
-self_modulate = Color(0, 0, 0, 1)
 texture_filter = 1
 material = SubResource("CanvasItemMaterial_goqcv")
 position = Vector2(455.99997, 312.00003)
 rotation = -3.1415927
-texture = ExtResource("24_crx51")
+scale = Vector2(3, 3)
+texture = SubResource("AtlasTexture_wren1")
 
 [node name="wall-d-10" type="Sprite2D" parent="Tilemaps/Clip"]
-modulate = Color(0, 0, 0, 1)
-self_modulate = Color(0, 0, 0, 1)
 texture_filter = 1
 material = SubResource("CanvasItemMaterial_goqcv")
 position = Vector2(647.99994, -24.000013)
 rotation = -3.1415927
-texture = ExtResource("24_crx51")
+scale = Vector2(3, 3)
+texture = SubResource("AtlasTexture_wren1")
 
 [node name="wall-d-11" type="Sprite2D" parent="Tilemaps/Clip"]
-modulate = Color(0, 0, 0, 1)
-self_modulate = Color(0, 0, 0, 1)
 texture_filter = 1
 material = SubResource("CanvasItemMaterial_goqcv")
 position = Vector2(599.99994, -24.000011)
 rotation = -3.1415927
-texture = ExtResource("24_crx51")
+scale = Vector2(3, 3)
+texture = SubResource("AtlasTexture_wren1")
 
 [node name="wall-d-9" type="Sprite2D" parent="Tilemaps/Clip"]
-modulate = Color(0, 0, 0, 1)
-self_modulate = Color(0, 0, 0, 1)
 texture_filter = 1
 material = SubResource("CanvasItemMaterial_goqcv")
 position = Vector2(503.99997, 312)
 rotation = -3.1415927
-texture = ExtResource("24_crx51")
+scale = Vector2(3, 3)
+texture = SubResource("AtlasTexture_wren1")
 
 [node name="corner-ld-1" type="Sprite2D" parent="Tilemaps/Clip"]
-modulate = Color(0, 0, 0, 1)
-self_modulate = Color(0, 0, 0, 1)
 texture_filter = 1
 material = SubResource("CanvasItemMaterial_goqcv")
 position = Vector2(-119.999985, -72)
 rotation = 4.712389
-texture = ExtResource("23_lk2p4")
+scale = Vector2(3, 3)
+texture = SubResource("AtlasTexture_goqcv")
 
 [node name="corner-rd-1" type="Sprite2D" parent="Tilemaps/Clip"]
-modulate = Color(0, 0, 0, 1)
-self_modulate = Color(0, 0, 0, 1)
 texture_filter = 1
 material = SubResource("CanvasItemMaterial_goqcv")
 position = Vector2(168, -168)
 rotation = 6.2831855
-texture = ExtResource("23_lk2p4")
+scale = Vector2(3, 3)
+texture = SubResource("AtlasTexture_goqcv")
 
 [node name="corner-rd-6" type="Sprite2D" parent="Tilemaps/Clip"]
-modulate = Color(0, 0, 0, 1)
-self_modulate = Color(0, 0, 0, 1)
 texture_filter = 1
 material = SubResource("CanvasItemMaterial_goqcv")
 position = Vector2(359.99997, 216.00002)
 rotation = 6.2831855
-texture = ExtResource("23_lk2p4")
+scale = Vector2(3, 3)
+texture = SubResource("AtlasTexture_goqcv")
 
 [node name="corner-rd-3" type="Sprite2D" parent="Tilemaps/Clip"]
-modulate = Color(0, 0, 0, 1)
-self_modulate = Color(0, 0, 0, 1)
 texture_filter = 1
 material = SubResource("CanvasItemMaterial_goqcv")
 position = Vector2(455.99997, 216)
 rotation = 6.2831855
-texture = ExtResource("23_lk2p4")
+scale = Vector2(3, 3)
+texture = SubResource("AtlasTexture_goqcv")
 
 [node name="corner-rd-2" type="Sprite2D" parent="Tilemaps/Clip"]
-modulate = Color(0, 0, 0, 1)
-self_modulate = Color(0, 0, 0, 1)
 texture_filter = 1
 material = SubResource("CanvasItemMaterial_goqcv")
 position = Vector2(264, -120)
 rotation = 6.2831855
-texture = ExtResource("23_lk2p4")
+scale = Vector2(3, 3)
+texture = SubResource("AtlasTexture_goqcv")
 
 [node name="corner-rd-7" type="Sprite2D" parent="Tilemaps/Clip"]
-modulate = Color(0, 0, 0, 1)
-self_modulate = Color(0, 0, 0, 1)
 texture_filter = 1
 material = SubResource("CanvasItemMaterial_goqcv")
 position = Vector2(360, -72)
 rotation = 6.2831855
-texture = ExtResource("23_lk2p4")
+scale = Vector2(3, 3)
+texture = SubResource("AtlasTexture_goqcv")
 
 [node name="corner-rd-4" type="Sprite2D" parent="Tilemaps/Clip"]
-modulate = Color(0, 0, 0, 1)
-self_modulate = Color(0, 0, 0, 1)
 texture_filter = 1
 material = SubResource("CanvasItemMaterial_goqcv")
 position = Vector2(167.99997, 168)
 rotation = 6.2831855
-texture = ExtResource("23_lk2p4")
+scale = Vector2(3, 3)
+texture = SubResource("AtlasTexture_goqcv")
 
 [node name="corner-rd-5" type="Sprite2D" parent="Tilemaps/Clip"]
-modulate = Color(0, 0, 0, 1)
-self_modulate = Color(0, 0, 0, 1)
 texture_filter = 1
 material = SubResource("CanvasItemMaterial_goqcv")
 position = Vector2(23.999977, 120)
 rotation = 6.2831855
-texture = ExtResource("23_lk2p4")
+scale = Vector2(3, 3)
+texture = SubResource("AtlasTexture_goqcv")
 
 [node name="corner-ld-2" type="Sprite2D" parent="Tilemaps/Clip"]
-modulate = Color(0, 0, 0, 1)
-self_modulate = Color(0, 0, 0, 1)
 texture_filter = 1
 material = SubResource("CanvasItemMaterial_goqcv")
 position = Vector2(72.000015, -120)
 rotation = 4.712389
-texture = ExtResource("23_lk2p4")
+scale = Vector2(3, 3)
+texture = SubResource("AtlasTexture_goqcv")
 
 [node name="corner-ld-5" type="Sprite2D" parent="Tilemaps/Clip"]
-modulate = Color(0, 0, 0, 1)
-self_modulate = Color(0, 0, 0, 1)
 texture_filter = 1
 material = SubResource("CanvasItemMaterial_goqcv")
 position = Vector2(216, 168)
 rotation = 4.712389
-texture = ExtResource("23_lk2p4")
+scale = Vector2(3, 3)
+texture = SubResource("AtlasTexture_goqcv")
 
 [node name="corner-ld-6" type="Sprite2D" parent="Tilemaps/Clip"]
-modulate = Color(0, 0, 0, 1)
-self_modulate = Color(0, 0, 0, 1)
 texture_filter = 1
 material = SubResource("CanvasItemMaterial_goqcv")
 position = Vector2(264, 120)
 rotation = 4.712389
-texture = ExtResource("23_lk2p4")
+scale = Vector2(3, 3)
+texture = SubResource("AtlasTexture_goqcv")
 
 [node name="corner-ld-7" type="Sprite2D" parent="Tilemaps/Clip"]
-modulate = Color(0, 0, 0, 1)
-self_modulate = Color(0, 0, 0, 1)
 texture_filter = 1
 material = SubResource("CanvasItemMaterial_goqcv")
 position = Vector2(312, 71.99999)
 rotation = 4.712389
-texture = ExtResource("23_lk2p4")
+scale = Vector2(3, 3)
+texture = SubResource("AtlasTexture_goqcv")
 
 [node name="corner-ld-3" type="Sprite2D" parent="Tilemaps/Clip"]
-modulate = Color(0, 0, 0, 1)
-self_modulate = Color(0, 0, 0, 1)
 texture_filter = 1
 material = SubResource("CanvasItemMaterial_goqcv")
 position = Vector2(504, -71.99999)
 rotation = 4.712389
-texture = ExtResource("23_lk2p4")
+scale = Vector2(3, 3)
+texture = SubResource("AtlasTexture_goqcv")
 
 [node name="corner-ld-8" type="Sprite2D" parent="Tilemaps/Clip"]
-modulate = Color(0, 0, 0, 1)
-self_modulate = Color(0, 0, 0, 1)
 texture_filter = 1
 material = SubResource("CanvasItemMaterial_goqcv")
-position = Vector2(408, 216)
+position = Vector2(408, 215.99998)
 rotation = 4.712389
-texture = ExtResource("23_lk2p4")
+scale = Vector2(3, 3)
+texture = SubResource("AtlasTexture_goqcv")
 
 [node name="corner-ld-4" type="Sprite2D" parent="Tilemaps/Clip"]
-modulate = Color(0, 0, 0, 1)
-self_modulate = Color(0, 0, 0, 1)
 texture_filter = 1
 material = SubResource("CanvasItemMaterial_goqcv")
 position = Vector2(600, -119.99999)
 rotation = 4.712389
-texture = ExtResource("23_lk2p4")
+scale = Vector2(3, 3)
+texture = SubResource("AtlasTexture_goqcv")
 
 [node name="corner-ru-2" type="Sprite2D" parent="Tilemaps/Clip"]
-modulate = Color(0, 0, 0, 1)
-self_modulate = Color(0, 0, 0, 1)
 texture_filter = 1
 material = SubResource("CanvasItemMaterial_goqcv")
 position = Vector2(168.00002, 264)
 rotation = -3.1415925
-texture = ExtResource("23_lk2p4")
+scale = Vector2(3, 3)
+texture = SubResource("AtlasTexture_goqcv")
 
 [node name="corner-ru-3" type="Sprite2D" parent="Tilemaps/Clip"]
-modulate = Color(0, 0, 0, 1)
-self_modulate = Color(0, 0, 0, 1)
 texture_filter = 1
 material = SubResource("CanvasItemMaterial_goqcv")
-position = Vector2(408, 264)
+position = Vector2(408, 263.99997)
 rotation = -3.1415925
-texture = ExtResource("23_lk2p4")
+scale = Vector2(3, 3)
+texture = SubResource("AtlasTexture_goqcv")
 
 [node name="corner-lu-2" type="Sprite2D" parent="Tilemaps/Clip"]
-modulate = Color(0, 0, 0, 1)
-self_modulate = Color(0, 0, 0, 1)
 texture_filter = 1
 material = SubResource("CanvasItemMaterial_goqcv")
 position = Vector2(24.000015, 264)
 rotation = 1.5707964
-texture = ExtResource("23_lk2p4")
+scale = Vector2(3, 3)
+texture = SubResource("AtlasTexture_goqcv")
 
 [node name="corner-lu-8" type="Sprite2D" parent="Tilemaps/Clip"]
-modulate = Color(0, 0, 0, 1)
-self_modulate = Color(0, 0, 0, 1)
 texture_filter = 1
 material = SubResource("CanvasItemMaterial_goqcv")
 position = Vector2(408.00006, 119.99999)
 rotation = 1.5707964
-texture = ExtResource("23_lk2p4")
+scale = Vector2(3, 3)
+texture = SubResource("AtlasTexture_goqcv")
 
 [node name="corner-lu-9" type="Sprite2D" parent="Tilemaps/Clip"]
-modulate = Color(0, 0, 0, 1)
-self_modulate = Color(0, 0, 0, 1)
 texture_filter = 1
 material = SubResource("CanvasItemMaterial_goqcv")
 position = Vector2(456.0001, 71.99999)
 rotation = 1.5707964
-texture = ExtResource("23_lk2p4")
+scale = Vector2(3, 3)
+texture = SubResource("AtlasTexture_goqcv")
 
 [node name="corner-lu-10" type="Sprite2D" parent="Tilemaps/Clip"]
-modulate = Color(0, 0, 0, 1)
-self_modulate = Color(0, 0, 0, 1)
 texture_filter = 1
 material = SubResource("CanvasItemMaterial_goqcv")
-position = Vector2(504.0001, 23.999992)
+position = Vector2(504.0001, 23.999985)
 rotation = 1.5707964
-texture = ExtResource("23_lk2p4")
+scale = Vector2(3, 3)
+texture = SubResource("AtlasTexture_goqcv")
 
 [node name="corner-lu-11" type="Sprite2D" parent="Tilemaps/Clip"]
-modulate = Color(0, 0, 0, 1)
-self_modulate = Color(0, 0, 0, 1)
 texture_filter = 1
 material = SubResource("CanvasItemMaterial_goqcv")
-position = Vector2(552.0001, -24.000008)
+position = Vector2(552.0001, -24.000013)
 rotation = 1.5707964
-texture = ExtResource("23_lk2p4")
+scale = Vector2(3, 3)
+texture = SubResource("AtlasTexture_goqcv")
 
 [node name="corner-lu-4" type="Sprite2D" parent="Tilemaps/Clip"]
-modulate = Color(0, 0, 0, 1)
-self_modulate = Color(0, 0, 0, 1)
 texture_filter = 1
 material = SubResource("CanvasItemMaterial_goqcv")
 position = Vector2(120.00003, -71.99999)
 rotation = 1.5707964
-texture = ExtResource("23_lk2p4")
+scale = Vector2(3, 3)
+texture = SubResource("AtlasTexture_goqcv")
 
 [node name="corner-lu-5" type="Sprite2D" parent="Tilemaps/Clip"]
-modulate = Color(0, 0, 0, 1)
-self_modulate = Color(0, 0, 0, 1)
 texture_filter = 1
 material = SubResource("CanvasItemMaterial_goqcv")
 position = Vector2(72.00003, -23.99999)
 rotation = 1.5707964
-texture = ExtResource("23_lk2p4")
+scale = Vector2(3, 3)
+texture = SubResource("AtlasTexture_goqcv")
 
 [node name="corner-lu-6" type="Sprite2D" parent="Tilemaps/Clip"]
-modulate = Color(0, 0, 0, 1)
-self_modulate = Color(0, 0, 0, 1)
 texture_filter = 1
 material = SubResource("CanvasItemMaterial_goqcv")
 position = Vector2(24.00003, 24.000008)
 rotation = 1.5707964
-texture = ExtResource("23_lk2p4")
+scale = Vector2(3, 3)
+texture = SubResource("AtlasTexture_goqcv")
 
 [node name="corner-lu-3" type="Sprite2D" parent="Tilemaps/Clip"]
-modulate = Color(0, 0, 0, 1)
-self_modulate = Color(0, 0, 0, 1)
 texture_filter = 1
 material = SubResource("CanvasItemMaterial_goqcv")
 position = Vector2(312.00003, 263.99997)
 rotation = 1.5707964
-texture = ExtResource("23_lk2p4")
+scale = Vector2(3, 3)
+texture = SubResource("AtlasTexture_goqcv")
 
 [node name="corner-lu-7" type="Sprite2D" parent="Tilemaps/Clip"]
-modulate = Color(0, 0, 0, 1)
-self_modulate = Color(0, 0, 0, 1)
 texture_filter = 1
 material = SubResource("CanvasItemMaterial_goqcv")
 position = Vector2(360, 167.99998)
 rotation = 1.5707964
-texture = ExtResource("23_lk2p4")
+scale = Vector2(3, 3)
+texture = SubResource("AtlasTexture_goqcv")
 
 [node name="Polygon2D" type="Polygon2D" parent="Tilemaps"]
 visible = false
@@ -1279,7 +1211,7 @@ clip_children = 1
 polygon = PackedVector2Array(-162, 212, -148, 216, -89, 215, -72, 231, -73, 297, -54, 312, 12, 311, 23, 298, 23, 278, 40, 263, 156, 265, 165, 278, 167, 301, 183, 311, 298, 311, 311, 296, 315, 275, 329, 264, 395, 266, 408, 280, 409, 298, 422, 310, 531, 311, 546, 305, 552, 294, 553, 235, 538, 217, 469, 216, 456, 201, 450, 171, 418, 170, 407, 181, 406, 203, 394, 214, 372, 214, 362, 200, 361, 183, 368, 171, 389, 169, 406, 160, 407, 143, -105, -119, -119, -105, -123, -85, -141, -74, -159, -69, -168, -53, -169, 197)
 
 [node name="APCellInfoNode" type="Node" parent="Tilemaps"]
-script = ExtResource("18_a6847")
+script = ExtResource("23_iy33d")
 cell_info_res = SubResource("Resource_ph3ti")
 metadata/_custom_type_script = "uid://cicas0bkgf1up"
 
@@ -1312,14 +1244,14 @@ collision_layer = 4
 collision_mask = 8
 
 [node name="APContMouseDrag2D" type="Node" parent="World/Camera" node_paths=PackedStringArray("body")]
-script = ExtResource("15_ob58h")
+script = ExtResource("25_37h3l")
 body = NodePath("..")
 action_move = SubResource("InputEventAction_ob58h")
 cursor_when_drag = 6
 metadata/_custom_type_script = "uid://dvoxncb42t31a"
 
 [node name="AP_WASD_2D" type="Node" parent="World/Camera" node_paths=PackedStringArray("character_body")]
-script = ExtResource("8_pnqar")
+script = ExtResource("26_k2ftk")
 character_body = NodePath("..")
 move_speed = SubResource("Resource_08k7p")
 
@@ -1337,34 +1269,34 @@ position_smoothing_speed = 10.0
 editor_draw_limits = true
 
 [node name="APCameraZoomIsNum" type="Node" parent="World/Camera/Camera2D" node_paths=PackedStringArray("camera")]
-script = ExtResource("14_tuai4")
+script = ExtResource("27_5ds6a")
 camera = NodePath("..")
-vares_target = ExtResource("5_hrl0l")
+vares_target = ExtResource("4_mfl3s")
 metadata/_custom_type_script = "uid://dikax674203i8"
 
 [node name="zoom_plus" type="Node" parent="World/Camera/Camera2D"]
-script = ExtResource("19_fh3cp")
+script = ExtResource("28_6d0fn")
 _action = "zoom_plus"
 action = "zoom_plus"
 metadata/_custom_type_script = "uid://db7sp186hj8oq"
 
 [node name="APChainNumOp" type="Node" parent="World/Camera/Camera2D/zoom_plus" node_paths=PackedStringArray("node_emitter")]
-script = ExtResource("4_764rb")
-vares_target = ExtResource("5_hrl0l")
+script = ExtResource("6_aybfu")
+vares_target = ExtResource("4_mfl3s")
 vares_b = SubResource("Resource_ob58h")
 node_emitter = NodePath("..")
 watch_signal = 0
 metadata/_custom_type_script = "uid://uh8e7y0n0t5e"
 
 [node name="zoom_minus" type="Node" parent="World/Camera/Camera2D"]
-script = ExtResource("19_fh3cp")
+script = ExtResource("28_6d0fn")
 _action = "zoom_minus"
 action = "zoom_minus"
 metadata/_custom_type_script = "uid://db7sp186hj8oq"
 
 [node name="APChainNumOp2" type="Node" parent="World/Camera/Camera2D/zoom_minus" node_paths=PackedStringArray("node_emitter")]
-script = ExtResource("4_764rb")
-vares_target = ExtResource("5_hrl0l")
+script = ExtResource("6_aybfu")
+vares_target = ExtResource("4_mfl3s")
 vares_b = SubResource("Resource_3hqfm")
 node_emitter = NodePath("..")
 watch_signal = 0
@@ -1382,7 +1314,7 @@ mouse_filter = 2
 [node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer"]
 layout_mode = 2
 
-[node name="Panel-Achievements" parent="CenterContainer/VBoxContainer" instance=ExtResource("7_s5yxy")]
+[node name="Panel-Achievements" parent="CenterContainer/VBoxContainer" instance=ExtResource("29_n0vfx")]
 layout_mode = 2
 
 [node name="VaResSpinBox" type="SpinBox" parent="CenterContainer/VBoxContainer"]
@@ -1391,8 +1323,8 @@ min_value = -999900000000000.0
 max_value = 999900000000000.0
 value = 9.0
 prefix = "gold-spent"
-script = ExtResource("3_hr7lf")
-var_res = ExtResource("2_x4yfu")
+script = ExtResource("30_xx8up")
+var_res = ExtResource("31_job78")
 prefix_is_var_res = true
 metadata/_custom_type_script = "uid://bsqxqxasuhg01"
 
@@ -1402,47 +1334,47 @@ min_value = -999900000000000.0
 max_value = 999900000000000.0
 value = 1.0
 prefix = "map-levels-complete"
-script = ExtResource("3_hr7lf")
-var_res = ExtResource("5_mnmej")
+script = ExtResource("30_xx8up")
+var_res = ExtResource("32_826sf")
 prefix_is_var_res = true
 metadata/_custom_type_script = "uid://bsqxqxasuhg01"
 
-[node name="ball_red" parent="." instance=ExtResource("56_bp33t")]
+[node name="ball_red" parent="." instance=ExtResource("33_hj5yx")]
 position = Vector2(425, 49)
 linear_velocity = Vector2(-5, 0)
 metadata/is_die = SubResource("Resource_bp33t")
 
-[node name="ball_red2" parent="." instance=ExtResource("56_bp33t")]
-position = Vector2(335, -96)
+[node name="ball_red2" parent="." instance=ExtResource("33_hj5yx")]
+position = Vector2(336, -93)
 linear_velocity = Vector2(0, 0)
 metadata/is_die = SubResource("Resource_a6847")
 
-[node name="ball_purple" parent="." instance=ExtResource("58_a6847")]
-position = Vector2(136, -96)
+[node name="ball_purple" parent="." instance=ExtResource("35_oa5rw")]
+position = Vector2(47, -96)
 input_pickable = false
 linear_velocity = Vector2(200, 0)
 metadata/is_die = SubResource("Resource_d5i4e")
 
-[node name="ball_white" parent="." instance=ExtResource("60_qaqtq")]
+[node name="ball_white" parent="." instance=ExtResource("36_i8hpu")]
 position = Vector2(-3, 196)
 linear_velocity = Vector2(200, 44)
 metadata/is_die = SubResource("Resource_2hth1")
 
-[node name="ball_white2" parent="." instance=ExtResource("60_qaqtq")]
+[node name="ball_white2" parent="." instance=ExtResource("36_i8hpu")]
 position = Vector2(-97, 142)
 linear_velocity = Vector2(200, -40)
 metadata/is_die = SubResource("Resource_ms5ap")
 
-[node name="ball_yellow" parent="." instance=ExtResource("61_r1tel")]
+[node name="ball_yellow" parent="." instance=ExtResource("37_vkmwy")]
 position = Vector2(-49, -4)
 metadata/is_die = SubResource("Resource_v1evy")
 
-[node name="ball_yellow2" parent="." instance=ExtResource("61_r1tel")]
+[node name="ball_yellow2" parent="." instance=ExtResource("37_vkmwy")]
 position = Vector2(-142, -45)
 linear_velocity = Vector2(200, -100)
 metadata/is_die = SubResource("Resource_u8yls")
 
-[node name="ball_purple2" parent="." instance=ExtResource("58_a6847")]
+[node name="ball_purple2" parent="." instance=ExtResource("35_oa5rw")]
 position = Vector2(289, 1)
 linear_velocity = Vector2(200, 0)
 metadata/is_die = SubResource("Resource_rwiys")

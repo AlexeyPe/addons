@@ -8,6 +8,6 @@ collision_layer = 64
 collision_mask = 64
 metadata/field_type = &"yellow"
 
-[node name="Area2D" parent="." index="1"]
+[node name="Area2D" parent="." index="0"]
 collision_layer = 176
 collision_mask = 176
