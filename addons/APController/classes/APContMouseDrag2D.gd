@@ -20,7 +20,7 @@ func _ready() -> void:
 		)
 		pass
 
-func _input(event: InputEvent) -> void:
+func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed(action_move.action):
 		cursor_before = Input.get_current_cursor_shape()
 		Input.set_default_cursor_shape(cursor_when_drag)

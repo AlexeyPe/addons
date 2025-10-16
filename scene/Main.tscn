@@ -160,7 +160,6 @@ metadata/_custom_type_script = "uid://djmnu1e55mp0j"
 script = ExtResource("1_nbc6x")
 
 [node name="UI" type="CanvasLayer" parent="."]
-visible = false
 
 [node name="Counters" type="MarginContainer" parent="UI"]
 anchors_preset = 15
