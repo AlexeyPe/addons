@@ -1,14 +1,17 @@
-[gd_scene load_steps=33 format=3 uid="uid://bcap7c1i87f30"]
+[gd_scene load_steps=36 format=3 uid="uid://bcap7c1i87f30"]
 
 [ext_resource type="Shader" uid="uid://bso165sdn2g37" path="res://addons/APCards/shaders/2D-perspective.gdshader" id="1_y1qi0"]
 [ext_resource type="Script" uid="uid://qgft63fv0g22" path="res://addons/APChain/classes/chain/drag_and_drop/APDragDataControl.gd" id="2_mqpi6"]
 [ext_resource type="Script" uid="uid://djmnu1e55mp0j" path="res://addons/VarRes/classes/bool/VaRBool.gd" id="3_a8db2"]
 [ext_resource type="Script" uid="uid://bxgs3dw2ym11j" path="res://addons/APChain/classes/chain/drag_and_drop/APDragDataRes.gd" id="3_yx8bl"]
 [ext_resource type="Theme" uid="uid://cjnu6wdil2hgp" path="res://scene/UI/Theme.tres" id="4_2rskf"]
-[ext_resource type="Script" uid="uid://dc4j1c7cfcp1n" path="res://addons/VarRes/classes/UI/LabelName.gd" id="4_73gyv"]
+[ext_resource type="Texture2D" uid="uid://2h4h444r401e" path="res://scene/cards/wall/panel_grey_bolts_detail_a.svg" id="4_fr5rg"]
+[ext_resource type="LabelSettings" uid="uid://bs3a6ff5awow6" path="res://scene/UI/LabelSettings/MainLabel.tres" id="5_4r383"]
 [ext_resource type="Shader" uid="uid://bvvll4jp3kavo" path="res://addons/shadercollectionap/shader/outline/outline-dotted.gdshader" id="5_5yh0u"]
 [ext_resource type="Script" uid="uid://dfnv5lgi83cdo" path="res://addons/APChain/classes/chain/APChainAnimPlay.gd" id="5_fjufq"]
+[ext_resource type="Script" uid="uid://5t32i7d2eb57" path="res://addons/VarRes/classes/UI/TextureRectVarNum.gd" id="5_hb6gr"]
 [ext_resource type="Script" uid="uid://cpilgm747sne6" path="res://addons/APChain/classes/chain/set/APChainSetZ.gd" id="6_c251f"]
+[ext_resource type="Resource" uid="uid://cehqu7jl7rmu3" path="res://data/gameplay/player_team.tres" id="6_oenry"]
 [ext_resource type="Script" uid="uid://ba4djel70nxp6" path="res://addons/APCards/classes/APCard2DPersp.gd" id="7_d1ve1"]
 [ext_resource type="Script" uid="uid://otq5ty4iete3" path="res://addons/APChain/classes/chain/APChainToggleBtns.gd" id="7_qul38"]
 [ext_resource type="Resource" uid="uid://le4nnyijbcxw" path="res://data/CardPack/PickCardsPerPack.tres" id="8_0tp00"]
@@ -35,12 +38,14 @@ resource_local_to_scene = true
 resource_name = "is_pack_card"
 script = ExtResource("3_a8db2")
 value = true
+description = null
 metadata/_custom_type_script = "uid://djmnu1e55mp0j"
 
 [sub_resource type="Resource" id="Resource_jqurx"]
 resource_local_to_scene = true
 resource_name = "is_active_pack_card"
 script = ExtResource("3_a8db2")
+description = null
 metadata/_custom_type_script = "uid://djmnu1e55mp0j"
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_s1pa1"]
@@ -185,20 +190,24 @@ size_flags_vertical = 4
 mouse_default_cursor_shape = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_s1pa1")
 
-[node name="LabelName" type="Label" parent="SubViewport/PanelContainer" node_paths=PackedStringArray("target_node")]
+[node name="TextureRect" type="TextureRect" parent="SubViewport/PanelContainer"]
+texture_filter = 2
+custom_minimum_size = Vector2(55, 0)
 layout_mode = 2
-size_flags_horizontal = 0
-size_flags_vertical = 0
-theme_override_font_sizes/font_size = 14
-text = "Card"
-script = ExtResource("4_73gyv")
-target_node = NodePath("../../..")
-metadata/_custom_type_script = "uid://dc4j1c7cfcp1n"
+size_flags_horizontal = 4
+texture = ExtResource("4_fr5rg")
+expand_mode = 1
+stretch_mode = 5
+script = ExtResource("5_hb6gr")
+num = ExtResource("6_oenry")
+metadata/_custom_type_script = "uid://5t32i7d2eb57"
 
 [node name="Label" type="Label" parent="SubViewport/PanelContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
-text = "Text"
+size_flags_vertical = 0
+text = "Карта"
+label_settings = ExtResource("5_4r383")
 
 [node name="PanelContainer" type="PanelContainer" parent="SubViewport/PanelContainer"]
 custom_minimum_size = Vector2(23, 23)

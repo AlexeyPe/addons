@@ -1,4 +1,4 @@
-[gd_scene load_steps=71 format=4 uid="uid://dhgo7ujbqhqoi"]
+[gd_scene load_steps=73 format=4 uid="uid://dhgo7ujbqhqoi"]
 
 [ext_resource type="Script" uid="uid://mjk4ctyfa82r" path="res://scene/main.gd" id="1_nbc6x"]
 [ext_resource type="Texture2D" uid="uid://8yci6v355lg4" path="res://imgs/icons/tabler--zoom-in.svg" id="2_764rb"]
@@ -13,6 +13,7 @@
 [ext_resource type="Shader" uid="uid://bnx70r4bgsw0y" path="res://addons/shadercollectionap/shader/grid/grid.gdshader" id="8_1ihg2"]
 [ext_resource type="Resource" uid="uid://bewvxbnhpn1k2" path="res://data/gameplay/units/units.tres" id="8_6xsba"]
 [ext_resource type="Script" uid="uid://beulpxkd70k21" path="res://addons/APController/classes/AP_WASD_2D.gd" id="8_pnqar"]
+[ext_resource type="Resource" uid="uid://cehqu7jl7rmu3" path="res://data/gameplay/player_team.tres" id="9_32nmk"]
 [ext_resource type="Resource" uid="uid://dtkw5uacj3oc5" path="res://data/gameplay/units/unit_deaths.tres" id="9_d5i4e"]
 [ext_resource type="Script" uid="uid://cccrm8vuks5fs" path="res://addons/VarRes/classes/UI/VaResLabel.gd" id="9_ia2xj"]
 [ext_resource type="Resource" uid="uid://ccq6dphbjbpf6" path="res://data/gameplay/units/units_white.tres" id="9_v1evy"]
@@ -51,12 +52,19 @@
 [sub_resource type="Resource" id="Resource_tuai4"]
 script = ExtResource("5_aex65")
 value = 0.2
+description = null
 metadata/_custom_type_script = "uid://msh8p6ojhxex"
 
 [sub_resource type="Resource" id="Resource_hrl0l"]
 script = ExtResource("5_aex65")
 value = -0.2
+description = null
 metadata/_custom_type_script = "uid://msh8p6ojhxex"
+
+[sub_resource type="LabelSettings" id="LabelSettings_32nmk"]
+font_color = Color(0.8397716, 0.49030846, 0.909368, 1)
+outline_size = 7
+outline_color = Color(0.13, 0.13, 0.13, 1)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_r5aow"]
 shader = ExtResource("14_r5aow")
@@ -109,6 +117,7 @@ action = &"move_camera"
 [sub_resource type="Resource" id="Resource_08k7p"]
 script = ExtResource("5_aex65")
 value = 300.0
+description = null
 metadata/_custom_type_script = "uid://msh8p6ojhxex"
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_pnqar"]
@@ -117,17 +126,20 @@ radius = 200.0
 [sub_resource type="Resource" id="Resource_ob58h"]
 script = ExtResource("5_aex65")
 value = 0.1
+description = null
 metadata/_custom_type_script = "uid://msh8p6ojhxex"
 
 [sub_resource type="Resource" id="Resource_3hqfm"]
 script = ExtResource("5_aex65")
 value = -0.1
+description = null
 metadata/_custom_type_script = "uid://msh8p6ojhxex"
 
 [sub_resource type="Resource" id="Resource_bp33t"]
 resource_local_to_scene = true
 resource_name = "is_die"
 script = ExtResource("57_a6847")
+description = null
 metadata/_custom_type_script = "uid://djmnu1e55mp0j"
 
 [sub_resource type="Resource" id="Resource_a6847"]
@@ -135,37 +147,44 @@ resource_local_to_scene = true
 resource_name = "is_die"
 script = ExtResource("57_a6847")
 storage_value = true
+description = null
 metadata/_custom_type_script = "uid://djmnu1e55mp0j"
 
 [sub_resource type="Resource" id="Resource_d5i4e"]
 resource_local_to_scene = true
 script = ExtResource("57_a6847")
+description = null
 metadata/_custom_type_script = "uid://djmnu1e55mp0j"
 
 [sub_resource type="Resource" id="Resource_2hth1"]
 resource_local_to_scene = true
 script = ExtResource("57_a6847")
+description = null
 metadata/_custom_type_script = "uid://djmnu1e55mp0j"
 
 [sub_resource type="Resource" id="Resource_ms5ap"]
 resource_local_to_scene = true
 script = ExtResource("57_a6847")
+description = null
 metadata/_custom_type_script = "uid://djmnu1e55mp0j"
 
 [sub_resource type="Resource" id="Resource_v1evy"]
 resource_local_to_scene = true
 script = ExtResource("57_a6847")
+description = null
 metadata/_custom_type_script = "uid://djmnu1e55mp0j"
 
 [sub_resource type="Resource" id="Resource_u8yls"]
 resource_local_to_scene = true
 script = ExtResource("57_a6847")
+description = null
 metadata/_custom_type_script = "uid://djmnu1e55mp0j"
 
 [sub_resource type="Resource" id="Resource_rwiys"]
 resource_local_to_scene = true
 resource_name = "is_die_purple"
 script = ExtResource("57_a6847")
+description = null
 metadata/_custom_type_script = "uid://djmnu1e55mp0j"
 
 [node name="Main" type="Node"]
@@ -243,6 +262,34 @@ node_emitter = NodePath("..")
 watch_signal = 0
 metadata/_custom_type_script = "uid://uh8e7y0n0t5e"
 
+[node name="Team" type="HBoxContainer" parent="UI/Counters/Counters"]
+layout_mode = 2
+size_flags_horizontal = 0
+tooltip_text = "Количетсво билетов для переброса набора карточек"
+metadata/_edit_group_ = true
+
+[node name="Label" type="Label" parent="UI/Counters/Counters/Team"]
+layout_mode = 2
+text = "Команда:"
+label_settings = ExtResource("15_goqcv")
+
+[node name="Label2" type="Label" parent="UI/Counters/Counters/Team"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.2901961, 0.2901961, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_offset_y = 1
+theme_override_constants/outline_size = 7
+theme_override_constants/shadow_outline_size = 12
+text = "Фиолетовые"
+label_settings = SubResource("LabelSettings_32nmk")
+script = ExtResource("9_ia2xj")
+var_res = ExtResource("9_32nmk")
+num_is = Array[String](["Белые", "Красные", "Фиолетовые", "Жёлтые"])
+num_is_font_color = Array[Color]([Color(1, 1, 1, 1), Color(1, 0.2901961, 0.2901961, 1), Color(0.8397716, 0.49030846, 0.909368, 1), Color(0.97150236, 0.8373624, 0, 1)])
+metadata/_custom_type_script = "uid://cccrm8vuks5fs"
+
 [node name="UnitsAll" type="HBoxContainer" parent="UI/Counters/Counters"]
 visible = false
 layout_mode = 2
@@ -281,7 +328,7 @@ expand_mode = 3
 
 [node name="Label2" type="Label" parent="UI/Counters/Counters/Fields/White"]
 layout_mode = 2
-text = "12"
+text = "11"
 label_settings = ExtResource("15_goqcv")
 script = ExtResource("9_ia2xj")
 var_res = ExtResource("12_1ihg2")
@@ -298,7 +345,7 @@ label_settings = ExtResource("15_goqcv")
 
 [node name="Label2" type="Label" parent="UI/Counters/Counters/Fields/Red"]
 layout_mode = 2
-text = "19"
+text = "3"
 label_settings = ExtResource("15_goqcv")
 script = ExtResource("9_ia2xj")
 var_res = ExtResource("13_32nmk")
@@ -315,7 +362,7 @@ label_settings = ExtResource("15_goqcv")
 
 [node name="Label2" type="Label" parent="UI/Counters/Counters/Fields/Purple"]
 layout_mode = 2
-text = "18"
+text = "17"
 label_settings = ExtResource("15_goqcv")
 script = ExtResource("9_ia2xj")
 var_res = ExtResource("14_ftvp4")
@@ -332,7 +379,7 @@ label_settings = ExtResource("15_goqcv")
 
 [node name="Label2" type="Label" parent="UI/Counters/Counters/Fields/Yellow"]
 layout_mode = 2
-text = "10"
+text = "8"
 label_settings = ExtResource("15_goqcv")
 script = ExtResource("9_ia2xj")
 var_res = ExtResource("15_1qtut")
@@ -1415,7 +1462,6 @@ collision_mask = 8
 script = ExtResource("15_ob58h")
 body = NodePath("..")
 action_move = SubResource("InputEventAction_ob58h")
-cursor_when_drag = 6
 metadata/_custom_type_script = "uid://dvoxncb42t31a"
 
 [node name="AP_WASD_2D" type="Node" parent="World/Camera" node_paths=PackedStringArray("character_body")]

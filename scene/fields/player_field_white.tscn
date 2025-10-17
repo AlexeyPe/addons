@@ -1,7 +1,13 @@
-[gd_scene load_steps=3 format=3 uid="uid://dgichot42emfv"]
+[gd_scene load_steps=5 format=3 uid="uid://dgichot42emfv"]
 
 [ext_resource type="PackedScene" uid="uid://b1dthv2qurwnx" path="res://scene/fields/player_field_red.tscn" id="1_wl56a"]
 [ext_resource type="Resource" uid="uid://bbu6crs5k6ct6" path="res://data/gameplay/field_counters/fields_white.tres" id="2_budfs"]
+[ext_resource type="Script" uid="uid://8myr58nwfvfg" path="res://addons/VarRes/classes/numbers/VaRInt.gd" id="2_f6de6"]
+
+[sub_resource type="Resource" id="Resource_08hbt"]
+script = ExtResource("2_f6de6")
+value = 0
+metadata/_custom_type_script = "uid://8myr58nwfvfg"
 
 [node name="PlayerField-White" instance=ExtResource("1_wl56a")]
 modulate = Color(1, 1, 1, 1)
@@ -13,8 +19,11 @@ metadata/field_type = &"white"
 collision_layer = 224
 collision_mask = 224
 
-[node name="APChainSetNum" parent="." index="4"]
+[node name="APChainIfNum" parent="APDropZone" index="1"]
+num_b = SubResource("Resource_08hbt")
+
+[node name="APChainSetNum" parent="." index="5"]
 num_a = ExtResource("2_budfs")
 
-[node name="APChainSetNum2" parent="." index="5"]
+[node name="APChainSetNum2" parent="." index="6"]
 num_a = ExtResource("2_budfs")
