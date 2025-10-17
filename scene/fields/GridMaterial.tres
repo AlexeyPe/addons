@@ -6,5 +6,5 @@
 shader = ExtResource("1_wbqrt")
 shader_parameter/grid_size = 48.0
 shader_parameter/line_color = Color(0.0885599, 0.0885599, 0.0885599, 0.15686275)
-shader_parameter/offset = Vector2(24, 24)
+shader_parameter/offset = Vector2(25, 25)
 shader_parameter/line_thickness = 2.5

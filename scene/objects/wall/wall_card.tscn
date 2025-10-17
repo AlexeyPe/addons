@@ -1,0 +1,70 @@
+[gd_scene load_steps=14 format=3 uid="uid://dydhud4jeqphy"]
+
+[ext_resource type="PackedScene" uid="uid://bcap7c1i87f30" path="res://scene/objects/Card.tscn" id="1_tbxw8"]
+[ext_resource type="Shader" uid="uid://bso165sdn2g37" path="res://addons/APCards/shaders/2D-perspective.gdshader" id="2_uohim"]
+[ext_resource type="Script" uid="uid://bxgs3dw2ym11j" path="res://addons/APChain/classes/chain/drag_and_drop/APDragDataRes.gd" id="3_6vxwn"]
+[ext_resource type="Script" uid="uid://djmnu1e55mp0j" path="res://addons/VarRes/classes/bool/VaRBool.gd" id="3_86air"]
+[ext_resource type="Script" uid="uid://b03dlfkxcckwp" path="res://addons/VarRes/classes/VarRes.gd" id="4_syiw1"]
+[ext_resource type="Script" uid="uid://dapuucp3gf6c8" path="res://addons/VarRes/classes/VaRScene.gd" id="5_57cwf"]
+[ext_resource type="PackedScene" uid="uid://dfht4fveoaaib" path="res://scene/objects/wall/wall_build.tscn" id="6_mltky"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_d3wn7"]
+resource_local_to_scene = true
+shader = ExtResource("2_uohim")
+shader_parameter/fov = 80.0
+shader_parameter/cull_back = true
+shader_parameter/y_rot = 0.0
+shader_parameter/x_rot = 0.0
+shader_parameter/inset = 0.0
+
+[sub_resource type="Resource" id="Resource_i5byt"]
+resource_name = "build"
+script = ExtResource("5_57cwf")
+value = ExtResource("6_mltky")
+metadata/_custom_type_script = "uid://dapuucp3gf6c8"
+
+[sub_resource type="Resource" id="Resource_pa800"]
+script = ExtResource("3_6vxwn")
+vares = Array[ExtResource("4_syiw1")]([SubResource("Resource_i5byt")])
+metadata/_custom_type_script = "uid://bxgs3dw2ym11j"
+
+[sub_resource type="Resource" id="Resource_3qhui"]
+resource_local_to_scene = true
+resource_name = "enable_drag"
+script = ExtResource("3_86air")
+description = null
+metadata/_custom_type_script = "uid://djmnu1e55mp0j"
+
+[sub_resource type="Resource" id="Resource_cnwsi"]
+resource_local_to_scene = true
+resource_name = "is_pack_card"
+script = ExtResource("3_86air")
+value = true
+description = null
+metadata/_custom_type_script = "uid://djmnu1e55mp0j"
+
+[sub_resource type="Resource" id="Resource_pkofc"]
+resource_local_to_scene = true
+resource_name = "is_active_pack_card"
+script = ExtResource("3_86air")
+description = null
+metadata/_custom_type_script = "uid://djmnu1e55mp0j"
+
+[node name="Card" instance=ExtResource("1_tbxw8")]
+material = SubResource("ShaderMaterial_d3wn7")
+drag_data = SubResource("Resource_pa800")
+enable_drag = SubResource("Resource_3qhui")
+metadata/is_pack_card = SubResource("Resource_cnwsi")
+metadata/is_active_pack_card = SubResource("Resource_pkofc")
+
+[node name="Label" parent="SubViewport/PanelContainer" index="1"]
+text = "Стена"
+
+[node name="APChainToggleBtns" parent="SubViewport/PanelContainer/ButtonSelectCardPack" index="0"]
+toggle_bool = SubResource("Resource_pkofc")
+
+[node name="is_pack_card=now_false" parent="." index="8"]
+resource = SubResource("Resource_cnwsi")
+
+[node name="SET_enable_drag=true" parent="is_pack_card=now_false" index="1"]
+var_bool = SubResource("Resource_3qhui")

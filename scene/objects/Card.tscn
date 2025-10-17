@@ -1,11 +1,11 @@
-[gd_scene load_steps=36 format=3 uid="uid://bcap7c1i87f30"]
+[gd_scene load_steps=38 format=3 uid="uid://bcap7c1i87f30"]
 
 [ext_resource type="Shader" uid="uid://bso165sdn2g37" path="res://addons/APCards/shaders/2D-perspective.gdshader" id="1_y1qi0"]
 [ext_resource type="Script" uid="uid://qgft63fv0g22" path="res://addons/APChain/classes/chain/drag_and_drop/APDragDataControl.gd" id="2_mqpi6"]
 [ext_resource type="Script" uid="uid://djmnu1e55mp0j" path="res://addons/VarRes/classes/bool/VaRBool.gd" id="3_a8db2"]
 [ext_resource type="Script" uid="uid://bxgs3dw2ym11j" path="res://addons/APChain/classes/chain/drag_and_drop/APDragDataRes.gd" id="3_yx8bl"]
 [ext_resource type="Theme" uid="uid://cjnu6wdil2hgp" path="res://scene/UI/Theme.tres" id="4_2rskf"]
-[ext_resource type="Texture2D" uid="uid://2h4h444r401e" path="res://scene/cards/wall/panel_grey_bolts_detail_a.svg" id="4_fr5rg"]
+[ext_resource type="Texture2D" uid="uid://h14mo3pcwr6i" path="res://scene/objects/wall/round_grey_detailed.png" id="4_hb6gr"]
 [ext_resource type="LabelSettings" uid="uid://bs3a6ff5awow6" path="res://scene/UI/LabelSettings/MainLabel.tres" id="5_4r383"]
 [ext_resource type="Shader" uid="uid://bvvll4jp3kavo" path="res://addons/shadercollectionap/shader/outline/outline-dotted.gdshader" id="5_5yh0u"]
 [ext_resource type="Script" uid="uid://dfnv5lgi83cdo" path="res://addons/APChain/classes/chain/APChainAnimPlay.gd" id="5_fjufq"]
@@ -18,11 +18,12 @@
 [ext_resource type="Script" uid="uid://u1gglou2n5jq" path="res://addons/APChain/classes/chain_activator/APActivatorResource.gd" id="8_esaqt"]
 [ext_resource type="Resource" uid="uid://lt145sa8tr3" path="res://data/UI/VisibleCardPack.tres" id="9_esaqt"]
 [ext_resource type="Script" uid="uid://bdky14gdt5q2x" path="res://addons/VarRes/classes/VaRPath.gd" id="9_jqurx"]
-[ext_resource type="Script" uid="uid://5kvsg1sui3d3" path="res://addons/APChain/classes/chain/drag_and_drop/APChainSetDragData.gd" id="10_gpli8"]
 [ext_resource type="Script" uid="uid://dj04ffy0nu74n" path="res://addons/APChain/classes/chain/audio/APChainAudioPlay.gd" id="11_4r383"]
 [ext_resource type="AudioStream" uid="uid://c6ktfn7vyk0tn" path="res://audio/CardPackSelectTrue.tres" id="11_fr5rg"]
 [ext_resource type="Script" uid="uid://bqn6e76istclq" path="res://addons/APChain/classes/chain/set/APChainSetVisible.gd" id="13_xd0mm"]
 [ext_resource type="Script" uid="uid://bein4dn8ts6bb" path="res://addons/APChain/classes/chain/childs/APChainDelChildsArr.gd" id="18_5yh0u"]
+[ext_resource type="Script" uid="uid://xv7plkxnebcm" path="res://addons/APChain/classes/chain/set/vares/APChainSetBool.gd" id="22_mp0y4"]
+[ext_resource type="Script" uid="uid://b03dlfkxcckwp" path="res://addons/VarRes/classes/VarRes.gd" id="22_udmh3"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_6018q"]
 resource_local_to_scene = true
@@ -32,6 +33,17 @@ shader_parameter/cull_back = true
 shader_parameter/y_rot = 0.0
 shader_parameter/x_rot = 0.0
 shader_parameter/inset = 0.0
+
+[sub_resource type="Resource" id="Resource_udmh3"]
+script = ExtResource("3_yx8bl")
+metadata/_custom_type_script = "uid://bxgs3dw2ym11j"
+
+[sub_resource type="Resource" id="Resource_eh51v"]
+resource_local_to_scene = true
+resource_name = "enable_drag"
+script = ExtResource("3_a8db2")
+description = null
+metadata/_custom_type_script = "uid://djmnu1e55mp0j"
 
 [sub_resource type="Resource" id="Resource_xd0mm"]
 resource_local_to_scene = true
@@ -135,10 +147,6 @@ _data = {
 &"mouse_eneted": SubResource("Animation_a8avr")
 }
 
-[sub_resource type="Resource" id="Resource_34j44"]
-script = ExtResource("3_yx8bl")
-metadata/_custom_type_script = "uid://bxgs3dw2ym11j"
-
 [node name="Card" type="SubViewportContainer"]
 material = SubResource("ShaderMaterial_6018q")
 custom_minimum_size = Vector2(66, 88)
@@ -158,6 +166,8 @@ focus_mode = 2
 focus_behavior_recursive = 2
 mouse_target = true
 script = ExtResource("2_mqpi6")
+drag_data = SubResource("Resource_udmh3")
+enable_drag = SubResource("Resource_eh51v")
 metadata/is_pack_card = SubResource("Resource_xd0mm")
 metadata/is_active_pack_card = SubResource("Resource_jqurx")
 
@@ -195,7 +205,7 @@ texture_filter = 2
 custom_minimum_size = Vector2(55, 0)
 layout_mode = 2
 size_flags_horizontal = 4
-texture = ExtResource("4_fr5rg")
+texture = ExtResource("4_hb6gr")
 expand_mode = 1
 stretch_mode = 5
 script = ExtResource("5_hb6gr")
@@ -336,14 +346,6 @@ resource = ExtResource("9_esaqt")
 signal = "now_false"
 metadata/_custom_type_script = "uid://u1gglou2n5jq"
 
-[node name="APChainSetDragData" type="Node" parent="VisibleCardPack=now_false" node_paths=PackedStringArray("target", "node_emitter")]
-script = ExtResource("10_gpli8")
-target = NodePath("../..")
-set_data = SubResource("Resource_34j44")
-node_emitter = NodePath("..")
-watch_signal = 0
-metadata/_custom_type_script = "uid://5kvsg1sui3d3"
-
 [node name="is_pack_card=now_false" type="Node" parent="."]
 script = ExtResource("8_esaqt")
 _signal = "now_false"
@@ -358,6 +360,13 @@ nodes = [NodePath("../../SubViewport/PanelContainer/ButtonSelectCardPack"), Node
 node_emitter = NodePath("..")
 watch_signal = 0
 metadata/_custom_type_script = "uid://bein4dn8ts6bb"
+
+[node name="SET_enable_drag=true" type="Node" parent="is_pack_card=now_false" node_paths=PackedStringArray("node_emitter")]
+script = ExtResource("22_mp0y4")
+var_bool = SubResource("Resource_eh51v")
+node_emitter = NodePath("..")
+watch_signal = 0
+metadata/_custom_type_script = "uid://xv7plkxnebcm"
 
 [node name="CardPackSelectTrue" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("11_fr5rg")

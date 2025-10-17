@@ -2,12 +2,14 @@ extends Control
 class_name APDragDataControl
 
 @export var drag_data:APDragDataRes
+@export var enable_drag:VaRBool
 
 var is_drag:bool = false
 var parent_before_remove:Node
 var index_before_remove:int
 
 func _get_drag_data(at_position: Vector2) -> Variant:
+	if enable_drag.value == false: return null
 	if drag_data:
 		is_drag = true
 		drag_data.dragged_node = self

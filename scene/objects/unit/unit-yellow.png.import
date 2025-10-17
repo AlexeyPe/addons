@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cqw0217wehyo4"
-path="res://.godot/imported/unit-purple.png-e08f9ae3fcd0614632449ba008386687.ctex"
+uid="uid://dwpcfya8anvdv"
+path="res://.godot/imported/unit-yellow.png-b2fb34fdefa28b841673426e1a594988.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://scene/cards/unit/unit-purple.png"
-dest_files=["res://.godot/imported/unit-purple.png-e08f9ae3fcd0614632449ba008386687.ctex"]
+source_file="res://scene/objects/unit/unit-yellow.png"
+dest_files=["res://.godot/imported/unit-yellow.png-b2fb34fdefa28b841673426e1a594988.ctex"]
 
 [params]
 
@@ -23,7 +23,7 @@ compress/rdo_quality_loss=0.0
 compress/hdr_compression=1
 compress/normal_map=0
 compress/channel_pack=0
-mipmaps/generate=false
+mipmaps/generate=true
 mipmaps/limit=-1
 roughness/mode=0
 roughness/src_normal=""

@@ -10,7 +10,6 @@ value = 3
 metadata/_custom_type_script = "uid://8myr58nwfvfg"
 
 [node name="PlayerField-Yellow" instance=ExtResource("1_5xbmj")]
-modulate = Color(0.9490196, 0.8980392, 0.3137255, 1)
 collision_layer = 64
 collision_mask = 64
 metadata/field_type = &"yellow"
@@ -18,6 +17,9 @@ metadata/field_type = &"yellow"
 [node name="Area2D" parent="." index="0"]
 collision_layer = 176
 collision_mask = 176
+
+[node name="NinePatchRect" parent="." index="1"]
+self_modulate = Color(0.9490196, 0.8980392, 0.3137255, 1)
 
 [node name="APChainIfNum" parent="APDropZone" index="1"]
 num_b = SubResource("Resource_8xlrx")

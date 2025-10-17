@@ -2,9 +2,9 @@
 
 [ext_resource type="Script" uid="uid://8myr58nwfvfg" path="res://addons/VarRes/classes/numbers/VaRInt.gd" id="1_3xoup"]
 [ext_resource type="Script" uid="uid://c3heqian2igr6" path="res://addons/VarRes/classes/random/VaRRandomScene.gd" id="2_8v2xx"]
-[ext_resource type="PackedScene" uid="uid://bcap7c1i87f30" path="res://scene/cards/Card.tscn" id="2_km3j8"]
-[ext_resource type="PackedScene" uid="uid://b6d7oaky3mjbw" path="res://scene/cards/CardGreen.tscn" id="3_t0pc6"]
-[ext_resource type="PackedScene" uid="uid://c1g87ftb2c4si" path="res://scene/cards/CardPurple.tscn" id="4_1wt67"]
+[ext_resource type="PackedScene" uid="uid://bcap7c1i87f30" path="res://scene/objects/Card.tscn" id="2_km3j8"]
+[ext_resource type="PackedScene" uid="uid://b6d7oaky3mjbw" path="res://scene/objects/CardGreen.tscn" id="3_t0pc6"]
+[ext_resource type="PackedScene" uid="uid://c1g87ftb2c4si" path="res://scene/objects/CardPurple.tscn" id="4_1wt67"]
 
 [sub_resource type="Resource" id="Resource_1wt67"]
 script = ExtResource("1_3xoup")

@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://vylvaqmvksie"]
+[gd_scene load_steps=15 format=3 uid="uid://vylvaqmvksie"]
 
 [ext_resource type="Script" uid="uid://dn354cgweyjxg" path="res://addons/APCards/classes/APDeckContainer.gd" id="1_nyiwj"]
 [ext_resource type="Script" uid="uid://0ax2sihcwf5u" path="res://addons/APCards/classes/APChainSetCardDeck.gd" id="2_a4bd6"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://hn6sogho0cth" path="res://addons/APCards/demo_can_del/Card.tscn" id="3_4voe3"]
 [ext_resource type="Shader" uid="uid://bso165sdn2g37" path="res://addons/APCards/shaders/2D-perspective.gdshader" id="3_pfrr3"]
 [ext_resource type="Script" uid="uid://c6lf3egn1f263" path="res://addons/APChain/classes/chain/childs/APChainDelChilds.gd" id="4_4voe3"]
+[ext_resource type="Script" uid="uid://dapuucp3gf6c8" path="res://addons/VarRes/classes/VaRScene.gd" id="6_7nugf"]
 
 [sub_resource type="Gradient" id="Gradient_4voe3"]
 interpolation_color_space = 1
@@ -53,6 +54,11 @@ shader_parameter/cull_back = true
 shader_parameter/y_rot = 0.0
 shader_parameter/x_rot = 0.0
 shader_parameter/inset = 0.0
+
+[sub_resource type="Resource" id="Resource_702qn"]
+script = ExtResource("6_7nugf")
+value = ExtResource("3_4voe3")
+metadata/_custom_type_script = "uid://dapuucp3gf6c8"
 
 [node name="TestDeck" type="Control"]
 layout_mode = 3
@@ -231,7 +237,7 @@ text = "Add card"
 [node name="APChainAddChild" type="Node" parent="VBoxContainer/cards/ButtonAddChild" node_paths=PackedStringArray("target_parent", "node_emitter")]
 script = ExtResource("2_mmfvu")
 target_parent = NodePath("../../../../TextureRect/VBoxContainer/APDeckContainer")
-scene = ExtResource("3_4voe3")
+scene = SubResource("Resource_702qn")
 force_readable_name = true
 node_emitter = NodePath("..")
 watch_signal = 0

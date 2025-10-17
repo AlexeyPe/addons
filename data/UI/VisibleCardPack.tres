@@ -5,4 +5,5 @@
 [resource]
 resource_name = "VisibleCardPack"
 script = ExtResource("1_ncvxc")
+description = null
 metadata/_custom_type_script = "uid://djmnu1e55mp0j"

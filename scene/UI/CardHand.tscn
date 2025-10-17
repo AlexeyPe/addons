@@ -1,4 +1,4 @@
-[gd_scene load_steps=85 format=3 uid="uid://csgbo46w4e1c5"]
+[gd_scene load_steps=90 format=3 uid="uid://csgbo46w4e1c5"]
 
 [ext_resource type="PackedScene" uid="uid://dyof3d0s47yns" path="res://scene/UI/CardPack.tscn" id="1_mngf1"]
 [ext_resource type="Texture2D" uid="uid://b7r717imcw7y8" path="res://imgs/icons/input/icon-park-solid--enter-key.svg" id="2_6e6x1"]
@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://b55ulf7hqxpdb" path="res://imgs/icons/input/mdi--arrow-left-thin.svg" id="2_i6qmb"]
 [ext_resource type="Texture2D" uid="uid://x473kv2by7g5" path="res://imgs/UI/frame/banner_hanging.png" id="2_jrwam"]
 [ext_resource type="Script" uid="uid://dn354cgweyjxg" path="res://addons/APCards/classes/APDeckContainer.gd" id="2_jtq55"]
-[ext_resource type="PackedScene" uid="uid://bcap7c1i87f30" path="res://scene/cards/Card.tscn" id="3_hblv7"]
+[ext_resource type="PackedScene" uid="uid://bcap7c1i87f30" path="res://scene/objects/Card.tscn" id="3_hblv7"]
 [ext_resource type="Texture2D" uid="uid://bs6wwydvpnun8" path="res://imgs/icons/input/ph--mouse-left-click-fill.svg" id="4_1dhve"]
 [ext_resource type="Shader" uid="uid://bso165sdn2g37" path="res://addons/APCards/shaders/2D-perspective.gdshader" id="4_6px0d"]
 [ext_resource type="Texture2D" uid="uid://dy5sx6te7gscu" path="res://imgs/icons/input/mdi--arrow-right-thin.svg" id="4_8seqe"]
@@ -47,8 +47,9 @@
 [ext_resource type="Resource" uid="uid://fdc37uony7ts" path="res://data/UI/PlayAudioCardPackSelect.tres" id="35_kpoiw"]
 [ext_resource type="AudioStream" uid="uid://dr3yimv6j8o3x" path="res://audio/ButtonError.tres" id="44_fc40o"]
 [ext_resource type="AudioStream" uid="uid://c38v7gxandina" path="res://audio/Rerol.tres" id="45_mh6vc"]
-[ext_resource type="PackedScene" uid="uid://b76n5oe8qruln" path="res://scene/cards/unit/unit_card.tscn" id="45_t7ygc"]
-[ext_resource type="PackedScene" uid="uid://dydhud4jeqphy" path="res://scene/cards/wall/wall_card.tscn" id="46_4cst2"]
+[ext_resource type="PackedScene" uid="uid://b76n5oe8qruln" path="res://scene/objects/unit/unit_card.tscn" id="45_t7ygc"]
+[ext_resource type="PackedScene" uid="uid://dydhud4jeqphy" path="res://scene/objects/wall/wall_card.tscn" id="46_4cst2"]
+[ext_resource type="Script" uid="uid://b03dlfkxcckwp" path="res://addons/VarRes/classes/VarRes.gd" id="46_hugvf"]
 [ext_resource type="Script" uid="uid://dhamqitbrimqh" path="res://addons/APChain/classes/chain/if/APChainIfBool.gd" id="47_sxktb"]
 [ext_resource type="AudioStream" uid="uid://dridsfo8apuj7" path="res://audio/SelectCardsPack.tres" id="48_8m7k3"]
 [ext_resource type="AudioStream" uid="uid://bs0dt6d64esl7" path="res://audio/CardPackSelectFalse.tres" id="48_kpoiw"]
@@ -74,17 +75,26 @@ shader_parameter/y_rot = 0.0
 shader_parameter/x_rot = 0.0
 shader_parameter/inset = 0.0
 
+[sub_resource type="Resource" id="Resource_13dmk"]
+resource_local_to_scene = true
+resource_name = "enable_drag"
+script = ExtResource("13_3r0al")
+description = null
+metadata/_custom_type_script = "uid://djmnu1e55mp0j"
+
 [sub_resource type="Resource" id="Resource_6vyr0"]
 resource_local_to_scene = true
 resource_name = "is_pack_card"
 script = ExtResource("13_3r0al")
 value = true
+description = null
 metadata/_custom_type_script = "uid://djmnu1e55mp0j"
 
 [sub_resource type="Resource" id="Resource_mnmi3"]
 resource_local_to_scene = true
 resource_name = "is_active_pack_card"
 script = ExtResource("13_3r0al")
+description = null
 metadata/_custom_type_script = "uid://djmnu1e55mp0j"
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ka15h"]
@@ -96,17 +106,26 @@ shader_parameter/y_rot = 0.0
 shader_parameter/x_rot = 0.0
 shader_parameter/inset = 0.0
 
+[sub_resource type="Resource" id="Resource_iriwx"]
+resource_local_to_scene = true
+resource_name = "enable_drag"
+script = ExtResource("13_3r0al")
+description = null
+metadata/_custom_type_script = "uid://djmnu1e55mp0j"
+
 [sub_resource type="Resource" id="Resource_m1dll"]
 resource_local_to_scene = true
 resource_name = "is_pack_card"
 script = ExtResource("13_3r0al")
 value = true
+description = null
 metadata/_custom_type_script = "uid://djmnu1e55mp0j"
 
 [sub_resource type="Resource" id="Resource_3r0al"]
 resource_local_to_scene = true
 resource_name = "is_active_pack_card"
 script = ExtResource("13_3r0al")
+description = null
 metadata/_custom_type_script = "uid://djmnu1e55mp0j"
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_6e6x1"]
@@ -118,17 +137,26 @@ shader_parameter/y_rot = 0.0
 shader_parameter/x_rot = 0.0
 shader_parameter/inset = 0.0
 
+[sub_resource type="Resource" id="Resource_xjfkq"]
+resource_local_to_scene = true
+resource_name = "enable_drag"
+script = ExtResource("13_3r0al")
+description = null
+metadata/_custom_type_script = "uid://djmnu1e55mp0j"
+
 [sub_resource type="Resource" id="Resource_rvtym"]
 resource_local_to_scene = true
 resource_name = "is_pack_card"
 script = ExtResource("13_3r0al")
 value = true
+description = null
 metadata/_custom_type_script = "uid://djmnu1e55mp0j"
 
 [sub_resource type="Resource" id="Resource_jrwam"]
 resource_local_to_scene = true
 resource_name = "is_active_pack_card"
 script = ExtResource("13_3r0al")
+description = null
 metadata/_custom_type_script = "uid://djmnu1e55mp0j"
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_k50lw"]
@@ -136,16 +164,19 @@ metadata/_custom_type_script = "uid://djmnu1e55mp0j"
 [sub_resource type="Resource" id="Resource_oqeg1"]
 script = ExtResource("23_ab62b")
 value = 0
+description = null
 metadata/_custom_type_script = "uid://8myr58nwfvfg"
 
 [sub_resource type="Resource" id="Resource_t7ygc"]
 script = ExtResource("23_ab62b")
 value = 0
+description = null
 metadata/_custom_type_script = "uid://8myr58nwfvfg"
 
 [sub_resource type="Resource" id="Resource_4cst2"]
 script = ExtResource("23_ab62b")
 value = 0
+description = null
 metadata/_custom_type_script = "uid://8myr58nwfvfg"
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2h030"]
@@ -170,19 +201,29 @@ shader_parameter/inset = 0.0
 script = ExtResource("26_6vyr0")
 metadata/_custom_type_script = "uid://bxgs3dw2ym11j"
 
+[sub_resource type="Resource" id="Resource_dhwwv"]
+resource_local_to_scene = true
+resource_name = "enable_drag"
+script = ExtResource("13_3r0al")
+value = true
+description = null
+metadata/_custom_type_script = "uid://djmnu1e55mp0j"
+
 [sub_resource type="Resource" id="Resource_06xac"]
 resource_local_to_scene = true
 resource_name = "is_pack_card"
 script = ExtResource("13_3r0al")
+description = null
 metadata/_custom_type_script = "uid://djmnu1e55mp0j"
 
 [sub_resource type="Resource" id="Resource_tecgj"]
 resource_local_to_scene = true
 resource_name = "is_active_pack_card"
 script = ExtResource("13_3r0al")
+description = null
 metadata/_custom_type_script = "uid://djmnu1e55mp0j"
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_o0w05"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_4cst2"]
 resource_local_to_scene = true
 shader = ExtResource("4_6px0d")
 shader_parameter/fov = 80.0
@@ -192,19 +233,26 @@ shader_parameter/x_rot = 0.0
 shader_parameter/inset = 0.0
 
 [sub_resource type="Resource" id="Resource_o0w05"]
-script = ExtResource("26_6vyr0")
-metadata/_custom_type_script = "uid://bxgs3dw2ym11j"
+resource_local_to_scene = true
+resource_name = "enable_drag"
+script = ExtResource("13_3r0al")
+value = true
+description = null
+metadata/_custom_type_script = "uid://djmnu1e55mp0j"
 
 [sub_resource type="Resource" id="Resource_m50ih"]
 resource_local_to_scene = true
 resource_name = "is_pack_card"
 script = ExtResource("13_3r0al")
+value = true
+description = null
 metadata/_custom_type_script = "uid://djmnu1e55mp0j"
 
 [sub_resource type="Resource" id="Resource_lmunf"]
 resource_local_to_scene = true
 resource_name = "is_active_pack_card"
 script = ExtResource("13_3r0al")
+description = null
 metadata/_custom_type_script = "uid://djmnu1e55mp0j"
 
 [sub_resource type="Animation" id="Animation_a6oyl"]
@@ -775,18 +823,21 @@ metadata/_custom_type_script = "uid://dn354cgweyjxg"
 [node name="Card" parent="VBoxContainer/CardPack/PanelContainer/Panel/MarginContainer/VBoxContainer/APDeckCardPack" instance=ExtResource("3_hblv7")]
 material = SubResource("ShaderMaterial_hwbwf")
 layout_mode = 2
+enable_drag = SubResource("Resource_13dmk")
 metadata/is_pack_card = SubResource("Resource_6vyr0")
 metadata/is_active_pack_card = SubResource("Resource_mnmi3")
 
 [node name="Card2" parent="VBoxContainer/CardPack/PanelContainer/Panel/MarginContainer/VBoxContainer/APDeckCardPack" instance=ExtResource("3_hblv7")]
 material = SubResource("ShaderMaterial_ka15h")
 layout_mode = 2
+enable_drag = SubResource("Resource_iriwx")
 metadata/is_pack_card = SubResource("Resource_m1dll")
 metadata/is_active_pack_card = SubResource("Resource_3r0al")
 
 [node name="Card3" parent="VBoxContainer/CardPack/PanelContainer/Panel/MarginContainer/VBoxContainer/APDeckCardPack" instance=ExtResource("3_hblv7")]
 material = SubResource("ShaderMaterial_6e6x1")
 layout_mode = 2
+enable_drag = SubResource("Resource_xjfkq")
 metadata/is_pack_card = SubResource("Resource_rvtym")
 metadata/is_active_pack_card = SubResource("Resource_jrwam")
 
@@ -1359,13 +1410,14 @@ metadata/_custom_type_script = "uid://dn354cgweyjxg"
 material = SubResource("ShaderMaterial_hugvf")
 layout_mode = 2
 drag_data = SubResource("Resource_hugvf")
+enable_drag = SubResource("Resource_dhwwv")
 metadata/is_pack_card = SubResource("Resource_06xac")
 metadata/is_active_pack_card = SubResource("Resource_tecgj")
 
-[node name="Card3" parent="VBoxContainer/Panel/Panel/APDeckHand" instance=ExtResource("46_4cst2")]
-material = SubResource("ShaderMaterial_o0w05")
+[node name="Card" parent="VBoxContainer/Panel/Panel/APDeckHand" instance=ExtResource("46_4cst2")]
+material = SubResource("ShaderMaterial_4cst2")
 layout_mode = 2
-drag_data = SubResource("Resource_o0w05")
+enable_drag = SubResource("Resource_o0w05")
 metadata/is_pack_card = SubResource("Resource_m50ih")
 metadata/is_active_pack_card = SubResource("Resource_lmunf")
 

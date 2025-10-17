@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bqt3eq0wwpbsh"
-path="res://.godot/imported/unit-white.png-3153c5ea2d83c8741d48479922d6f7dd.ctex"
+uid="uid://h14mo3pcwr6i"
+path="res://.godot/imported/round_grey_detailed.png-3cfe801bd823284ebae5e45f360a5ba1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://scene/cards/unit/unit-white.png"
-dest_files=["res://.godot/imported/unit-white.png-3153c5ea2d83c8741d48479922d6f7dd.ctex"]
+source_file="res://scene/objects/wall/round_grey_detailed.png"
+dest_files=["res://.godot/imported/round_grey_detailed.png-3cfe801bd823284ebae5e45f360a5ba1.ctex"]
 
 [params]
 

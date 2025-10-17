@@ -10,7 +10,7 @@ class_name APActivatorResource
 	elif _signal.is_empty(): name = "err_signal_empty" 
 	elif resource.resource_name.is_empty(): name = _signal
 	else: name = "%s=%s"%[resource.resource_name, _signal]
-@export var resource:Resource :
+@export var resource:VarRes :
 	set(new):
 		resource = new
 		notify_property_list_changed()

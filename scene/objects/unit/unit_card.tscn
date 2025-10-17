@@ -1,12 +1,12 @@
 [gd_scene load_steps=11 format=3 uid="uid://b76n5oe8qruln"]
 
-[ext_resource type="PackedScene" uid="uid://bcap7c1i87f30" path="res://scene/cards/Card.tscn" id="1_swlyr"]
+[ext_resource type="PackedScene" uid="uid://bcap7c1i87f30" path="res://scene/objects/Card.tscn" id="1_swlyr"]
 [ext_resource type="Shader" uid="uid://bso165sdn2g37" path="res://addons/APCards/shaders/2D-perspective.gdshader" id="2_64qk6"]
 [ext_resource type="Script" uid="uid://djmnu1e55mp0j" path="res://addons/VarRes/classes/bool/VaRBool.gd" id="3_dlupk"]
-[ext_resource type="Texture2D" uid="uid://cqw0217wehyo4" path="res://scene/cards/unit/unit-purple.png" id="4_4dug4"]
-[ext_resource type="Texture2D" uid="uid://bqt3eq0wwpbsh" path="res://scene/cards/unit/unit-white.png" id="4_jmrn4"]
-[ext_resource type="Texture2D" uid="uid://clwuhqp5we3eh" path="res://scene/cards/unit/unit-red.png" id="5_4dug4"]
-[ext_resource type="Texture2D" uid="uid://dwpcfya8anvdv" path="res://scene/cards/unit/unit-yellow.png" id="7_f34vj"]
+[ext_resource type="Texture2D" uid="uid://cqw0217wehyo4" path="res://scene/objects/unit/unit-purple.png" id="4_4dug4"]
+[ext_resource type="Texture2D" uid="uid://bqt3eq0wwpbsh" path="res://scene/objects/unit/unit-white.png" id="4_jmrn4"]
+[ext_resource type="Texture2D" uid="uid://clwuhqp5we3eh" path="res://scene/objects/unit/unit-red.png" id="5_4dug4"]
+[ext_resource type="Texture2D" uid="uid://dwpcfya8anvdv" path="res://scene/objects/unit/unit-yellow.png" id="7_f34vj"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_d3wn7"]
 resource_local_to_scene = true

@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://c1g87ftb2c4si"]
 
-[ext_resource type="PackedScene" uid="uid://bcap7c1i87f30" path="res://scene/cards/Card.tscn" id="1_xp3h1"]
+[ext_resource type="PackedScene" uid="uid://bcap7c1i87f30" path="res://scene/objects/Card.tscn" id="1_xp3h1"]
 [ext_resource type="Shader" uid="uid://bso165sdn2g37" path="res://addons/APCards/shaders/2D-perspective.gdshader" id="2_w17oy"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_uh80b"]
