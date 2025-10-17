@@ -616,7 +616,7 @@ bus = &"Error"
 
 [node name="Purchase" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("19_0dj3i")
-volume_db = 2.0
+volume_db = 1.0
 pitch_scale = 0.96
 bus = &"OpenPack"
 

@@ -26,7 +26,6 @@ resource_local_to_scene = true
 resource_name = "can_drop"
 script = ExtResource("4_n5j5t")
 value = true
-description = null
 metadata/_custom_type_script = "uid://djmnu1e55mp0j"
 
 [sub_resource type="Resource" id="Resource_rh7me"]
@@ -52,7 +51,6 @@ metadata/_custom_type_script = "uid://8myr58nwfvfg"
 [sub_resource type="Resource" id="Resource_b6lq4"]
 script = ExtResource("7_mkipr")
 value = 1
-description = null
 metadata/_custom_type_script = "uid://8myr58nwfvfg"
 
 [node name="PlayerField-Red" type="StaticBody2D"]

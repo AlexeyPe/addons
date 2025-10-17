@@ -1,6 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://dfht4fveoaaib"]
+[gd_scene load_steps=5 format=3 uid="uid://dfht4fveoaaib"]
 
 [ext_resource type="Texture2D" uid="uid://h14mo3pcwr6i" path="res://scene/objects/wall/round_grey_detailed.png" id="1_m8rlx"]
+[ext_resource type="Script" uid="uid://dj04ffy0nu74n" path="res://addons/APChain/classes/chain/audio/APChainAudioPlay.gd" id="2_g8gtm"]
+[ext_resource type="AudioStream" uid="uid://dqq8qx5giulpj" path="res://scene/objects/wall/Place.tres" id="3_hfs6u"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_m8rlx"]
 radius = 18.027756
@@ -14,3 +16,16 @@ texture = ExtResource("1_m8rlx")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_m8rlx")
+
+[node name="APChainAudioPlay" type="Node" parent="." node_paths=PackedStringArray("player", "node_emitter")]
+script = ExtResource("2_g8gtm")
+player = NodePath("Place")
+node_emitter = NodePath("..")
+watch_signal = 9
+metadata/_custom_type_script = "uid://dj04ffy0nu74n"
+
+[node name="Place" type="AudioStreamPlayer" parent="APChainAudioPlay"]
+stream = ExtResource("3_hfs6u")
+volume_db = 2.0
+pitch_scale = 0.91
+bus = &"Sounds"

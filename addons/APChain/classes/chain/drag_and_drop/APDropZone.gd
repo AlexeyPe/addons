@@ -38,6 +38,5 @@ func _drop_data(at_position: Vector2, data: Variant) -> void:
 			if vares.resource_name.is_empty(): continue
 			var find = set_vares_value.get(vares.resource_name)
 			if find:
-				print(vares)
 				find.paste(vares)
 		can_drop.value = false
