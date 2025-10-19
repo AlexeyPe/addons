@@ -1,0 +1,44 @@
+[gd_scene load_steps=9 format=3 uid="uid://barkecirxiasy"]
+
+[ext_resource type="PackedScene" uid="uid://cmkm76vsh55r0" path="res://scene/fields/scene/field_yellow.tscn" id="1_nlhjm"]
+[ext_resource type="Script" uid="uid://djmnu1e55mp0j" path="res://addons/VarRes/classes/bool/VaRBool.gd" id="2_3w3ls"]
+[ext_resource type="Script" uid="uid://b03dlfkxcckwp" path="res://addons/VarRes/classes/VarRes.gd" id="3_o233u"]
+[ext_resource type="Script" uid="uid://dapuucp3gf6c8" path="res://addons/VarRes/classes/VaRScene.gd" id="4_kfw2s"]
+[ext_resource type="PackedScene" uid="uid://dfht4fveoaaib" path="res://scene/objects/wall/wall_build.tscn" id="5_3w3ls"]
+
+[sub_resource type="Resource" id="Resource_nlhjm"]
+resource_local_to_scene = true
+resource_name = "can_drop"
+script = ExtResource("2_3w3ls")
+value = true
+metadata/_custom_type_script = "uid://djmnu1e55mp0j"
+
+[sub_resource type="Resource" id="Resource_3w3ls"]
+resource_local_to_scene = true
+resource_name = "build"
+script = ExtResource("4_kfw2s")
+metadata/_custom_type_script = "uid://dapuucp3gf6c8"
+
+[sub_resource type="Resource" id="Resource_o233u"]
+resource_local_to_scene = true
+resource_name = "build"
+script = ExtResource("4_kfw2s")
+value = ExtResource("5_3w3ls")
+metadata/_custom_type_script = "uid://dapuucp3gf6c8"
+
+[node name="PlayerField-Yellow" instance=ExtResource("1_nlhjm")]
+
+[node name="APDropZone" parent="." index="2"]
+can_drop = SubResource("Resource_nlhjm")
+set_vares_value = Dictionary[String, ExtResource("3_o233u")]({
+"build": SubResource("Resource_3w3ls")
+})
+
+[node name="DropBuild=changed" parent="APDropZone" index="2"]
+resource = SubResource("Resource_3w3ls")
+
+[node name="APChainAddChild" parent="APDropZone/DropBuild=changed" index="0"]
+scene = SubResource("Resource_3w3ls")
+
+[node name="APChainAddChild2" parent="." index="7"]
+scene = SubResource("Resource_o233u")

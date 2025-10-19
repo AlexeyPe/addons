@@ -1,3 +1,4 @@
+@tool
 extends VarRes
 class_name VaRScene
 
@@ -5,6 +6,9 @@ class_name VaRScene
 	set(new):
 		value = new
 		emit_changed()
+
+func is_empty() -> bool:
+	return value == null
 
 func paste(vares:VarRes):
 	if vares is VaRScene:

@@ -19,7 +19,7 @@ func _rename_self():
 
 func _execute(...args:Array) -> void:
 	execution_started.emit()
-	print("set (bool %s) to %s"%[var_bool, new_value])
+	#print("set (bool %s) to %s"%[var_bool, new_value])
 	if var_bool:
 		if skip_if_equal:
 			if var_bool.value != new_value:

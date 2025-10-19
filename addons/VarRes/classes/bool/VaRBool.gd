@@ -24,3 +24,7 @@ func _init() -> void:
 func check():
 	if value: now_true.emit()
 	else: now_false.emit()
+
+func paste(vares:VarRes):
+	if vares is VaRBool:
+		value = vares.value

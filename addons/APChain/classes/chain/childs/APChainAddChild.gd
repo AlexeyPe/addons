@@ -5,10 +5,29 @@ class_name APChainAddChild
 @export var target_parent:Node
 @export var scene:VaRScene
 @export var force_readable_name:bool = false
+@export var set_metadata:Dictionary[String, VarRes]
 
 func _execute(...args:Array) -> void:
 	execution_started.emit()
+	if scene == null or scene.is_empty():
+		executed.emit()
+		executed_failed.emit()
+		return
 	var child = scene.value.instantiate()
 	target_parent.add_child(child, force_readable_name)
+	if !set_metadata.is_empty():
+		for key in set_metadata.keys():
+			if !child.has_meta(key): continue
+			var meta:Variant = child.get_meta(key)
+			if meta is VarRes:
+				meta.paste(set_metadata[key])
+				continue
+			printerr(
+				"APChainAddChild(%s), child(%s) meta(%s) != VarRes"%[
+					get_path(),
+					child,
+					key
+				]
+			)
 	executed.emit()
 	executed_good.emit()

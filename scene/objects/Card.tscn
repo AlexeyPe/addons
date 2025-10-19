@@ -42,7 +42,6 @@ metadata/_custom_type_script = "uid://bxgs3dw2ym11j"
 resource_local_to_scene = true
 resource_name = "enable_drag"
 script = ExtResource("3_a8db2")
-description = null
 metadata/_custom_type_script = "uid://djmnu1e55mp0j"
 
 [sub_resource type="Resource" id="Resource_xd0mm"]
@@ -50,14 +49,12 @@ resource_local_to_scene = true
 resource_name = "is_pack_card"
 script = ExtResource("3_a8db2")
 value = true
-description = null
 metadata/_custom_type_script = "uid://djmnu1e55mp0j"
 
 [sub_resource type="Resource" id="Resource_jqurx"]
 resource_local_to_scene = true
 resource_name = "is_active_pack_card"
 script = ExtResource("3_a8db2")
-description = null
 metadata/_custom_type_script = "uid://djmnu1e55mp0j"
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_s1pa1"]

@@ -55,3 +55,8 @@ func set_value(new: int):
 			value = new
 			emit_changed()
 			now_less.emit()
+
+## Не переписывает max и min
+func paste(vares:VarRes):
+	if vares is VaRInt:
+		value = vares.value

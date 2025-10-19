@@ -52,13 +52,11 @@
 [sub_resource type="Resource" id="Resource_tuai4"]
 script = ExtResource("5_aex65")
 value = 0.2
-description = null
 metadata/_custom_type_script = "uid://msh8p6ojhxex"
 
 [sub_resource type="Resource" id="Resource_hrl0l"]
 script = ExtResource("5_aex65")
 value = -0.2
-description = null
 metadata/_custom_type_script = "uid://msh8p6ojhxex"
 
 [sub_resource type="LabelSettings" id="LabelSettings_32nmk"]
@@ -117,7 +115,6 @@ action = &"move_camera"
 [sub_resource type="Resource" id="Resource_08k7p"]
 script = ExtResource("5_aex65")
 value = 300.0
-description = null
 metadata/_custom_type_script = "uid://msh8p6ojhxex"
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_pnqar"]
@@ -126,20 +123,17 @@ radius = 200.0
 [sub_resource type="Resource" id="Resource_ob58h"]
 script = ExtResource("5_aex65")
 value = 0.1
-description = null
 metadata/_custom_type_script = "uid://msh8p6ojhxex"
 
 [sub_resource type="Resource" id="Resource_3hqfm"]
 script = ExtResource("5_aex65")
 value = -0.1
-description = null
 metadata/_custom_type_script = "uid://msh8p6ojhxex"
 
 [sub_resource type="Resource" id="Resource_bp33t"]
 resource_local_to_scene = true
 resource_name = "is_die"
 script = ExtResource("57_a6847")
-description = null
 metadata/_custom_type_script = "uid://djmnu1e55mp0j"
 
 [sub_resource type="Resource" id="Resource_a6847"]
@@ -147,44 +141,37 @@ resource_local_to_scene = true
 resource_name = "is_die"
 script = ExtResource("57_a6847")
 storage_value = true
-description = null
 metadata/_custom_type_script = "uid://djmnu1e55mp0j"
 
 [sub_resource type="Resource" id="Resource_d5i4e"]
 resource_local_to_scene = true
 script = ExtResource("57_a6847")
-description = null
 metadata/_custom_type_script = "uid://djmnu1e55mp0j"
 
 [sub_resource type="Resource" id="Resource_2hth1"]
 resource_local_to_scene = true
 script = ExtResource("57_a6847")
-description = null
 metadata/_custom_type_script = "uid://djmnu1e55mp0j"
 
 [sub_resource type="Resource" id="Resource_ms5ap"]
 resource_local_to_scene = true
 script = ExtResource("57_a6847")
-description = null
 metadata/_custom_type_script = "uid://djmnu1e55mp0j"
 
 [sub_resource type="Resource" id="Resource_v1evy"]
 resource_local_to_scene = true
 script = ExtResource("57_a6847")
-description = null
 metadata/_custom_type_script = "uid://djmnu1e55mp0j"
 
 [sub_resource type="Resource" id="Resource_u8yls"]
 resource_local_to_scene = true
 script = ExtResource("57_a6847")
-description = null
 metadata/_custom_type_script = "uid://djmnu1e55mp0j"
 
 [sub_resource type="Resource" id="Resource_rwiys"]
 resource_local_to_scene = true
 resource_name = "is_die_purple"
 script = ExtResource("57_a6847")
-description = null
 metadata/_custom_type_script = "uid://djmnu1e55mp0j"
 
 [node name="Main" type="Node"]
@@ -328,7 +315,7 @@ expand_mode = 3
 
 [node name="Label2" type="Label" parent="UI/Counters/Counters/Fields/White"]
 layout_mode = 2
-text = "9"
+text = "12"
 label_settings = ExtResource("15_goqcv")
 script = ExtResource("9_ia2xj")
 var_res = ExtResource("12_1ihg2")
@@ -345,7 +332,7 @@ label_settings = ExtResource("15_goqcv")
 
 [node name="Label2" type="Label" parent="UI/Counters/Counters/Fields/Red"]
 layout_mode = 2
-text = "-31"
+text = "13"
 label_settings = ExtResource("15_goqcv")
 script = ExtResource("9_ia2xj")
 var_res = ExtResource("13_32nmk")
@@ -362,7 +349,7 @@ label_settings = ExtResource("15_goqcv")
 
 [node name="Label2" type="Label" parent="UI/Counters/Counters/Fields/Purple"]
 layout_mode = 2
-text = "15"
+text = "17"
 label_settings = ExtResource("15_goqcv")
 script = ExtResource("9_ia2xj")
 var_res = ExtResource("14_ftvp4")
@@ -379,7 +366,7 @@ label_settings = ExtResource("15_goqcv")
 
 [node name="Label2" type="Label" parent="UI/Counters/Counters/Fields/Yellow"]
 layout_mode = 2
-text = "5"
+text = "-3"
 label_settings = ExtResource("15_goqcv")
 script = ExtResource("9_ia2xj")
 var_res = ExtResource("15_1qtut")
@@ -565,7 +552,7 @@ clip_children = 1
 
 [node name="Fields" type="TileMapLayer" parent="Tilemaps/Clip"]
 position = Vector2(24, 24)
-tile_map_data = PackedByteArray("AAAGAAMAAAAAAAAAAQAGAAIAAAAAAAAAAQAFAAIAAAAAAAAAAQAFAAEAAAAAAAAAAQAGAAEAAAAAAAAAAQAHAAEAAAAAAAAAAQAHAAIAAAAAAAAAAQAIAAEAAAAAAAAAAQAIAAAAAAAAAAAAAQAHAAAAAAAAAAAAAQAGAAAAAAAAAAAABQD//wUAAAAAAAAAAgD//wQAAAAAAAAAAgD//wMAAAAAAAAAAgD//wIAAAAAAAAAAgAAAAMAAAAAAAAAAgAAAAQAAAAAAAAAAgABAAQAAAAAAAAAAgD+/wQAAAAAAAAAAgD+/wMAAAAAAAAAAgD+/wIAAAAAAAAAAgD9/wIAAAAAAAAAAgD9/wMAAAAAAAAAAgD8//7/AAAAAAAAAwD8////AAAAAAAAAwD9////AAAAAAAAAwD+////AAAAAAAAAwD+//7/AAAAAAAAAwD9//7/AAAAAAAAAwD9//3/AAAAAAAAAwD+//3/AAAAAAAAAwD///3/AAAAAAAAAwD///7/AAAAAAAAAwADAPz/AAAAAAAABQADAP3/AAAAAAAABQAEAP3/AAAAAAAABQAEAPz/AAAAAAAABQAFAP3/AAAAAAAABQAFAP7/AAAAAAAABQAEAP7/AAAAAAAABQAGAP7/AAAAAAAABQAGAP3/AAAAAAAAAQAFAAQAAAAAAAAABAAFAAMAAAAAAAAABAAEAAMAAAAAAAAABAAEAAQAAAAAAAAABAAEAAUAAAAAAAAABAAFAAUAAAAAAAAABAADAAUAAAAAAAAABAADAAQAAAAAAAAABAADAAMAAAAAAAAABAAEAAIAAAAAAAAABAACAAMAAAAAAAAABAACAAIAAAAAAAAABAABAAIAAAAAAAAABAABAAMAAAAAAAAABAACAAQAAAAAAAAAAQAHAAQAAAAAAAAABAAGAAQAAAAAAAAABAAIAAQAAAAAAAAABAAIAAUAAAAAAAAABAAJAAUAAAAAAAAABAAKAAUAAAAAAAAABAAKAAQAAAAAAAAABAAJAAQAAAAAAAAABAAIAAMAAAAAAAAABAAAAAIAAAAAAAAABAD+/wUAAAAAAAAABAD8/wMAAAAAAAAABAD8/wIAAAAAAAAABAD8/wEAAAAAAAAABAD8/wAAAAAAAAAABAD9/wAAAAAAAAAABAD9/wEAAAAAAAAABAD+/wEAAAAAAAAABAD+/wAAAAAAAAAABAD//wAAAAAAAAAABAD//wEAAAAAAAAABAD/////AAAAAAAABAAAAP//AAAAAAAABAAAAP7/AAAAAAAABAAAAP3/AAAAAAAABQABAP3/AAAAAAAABQABAP7/AAAAAAAAAQABAPz/AAAAAAAAAQABAPv/AAAAAAAAAQACAPv/AAAAAAAABAACAPz/AAAAAAAABAACAP3/AAAAAAAABQADAP7/AAAAAAAABAAFAP//AAAAAAAABQAGAP//AAAAAAAABQAHAP//AAAAAAAABQAIAP//AAAAAAAABQAJAAAAAAAAAAAABAAJAP7/AAAAAAAABAAIAP7/AAAAAAAABQAHAP7/AAAAAAAABQAKAP7/AAAAAAAABAAKAP3/AAAAAAAABAALAP7/AAAAAAAABAALAP3/AAAAAAAABAAMAP7/AAAAAAAABAAMAP3/AAAAAAAABAAMAPz/AAAAAAAABAANAPz/AAAAAAAABAANAP3/AAAAAAAABAANAP7/AAAAAAAABAAEAP//AAAAAAAABAAJAP//AAAAAAAABAAKAP//AAAAAAAABAA=")
+tile_map_data = PackedByteArray("AAAGAAMAAAAAAAAAAQAGAAIAAAAAAAAAAQAFAAIAAAAAAAAAAQAFAAEAAAAAAAAAAQAGAAEAAAAAAAAAAQAHAAEAAAAAAAAAAQAHAAIAAAAAAAAAAQAIAAEAAAAAAAAAAQAIAAAAAAAAAAAAAQAHAAAAAAAAAAAAAQAGAAAAAAAAAAAABQD//wUAAAAAAAAAAgD//wQAAAAAAAAAAgD//wMAAAAAAAAAAgD//wIAAAAAAAAAAgAAAAMAAAAAAAAAAgAAAAQAAAAAAAAAAgABAAQAAAAAAAAAAgD+/wQAAAAAAAAAAgD+/wMAAAAAAAAAAgD+/wIAAAAAAAAAAgD9/wIAAAAAAAAAAgD9/wMAAAAAAAAAAgD8//7/AAAAAAAAAwD8////AAAAAAAAAwD9////AAAAAAAAAwD+////AAAAAAAAAwD+//7/AAAAAAAAAwD9//7/AAAAAAAAAwD9//3/AAAAAAAAAwD+//3/AAAAAAAAAwD///3/AAAAAAAAAwD///7/AAAAAAAAAwADAPz/AAAAAAAABQADAP3/AAAAAAAABQAEAP3/AAAAAAAABQAEAPz/AAAAAAAABQAFAP3/AAAAAAAABQAFAP7/AAAAAAAABQAEAP7/AAAAAAAABQAGAP7/AAAAAAAABQAGAP3/AAAAAAAAAQAFAAQAAAAAAAAABAAFAAMAAAAAAAAABAAEAAMAAAAAAAAABAAEAAQAAAAAAAAABAAEAAUAAAAAAAAABAAFAAUAAAAAAAAABAADAAUAAAAAAAAABAADAAMAAAAAAAAABAAEAAIAAAAAAAAABAACAAMAAAAAAAAABAACAAIAAAAAAAAABAABAAIAAAAAAAAABAABAAMAAAAAAAAABAAHAAQAAAAAAAAABAAGAAQAAAAAAAAABAAIAAQAAAAAAAAABAAIAAUAAAAAAAAABAAJAAUAAAAAAAAABAAKAAUAAAAAAAAABAAKAAQAAAAAAAAABAAJAAQAAAAAAAAABAAIAAMAAAAAAAAABAAAAAIAAAAAAAAABAD+/wUAAAAAAAAABAD8/wMAAAAAAAAABAD8/wIAAAAAAAAABAD8/wEAAAAAAAAABAD8/wAAAAAAAAAABAD9/wAAAAAAAAAABAD9/wEAAAAAAAAABAD+/wEAAAAAAAAABAD+/wAAAAAAAAAABAD//wAAAAAAAAAABAD//wEAAAAAAAAABAD/////AAAAAAAABAAAAP//AAAAAAAABAAAAP7/AAAAAAAABAAAAP3/AAAAAAAABgABAP3/AAAAAAAABQABAP7/AAAAAAAAAQABAPz/AAAAAAAAAQABAPv/AAAAAAAAAQACAPv/AAAAAAAABAACAPz/AAAAAAAABAACAP3/AAAAAAAABQADAP7/AAAAAAAABAAFAP//AAAAAAAABQAGAP//AAAAAAAABQAHAP//AAAAAAAABQAIAP//AAAAAAAABQAJAAAAAAAAAAAABAAJAP7/AAAAAAAABAAIAP7/AAAAAAAABQAHAP7/AAAAAAAABQAKAP7/AAAAAAAABAAKAP3/AAAAAAAABAALAP7/AAAAAAAABAALAP3/AAAAAAAABAAMAP7/AAAAAAAABAAMAP3/AAAAAAAABAAMAPz/AAAAAAAABAANAPz/AAAAAAAABAANAP3/AAAAAAAABAANAP7/AAAAAAAABAAEAP//AAAAAAAABAAJAP//AAAAAAAABAAKAP//AAAAAAAABAACAAQAAAAAAAAAAQADAAQAAAAAAAAABAA=")
 tile_set = ExtResource("13_fh3cp")
 
 [node name="corner-ru-1" type="Sprite2D" parent="Tilemaps/Clip"]

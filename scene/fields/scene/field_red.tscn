@@ -1,0 +1,206 @@
+[gd_scene load_steps=26 format=3 uid="uid://b1dthv2qurwnx"]
+
+[ext_resource type="Material" uid="uid://svr62spjy8px" path="res://scene/fields/GridMaterial.tres" id="1_fpfk7"]
+[ext_resource type="Texture2D" uid="uid://1rw0438kebug" path="res://scene/fields/frame-spikes-2-fill-16px.png" id="2_fpfk7"]
+[ext_resource type="Material" uid="uid://c1a0yqd8g15k8" path="res://scene/cell_mat.tres" id="3_a0px4"]
+[ext_resource type="Texture2D" uid="uid://b4dqq6o88p517" path="res://scene/fields/field2.svg" id="3_ok0d1"]
+[ext_resource type="Shader" uid="uid://bvvll4jp3kavo" path="res://addons/shadercollectionap/shader/outline/outline-dotted.gdshader" id="4_b6lq4"]
+[ext_resource type="Script" uid="uid://djmnu1e55mp0j" path="res://addons/VarRes/classes/bool/VaRBool.gd" id="4_n5j5t"]
+[ext_resource type="Script" uid="uid://b03dlfkxcckwp" path="res://addons/VarRes/classes/VarRes.gd" id="5_1exl1"]
+[ext_resource type="Script" uid="uid://cldopw0r4n1wj" path="res://addons/APChain/classes/chain/set/vares/APChainSetNum.gd" id="5_8jpos"]
+[ext_resource type="Script" uid="uid://up8up6hch40i" path="res://addons/APChain/classes/chain/if/APChainIfNum.gd" id="5_y202s"]
+[ext_resource type="Resource" uid="uid://cehqu7jl7rmu3" path="res://data/gameplay/player_team.tres" id="6_jsbx0"]
+[ext_resource type="Resource" uid="uid://cvpnw37xy7hya" path="res://data/gameplay/field_counters/fields_red.tres" id="6_n0r8l"]
+[ext_resource type="Script" uid="uid://8myr58nwfvfg" path="res://addons/VarRes/classes/numbers/VaRInt.gd" id="7_mkipr"]
+[ext_resource type="Script" uid="uid://bein4dn8ts6bb" path="res://addons/APChain/classes/chain/childs/APChainDelChildsArr.gd" id="8_jsbx0"]
+[ext_resource type="Script" uid="uid://dyjt63xqg1uru" path="res://addons/APChain/classes/chain/drag_and_drop/APDropZone.gd" id="8_mkipr"]
+[ext_resource type="Script" uid="uid://dg3tbem26ogr7" path="res://addons/APChain/classes/chain/childs/APChainAddChild.gd" id="10_n5j5t"]
+[ext_resource type="Script" uid="uid://u1gglou2n5jq" path="res://addons/APChain/classes/chain_activator/APActivatorResource.gd" id="11_y8fmx"]
+[ext_resource type="Script" uid="uid://dapuucp3gf6c8" path="res://addons/VarRes/classes/VaRScene.gd" id="12_rh7me"]
+[ext_resource type="Resource" uid="uid://dlnydceni78on" path="res://scene/objects/team_red.tres" id="18_bwhvg"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_j64cy"]
+size = Vector2(48, 48)
+
+[sub_resource type="Resource" id="Resource_y8fmx"]
+resource_local_to_scene = true
+resource_name = "can_drop"
+script = ExtResource("4_n5j5t")
+value = true
+metadata/_custom_type_script = "uid://djmnu1e55mp0j"
+
+[sub_resource type="Resource" id="Resource_rh7me"]
+resource_local_to_scene = true
+resource_name = "build"
+script = ExtResource("12_rh7me")
+metadata/_custom_type_script = "uid://dapuucp3gf6c8"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ls341"]
+shader = ExtResource("4_b6lq4")
+shader_parameter/color = Color(0, 0, 0, 1)
+shader_parameter/direction = -1.0
+shader_parameter/frequency = 15.0
+shader_parameter/speed = 4.5
+shader_parameter/radius = 0.999999977648
+shader_parameter/line_thickness = 0.0499999988824
+
+[sub_resource type="Resource" id="Resource_y202s"]
+script = ExtResource("7_mkipr")
+value = 1
+metadata/_custom_type_script = "uid://8myr58nwfvfg"
+
+[sub_resource type="Resource" id="Resource_gduf2"]
+script = ExtResource("4_n5j5t")
+value = true
+metadata/_custom_type_script = "uid://djmnu1e55mp0j"
+
+[sub_resource type="Resource" id="Resource_b6lq4"]
+script = ExtResource("7_mkipr")
+value = 1
+metadata/_custom_type_script = "uid://8myr58nwfvfg"
+
+[node name="PlayerField-Red" type="StaticBody2D"]
+collision_layer = 128
+collision_mask = 128
+metadata/field_type = &"red"
+
+[node name="Area2D" type="Area2D" parent="."]
+editor_description = "Для убийства юнитов"
+collision_layer = 112
+collision_mask = 112
+input_pickable = false
+monitorable = false
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D"]
+visible = false
+shape = SubResource("RectangleShape2D_j64cy")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+self_modulate = Color(1, 0.2901961, 0.2901961, 1)
+material = ExtResource("1_fpfk7")
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -66.0
+offset_top = -66.0
+offset_right = 66.0
+offset_bottom = 66.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.536, 0.536)
+pivot_offset = Vector2(66, 66)
+texture = ExtResource("2_fpfk7")
+patch_margin_left = 32
+patch_margin_top = 32
+patch_margin_right = 32
+patch_margin_bottom = 32
+axis_stretch_horizontal = 2
+axis_stretch_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="APDropZone" type="Control" parent="." node_paths=PackedStringArray("visible_true", "visible_false")]
+z_index = 5
+layout_mode = 3
+anchors_preset = 0
+offset_left = -23.0
+offset_top = -23.0
+offset_right = 23.0
+offset_bottom = 23.0
+mouse_filter = 1
+script = ExtResource("8_mkipr")
+can_drop = SubResource("Resource_y8fmx")
+after_drop_set_success = false
+set_vares_value = Dictionary[String, ExtResource("5_1exl1")]({
+"build": SubResource("Resource_rh7me")
+})
+visible_true = [NodePath("ColorRect")]
+visible_false = [NodePath("ColorRect")]
+metadata/_custom_type_script = "uid://dyjt63xqg1uru"
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRect" type="ColorRect" parent="APDropZone"]
+visible = false
+z_index = 5
+material = SubResource("ShaderMaterial_ls341")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="APChainIfNum" type="Node" parent="APDropZone" node_paths=PackedStringArray("node_emitter")]
+script = ExtResource("5_y202s")
+num_a = ExtResource("6_jsbx0")
+num_b = SubResource("Resource_y202s")
+condition = 1
+node_emitter = NodePath("../..")
+watch_signal = 9
+metadata/_custom_type_script = "uid://up8up6hch40i"
+
+[node name="APChainDelChildsArr" type="Node" parent="APDropZone/APChainIfNum" node_paths=PackedStringArray("nodes", "node_emitter")]
+script = ExtResource("8_jsbx0")
+nodes = [NodePath("../..")]
+node_emitter = NodePath("..")
+watch_signal = 0
+metadata/_custom_type_script = "uid://bein4dn8ts6bb"
+
+[node name="DropBuild=changed" type="Node" parent="APDropZone"]
+script = ExtResource("11_y8fmx")
+_signal = "changed"
+resource = SubResource("Resource_rh7me")
+signal = "changed"
+metadata/_custom_type_script = "uid://u1gglou2n5jq"
+
+[node name="APChainAddChild" type="Node" parent="APDropZone/DropBuild=changed" node_paths=PackedStringArray("target_parent", "node_emitter")]
+script = ExtResource("10_n5j5t")
+target_parent = NodePath("../../..")
+scene = SubResource("Resource_rh7me")
+set_metadata = Dictionary[String, ExtResource("5_1exl1")]({
+"build_team": ExtResource("18_bwhvg"),
+"is_now_spawning": SubResource("Resource_gduf2")
+})
+node_emitter = NodePath("..")
+watch_signal = 0
+metadata/_custom_type_script = "uid://dg3tbem26ogr7"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
+material = ExtResource("3_a0px4")
+texture = ExtResource("3_ok0d1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+shape = SubResource("RectangleShape2D_j64cy")
+
+[node name="APChainSetNum" type="Node" parent="." node_paths=PackedStringArray("node_emitter")]
+script = ExtResource("5_8jpos")
+num_a = ExtResource("6_n0r8l")
+num_b = SubResource("Resource_b6lq4")
+operation = 1
+node_emitter = NodePath("..")
+watch_signal = 9
+metadata/_custom_type_script = "uid://cldopw0r4n1wj"
+
+[node name="APChainSetNum2" type="Node" parent="." node_paths=PackedStringArray("node_emitter")]
+script = ExtResource("5_8jpos")
+num_a = ExtResource("6_n0r8l")
+num_b = SubResource("Resource_b6lq4")
+operation = 2
+node_emitter = NodePath("..")
+watch_signal = 12
+metadata/_custom_type_script = "uid://cldopw0r4n1wj"
+
+[node name="APChainAddChild2" type="Node" parent="." node_paths=PackedStringArray("target_parent", "node_emitter")]
+script = ExtResource("10_n5j5t")
+target_parent = NodePath("..")
+scene = SubResource("Resource_rh7me")
+set_metadata = Dictionary[String, ExtResource("5_1exl1")]({
+"build_team": ExtResource("18_bwhvg")
+})
+node_emitter = NodePath("..")
+watch_signal = 9
+metadata/_custom_type_script = "uid://dg3tbem26ogr7"

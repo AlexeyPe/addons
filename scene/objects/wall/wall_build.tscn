@@ -1,14 +1,26 @@
-[gd_scene load_steps=5 format=3 uid="uid://dfht4fveoaaib"]
+[gd_scene load_steps=11 format=3 uid="uid://dfht4fveoaaib"]
 
 [ext_resource type="Texture2D" uid="uid://h14mo3pcwr6i" path="res://scene/objects/wall/round_grey_detailed.png" id="1_m8rlx"]
 [ext_resource type="Script" uid="uid://dj04ffy0nu74n" path="res://addons/APChain/classes/chain/audio/APChainAudioPlay.gd" id="2_g8gtm"]
+[ext_resource type="Resource" uid="uid://duba1x536ikob" path="res://scene/objects/is_now_spawning.tres" id="2_gqlfw"]
 [ext_resource type="AudioStream" uid="uid://dqq8qx5giulpj" path="res://scene/objects/wall/Place.tres" id="3_hfs6u"]
+[ext_resource type="Script" uid="uid://cccrm8vuks5fs" path="res://addons/VarRes/classes/UI/VaResLabel.gd" id="4_sclkb"]
+[ext_resource type="Script" uid="uid://u1gglou2n5jq" path="res://addons/APChain/classes/chain_activator/APActivatorResource.gd" id="5_273i7"]
+[ext_resource type="Resource" uid="uid://dko68hbsa7qr3" path="res://scene/objects/build_team.tres" id="5_sclkb"]
+[ext_resource type="Script" uid="uid://xv7plkxnebcm" path="res://addons/APChain/classes/chain/set/vares/APChainSetBool.gd" id="8_q0apd"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_m8rlx"]
 radius = 18.027756
 
+[sub_resource type="LabelSettings" id="LabelSettings_273i7"]
+font_size = 12
+outline_size = 7
+outline_color = Color(0.13, 0.13, 0.13, 1)
+
 [node name="WallBuild" type="StaticBody2D"]
 z_index = 1
+metadata/build_team = ExtResource("5_sclkb")
+metadata/is_now_spawning = ExtResource("2_gqlfw")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(0.28125, 0.28125)
@@ -17,15 +29,58 @@ texture = ExtResource("1_m8rlx")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_m8rlx")
 
-[node name="APChainAudioPlay" type="Node" parent="." node_paths=PackedStringArray("player", "node_emitter")]
+[node name="Label2" type="Label" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -38.5
+offset_top = -8.5
+offset_right = 38.5
+offset_bottom = 8.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 0.2901961, 0.2901961, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_offset_y = 1
+theme_override_constants/outline_size = 7
+theme_override_constants/shadow_outline_size = 12
+text = "Белые"
+label_settings = SubResource("LabelSettings_273i7")
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("4_sclkb")
+var_res = ExtResource("5_sclkb")
+num_is = Array[String](["Белые", "Красные", "Фиолетовые", "Жёлтые"])
+num_is_font_color = Array[Color]([Color(1, 1, 1, 1), Color(1, 0.2901961, 0.2901961, 1), Color(0.8397716, 0.49030846, 0.909368, 1), Color(0.97150236, 0.8373624, 0, 1)])
+metadata/_custom_type_script = "uid://cccrm8vuks5fs"
+
+[node name="Spawn" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_hfs6u")
+volume_db = 5.0
+pitch_scale = 0.95
+
+[node name="is_now_spawning=now_true" type="Node" parent="."]
+script = ExtResource("5_273i7")
+_signal = "now_true"
+resource = ExtResource("2_gqlfw")
+signal = "now_true"
+metadata/_custom_type_script = "uid://u1gglou2n5jq"
+
+[node name="APChainAudioPlay" type="Node" parent="is_now_spawning=now_true" node_paths=PackedStringArray("player", "node_emitter")]
 script = ExtResource("2_g8gtm")
-player = NodePath("Place")
+player = NodePath("../../Spawn")
 node_emitter = NodePath("..")
-watch_signal = 9
+watch_signal = 0
 metadata/_custom_type_script = "uid://dj04ffy0nu74n"
 
-[node name="Place" type="AudioStreamPlayer" parent="APChainAudioPlay"]
-stream = ExtResource("3_hfs6u")
-volume_db = 2.0
-pitch_scale = 0.91
-bus = &"Sounds"
+[node name="SET_is_now_spawning=false" type="Node" parent="is_now_spawning=now_true" node_paths=PackedStringArray("node_emitter")]
+script = ExtResource("8_q0apd")
+var_bool = ExtResource("2_gqlfw")
+new_value = false
+node_emitter = NodePath("..")
+watch_signal = 0
+metadata/_custom_type_script = "uid://xv7plkxnebcm"

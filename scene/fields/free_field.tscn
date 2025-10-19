@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://cwpjcvf3t4yos"]
 
-[ext_resource type="PackedScene" uid="uid://b1dthv2qurwnx" path="res://scene/fields/player_field_red.tscn" id="1_ggerw"]
+[ext_resource type="PackedScene" uid="uid://b1dthv2qurwnx" path="res://scene/fields/scene/field_red.tscn" id="1_ggerw"]
 
 [node name="FreeField" instance=ExtResource("1_ggerw")]
 modulate = Color(1, 0.29000002, 0.29000002, 0)
