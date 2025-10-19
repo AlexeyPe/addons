@@ -1,0 +1,46 @@
+[gd_scene load_steps=7 format=3 uid="uid://cwpjcvf3t4yos"]
+
+[ext_resource type="PackedScene" uid="uid://b1dthv2qurwnx" path="res://scene/fields/scene/field_red.tscn" id="1_ggerw"]
+[ext_resource type="Script" uid="uid://djmnu1e55mp0j" path="res://addons/VarRes/classes/bool/VaRBool.gd" id="2_tvpuf"]
+[ext_resource type="Script" uid="uid://b03dlfkxcckwp" path="res://addons/VarRes/classes/VarRes.gd" id="3_y4ktq"]
+[ext_resource type="Script" uid="uid://dapuucp3gf6c8" path="res://addons/VarRes/classes/VaRScene.gd" id="4_vrbnf"]
+
+[sub_resource type="Resource" id="Resource_dufhi"]
+resource_local_to_scene = true
+resource_name = "can_drop"
+script = ExtResource("2_tvpuf")
+value = true
+metadata/_custom_type_script = "uid://djmnu1e55mp0j"
+
+[sub_resource type="Resource" id="Resource_o5pnc"]
+resource_local_to_scene = true
+resource_name = "build"
+script = ExtResource("4_vrbnf")
+metadata/_custom_type_script = "uid://dapuucp3gf6c8"
+
+[node name="FreeField" instance=ExtResource("1_ggerw")]
+modulate = Color(1, 0.29000002, 0.29000002, 0)
+collision_layer = 4096
+collision_mask = 4096
+metadata/field_type = &"free"
+
+[node name="APDropZone" parent="." index="2"]
+can_drop = SubResource("Resource_dufhi")
+set_vares_value = Dictionary[String, ExtResource("3_y4ktq")]({
+"build": SubResource("Resource_o5pnc")
+})
+
+[node name="DropBuild=changed" parent="APDropZone" index="2"]
+resource = SubResource("Resource_o5pnc")
+
+[node name="APChainAddChild" parent="APDropZone/DropBuild=changed" index="0"]
+scene = SubResource("Resource_o5pnc")
+
+[node name="APChainSetNum" parent="." index="5"]
+enable = false
+
+[node name="APChainSetNum2" parent="." index="6"]
+enable = false
+
+[node name="APChainAddChild2" parent="." index="7"]
+scene = SubResource("Resource_o5pnc")

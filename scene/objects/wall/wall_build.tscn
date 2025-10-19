@@ -13,7 +13,9 @@
 radius = 18.027756
 
 [sub_resource type="LabelSettings" id="LabelSettings_273i7"]
+resource_local_to_scene = true
 font_size = 12
+font_color = Color(0.97150236, 0.8373624, 0, 1)
 outline_size = 7
 outline_color = Color(0.13, 0.13, 0.13, 1)
 
