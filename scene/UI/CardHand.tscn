@@ -871,7 +871,6 @@ metadata/_custom_type_script = "uid://dfnv5lgi83cdo"
 script = ExtResource("17_ipcpg")
 var_bool = ExtResource("6_5gjnk")
 new_value = false
-wait = null
 node_emitter = NodePath("..")
 watch_signal = 0
 metadata/_custom_type_script = "uid://xv7plkxnebcm"
@@ -981,7 +980,6 @@ metadata/_custom_type_script = "uid://dfnv5lgi83cdo"
 script = ExtResource("17_ipcpg")
 var_bool = ExtResource("6_5gjnk")
 new_value = false
-wait = null
 node_emitter = NodePath("..")
 watch_signal = 0
 metadata/_custom_type_script = "uid://xv7plkxnebcm"
@@ -1134,7 +1132,6 @@ flat = true
 script = ExtResource("17_ipcpg")
 var_bool = ExtResource("35_kpoiw")
 new_value = false
-wait = null
 node_emitter = NodePath("..")
 watch_signal = 0
 metadata/_custom_type_script = "uid://xv7plkxnebcm"
@@ -1150,7 +1147,6 @@ metadata/_custom_type_script = "uid://cldopw0r4n1wj"
 [node name="SET_PlayAudioCardPackSelect=true" type="Node" parent="VBoxContainer/CardPack/PanelContainer/Panel/MarginContainer/VBoxContainer/VBoxContainer/ControlBtns/Rerol/CanRerol/ButtonCanRerol/SET_PlayAudioCardPackSelect=false/SET_PickCardsPerPack" node_paths=PackedStringArray("node_emitter")]
 script = ExtResource("17_ipcpg")
 var_bool = ExtResource("35_kpoiw")
-wait = null
 node_emitter = NodePath("..")
 watch_signal = 1
 metadata/_custom_type_script = "uid://xv7plkxnebcm"
@@ -1388,6 +1384,20 @@ separation = -5.0
 metadata/_custom_type_script = "uid://dn354cgweyjxg"
 
 [node name="Card" parent="VBoxContainer/Panel/Panel/APDeckHand" instance=ExtResource("46_4cst2")]
+material = SubResource("ShaderMaterial_8m7k3")
+layout_mode = 2
+enable_drag = SubResource("Resource_hugvf")
+metadata/is_pack_card = SubResource("Resource_06xac")
+metadata/is_active_pack_card = SubResource("Resource_tecgj")
+
+[node name="Card3" parent="VBoxContainer/Panel/Panel/APDeckHand" instance=ExtResource("46_4cst2")]
+material = SubResource("ShaderMaterial_8m7k3")
+layout_mode = 2
+enable_drag = SubResource("Resource_hugvf")
+metadata/is_pack_card = SubResource("Resource_06xac")
+metadata/is_active_pack_card = SubResource("Resource_tecgj")
+
+[node name="Card4" parent="VBoxContainer/Panel/Panel/APDeckHand" instance=ExtResource("46_4cst2")]
 material = SubResource("ShaderMaterial_8m7k3")
 layout_mode = 2
 enable_drag = SubResource("Resource_hugvf")

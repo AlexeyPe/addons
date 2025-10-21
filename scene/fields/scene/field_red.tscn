@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://b1dthv2qurwnx"]
+[gd_scene load_steps=31 format=3 uid="uid://b1dthv2qurwnx"]
 
 [ext_resource type="Material" uid="uid://svr62spjy8px" path="res://scene/fields/GridMaterial.tres" id="1_fpfk7"]
 [ext_resource type="Texture2D" uid="uid://1rw0438kebug" path="res://scene/fields/frame-spikes-2-fill-16px.png" id="2_fpfk7"]
@@ -22,6 +22,7 @@
 [ext_resource type="Script" uid="uid://xix6u347hwe" path="res://addons/APChain/classes/chain/set/APChainSetCollisionEnable.gd" id="15_2vhxi"]
 [ext_resource type="Script" uid="uid://xv7plkxnebcm" path="res://addons/APChain/classes/chain/set/vares/APChainSetBool.gd" id="16_clcyr"]
 [ext_resource type="Resource" uid="uid://dlnydceni78on" path="res://data/gameplay/teams/team_red.tres" id="18_bwhvg"]
+[ext_resource type="Script" uid="uid://bqn6e76istclq" path="res://addons/APChain/classes/chain/set/APChainSetVisible.gd" id="19_8f6du"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_j64cy"]
 size = Vector2(48, 48)
@@ -116,7 +117,6 @@ mouse_filter = 1
 script = ExtResource("8_mkipr")
 can_drop = SubResource("Resource_y8fmx")
 drop_data_check = Array[ExtResource("5_8f6du")]([ExtResource("6_0dm02")])
-after_drop_set_success = false
 set_vares_value = Dictionary[String, ExtResource("5_1exl1")]({
 "build": SubResource("Resource_rh7me")
 })
@@ -192,6 +192,20 @@ var_bool = SubResource("Resource_y8fmx")
 node_emitter = NodePath("..")
 watch_signal = 0
 metadata/_custom_type_script = "uid://xv7plkxnebcm"
+
+[node name="drop_not_enough_money=if_false" type="Node" parent="APDropZone"]
+script = ExtResource("11_y8fmx")
+_signal = "if_false"
+resource = ExtResource("6_0dm02")
+signal = "if_false"
+metadata/_custom_type_script = "uid://u1gglou2n5jq"
+
+[node name="APChainSetVisible" type="Node" parent="APDropZone/drop_not_enough_money=if_false" node_paths=PackedStringArray("nodes_visible_false", "node_emitter")]
+script = ExtResource("19_8f6du")
+nodes_visible_false = [NodePath("../../outline")]
+node_emitter = NodePath("..")
+watch_signal = 0
+metadata/_custom_type_script = "uid://bqn6e76istclq"
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 visible = false
