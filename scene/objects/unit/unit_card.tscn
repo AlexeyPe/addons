@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://b76n5oe8qruln"]
+[gd_scene load_steps=11 format=3 uid="uid://b76n5oe8qruln"]
 
 [ext_resource type="PackedScene" uid="uid://bcap7c1i87f30" path="res://scene/objects/card/Card.tscn" id="1_swlyr"]
 [ext_resource type="Shader" uid="uid://bso165sdn2g37" path="res://addons/APCards/shaders/2D-perspective.gdshader" id="2_64qk6"]
@@ -24,45 +24,18 @@ resource_name = "enable_drag"
 script = ExtResource("3_dlupk")
 metadata/_custom_type_script = "uid://djmnu1e55mp0j"
 
-[sub_resource type="Resource" id="Resource_cnwsi"]
-resource_local_to_scene = true
-resource_name = "is_pack_card"
-script = ExtResource("3_dlupk")
-value = true
-metadata/_custom_type_script = "uid://djmnu1e55mp0j"
-
-[sub_resource type="Resource" id="Resource_pkofc"]
-resource_local_to_scene = true
-resource_name = "is_active_pack_card"
-script = ExtResource("3_dlupk")
-metadata/_custom_type_script = "uid://djmnu1e55mp0j"
-
-[sub_resource type="Resource" id="Resource_8m6nh"]
-resource_local_to_scene = true
-resource_name = "is_active_pack_card"
-script = ExtResource("3_dlupk")
-metadata/_custom_type_script = "uid://djmnu1e55mp0j"
-
 [node name="Card" instance=ExtResource("1_swlyr")]
 material = SubResource("ShaderMaterial_d3wn7")
 enable_drag = SubResource("Resource_tqnva")
-metadata/is_pack_card = SubResource("Resource_cnwsi")
-metadata/is_active_pack_card = SubResource("Resource_pkofc")
 metadata/price_card = ExtResource("8_hmn1j")
 
 [node name="TextureRect" parent="SubViewport/PanelContainer" index="0"]
 texture = ExtResource("4_4dug4")
 num_is = Array[Texture]([ExtResource("4_jmrn4"), ExtResource("5_4dug4"), ExtResource("4_4dug4"), ExtResource("7_f34vj")])
 
-[node name="APChainToggleBtns" parent="SubViewport/PanelContainer/ButtonSelectCardPack" index="0"]
-toggle_bool = SubResource("Resource_8m6nh")
-
 [node name="Label3" parent="SubViewport/PanelContainer/TextureRect2" index="0"]
 text = "3"
 var_res = ExtResource("8_hmn1j")
-
-[node name="is_pack_card=now_false" parent="." index="8"]
-resource = SubResource("Resource_cnwsi")
 
 [node name="SET_enable_drag=true" parent="is_pack_card=now_false" index="1"]
 var_bool = SubResource("Resource_tqnva")

@@ -14,13 +14,20 @@ func _execute(...args:Array) -> void:
 		return
 	var childs_move: Array[Node]
 	for child in parent.get_children():
-		for meta_name in with_metadata:
-			if !child.has_meta(meta_name): 
+		for meta_name in with_metadata.keys():
+			if !child.has_meta(meta_name):
+				print("child(%s) not has meta(%s)"%[child, meta_name])
 				continue
 			var meta = with_metadata[meta_name]
 			if child.get_meta(meta_name) is VaRBool:
 				if child.get_meta(meta_name).value != meta: 
+					print(
+						"check meta_name(%s) meta-value(%s) child(%s) continue"%[
+							meta_name, child.get_meta(meta_name), child
+						]
+					)
 					continue
+				print("reparent")
 				child.reparent(new_parent)
 				childs_move.append(child)
 				break
