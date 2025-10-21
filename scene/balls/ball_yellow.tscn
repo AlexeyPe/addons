@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://cj53tnqi6uwe0"]
+[gd_scene load_steps=7 format=3 uid="uid://cj53tnqi6uwe0"]
 
 [ext_resource type="PackedScene" uid="uid://cpprsnw4qtbbj" path="res://scene/balls/ball_red.tscn" id="1_0s07m"]
 [ext_resource type="Script" uid="uid://djmnu1e55mp0j" path="res://addons/VarRes/classes/bool/VaRBool.gd" id="2_t7r6g"]
 [ext_resource type="Resource" uid="uid://cvmmidd5uwfbn" path="res://data/gameplay/units/units_yellow.tres" id="3_5hq5e"]
+[ext_resource type="Resource" uid="uid://ujnnuhtgp6ev" path="res://data/gameplay/teams/team_yellow.tres" id="3_kgxfx"]
 
 [sub_resource type="Resource" id="Resource_5hq5e"]
 resource_local_to_scene = true
@@ -19,6 +20,7 @@ metadata/_custom_type_script = "uid://djmnu1e55mp0j"
 collision_layer = 4273
 collision_mask = 4273
 metadata/is_die = SubResource("Resource_5hq5e")
+metadata/ball_team = ExtResource("3_kgxfx")
 
 [node name="chain_ball" parent="." index="0"]
 unit_type = "yellow"

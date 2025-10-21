@@ -7,6 +7,7 @@ signal anim_finished
 @export var animation_player:AnimationPlayer : set = set_animation_player
 @export var speed:float = 1.0
 @export var from_end:bool = false
+@export var skip_if_play:bool = false
 var _anims:PackedStringArray
 var _anim_name:int
 
@@ -42,6 +43,8 @@ func _ready() -> void:
 		pass
 
 func _execute(...args:Array):
+	if skip_if_play and animation_player.is_playing():
+		return
 	if from_end:
 		#prints("play from_end anim:", _anims[_anim_name], "speed:", speed)
 		animation_player.play_backwards(_anims[_anim_name])
@@ -54,3 +57,4 @@ func _execute(...args:Array):
 		animation_player.seek(0)
 		await animation_player.animation_finished
 		anim_finished.emit()
+	executed.emit()

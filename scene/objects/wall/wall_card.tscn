@@ -1,6 +1,6 @@
-[gd_scene load_steps=14 format=3 uid="uid://dydhud4jeqphy"]
+[gd_scene load_steps=15 format=3 uid="uid://dydhud4jeqphy"]
 
-[ext_resource type="PackedScene" uid="uid://bcap7c1i87f30" path="res://scene/objects/Card.tscn" id="1_tbxw8"]
+[ext_resource type="PackedScene" uid="uid://bcap7c1i87f30" path="res://scene/objects/card/Card.tscn" id="1_tbxw8"]
 [ext_resource type="Shader" uid="uid://bso165sdn2g37" path="res://addons/APCards/shaders/2D-perspective.gdshader" id="2_uohim"]
 [ext_resource type="Script" uid="uid://bxgs3dw2ym11j" path="res://addons/APChain/classes/chain/drag_and_drop/APDragDataRes.gd" id="3_6vxwn"]
 [ext_resource type="Script" uid="uid://djmnu1e55mp0j" path="res://addons/VarRes/classes/bool/VaRBool.gd" id="3_86air"]
@@ -32,7 +32,6 @@ metadata/_custom_type_script = "uid://bxgs3dw2ym11j"
 resource_local_to_scene = true
 resource_name = "enable_drag"
 script = ExtResource("3_86air")
-description = null
 metadata/_custom_type_script = "uid://djmnu1e55mp0j"
 
 [sub_resource type="Resource" id="Resource_cnwsi"]
@@ -40,14 +39,18 @@ resource_local_to_scene = true
 resource_name = "is_pack_card"
 script = ExtResource("3_86air")
 value = true
-description = null
 metadata/_custom_type_script = "uid://djmnu1e55mp0j"
 
 [sub_resource type="Resource" id="Resource_pkofc"]
 resource_local_to_scene = true
 resource_name = "is_active_pack_card"
 script = ExtResource("3_86air")
-description = null
+metadata/_custom_type_script = "uid://djmnu1e55mp0j"
+
+[sub_resource type="Resource" id="Resource_6vxwn"]
+resource_local_to_scene = true
+resource_name = "is_active_pack_card"
+script = ExtResource("3_86air")
 metadata/_custom_type_script = "uid://djmnu1e55mp0j"
 
 [node name="Card" instance=ExtResource("1_tbxw8")]
@@ -57,11 +60,8 @@ enable_drag = SubResource("Resource_3qhui")
 metadata/is_pack_card = SubResource("Resource_cnwsi")
 metadata/is_active_pack_card = SubResource("Resource_pkofc")
 
-[node name="Label" parent="SubViewport/PanelContainer" index="1"]
-text = "Стена"
-
 [node name="APChainToggleBtns" parent="SubViewport/PanelContainer/ButtonSelectCardPack" index="0"]
-toggle_bool = SubResource("Resource_pkofc")
+toggle_bool = SubResource("Resource_6vxwn")
 
 [node name="is_pack_card=now_false" parent="." index="8"]
 resource = SubResource("Resource_cnwsi")

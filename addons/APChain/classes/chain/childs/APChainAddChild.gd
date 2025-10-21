@@ -2,6 +2,8 @@
 extends APChain
 class_name APChainAddChild
 
+signal added_child_exiting
+
 @export var target_parent:Node
 @export var scene:VaRScene
 @export var force_readable_name:bool = false
@@ -13,8 +15,10 @@ func _execute(...args:Array) -> void:
 		executed.emit()
 		executed_failed.emit()
 		return
-	var child = scene.value.instantiate()
+	var child:Node = scene.value.instantiate()
 	target_parent.add_child(child, force_readable_name)
+	if !child.tree_exiting.is_connected(added_child_exiting_emit):
+		child.tree_exiting.connect(added_child_exiting_emit)
 	if !set_metadata.is_empty():
 		for key in set_metadata.keys():
 			if !child.has_meta(key): continue
@@ -31,3 +35,6 @@ func _execute(...args:Array) -> void:
 			)
 	executed.emit()
 	executed_good.emit()
+
+func added_child_exiting_emit():
+	added_child_exiting.emit()

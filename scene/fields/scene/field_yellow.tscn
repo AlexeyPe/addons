@@ -6,7 +6,7 @@
 [ext_resource type="Script" uid="uid://8myr58nwfvfg" path="res://addons/VarRes/classes/numbers/VaRInt.gd" id="2_wtsfe"]
 [ext_resource type="Script" uid="uid://b03dlfkxcckwp" path="res://addons/VarRes/classes/VarRes.gd" id="3_624dq"]
 [ext_resource type="Script" uid="uid://dapuucp3gf6c8" path="res://addons/VarRes/classes/VaRScene.gd" id="4_otvii"]
-[ext_resource type="Resource" uid="uid://ujnnuhtgp6ev" path="res://scene/objects/team_yellow.tres" id="6_o5iat"]
+[ext_resource type="Resource" uid="uid://ujnnuhtgp6ev" path="res://data/gameplay/teams/team_yellow.tres" id="6_o5iat"]
 
 [sub_resource type="Resource" id="Resource_klh8n"]
 resource_local_to_scene = true

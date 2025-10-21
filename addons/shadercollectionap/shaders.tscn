@@ -1,4 +1,4 @@
-[gd_scene load_steps=96 format=3 uid="uid://dnxe3vhvxsoum"]
+[gd_scene load_steps=98 format=3 uid="uid://dnxe3vhvxsoum"]
 
 [ext_resource type="Shader" uid="uid://34vuvr16u6om" path="res://addons/shadercollectionap/shader/starfield/eclmist.gdshader" id="1_w8vxg"]
 [ext_resource type="Texture2D" uid="uid://cybbdvgqf1fci" path="res://icon.svg" id="2_7eqmx"]
@@ -34,6 +34,7 @@
 [ext_resource type="Shader" uid="uid://c7ihfh4tgq50c" path="res://addons/shadercollectionap/shader/transform/Slice2.gdshader" id="26_hkxm1"]
 [ext_resource type="Shader" uid="uid://k4a8ylb5cenv" path="res://addons/shadercollectionap/shader/starfield/starfield.gdshader" id="26_txere"]
 [ext_resource type="Shader" uid="uid://cqunkxivlqmr8" path="res://addons/shadercollectionap/shader/starfield/starfield2.gdshader" id="27_0xktr"]
+[ext_resource type="Shader" uid="uid://cdpofvwclxk2r" path="res://addons/shadercollectionap/transition.gdshader" id="27_nmjwx"]
 [ext_resource type="Shader" uid="uid://bj7svbnmcawap" path="res://addons/shadercollectionap/shader/starfield/starfield3.gdshader" id="28_sn1h2"]
 [ext_resource type="Shader" uid="uid://cwogfu8vk8ie" path="res://addons/shadercollectionap/shader/outline/border_triangle.gdshader" id="29_tpb81"]
 [ext_resource type="Shader" uid="uid://dmlj5iytq51ty" path="res://addons/shadercollectionap/shader/starfield/starfield4.gdshader" id="29_ulr44"]
@@ -239,6 +240,28 @@ shader = ExtResource("25_t36y0")
 shader_parameter/Strength = 8.2800003933
 shader_parameter/RandomOffset = 1.0
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_uohxh"]
+shader = ExtResource("27_nmjwx")
+shader_parameter/use_sprite_alpha = true
+shader_parameter/use_transition_texture = false
+shader_parameter/transition_type = 0
+shader_parameter/position = Vector2(0.5, 0.5)
+shader_parameter/invert = true
+shader_parameter/grid_size = Vector2(4, 4)
+shader_parameter/rotation_angle = 0.0
+shader_parameter/stagger = Vector2(0, 0)
+shader_parameter/stagger_frequency = Vector2i(2, 2)
+shader_parameter/flip_frequency = Vector2i(1, 1)
+shader_parameter/basic_feather = 0.0
+shader_parameter/use_mask_size = false
+shader_parameter/mask_size = Vector2(100, 100)
+shader_parameter/edges = 6
+shader_parameter/shape_feather = 0.1
+shader_parameter/sectors = 1
+shader_parameter/clock_feather = 0.0
+shader_parameter/progress = 0.755
+shader_parameter/progress_bias = Vector2(0, 0)
+
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_hkxm1"]
 shader = ExtResource("25_fxorn")
 shader_parameter/direction = Vector2(1, 0)
@@ -258,7 +281,7 @@ shader_parameter/border_color = Vector4(0, 0, 0, 0)
 shader = ExtResource("29_tpb81")
 shader_parameter/block_color = Color(0, 3.308989e-08, 0.12247535, 1)
 shader_parameter/block_width = 0.2410000114475
-shader_parameter/triangle_size_pixels = 50.500002351250004
+shader_parameter/triangle_size_pixels = 50.50000235125
 shader_parameter/wave_offset = 0.0
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_gdsgs"]
@@ -605,6 +628,15 @@ offset_left = 1262.0
 offset_top = -274.0
 offset_right = 1390.0
 offset_bottom = -146.0
+texture = ExtResource("2_7eqmx")
+
+[node name="progres-circle20" type="TextureRect" parent="."]
+material = SubResource("ShaderMaterial_uohxh")
+custom_minimum_size = Vector2(100, 100)
+offset_left = 1398.0
+offset_top = -138.0
+offset_right = 1526.0
+offset_bottom = -10.0
 texture = ExtResource("2_7eqmx")
 
 [node name="progres-circle15" type="TextureRect" parent="."]

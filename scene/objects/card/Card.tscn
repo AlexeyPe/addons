@@ -1,33 +1,35 @@
-[gd_scene load_steps=38 format=3 uid="uid://bcap7c1i87f30"]
+[gd_scene load_steps=39 format=3 uid="uid://bcap7c1i87f30"]
 
-[ext_resource type="Shader" uid="uid://bso165sdn2g37" path="res://addons/APCards/shaders/2D-perspective.gdshader" id="1_y1qi0"]
-[ext_resource type="Script" uid="uid://qgft63fv0g22" path="res://addons/APChain/classes/chain/drag_and_drop/APDragDataControl.gd" id="2_mqpi6"]
-[ext_resource type="Script" uid="uid://djmnu1e55mp0j" path="res://addons/VarRes/classes/bool/VaRBool.gd" id="3_a8db2"]
-[ext_resource type="Script" uid="uid://bxgs3dw2ym11j" path="res://addons/APChain/classes/chain/drag_and_drop/APDragDataRes.gd" id="3_yx8bl"]
-[ext_resource type="Theme" uid="uid://cjnu6wdil2hgp" path="res://scene/UI/Theme.tres" id="4_2rskf"]
-[ext_resource type="Texture2D" uid="uid://h14mo3pcwr6i" path="res://scene/objects/wall/round_grey_detailed.png" id="4_hb6gr"]
-[ext_resource type="LabelSettings" uid="uid://bs3a6ff5awow6" path="res://scene/UI/LabelSettings/MainLabel.tres" id="5_4r383"]
-[ext_resource type="Shader" uid="uid://bvvll4jp3kavo" path="res://addons/shadercollectionap/shader/outline/outline-dotted.gdshader" id="5_5yh0u"]
-[ext_resource type="Script" uid="uid://dfnv5lgi83cdo" path="res://addons/APChain/classes/chain/APChainAnimPlay.gd" id="5_fjufq"]
-[ext_resource type="Script" uid="uid://5t32i7d2eb57" path="res://addons/VarRes/classes/UI/TextureRectVarNum.gd" id="5_hb6gr"]
-[ext_resource type="Script" uid="uid://cpilgm747sne6" path="res://addons/APChain/classes/chain/set/APChainSetZ.gd" id="6_c251f"]
-[ext_resource type="Resource" uid="uid://cehqu7jl7rmu3" path="res://data/gameplay/player_team.tres" id="6_oenry"]
-[ext_resource type="Script" uid="uid://ba4djel70nxp6" path="res://addons/APCards/classes/APCard2DPersp.gd" id="7_d1ve1"]
-[ext_resource type="Script" uid="uid://otq5ty4iete3" path="res://addons/APChain/classes/chain/APChainToggleBtns.gd" id="7_qul38"]
-[ext_resource type="Resource" uid="uid://le4nnyijbcxw" path="res://data/CardPack/PickCardsPerPack.tres" id="8_0tp00"]
-[ext_resource type="Script" uid="uid://u1gglou2n5jq" path="res://addons/APChain/classes/chain_activator/APActivatorResource.gd" id="8_esaqt"]
-[ext_resource type="Resource" uid="uid://lt145sa8tr3" path="res://data/UI/VisibleCardPack.tres" id="9_esaqt"]
-[ext_resource type="Script" uid="uid://bdky14gdt5q2x" path="res://addons/VarRes/classes/VaRPath.gd" id="9_jqurx"]
-[ext_resource type="Script" uid="uid://dj04ffy0nu74n" path="res://addons/APChain/classes/chain/audio/APChainAudioPlay.gd" id="11_4r383"]
-[ext_resource type="AudioStream" uid="uid://c6ktfn7vyk0tn" path="res://audio/CardPackSelectTrue.tres" id="11_fr5rg"]
-[ext_resource type="Script" uid="uid://bqn6e76istclq" path="res://addons/APChain/classes/chain/set/APChainSetVisible.gd" id="13_xd0mm"]
-[ext_resource type="Script" uid="uid://bein4dn8ts6bb" path="res://addons/APChain/classes/chain/childs/APChainDelChildsArr.gd" id="18_5yh0u"]
-[ext_resource type="Script" uid="uid://xv7plkxnebcm" path="res://addons/APChain/classes/chain/set/vares/APChainSetBool.gd" id="22_mp0y4"]
-[ext_resource type="Script" uid="uid://b03dlfkxcckwp" path="res://addons/VarRes/classes/VarRes.gd" id="22_udmh3"]
+[ext_resource type="Shader" uid="uid://bso165sdn2g37" path="res://addons/APCards/shaders/2D-perspective.gdshader" id="1_ahth5"]
+[ext_resource type="Script" uid="uid://qgft63fv0g22" path="res://addons/APChain/classes/chain/drag_and_drop/APDragDataControl.gd" id="2_xveq6"]
+[ext_resource type="Script" uid="uid://bxgs3dw2ym11j" path="res://addons/APChain/classes/chain/drag_and_drop/APDragDataRes.gd" id="3_dnr2u"]
+[ext_resource type="Script" uid="uid://b03dlfkxcckwp" path="res://addons/VarRes/classes/VarRes.gd" id="4_3p47q"]
+[ext_resource type="Script" uid="uid://djmnu1e55mp0j" path="res://addons/VarRes/classes/bool/VaRBool.gd" id="5_f05fl"]
+[ext_resource type="Texture2D" uid="uid://c2tks3354i33o" path="res://scene/objects/card/panel_grey_bolts_detail_a.png" id="6_ahth5"]
+[ext_resource type="Texture2D" uid="uid://h14mo3pcwr6i" path="res://scene/objects/wall/round_grey_detailed.png" id="7_cjyau"]
+[ext_resource type="Script" uid="uid://5t32i7d2eb57" path="res://addons/VarRes/classes/UI/TextureRectVarNum.gd" id="8_tsnvq"]
+[ext_resource type="Resource" uid="uid://cehqu7jl7rmu3" path="res://data/gameplay/player_team.tres" id="9_t214e"]
+[ext_resource type="Shader" uid="uid://bvvll4jp3kavo" path="res://addons/shadercollectionap/shader/outline/outline-dotted.gdshader" id="10_7u7fq"]
+[ext_resource type="Theme" uid="uid://cjnu6wdil2hgp" path="res://scene/UI/Theme.tres" id="11_r5wti"]
+[ext_resource type="Script" uid="uid://otq5ty4iete3" path="res://addons/APChain/classes/chain/APChainToggleBtns.gd" id="12_1h1c2"]
+[ext_resource type="Resource" uid="uid://le4nnyijbcxw" path="res://data/CardPack/PickCardsPerPack.tres" id="13_j7sdq"]
+[ext_resource type="Script" uid="uid://bdky14gdt5q2x" path="res://addons/VarRes/classes/VaRPath.gd" id="14_dhogm"]
+[ext_resource type="Script" uid="uid://bqn6e76istclq" path="res://addons/APChain/classes/chain/set/APChainSetVisible.gd" id="15_5h0lx"]
+[ext_resource type="Script" uid="uid://dj04ffy0nu74n" path="res://addons/APChain/classes/chain/audio/APChainAudioPlay.gd" id="16_vkfde"]
+[ext_resource type="Shader" uid="uid://b4xocinxdwelf" path="res://addons/shadercollectionap/shader/outline/Outline.gdshader" id="17_5tsiq"]
+[ext_resource type="Texture2D" uid="uid://b07iujhfuayin" path="res://imgs/icons/fluent-emoji-flat--gem-stone.png" id="18_63u5a"]
+[ext_resource type="Script" uid="uid://dfnv5lgi83cdo" path="res://addons/APChain/classes/chain/APChainAnimPlay.gd" id="19_v4l2n"]
+[ext_resource type="Script" uid="uid://cpilgm747sne6" path="res://addons/APChain/classes/chain/set/APChainSetZ.gd" id="20_yq4sa"]
+[ext_resource type="Script" uid="uid://ba4djel70nxp6" path="res://addons/APCards/classes/APCard2DPersp.gd" id="21_2iwqe"]
+[ext_resource type="Script" uid="uid://u1gglou2n5jq" path="res://addons/APChain/classes/chain_activator/APActivatorResource.gd" id="22_856jb"]
+[ext_resource type="Resource" uid="uid://lt145sa8tr3" path="res://data/UI/VisibleCardPack.tres" id="23_g1b76"]
+[ext_resource type="Script" uid="uid://bein4dn8ts6bb" path="res://addons/APChain/classes/chain/childs/APChainDelChildsArr.gd" id="24_8stg3"]
+[ext_resource type="Script" uid="uid://xv7plkxnebcm" path="res://addons/APChain/classes/chain/set/vares/APChainSetBool.gd" id="25_qp2gs"]
+[ext_resource type="AudioStream" uid="uid://c6ktfn7vyk0tn" path="res://audio/CardPackSelectTrue.tres" id="26_fei0p"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_6018q"]
 resource_local_to_scene = true
-shader = ExtResource("1_y1qi0")
+shader = ExtResource("1_ahth5")
 shader_parameter/fov = 80.0
 shader_parameter/cull_back = true
 shader_parameter/y_rot = 0.0
@@ -35,57 +37,30 @@ shader_parameter/x_rot = 0.0
 shader_parameter/inset = 0.0
 
 [sub_resource type="Resource" id="Resource_udmh3"]
-script = ExtResource("3_yx8bl")
+script = ExtResource("3_dnr2u")
 metadata/_custom_type_script = "uid://bxgs3dw2ym11j"
 
 [sub_resource type="Resource" id="Resource_eh51v"]
 resource_local_to_scene = true
 resource_name = "enable_drag"
-script = ExtResource("3_a8db2")
+script = ExtResource("5_f05fl")
 metadata/_custom_type_script = "uid://djmnu1e55mp0j"
 
 [sub_resource type="Resource" id="Resource_xd0mm"]
 resource_local_to_scene = true
 resource_name = "is_pack_card"
-script = ExtResource("3_a8db2")
+script = ExtResource("5_f05fl")
 value = true
 metadata/_custom_type_script = "uid://djmnu1e55mp0j"
 
 [sub_resource type="Resource" id="Resource_jqurx"]
 resource_local_to_scene = true
 resource_name = "is_active_pack_card"
-script = ExtResource("3_a8db2")
+script = ExtResource("5_f05fl")
 metadata/_custom_type_script = "uid://djmnu1e55mp0j"
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_s1pa1"]
-content_margin_left = 2.0
-content_margin_top = 2.0
-content_margin_right = 2.0
-content_margin_bottom = 2.0
-bg_color = Color(0.061926693, 0.061926708, 0.061926648, 1)
-border_width_left = 1
-border_width_top = 1
-border_width_right = 1
-border_width_bottom = 1
-border_color = Color(1, 1, 1, 0.47843137)
-corner_radius_top_left = 5
-corner_radius_top_right = 5
-corner_radius_bottom_right = 5
-corner_radius_bottom_left = 5
-corner_detail = 4
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yx64x"]
-content_margin_left = 1.0
-bg_color = Color(1, 0.84313726, 0, 1)
-border_width_bottom = 1
-border_color = Color(0.75686276, 0, 0, 1)
-corner_radius_top_left = 44
-corner_radius_top_right = 44
-corner_radius_bottom_right = 44
-corner_radius_bottom_left = 44
-
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_5yh0u"]
-shader = ExtResource("5_5yh0u")
+shader = ExtResource("10_7u7fq")
 shader_parameter/color = Color(1, 1, 1, 1)
 shader_parameter/direction = -1.0
 shader_parameter/frequency = 9.875
@@ -94,17 +69,23 @@ shader_parameter/radius = 1.0
 shader_parameter/line_thickness = 4.965
 
 [sub_resource type="Resource" id="Resource_xrsab"]
-script = ExtResource("9_jqurx")
+script = ExtResource("14_dhogm")
 metadata/_custom_type_script = "uid://bdky14gdt5q2x"
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_fvxqc"]
-shader = ExtResource("5_5yh0u")
+shader = ExtResource("10_7u7fq")
 shader_parameter/color = Color(1, 1, 1, 1)
 shader_parameter/direction = -1.0
 shader_parameter/frequency = 22.0000003278264
 shader_parameter/speed = 4.0
 shader_parameter/radius = 0.65999998524768
 shader_parameter/line_thickness = 0.03999999910592
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_fylif"]
+shader = ExtResource("17_5tsiq")
+shader_parameter/allow_out_of_bounds = true
+shader_parameter/outline_thickness = 2.0
+shader_parameter/outline_color = Color(0, 0, 0, 1)
 
 [sub_resource type="Animation" id="Animation_1miy5"]
 length = 0.001
@@ -162,7 +143,7 @@ pivot_offset = Vector2(33, 49.5)
 focus_mode = 2
 focus_behavior_recursive = 2
 mouse_target = true
-script = ExtResource("2_mqpi6")
+script = ExtResource("2_xveq6")
 drag_data = SubResource("Resource_udmh3")
 enable_drag = SubResource("Resource_eh51v")
 metadata/is_pack_card = SubResource("Resource_xd0mm")
@@ -178,73 +159,61 @@ size = Vector2i(70, 102)
 size_2d_override_stretch = true
 render_target_update_mode = 4
 
-[node name="PanelContainer" type="PanelContainer" parent="SubViewport"]
+[node name="PanelContainer" type="NinePatchRect" parent="SubViewport"]
 z_index = 2
-custom_minimum_size = Vector2(66, 99)
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -19.0
-offset_top = -14.0
-offset_right = 19.0
-offset_bottom = 14.0
+offset_left = -34.0
+offset_top = -49.5
+offset_right = 35.0
+offset_bottom = 50.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 mouse_default_cursor_shape = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_s1pa1")
+texture = ExtResource("6_ahth5")
+region_rect = Rect2(0, 0, 64, 64)
+patch_margin_left = 20
+patch_margin_top = 20
+patch_margin_right = 20
+patch_margin_bottom = 20
+axis_stretch_vertical = 2
 
 [node name="TextureRect" type="TextureRect" parent="SubViewport/PanelContainer"]
 texture_filter = 2
 custom_minimum_size = Vector2(55, 0)
-layout_mode = 2
+layout_mode = 0
+offset_left = 7.0
+offset_top = 1.0
+offset_right = 62.0
+offset_bottom = 98.0
 size_flags_horizontal = 4
-texture = ExtResource("4_hb6gr")
+texture = ExtResource("7_cjyau")
 expand_mode = 1
 stretch_mode = 5
-script = ExtResource("5_hb6gr")
-num = ExtResource("6_oenry")
+script = ExtResource("8_tsnvq")
+num = ExtResource("9_t214e")
 metadata/_custom_type_script = "uid://5t32i7d2eb57"
-
-[node name="Label" type="Label" parent="SubViewport/PanelContainer"]
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 0
-text = "Карта"
-label_settings = ExtResource("5_4r383")
-
-[node name="PanelContainer" type="PanelContainer" parent="SubViewport/PanelContainer"]
-custom_minimum_size = Vector2(23, 23)
-layout_mode = 2
-size_flags_horizontal = 0
-size_flags_vertical = 8
-mouse_filter = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_yx64x")
-
-[node name="Label3" type="Label" parent="SubViewport/PanelContainer/PanelContainer"]
-layout_mode = 2
-size_flags_horizontal = 4
-theme_override_colors/font_shadow_color = Color(1, 0, 0, 0.5647059)
-theme_override_constants/shadow_offset_x = 0
-theme_override_constants/shadow_offset_y = 1
-theme_override_constants/outline_size = 3
-theme_override_constants/shadow_outline_size = 4
-text = "11"
 
 [node name="ButtonSelectCardPack" type="Button" parent="SubViewport/PanelContainer"]
 material = SubResource("ShaderMaterial_5yh0u")
-layout_mode = 2
+layout_mode = 0
+offset_left = 1.0
+offset_top = 1.0
+offset_right = 68.0
+offset_bottom = 98.0
 mouse_default_cursor_shape = 2
-theme = ExtResource("4_2rskf")
+theme = ExtResource("11_r5wti")
 theme_type_variation = &"ButtonCard"
 toggle_mode = true
 
 [node name="APChainToggleBtns" type="Node" parent="SubViewport/PanelContainer/ButtonSelectCardPack" node_paths=PackedStringArray("node_emitter")]
-script = ExtResource("7_qul38")
-counter_toggle_buttons = ExtResource("8_0tp00")
+script = ExtResource("12_1h1c2")
+counter_toggle_buttons = ExtResource("13_j7sdq")
 last_toggle = SubResource("Resource_xrsab")
 toggle_bool = SubResource("Resource_jqurx")
 node_emitter = NodePath("..")
@@ -252,21 +221,21 @@ watch_signal = 0
 metadata/_custom_type_script = "uid://otq5ty4iete3"
 
 [node name="APChainSetVisible" type="Node" parent="SubViewport/PanelContainer/ButtonSelectCardPack/APChainToggleBtns" node_paths=PackedStringArray("nodes_visible_true", "node_emitter")]
-script = ExtResource("13_xd0mm")
+script = ExtResource("15_5h0lx")
 nodes_visible_true = [NodePath("../../OutlineDotted")]
 node_emitter = NodePath("..")
 watch_signal = 0
 metadata/_custom_type_script = "uid://bqn6e76istclq"
 
 [node name="APChainSetVisible2" type="Node" parent="SubViewport/PanelContainer/ButtonSelectCardPack/APChainToggleBtns" node_paths=PackedStringArray("nodes_visible_false", "node_emitter")]
-script = ExtResource("13_xd0mm")
+script = ExtResource("15_5h0lx")
 nodes_visible_false = [NodePath("../../OutlineDotted")]
 node_emitter = NodePath("..")
 watch_signal = 1
 metadata/_custom_type_script = "uid://bqn6e76istclq"
 
 [node name="APChainAudioPlay" type="Node" parent="SubViewport/PanelContainer/ButtonSelectCardPack/APChainToggleBtns" node_paths=PackedStringArray("player", "node_emitter")]
-script = ExtResource("11_4r383")
+script = ExtResource("16_vkfde")
 player = NodePath("../../../../../CardPackSelectTrue")
 node_emitter = NodePath("..")
 watch_signal = 0
@@ -289,8 +258,42 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 
+[node name="TextureRect2" type="TextureRect" parent="SubViewport/PanelContainer"]
+material = SubResource("ShaderMaterial_fylif")
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 1
+offset_left = -1.0
+offset_top = -8.0
+offset_right = 31.0
+offset_bottom = 24.0
+size_flags_horizontal = 0
+size_flags_vertical = 8
+texture = ExtResource("18_63u5a")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Label3" type="Label" parent="SubViewport/PanelContainer/TextureRect2"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -9.5
+offset_top = -23.0
+offset_right = 9.5
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_offset_y = 1
+theme_override_constants/outline_size = 3
+theme_override_constants/shadow_outline_size = 4
+text = "11"
+
 [node name="APChainAnimPlay" type="Node" parent="." node_paths=PackedStringArray("animation_player", "node_emitter")]
-script = ExtResource("5_fjufq")
+script = ExtResource("19_v4l2n")
 animation_player = NodePath("../AnimationPlayer")
 speed = 1.6
 anim_name = 1
@@ -299,7 +302,7 @@ watch_signal = 4
 metadata/_custom_type_script = "uid://dfnv5lgi83cdo"
 
 [node name="APChainAnimPlay2" type="Node" parent="." node_paths=PackedStringArray("animation_player", "node_emitter")]
-script = ExtResource("5_fjufq")
+script = ExtResource("19_v4l2n")
 animation_player = NodePath("../AnimationPlayer")
 speed = 2.0
 from_end = true
@@ -309,7 +312,7 @@ watch_signal = 5
 metadata/_custom_type_script = "uid://dfnv5lgi83cdo"
 
 [node name="APChainSetZ" type="Node" parent="." node_paths=PackedStringArray("target", "node_emitter")]
-script = ExtResource("6_c251f")
+script = ExtResource("20_yq4sa")
 target = NodePath("..")
 new_z_index = 2
 node_emitter = NodePath("..")
@@ -317,14 +320,14 @@ watch_signal = 4
 metadata/_custom_type_script = "uid://cpilgm747sne6"
 
 [node name="APChainSetZ2" type="Node" parent="." node_paths=PackedStringArray("target", "node_emitter")]
-script = ExtResource("6_c251f")
+script = ExtResource("20_yq4sa")
 target = NodePath("..")
 node_emitter = NodePath("..")
 watch_signal = 5
 metadata/_custom_type_script = "uid://cpilgm747sne6"
 
 [node name="APCard2DPersp" type="Node" parent="." node_paths=PackedStringArray("card_body")]
-script = ExtResource("7_d1ve1")
+script = ExtResource("21_2iwqe")
 card_body = NodePath("..")
 angle_max_x = 0.1
 angle_max_y = 0.1
@@ -337,14 +340,14 @@ libraries = {
 speed_scale = 2.0
 
 [node name="VisibleCardPack=now_false" type="Node" parent="."]
-script = ExtResource("8_esaqt")
+script = ExtResource("22_856jb")
 _signal = "now_false"
-resource = ExtResource("9_esaqt")
+resource = ExtResource("23_g1b76")
 signal = "now_false"
 metadata/_custom_type_script = "uid://u1gglou2n5jq"
 
 [node name="is_pack_card=now_false" type="Node" parent="."]
-script = ExtResource("8_esaqt")
+script = ExtResource("22_856jb")
 _signal = "now_false"
 resource = SubResource("Resource_xd0mm")
 call_init = true
@@ -352,21 +355,21 @@ signal = "now_false"
 metadata/_custom_type_script = "uid://u1gglou2n5jq"
 
 [node name="APChainDelChildsArr" type="Node" parent="is_pack_card=now_false" node_paths=PackedStringArray("nodes", "node_emitter")]
-script = ExtResource("18_5yh0u")
+script = ExtResource("24_8stg3")
 nodes = [NodePath("../../SubViewport/PanelContainer/ButtonSelectCardPack"), NodePath("..")]
 node_emitter = NodePath("..")
 watch_signal = 0
 metadata/_custom_type_script = "uid://bein4dn8ts6bb"
 
 [node name="SET_enable_drag=true" type="Node" parent="is_pack_card=now_false" node_paths=PackedStringArray("node_emitter")]
-script = ExtResource("22_mp0y4")
+script = ExtResource("25_qp2gs")
 var_bool = SubResource("Resource_eh51v")
 node_emitter = NodePath("..")
 watch_signal = 0
 metadata/_custom_type_script = "uid://xv7plkxnebcm"
 
 [node name="CardPackSelectTrue" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("11_fr5rg")
+stream = ExtResource("26_fei0p")
 volume_db = 4.0
 pitch_scale = 1.05
 bus = &"Sounds"

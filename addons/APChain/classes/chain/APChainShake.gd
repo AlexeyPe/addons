@@ -5,8 +5,7 @@ class_name APChainShake2D
 enum SHAKE_TYPE {RANDOM, NOISE}
 
 func _execute(...args:Array):
-	
-	pass
+	trauma = min(trauma + add_trauma, 1.0)
 
 @export var target_node_shake:Node2D
 ## Как быстро прекращается дрожь
@@ -27,10 +26,6 @@ func _execute(...args:Array):
 var shake_noise:Noise
 var trauma = 0.0
 var noise_y:float = 0.0
-
-func _get_execute() -> Callable:
-	return func(arg:Variant = null):
-		trauma = min(trauma + add_trauma, 1.0)
 
 func _process(delta: float) -> void:
 	if trauma:

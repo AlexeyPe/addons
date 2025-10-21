@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://b1dthv2qurwnx"]
+[gd_scene load_steps=28 format=3 uid="uid://b1dthv2qurwnx"]
 
 [ext_resource type="Material" uid="uid://svr62spjy8px" path="res://scene/fields/GridMaterial.tres" id="1_fpfk7"]
 [ext_resource type="Texture2D" uid="uid://1rw0438kebug" path="res://scene/fields/frame-spikes-2-fill-16px.png" id="2_fpfk7"]
@@ -18,7 +18,8 @@
 [ext_resource type="Script" uid="uid://u1gglou2n5jq" path="res://addons/APChain/classes/chain_activator/APActivatorResource.gd" id="11_y8fmx"]
 [ext_resource type="Script" uid="uid://dapuucp3gf6c8" path="res://addons/VarRes/classes/VaRScene.gd" id="12_rh7me"]
 [ext_resource type="Script" uid="uid://xix6u347hwe" path="res://addons/APChain/classes/chain/set/APChainSetCollisionEnable.gd" id="15_2vhxi"]
-[ext_resource type="Resource" uid="uid://dlnydceni78on" path="res://scene/objects/team_red.tres" id="18_bwhvg"]
+[ext_resource type="Script" uid="uid://xv7plkxnebcm" path="res://addons/APChain/classes/chain/set/vares/APChainSetBool.gd" id="16_clcyr"]
+[ext_resource type="Resource" uid="uid://dlnydceni78on" path="res://data/gameplay/teams/team_red.tres" id="18_bwhvg"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_j64cy"]
 size = Vector2(48, 48)
@@ -116,12 +117,12 @@ after_drop_set_success = false
 set_vares_value = Dictionary[String, ExtResource("5_1exl1")]({
 "build": SubResource("Resource_rh7me")
 })
-visible_true = [NodePath("ColorRect")]
-visible_false = [NodePath("ColorRect")]
+visible_true = [NodePath("outline")]
+visible_false = [NodePath("outline")]
 metadata/_custom_type_script = "uid://dyjt63xqg1uru"
 metadata/_edit_use_anchors_ = true
 
-[node name="ColorRect" type="ColorRect" parent="APDropZone"]
+[node name="outline" type="ColorRect" parent="APDropZone"]
 visible = false
 z_index = 5
 material = SubResource("ShaderMaterial_ls341")
@@ -172,8 +173,22 @@ metadata/_custom_type_script = "uid://dg3tbem26ogr7"
 script = ExtResource("15_2vhxi")
 collision_disable = [NodePath("../../../../CollisionShape2D")]
 node_emitter = NodePath("..")
+watch_signal = 3
+metadata/_custom_type_script = "uid://xix6u347hwe"
+
+[node name="APChainSetCollisionEnable2" type="Node" parent="APDropZone/DropBuild=changed/APChainAddChild" node_paths=PackedStringArray("collision_enable", "node_emitter")]
+script = ExtResource("15_2vhxi")
+collision_enable = [NodePath("../../../../CollisionShape2D")]
+node_emitter = NodePath("..")
 watch_signal = 0
 metadata/_custom_type_script = "uid://xix6u347hwe"
+
+[node name="SET_can_drop=true" type="Node" parent="APDropZone/DropBuild=changed/APChainAddChild" node_paths=PackedStringArray("node_emitter")]
+script = ExtResource("16_clcyr")
+var_bool = SubResource("Resource_y8fmx")
+node_emitter = NodePath("..")
+watch_signal = 0
+metadata/_custom_type_script = "uid://xv7plkxnebcm"
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 visible = false
@@ -213,9 +228,31 @@ node_emitter = NodePath("..")
 watch_signal = 9
 metadata/_custom_type_script = "uid://dg3tbem26ogr7"
 
-[node name="APChainSetCollisionEnable" type="Node" parent="APChainAddChild2" node_paths=PackedStringArray("collision_disable", "node_emitter")]
+[node name="SetCollision=executed_good" type="Node" parent="APChainAddChild2" node_paths=PackedStringArray("collision_disable", "node_emitter")]
 script = ExtResource("15_2vhxi")
 collision_disable = [NodePath("../../CollisionShape2D")]
 node_emitter = NodePath("..")
-watch_signal = 2
+watch_signal = 3
 metadata/_custom_type_script = "uid://xix6u347hwe"
+
+[node name="SetCollision=added_child_exiting" type="Node" parent="APChainAddChild2" node_paths=PackedStringArray("collision_enable", "node_emitter")]
+script = ExtResource("15_2vhxi")
+collision_enable = [NodePath("../../CollisionShape2D")]
+node_emitter = NodePath("..")
+watch_signal = 0
+metadata/_custom_type_script = "uid://xix6u347hwe"
+
+[node name="SET_can_drop=false" type="Node" parent="APChainAddChild2" node_paths=PackedStringArray("node_emitter")]
+script = ExtResource("16_clcyr")
+var_bool = SubResource("Resource_y8fmx")
+new_value = false
+node_emitter = NodePath("..")
+watch_signal = 3
+metadata/_custom_type_script = "uid://xv7plkxnebcm"
+
+[node name="SET_can_drop=true" type="Node" parent="APChainAddChild2" node_paths=PackedStringArray("node_emitter")]
+script = ExtResource("16_clcyr")
+var_bool = SubResource("Resource_y8fmx")
+node_emitter = NodePath("..")
+watch_signal = 0
+metadata/_custom_type_script = "uid://xv7plkxnebcm"

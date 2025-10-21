@@ -1,9 +1,10 @@
-[gd_scene load_steps=28 format=3 uid="uid://cpprsnw4qtbbj"]
+[gd_scene load_steps=29 format=3 uid="uid://cpprsnw4qtbbj"]
 
 [ext_resource type="Script" uid="uid://uh8e7y0n0t5e" path="res://addons/APChain/classes/chain/APChainNumOp.gd" id="1_dvgan"]
 [ext_resource type="Script" uid="uid://c8qjdf1iq8aup" path="res://chain_ball.gd" id="1_g1m40"]
 [ext_resource type="Script" uid="uid://djmnu1e55mp0j" path="res://addons/VarRes/classes/bool/VaRBool.gd" id="1_ntt2y"]
 [ext_resource type="Script" uid="uid://7mbjsugg8t15" path="res://addons/APController/classes/APContDirTargetRB2D.gd" id="1_vrtbt"]
+[ext_resource type="Resource" uid="uid://dlnydceni78on" path="res://data/gameplay/teams/team_red.tres" id="2_60vfn"]
 [ext_resource type="Texture2D" uid="uid://78e3w1wem3mv" path="res://imgs/circle-outline-32.svg" id="2_mbpoi"]
 [ext_resource type="Script" uid="uid://du8j36g8pf8k8" path="res://addons/APChain/classes/chain/APChainShake.gd" id="2_mmkjt"]
 [ext_resource type="Script" uid="uid://8myr58nwfvfg" path="res://addons/VarRes/classes/numbers/VaRInt.gd" id="3_24a84"]
@@ -289,6 +290,7 @@ linear_damp_mode = 1
 angular_damp_mode = 1
 angular_damp = 100.0
 metadata/is_die = SubResource("Resource_ntt2y")
+metadata/ball_team = ExtResource("2_60vfn")
 
 [node name="chain_ball" type="Node" parent="." node_paths=PackedStringArray("node_emitter")]
 script = ExtResource("1_g1m40")

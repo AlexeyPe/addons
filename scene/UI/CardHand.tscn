@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://b55ulf7hqxpdb" path="res://imgs/icons/input/mdi--arrow-left-thin.svg" id="2_i6qmb"]
 [ext_resource type="Texture2D" uid="uid://x473kv2by7g5" path="res://imgs/UI/frame/banner_hanging.png" id="2_jrwam"]
 [ext_resource type="Script" uid="uid://dn354cgweyjxg" path="res://addons/APCards/classes/APDeckContainer.gd" id="2_jtq55"]
-[ext_resource type="PackedScene" uid="uid://bcap7c1i87f30" path="res://scene/objects/Card.tscn" id="3_hblv7"]
+[ext_resource type="PackedScene" uid="uid://bcap7c1i87f30" path="res://scene/objects/card/Card.tscn" id="3_hblv7"]
 [ext_resource type="Texture2D" uid="uid://bs6wwydvpnun8" path="res://imgs/icons/input/ph--mouse-left-click-fill.svg" id="4_1dhve"]
 [ext_resource type="Shader" uid="uid://bso165sdn2g37" path="res://addons/APCards/shaders/2D-perspective.gdshader" id="4_6px0d"]
 [ext_resource type="Texture2D" uid="uid://dy5sx6te7gscu" path="res://imgs/icons/input/mdi--arrow-right-thin.svg" id="4_8seqe"]
@@ -43,7 +43,7 @@
 [ext_resource type="Script" uid="uid://bqn6e76istclq" path="res://addons/APChain/classes/chain/set/APChainSetVisible.gd" id="29_aw5u7"]
 [ext_resource type="Script" uid="uid://c6lf3egn1f263" path="res://addons/APChain/classes/chain/childs/APChainDelChilds.gd" id="29_k3mva"]
 [ext_resource type="Script" uid="uid://b4dffbr30waq" path="res://addons/APChain/classes/chain/childs/APChainAddChildRand.gd" id="30_kryo7"]
-[ext_resource type="Resource" uid="uid://bcc8rafbxkkes" path="res://addons/VarRes/classes/random/new_resource.tres" id="31_047eh"]
+[ext_resource type="Resource" uid="uid://bcc8rafbxkkes" path="res://addons/VarRes/classes/random/CardsRand.tres" id="31_047eh"]
 [ext_resource type="Resource" uid="uid://fdc37uony7ts" path="res://data/UI/PlayAudioCardPackSelect.tres" id="35_kpoiw"]
 [ext_resource type="AudioStream" uid="uid://dr3yimv6j8o3x" path="res://audio/ButtonError.tres" id="44_fc40o"]
 [ext_resource type="AudioStream" uid="uid://c38v7gxandina" path="res://audio/Rerol.tres" id="45_mh6vc"]
@@ -79,7 +79,6 @@ shader_parameter/inset = 0.0
 resource_local_to_scene = true
 resource_name = "enable_drag"
 script = ExtResource("13_3r0al")
-description = null
 metadata/_custom_type_script = "uid://djmnu1e55mp0j"
 
 [sub_resource type="Resource" id="Resource_6vyr0"]
@@ -87,14 +86,12 @@ resource_local_to_scene = true
 resource_name = "is_pack_card"
 script = ExtResource("13_3r0al")
 value = true
-description = null
 metadata/_custom_type_script = "uid://djmnu1e55mp0j"
 
 [sub_resource type="Resource" id="Resource_mnmi3"]
 resource_local_to_scene = true
 resource_name = "is_active_pack_card"
 script = ExtResource("13_3r0al")
-description = null
 metadata/_custom_type_script = "uid://djmnu1e55mp0j"
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ka15h"]
@@ -110,7 +107,6 @@ shader_parameter/inset = 0.0
 resource_local_to_scene = true
 resource_name = "enable_drag"
 script = ExtResource("13_3r0al")
-description = null
 metadata/_custom_type_script = "uid://djmnu1e55mp0j"
 
 [sub_resource type="Resource" id="Resource_m1dll"]
@@ -118,14 +114,12 @@ resource_local_to_scene = true
 resource_name = "is_pack_card"
 script = ExtResource("13_3r0al")
 value = true
-description = null
 metadata/_custom_type_script = "uid://djmnu1e55mp0j"
 
 [sub_resource type="Resource" id="Resource_3r0al"]
 resource_local_to_scene = true
 resource_name = "is_active_pack_card"
 script = ExtResource("13_3r0al")
-description = null
 metadata/_custom_type_script = "uid://djmnu1e55mp0j"
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_6e6x1"]
@@ -141,7 +135,6 @@ shader_parameter/inset = 0.0
 resource_local_to_scene = true
 resource_name = "enable_drag"
 script = ExtResource("13_3r0al")
-description = null
 metadata/_custom_type_script = "uid://djmnu1e55mp0j"
 
 [sub_resource type="Resource" id="Resource_rvtym"]
@@ -149,14 +142,12 @@ resource_local_to_scene = true
 resource_name = "is_pack_card"
 script = ExtResource("13_3r0al")
 value = true
-description = null
 metadata/_custom_type_script = "uid://djmnu1e55mp0j"
 
 [sub_resource type="Resource" id="Resource_jrwam"]
 resource_local_to_scene = true
 resource_name = "is_active_pack_card"
 script = ExtResource("13_3r0al")
-description = null
 metadata/_custom_type_script = "uid://djmnu1e55mp0j"
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_k50lw"]
@@ -164,19 +155,16 @@ metadata/_custom_type_script = "uid://djmnu1e55mp0j"
 [sub_resource type="Resource" id="Resource_oqeg1"]
 script = ExtResource("23_ab62b")
 value = 0
-description = null
 metadata/_custom_type_script = "uid://8myr58nwfvfg"
 
 [sub_resource type="Resource" id="Resource_t7ygc"]
 script = ExtResource("23_ab62b")
 value = 0
-description = null
 metadata/_custom_type_script = "uid://8myr58nwfvfg"
 
 [sub_resource type="Resource" id="Resource_4cst2"]
 script = ExtResource("23_ab62b")
 value = 0
-description = null
 metadata/_custom_type_script = "uid://8myr58nwfvfg"
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2h030"]
@@ -206,21 +194,18 @@ resource_local_to_scene = true
 resource_name = "enable_drag"
 script = ExtResource("13_3r0al")
 value = true
-description = null
 metadata/_custom_type_script = "uid://djmnu1e55mp0j"
 
 [sub_resource type="Resource" id="Resource_06xac"]
 resource_local_to_scene = true
 resource_name = "is_pack_card"
 script = ExtResource("13_3r0al")
-description = null
 metadata/_custom_type_script = "uid://djmnu1e55mp0j"
 
 [sub_resource type="Resource" id="Resource_tecgj"]
 resource_local_to_scene = true
 resource_name = "is_active_pack_card"
 script = ExtResource("13_3r0al")
-description = null
 metadata/_custom_type_script = "uid://djmnu1e55mp0j"
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_4cst2"]
@@ -237,7 +222,6 @@ resource_local_to_scene = true
 resource_name = "enable_drag"
 script = ExtResource("13_3r0al")
 value = true
-description = null
 metadata/_custom_type_script = "uid://djmnu1e55mp0j"
 
 [sub_resource type="Resource" id="Resource_m50ih"]
@@ -245,14 +229,12 @@ resource_local_to_scene = true
 resource_name = "is_pack_card"
 script = ExtResource("13_3r0al")
 value = true
-description = null
 metadata/_custom_type_script = "uid://djmnu1e55mp0j"
 
 [sub_resource type="Resource" id="Resource_lmunf"]
 resource_local_to_scene = true
 resource_name = "is_active_pack_card"
 script = ExtResource("13_3r0al")
-description = null
 metadata/_custom_type_script = "uid://djmnu1e55mp0j"
 
 [sub_resource type="Animation" id="Animation_a6oyl"]

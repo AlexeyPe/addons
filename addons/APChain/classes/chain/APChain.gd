@@ -50,6 +50,9 @@ var _watch_signal:int
 ## Логика цепочки
 @abstract func _execute(...args:Array) -> void
 
+func get_signal_name() -> String:
+	return signals[_watch_signal]
+
 func _ready() -> void:
 	if not enable: return
 	if node_emitter  and\

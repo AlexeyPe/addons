@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="VaRRandomScene" load_steps=7 format=3 uid="uid://bcc8rafbxkkes"]
+
+[ext_resource type="Script" uid="uid://8myr58nwfvfg" path="res://addons/VarRes/classes/numbers/VaRInt.gd" id="1_paens"]
+[ext_resource type="PackedScene" uid="uid://b76n5oe8qruln" path="res://scene/objects/unit/unit_card.tscn" id="2_jbavx"]
+[ext_resource type="PackedScene" uid="uid://dydhud4jeqphy" path="res://scene/objects/wall/wall_card.tscn" id="3_spo0s"]
+[ext_resource type="Script" uid="uid://c3heqian2igr6" path="res://addons/VarRes/classes/random/VaRRandomScene.gd" id="4_xfb72"]
+
+[sub_resource type="Resource" id="Resource_xkj73"]
+script = ExtResource("1_paens")
+metadata/_custom_type_script = "uid://8myr58nwfvfg"
+
+[sub_resource type="Resource" id="Resource_anh30"]
+script = ExtResource("1_paens")
+metadata/_custom_type_script = "uid://8myr58nwfvfg"
+
+[resource]
+script = ExtResource("4_xfb72")
+elements = Dictionary[PackedScene, ExtResource("1_paens")]({
+ExtResource("2_jbavx"): SubResource("Resource_xkj73"),
+ExtResource("3_spo0s"): SubResource("Resource_anh30")
+})
+metadata/_custom_type_script = "uid://c3heqian2igr6"
