@@ -1,6 +1,8 @@
 extends Control
 class_name APDragDataControl
 
+@export var preview_self:bool = true
+@export var remove_from_parent:bool = true
 @export var drag_data:APDragDataRes
 @export var enable_drag:VaRBool
 
@@ -13,7 +15,7 @@ func _get_drag_data(at_position: Vector2) -> Variant:
 	if drag_data:
 		is_drag = true
 		drag_data.dragged_node = self
-		if drag_data.preview_self:
+		if preview_self:
 			var preview = self.duplicate()
 			var _signal :Signal = preview.tree_exited
 			_signal.connect(func():
@@ -27,7 +29,7 @@ func _get_drag_data(at_position: Vector2) -> Variant:
 				is_drag = false
 				pass)
 			set_drag_preview(preview)
-		if drag_data.remove_from_parent:
+		if remove_from_parent:
 			parent_before_remove = get_parent()
 			index_before_remove = get_index()
 			parent_before_remove.remove_child(self)

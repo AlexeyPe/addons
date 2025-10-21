@@ -1,4 +1,4 @@
-[gd_scene load_steps=90 format=3 uid="uid://csgbo46w4e1c5"]
+[gd_scene load_steps=87 format=3 uid="uid://csgbo46w4e1c5"]
 
 [ext_resource type="PackedScene" uid="uid://dyof3d0s47yns" path="res://scene/UI/CardPack.tscn" id="1_mngf1"]
 [ext_resource type="Texture2D" uid="uid://b7r717imcw7y8" path="res://imgs/icons/input/icon-park-solid--enter-key.svg" id="2_6e6x1"]
@@ -35,7 +35,6 @@
 [ext_resource type="Curve" uid="uid://u4kqmfutxavu" path="res://data/CardPack/DropCardsPerSecond.tres" id="23_24223"]
 [ext_resource type="Script" uid="uid://8myr58nwfvfg" path="res://addons/VarRes/classes/numbers/VaRInt.gd" id="23_ab62b"]
 [ext_resource type="Resource" uid="uid://c0dxxiatt4dlo" path="res://data/CardPack/CardsPerPack.tres" id="23_dtumk"]
-[ext_resource type="Script" uid="uid://bxgs3dw2ym11j" path="res://addons/APChain/classes/chain/drag_and_drop/APDragDataRes.gd" id="26_6vyr0"]
 [ext_resource type="Texture2D" uid="uid://decg5levc7kjv" path="res://imgs/UI/button/button_grey.png" id="26_ab62b"]
 [ext_resource type="Script" uid="uid://dj04ffy0nu74n" path="res://addons/APChain/classes/chain/audio/APChainAudioPlay.gd" id="28_8cou2"]
 [ext_resource type="Script" uid="uid://up8up6hch40i" path="res://addons/APChain/classes/chain/if/APChainIfNum.gd" id="28_37ebo"]
@@ -49,7 +48,6 @@
 [ext_resource type="AudioStream" uid="uid://c38v7gxandina" path="res://audio/Rerol.tres" id="45_mh6vc"]
 [ext_resource type="PackedScene" uid="uid://b76n5oe8qruln" path="res://scene/objects/unit/unit_card.tscn" id="45_t7ygc"]
 [ext_resource type="PackedScene" uid="uid://dydhud4jeqphy" path="res://scene/objects/wall/wall_card.tscn" id="46_4cst2"]
-[ext_resource type="Script" uid="uid://b03dlfkxcckwp" path="res://addons/VarRes/classes/VarRes.gd" id="46_hugvf"]
 [ext_resource type="Script" uid="uid://dhamqitbrimqh" path="res://addons/APChain/classes/chain/if/APChainIfBool.gd" id="47_sxktb"]
 [ext_resource type="AudioStream" uid="uid://dridsfo8apuj7" path="res://audio/SelectCardsPack.tres" id="48_8m7k3"]
 [ext_resource type="AudioStream" uid="uid://bs0dt6d64esl7" path="res://audio/CardPackSelectFalse.tres" id="48_kpoiw"]
@@ -176,7 +174,7 @@ bg_color = Color(0.15727401, 0.15727392, 0.15727395, 0.26274514)
 corner_radius_top_left = 4
 corner_radius_top_right = 4
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_hugvf"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_8m7k3"]
 resource_local_to_scene = true
 shader = ExtResource("4_6px0d")
 shader_parameter/fov = 80.0
@@ -186,10 +184,6 @@ shader_parameter/x_rot = 0.0
 shader_parameter/inset = 0.0
 
 [sub_resource type="Resource" id="Resource_hugvf"]
-script = ExtResource("26_6vyr0")
-metadata/_custom_type_script = "uid://bxgs3dw2ym11j"
-
-[sub_resource type="Resource" id="Resource_dhwwv"]
 resource_local_to_scene = true
 resource_name = "enable_drag"
 script = ExtResource("13_3r0al")
@@ -200,6 +194,7 @@ metadata/_custom_type_script = "uid://djmnu1e55mp0j"
 resource_local_to_scene = true
 resource_name = "is_pack_card"
 script = ExtResource("13_3r0al")
+value = true
 metadata/_custom_type_script = "uid://djmnu1e55mp0j"
 
 [sub_resource type="Resource" id="Resource_tecgj"]
@@ -208,7 +203,7 @@ resource_name = "is_active_pack_card"
 script = ExtResource("13_3r0al")
 metadata/_custom_type_script = "uid://djmnu1e55mp0j"
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_4cst2"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_oqeg1"]
 resource_local_to_scene = true
 shader = ExtResource("4_6px0d")
 shader_parameter/fov = 80.0
@@ -876,6 +871,7 @@ metadata/_custom_type_script = "uid://dfnv5lgi83cdo"
 script = ExtResource("17_ipcpg")
 var_bool = ExtResource("6_5gjnk")
 new_value = false
+wait = null
 node_emitter = NodePath("..")
 watch_signal = 0
 metadata/_custom_type_script = "uid://xv7plkxnebcm"
@@ -985,6 +981,7 @@ metadata/_custom_type_script = "uid://dfnv5lgi83cdo"
 script = ExtResource("17_ipcpg")
 var_bool = ExtResource("6_5gjnk")
 new_value = false
+wait = null
 node_emitter = NodePath("..")
 watch_signal = 0
 metadata/_custom_type_script = "uid://xv7plkxnebcm"
@@ -1137,6 +1134,7 @@ flat = true
 script = ExtResource("17_ipcpg")
 var_bool = ExtResource("35_kpoiw")
 new_value = false
+wait = null
 node_emitter = NodePath("..")
 watch_signal = 0
 metadata/_custom_type_script = "uid://xv7plkxnebcm"
@@ -1152,6 +1150,7 @@ metadata/_custom_type_script = "uid://cldopw0r4n1wj"
 [node name="SET_PlayAudioCardPackSelect=true" type="Node" parent="VBoxContainer/CardPack/PanelContainer/Panel/MarginContainer/VBoxContainer/VBoxContainer/ControlBtns/Rerol/CanRerol/ButtonCanRerol/SET_PlayAudioCardPackSelect=false/SET_PickCardsPerPack" node_paths=PackedStringArray("node_emitter")]
 script = ExtResource("17_ipcpg")
 var_bool = ExtResource("35_kpoiw")
+wait = null
 node_emitter = NodePath("..")
 watch_signal = 1
 metadata/_custom_type_script = "uid://xv7plkxnebcm"
@@ -1388,16 +1387,15 @@ alignment = 1
 separation = -5.0
 metadata/_custom_type_script = "uid://dn354cgweyjxg"
 
-[node name="Card2" parent="VBoxContainer/Panel/Panel/APDeckHand" instance=ExtResource("45_t7ygc")]
-material = SubResource("ShaderMaterial_hugvf")
+[node name="Card" parent="VBoxContainer/Panel/Panel/APDeckHand" instance=ExtResource("46_4cst2")]
+material = SubResource("ShaderMaterial_8m7k3")
 layout_mode = 2
-drag_data = SubResource("Resource_hugvf")
-enable_drag = SubResource("Resource_dhwwv")
+enable_drag = SubResource("Resource_hugvf")
 metadata/is_pack_card = SubResource("Resource_06xac")
 metadata/is_active_pack_card = SubResource("Resource_tecgj")
 
-[node name="Card" parent="VBoxContainer/Panel/Panel/APDeckHand" instance=ExtResource("46_4cst2")]
-material = SubResource("ShaderMaterial_4cst2")
+[node name="Card2" parent="VBoxContainer/Panel/Panel/APDeckHand" instance=ExtResource("45_t7ygc")]
+material = SubResource("ShaderMaterial_oqeg1")
 layout_mode = 2
 enable_drag = SubResource("Resource_o0w05")
 metadata/is_pack_card = SubResource("Resource_m50ih")

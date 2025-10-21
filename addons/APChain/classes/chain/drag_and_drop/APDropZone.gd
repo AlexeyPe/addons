@@ -1,7 +1,14 @@
 extends Control
 class_name APDropZone
 
+## Не учитывая что пытаются сюда бросить, можно или нет?
 @export var can_drop:VaRBool
+## Если can_drop = true, тогда провести эти проверки.[br]
+## Что бы разрешить drop все проверки должны пройти.[br]
+## Для проверки используются metadata ноды которая переносится
+@export var can_drop_check:Array[MetaCondition]
+## Это как can_drop_check, но только в момент броска
+@export var drop_data_check:Array[MetaCondition]
 ## Пример использования:[br]
 ## False - карточка после drop вернётся в колоду,
 ## но её количество потратится.[br]
@@ -33,10 +40,19 @@ func _can_drop_data(at_position: Vector2, data: Variant) -> bool:
 
 func _drop_data(at_position: Vector2, data: Variant) -> void:
 	if data is APDragDataRes:
-		data.success = after_drop_set_success
-		for vares in data.vares:
-			if vares.resource_name.is_empty(): continue
-			var find = set_vares_value.get(vares.resource_name)
-			if find:
-				find.paste(vares)
-		can_drop.value = false
+		var check:bool = true
+		if !drop_data_check.is_empty():
+			for drop_check in drop_data_check:
+				if drop_check.check(data.dragged_node) == false:
+					check = false
+					break
+		if check:
+			data.success = after_drop_set_success
+			for vares in data.vares:
+				if vares.resource_name.is_empty(): continue
+				var find = set_vares_value.get(vares.resource_name)
+				if find:
+					find.paste(vares)
+			can_drop.value = false
+		else:
+			data.success = false

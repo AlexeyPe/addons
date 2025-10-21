@@ -1,9 +1,6 @@
 extends MetaCondition
 class_name MetaConditionNum
 
-signal if_true
-signal if_false
-
 @export var num:VaRNumber
 @export_enum(
 	"meta == num",
@@ -14,14 +11,14 @@ signal if_false
 	"meta <= num",
 ) var condition:int
 
-func check(node:Node):
+func check(node:Node) -> bool:
 	if meta_name.is_empty(): 
 		printerr(
 			"MetaConditionNum, meta_name is empty, %s"%[
 				resource_path
 			]
 		)
-		return
+		return false
 	if !node.has_meta(meta_name):
 		printerr(
 			"MetaConditionNum, node(%s) meta not found, %s"%[
@@ -29,7 +26,7 @@ func check(node:Node):
 				resource_path
 			]
 		)
-		return
+		return false
 	var meta_value
 	if node.get_meta(meta_name) is VaRNumber:
 		meta_value = node.get_meta(meta_name).get_value()
@@ -37,7 +34,8 @@ func check(node:Node):
 		node.get_meta(meta_name) is float:
 		meta_value = node.get_meta(meta_name)
 	else:
-		return
+		if_false.emit()
+		return false
 	var result:bool
 	match condition:
 		0: # meta == num
@@ -45,43 +43,56 @@ func check(node:Node):
 				if_true.emit()
 				if meta_execute:
 					meta_execute.execute()
+				return true
 			else:
 				if_false.emit()
+				return false
 		1: # meta != num
 			if meta_value != num.get_value():
 				if_true.emit()
 				if meta_execute:
 					meta_execute.execute()
+				return true
 			else:
 				if_false.emit()
+				return false
 		2: # meta > num
 			if meta_value > num.get_value():
 				if_true.emit()
 				if meta_execute:
 					meta_execute.execute()
+				return true
 			else:
 				if_false.emit()
+				return false
 		3: # meta >= num
 			if meta_value >= num.get_value():
 				if_true.emit()
 				if meta_execute:
 					meta_execute.execute()
+				return true
 			else:
 				if_false.emit()
+				return false
 		4: # meta < num
 			if meta_value < num.get_value():
 				if_true.emit()
 				if meta_execute:
 					meta_execute.execute()
+				return true
 			else:
 				if_false.emit()
+				return false
 		5: # meta <= num
 			if meta_value <= num.get_value():
 				if_true.emit()
 				if meta_execute:
 					meta_execute.execute()
+				return true
 			else:
 				if_false.emit()
+				return false
+		_: return false
 func paste(vares:VarRes):
 	if vares is MetaConditionNum:
 		num = vares.num

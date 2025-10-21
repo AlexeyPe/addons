@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://b1dthv2qurwnx"]
+[gd_scene load_steps=30 format=3 uid="uid://b1dthv2qurwnx"]
 
 [ext_resource type="Material" uid="uid://svr62spjy8px" path="res://scene/fields/GridMaterial.tres" id="1_fpfk7"]
 [ext_resource type="Texture2D" uid="uid://1rw0438kebug" path="res://scene/fields/frame-spikes-2-fill-16px.png" id="2_fpfk7"]
@@ -7,8 +7,10 @@
 [ext_resource type="Shader" uid="uid://bvvll4jp3kavo" path="res://addons/shadercollectionap/shader/outline/outline-dotted.gdshader" id="4_b6lq4"]
 [ext_resource type="Script" uid="uid://djmnu1e55mp0j" path="res://addons/VarRes/classes/bool/VaRBool.gd" id="4_n5j5t"]
 [ext_resource type="Script" uid="uid://b03dlfkxcckwp" path="res://addons/VarRes/classes/VarRes.gd" id="5_1exl1"]
+[ext_resource type="Script" uid="uid://cwwtvvbcb8q70" path="res://addons/VarRes/classes/meta/condition/MetaCondition.gd" id="5_8f6du"]
 [ext_resource type="Script" uid="uid://cldopw0r4n1wj" path="res://addons/APChain/classes/chain/set/vares/APChainSetNum.gd" id="5_8jpos"]
 [ext_resource type="Script" uid="uid://up8up6hch40i" path="res://addons/APChain/classes/chain/if/APChainIfNum.gd" id="5_y202s"]
+[ext_resource type="Resource" uid="uid://dmwcplu0r2ovs" path="res://scene/objects/drop_not_enough_money.tres" id="6_0dm02"]
 [ext_resource type="Resource" uid="uid://cehqu7jl7rmu3" path="res://data/gameplay/player_team.tres" id="6_jsbx0"]
 [ext_resource type="Resource" uid="uid://cvpnw37xy7hya" path="res://data/gameplay/field_counters/fields_red.tres" id="6_n0r8l"]
 [ext_resource type="Script" uid="uid://8myr58nwfvfg" path="res://addons/VarRes/classes/numbers/VaRInt.gd" id="7_mkipr"]
@@ -113,6 +115,7 @@ offset_bottom = 23.0
 mouse_filter = 1
 script = ExtResource("8_mkipr")
 can_drop = SubResource("Resource_y8fmx")
+drop_data_check = Array[ExtResource("5_8f6du")]([ExtResource("6_0dm02")])
 after_drop_set_success = false
 set_vares_value = Dictionary[String, ExtResource("5_1exl1")]({
 "build": SubResource("Resource_rh7me")

@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="MetaConditionNum" load_steps=3 format=3 uid="uid://dmwcplu0r2ovs"]
+
+[ext_resource type="Resource" uid="uid://4ok8jqiesqsv" path="res://data/gameplay/Money.tres" id="1_nt07x"]
+[ext_resource type="Script" uid="uid://ddotvop5haytd" path="res://addons/VarRes/classes/meta/condition/MetaConditionNum.gd" id="2_rapbq"]
+
+[resource]
+resource_name = "drop_not_enough_money"
+script = ExtResource("2_rapbq")
+num = ExtResource("1_nt07x")
+condition = 5
+meta_name = "price_card"
+metadata/_custom_type_script = "uid://ddotvop5haytd"

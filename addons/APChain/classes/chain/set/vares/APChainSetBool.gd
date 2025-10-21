@@ -6,6 +6,8 @@ class_name APChainSetBool
 @export var new_value:bool = true
 ## Пропуск если var_bool равен new_value 
 @export var skip_if_equal:bool = true
+## Подождать перед установкой нового bool
+@export var wait:float = 0.0
 @export_tool_button("Rename node") var _rename = _rename_self
 
 func _rename_self():
@@ -21,6 +23,8 @@ func _execute(...args:Array) -> void:
 	execution_started.emit()
 	#print("set (bool %s) to %s"%[var_bool, new_value])
 	if var_bool:
+		if wait > 0.0:
+			await get_tree().create_timer(wait).timeout
 		if skip_if_equal:
 			if var_bool.value != new_value:
 				var_bool.value = new_value

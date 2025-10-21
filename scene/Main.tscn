@@ -1,4 +1,4 @@
-[gd_scene load_steps=73 format=4 uid="uid://dhgo7ujbqhqoi"]
+[gd_scene load_steps=74 format=4 uid="uid://dhgo7ujbqhqoi"]
 
 [ext_resource type="Script" uid="uid://mjk4ctyfa82r" path="res://scene/main.gd" id="1_nbc6x"]
 [ext_resource type="Texture2D" uid="uid://8yci6v355lg4" path="res://imgs/icons/tabler--zoom-in.svg" id="2_764rb"]
@@ -43,6 +43,7 @@
 [ext_resource type="Texture2D" uid="uid://dd0ws1t530ycd" path="res://scene/fields/clip_texture/wall.tres" id="24_crx51"]
 [ext_resource type="Texture2D" uid="uid://b4337huijb0tp" path="res://scene/fields/clip_texture/corner_2.tres" id="24_wren1"]
 [ext_resource type="Texture2D" uid="uid://bn3uq1k1c5qjv" path="res://scene/fields/clip_texture/corners_invert.tres" id="25_2h030"]
+[ext_resource type="PackedScene" uid="uid://ck4w0vjnl4qkd" path="res://scene/UI/notifications.tscn" id="25_ftvp4"]
 [ext_resource type="PackedScene" uid="uid://cpprsnw4qtbbj" path="res://scene/balls/ball_red.tscn" id="56_bp33t"]
 [ext_resource type="Script" uid="uid://djmnu1e55mp0j" path="res://addons/VarRes/classes/bool/VaRBool.gd" id="57_a6847"]
 [ext_resource type="PackedScene" uid="uid://8e48k70ehvv5" path="res://scene/balls/ball_purple.tscn" id="58_a6847"]
@@ -316,7 +317,7 @@ expand_mode = 3
 
 [node name="Label2" type="Label" parent="UI/Counters/Counters/Fields/White"]
 layout_mode = 2
-text = "-12"
+text = "12"
 label_settings = ExtResource("15_goqcv")
 script = ExtResource("9_ia2xj")
 var_res = ExtResource("12_1ihg2")
@@ -333,7 +334,7 @@ label_settings = ExtResource("15_goqcv")
 
 [node name="Label2" type="Label" parent="UI/Counters/Counters/Fields/Red"]
 layout_mode = 2
-text = "-15"
+text = "11"
 label_settings = ExtResource("15_goqcv")
 script = ExtResource("9_ia2xj")
 var_res = ExtResource("13_32nmk")
@@ -350,7 +351,7 @@ label_settings = ExtResource("15_goqcv")
 
 [node name="Label2" type="Label" parent="UI/Counters/Counters/Fields/Purple"]
 layout_mode = 2
-text = "-18"
+text = "18"
 label_settings = ExtResource("15_goqcv")
 script = ExtResource("9_ia2xj")
 var_res = ExtResource("14_ftvp4")
@@ -367,7 +368,7 @@ label_settings = ExtResource("15_goqcv")
 
 [node name="Label2" type="Label" parent="UI/Counters/Counters/Fields/Yellow"]
 layout_mode = 2
-text = "-11"
+text = "11"
 label_settings = ExtResource("15_goqcv")
 script = ExtResource("9_ia2xj")
 var_res = ExtResource("15_1qtut")
@@ -480,7 +481,7 @@ label_settings = ExtResource("15_goqcv")
 
 [node name="Label2" type="Label" parent="UI/Counters/Counters/Money"]
 layout_mode = 2
-text = "16"
+text = "5"
 label_settings = ExtResource("15_goqcv")
 script = ExtResource("9_ia2xj")
 var_res = ExtResource("14_u8yls")
@@ -514,6 +515,8 @@ metadata/_custom_type_script = "uid://cccrm8vuks5fs"
 
 [node name="CardHand" parent="UI" instance=ExtResource("15_65lg3")]
 metadata/_edit_lock_ = true
+
+[node name="Notifications" parent="UI" instance=ExtResource("25_ftvp4")]
 
 [node name="ColorRectGrid1" type="ColorRect" parent="."]
 visible = false

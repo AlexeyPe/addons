@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://b76n5oe8qruln"]
+[gd_scene load_steps=14 format=3 uid="uid://b76n5oe8qruln"]
 
 [ext_resource type="PackedScene" uid="uid://bcap7c1i87f30" path="res://scene/objects/card/Card.tscn" id="1_swlyr"]
 [ext_resource type="Shader" uid="uid://bso165sdn2g37" path="res://addons/APCards/shaders/2D-perspective.gdshader" id="2_64qk6"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://bqt3eq0wwpbsh" path="res://scene/objects/unit/unit-white.png" id="4_jmrn4"]
 [ext_resource type="Texture2D" uid="uid://clwuhqp5we3eh" path="res://scene/objects/unit/unit-red.png" id="5_4dug4"]
 [ext_resource type="Texture2D" uid="uid://dwpcfya8anvdv" path="res://scene/objects/unit/unit-yellow.png" id="7_f34vj"]
+[ext_resource type="Resource" uid="uid://dv7dvkk430ws2" path="res://scene/objects/unit/unit_price.tres" id="8_hmn1j"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_d3wn7"]
 resource_local_to_scene = true
@@ -47,6 +48,7 @@ material = SubResource("ShaderMaterial_d3wn7")
 enable_drag = SubResource("Resource_tqnva")
 metadata/is_pack_card = SubResource("Resource_cnwsi")
 metadata/is_active_pack_card = SubResource("Resource_pkofc")
+metadata/price_card = ExtResource("8_hmn1j")
 
 [node name="TextureRect" parent="SubViewport/PanelContainer" index="0"]
 texture = ExtResource("4_4dug4")
@@ -54,6 +56,10 @@ num_is = Array[Texture]([ExtResource("4_jmrn4"), ExtResource("5_4dug4"), ExtReso
 
 [node name="APChainToggleBtns" parent="SubViewport/PanelContainer/ButtonSelectCardPack" index="0"]
 toggle_bool = SubResource("Resource_8m6nh")
+
+[node name="Label3" parent="SubViewport/PanelContainer/TextureRect2" index="0"]
+text = "3"
+var_res = ExtResource("8_hmn1j")
 
 [node name="is_pack_card=now_false" parent="." index="8"]
 resource = SubResource("Resource_cnwsi")

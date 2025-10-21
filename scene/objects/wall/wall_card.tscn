@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://dydhud4jeqphy"]
+[gd_scene load_steps=16 format=3 uid="uid://dydhud4jeqphy"]
 
 [ext_resource type="PackedScene" uid="uid://bcap7c1i87f30" path="res://scene/objects/card/Card.tscn" id="1_tbxw8"]
 [ext_resource type="Shader" uid="uid://bso165sdn2g37" path="res://addons/APCards/shaders/2D-perspective.gdshader" id="2_uohim"]
@@ -7,6 +7,7 @@
 [ext_resource type="Script" uid="uid://b03dlfkxcckwp" path="res://addons/VarRes/classes/VarRes.gd" id="4_syiw1"]
 [ext_resource type="Script" uid="uid://dapuucp3gf6c8" path="res://addons/VarRes/classes/VaRScene.gd" id="5_57cwf"]
 [ext_resource type="PackedScene" uid="uid://dfht4fveoaaib" path="res://scene/objects/wall/wall_build.tscn" id="6_mltky"]
+[ext_resource type="Resource" uid="uid://drwp51oy6ohye" path="res://scene/objects/wall/wall_price.tres" id="8_syiw1"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_d3wn7"]
 resource_local_to_scene = true
@@ -59,9 +60,14 @@ drag_data = SubResource("Resource_pa800")
 enable_drag = SubResource("Resource_3qhui")
 metadata/is_pack_card = SubResource("Resource_cnwsi")
 metadata/is_active_pack_card = SubResource("Resource_pkofc")
+metadata/price_card = ExtResource("8_syiw1")
 
 [node name="APChainToggleBtns" parent="SubViewport/PanelContainer/ButtonSelectCardPack" index="0"]
 toggle_bool = SubResource("Resource_6vxwn")
+
+[node name="Label3" parent="SubViewport/PanelContainer/TextureRect2" index="0"]
+text = "2"
+var_res = ExtResource("8_syiw1")
 
 [node name="is_pack_card=now_false" parent="." index="8"]
 resource = SubResource("Resource_cnwsi")

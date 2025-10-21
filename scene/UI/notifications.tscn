@@ -1,0 +1,101 @@
+[gd_scene load_steps=8 format=3 uid="uid://ck4w0vjnl4qkd"]
+
+[ext_resource type="Texture2D" uid="uid://cglxi3v4nei02" path="res://imgs/UI/button/button_red.png" id="1_namij"]
+[ext_resource type="Texture2D" uid="uid://b07iujhfuayin" path="res://imgs/icons/fluent-emoji-flat--gem-stone.png" id="2_hjgcb"]
+[ext_resource type="Script" uid="uid://u1gglou2n5jq" path="res://addons/APChain/classes/chain_activator/APActivatorResource.gd" id="3_gwmsk"]
+[ext_resource type="Resource" uid="uid://dmwcplu0r2ovs" path="res://scene/objects/drop_not_enough_money.tres" id="4_0g1ky"]
+[ext_resource type="Script" uid="uid://bqn6e76istclq" path="res://addons/APChain/classes/chain/set/APChainSetVisible.gd" id="5_cqnaf"]
+[ext_resource type="Script" uid="uid://dj04ffy0nu74n" path="res://addons/APChain/classes/chain/audio/APChainAudioPlay.gd" id="7_0g1ky"]
+[ext_resource type="AudioStream" uid="uid://dr3yimv6j8o3x" path="res://audio/ButtonError.tres" id="8_eutfn"]
+
+[node name="Notifications" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="need_balance" type="NinePatchRect" parent="VBoxContainer"]
+visible = false
+self_modulate = Color(1.8155894, 0.19548967, 0.64744884, 0.8)
+custom_minimum_size = Vector2(250, 40)
+layout_mode = 2
+size_flags_horizontal = 4
+texture = ExtResource("1_namij")
+patch_margin_left = 7
+patch_margin_top = 6
+patch_margin_right = 6
+patch_margin_bottom = 7
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/need_balance"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -70.5
+offset_top = -11.5
+offset_right = 70.5
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/need_balance/HBoxContainer"]
+layout_mode = 2
+text = "Недостаточно"
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/need_balance/HBoxContainer"]
+custom_minimum_size = Vector2(22, 0)
+layout_mode = 2
+mouse_filter = 2
+texture = ExtResource("2_hjgcb")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="notify_need_balance=now_true" type="Node" parent="VBoxContainer/need_balance"]
+script = ExtResource("3_gwmsk")
+_signal = "if_false"
+resource = ExtResource("4_0g1ky")
+signal = "if_false"
+metadata/_custom_type_script = "uid://u1gglou2n5jq"
+
+[node name="APChainSetVisible" type="Node" parent="VBoxContainer/need_balance/notify_need_balance=now_true" node_paths=PackedStringArray("nodes_visible_true", "node_emitter")]
+script = ExtResource("5_cqnaf")
+nodes_visible_true = [NodePath("../..")]
+wait = null
+node_emitter = NodePath("..")
+watch_signal = 0
+metadata/_custom_type_script = "uid://bqn6e76istclq"
+
+[node name="APChainAudioPlay" type="Node" parent="VBoxContainer/need_balance/notify_need_balance=now_true" node_paths=PackedStringArray("player", "node_emitter")]
+script = ExtResource("7_0g1ky")
+player = NodePath("../../../../Error")
+node_emitter = NodePath("..")
+watch_signal = 0
+metadata/_custom_type_script = "uid://dj04ffy0nu74n"
+
+[node name="APChainSetVisible2" type="Node" parent="VBoxContainer/need_balance/notify_need_balance=now_true" node_paths=PackedStringArray("nodes_visible_false", "node_emitter")]
+script = ExtResource("5_cqnaf")
+nodes_visible_false = [NodePath("../..")]
+wait = 1.0
+node_emitter = NodePath("..")
+watch_signal = 0
+metadata/_custom_type_script = "uid://bqn6e76istclq"
+
+[node name="Error" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_eutfn")
+volume_db = -8.0
+bus = &"Error"
