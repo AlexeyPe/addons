@@ -16,7 +16,7 @@ func _get_drag_data(at_position: Vector2) -> Variant:
 		is_drag = true
 		drag_data.dragged_node = self
 		if preview_self:
-			var preview = self.duplicate()
+			var preview = self.duplicate(true)
 			var _signal :Signal = preview.tree_exited
 			_signal.connect(func():
 				if drag_data.success and is_drag:

@@ -21,11 +21,11 @@ func _execute(...args:Array) -> void:
 			var meta = with_metadata[meta_name]
 			if child.get_meta(meta_name) is VaRBool:
 				if child.get_meta(meta_name).value != meta: 
-					print(
-						"check meta_name(%s) meta-value(%s) child(%s) continue"%[
-							meta_name, child.get_meta(meta_name), child
-						]
-					)
+					#print(
+						#"check meta_name(%s) meta-value(%s) child(%s) continue"%[
+							#meta_name, child.get_meta(meta_name), child
+						#]
+					#)
 					continue
 				print("reparent")
 				child.reparent(new_parent)
