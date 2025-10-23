@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://b1dthv2qurwnx"]
+[gd_scene load_steps=32 format=3 uid="uid://b1dthv2qurwnx"]
 
 [ext_resource type="Material" uid="uid://svr62spjy8px" path="res://scene/fields/GridMaterial.tres" id="1_fpfk7"]
 [ext_resource type="Texture2D" uid="uid://1rw0438kebug" path="res://scene/fields/frame-spikes-2-fill-16px.png" id="2_fpfk7"]
@@ -15,7 +15,7 @@
 [ext_resource type="Resource" uid="uid://cvpnw37xy7hya" path="res://data/gameplay/field_counters/fields_red.tres" id="6_n0r8l"]
 [ext_resource type="Script" uid="uid://8myr58nwfvfg" path="res://addons/VarRes/classes/numbers/VaRInt.gd" id="7_mkipr"]
 [ext_resource type="Script" uid="uid://bein4dn8ts6bb" path="res://addons/APChain/classes/chain/childs/APChainDelChildsArr.gd" id="8_jsbx0"]
-[ext_resource type="Script" uid="uid://o5u2kpte2mrd" path="res://addons/VarRes/classes/meta/condition/MetaConditionHasPaste.gd" id="8_lahdi"]
+[ext_resource type="Script" path="res://addons/VarRes/classes/meta/condition/MetaConditionHasPaste.gd" id="8_lahdi"]
 [ext_resource type="Script" uid="uid://dyjt63xqg1uru" path="res://addons/APChain/classes/chain/drag_and_drop/APDropZone.gd" id="8_mkipr"]
 [ext_resource type="Script" uid="uid://dg3tbem26ogr7" path="res://addons/APChain/classes/chain/childs/APChainAddChild.gd" id="10_n5j5t"]
 [ext_resource type="Script" uid="uid://u1gglou2n5jq" path="res://addons/APChain/classes/chain_activator/APActivatorResource.gd" id="11_y8fmx"]
@@ -36,6 +36,7 @@ value = true
 metadata/_custom_type_script = "uid://djmnu1e55mp0j"
 
 [sub_resource type="Resource" id="Resource_lahdi"]
+resource_local_to_scene = true
 script = ExtResource("8_lahdi")
 paste_vares = ExtResource("13_8f6du")
 meta_name = "build"
@@ -54,6 +55,11 @@ shader_parameter/line_thickness = 0.0499999988824
 script = ExtResource("7_mkipr")
 value = 1
 metadata/_custom_type_script = "uid://8myr58nwfvfg"
+
+[sub_resource type="Resource" id="Resource_btp3e"]
+script = ExtResource("4_n5j5t")
+value = true
+metadata/_custom_type_script = "uid://djmnu1e55mp0j"
 
 [sub_resource type="Resource" id="Resource_b6lq4"]
 script = ExtResource("7_mkipr")
@@ -171,6 +177,10 @@ metadata/_custom_type_script = "uid://u1gglou2n5jq"
 script = ExtResource("10_n5j5t")
 target_parent = NodePath("../../..")
 scene = ExtResource("13_8f6du")
+set_metadata = Dictionary[String, ExtResource("5_1exl1")]({
+"build_team": ExtResource("18_bwhvg"),
+"is_now_spawning": SubResource("Resource_btp3e")
+})
 node_emitter = NodePath("..")
 watch_signal = 0
 metadata/_custom_type_script = "uid://dg3tbem26ogr7"

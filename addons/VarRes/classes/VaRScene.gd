@@ -15,11 +15,11 @@ func paste(data:Variant):
 		value = data.value
 	elif data is PackedScene:
 		value = data
-		print("%s paste %s, is_empty:%s"%[
-			resource_name,
-			data,
-			is_empty()
-		])
+		#print("%s paste %s, is_empty:%s"%[
+			#resource_name,
+			#data,
+			#is_empty()
+		#])
 
 func _to_string() -> String:
 	if value:

@@ -11,7 +11,7 @@ metadata/_custom_type_script = "uid://8myr58nwfvfg"
 resource_name = "player_team"
 script = ExtResource("1_l6i7g")
 min_value_res = SubResource("Resource_l6i7g")
-value = 2
+value = 0
 description = "0 - Белые
 1 - Красные
 2 - Фиолетовые

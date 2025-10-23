@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://r0oloojfa3hw"]
+[gd_scene load_steps=14 format=3 uid="uid://r0oloojfa3hw"]
 
 [ext_resource type="PackedScene" uid="uid://b1dthv2qurwnx" path="res://scene/fields/scene/field_red.tscn" id="1_3ukmj"]
 [ext_resource type="Resource" uid="uid://yjwdocjo8sh2" path="res://data/gameplay/field_counters/fields_purple.tres" id="2_bypwl"]
@@ -6,8 +6,8 @@
 [ext_resource type="Script" uid="uid://8myr58nwfvfg" path="res://addons/VarRes/classes/numbers/VaRInt.gd" id="2_v4syp"]
 [ext_resource type="Script" uid="uid://b03dlfkxcckwp" path="res://addons/VarRes/classes/VarRes.gd" id="3_k00rn"]
 [ext_resource type="Script" uid="uid://cwwtvvbcb8q70" path="res://addons/VarRes/classes/meta/condition/MetaCondition.gd" id="3_t4ihh"]
-[ext_resource type="Script" uid="uid://dapuucp3gf6c8" path="res://addons/VarRes/classes/VaRScene.gd" id="4_813iu"]
-[ext_resource type="Script" uid="uid://o5u2kpte2mrd" path="res://addons/VarRes/classes/meta/condition/MetaConditionHasPaste.gd" id="5_u4prx"]
+[ext_resource type="Resource" uid="uid://c5uqor1qvqiov" path="res://scene/objects/build.tres" id="4_t4ihh"]
+[ext_resource type="Script" path="res://addons/VarRes/classes/meta/condition/MetaConditionHasPaste.gd" id="5_u4prx"]
 [ext_resource type="Resource" uid="uid://bxldnhlmney6i" path="res://data/gameplay/teams/team_purple.tres" id="7_813iu"]
 
 [sub_resource type="Resource" id="Resource_ldojk"]
@@ -17,15 +17,10 @@ script = ExtResource("2_ldojk")
 value = true
 metadata/_custom_type_script = "uid://djmnu1e55mp0j"
 
-[sub_resource type="Resource" id="Resource_wuhhy"]
+[sub_resource type="Resource" id="Resource_lahdi"]
 resource_local_to_scene = true
-resource_name = "build2"
-script = ExtResource("4_813iu")
-metadata/_custom_type_script = "uid://dapuucp3gf6c8"
-
-[sub_resource type="Resource" id="Resource_b43kx"]
 script = ExtResource("5_u4prx")
-paste_vares = SubResource("Resource_wuhhy")
+paste_vares = ExtResource("4_t4ihh")
 meta_name = "build"
 metadata/_custom_type_script = "uid://o5u2kpte2mrd"
 
@@ -55,16 +50,10 @@ self_modulate = Color(0.7411765, 0.42745098, 0.9490196, 1)
 
 [node name="APDropZone" parent="." index="2"]
 can_drop = SubResource("Resource_ldojk")
-drop_meta_conditions = Array[ExtResource("3_t4ihh")]([SubResource("Resource_b43kx")])
+drop_meta_conditions = Array[ExtResource("3_t4ihh")]([SubResource("Resource_lahdi")])
 
 [node name="APChainIfNum" parent="APDropZone" index="1"]
 num_b = SubResource("Resource_dlhfj")
-
-[node name="build=changed" parent="APDropZone" index="3"]
-resource = SubResource("Resource_wuhhy")
-
-[node name="APChainAddChild" parent="APDropZone/build=changed" index="0"]
-scene = SubResource("Resource_wuhhy")
 
 [node name="SET_can_drop=true" parent="APDropZone/build=changed/APChainAddChild" index="2"]
 var_bool = SubResource("Resource_t4ihh")

@@ -67,5 +67,3 @@ func _ready() -> void:
 	_change_enable()
 	if call_init:
 		resource._init()
-	if not Engine.is_editor_hint():
-		assert(resource != null, "resource is null, %s"%[self.get_path()])
