@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://n4dics7e7f7l"
-path="res://.godot/imported/game-icons--ring.svg-80119d6f64f1f4f739606953500d8d75.ctex"
+uid="uid://c8tb361n7a6t1"
+path="res://.godot/imported/ball-white.png-1328edd8140afa1d60dd8bdc9ba4001c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://scene/balls/imgs/game-icons--ring.svg"
-dest_files=["res://.godot/imported/game-icons--ring.svg-80119d6f64f1f4f739606953500d8d75.ctex"]
+source_file="res://scene/ball/ball-white.png"
+dest_files=["res://.godot/imported/ball-white.png-1328edd8140afa1d60dd8bdc9ba4001c.ctex"]
 
 [params]
 
@@ -38,6 +38,3 @@ process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
 detect_3d/compress_to=1
-svg/scale=1.0
-editor/scale_with_editor_scale=false
-editor/convert_colors_with_editor_theme=false

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dwpcfya8anvdv"
-path="res://.godot/imported/unit-yellow.png-b2fb34fdefa28b841673426e1a594988.ctex"
+uid="uid://cqtx321wtmej7"
+path="res://.godot/imported/ball-white-die.png-ac4a564a419c3506c6ba4f7b5e1632fb.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://scene/objects/unit/unit-yellow.png"
-dest_files=["res://.godot/imported/unit-yellow.png-b2fb34fdefa28b841673426e1a594988.ctex"]
+source_file="res://scene/ball/ball-white-die.png"
+dest_files=["res://.godot/imported/ball-white-die.png-ac4a564a419c3506c6ba4f7b5e1632fb.ctex"]
 
 [params]
 
@@ -23,7 +23,7 @@ compress/rdo_quality_loss=0.0
 compress/hdr_compression=1
 compress/normal_map=0
 compress/channel_pack=0
-mipmaps/generate=true
+mipmaps/generate=false
 mipmaps/limit=-1
 roughness/mode=0
 roughness/src_normal=""

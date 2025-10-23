@@ -1,4 +1,4 @@
-[gd_scene load_steps=74 format=4 uid="uid://dhgo7ujbqhqoi"]
+[gd_scene load_steps=73 format=4 uid="uid://dhgo7ujbqhqoi"]
 
 [ext_resource type="Script" uid="uid://mjk4ctyfa82r" path="res://scene/main.gd" id="1_nbc6x"]
 [ext_resource type="Texture2D" uid="uid://8yci6v355lg4" path="res://imgs/icons/tabler--zoom-in.svg" id="2_764rb"]
@@ -13,7 +13,7 @@
 [ext_resource type="Shader" uid="uid://bnx70r4bgsw0y" path="res://addons/shadercollectionap/shader/grid/grid.gdshader" id="8_1ihg2"]
 [ext_resource type="Resource" uid="uid://bewvxbnhpn1k2" path="res://data/gameplay/units/units.tres" id="8_6xsba"]
 [ext_resource type="Script" uid="uid://beulpxkd70k21" path="res://addons/APController/classes/AP_WASD_2D.gd" id="8_pnqar"]
-[ext_resource type="Resource" uid="uid://cehqu7jl7rmu3" path="res://data/gameplay/player_team.tres" id="9_32nmk"]
+[ext_resource type="Resource" uid="uid://cehqu7jl7rmu3" path="res://data/gameplay/teams/team_player.tres" id="9_32nmk"]
 [ext_resource type="Resource" uid="uid://dtkw5uacj3oc5" path="res://data/gameplay/units/unit_deaths.tres" id="9_d5i4e"]
 [ext_resource type="Script" uid="uid://cccrm8vuks5fs" path="res://addons/VarRes/classes/UI/VaResLabel.gd" id="9_ia2xj"]
 [ext_resource type="Resource" uid="uid://ccq6dphbjbpf6" path="res://data/gameplay/units/units_white.tres" id="9_v1evy"]
@@ -44,11 +44,9 @@
 [ext_resource type="Texture2D" uid="uid://b4337huijb0tp" path="res://scene/fields/clip_texture/corner_2.tres" id="24_wren1"]
 [ext_resource type="Texture2D" uid="uid://bn3uq1k1c5qjv" path="res://scene/fields/clip_texture/corners_invert.tres" id="25_2h030"]
 [ext_resource type="PackedScene" uid="uid://ck4w0vjnl4qkd" path="res://scene/UI/notifications.tscn" id="25_ftvp4"]
-[ext_resource type="PackedScene" uid="uid://cpprsnw4qtbbj" path="res://scene/balls/ball_red.tscn" id="56_bp33t"]
+[ext_resource type="PackedScene" uid="uid://bpn7vchp3v0o6" path="res://scene/ball/object/ball.tscn" id="35_1ihg2"]
+[ext_resource type="Script" uid="uid://8myr58nwfvfg" path="res://addons/VarRes/classes/numbers/VaRInt.gd" id="36_32nmk"]
 [ext_resource type="Script" uid="uid://djmnu1e55mp0j" path="res://addons/VarRes/classes/bool/VaRBool.gd" id="57_a6847"]
-[ext_resource type="PackedScene" uid="uid://8e48k70ehvv5" path="res://scene/balls/ball_purple.tscn" id="58_a6847"]
-[ext_resource type="PackedScene" uid="uid://bxunj00q8ifrt" path="res://scene/balls/ball_white.tscn" id="60_qaqtq"]
-[ext_resource type="PackedScene" uid="uid://cj53tnqi6uwe0" path="res://scene/balls/ball_yellow.tscn" id="61_r1tel"]
 
 [sub_resource type="Resource" id="Resource_tuai4"]
 script = ExtResource("5_aex65")
@@ -101,9 +99,90 @@ sources/1 = SubResource("TileSetAtlasSource_dk2pn")
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_goqcv"]
 blend_mode = 2
 
+[sub_resource type="Resource" id="Resource_l6i7g"]
+script = ExtResource("36_32nmk")
+value = 0
+metadata/_custom_type_script = "uid://8myr58nwfvfg"
+
+[sub_resource type="Resource" id="Resource_ftvp4"]
+resource_local_to_scene = true
+resource_name = "team_object"
+script = ExtResource("36_32nmk")
+min_value_res = SubResource("Resource_l6i7g")
+value = 0
+description = "Команда объекта - здания/юнита.
+0 - Белые
+1 - Красные
+2 - Фиолетовые
+3 - Жёлтые"
+metadata/_custom_type_script = "uid://8myr58nwfvfg"
+
+[sub_resource type="Resource" id="Resource_1qtut"]
+resource_local_to_scene = true
+resource_name = "is_die_red"
+script = ExtResource("57_a6847")
+metadata/_custom_type_script = "uid://djmnu1e55mp0j"
+
 [sub_resource type="Resource" id="Resource_ph3ti"]
 script = ExtResource("19_d5i4e")
 metadata/_custom_type_script = "uid://co8mhqm73w3ve"
+
+[sub_resource type="Resource" id="Resource_43j8o"]
+resource_local_to_scene = true
+resource_name = "team_object"
+script = ExtResource("36_32nmk")
+min_value_res = SubResource("Resource_l6i7g")
+value = 1
+description = "Команда объекта - здания/юнита.
+0 - Белые
+1 - Красные
+2 - Фиолетовые
+3 - Жёлтые"
+metadata/_custom_type_script = "uid://8myr58nwfvfg"
+
+[sub_resource type="Resource" id="Resource_ya7da"]
+resource_local_to_scene = true
+resource_name = "is_die"
+script = ExtResource("57_a6847")
+metadata/_custom_type_script = "uid://djmnu1e55mp0j"
+
+[sub_resource type="Resource" id="Resource_6xsba"]
+resource_local_to_scene = true
+resource_name = "team_object"
+script = ExtResource("36_32nmk")
+min_value_res = SubResource("Resource_l6i7g")
+value = 3
+description = "Команда объекта - здания/юнита.
+0 - Белые
+1 - Красные
+2 - Фиолетовые
+3 - Жёлтые"
+metadata/_custom_type_script = "uid://8myr58nwfvfg"
+
+[sub_resource type="Resource" id="Resource_ia2xj"]
+resource_local_to_scene = true
+resource_name = "is_die"
+script = ExtResource("57_a6847")
+metadata/_custom_type_script = "uid://djmnu1e55mp0j"
+
+[sub_resource type="Resource" id="Resource_fh3cp"]
+resource_local_to_scene = true
+resource_name = "team_object"
+script = ExtResource("36_32nmk")
+min_value_res = SubResource("Resource_l6i7g")
+value = 2
+description = "Команда объекта - здания/юнита.
+0 - Белые
+1 - Красные
+2 - Фиолетовые
+3 - Жёлтые"
+metadata/_custom_type_script = "uid://8myr58nwfvfg"
+
+[sub_resource type="Resource" id="Resource_dk2pn"]
+resource_local_to_scene = true
+resource_name = "is_die"
+script = ExtResource("57_a6847")
+metadata/_custom_type_script = "uid://djmnu1e55mp0j"
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_x4yfu"]
 size = Vector2(2300, 100)
@@ -131,50 +210,6 @@ metadata/_custom_type_script = "uid://msh8p6ojhxex"
 script = ExtResource("5_aex65")
 value = -0.1
 metadata/_custom_type_script = "uid://msh8p6ojhxex"
-
-[sub_resource type="Resource" id="Resource_bp33t"]
-resource_local_to_scene = true
-resource_name = "is_die"
-script = ExtResource("57_a6847")
-metadata/_custom_type_script = "uid://djmnu1e55mp0j"
-
-[sub_resource type="Resource" id="Resource_a6847"]
-resource_local_to_scene = true
-resource_name = "is_die"
-script = ExtResource("57_a6847")
-storage_value = true
-metadata/_custom_type_script = "uid://djmnu1e55mp0j"
-
-[sub_resource type="Resource" id="Resource_d5i4e"]
-resource_local_to_scene = true
-script = ExtResource("57_a6847")
-metadata/_custom_type_script = "uid://djmnu1e55mp0j"
-
-[sub_resource type="Resource" id="Resource_2hth1"]
-resource_local_to_scene = true
-script = ExtResource("57_a6847")
-metadata/_custom_type_script = "uid://djmnu1e55mp0j"
-
-[sub_resource type="Resource" id="Resource_ms5ap"]
-resource_local_to_scene = true
-script = ExtResource("57_a6847")
-metadata/_custom_type_script = "uid://djmnu1e55mp0j"
-
-[sub_resource type="Resource" id="Resource_v1evy"]
-resource_local_to_scene = true
-script = ExtResource("57_a6847")
-metadata/_custom_type_script = "uid://djmnu1e55mp0j"
-
-[sub_resource type="Resource" id="Resource_u8yls"]
-resource_local_to_scene = true
-script = ExtResource("57_a6847")
-metadata/_custom_type_script = "uid://djmnu1e55mp0j"
-
-[sub_resource type="Resource" id="Resource_rwiys"]
-resource_local_to_scene = true
-resource_name = "is_die_purple"
-script = ExtResource("57_a6847")
-metadata/_custom_type_script = "uid://djmnu1e55mp0j"
 
 [node name="Main" type="Node"]
 script = ExtResource("1_nbc6x")
@@ -1411,6 +1446,13 @@ position = Vector2(360, 167.99998)
 rotation = 1.5707964
 texture = ExtResource("23_lk2p4")
 
+[node name="ball" parent="Tilemaps" instance=ExtResource("35_1ihg2")]
+position = Vector2(-54, 191)
+collision_layer = 4321
+num = SubResource("Resource_ftvp4")
+metadata/is_die = SubResource("Resource_1qtut")
+metadata/team_object = SubResource("Resource_ftvp4")
+
 [node name="Polygon2D" type="Polygon2D" parent="Tilemaps"]
 visible = false
 clip_children = 1
@@ -1420,6 +1462,27 @@ polygon = PackedVector2Array(-162, 212, -148, 216, -89, 215, -72, 231, -73, 297,
 script = ExtResource("18_a6847")
 cell_info_res = SubResource("Resource_ph3ti")
 metadata/_custom_type_script = "uid://cicas0bkgf1up"
+
+[node name="ball2" parent="Tilemaps" instance=ExtResource("35_1ihg2")]
+position = Vector2(335, 131)
+collision_layer = 4209
+num = SubResource("Resource_43j8o")
+metadata/is_die = SubResource("Resource_ya7da")
+metadata/team_object = SubResource("Resource_43j8o")
+
+[node name="ball3" parent="Tilemaps" instance=ExtResource("35_1ihg2")]
+position = Vector2(-50, -53)
+collision_layer = 4257
+num = SubResource("Resource_6xsba")
+metadata/is_die = SubResource("Resource_ia2xj")
+metadata/team_object = SubResource("Resource_6xsba")
+
+[node name="ball4" parent="Tilemaps" instance=ExtResource("35_1ihg2")]
+position = Vector2(313, -27)
+collision_layer = 4305
+num = SubResource("Resource_fh3cp")
+metadata/is_die = SubResource("Resource_dk2pn")
+metadata/team_object = SubResource("Resource_fh3cp")
 
 [node name="World" type="Node2D" parent="."]
 
@@ -1543,43 +1606,3 @@ script = ExtResource("3_hr7lf")
 var_res = ExtResource("5_mnmej")
 prefix_is_var_res = true
 metadata/_custom_type_script = "uid://bsqxqxasuhg01"
-
-[node name="ball_red" parent="." instance=ExtResource("56_bp33t")]
-position = Vector2(425, 49)
-linear_velocity = Vector2(-5, 0)
-metadata/is_die = SubResource("Resource_bp33t")
-
-[node name="ball_red2" parent="." instance=ExtResource("56_bp33t")]
-position = Vector2(335, -96)
-linear_velocity = Vector2(0, 0)
-metadata/is_die = SubResource("Resource_a6847")
-
-[node name="ball_purple" parent="." instance=ExtResource("58_a6847")]
-position = Vector2(147, -97)
-input_pickable = false
-linear_velocity = Vector2(200, 0)
-metadata/is_die = SubResource("Resource_d5i4e")
-
-[node name="ball_white" parent="." instance=ExtResource("60_qaqtq")]
-position = Vector2(-3, 196)
-linear_velocity = Vector2(200, 44)
-metadata/is_die = SubResource("Resource_2hth1")
-
-[node name="ball_white2" parent="." instance=ExtResource("60_qaqtq")]
-position = Vector2(-97, 142)
-linear_velocity = Vector2(200, -40)
-metadata/is_die = SubResource("Resource_ms5ap")
-
-[node name="ball_yellow" parent="." instance=ExtResource("61_r1tel")]
-position = Vector2(-49, -4)
-metadata/is_die = SubResource("Resource_v1evy")
-
-[node name="ball_yellow2" parent="." instance=ExtResource("61_r1tel")]
-position = Vector2(-142, -45)
-linear_velocity = Vector2(200, -100)
-metadata/is_die = SubResource("Resource_u8yls")
-
-[node name="ball_purple2" parent="." instance=ExtResource("58_a6847")]
-position = Vector2(289, 1)
-linear_velocity = Vector2(200, 0)
-metadata/is_die = SubResource("Resource_rwiys")

@@ -14,10 +14,10 @@
 [ext_resource type="Script" uid="uid://bqn6e76istclq" path="res://addons/APChain/classes/chain/set/APChainSetVisible.gd" id="11_yv52f"]
 [ext_resource type="Script" uid="uid://u1gglou2n5jq" path="res://addons/APChain/classes/chain_activator/APActivatorResource.gd" id="12_a1sw8"]
 [ext_resource type="Script" uid="uid://duly1h7lf3u3o" path="res://addons/APChain/classes/chain/set/APChainSetPhysics2D.gd" id="13_we3cd"]
-[ext_resource type="Texture2D" uid="uid://cx7fttq7ienoo" path="res://scene/balls/imgs/mingcute--ghost-fill.svg" id="14_h6r1o"]
+[ext_resource type="Texture2D" uid="uid://cx7fttq7ienoo" path="res://scene/ball/mingcute--ghost-fill.svg" id="14_h6r1o"]
 [ext_resource type="Script" uid="uid://dfnv5lgi83cdo" path="res://addons/APChain/classes/chain/APChainAnimPlay.gd" id="14_xhvql"]
 [ext_resource type="Resource" uid="uid://dtkw5uacj3oc5" path="res://data/gameplay/units/unit_deaths.tres" id="15_4xn3i"]
-[ext_resource type="Texture2D" uid="uid://n4dics7e7f7l" path="res://scene/balls/imgs/game-icons--ring.svg" id="15_bdpl3"]
+[ext_resource type="Texture2D" uid="uid://n4dics7e7f7l" path="res://scene/ball/game-icons--ring.svg" id="15_bdpl3"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_6xsba"]
 friction = 0.0

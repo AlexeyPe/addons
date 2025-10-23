@@ -2,16 +2,17 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cqw0217wehyo4"
-path="res://.godot/imported/unit-purple.png-e8e3b3bd5b5ab8c555eb96efbaf6076e.ctex"
+uid="uid://n4dics7e7f7l"
+path="res://.godot/imported/game-icons--ring.svg-247b7790d72eda9e90e0cb37ef4e5997.ctex"
 metadata={
+"has_editor_variant": true,
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://scene/objects/unit/unit-purple.png"
-dest_files=["res://.godot/imported/unit-purple.png-e8e3b3bd5b5ab8c555eb96efbaf6076e.ctex"]
+source_file="res://scene/ball/game-icons--ring.svg"
+dest_files=["res://.godot/imported/game-icons--ring.svg-247b7790d72eda9e90e0cb37ef4e5997.ctex"]
 
 [params]
 
@@ -38,3 +39,6 @@ process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
 detect_3d/compress_to=1
+svg/scale=3.0
+editor/scale_with_editor_scale=true
+editor/convert_colors_with_editor_theme=true

@@ -3,6 +3,8 @@
 [ext_resource type="Script" uid="uid://8myr58nwfvfg" path="res://addons/VarRes/classes/numbers/VaRInt.gd" id="1_nls85"]
 
 [resource]
+resource_name = "team_yellow"
 script = ExtResource("1_nls85")
 value = 3
+description = "константа"
 metadata/_custom_type_script = "uid://8myr58nwfvfg"

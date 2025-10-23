@@ -8,7 +8,7 @@
 [ext_resource type="Resource" uid="uid://bijkgjnnj3lja" path="res://scene/objects/card/is_pack_card.tres" id="6_f05fl"]
 [ext_resource type="Texture2D" uid="uid://h14mo3pcwr6i" path="res://scene/objects/wall/round_grey_detailed.png" id="7_cjyau"]
 [ext_resource type="Script" uid="uid://5t32i7d2eb57" path="res://addons/VarRes/classes/UI/TextureRectVarNum.gd" id="8_tsnvq"]
-[ext_resource type="Resource" uid="uid://cehqu7jl7rmu3" path="res://data/gameplay/player_team.tres" id="9_t214e"]
+[ext_resource type="Resource" uid="uid://cehqu7jl7rmu3" path="res://data/gameplay/teams/team_player.tres" id="9_t214e"]
 [ext_resource type="Shader" uid="uid://bvvll4jp3kavo" path="res://addons/shadercollectionap/shader/outline/outline-dotted.gdshader" id="10_7u7fq"]
 [ext_resource type="Theme" uid="uid://cjnu6wdil2hgp" path="res://scene/UI/Theme.tres" id="11_r5wti"]
 [ext_resource type="Script" uid="uid://otq5ty4iete3" path="res://addons/APChain/classes/chain/APChainToggleBtns.gd" id="12_1h1c2"]
