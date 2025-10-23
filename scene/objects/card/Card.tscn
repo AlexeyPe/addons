@@ -1,9 +1,7 @@
-[gd_scene load_steps=41 format=3 uid="uid://bcap7c1i87f30"]
+[gd_scene load_steps=38 format=3 uid="uid://bcap7c1i87f30"]
 
 [ext_resource type="Shader" uid="uid://bso165sdn2g37" path="res://addons/APCards/shaders/2D-perspective.gdshader" id="1_ahth5"]
 [ext_resource type="Script" uid="uid://qgft63fv0g22" path="res://addons/APChain/classes/chain/drag_and_drop/APDragDataControl.gd" id="2_xveq6"]
-[ext_resource type="Script" uid="uid://bxgs3dw2ym11j" path="res://addons/APChain/classes/chain/drag_and_drop/APDragDataRes.gd" id="3_dnr2u"]
-[ext_resource type="Script" uid="uid://b03dlfkxcckwp" path="res://addons/VarRes/classes/VarRes.gd" id="4_3p47q"]
 [ext_resource type="Script" uid="uid://djmnu1e55mp0j" path="res://addons/VarRes/classes/bool/VaRBool.gd" id="5_f05fl"]
 [ext_resource type="Resource" uid="uid://bo2xmw1b8dyuf" path="res://scene/objects/card/is_active_pack_card.tres" id="6_3p47q"]
 [ext_resource type="Texture2D" uid="uid://bsbd0ia3fvow" path="res://scene/objects/card/panel_grey_dark.png" id="6_ahth5"]
@@ -39,10 +37,6 @@ shader_parameter/cull_back = true
 shader_parameter/y_rot = 0.0
 shader_parameter/x_rot = 0.0
 shader_parameter/inset = 0.0
-
-[sub_resource type="Resource" id="Resource_udmh3"]
-script = ExtResource("3_dnr2u")
-metadata/_custom_type_script = "uid://bxgs3dw2ym11j"
 
 [sub_resource type="Resource" id="Resource_eh51v"]
 resource_local_to_scene = true
@@ -135,11 +129,12 @@ focus_mode = 2
 focus_behavior_recursive = 2
 mouse_target = true
 script = ExtResource("2_xveq6")
-drag_data = SubResource("Resource_udmh3")
 enable_drag = SubResource("Resource_eh51v")
 metadata/is_pack_card = ExtResource("6_f05fl")
 metadata/is_active_pack_card = ExtResource("6_3p47q")
 metadata/price_card = ExtResource("20_3p47q")
+metadata/build = null
+metadata/unit = null
 
 [node name="SubViewport" type="SubViewport" parent="."]
 transparent_bg = true

@@ -10,9 +10,19 @@ class_name VaRScene
 func is_empty() -> bool:
 	return value == null
 
-func paste(vares:VarRes):
-	if vares is VaRScene:
-		value = vares.value
+func paste(data:Variant):
+	if data is VaRScene:
+		value = data.value
+	elif data is PackedScene:
+		value = data
+		print("%s paste %s, is_empty:%s"%[
+			resource_name,
+			data,
+			is_empty()
+		])
 
 func _to_string() -> String:
-	return "VaRScene:%s"%[value.get_state().get_node_name(0)]
+	if value:
+		return "VaRScene_%s:%s"%[resource_name, value.get_state().get_node_name(0)]
+	else:
+		return "VaRScene_%s:null"%[resource_name]

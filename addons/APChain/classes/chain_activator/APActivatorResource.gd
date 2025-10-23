@@ -45,12 +45,20 @@ func _get(property: StringName) -> Variant:
 		_: return null
 
 func _change_enable():
-	if not resource: return
+	if !resource: 
+		printerr(
+			"APActivatorResource(%s) resource is null"%[
+				self.get_path()
+			]
+		)
+		return
 	if enable:
+		#print("APActivatorResource(%s) is enable"%[self.get_path()])
 		if resource.has_signal(_signal) and\
 			not resource.is_connected(_signal, emit_activated):
 			resource.connect(_signal, emit_activated)
 	else:
+		#print("APActivatorResource(%s) is disable"%[self.get_path()])
 		if resource.has_signal(_signal) and\
 			resource.is_connected(_signal, emit_activated):
 			resource.disconnect(_signal, emit_activated)
@@ -60,4 +68,4 @@ func _ready() -> void:
 	if call_init:
 		resource._init()
 	if not Engine.is_editor_hint():
-		assert(resource != null, "resource is null, %s"%[self])
+		assert(resource != null, "resource is null, %s"%[self.get_path()])

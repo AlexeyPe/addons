@@ -1,10 +1,7 @@
-[gd_scene load_steps=13 format=3 uid="uid://dydhud4jeqphy"]
+[gd_scene load_steps=10 format=3 uid="uid://dydhud4jeqphy"]
 
 [ext_resource type="PackedScene" uid="uid://bcap7c1i87f30" path="res://scene/objects/card/Card.tscn" id="1_tbxw8"]
 [ext_resource type="Shader" uid="uid://bso165sdn2g37" path="res://addons/APCards/shaders/2D-perspective.gdshader" id="2_uohim"]
-[ext_resource type="Script" uid="uid://bxgs3dw2ym11j" path="res://addons/APChain/classes/chain/drag_and_drop/APDragDataRes.gd" id="3_6vxwn"]
-[ext_resource type="Script" uid="uid://b03dlfkxcckwp" path="res://addons/VarRes/classes/VarRes.gd" id="4_syiw1"]
-[ext_resource type="Script" uid="uid://dapuucp3gf6c8" path="res://addons/VarRes/classes/VaRScene.gd" id="5_57cwf"]
 [ext_resource type="PackedScene" uid="uid://dfht4fveoaaib" path="res://scene/objects/wall/wall_build.tscn" id="6_mltky"]
 [ext_resource type="Script" uid="uid://djmnu1e55mp0j" path="res://addons/VarRes/classes/bool/VaRBool.gd" id="7_syiw1"]
 [ext_resource type="Resource" uid="uid://drwp51oy6ohye" path="res://scene/objects/wall/wall_price.tres" id="8_syiw1"]
@@ -18,32 +15,42 @@ shader_parameter/y_rot = 0.0
 shader_parameter/x_rot = 0.0
 shader_parameter/inset = 0.0
 
-[sub_resource type="Resource" id="Resource_i5byt"]
-resource_name = "build"
-script = ExtResource("5_57cwf")
-value = ExtResource("6_mltky")
-metadata/_custom_type_script = "uid://dapuucp3gf6c8"
-
-[sub_resource type="Resource" id="Resource_pa800"]
-script = ExtResource("3_6vxwn")
-vares = Array[ExtResource("4_syiw1")]([SubResource("Resource_i5byt")])
-metadata/_custom_type_script = "uid://bxgs3dw2ym11j"
-
 [sub_resource type="Resource" id="Resource_57cwf"]
 resource_local_to_scene = true
 resource_name = "enable_drag"
 script = ExtResource("7_syiw1")
 metadata/_custom_type_script = "uid://djmnu1e55mp0j"
 
+[sub_resource type="Resource" id="Resource_syiw1"]
+resource_local_to_scene = true
+resource_name = "is_pack_card"
+script = ExtResource("7_syiw1")
+value = true
+metadata/_custom_type_script = "uid://djmnu1e55mp0j"
+
+[sub_resource type="Resource" id="Resource_mltky"]
+resource_local_to_scene = true
+resource_name = "is_active_pack_card"
+script = ExtResource("7_syiw1")
+metadata/_custom_type_script = "uid://djmnu1e55mp0j"
+
 [node name="Card" instance=ExtResource("1_tbxw8")]
 material = SubResource("ShaderMaterial_d3wn7")
-drag_data = SubResource("Resource_pa800")
 enable_drag = SubResource("Resource_57cwf")
+metadata/is_pack_card = SubResource("Resource_syiw1")
+metadata/is_active_pack_card = SubResource("Resource_mltky")
 metadata/price_card = ExtResource("8_syiw1")
+metadata/build = ExtResource("6_mltky")
+
+[node name="APChainToggleBtns" parent="SubViewport/PanelContainer/ButtonSelectCardPack" index="0"]
+toggle_bool = SubResource("Resource_mltky")
 
 [node name="Label3" parent="SubViewport/PanelContainer/TextureRect2" index="0"]
 text = "2"
 var_res = ExtResource("8_syiw1")
+
+[node name="is_pack_card=now_false" parent="." index="8"]
+resource = SubResource("Resource_syiw1")
 
 [node name="SET_enable_drag=true" parent="is_pack_card=now_false" index="1"]
 var_bool = SubResource("Resource_57cwf")

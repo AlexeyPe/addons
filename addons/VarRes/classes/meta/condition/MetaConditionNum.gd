@@ -93,8 +93,8 @@ func check(node:Node) -> bool:
 				if_false.emit()
 				return false
 		_: return false
-func paste(vares:VarRes):
-	if vares is MetaConditionNum:
-		num = vares.num
-		condition = vares.condition
+func paste(data:Variant):
+	if data is MetaConditionNum:
+		num = data.num
+		condition = data.condition
 	else: printerr("MetaConditionNum func paste() need code")

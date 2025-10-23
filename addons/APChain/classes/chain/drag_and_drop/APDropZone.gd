@@ -14,9 +14,8 @@ class_name APDropZone
 ## но её количество потратится.[br]
 ## False - можно использовать для отладки.
 @export var after_drop_set_success:bool = true
-## Попытается перезаписать value из APDragDataRes.[br]
-## APDragDataRes resource_name => [VarRes]
-@export var set_vares_value:Dictionary[String, VarRes]
+## MetaCondition использует metadata которые берутся из drop node
+@export var drop_meta_conditions:Array[MetaCondition]
 @export_group("When can drop")
 ## Сделать visible true когда _can_drop_data true
 @export var visible_true:Array[Node]
@@ -39,20 +38,16 @@ func _can_drop_data(at_position: Vector2, data: Variant) -> bool:
 	return can_drop.get_value()
 
 func _drop_data(at_position: Vector2, data: Variant) -> void:
-	if data is APDragDataRes:
+	if data is APDragDataControl:
 		var check:bool = true
 		if !drop_data_check.is_empty():
 			for drop_check in drop_data_check:
-				if drop_check.check(data.dragged_node) == false:
+				if drop_check.check(data) == false:
 					check = false
 					break
 		if check:
-			data.success = after_drop_set_success
-			for vares in data.vares:
-				if vares.resource_name.is_empty(): continue
-				var find = set_vares_value.get(vares.resource_name)
-				if find:
-					find.paste(vares)
+			data.set_meta("_drop_success", true)
+			for meta_cond in drop_meta_conditions:
+				meta_cond.check(data)
 			can_drop.value = false
-		else:
-			data.success = false
+		return

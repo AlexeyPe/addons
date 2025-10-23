@@ -334,7 +334,7 @@ label_settings = ExtResource("15_goqcv")
 
 [node name="Label2" type="Label" parent="UI/Counters/Counters/Fields/Red"]
 layout_mode = 2
-text = "9"
+text = "14"
 label_settings = ExtResource("15_goqcv")
 script = ExtResource("9_ia2xj")
 var_res = ExtResource("13_32nmk")
@@ -481,7 +481,7 @@ label_settings = ExtResource("15_goqcv")
 
 [node name="Label2" type="Label" parent="UI/Counters/Counters/Money"]
 layout_mode = 2
-text = "5"
+text = "55"
 label_settings = ExtResource("15_goqcv")
 script = ExtResource("9_ia2xj")
 var_res = ExtResource("14_u8yls")
