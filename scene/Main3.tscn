@@ -1,9 +1,11 @@
-[gd_scene load_steps=49 format=4 uid="uid://cpjve54sahjml"]
+[gd_scene load_steps=51 format=4 uid="uid://cpjve54sahjml"]
 
 [ext_resource type="Script" uid="uid://mjk4ctyfa82r" path="res://scene/main.gd" id="1_h5oyc"]
 [ext_resource type="Resource" uid="uid://cwbslfwrc5pwx" path="res://data/CameraZoom.tres" id="4_ndi7f"]
 [ext_resource type="Script" uid="uid://uh8e7y0n0t5e" path="res://addons/APChain/classes/chain/APChainNumOp.gd" id="6_oep7y"]
 [ext_resource type="Script" uid="uid://msh8p6ojhxex" path="res://addons/VarRes/classes/numbers/VaRFloat.gd" id="7_8m5be"]
+[ext_resource type="Script" uid="uid://b711j7wpabhvl" path="res://addons/VarRes/classes/utility/TileMapLayerVaRes.gd" id="7_mng47"]
+[ext_resource type="PackedScene" uid="uid://7bappgufejs0" path="res://scene/field/object/field.tscn" id="8_fmk5b"]
 [ext_resource type="Shader" uid="uid://bnx70r4bgsw0y" path="res://addons/shadercollectionap/shader/grid/grid.gdshader" id="26_ne6fy"]
 [ext_resource type="Material" uid="uid://svr62spjy8px" path="res://scene/fields/GridMaterial.tres" id="27_d1wsa"]
 [ext_resource type="TileSet" uid="uid://dtotbe61qvlwk" path="res://scene/fields/VisualFields2.tres" id="28_hpvv2"]
@@ -212,11 +214,18 @@ tile_set = SubResource("TileSet_ia2xj")
 clip_children = 1
 
 [node name="Fields" type="TileMapLayer" parent="Tilemaps/Clip"]
+texture_filter = 1
 position = Vector2(24, 24)
-tile_map_data = PackedByteArray("AAAGAAEAAQAAAAAAAQAGAAIAAQAAAAAAAQAGAAMAAQAAAAAAAQAFAAMAAQAAAAAAAQAFAAIAAQAAAAAAAQAFAAEAAQAAAAAAAQAHAAIAAQAAAAAAAQAHAAEAAQAAAAAAAQD//wMAAQAAAAAAAgD+/wMAAQAAAAAAAgD9/wMAAQAAAAAAAgD9/wIAAQAAAAAAAgD+/wIAAQAAAAAAAgD//wIAAQAAAAAAAgD//wQAAQAAAAAAAgD+/wQAAQAAAAAAAgD+////AQAAAAAABAD9////AQAAAAAABAD+//7/AQAAAAAABAD9//7/AQAAAAAABAD9//3/AQAAAAAABAD+//3/AQAAAAAABAD///7/AQAAAAAABAD/////AQAAAAAABAD///3/AQAAAAAABAAFAP7/AQAAAAAABQAFAP//AQAAAAAABQAGAP//AQAAAAAABQAGAP7/AQAAAAAABQAGAP3/AQAAAAAABQAFAP3/AQAAAAAABQAEAP7/AQAAAAAABQAEAP//AQAAAAAABQAEAP3/AQAAAAAABQA=")
+tile_map_data = PackedByteArray("AAD+/wQAAgABAAAAAAD//wQAAgABAAAAAAD//wMAAgABAAAAAAD//wIAAgABAAAAAAD+/wIAAgABAAAAAAD9/wMAAgABAAAAAAD+/wMAAgABAAAAAAD9/wIAAgABAAAAAAAFAAEAAgACAAAAAAAFAAIAAgACAAAAAAAFAAMAAgACAAAAAAAGAAMAAgACAAAAAAAGAAIAAgACAAAAAAAGAAEAAgACAAAAAAAHAAEAAgACAAAAAAAHAAIAAgACAAAAAAD+//3/AgAEAAAAAAD+//7/AgAEAAAAAAD9//7/AgAEAAAAAAD9////AgAEAAAAAAD+////AgAEAAAAAAD9//3/AgAEAAAAAAD///3/AgAEAAAAAAD///7/AgAEAAAAAAD/////AgAEAAAAAAAFAP7/AgADAAAAAAAEAP7/AgADAAAAAAAEAP//AgADAAAAAAAFAP//AgADAAAAAAAGAP7/AgADAAAAAAAGAP3/AgADAAAAAAAFAP3/AgAAAAAAAAAEAP3/AgADAAAAAAAGAP//AgADAAAAAAD//wUAAgAAAAAAAAD+/wUAAgAAAAAAAAAAAAQAAgAAAAAAAAAAAAMAAgAAAAAAAAAAAAIAAgAAAAAAAAABAAIAAgAAAAAAAAABAAMAAgAAAAAAAAABAAQAAgAAAAAAAAACAAQAAgAAAAAAAAACAAMAAgAAAAAAAAACAAIAAgAAAAAAAAADAAMAAgAAAAAAAAADAAQAAgAAAAAAAAADAAUAAgAAAAAAAAAEAAUAAgAAAAAAAAAFAAUAAgAAAAAAAAAFAAQAAgAAAAAAAAAEAAQAAgAAAAAAAAAEAAMAAgAAAAAAAAAEAAIAAgAAAAAAAAAGAAQAAgAAAAAAAAAHAAQAAgAAAAAAAAAIAAQAAgAAAAAAAAAJAAQAAgAAAAAAAAAIAAUAAgAAAAAAAAAJAAUAAgAAAAAAAAAKAAUAAgAAAAAAAAAKAAQAAgAAAAAAAAAIAAMAAgAAAAAAAAAIAAEAAgAAAAAAAAAIAAAAAgAAAAAAAAAHAAAAAgAAAAAAAAAGAAAAAgAAAAAAAAAIAP//AgAAAAAAAAAIAP7/AgAAAAAAAAAHAP//AgAAAAAAAAAHAP7/AgAAAAAAAAAJAP//AgAAAAAAAAAJAAAAAgAAAAAAAAAJAP7/AgAAAAAAAAAKAP7/AgAAAAAAAAAKAP//AgAAAAAAAAAKAP3/AgAAAAAAAAALAP3/AgAAAAAAAAAMAP3/AgAAAAAAAAALAP7/AgAAAAAAAAAMAP7/AgAAAAAAAAANAP7/AgAAAAAAAAANAP3/AgAAAAAAAAANAPz/AgAAAAAAAAAMAPz/AgAAAAAAAAADAP7/AgAAAAAAAAADAP3/AgADAAAAAAADAPz/AgAAAAAAAAAEAPz/AgAAAAAAAAACAPz/AgAAAAAAAAABAPz/AgAAAAAAAAABAPv/AgAAAAAAAAACAPv/AgAAAAAAAAACAP3/AgADAAAAAAABAP3/AgAEAAAAAQAAAP3/AgAEAAAAAAAAAP7/AgAAAAAAAAABAP7/AgAAAAAAAAAAAP//AgAAAAAAAAD//wAAAgAAAAAAAAD//wEAAgAAAAAAAAD+/wEAAgAAAAAAAAD+/wAAAgAAAAAAAAD9/wAAAgAAAAAAAAD9/wEAAgAAAAAAAAD8/wEAAgAAAAAAAAD8/wAAAgAAAAAAAAD8////AgAAAAAAAAD8//7/AgAAAAAAAAD8/wIAAgAAAAAAAAD8/wMAAgAAAAAAAAA=")
 tile_set = ExtResource("30_iynh3")
+script = ExtResource("7_mng47")
+scene = ExtResource("8_fmk5b")
+tile_offset = Vector2(24, 24)
+metadata/_custom_type_script = "uid://b711j7wpabhvl"
 
-[node name="corner-ru-1" type="Sprite2D" parent="Tilemaps/Clip"]
+[node name="Node2D" type="Node2D" parent="Tilemaps/Clip"]
+
+[node name="corner-ru-1" type="Sprite2D" parent="Tilemaps/Clip/Node2D"]
 modulate = Color(0, 0, 0, 1)
 self_modulate = Color(0, 0, 0, 1)
 texture_filter = 1
@@ -225,7 +234,7 @@ position = Vector2(-71.999985, 216.00002)
 rotation = -3.1415925
 texture = ExtResource("31_87kko")
 
-[node name="corner-ru-4" type="Sprite2D" parent="Tilemaps/Clip"]
+[node name="corner-ru-4" type="Sprite2D" parent="Tilemaps/Clip/Node2D"]
 modulate = Color(0, 0, 0, 1)
 self_modulate = Color(0, 0, 0, 1)
 texture_filter = 1
@@ -234,7 +243,7 @@ position = Vector2(168.00003, -72.00001)
 rotation = -3.1415925
 texture = ExtResource("31_87kko")
 
-[node name="corner-ru-5" type="Sprite2D" parent="Tilemaps/Clip"]
+[node name="corner-ru-5" type="Sprite2D" parent="Tilemaps/Clip/Node2D"]
 modulate = Color(0, 0, 0, 1)
 self_modulate = Color(0, 0, 0, 1)
 texture_filter = 1
@@ -243,7 +252,7 @@ position = Vector2(216.00005, -24.00001)
 rotation = -3.1415925
 texture = ExtResource("31_87kko")
 
-[node name="corner-ru-6" type="Sprite2D" parent="Tilemaps/Clip"]
+[node name="corner-ru-6" type="Sprite2D" parent="Tilemaps/Clip/Node2D"]
 modulate = Color(0, 0, 0, 1)
 self_modulate = Color(0, 0, 0, 1)
 texture_filter = 1
@@ -252,7 +261,7 @@ position = Vector2(312.00006, 23.999992)
 rotation = -3.1415925
 texture = ExtResource("31_87kko")
 
-[node name="wall-r-1" type="Sprite2D" parent="Tilemaps/Clip"]
+[node name="wall-r-1" type="Sprite2D" parent="Tilemaps/Clip/Node2D"]
 modulate = Color(0, 0, 0, 1)
 self_modulate = Color(0, 0, 0, 1)
 texture_filter = 1
@@ -261,7 +270,7 @@ position = Vector2(-71.999985, 264)
 rotation = -1.5707964
 texture = ExtResource("32_he6an")
 
-[node name="wall-r-2" type="Sprite2D" parent="Tilemaps/Clip"]
+[node name="wall-r-2" type="Sprite2D" parent="Tilemaps/Clip/Node2D"]
 modulate = Color(0, 0, 0, 1)
 self_modulate = Color(0, 0, 0, 1)
 texture_filter = 1
@@ -270,7 +279,7 @@ position = Vector2(-168, 167.99998)
 rotation = -1.5707964
 texture = ExtResource("32_he6an")
 
-[node name="wall-r-3" type="Sprite2D" parent="Tilemaps/Clip"]
+[node name="wall-r-3" type="Sprite2D" parent="Tilemaps/Clip/Node2D"]
 modulate = Color(0, 0, 0, 1)
 self_modulate = Color(0, 0, 0, 1)
 texture_filter = 1
@@ -279,7 +288,7 @@ position = Vector2(-168.00002, 120)
 rotation = -1.5707964
 texture = ExtResource("32_he6an")
 
-[node name="wall-r-4" type="Sprite2D" parent="Tilemaps/Clip"]
+[node name="wall-r-4" type="Sprite2D" parent="Tilemaps/Clip/Node2D"]
 modulate = Color(0, 0, 0, 1)
 self_modulate = Color(0, 0, 0, 1)
 texture_filter = 1
@@ -288,7 +297,7 @@ position = Vector2(-168, 71.99999)
 rotation = -1.5707964
 texture = ExtResource("32_he6an")
 
-[node name="wall-r-5" type="Sprite2D" parent="Tilemaps/Clip"]
+[node name="wall-r-5" type="Sprite2D" parent="Tilemaps/Clip/Node2D"]
 modulate = Color(0, 0, 0, 1)
 self_modulate = Color(0, 0, 0, 1)
 texture_filter = 1
@@ -297,7 +306,7 @@ position = Vector2(-168, 23.999992)
 rotation = -1.5707964
 texture = ExtResource("32_he6an")
 
-[node name="wall-r-6" type="Sprite2D" parent="Tilemaps/Clip"]
+[node name="wall-r-6" type="Sprite2D" parent="Tilemaps/Clip/Node2D"]
 modulate = Color(0, 0, 0, 1)
 self_modulate = Color(0, 0, 0, 1)
 texture_filter = 1
@@ -306,7 +315,7 @@ position = Vector2(-168, -24.000008)
 rotation = -1.5707964
 texture = ExtResource("32_he6an")
 
-[node name="wall-r-7" type="Sprite2D" parent="Tilemaps/Clip"]
+[node name="wall-r-7" type="Sprite2D" parent="Tilemaps/Clip/Node2D"]
 modulate = Color(0, 0, 0, 1)
 self_modulate = Color(0, 0, 0, 1)
 texture_filter = 1
@@ -315,7 +324,7 @@ position = Vector2(72, -168)
 rotation = -1.5707964
 texture = ExtResource("32_he6an")
 
-[node name="wall-l-1" type="Sprite2D" parent="Tilemaps/Clip"]
+[node name="wall-l-1" type="Sprite2D" parent="Tilemaps/Clip/Node2D"]
 modulate = Color(0, 0, 0, 1)
 self_modulate = Color(0, 0, 0, 1)
 texture_filter = 1
@@ -324,7 +333,7 @@ position = Vector2(696, -72)
 rotation = 1.5707964
 texture = ExtResource("32_he6an")
 
-[node name="wall-l-3" type="Sprite2D" parent="Tilemaps/Clip"]
+[node name="wall-l-3" type="Sprite2D" parent="Tilemaps/Clip/Node2D"]
 modulate = Color(0, 0, 0, 1)
 self_modulate = Color(0, 0, 0, 1)
 texture_filter = 1
@@ -333,7 +342,7 @@ position = Vector2(552, 264)
 rotation = 1.5707964
 texture = ExtResource("32_he6an")
 
-[node name="wall-l-4" type="Sprite2D" parent="Tilemaps/Clip"]
+[node name="wall-l-4" type="Sprite2D" parent="Tilemaps/Clip/Node2D"]
 modulate = Color(0, 0, 0, 1)
 self_modulate = Color(0, 0, 0, 1)
 texture_filter = 1
@@ -342,7 +351,7 @@ position = Vector2(23.999992, 71.999985)
 rotation = 1.5707964
 texture = ExtResource("32_he6an")
 
-[node name="wall-l-2" type="Sprite2D" parent="Tilemaps/Clip"]
+[node name="wall-l-2" type="Sprite2D" parent="Tilemaps/Clip/Node2D"]
 modulate = Color(0, 0, 0, 1)
 self_modulate = Color(0, 0, 0, 1)
 texture_filter = 1
@@ -351,7 +360,7 @@ position = Vector2(696, -120)
 rotation = 1.5707964
 texture = ExtResource("32_he6an")
 
-[node name="wall-u-1" type="Sprite2D" parent="Tilemaps/Clip"]
+[node name="wall-u-1" type="Sprite2D" parent="Tilemaps/Clip/Node2D"]
 modulate = Color(0, 0, 0, 1)
 self_modulate = Color(0, 0, 0, 1)
 texture_filter = 1
@@ -359,7 +368,7 @@ material = SubResource("CanvasItemMaterial_goqcv")
 position = Vector2(24, -120)
 texture = ExtResource("32_he6an")
 
-[node name="wall-u-2" type="Sprite2D" parent="Tilemaps/Clip"]
+[node name="wall-u-2" type="Sprite2D" parent="Tilemaps/Clip/Node2D"]
 modulate = Color(0, 0, 0, 1)
 self_modulate = Color(0, 0, 0, 1)
 texture_filter = 1
@@ -367,7 +376,7 @@ material = SubResource("CanvasItemMaterial_goqcv")
 position = Vector2(-24, -120)
 texture = ExtResource("32_he6an")
 
-[node name="wall-u-8" type="Sprite2D" parent="Tilemaps/Clip"]
+[node name="wall-u-8" type="Sprite2D" parent="Tilemaps/Clip/Node2D"]
 modulate = Color(0, 0, 0, 1)
 self_modulate = Color(0, 0, 0, 1)
 texture_filter = 1
@@ -375,7 +384,7 @@ material = SubResource("CanvasItemMaterial_goqcv")
 position = Vector2(72, 120)
 texture = ExtResource("32_he6an")
 
-[node name="wall-u-9" type="Sprite2D" parent="Tilemaps/Clip"]
+[node name="wall-u-9" type="Sprite2D" parent="Tilemaps/Clip/Node2D"]
 modulate = Color(0, 0, 0, 1)
 self_modulate = Color(0, 0, 0, 1)
 texture_filter = 1
@@ -383,7 +392,7 @@ material = SubResource("CanvasItemMaterial_goqcv")
 position = Vector2(120, 120)
 texture = ExtResource("32_he6an")
 
-[node name="wall-u-4" type="Sprite2D" parent="Tilemaps/Clip"]
+[node name="wall-u-4" type="Sprite2D" parent="Tilemaps/Clip/Node2D"]
 modulate = Color(0, 0, 0, 1)
 self_modulate = Color(0, 0, 0, 1)
 texture_filter = 1
@@ -391,7 +400,7 @@ material = SubResource("CanvasItemMaterial_goqcv")
 position = Vector2(120, -216)
 texture = ExtResource("32_he6an")
 
-[node name="wall-u-6" type="Sprite2D" parent="Tilemaps/Clip"]
+[node name="wall-u-6" type="Sprite2D" parent="Tilemaps/Clip/Node2D"]
 modulate = Color(0, 0, 0, 1)
 self_modulate = Color(0, 0, 0, 1)
 texture_filter = 1
@@ -399,7 +408,7 @@ material = SubResource("CanvasItemMaterial_goqcv")
 position = Vector2(216, -168)
 texture = ExtResource("32_he6an")
 
-[node name="wall-u-7" type="Sprite2D" parent="Tilemaps/Clip"]
+[node name="wall-u-7" type="Sprite2D" parent="Tilemaps/Clip/Node2D"]
 modulate = Color(0, 0, 0, 1)
 self_modulate = Color(0, 0, 0, 1)
 texture_filter = 1
@@ -407,7 +416,7 @@ material = SubResource("CanvasItemMaterial_goqcv")
 position = Vector2(312, -120)
 texture = ExtResource("32_he6an")
 
-[node name="wall-u-10" type="Sprite2D" parent="Tilemaps/Clip"]
+[node name="wall-u-10" type="Sprite2D" parent="Tilemaps/Clip/Node2D"]
 modulate = Color(0, 0, 0, 1)
 self_modulate = Color(0, 0, 0, 1)
 texture_filter = 1
@@ -415,7 +424,7 @@ material = SubResource("CanvasItemMaterial_goqcv")
 position = Vector2(408, -72)
 texture = ExtResource("32_he6an")
 
-[node name="wall-u-11" type="Sprite2D" parent="Tilemaps/Clip"]
+[node name="wall-u-11" type="Sprite2D" parent="Tilemaps/Clip/Node2D"]
 modulate = Color(0, 0, 0, 1)
 self_modulate = Color(0, 0, 0, 1)
 texture_filter = 1
@@ -423,7 +432,7 @@ material = SubResource("CanvasItemMaterial_goqcv")
 position = Vector2(456, -72)
 texture = ExtResource("32_he6an")
 
-[node name="wall-u-12" type="Sprite2D" parent="Tilemaps/Clip"]
+[node name="wall-u-12" type="Sprite2D" parent="Tilemaps/Clip/Node2D"]
 modulate = Color(0, 0, 0, 1)
 self_modulate = Color(0, 0, 0, 1)
 texture_filter = 1
@@ -431,7 +440,7 @@ material = SubResource("CanvasItemMaterial_goqcv")
 position = Vector2(552, -120)
 texture = ExtResource("32_he6an")
 
-[node name="wall-u-13" type="Sprite2D" parent="Tilemaps/Clip"]
+[node name="wall-u-13" type="Sprite2D" parent="Tilemaps/Clip/Node2D"]
 modulate = Color(0, 0, 0, 1)
 self_modulate = Color(0, 0, 0, 1)
 texture_filter = 1
@@ -439,7 +448,7 @@ material = SubResource("CanvasItemMaterial_goqcv")
 position = Vector2(648, -168)
 texture = ExtResource("32_he6an")
 
-[node name="wall-u-5" type="Sprite2D" parent="Tilemaps/Clip"]
+[node name="wall-u-5" type="Sprite2D" parent="Tilemaps/Clip/Node2D"]
 modulate = Color(0, 0, 0, 1)
 self_modulate = Color(0, 0, 0, 1)
 texture_filter = 1
@@ -447,7 +456,7 @@ material = SubResource("CanvasItemMaterial_goqcv")
 position = Vector2(504, 216)
 texture = ExtResource("32_he6an")
 
-[node name="wall-u-3" type="Sprite2D" parent="Tilemaps/Clip"]
+[node name="wall-u-3" type="Sprite2D" parent="Tilemaps/Clip/Node2D"]
 modulate = Color(0, 0, 0, 1)
 self_modulate = Color(0, 0, 0, 1)
 texture_filter = 1
@@ -455,7 +464,7 @@ material = SubResource("CanvasItemMaterial_goqcv")
 position = Vector2(-72, -120)
 texture = ExtResource("32_he6an")
 
-[node name="corner2-lu-1" type="Sprite2D" parent="Tilemaps/Clip"]
+[node name="corner2-lu-1" type="Sprite2D" parent="Tilemaps/Clip/Node2D"]
 modulate = Color(0, 0, 0, 1)
 self_modulate = Color(0, 0, 0, 1)
 texture_filter = 1
@@ -463,7 +472,7 @@ material = SubResource("CanvasItemMaterial_goqcv")
 position = Vector2(-120, -120)
 texture = ExtResource("33_53ylk")
 
-[node name="corner2-lu-4" type="Sprite2D" parent="Tilemaps/Clip"]
+[node name="corner2-lu-4" type="Sprite2D" parent="Tilemaps/Clip/Node2D"]
 modulate = Color(0, 0, 0, 1)
 self_modulate = Color(0, 0, 0, 1)
 texture_filter = 1
@@ -471,7 +480,7 @@ material = SubResource("CanvasItemMaterial_goqcv")
 position = Vector2(504, -120)
 texture = ExtResource("33_53ylk")
 
-[node name="corner2-lu-6" type="Sprite2D" parent="Tilemaps/Clip"]
+[node name="corner2-lu-6" type="Sprite2D" parent="Tilemaps/Clip/Node2D"]
 modulate = Color(0, 0, 0, 1)
 self_modulate = Color(0, 0, 0, 1)
 texture_filter = 1
@@ -479,14 +488,14 @@ material = SubResource("CanvasItemMaterial_goqcv")
 position = Vector2(216, 120)
 texture = ExtResource("33_53ylk")
 
-[node name="corner2-lu-7" type="Sprite2D" parent="Tilemaps/Clip"]
+[node name="corner2-lu-7" type="Sprite2D" parent="Tilemaps/Clip/Node2D"]
 modulate = Color(0.39181867, 0.39181864, 0.39181864, 1)
 texture_filter = 1
 material = SubResource("CanvasItemMaterial_goqcv")
 position = Vector2(264, 72)
 texture = ExtResource("33_53ylk")
 
-[node name="corner2-lu-5" type="Sprite2D" parent="Tilemaps/Clip"]
+[node name="corner2-lu-5" type="Sprite2D" parent="Tilemaps/Clip/Node2D"]
 modulate = Color(0, 0, 0, 1)
 self_modulate = Color(0, 0, 0, 1)
 texture_filter = 1
@@ -494,7 +503,7 @@ material = SubResource("CanvasItemMaterial_goqcv")
 position = Vector2(600, -168)
 texture = ExtResource("33_53ylk")
 
-[node name="corner2-lu-2" type="Sprite2D" parent="Tilemaps/Clip"]
+[node name="corner2-lu-2" type="Sprite2D" parent="Tilemaps/Clip/Node2D"]
 modulate = Color(0, 0, 0, 1)
 self_modulate = Color(0, 0, 0, 1)
 texture_filter = 1
@@ -502,7 +511,7 @@ material = SubResource("CanvasItemMaterial_goqcv")
 position = Vector2(-168, -72)
 texture = ExtResource("33_53ylk")
 
-[node name="corner2-lu-3" type="Sprite2D" parent="Tilemaps/Clip"]
+[node name="corner2-lu-3" type="Sprite2D" parent="Tilemaps/Clip/Node2D"]
 modulate = Color(0, 0, 0, 1)
 self_modulate = Color(0, 0, 0, 1)
 texture_filter = 1
@@ -510,7 +519,7 @@ material = SubResource("CanvasItemMaterial_goqcv")
 position = Vector2(72, -216)
 texture = ExtResource("33_53ylk")
 
-[node name="corner2-ld-1" type="Sprite2D" parent="Tilemaps/Clip"]
+[node name="corner2-ld-1" type="Sprite2D" parent="Tilemaps/Clip/Node2D"]
 modulate = Color(0, 0, 0, 1)
 self_modulate = Color(0, 0, 0, 1)
 texture_filter = 1
@@ -519,7 +528,7 @@ position = Vector2(-168, 216)
 rotation = -1.5707964
 texture = ExtResource("33_53ylk")
 
-[node name="corner2-ld-2" type="Sprite2D" parent="Tilemaps/Clip"]
+[node name="corner2-ld-2" type="Sprite2D" parent="Tilemaps/Clip/Node2D"]
 modulate = Color(0, 0, 0, 1)
 self_modulate = Color(0, 0, 0, 1)
 texture_filter = 1
@@ -528,7 +537,7 @@ position = Vector2(-72, 312)
 rotation = -1.5707964
 texture = ExtResource("33_53ylk")
 
-[node name="corner2-ld-3" type="Sprite2D" parent="Tilemaps/Clip"]
+[node name="corner2-ld-3" type="Sprite2D" parent="Tilemaps/Clip/Node2D"]
 modulate = Color(0, 0, 0, 1)
 self_modulate = Color(0, 0, 0, 1)
 texture_filter = 1
@@ -537,7 +546,7 @@ position = Vector2(168, 312)
 rotation = -1.5707964
 texture = ExtResource("33_53ylk")
 
-[node name="corner2-ld-5" type="Sprite2D" parent="Tilemaps/Clip"]
+[node name="corner2-ld-5" type="Sprite2D" parent="Tilemaps/Clip/Node2D"]
 modulate = Color(0, 0, 0, 1)
 self_modulate = Color(0, 0, 0, 1)
 texture_filter = 1
@@ -546,7 +555,7 @@ position = Vector2(167.99998, -23.999977)
 rotation = -1.5707964
 texture = ExtResource("33_53ylk")
 
-[node name="corner2-ld-6" type="Sprite2D" parent="Tilemaps/Clip"]
+[node name="corner2-ld-6" type="Sprite2D" parent="Tilemaps/Clip/Node2D"]
 modulate = Color(0, 0, 0, 1)
 self_modulate = Color(0, 0, 0, 1)
 texture_filter = 1
@@ -555,7 +564,7 @@ position = Vector2(215.99998, 24.000023)
 rotation = -1.5707964
 texture = ExtResource("33_53ylk")
 
-[node name="corner2-ld-4" type="Sprite2D" parent="Tilemaps/Clip"]
+[node name="corner2-ld-4" type="Sprite2D" parent="Tilemaps/Clip/Node2D"]
 modulate = Color(0, 0, 0, 1)
 self_modulate = Color(0, 0, 0, 1)
 texture_filter = 1
@@ -564,403 +573,396 @@ position = Vector2(407.99997, 312)
 rotation = -1.5707964
 texture = ExtResource("33_53ylk")
 
-[node name="corner2-rd-1" type="Sprite2D" parent="Tilemaps/Clip"]
+[node name="corner2-rd-1" type="Sprite2D" parent="Tilemaps/Clip/Node2D"]
 modulate = Color(0, 0, 0, 1)
 self_modulate = Color(0, 0, 0, 1)
 texture_filter = 1
 material = SubResource("CanvasItemMaterial_goqcv")
 position = Vector2(24, 312)
-rotation = -3.1415927
+rotation = 3.1415925
 texture = ExtResource("33_53ylk")
 
-[node name="corner2-rd-2" type="Sprite2D" parent="Tilemaps/Clip"]
+[node name="corner2-rd-2" type="Sprite2D" parent="Tilemaps/Clip/Node2D"]
 modulate = Color(0, 0, 0, 1)
 self_modulate = Color(0, 0, 0, 1)
 texture_filter = 1
 material = SubResource("CanvasItemMaterial_goqcv")
 position = Vector2(312, 312.00003)
-rotation = -3.1415927
+rotation = 3.1415925
 texture = ExtResource("33_53ylk")
 
-[node name="corner2-rd-5" type="Sprite2D" parent="Tilemaps/Clip"]
+[node name="corner2-rd-5" type="Sprite2D" parent="Tilemaps/Clip/Node2D"]
 modulate = Color(0, 0, 0, 1)
 self_modulate = Color(0, 0, 0, 1)
 texture_filter = 1
 material = SubResource("CanvasItemMaterial_goqcv")
 position = Vector2(119.999985, -23.999971)
-rotation = -3.1415927
+rotation = 3.1415925
 texture = ExtResource("33_53ylk")
 
-[node name="corner2-rd-6" type="Sprite2D" parent="Tilemaps/Clip"]
+[node name="corner2-rd-6" type="Sprite2D" parent="Tilemaps/Clip/Node2D"]
 modulate = Color(0, 0, 0, 1)
 self_modulate = Color(0, 0, 0, 1)
 texture_filter = 1
 material = SubResource("CanvasItemMaterial_goqcv")
 position = Vector2(71.999985, 24.000029)
-rotation = -3.1415927
+rotation = 3.1415925
 texture = ExtResource("33_53ylk")
 
-[node name="corner2-rd-3" type="Sprite2D" parent="Tilemaps/Clip"]
+[node name="corner2-rd-3" type="Sprite2D" parent="Tilemaps/Clip/Node2D"]
 modulate = Color(0, 0, 0, 1)
 self_modulate = Color(0, 0, 0, 1)
 texture_filter = 1
 material = SubResource("CanvasItemMaterial_goqcv")
 position = Vector2(552, 312)
-rotation = -3.1415927
+rotation = 3.1415925
 texture = ExtResource("33_53ylk")
 
-[node name="corner2-rd-7" type="Sprite2D" parent="Tilemaps/Clip"]
+[node name="corner2-rd-7" type="Sprite2D" parent="Tilemaps/Clip/Node2D"]
 modulate = Color(0, 0, 0, 1)
 self_modulate = Color(0, 0, 0, 1)
 texture_filter = 1
 material = SubResource("CanvasItemMaterial_goqcv")
 position = Vector2(456, 119.999985)
-rotation = -3.1415927
+rotation = 3.1415925
 texture = ExtResource("33_53ylk")
 
-[node name="corner2-rd-8" type="Sprite2D" parent="Tilemaps/Clip"]
+[node name="corner2-rd-8" type="Sprite2D" parent="Tilemaps/Clip/Node2D"]
 modulate = Color(0, 0, 0, 1)
 self_modulate = Color(0, 0, 0, 1)
 texture_filter = 1
 material = SubResource("CanvasItemMaterial_goqcv")
 position = Vector2(504, 71.999985)
-rotation = -3.1415927
+rotation = 3.1415925
 texture = ExtResource("33_53ylk")
 
-[node name="corners_invert" type="Sprite2D" parent="Tilemaps/Clip"]
+[node name="corners_invert" type="Sprite2D" parent="Tilemaps/Clip/Node2D"]
 modulate = Color(0, 0, 0, 1)
 self_modulate = Color(0, 0, 0, 1)
 texture_filter = 1
 material = SubResource("CanvasItemMaterial_goqcv")
 position = Vector2(408, 168)
-rotation = -4.712389
+rotation = 1.5707964
 texture = ExtResource("34_ixwqa")
 
-[node name="corner2-rd-9" type="Sprite2D" parent="Tilemaps/Clip"]
+[node name="corner2-rd-9" type="Sprite2D" parent="Tilemaps/Clip/Node2D"]
 modulate = Color(0, 0, 0, 1)
 self_modulate = Color(0, 0, 0, 1)
 texture_filter = 1
 material = SubResource("CanvasItemMaterial_goqcv")
 position = Vector2(552, 23.999985)
-rotation = -3.1415927
+rotation = 3.1415925
 texture = ExtResource("33_53ylk")
 
-[node name="corner2-rd-4" type="Sprite2D" parent="Tilemaps/Clip"]
+[node name="corner2-rd-4" type="Sprite2D" parent="Tilemaps/Clip/Node2D"]
 modulate = Color(0, 0, 0, 1)
 self_modulate = Color(0, 0, 0, 1)
 texture_filter = 1
 material = SubResource("CanvasItemMaterial_goqcv")
 position = Vector2(695.99994, -23.999977)
-rotation = -3.1415927
+rotation = 3.1415925
 texture = ExtResource("33_53ylk")
 
-[node name="corner2-ru-1" type="Sprite2D" parent="Tilemaps/Clip"]
+[node name="corner2-ru-1" type="Sprite2D" parent="Tilemaps/Clip/Node2D"]
 modulate = Color(0, 0, 0, 1)
 self_modulate = Color(0, 0, 0, 1)
 texture_filter = 1
 material = SubResource("CanvasItemMaterial_goqcv")
 position = Vector2(552, 216)
-rotation = -4.712389
+rotation = 1.5707964
 texture = ExtResource("33_53ylk")
 
-[node name="corner2-ru-7" type="Sprite2D" parent="Tilemaps/Clip"]
+[node name="corner2-ru-7" type="Sprite2D" parent="Tilemaps/Clip/Node2D"]
 modulate = Color(0, 0, 0, 1)
 self_modulate = Color(0, 0, 0, 1)
 texture_filter = 1
 material = SubResource("CanvasItemMaterial_goqcv")
 position = Vector2(456, 168.00003)
-rotation = -4.712389
+rotation = 1.5707964
 texture = ExtResource("33_53ylk")
 
-[node name="corner2-ru-3" type="Sprite2D" parent="Tilemaps/Clip"]
+[node name="corner2-ru-3" type="Sprite2D" parent="Tilemaps/Clip/Node2D"]
 modulate = Color(0, 0, 0, 1)
 self_modulate = Color(0, 0, 0, 1)
 texture_filter = 1
 material = SubResource("CanvasItemMaterial_goqcv")
 position = Vector2(696, -167.99998)
-rotation = -4.712389
+rotation = 1.5707964
 texture = ExtResource("33_53ylk")
 
-[node name="corner2-ru-2" type="Sprite2D" parent="Tilemaps/Clip"]
+[node name="corner2-ru-2" type="Sprite2D" parent="Tilemaps/Clip/Node2D"]
 modulate = Color(0, 0, 0, 1)
 self_modulate = Color(0, 0, 0, 1)
 texture_filter = 1
 material = SubResource("CanvasItemMaterial_goqcv")
 position = Vector2(168, -215.99997)
-rotation = -4.712389
+rotation = 1.5707964
 texture = ExtResource("33_53ylk")
 
-[node name="corner2-ru-4" type="Sprite2D" parent="Tilemaps/Clip"]
+[node name="corner2-ru-4" type="Sprite2D" parent="Tilemaps/Clip/Node2D"]
 modulate = Color(0, 0, 0, 1)
 self_modulate = Color(0, 0, 0, 1)
 texture_filter = 1
 material = SubResource("CanvasItemMaterial_goqcv")
 position = Vector2(264, -167.99997)
-rotation = -4.712389
+rotation = 1.5707964
 texture = ExtResource("33_53ylk")
 
-[node name="corner2-ru-6" type="Sprite2D" parent="Tilemaps/Clip"]
+[node name="corner2-ru-6" type="Sprite2D" parent="Tilemaps/Clip/Node2D"]
 modulate = Color(0, 0, 0, 1)
 self_modulate = Color(0, 0, 0, 1)
 texture_filter = 1
 material = SubResource("CanvasItemMaterial_goqcv")
 position = Vector2(168, 120.00002)
-rotation = -4.712389
+rotation = 1.5707964
 texture = ExtResource("33_53ylk")
 
-[node name="corner2-ru-5" type="Sprite2D" parent="Tilemaps/Clip"]
+[node name="corner2-ru-5" type="Sprite2D" parent="Tilemaps/Clip/Node2D"]
 modulate = Color(0, 0, 0, 1)
 self_modulate = Color(0, 0, 0, 1)
 texture_filter = 1
 material = SubResource("CanvasItemMaterial_goqcv")
 position = Vector2(360, -119.99999)
-rotation = -4.712389
+rotation = 1.5707964
 texture = ExtResource("33_53ylk")
 
-[node name="wall-d-1" type="Sprite2D" parent="Tilemaps/Clip"]
+[node name="wall-d-1" type="Sprite2D" parent="Tilemaps/Clip/Node2D"]
 modulate = Color(0, 0, 0, 1)
 self_modulate = Color(0, 0, 0, 1)
 texture_filter = 1
 material = SubResource("CanvasItemMaterial_goqcv")
 position = Vector2(-119.999985, 216)
-rotation = -3.1415927
+rotation = 3.1415925
 texture = ExtResource("32_he6an")
 
-[node name="wall-d-2" type="Sprite2D" parent="Tilemaps/Clip"]
+[node name="wall-d-2" type="Sprite2D" parent="Tilemaps/Clip/Node2D"]
 modulate = Color(0, 0, 0, 1)
 self_modulate = Color(0, 0, 0, 1)
 texture_filter = 1
 material = SubResource("CanvasItemMaterial_goqcv")
 position = Vector2(-23.999994, 312)
-rotation = -3.1415927
+rotation = 3.1415925
 texture = ExtResource("32_he6an")
 
-[node name="wall-d-3" type="Sprite2D" parent="Tilemaps/Clip"]
+[node name="wall-d-3" type="Sprite2D" parent="Tilemaps/Clip/Node2D"]
 modulate = Color(0, 0, 0, 1)
 self_modulate = Color(0, 0, 0, 1)
 texture_filter = 1
 material = SubResource("CanvasItemMaterial_goqcv")
 position = Vector2(72.00001, 264)
-rotation = -3.1415927
+rotation = 3.1415925
 texture = ExtResource("32_he6an")
 
-[node name="wall-d-4" type="Sprite2D" parent="Tilemaps/Clip"]
+[node name="wall-d-4" type="Sprite2D" parent="Tilemaps/Clip/Node2D"]
 modulate = Color(0, 0, 0, 1)
 self_modulate = Color(0, 0, 0, 1)
 texture_filter = 1
 material = SubResource("CanvasItemMaterial_goqcv")
 position = Vector2(120.00001, 264)
-rotation = -3.1415927
+rotation = 3.1415925
 texture = ExtResource("32_he6an")
 
-[node name="wall-d-12" type="Sprite2D" parent="Tilemaps/Clip"]
+[node name="wall-d-12" type="Sprite2D" parent="Tilemaps/Clip/Node2D"]
 modulate = Color(0, 0, 0, 1)
 self_modulate = Color(0, 0, 0, 1)
 texture_filter = 1
 material = SubResource("CanvasItemMaterial_goqcv")
 position = Vector2(264, 23.99997)
-rotation = -3.1415927
+rotation = 3.1415925
 texture = ExtResource("32_he6an")
 
-[node name="wall-d-5" type="Sprite2D" parent="Tilemaps/Clip"]
+[node name="wall-d-5" type="Sprite2D" parent="Tilemaps/Clip/Node2D"]
 modulate = Color(0, 0, 0, 1)
 self_modulate = Color(0, 0, 0, 1)
 texture_filter = 1
 material = SubResource("CanvasItemMaterial_goqcv")
 position = Vector2(216, 312.00003)
-rotation = -3.1415927
+rotation = 3.1415925
 texture = ExtResource("32_he6an")
 
-[node name="wall-d-6" type="Sprite2D" parent="Tilemaps/Clip"]
+[node name="wall-d-6" type="Sprite2D" parent="Tilemaps/Clip/Node2D"]
 modulate = Color(0, 0, 0, 1)
 self_modulate = Color(0, 0, 0, 1)
 texture_filter = 1
 material = SubResource("CanvasItemMaterial_goqcv")
 position = Vector2(264, 312.00003)
-rotation = -3.1415927
+rotation = 3.1415925
 texture = ExtResource("32_he6an")
 
-[node name="wall-d-7" type="Sprite2D" parent="Tilemaps/Clip"]
+[node name="wall-d-7" type="Sprite2D" parent="Tilemaps/Clip/Node2D"]
 modulate = Color(0, 0, 0, 1)
 self_modulate = Color(0, 0, 0, 1)
 texture_filter = 1
 material = SubResource("CanvasItemMaterial_goqcv")
 position = Vector2(360, 264.00003)
-rotation = -3.1415927
+rotation = 3.1415925
 texture = ExtResource("32_he6an")
 
-[node name="wall-d-8" type="Sprite2D" parent="Tilemaps/Clip"]
+[node name="wall-d-8" type="Sprite2D" parent="Tilemaps/Clip/Node2D"]
 modulate = Color(0, 0, 0, 1)
 self_modulate = Color(0, 0, 0, 1)
 texture_filter = 1
 material = SubResource("CanvasItemMaterial_goqcv")
 position = Vector2(455.99997, 312.00003)
-rotation = -3.1415927
+rotation = 3.1415925
 texture = ExtResource("32_he6an")
 
-[node name="wall-d-10" type="Sprite2D" parent="Tilemaps/Clip"]
+[node name="wall-d-10" type="Sprite2D" parent="Tilemaps/Clip/Node2D"]
 modulate = Color(0, 0, 0, 1)
 self_modulate = Color(0, 0, 0, 1)
 texture_filter = 1
 material = SubResource("CanvasItemMaterial_goqcv")
 position = Vector2(647.99994, -24.000013)
-rotation = -3.1415927
+rotation = 3.1415925
 texture = ExtResource("32_he6an")
 
-[node name="wall-d-11" type="Sprite2D" parent="Tilemaps/Clip"]
+[node name="wall-d-11" type="Sprite2D" parent="Tilemaps/Clip/Node2D"]
 modulate = Color(0, 0, 0, 1)
 self_modulate = Color(0, 0, 0, 1)
 texture_filter = 1
 material = SubResource("CanvasItemMaterial_goqcv")
 position = Vector2(599.99994, -24.000011)
-rotation = -3.1415927
+rotation = 3.1415925
 texture = ExtResource("32_he6an")
 
-[node name="wall-d-9" type="Sprite2D" parent="Tilemaps/Clip"]
+[node name="wall-d-9" type="Sprite2D" parent="Tilemaps/Clip/Node2D"]
 modulate = Color(0, 0, 0, 1)
 self_modulate = Color(0, 0, 0, 1)
 texture_filter = 1
 material = SubResource("CanvasItemMaterial_goqcv")
 position = Vector2(503.99997, 312)
-rotation = -3.1415927
+rotation = 3.1415925
 texture = ExtResource("32_he6an")
 
-[node name="corner-ld-1" type="Sprite2D" parent="Tilemaps/Clip"]
+[node name="corner-ld-1" type="Sprite2D" parent="Tilemaps/Clip/Node2D"]
 modulate = Color(0, 0, 0, 1)
 self_modulate = Color(0, 0, 0, 1)
 texture_filter = 1
 material = SubResource("CanvasItemMaterial_goqcv")
 position = Vector2(-119.999985, -72)
-rotation = 4.712389
+rotation = -1.5707964
 texture = ExtResource("31_87kko")
 
-[node name="corner-rd-1" type="Sprite2D" parent="Tilemaps/Clip"]
+[node name="corner-rd-1" type="Sprite2D" parent="Tilemaps/Clip/Node2D"]
 modulate = Color(0, 0, 0, 1)
 self_modulate = Color(0, 0, 0, 1)
 texture_filter = 1
 material = SubResource("CanvasItemMaterial_goqcv")
 position = Vector2(168, -168)
-rotation = 6.2831855
 texture = ExtResource("31_87kko")
 
-[node name="corner-rd-6" type="Sprite2D" parent="Tilemaps/Clip"]
+[node name="corner-rd-6" type="Sprite2D" parent="Tilemaps/Clip/Node2D"]
 modulate = Color(0, 0, 0, 1)
 self_modulate = Color(0, 0, 0, 1)
 texture_filter = 1
 material = SubResource("CanvasItemMaterial_goqcv")
 position = Vector2(359.99997, 216.00002)
-rotation = 6.2831855
 texture = ExtResource("31_87kko")
 
-[node name="corner-rd-3" type="Sprite2D" parent="Tilemaps/Clip"]
+[node name="corner-rd-3" type="Sprite2D" parent="Tilemaps/Clip/Node2D"]
 modulate = Color(0, 0, 0, 1)
 self_modulate = Color(0, 0, 0, 1)
 texture_filter = 1
 material = SubResource("CanvasItemMaterial_goqcv")
 position = Vector2(455.99997, 216)
-rotation = 6.2831855
 texture = ExtResource("31_87kko")
 
-[node name="corner-rd-2" type="Sprite2D" parent="Tilemaps/Clip"]
+[node name="corner-rd-2" type="Sprite2D" parent="Tilemaps/Clip/Node2D"]
 modulate = Color(0, 0, 0, 1)
 self_modulate = Color(0, 0, 0, 1)
 texture_filter = 1
 material = SubResource("CanvasItemMaterial_goqcv")
 position = Vector2(264, -120)
-rotation = 6.2831855
 texture = ExtResource("31_87kko")
 
-[node name="corner-rd-7" type="Sprite2D" parent="Tilemaps/Clip"]
+[node name="corner-rd-7" type="Sprite2D" parent="Tilemaps/Clip/Node2D"]
 modulate = Color(0, 0, 0, 1)
 self_modulate = Color(0, 0, 0, 1)
 texture_filter = 1
 material = SubResource("CanvasItemMaterial_goqcv")
 position = Vector2(360, -72)
-rotation = 6.2831855
 texture = ExtResource("31_87kko")
 
-[node name="corner-rd-4" type="Sprite2D" parent="Tilemaps/Clip"]
+[node name="corner-rd-4" type="Sprite2D" parent="Tilemaps/Clip/Node2D"]
 modulate = Color(0, 0, 0, 1)
 self_modulate = Color(0, 0, 0, 1)
 texture_filter = 1
 material = SubResource("CanvasItemMaterial_goqcv")
 position = Vector2(167.99997, 168)
-rotation = 6.2831855
 texture = ExtResource("31_87kko")
 
-[node name="corner-rd-5" type="Sprite2D" parent="Tilemaps/Clip"]
+[node name="corner-rd-5" type="Sprite2D" parent="Tilemaps/Clip/Node2D"]
 modulate = Color(0, 0, 0, 1)
 self_modulate = Color(0, 0, 0, 1)
 texture_filter = 1
 material = SubResource("CanvasItemMaterial_goqcv")
 position = Vector2(23.999977, 120)
-rotation = 6.2831855
 texture = ExtResource("31_87kko")
 
-[node name="corner-ld-2" type="Sprite2D" parent="Tilemaps/Clip"]
+[node name="corner-ld-2" type="Sprite2D" parent="Tilemaps/Clip/Node2D"]
 modulate = Color(0, 0, 0, 1)
 self_modulate = Color(0, 0, 0, 1)
 texture_filter = 1
 material = SubResource("CanvasItemMaterial_goqcv")
 position = Vector2(72.000015, -120)
-rotation = 4.712389
+rotation = -1.5707964
 texture = ExtResource("31_87kko")
 
-[node name="corner-ld-5" type="Sprite2D" parent="Tilemaps/Clip"]
+[node name="corner-ld-5" type="Sprite2D" parent="Tilemaps/Clip/Node2D"]
 modulate = Color(0, 0, 0, 1)
 self_modulate = Color(0, 0, 0, 1)
 texture_filter = 1
 material = SubResource("CanvasItemMaterial_goqcv")
 position = Vector2(216, 168)
-rotation = 4.712389
+rotation = -1.5707964
 texture = ExtResource("31_87kko")
 
-[node name="corner-ld-6" type="Sprite2D" parent="Tilemaps/Clip"]
+[node name="corner-ld-6" type="Sprite2D" parent="Tilemaps/Clip/Node2D"]
 modulate = Color(0, 0, 0, 1)
 self_modulate = Color(0, 0, 0, 1)
 texture_filter = 1
 material = SubResource("CanvasItemMaterial_goqcv")
 position = Vector2(264, 120)
-rotation = 4.712389
+rotation = -1.5707964
 texture = ExtResource("31_87kko")
 
-[node name="corner-ld-7" type="Sprite2D" parent="Tilemaps/Clip"]
+[node name="corner-ld-7" type="Sprite2D" parent="Tilemaps/Clip/Node2D"]
 modulate = Color(0, 0, 0, 1)
 self_modulate = Color(0, 0, 0, 1)
 texture_filter = 1
 material = SubResource("CanvasItemMaterial_goqcv")
 position = Vector2(312, 71.99999)
-rotation = 4.712389
+rotation = -1.5707964
 texture = ExtResource("31_87kko")
 
-[node name="corner-ld-3" type="Sprite2D" parent="Tilemaps/Clip"]
+[node name="corner-ld-3" type="Sprite2D" parent="Tilemaps/Clip/Node2D"]
 modulate = Color(0, 0, 0, 1)
 self_modulate = Color(0, 0, 0, 1)
 texture_filter = 1
 material = SubResource("CanvasItemMaterial_goqcv")
 position = Vector2(504, -71.99999)
-rotation = 4.712389
+rotation = -1.5707964
 texture = ExtResource("31_87kko")
 
-[node name="corner-ld-8" type="Sprite2D" parent="Tilemaps/Clip"]
+[node name="corner-ld-8" type="Sprite2D" parent="Tilemaps/Clip/Node2D"]
 modulate = Color(0, 0, 0, 1)
 self_modulate = Color(0, 0, 0, 1)
 texture_filter = 1
 material = SubResource("CanvasItemMaterial_goqcv")
 position = Vector2(408, 216)
-rotation = 4.712389
+rotation = -1.5707964
 texture = ExtResource("31_87kko")
 
-[node name="corner-ld-4" type="Sprite2D" parent="Tilemaps/Clip"]
+[node name="corner-ld-4" type="Sprite2D" parent="Tilemaps/Clip/Node2D"]
 modulate = Color(0, 0, 0, 1)
 self_modulate = Color(0, 0, 0, 1)
 texture_filter = 1
 material = SubResource("CanvasItemMaterial_goqcv")
 position = Vector2(600, -119.99999)
-rotation = 4.712389
+rotation = -1.5707964
 texture = ExtResource("31_87kko")
 
-[node name="corner-ru-2" type="Sprite2D" parent="Tilemaps/Clip"]
+[node name="corner-ru-2" type="Sprite2D" parent="Tilemaps/Clip/Node2D"]
 modulate = Color(0, 0, 0, 1)
 self_modulate = Color(0, 0, 0, 1)
 texture_filter = 1
@@ -969,7 +971,7 @@ position = Vector2(168.00002, 264)
 rotation = -3.1415925
 texture = ExtResource("31_87kko")
 
-[node name="corner-ru-3" type="Sprite2D" parent="Tilemaps/Clip"]
+[node name="corner-ru-3" type="Sprite2D" parent="Tilemaps/Clip/Node2D"]
 modulate = Color(0, 0, 0, 1)
 self_modulate = Color(0, 0, 0, 1)
 texture_filter = 1
@@ -978,7 +980,7 @@ position = Vector2(408, 264)
 rotation = -3.1415925
 texture = ExtResource("31_87kko")
 
-[node name="corner-lu-2" type="Sprite2D" parent="Tilemaps/Clip"]
+[node name="corner-lu-2" type="Sprite2D" parent="Tilemaps/Clip/Node2D"]
 modulate = Color(0, 0, 0, 1)
 self_modulate = Color(0, 0, 0, 1)
 texture_filter = 1
@@ -987,7 +989,7 @@ position = Vector2(24.000015, 264)
 rotation = 1.5707964
 texture = ExtResource("31_87kko")
 
-[node name="corner-lu-8" type="Sprite2D" parent="Tilemaps/Clip"]
+[node name="corner-lu-8" type="Sprite2D" parent="Tilemaps/Clip/Node2D"]
 modulate = Color(0, 0, 0, 1)
 self_modulate = Color(0, 0, 0, 1)
 texture_filter = 1
@@ -996,7 +998,7 @@ position = Vector2(408.00006, 119.99999)
 rotation = 1.5707964
 texture = ExtResource("31_87kko")
 
-[node name="corner-lu-9" type="Sprite2D" parent="Tilemaps/Clip"]
+[node name="corner-lu-9" type="Sprite2D" parent="Tilemaps/Clip/Node2D"]
 modulate = Color(0, 0, 0, 1)
 self_modulate = Color(0, 0, 0, 1)
 texture_filter = 1
@@ -1005,7 +1007,7 @@ position = Vector2(456.0001, 71.99999)
 rotation = 1.5707964
 texture = ExtResource("31_87kko")
 
-[node name="corner-lu-10" type="Sprite2D" parent="Tilemaps/Clip"]
+[node name="corner-lu-10" type="Sprite2D" parent="Tilemaps/Clip/Node2D"]
 modulate = Color(0, 0, 0, 1)
 self_modulate = Color(0, 0, 0, 1)
 texture_filter = 1
@@ -1014,7 +1016,7 @@ position = Vector2(504.0001, 23.999992)
 rotation = 1.5707964
 texture = ExtResource("31_87kko")
 
-[node name="corner-lu-11" type="Sprite2D" parent="Tilemaps/Clip"]
+[node name="corner-lu-11" type="Sprite2D" parent="Tilemaps/Clip/Node2D"]
 modulate = Color(0, 0, 0, 1)
 self_modulate = Color(0, 0, 0, 1)
 texture_filter = 1
@@ -1023,7 +1025,7 @@ position = Vector2(552.0001, -24.000008)
 rotation = 1.5707964
 texture = ExtResource("31_87kko")
 
-[node name="corner-lu-4" type="Sprite2D" parent="Tilemaps/Clip"]
+[node name="corner-lu-4" type="Sprite2D" parent="Tilemaps/Clip/Node2D"]
 modulate = Color(0, 0, 0, 1)
 self_modulate = Color(0, 0, 0, 1)
 texture_filter = 1
@@ -1032,7 +1034,7 @@ position = Vector2(120.00003, -71.99999)
 rotation = 1.5707964
 texture = ExtResource("31_87kko")
 
-[node name="corner-lu-5" type="Sprite2D" parent="Tilemaps/Clip"]
+[node name="corner-lu-5" type="Sprite2D" parent="Tilemaps/Clip/Node2D"]
 modulate = Color(0, 0, 0, 1)
 self_modulate = Color(0, 0, 0, 1)
 texture_filter = 1
@@ -1041,7 +1043,7 @@ position = Vector2(72.00003, -23.99999)
 rotation = 1.5707964
 texture = ExtResource("31_87kko")
 
-[node name="corner-lu-6" type="Sprite2D" parent="Tilemaps/Clip"]
+[node name="corner-lu-6" type="Sprite2D" parent="Tilemaps/Clip/Node2D"]
 modulate = Color(0, 0, 0, 1)
 self_modulate = Color(0, 0, 0, 1)
 texture_filter = 1
@@ -1050,7 +1052,7 @@ position = Vector2(24.00003, 24.000008)
 rotation = 1.5707964
 texture = ExtResource("31_87kko")
 
-[node name="corner-lu-3" type="Sprite2D" parent="Tilemaps/Clip"]
+[node name="corner-lu-3" type="Sprite2D" parent="Tilemaps/Clip/Node2D"]
 modulate = Color(0, 0, 0, 1)
 self_modulate = Color(0, 0, 0, 1)
 texture_filter = 1
@@ -1059,7 +1061,7 @@ position = Vector2(312.00003, 263.99997)
 rotation = 1.5707964
 texture = ExtResource("31_87kko")
 
-[node name="corner-lu-7" type="Sprite2D" parent="Tilemaps/Clip"]
+[node name="corner-lu-7" type="Sprite2D" parent="Tilemaps/Clip/Node2D"]
 modulate = Color(0, 0, 0, 1)
 self_modulate = Color(0, 0, 0, 1)
 texture_filter = 1
@@ -1073,6 +1075,7 @@ position = Vector2(-48, 192)
 collision_layer = 4321
 collision_mask = 4321
 num = SubResource("Resource_ftvp4")
+print_collision = false
 metadata/is_die = SubResource("Resource_1qtut")
 metadata/team_object = SubResource("Resource_ftvp4")
 
@@ -1088,23 +1091,26 @@ metadata/_custom_type_script = "uid://cicas0bkgf1up"
 
 [node name="ball2" parent="Tilemaps" instance=ExtResource("35_41idh")]
 position = Vector2(336, 144)
-collision_layer = 4209
-collision_mask = 4209
 num = SubResource("Resource_43j8o")
+print_collision = false
 metadata/is_die = SubResource("Resource_ya7da")
 metadata/team_object = SubResource("Resource_43j8o")
 
 [node name="ball3" parent="Tilemaps" instance=ExtResource("35_41idh")]
-position = Vector2(-50, -53)
+position = Vector2(-48, -48)
 collision_layer = 4257
 collision_mask = 4257
 num = SubResource("Resource_6xsba")
+print_collision = false
 metadata/is_die = SubResource("Resource_ia2xj")
 metadata/team_object = SubResource("Resource_6xsba")
 
 [node name="ball_purple" parent="Tilemaps" instance=ExtResource("35_41idh")]
-position = Vector2(288, -48)
+position = Vector2(240, -96)
+collision_layer = 4305
+collision_mask = 4305
 num = SubResource("Resource_w08im")
+print_collision = false
 metadata/is_die = SubResource("Resource_mng47")
 metadata/team_object = SubResource("Resource_w08im")
 

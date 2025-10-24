@@ -10,7 +10,7 @@
 [ext_resource type="Script" uid="uid://7mbjsugg8t15" path="res://addons/APController/classes/APContDirTargetRB2D.gd" id="7_8s2x3"]
 [ext_resource type="Script" uid="uid://du8j36g8pf8k8" path="res://addons/APChain/classes/chain/APChainShake.gd" id="8_mih5m"]
 [ext_resource type="Texture2D" uid="uid://c8tb361n7a6t1" path="res://scene/ball/ball-white.png" id="9_cn5ba"]
-[ext_resource type="Script" uid="uid://bgxr4wfhuukv" path="res://addons/VarRes/classes/utility/Sprite2DVaRes.gd" id="10_bk5pk"]
+[ext_resource type="Script" path="res://addons/VarRes/classes/utility/Sprite2DVaRes.gd" id="10_bk5pk"]
 [ext_resource type="Texture2D" uid="uid://xe2ta4d0ybxb" path="res://scene/ball/ball-red.png" id="11_xd8ss"]
 [ext_resource type="Texture2D" uid="uid://ba6d2amdlnvs" path="res://scene/ball/ball-purple.png" id="12_aahtj"]
 [ext_resource type="Script" uid="uid://u1gglou2n5jq" path="res://addons/APChain/classes/chain_activator/APActivatorResource.gd" id="12_gh3y3"]
@@ -146,8 +146,8 @@ _data = {
 }
 
 [node name="ball" type="RigidBody2D"]
-collision_layer = 4305
-collision_mask = 4305
+collision_layer = 4209
+collision_mask = 4209
 input_pickable = true
 physics_material_override = SubResource("PhysicsMaterial_6xsba")
 gravity_scale = 0.0
@@ -161,6 +161,7 @@ script = ExtResource("1_kwmlm")
 num = ExtResource("2_hsyp7")
 num_is_collision_layer = Array[int]([0, 4321, 4209, 4305, 4257])
 num_is_collision_mask = Array[int]([0, 4321, 4209, 4305, 4257])
+print_collision = null
 metadata/_custom_type_script = "uid://bt65n6o82yg6b"
 metadata/is_die = ExtResource("1_41df4")
 metadata/team_object = ExtResource("2_hsyp7")
@@ -214,7 +215,6 @@ texture = ExtResource("11_xd8ss")
 script = ExtResource("10_bk5pk")
 num = ExtResource("2_hsyp7")
 num_is_texture = Array[Texture]([null, ExtResource("9_cn5ba"), ExtResource("11_xd8ss"), ExtResource("12_aahtj"), ExtResource("13_8s2x3")])
-metadata/_custom_type_script = "uid://bgxr4wfhuukv"
 
 [node name="BodyDie" type="Sprite2D" parent="."]
 visible = false
@@ -226,7 +226,6 @@ texture = ExtResource("15_mih5m")
 script = ExtResource("10_bk5pk")
 num = ExtResource("2_hsyp7")
 num_is_texture = Array[Texture]([null, ExtResource("14_8s2x3"), ExtResource("15_mih5m"), ExtResource("16_41df4"), ExtResource("17_kwmlm")])
-metadata/_custom_type_script = "uid://bgxr4wfhuukv"
 
 [node name="MingcuteGhostFill" type="Sprite2D" parent="."]
 visible = false

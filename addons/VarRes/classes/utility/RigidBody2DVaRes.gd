@@ -15,6 +15,11 @@ class_name RigidBody2DVaRes
 
 @export_group("VaRes Bool")
 
+@export_group("Print Debug")
+@export var print_collision:bool
+
+var debug:CanvasLayer = null
+
 func on_changed_vars():
 	update_rigidbody()
 
@@ -26,3 +31,17 @@ func update_rigidbody():
 
 func _ready() -> void:
 	update_rigidbody()
+
+func _mouse_enter() -> void:
+	var layer = CanvasLayer.new()
+	var label = Label.new()
+	layer.add_child(label)
+	debug = layer
+	label.text = "%s, collision_layer:%s, collision_mask:%s"%[
+		name, collision_layer, collision_mask
+	]
+	get_tree().root.add_child(layer)
+
+func _mouse_exit() -> void:
+	if debug:
+		debug.queue_free()

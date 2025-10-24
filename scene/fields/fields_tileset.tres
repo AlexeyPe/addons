@@ -1,18 +1,38 @@
-[gd_resource type="TileSet" load_steps=7 format=3 uid="uid://ctx1yx25gyv50"]
+[gd_resource type="TileSet" load_steps=3 format=3 uid="uid://ctx1yx25gyv50"]
 
-[ext_resource type="PackedScene" uid="uid://7bappgufejs0" path="res://scene/field/object/field_red.tscn" id="1_l6fxn"]
-[ext_resource type="PackedScene" uid="uid://bfod4jbfvw3n1" path="res://scene/field/object/field_white.tscn" id="2_axioa"]
-[ext_resource type="PackedScene" uid="uid://cyw3hqnxnas28" path="res://scene/field/object/field_free.tscn" id="3_axioa"]
-[ext_resource type="PackedScene" uid="uid://b5bmd2x5pxxvi" path="res://scene/field/object/field_yellow.tscn" id="4_lom5w"]
-[ext_resource type="PackedScene" uid="uid://nna1vbccpbw3" path="res://scene/field/object/field_purple.tscn" id="5_yi3o1"]
+[ext_resource type="Texture2D" uid="uid://c0w2pydugb487" path="res://addons/VarRes/imgs/numbers_0-9.png" id="1_d4m1q"]
 
-[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_vap30"]
-scenes/1/scene = ExtResource("1_l6fxn")
-scenes/2/scene = ExtResource("2_axioa")
-scenes/3/scene = ExtResource("3_axioa")
-scenes/4/scene = ExtResource("4_lom5w")
-scenes/5/scene = ExtResource("5_yi3o1")
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_l6fxn"]
+texture = ExtResource("1_d4m1q")
+texture_region_size = Vector2i(30, 35)
+0:0/0 = 0
+0:0/0/modulate = Color(0.52, 0.52, 0.52, 1)
+1:0/0 = 0
+1:0/0/custom_data_0 = 1
+2:0/0 = 0
+2:0/0/modulate = Color(1, 0.0627451, 0.2901961, 1)
+2:0/0/custom_data_0 = 2
+3:0/next_alternative_id = 2
+3:0/0 = 0
+3:0/0/modulate = Color(0.7647059, 0.2901961, 1, 1)
+3:0/0/custom_data_0 = 3
+4:0/next_alternative_id = 2
+4:0/0 = 0
+4:0/0/modulate = Color(1, 1, 0.2901961, 1)
+4:0/0/custom_data_0 = 4
+4:0/1 = 1
+4:0/1/modulate = Color(0.62352943, 0.61960787, 0, 1)
+4:0/1/custom_data_0 = 4
+5:0/0 = 0
+6:0/0 = 0
+7:0/0 = 0
+8:0/0 = 0
+9:0/0 = 0
 
 [resource]
 tile_size = Vector2i(48, 48)
-sources/1 = SubResource("TileSetScenesCollectionSource_vap30")
+custom_data_layer_0/name = "team_object"
+custom_data_layer_0/type = 2
+custom_data_layer_1/name = "build"
+custom_data_layer_1/type = 24
+sources/2 = SubResource("TileSetAtlasSource_l6fxn")

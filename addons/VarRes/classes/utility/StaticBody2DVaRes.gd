@@ -17,6 +17,8 @@ class_name StaticBody2DVaRes
 		num_is_modulate = new
 		update_body()
 
+var debug:CanvasLayer
+
 func on_changed_vars():
 	update_body()
 
@@ -30,3 +32,18 @@ func update_body():
 
 func _ready() -> void:
 	update_body()
+
+
+func _mouse_enter() -> void:
+	var layer = CanvasLayer.new()
+	var label = Label.new()
+	layer.add_child(label)
+	debug = layer
+	label.text = "%s, collision_layer:%s, collision_mask:%s"%[
+		name, collision_layer, collision_mask
+	]
+	get_tree().root.add_child(layer)
+
+func _mouse_exit() -> void:
+	if debug:
+		debug.queue_free()
