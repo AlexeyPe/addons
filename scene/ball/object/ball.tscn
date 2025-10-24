@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=3 uid="uid://bpn7vchp3v0o6"]
+[gd_scene load_steps=39 format=3 uid="uid://bpn7vchp3v0o6"]
 
 [ext_resource type="Resource" uid="uid://58pmfjua3f3c" path="res://scene/ball/object/is_die.tres" id="1_41df4"]
 [ext_resource type="Script" uid="uid://bt65n6o82yg6b" path="res://addons/VarRes/classes/utility/RigidBody2DVaRes.gd" id="1_kwmlm"]
@@ -26,6 +26,8 @@
 [ext_resource type="Texture2D" uid="uid://mnjwql4xbnfx" path="res://scene/ball/ball-yellow-die.png" id="17_kwmlm"]
 [ext_resource type="Shader" uid="uid://b4xocinxdwelf" path="res://addons/shadercollectionap/shader/outline/Outline.gdshader" id="18_mih5m"]
 [ext_resource type="Texture2D" uid="uid://n4dics7e7f7l" path="res://scene/ball/game-icons--ring.svg" id="18_rblx7"]
+[ext_resource type="Script" uid="uid://b5w7jmxkrwose" path="res://addons/APChain/classes/chain_activator/APActivatorInteraction.gd" id="27_kwmlm"]
+[ext_resource type="Script" uid="uid://btail58r0orri" path="res://addons/APChain/classes/chain/meta/APChainHasMeta.gd" id="28_mmg5j"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_6xsba"]
 friction = 0.0
@@ -321,3 +323,16 @@ reset_on_save = false
 libraries = {
 &"": SubResource("AnimationLibrary_h6r1o")
 }
+
+[node name="APActivatorInteraction" type="Node" parent="." node_paths=PackedStringArray("rigid_body_2D")]
+script = ExtResource("27_kwmlm")
+rigid_body_2D = NodePath("..")
+metadata/_custom_type_script = "uid://b5w7jmxkrwose"
+
+[node name="HasMeta=test" type="Node" parent="APActivatorInteraction" node_paths=PackedStringArray("node_emitter")]
+script = ExtResource("28_mmg5j")
+meta_name = "test"
+need_value = false
+node_emitter = NodePath("..")
+watch_signal = 0
+metadata/_custom_type_script = "uid://btail58r0orri"

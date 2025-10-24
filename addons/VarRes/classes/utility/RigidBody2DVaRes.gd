@@ -22,4 +22,4 @@ func update_rigidbody():
 	if !num_is_collision_layer.is_empty() and num_is_collision_layer.size()-1 >= num.get_value():
 		collision_layer = num_is_collision_layer.get(num.get_value())
 	if !num_is_collision_mask.is_empty() and num_is_collision_mask.size()-1 >= num.get_value():
-		collision_layer = num_is_collision_mask.get(num.get_value())
+		collision_mask = num_is_collision_mask.get(num.get_value())
