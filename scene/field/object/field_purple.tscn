@@ -1,0 +1,95 @@
+[gd_scene load_steps=14 format=3 uid="uid://nna1vbccpbw3"]
+
+[ext_resource type="PackedScene" uid="uid://7bappgufejs0" path="res://scene/field/object/field_red.tscn" id="1_u8gbf"]
+[ext_resource type="Script" uid="uid://8myr58nwfvfg" path="res://addons/VarRes/classes/numbers/VaRInt.gd" id="2_sujvo"]
+[ext_resource type="Script" uid="uid://djmnu1e55mp0j" path="res://addons/VarRes/classes/bool/VaRBool.gd" id="3_v7sqo"]
+[ext_resource type="Script" uid="uid://cwwtvvbcb8q70" path="res://addons/VarRes/classes/meta/condition/MetaCondition.gd" id="4_3f0e1"]
+[ext_resource type="Script" uid="uid://dapuucp3gf6c8" path="res://addons/VarRes/classes/VaRScene.gd" id="5_032k0"]
+[ext_resource type="Script" uid="uid://o5u2kpte2mrd" path="res://addons/VarRes/classes/meta/condition/MetaConditionHasPaste.gd" id="6_kra4p"]
+
+[sub_resource type="Resource" id="Resource_fmk5b"]
+script = ExtResource("2_sujvo")
+value = 0
+metadata/_custom_type_script = "uid://8myr58nwfvfg"
+
+[sub_resource type="Resource" id="Resource_u8gbf"]
+resource_local_to_scene = true
+resource_name = "team_object"
+script = ExtResource("2_sujvo")
+min_value_res = SubResource("Resource_fmk5b")
+value = 2
+description = "Команда объекта - здания/юнита.
+0 - Ничья 
+1 - Белые
+2 - Красные
+3 - Фиолетовые
+4 - Жёлтые"
+metadata/_custom_type_script = "uid://8myr58nwfvfg"
+
+[sub_resource type="Resource" id="Resource_sujvo"]
+script = ExtResource("2_sujvo")
+value = 0
+metadata/_custom_type_script = "uid://8myr58nwfvfg"
+
+[sub_resource type="Resource" id="Resource_yqt3x"]
+resource_local_to_scene = true
+resource_name = "team_object"
+script = ExtResource("2_sujvo")
+min_value_res = SubResource("Resource_sujvo")
+value = 3
+description = "Команда объекта - здания/юнита.
+0 - Ничья 
+1 - Белые
+2 - Красные
+3 - Фиолетовые
+4 - Жёлтые"
+metadata/_custom_type_script = "uid://8myr58nwfvfg"
+
+[sub_resource type="Resource" id="Resource_xc314"]
+resource_local_to_scene = true
+resource_name = "can_drop"
+script = ExtResource("3_v7sqo")
+value = true
+metadata/_custom_type_script = "uid://djmnu1e55mp0j"
+
+[sub_resource type="Resource" id="Resource_ouko2"]
+resource_local_to_scene = true
+resource_name = "build"
+script = ExtResource("5_032k0")
+metadata/_custom_type_script = "uid://dapuucp3gf6c8"
+
+[sub_resource type="Resource" id="Resource_woivo"]
+resource_local_to_scene = true
+script = ExtResource("6_kra4p")
+paste_vares = SubResource("Resource_ouko2")
+meta_name = "build"
+metadata/_custom_type_script = "uid://o5u2kpte2mrd"
+
+[node name="FieldPurple" instance=ExtResource("1_u8gbf")]
+num = SubResource("Resource_u8gbf")
+num_is_collision_layer = Array[int]([0, 16, 128, 0, 64])
+num_is_collision_mask = Array[int]([0, 16, 128, 0, 64])
+metadata/team_object = SubResource("Resource_yqt3x")
+
+[node name="NinePatchRect" parent="." index="0"]
+modulate = Color(0.7411765, 0.42745098, 0.9490196, 1)
+num = SubResource("Resource_yqt3x")
+
+[node name="APDropZone" parent="." index="2"]
+can_drop = SubResource("Resource_xc314")
+drop_meta_conditions = Array[ExtResource("4_3f0e1")]([SubResource("Resource_woivo")])
+
+[node name="build=changed" parent="APDropZone" index="3"]
+resource = SubResource("Resource_ouko2")
+
+[node name="APChainAddChild" parent="APDropZone/build=changed" index="0"]
+scene = SubResource("Resource_ouko2")
+
+[node name="SET_can_drop=true" parent="APDropZone/build=changed/APChainAddChild" index="2"]
+var_bool = SubResource("Resource_xc314")
+
+[node name="SET_can_drop=false" parent="APChainAddChild2" index="2"]
+var_bool = SubResource("Resource_xc314")
+
+[node name="SET_can_drop=true" parent="APChainAddChild2" index="3"]
+var_bool = SubResource("Resource_xc314")

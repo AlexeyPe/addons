@@ -1,0 +1,73 @@
+[gd_scene load_steps=12 format=3 uid="uid://bfod4jbfvw3n1"]
+
+[ext_resource type="PackedScene" uid="uid://7bappgufejs0" path="res://scene/field/object/field_red.tscn" id="1_lquu2"]
+[ext_resource type="Script" uid="uid://8myr58nwfvfg" path="res://addons/VarRes/classes/numbers/VaRInt.gd" id="2_ua2r4"]
+[ext_resource type="Script" uid="uid://djmnu1e55mp0j" path="res://addons/VarRes/classes/bool/VaRBool.gd" id="3_efbao"]
+[ext_resource type="Script" uid="uid://cwwtvvbcb8q70" path="res://addons/VarRes/classes/meta/condition/MetaCondition.gd" id="4_gpaqo"]
+[ext_resource type="Script" uid="uid://dapuucp3gf6c8" path="res://addons/VarRes/classes/VaRScene.gd" id="5_m8lma"]
+[ext_resource type="Script" uid="uid://o5u2kpte2mrd" path="res://addons/VarRes/classes/meta/condition/MetaConditionHasPaste.gd" id="6_tx0t6"]
+
+[sub_resource type="Resource" id="Resource_fmk5b"]
+script = ExtResource("2_ua2r4")
+value = 0
+metadata/_custom_type_script = "uid://8myr58nwfvfg"
+
+[sub_resource type="Resource" id="Resource_vlh07"]
+resource_local_to_scene = true
+resource_name = "team_object"
+script = ExtResource("2_ua2r4")
+min_value_res = SubResource("Resource_fmk5b")
+value = 1
+description = "Команда объекта - здания/юнита.
+0 - Ничья 
+1 - Белые
+2 - Красные
+3 - Фиолетовые
+4 - Жёлтые"
+metadata/_custom_type_script = "uid://8myr58nwfvfg"
+
+[sub_resource type="Resource" id="Resource_dkg0p"]
+resource_local_to_scene = true
+resource_name = "can_drop"
+script = ExtResource("3_efbao")
+value = true
+metadata/_custom_type_script = "uid://djmnu1e55mp0j"
+
+[sub_resource type="Resource" id="Resource_kskwn"]
+resource_local_to_scene = true
+resource_name = "build"
+script = ExtResource("5_m8lma")
+metadata/_custom_type_script = "uid://dapuucp3gf6c8"
+
+[sub_resource type="Resource" id="Resource_5mjgs"]
+resource_local_to_scene = true
+script = ExtResource("6_tx0t6")
+paste_vares = SubResource("Resource_kskwn")
+meta_name = "build"
+metadata/_custom_type_script = "uid://o5u2kpte2mrd"
+
+[node name="FieldWhite" instance=ExtResource("1_lquu2")]
+metadata/team_object = SubResource("Resource_vlh07")
+
+[node name="NinePatchRect" parent="." index="0"]
+modulate = Color(1, 1, 1, 1)
+num = SubResource("Resource_vlh07")
+
+[node name="APDropZone" parent="." index="2"]
+can_drop = SubResource("Resource_dkg0p")
+drop_meta_conditions = Array[ExtResource("4_gpaqo")]([SubResource("Resource_5mjgs")])
+
+[node name="build=changed" parent="APDropZone" index="3"]
+resource = SubResource("Resource_kskwn")
+
+[node name="APChainAddChild" parent="APDropZone/build=changed" index="0"]
+scene = SubResource("Resource_kskwn")
+
+[node name="SET_can_drop=true" parent="APDropZone/build=changed/APChainAddChild" index="2"]
+var_bool = SubResource("Resource_dkg0p")
+
+[node name="SET_can_drop=false" parent="APChainAddChild2" index="2"]
+var_bool = SubResource("Resource_dkg0p")
+
+[node name="SET_can_drop=true" parent="APChainAddChild2" index="3"]
+var_bool = SubResource("Resource_dkg0p")

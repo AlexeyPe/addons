@@ -1,20 +1,18 @@
-[gd_resource type="TileSet" load_steps=8 format=3 uid="uid://ctx1yx25gyv50"]
+[gd_resource type="TileSet" load_steps=7 format=3 uid="uid://ctx1yx25gyv50"]
 
-[ext_resource type="PackedScene" uid="uid://b1dthv2qurwnx" path="res://scene/fields/scene/field_red.tscn" id="1_yi3o1"]
-[ext_resource type="PackedScene" uid="uid://dgichot42emfv" path="res://scene/fields/scene/field_white.tscn" id="2_xysng"]
-[ext_resource type="PackedScene" uid="uid://cmkm76vsh55r0" path="res://scene/fields/scene/field_yellow.tscn" id="3_k33yu"]
-[ext_resource type="PackedScene" uid="uid://cwpjcvf3t4yos" path="res://scene/fields/scene/free_field.tscn" id="4_k33yu"]
-[ext_resource type="PackedScene" uid="uid://r0oloojfa3hw" path="res://scene/fields/field_purple/field_purple.tscn" id="5_5tb0x"]
-[ext_resource type="PackedScene" uid="uid://barkecirxiasy" path="res://scene/fields/scene/field_yellow_wall.tscn" id="6_t5gba"]
+[ext_resource type="PackedScene" uid="uid://7bappgufejs0" path="res://scene/field/object/field_red.tscn" id="1_l6fxn"]
+[ext_resource type="PackedScene" uid="uid://bfod4jbfvw3n1" path="res://scene/field/object/field_white.tscn" id="2_axioa"]
+[ext_resource type="PackedScene" uid="uid://cyw3hqnxnas28" path="res://scene/field/object/field_free.tscn" id="3_axioa"]
+[ext_resource type="PackedScene" uid="uid://b5bmd2x5pxxvi" path="res://scene/field/object/field_yellow.tscn" id="4_lom5w"]
+[ext_resource type="PackedScene" uid="uid://nna1vbccpbw3" path="res://scene/field/object/field_purple.tscn" id="5_yi3o1"]
 
-[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_fh3cp"]
-scenes/1/scene = ExtResource("1_yi3o1")
-scenes/2/scene = ExtResource("2_xysng")
-scenes/3/scene = ExtResource("3_k33yu")
-scenes/4/scene = ExtResource("4_k33yu")
-scenes/5/scene = ExtResource("5_5tb0x")
-scenes/6/scene = ExtResource("6_t5gba")
+[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_vap30"]
+scenes/1/scene = ExtResource("1_l6fxn")
+scenes/2/scene = ExtResource("2_axioa")
+scenes/3/scene = ExtResource("3_axioa")
+scenes/4/scene = ExtResource("4_lom5w")
+scenes/5/scene = ExtResource("5_yi3o1")
 
 [resource]
 tile_size = Vector2i(48, 48)
-sources/0 = SubResource("TileSetScenesCollectionSource_fh3cp")
+sources/1 = SubResource("TileSetScenesCollectionSource_vap30")

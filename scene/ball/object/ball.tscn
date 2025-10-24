@@ -146,7 +146,8 @@ _data = {
 }
 
 [node name="ball" type="RigidBody2D"]
-collision_layer = 4209
+collision_layer = 4305
+collision_mask = 4305
 input_pickable = true
 physics_material_override = SubResource("PhysicsMaterial_6xsba")
 gravity_scale = 0.0
@@ -158,8 +159,8 @@ angular_damp_mode = 1
 angular_damp = 100.0
 script = ExtResource("1_kwmlm")
 num = ExtResource("2_hsyp7")
-num_is_collision_layer = Array[int]([4321, 4209, 4305, 4257])
-num_is_collision_mask = Array[int]([4321, 4209, 4305, 4257])
+num_is_collision_layer = Array[int]([0, 4321, 4209, 4305, 4257])
+num_is_collision_mask = Array[int]([0, 4321, 4209, 4305, 4257])
 metadata/_custom_type_script = "uid://bt65n6o82yg6b"
 metadata/is_die = ExtResource("1_41df4")
 metadata/team_object = ExtResource("2_hsyp7")
@@ -174,6 +175,7 @@ meta_to_field_id = Dictionary[String, int]({
 "yellow": 3
 })
 unit_type = "red"
+enable = false
 node_emitter = NodePath("..")
 watch_signal = 2
 metadata/_custom_type_script = "uid://c8qjdf1iq8aup"
@@ -211,7 +213,7 @@ scale = Vector2(0.25, 0.25000003)
 texture = ExtResource("11_xd8ss")
 script = ExtResource("10_bk5pk")
 num = ExtResource("2_hsyp7")
-num_is_texture = Array[Texture]([ExtResource("9_cn5ba"), ExtResource("11_xd8ss"), ExtResource("12_aahtj"), ExtResource("13_8s2x3")])
+num_is_texture = Array[Texture]([null, ExtResource("9_cn5ba"), ExtResource("11_xd8ss"), ExtResource("12_aahtj"), ExtResource("13_8s2x3")])
 metadata/_custom_type_script = "uid://bgxr4wfhuukv"
 
 [node name="BodyDie" type="Sprite2D" parent="."]
@@ -223,7 +225,7 @@ scale = Vector2(0.25, 0.25)
 texture = ExtResource("15_mih5m")
 script = ExtResource("10_bk5pk")
 num = ExtResource("2_hsyp7")
-num_is_texture = Array[Texture]([ExtResource("14_8s2x3"), ExtResource("15_mih5m"), ExtResource("16_41df4"), ExtResource("17_kwmlm")])
+num_is_texture = Array[Texture]([null, ExtResource("14_8s2x3"), ExtResource("15_mih5m"), ExtResource("16_41df4"), ExtResource("17_kwmlm")])
 metadata/_custom_type_script = "uid://bgxr4wfhuukv"
 
 [node name="MingcuteGhostFill" type="Sprite2D" parent="."]
@@ -332,7 +334,6 @@ metadata/_custom_type_script = "uid://b5w7jmxkrwose"
 [node name="HasMeta=test" type="Node" parent="APActivatorInteraction" node_paths=PackedStringArray("node_emitter")]
 script = ExtResource("28_mmg5j")
 meta_name = "test"
-need_value = false
 node_emitter = NodePath("..")
 watch_signal = 0
 metadata/_custom_type_script = "uid://btail58r0orri"

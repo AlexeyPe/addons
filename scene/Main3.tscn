@@ -1,4 +1,4 @@
-[gd_scene load_steps=48 format=4 uid="uid://cpjve54sahjml"]
+[gd_scene load_steps=49 format=4 uid="uid://cpjve54sahjml"]
 
 [ext_resource type="Script" uid="uid://mjk4ctyfa82r" path="res://scene/main.gd" id="1_h5oyc"]
 [ext_resource type="Resource" uid="uid://cwbslfwrc5pwx" path="res://data/CameraZoom.tres" id="4_ndi7f"]
@@ -66,7 +66,7 @@ resource_local_to_scene = true
 resource_name = "team_object"
 script = ExtResource("36_h6lfy")
 min_value_res = SubResource("Resource_l6i7g")
-value = 0
+value = 1
 description = "Команда объекта - здания/юнита.
 0 - Белые
 1 - Красные
@@ -89,7 +89,7 @@ resource_local_to_scene = true
 resource_name = "team_object"
 script = ExtResource("36_h6lfy")
 min_value_res = SubResource("Resource_l6i7g")
-value = 1
+value = 2
 description = "Команда объекта - здания/юнита.
 0 - Белые
 1 - Красные
@@ -108,7 +108,7 @@ resource_local_to_scene = true
 resource_name = "team_object"
 script = ExtResource("36_h6lfy")
 min_value_res = SubResource("Resource_l6i7g")
-value = 3
+value = 4
 description = "Команда объекта - здания/юнита.
 0 - Белые
 1 - Красные
@@ -122,20 +122,26 @@ resource_name = "is_die"
 script = ExtResource("37_2iqcl")
 metadata/_custom_type_script = "uid://djmnu1e55mp0j"
 
-[sub_resource type="Resource" id="Resource_fh3cp"]
+[sub_resource type="Resource" id="Resource_fmk5b"]
+script = ExtResource("36_h6lfy")
+value = 0
+metadata/_custom_type_script = "uid://8myr58nwfvfg"
+
+[sub_resource type="Resource" id="Resource_w08im"]
 resource_local_to_scene = true
 resource_name = "team_object"
 script = ExtResource("36_h6lfy")
-min_value_res = SubResource("Resource_l6i7g")
-value = 2
+min_value_res = SubResource("Resource_fmk5b")
+value = 3
 description = "Команда объекта - здания/юнита.
-0 - Белые
-1 - Красные
-2 - Фиолетовые
-3 - Жёлтые"
+0 - Ничья 
+1 - Белые
+2 - Красные
+3 - Фиолетовые
+4 - Жёлтые"
 metadata/_custom_type_script = "uid://8myr58nwfvfg"
 
-[sub_resource type="Resource" id="Resource_dk2pn"]
+[sub_resource type="Resource" id="Resource_mng47"]
 resource_local_to_scene = true
 resource_name = "is_die"
 script = ExtResource("37_2iqcl")
@@ -207,7 +213,7 @@ clip_children = 1
 
 [node name="Fields" type="TileMapLayer" parent="Tilemaps/Clip"]
 position = Vector2(24, 24)
-tile_map_data = PackedByteArray("AAAGAAMAAAAAAAAAAQAGAAIAAAAAAAAAAQAFAAIAAAAAAAAAAQAFAAEAAAAAAAAAAQAGAAEAAAAAAAAAAQAHAAEAAAAAAAAAAQAHAAIAAAAAAAAAAQAIAAEAAAAAAAAAAQAIAAAAAAAAAAAAAQAHAAAAAAAAAAAAAQAGAAAAAAAAAAAABQD//wUAAAAAAAAAAgD//wQAAAAAAAAAAgD//wMAAAAAAAAAAgD//wIAAAAAAAAAAgAAAAMAAAAAAAAAAgAAAAQAAAAAAAAAAgABAAQAAAAAAAAAAgD+/wQAAAAAAAAAAgD+/wMAAAAAAAAAAgD+/wIAAAAAAAAAAgD9/wIAAAAAAAAAAgD9/wMAAAAAAAAAAgD8//7/AAAAAAAAAwD8////AAAAAAAAAwD9////AAAAAAAAAwD+////AAAAAAAAAwD+//7/AAAAAAAAAwD9//7/AAAAAAAAAwD9//3/AAAAAAAAAwD+//3/AAAAAAAAAwD///3/AAAAAAAAAwD///7/AAAAAAAAAwADAPz/AAAAAAAABQADAP3/AAAAAAAABQAEAP3/AAAAAAAABQAEAPz/AAAAAAAABQAFAP3/AAAAAAAABQAFAP7/AAAAAAAABQAEAP7/AAAAAAAABQAGAP7/AAAAAAAABQAGAP3/AAAAAAAAAQAFAAQAAAAAAAAABAAFAAMAAAAAAAAABAAEAAMAAAAAAAAABAAEAAQAAAAAAAAABAAEAAUAAAAAAAAABAAFAAUAAAAAAAAABAADAAUAAAAAAAAABAADAAMAAAAAAAAABAAEAAIAAAAAAAAABAACAAMAAAAAAAAABAACAAIAAAAAAAAABAABAAIAAAAAAAAABAABAAMAAAAAAAAABAAHAAQAAAAAAAAABAAGAAQAAAAAAAAABAAIAAQAAAAAAAAABAAIAAUAAAAAAAAABAAJAAUAAAAAAAAABAAKAAUAAAAAAAAABAAKAAQAAAAAAAAABAAJAAQAAAAAAAAABAAIAAMAAAAAAAAABAAAAAIAAAAAAAAABAD+/wUAAAAAAAAABAD8/wMAAAAAAAAABAD8/wIAAAAAAAAABAD8/wEAAAAAAAAABAD8/wAAAAAAAAAABAD9/wAAAAAAAAAABAD9/wEAAAAAAAAABAD+/wEAAAAAAAAABAD+/wAAAAAAAAAABAD//wAAAAAAAAAABAD//wEAAAAAAAAABAD/////AAAAAAAABAAAAP//AAAAAAAABAAAAP7/AAAAAAAABAAAAP3/AAAAAAAABgABAP3/AAAAAAAABQABAP7/AAAAAAAABQABAPz/AAAAAAAAAQABAPv/AAAAAAAAAQACAPv/AAAAAAAABAACAPz/AAAAAAAABAACAP3/AAAAAAAABQADAP7/AAAAAAAABAAFAP//AAAAAAAABQAGAP//AAAAAAAABQAHAP//AAAAAAAABQAIAP//AAAAAAAABQAJAAAAAAAAAAAABAAJAP7/AAAAAAAABAAIAP7/AAAAAAAABQAHAP7/AAAAAAAABQAKAP7/AAAAAAAABAAKAP3/AAAAAAAABAALAP7/AAAAAAAABAALAP3/AAAAAAAABAAMAP7/AAAAAAAABAAMAP3/AAAAAAAABAAMAPz/AAAAAAAABAANAPz/AAAAAAAABAANAP3/AAAAAAAABAANAP7/AAAAAAAABAAEAP//AAAAAAAABAAJAP//AAAAAAAABAAKAP//AAAAAAAABAACAAQAAAAAAAAAAQADAAQAAAAAAAAABAA=")
+tile_map_data = PackedByteArray("AAAGAAEAAQAAAAAAAQAGAAIAAQAAAAAAAQAGAAMAAQAAAAAAAQAFAAMAAQAAAAAAAQAFAAIAAQAAAAAAAQAFAAEAAQAAAAAAAQAHAAIAAQAAAAAAAQAHAAEAAQAAAAAAAQD//wMAAQAAAAAAAgD+/wMAAQAAAAAAAgD9/wMAAQAAAAAAAgD9/wIAAQAAAAAAAgD+/wIAAQAAAAAAAgD//wIAAQAAAAAAAgD//wQAAQAAAAAAAgD+/wQAAQAAAAAAAgD+////AQAAAAAABAD9////AQAAAAAABAD+//7/AQAAAAAABAD9//7/AQAAAAAABAD9//3/AQAAAAAABAD+//3/AQAAAAAABAD///7/AQAAAAAABAD/////AQAAAAAABAD///3/AQAAAAAABAAFAP7/AQAAAAAABQAFAP//AQAAAAAABQAGAP//AQAAAAAABQAGAP7/AQAAAAAABQAGAP3/AQAAAAAABQAFAP3/AQAAAAAABQAEAP7/AQAAAAAABQAEAP//AQAAAAAABQAEAP3/AQAAAAAABQA=")
 tile_set = ExtResource("30_iynh3")
 
 [node name="corner-ru-1" type="Sprite2D" parent="Tilemaps/Clip"]
@@ -1063,7 +1069,7 @@ rotation = 1.5707964
 texture = ExtResource("31_87kko")
 
 [node name="ball" parent="Tilemaps" instance=ExtResource("35_41idh")]
-position = Vector2(-54, 191)
+position = Vector2(-48, 192)
 collision_layer = 4321
 collision_mask = 4321
 num = SubResource("Resource_ftvp4")
@@ -1081,7 +1087,8 @@ cell_info_res = SubResource("Resource_ph3ti")
 metadata/_custom_type_script = "uid://cicas0bkgf1up"
 
 [node name="ball2" parent="Tilemaps" instance=ExtResource("35_41idh")]
-position = Vector2(335, 131)
+position = Vector2(336, 144)
+collision_layer = 4209
 collision_mask = 4209
 num = SubResource("Resource_43j8o")
 metadata/is_die = SubResource("Resource_ya7da")
@@ -1095,13 +1102,11 @@ num = SubResource("Resource_6xsba")
 metadata/is_die = SubResource("Resource_ia2xj")
 metadata/team_object = SubResource("Resource_6xsba")
 
-[node name="ball4" parent="Tilemaps" instance=ExtResource("35_41idh")]
-position = Vector2(313, -27)
-collision_layer = 4305
-collision_mask = 4305
-num = SubResource("Resource_fh3cp")
-metadata/is_die = SubResource("Resource_dk2pn")
-metadata/team_object = SubResource("Resource_fh3cp")
+[node name="ball_purple" parent="Tilemaps" instance=ExtResource("35_41idh")]
+position = Vector2(288, -48)
+num = SubResource("Resource_w08im")
+metadata/is_die = SubResource("Resource_mng47")
+metadata/team_object = SubResource("Resource_w08im")
 
 [node name="World" type="Node2D" parent="."]
 

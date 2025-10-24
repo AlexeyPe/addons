@@ -1,6 +1,6 @@
 @tool
-extends RigidBody2D
-class_name RigidBody2DVaRes
+extends StaticBody2D
+class_name StaticBody2DVaRes
 
 @export_group("VaRes Number")
 @export var num:VaRNumber :
@@ -9,20 +9,24 @@ class_name RigidBody2DVaRes
 			num.changed.disconnect(on_changed_vars)
 		num = new
 		if new: num.changed.connect(on_changed_vars)
-		update_rigidbody()
+		update_body()
 @export_flags_2d_physics var num_is_collision_layer:Array[int]
 @export_flags_2d_physics var num_is_collision_mask:Array[int]
-
-@export_group("VaRes Bool")
+@export var num_is_modulate:Array[Color] : 
+	set(new):
+		num_is_modulate = new
+		update_body()
 
 func on_changed_vars():
-	update_rigidbody()
+	update_body()
 
-func update_rigidbody():
+func update_body():
+	if !num_is_modulate.is_empty() and num_is_modulate.size()-1 >= num.get_value():
+		modulate = num_is_modulate.get(num.get_value())
 	if !num_is_collision_layer.is_empty() and num_is_collision_layer.size()-1 >= num.get_value():
 		collision_layer = num_is_collision_layer.get(num.get_value())
 	if !num_is_collision_mask.is_empty() and num_is_collision_mask.size()-1 >= num.get_value():
 		collision_mask = num_is_collision_mask.get(num.get_value())
 
 func _ready() -> void:
-	update_rigidbody()
+	update_body()
