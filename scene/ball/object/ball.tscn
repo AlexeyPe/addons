@@ -146,8 +146,8 @@ _data = {
 }
 
 [node name="ball" type="RigidBody2D"]
-collision_layer = 4209
-collision_mask = 4209
+collision_layer = 4305
+collision_mask = 4305
 input_pickable = true
 physics_material_override = SubResource("PhysicsMaterial_6xsba")
 gravity_scale = 0.0
@@ -159,8 +159,8 @@ angular_damp_mode = 1
 angular_damp = 100.0
 script = ExtResource("1_kwmlm")
 num = ExtResource("2_hsyp7")
-num_is_collision_layer = Array[int]([0, 4321, 4209, 4305, 4257])
-num_is_collision_mask = Array[int]([0, 4321, 4209, 4305, 4257])
+num_is_collision_layer = Array[int]([0, 4321, 4209, 4305, 4273])
+num_is_collision_mask = Array[int]([0, 4321, 4209, 4305, 4273])
 print_collision = null
 metadata/_custom_type_script = "uid://bt65n6o82yg6b"
 metadata/is_die = ExtResource("1_41df4")
@@ -211,7 +211,7 @@ metadata/_custom_type_script = "uid://du8j36g8pf8k8"
 [node name="BodyLife" type="Sprite2D" parent="."]
 texture_filter = 4
 scale = Vector2(0.25, 0.25000003)
-texture = ExtResource("11_xd8ss")
+texture = ExtResource("12_aahtj")
 script = ExtResource("10_bk5pk")
 num = ExtResource("2_hsyp7")
 num_is_texture = Array[Texture]([null, ExtResource("9_cn5ba"), ExtResource("11_xd8ss"), ExtResource("12_aahtj"), ExtResource("13_8s2x3")])
@@ -222,7 +222,7 @@ self_modulate = Color(1, 1, 1, 0.7058824)
 z_index = 1
 texture_filter = 4
 scale = Vector2(0.25, 0.25)
-texture = ExtResource("15_mih5m")
+texture = ExtResource("16_41df4")
 script = ExtResource("10_bk5pk")
 num = ExtResource("2_hsyp7")
 num_is_texture = Array[Texture]([null, ExtResource("14_8s2x3"), ExtResource("15_mih5m"), ExtResource("16_41df4"), ExtResource("17_kwmlm")])
@@ -330,9 +330,10 @@ script = ExtResource("27_kwmlm")
 rigid_body_2D = NodePath("..")
 metadata/_custom_type_script = "uid://b5w7jmxkrwose"
 
-[node name="HasMeta=test" type="Node" parent="APActivatorInteraction" node_paths=PackedStringArray("node_emitter")]
+[node name="HasMeta=team_object" type="Node" parent="APActivatorInteraction" node_paths=PackedStringArray("node_emitter")]
 script = ExtResource("28_mmg5j")
-meta_name = "test"
+meta_name = "team_object"
+meta_value_paste = ExtResource("2_hsyp7")
 node_emitter = NodePath("..")
 watch_signal = 0
 metadata/_custom_type_script = "uid://btail58r0orri"

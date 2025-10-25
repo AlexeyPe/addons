@@ -80,6 +80,7 @@ metadata/team_object = ExtResource("2_qi7cb")
 
 [node name="NinePatchRect" type="NinePatchRect" parent="."]
 modulate = Color(0.7411765, 0.42745098, 0.9490196, 1)
+texture_filter = 4
 material = ExtResource("3_770ey")
 anchors_preset = 8
 anchor_left = 0.5

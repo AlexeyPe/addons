@@ -6,7 +6,7 @@ signal has_meta_true
 signal has_meta_false
 
 @export var meta_name:String
-@export var set_chain_num_a:APChainIfNum
+@export var meta_value_paste:VarRes
 @export_tool_button("Rename self node") var _rename = _rename_self
 
 func _rename_self():
@@ -18,6 +18,9 @@ func _rename_self():
 func _execute(...args:Array) -> void:
 	if not meta_name.is_empty():
 		if node_emitter.has_meta(meta_name):
+			var data = node_emitter.get_meta(meta_name)
+			if data is VarRes and meta_value_paste:
+				data.paste(meta_value_paste)
 			has_meta_true.emit()
 		else:
 			has_meta_false.emit()

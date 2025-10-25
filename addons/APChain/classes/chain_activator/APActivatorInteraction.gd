@@ -10,14 +10,6 @@ class_name APActivatorInteraction
 	"body_exited",
 ) var body_signal:String = "body_entered"
 
-func set_meta_list(new:Dictionary[StringName, Variant]):
-	if not enable: return
-	for meta in get_meta_list():
-		remove_meta(meta)
-	for new_meta in new.keys():
-		set_meta(new_meta, new[new_meta])
-	activated.emit()
-
 func _change_enable():
 	if enable:
 		if rigid_body_2D:
@@ -35,11 +27,12 @@ func _change_enable():
 				rigid_body_3D.disconnect(body_signal, target_emit)
 
 func target_emit(...args:Array):
-	#var body: Node = args[0]
-	var meta_list:Dictionary[StringName, Variant]
+	if not enable: return
+	for meta in get_meta_list():
+		remove_meta(meta)
 	for meta in args[0].get_meta_list():
-		meta_list[meta] = args[0].get_meta(meta)
-	set_meta_list(meta_list)
+		set_meta(meta, args[0].get_meta(meta))
+	activated.emit()
 
 func _ready() -> void:
 	_change_enable()
