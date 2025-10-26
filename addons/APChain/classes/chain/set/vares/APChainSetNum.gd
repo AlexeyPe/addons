@@ -3,6 +3,8 @@ extends APChain
 class_name APChainSetNum
 
 @export var num_a:VaRNumber
+@export var num_a_is_arr:Array[VaRNumber]
+@export var num_a_arr_index:VaRNumber
 @export var num_b:VaRNumber
 @export_enum(
 	"a = b",
@@ -21,6 +23,11 @@ func _rename_self():
 	else:
 		printerr("APChainSetNum, num_a is empty, %s"%[get_path()])
 
+func _ready() -> void:
+	super._ready()
+	if num_a_is_arr.is_empty() and !num_a_arr_index: return
+	if num_a_is_arr.size() < num_a_arr_index.get_value(): return
+	num_a = num_a_is_arr[num_a_arr_index.get_value()]
 
 func _execute(...args:Array) -> void:
 	execution_started.emit()

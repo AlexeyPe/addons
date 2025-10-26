@@ -6,5 +6,4 @@
 resource_local_to_scene = true
 resource_name = "is_die"
 script = ExtResource("1_ha8xn")
-value = true
 metadata/_custom_type_script = "uid://djmnu1e55mp0j"

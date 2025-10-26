@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=3 uid="uid://bpn7vchp3v0o6"]
+[gd_scene load_steps=44 format=3 uid="uid://bpn7vchp3v0o6"]
 
 [ext_resource type="Resource" uid="uid://58pmfjua3f3c" path="res://scene/ball/object/is_die.tres" id="1_41df4"]
 [ext_resource type="Script" uid="uid://bt65n6o82yg6b" path="res://addons/VarRes/classes/utility/RigidBody2DVaRes.gd" id="1_kwmlm"]
@@ -29,15 +29,15 @@
 [ext_resource type="Script" uid="uid://xix6u347hwe" path="res://addons/APChain/classes/chain/set/APChainSetCollisionEnable.gd" id="27_gh3y3"]
 [ext_resource type="Script" uid="uid://b5w7jmxkrwose" path="res://addons/APChain/classes/chain_activator/APActivatorInteraction.gd" id="27_kwmlm"]
 [ext_resource type="Script" uid="uid://btail58r0orri" path="res://addons/APChain/classes/chain/meta/APChainHasMeta.gd" id="28_mmg5j"]
+[ext_resource type="Script" uid="uid://cldopw0r4n1wj" path="res://addons/APChain/classes/chain/set/vares/APChainSetNum.gd" id="30_c5b2c"]
+[ext_resource type="Script" uid="uid://ck2yuex0aket8" path="res://addons/VarRes/classes/numbers/VaRNumber.gd" id="31_dtgiy"]
+[ext_resource type="Resource" uid="uid://ccq6dphbjbpf6" path="res://data/gameplay/units/units_white.tres" id="32_rblx7"]
+[ext_resource type="Resource" uid="uid://c4bpyilbpdmw" path="res://data/gameplay/units/units_purple.tres" id="33_i8mmh"]
+[ext_resource type="Resource" uid="uid://cvmmidd5uwfbn" path="res://data/gameplay/units/units_yellow.tres" id="34_tggjb"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_6xsba"]
 friction = 0.0
 bounce = 1.0
-
-[sub_resource type="Resource" id="Resource_u1ywn"]
-script = ExtResource("6_aahtj")
-value = 1
-metadata/_custom_type_script = "uid://8myr58nwfvfg"
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_ws0sv"]
 frequency = 0.0433
@@ -56,9 +56,9 @@ script = ExtResource("6_aahtj")
 value = 1
 metadata/_custom_type_script = "uid://8myr58nwfvfg"
 
-[sub_resource type="Resource" id="Resource_60vfn"]
+[sub_resource type="Resource" id="Resource_dtgiy"]
 script = ExtResource("6_aahtj")
-value = -1
+value = 1
 metadata/_custom_type_script = "uid://8myr58nwfvfg"
 
 [sub_resource type="Animation" id="Animation_h6r1o"]
@@ -154,7 +154,7 @@ physics_material_override = SubResource("PhysicsMaterial_6xsba")
 gravity_scale = 0.0
 contact_monitor = true
 max_contacts_reported = 6
-linear_velocity = Vector2(144.4, 74.33)
+linear_velocity = Vector2(177.7, 23.33)
 linear_damp_mode = 1
 angular_damp_mode = 1
 angular_damp = 100.0
@@ -181,14 +181,6 @@ node_emitter = NodePath("..")
 watch_signal = 2
 metadata/_custom_type_script = "uid://c8qjdf1iq8aup"
 
-[node name="APChainNumOpUnitAdd" type="Node" parent="." node_paths=PackedStringArray("node_emitter")]
-script = ExtResource("4_cn5ba")
-vares_target = ExtResource("5_xd8ss")
-vares_b = SubResource("Resource_u1ywn")
-node_emitter = NodePath("..")
-watch_signal = 14
-metadata/_custom_type_script = "uid://uh8e7y0n0t5e"
-
 [node name="APContDirTargetRB2D" type="Node" parent="." node_paths=PackedStringArray("body_2d", "node_scale")]
 script = ExtResource("7_8s2x3")
 body_2d = NodePath("..")
@@ -209,7 +201,6 @@ watch_signal = 2
 metadata/_custom_type_script = "uid://du8j36g8pf8k8"
 
 [node name="BodyLife" type="Sprite2D" parent="."]
-visible = false
 texture_filter = 4
 scale = Vector2(0.25, 0.25000003)
 texture = ExtResource("12_aahtj")
@@ -218,6 +209,7 @@ num = ExtResource("2_hsyp7")
 num_is_texture = Array[Texture]([null, ExtResource("9_cn5ba"), ExtResource("11_xd8ss"), ExtResource("12_aahtj"), ExtResource("13_8s2x3")])
 
 [node name="BodyDie" type="Sprite2D" parent="."]
+visible = false
 self_modulate = Color(1, 1, 1, 0.7058824)
 z_index = 1
 texture_filter = 4
@@ -232,7 +224,6 @@ visible = false
 modulate = Color(1, 1, 1, 0)
 z_index = 1
 material = SubResource("ShaderMaterial_41df4")
-position = Vector2(0, -24)
 scale = Vector2(0.25, 0.25000003)
 texture = ExtResource("17_dtgiy")
 
@@ -287,20 +278,22 @@ node_emitter = NodePath("..")
 watch_signal = 0
 metadata/_custom_type_script = "uid://uh8e7y0n0t5e"
 
-[node name="APChainNumOp2" type="Node" parent="is_die=now_true" node_paths=PackedStringArray("node_emitter")]
-script = ExtResource("4_cn5ba")
-vares_target = ExtResource("5_xd8ss")
-vares_b = SubResource("Resource_60vfn")
-node_emitter = NodePath("..")
-watch_signal = 0
-metadata/_custom_type_script = "uid://uh8e7y0n0t5e"
-
 [node name="SetCollision=activated" type="Node" parent="is_die=now_true" node_paths=PackedStringArray("collision_disable", "node_emitter")]
 script = ExtResource("27_gh3y3")
 collision_disable = [NodePath("../../CollisionShape2D")]
 node_emitter = NodePath("..")
 watch_signal = 0
 metadata/_custom_type_script = "uid://xix6u347hwe"
+
+[node name="APChainSetNum2" type="Node" parent="is_die=now_true" node_paths=PackedStringArray("node_emitter")]
+script = ExtResource("30_c5b2c")
+num_a_is_arr = Array[ExtResource("31_dtgiy")]([null, ExtResource("32_rblx7"), ExtResource("5_xd8ss"), ExtResource("33_i8mmh"), ExtResource("34_tggjb")])
+num_a_arr_index = ExtResource("2_hsyp7")
+num_b = SubResource("Resource_dtgiy")
+operation = 2
+node_emitter = NodePath("..")
+watch_signal = 0
+metadata/_custom_type_script = "uid://cldopw0r4n1wj"
 
 [node name="is_die=now_false" type="Node" parent="."]
 script = ExtResource("12_gh3y3")
@@ -345,3 +338,13 @@ meta_value_paste = ExtResource("2_hsyp7")
 node_emitter = NodePath("..")
 watch_signal = 0
 metadata/_custom_type_script = "uid://btail58r0orri"
+
+[node name="APChainSetNum" type="Node" parent="." node_paths=PackedStringArray("node_emitter")]
+script = ExtResource("30_c5b2c")
+num_a_is_arr = Array[ExtResource("31_dtgiy")]([null, ExtResource("32_rblx7"), ExtResource("5_xd8ss"), ExtResource("33_i8mmh"), ExtResource("34_tggjb")])
+num_a_arr_index = ExtResource("2_hsyp7")
+num_b = SubResource("Resource_dtgiy")
+operation = 1
+node_emitter = NodePath("..")
+watch_signal = 14
+metadata/_custom_type_script = "uid://cldopw0r4n1wj"

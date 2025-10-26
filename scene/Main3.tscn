@@ -419,7 +419,7 @@ label_settings = ExtResource("2_fcgbl")
 
 [node name="Label2" type="Label" parent="UI/Counters/Counters/Fields/Purple"]
 layout_mode = 2
-text = "0"
+text = "111"
 label_settings = ExtResource("2_fcgbl")
 script = ExtResource("3_ndi7f")
 var_res = ExtResource("15_5n2dr")
@@ -459,7 +459,7 @@ label_settings = ExtResource("2_fcgbl")
 
 [node name="Label2" type="Label" parent="UI/Counters/Counters/Units/White"]
 layout_mode = 2
-text = "0"
+text = "1"
 label_settings = ExtResource("2_fcgbl")
 script = ExtResource("3_ndi7f")
 var_res = ExtResource("17_f4rxr")
@@ -476,7 +476,7 @@ label_settings = ExtResource("2_fcgbl")
 
 [node name="Label2" type="Label" parent="UI/Counters/Counters/Units/Red"]
 layout_mode = 2
-text = "0"
+text = "2"
 label_settings = ExtResource("2_fcgbl")
 script = ExtResource("3_ndi7f")
 var_res = ExtResource("18_0f4br")
@@ -493,7 +493,7 @@ label_settings = ExtResource("2_fcgbl")
 
 [node name="Label2" type="Label" parent="UI/Counters/Counters/Units/Purple"]
 layout_mode = 2
-text = "0"
+text = "1"
 label_settings = ExtResource("2_fcgbl")
 script = ExtResource("3_ndi7f")
 var_res = ExtResource("19_ilk30")
@@ -510,7 +510,7 @@ label_settings = ExtResource("2_fcgbl")
 
 [node name="Label2" type="Label" parent="UI/Counters/Counters/Units/Yellow"]
 layout_mode = 2
-text = "0"
+text = "1"
 label_settings = ExtResource("2_fcgbl")
 script = ExtResource("3_ndi7f")
 var_res = ExtResource("20_oqdx0")
