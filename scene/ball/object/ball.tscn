@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=3 uid="uid://bpn7vchp3v0o6"]
+[gd_scene load_steps=40 format=3 uid="uid://bpn7vchp3v0o6"]
 
 [ext_resource type="Resource" uid="uid://58pmfjua3f3c" path="res://scene/ball/object/is_die.tres" id="1_41df4"]
 [ext_resource type="Script" uid="uid://bt65n6o82yg6b" path="res://addons/VarRes/classes/utility/RigidBody2DVaRes.gd" id="1_kwmlm"]
@@ -26,6 +26,7 @@
 [ext_resource type="Texture2D" uid="uid://mnjwql4xbnfx" path="res://scene/ball/ball-yellow-die.png" id="17_kwmlm"]
 [ext_resource type="Shader" uid="uid://b4xocinxdwelf" path="res://addons/shadercollectionap/shader/outline/Outline.gdshader" id="18_mih5m"]
 [ext_resource type="Texture2D" uid="uid://n4dics7e7f7l" path="res://scene/ball/game-icons--ring.svg" id="18_rblx7"]
+[ext_resource type="Script" uid="uid://xix6u347hwe" path="res://addons/APChain/classes/chain/set/APChainSetCollisionEnable.gd" id="27_gh3y3"]
 [ext_resource type="Script" uid="uid://b5w7jmxkrwose" path="res://addons/APChain/classes/chain_activator/APActivatorInteraction.gd" id="27_kwmlm"]
 [ext_resource type="Script" uid="uid://btail58r0orri" path="res://addons/APChain/classes/chain/meta/APChainHasMeta.gd" id="28_mmg5j"]
 
@@ -161,7 +162,6 @@ script = ExtResource("1_kwmlm")
 num = ExtResource("2_hsyp7")
 num_is_collision_layer = Array[int]([0, 4321, 4209, 4305, 4273])
 num_is_collision_mask = Array[int]([0, 4321, 4209, 4305, 4273])
-print_collision = null
 metadata/_custom_type_script = "uid://bt65n6o82yg6b"
 metadata/is_die = ExtResource("1_41df4")
 metadata/team_object = ExtResource("2_hsyp7")
@@ -262,10 +262,9 @@ node_emitter = NodePath("..")
 watch_signal = 0
 metadata/_custom_type_script = "uid://bqn6e76istclq"
 
-[node name="APChainSetPhysics2D" type="Node" parent="is_die=now_true" node_paths=PackedStringArray("node_emitter")]
+[node name="APChainSetPhysics2D" type="Node" parent="is_die=now_true" node_paths=PackedStringArray("target_node", "node_emitter")]
 script = ExtResource("14_davvq")
-set_collision = true
-input_pickable = true
+target_node = NodePath("../..")
 set_linear = true
 node_emitter = NodePath("..")
 watch_signal = 0
@@ -294,6 +293,13 @@ vares_b = SubResource("Resource_60vfn")
 node_emitter = NodePath("..")
 watch_signal = 0
 metadata/_custom_type_script = "uid://uh8e7y0n0t5e"
+
+[node name="SetCollision=activated" type="Node" parent="is_die=now_true" node_paths=PackedStringArray("collision_disable", "node_emitter")]
+script = ExtResource("27_gh3y3")
+collision_disable = [NodePath("../../CollisionShape2D")]
+node_emitter = NodePath("..")
+watch_signal = 0
+metadata/_custom_type_script = "uid://xix6u347hwe"
 
 [node name="is_die=now_false" type="Node" parent="."]
 script = ExtResource("12_gh3y3")
@@ -326,6 +332,7 @@ libraries = {
 }
 
 [node name="APActivatorInteraction" type="Node" parent="." node_paths=PackedStringArray("rigid_body_2D")]
+editor_description = "Работает при столкновении шара со зданием или полем (или юнитом, но такого не должно происходить)"
 script = ExtResource("27_kwmlm")
 rigid_body_2D = NodePath("..")
 metadata/_custom_type_script = "uid://b5w7jmxkrwose"

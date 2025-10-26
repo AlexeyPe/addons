@@ -17,9 +17,23 @@ signal if_false
 	"a >= b",
 	"a <= b",
 ) var condition:int
+## Оставить пустым что бы пропустить это выполнение.[br]
+## Заменит num_a на мету из node_emitter.[br]
+## Мета добавляется/перезаписывается в метаданные цепочки.
+@export var num_a_is_meta_emitter:String = ""
 
 func _execute(...args:Array) -> void:
 	execution_started.emit()
+	if !num_a_is_meta_emitter.is_empty():
+		print("APChainIfNum meta execute")
+		if node_emitter.has_meta(num_a_is_meta_emitter):
+			var meta = node_emitter.get_meta(num_a_is_meta_emitter)
+			if meta and meta is VaRNumber:
+				print("APChainIfNum meta execute set num_a ", meta)
+				num_a = meta
+				set_meta(num_a_is_meta_emitter, meta)
+			else: return
+		else: return
 	if !num_a:
 		executed_failed.emit()
 		printerr("APChainIfNum, num_a is null %s"%[])

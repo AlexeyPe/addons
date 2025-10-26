@@ -1,4 +1,4 @@
-[gd_scene load_steps=51 format=4 uid="uid://cpjve54sahjml"]
+[gd_scene load_steps=54 format=4 uid="uid://cpjve54sahjml"]
 
 [ext_resource type="Script" uid="uid://mjk4ctyfa82r" path="res://scene/main.gd" id="1_h5oyc"]
 [ext_resource type="Resource" uid="uid://cwbslfwrc5pwx" path="res://data/CameraZoom.tres" id="4_ndi7f"]
@@ -86,6 +86,31 @@ metadata/_custom_type_script = "uid://djmnu1e55mp0j"
 script = ExtResource("39_7h27y")
 metadata/_custom_type_script = "uid://co8mhqm73w3ve"
 
+[sub_resource type="Resource" id="Resource_fmk5b"]
+script = ExtResource("36_h6lfy")
+value = 0
+metadata/_custom_type_script = "uid://8myr58nwfvfg"
+
+[sub_resource type="Resource" id="Resource_yu40a"]
+resource_local_to_scene = true
+resource_name = "team_object"
+script = ExtResource("36_h6lfy")
+min_value_res = SubResource("Resource_fmk5b")
+value = 2
+description = "Команда объекта - здания/юнита.
+0 - Ничья 
+1 - Белые
+2 - Красные
+3 - Фиолетовые
+4 - Жёлтые"
+metadata/_custom_type_script = "uid://8myr58nwfvfg"
+
+[sub_resource type="Resource" id="Resource_00yp0"]
+resource_local_to_scene = true
+resource_name = "is_die"
+script = ExtResource("37_2iqcl")
+metadata/_custom_type_script = "uid://djmnu1e55mp0j"
+
 [sub_resource type="Resource" id="Resource_43j8o"]
 resource_local_to_scene = true
 resource_name = "team_object"
@@ -124,7 +149,7 @@ resource_name = "is_die"
 script = ExtResource("37_2iqcl")
 metadata/_custom_type_script = "uid://djmnu1e55mp0j"
 
-[sub_resource type="Resource" id="Resource_fmk5b"]
+[sub_resource type="Resource" id="Resource_wwpfc"]
 script = ExtResource("36_h6lfy")
 value = 0
 metadata/_custom_type_script = "uid://8myr58nwfvfg"
@@ -133,7 +158,7 @@ metadata/_custom_type_script = "uid://8myr58nwfvfg"
 resource_local_to_scene = true
 resource_name = "team_object"
 script = ExtResource("36_h6lfy")
-min_value_res = SubResource("Resource_fmk5b")
+min_value_res = SubResource("Resource_wwpfc")
 value = 3
 description = "Команда объекта - здания/юнита.
 0 - Ничья 
@@ -214,9 +239,10 @@ tile_set = SubResource("TileSet_ia2xj")
 clip_children = 1
 
 [node name="Fields" type="TileMapLayer" parent="Tilemaps/Clip"]
+self_modulate = Color(0, 0, 0, 0)
 texture_filter = 1
 position = Vector2(24, 24)
-tile_map_data = PackedByteArray("AAD+/wQAAgABAAAAAAD//wQAAgABAAAAAAD//wMAAgABAAAAAAD//wIAAgABAAAAAAD+/wIAAgABAAAAAAD9/wMAAgABAAAAAAD+/wMAAgABAAAAAAD9/wIAAgABAAAAAAAFAAEAAgACAAAAAAAFAAIAAgACAAAAAAAFAAMAAgACAAAAAAAGAAMAAgACAAAAAAAGAAIAAgACAAAAAAAGAAEAAgACAAAAAAAHAAEAAgACAAAAAAAHAAIAAgACAAAAAAD+//3/AgAEAAAAAAD+//7/AgAEAAAAAAD9//7/AgAEAAAAAAD9////AgAEAAAAAAD+////AgAEAAAAAAD9//3/AgAEAAAAAAD///3/AgAEAAAAAAD///7/AgAEAAAAAAD/////AgAEAAAAAAAFAP7/AgADAAAAAAAEAP7/AgADAAAAAAAEAP//AgADAAAAAAAFAP//AgADAAAAAAAGAP7/AgADAAAAAAAGAP3/AgADAAAAAAAFAP3/AgAAAAAAAAAEAP3/AgADAAAAAAAGAP//AgADAAAAAAD//wUAAgAAAAAAAAD+/wUAAgAAAAAAAAAAAAQAAgAAAAAAAAAAAAMAAgAAAAAAAAAAAAIAAgAAAAAAAAABAAIAAgAAAAAAAAABAAMAAgAAAAAAAAABAAQAAgAAAAAAAAACAAQAAgAAAAAAAAACAAMAAgAAAAAAAAACAAIAAgAAAAAAAAADAAMAAgAAAAAAAAADAAQAAgAAAAAAAAADAAUAAgAAAAAAAAAEAAUAAgAAAAAAAAAFAAUAAgAAAAAAAAAFAAQAAgAAAAAAAAAEAAQAAgAAAAAAAAAEAAMAAgAAAAAAAAAEAAIAAgAAAAAAAAAGAAQAAgAAAAAAAAAHAAQAAgAAAAAAAAAIAAQAAgAAAAAAAAAJAAQAAgAAAAAAAAAIAAUAAgAAAAAAAAAJAAUAAgAAAAAAAAAKAAUAAgAAAAAAAAAKAAQAAgAAAAAAAAAIAAMAAgAAAAAAAAAIAAEAAgAAAAAAAAAIAAAAAgAAAAAAAAAHAAAAAgAAAAAAAAAGAAAAAgAAAAAAAAAIAP//AgAAAAAAAAAIAP7/AgAAAAAAAAAHAP//AgAAAAAAAAAHAP7/AgAAAAAAAAAJAP//AgAAAAAAAAAJAAAAAgAAAAAAAAAJAP7/AgAAAAAAAAAKAP7/AgAAAAAAAAAKAP//AgAAAAAAAAAKAP3/AgAAAAAAAAALAP3/AgAAAAAAAAAMAP3/AgAAAAAAAAALAP7/AgAAAAAAAAAMAP7/AgAAAAAAAAANAP7/AgAAAAAAAAANAP3/AgAAAAAAAAANAPz/AgAAAAAAAAAMAPz/AgAAAAAAAAADAP7/AgAAAAAAAAADAP3/AgADAAAAAAADAPz/AgAAAAAAAAAEAPz/AgAAAAAAAAACAPz/AgAAAAAAAAABAPz/AgAAAAAAAAABAPv/AgAAAAAAAAACAPv/AgAAAAAAAAACAP3/AgADAAAAAAABAP3/AgAEAAAAAQAAAP3/AgAEAAAAAAAAAP7/AgAAAAAAAAABAP7/AgAAAAAAAAAAAP//AgAAAAAAAAD//wAAAgAAAAAAAAD//wEAAgAAAAAAAAD+/wEAAgAAAAAAAAD+/wAAAgAAAAAAAAD9/wAAAgAAAAAAAAD9/wEAAgAAAAAAAAD8/wEAAgAAAAAAAAD8/wAAAgAAAAAAAAD8////AgAAAAAAAAD8//7/AgAAAAAAAAD8/wIAAgAAAAAAAAD8/wMAAgAAAAAAAAA=")
+tile_map_data = PackedByteArray("AAD+/wQAAgABAAAAAAD//wQAAgABAAAAAAD//wMAAgABAAAAAAD//wIAAgABAAAAAAD+/wIAAgABAAAAAAD9/wMAAgABAAAAAAD+/wMAAgABAAAAAAD9/wIAAgABAAAAAAAFAAEAAgACAAAAAAAFAAIAAgACAAAAAAAFAAMAAgACAAAAAAAGAAMAAgACAAAAAAAGAAIAAgACAAAAAAAGAAEAAgACAAAAAAAHAAEAAgACAAAAAAAHAAIAAgACAAAAAAD+//3/AgAEAAAAAAD+//7/AgAEAAAAAAD9//7/AgAEAAAAAAD9////AgAEAAAAAAD+////AgAEAAAAAAD9//3/AgAEAAAAAAD///3/AgAEAAAAAAD///7/AgAEAAAAAAD/////AgAEAAAAAAAFAP7/AgADAAAAAAAEAP7/AgADAAAAAAAEAP//AgADAAAAAAAFAP//AgADAAAAAAAGAP7/AgADAAAAAAAGAP3/AgACAAAAAAAFAP3/AgADAAAAAAAEAP3/AgADAAAAAAAGAP//AgADAAAAAAD//wUAAgAAAAAAAAD+/wUAAgAAAAAAAAAAAAQAAgAAAAAAAAAAAAMAAgAAAAAAAAAAAAIAAgAAAAAAAAABAAIAAgAAAAAAAAABAAMAAgAAAAAAAAABAAQAAgAAAAAAAAACAAQAAgAAAAAAAAACAAMAAgAAAAAAAAACAAIAAgAAAAAAAAADAAMAAgAAAAAAAAADAAQAAgAAAAAAAAADAAUAAgAAAAAAAAAEAAUAAgAAAAAAAAAFAAUAAgAAAAAAAAAFAAQAAgAAAAAAAAAEAAQAAgAAAAAAAAAEAAMAAgAAAAAAAAAEAAIAAgAAAAAAAAAGAAQAAgAAAAAAAAAHAAQAAgAAAAAAAAAIAAQAAgAAAAAAAAAJAAQAAgAAAAAAAAAIAAUAAgAAAAAAAAAJAAUAAgAAAAAAAAAKAAUAAgAAAAAAAAAKAAQAAgAAAAAAAAAIAAMAAgAAAAAAAAAIAAEAAgAAAAAAAAAIAAAAAgAAAAAAAAAHAAAAAgAAAAAAAAAGAAAAAgAAAAAAAAAIAP//AgAAAAAAAAAIAP7/AgAAAAAAAAAHAP//AgAAAAAAAAAHAP7/AgAAAAAAAAAJAP//AgAAAAAAAAAJAAAAAgAAAAAAAAAJAP7/AgAAAAAAAAAKAP7/AgAAAAAAAAAKAP//AgAAAAAAAAAKAP3/AgAAAAAAAAALAP3/AgAAAAAAAAAMAP3/AgAAAAAAAAALAP7/AgAAAAAAAAAMAP7/AgAAAAAAAAANAP7/AgAAAAAAAAANAP3/AgAAAAAAAAANAPz/AgAAAAAAAAAMAPz/AgAAAAAAAAADAP7/AgAAAAAAAAADAP3/AgADAAAAAAADAPz/AgAAAAAAAAAEAPz/AgAAAAAAAAACAPz/AgAAAAAAAAABAPz/AgAAAAAAAAABAPv/AgAAAAAAAAACAPv/AgAAAAAAAAACAP3/AgADAAAAAAABAP3/AgAEAAAAAQAAAP3/AgAEAAAAAAAAAP7/AgAAAAAAAAABAP7/AgAAAAAAAAAAAP//AgAAAAAAAAD//wAAAgAAAAAAAAD//wEAAgAAAAAAAAD+/wEAAgAAAAAAAAD+/wAAAgAAAAAAAAD9/wAAAgAAAAAAAAD9/wEAAgAAAAAAAAD8/wEAAgAAAAAAAAD8/wAAAgAAAAAAAAD8////AgAAAAAAAAD8//7/AgAAAAAAAAD8/wIAAgAAAAAAAAD8/wMAAgAAAAAAAAA=")
 tile_set = ExtResource("30_iynh3")
 script = ExtResource("7_mng47")
 scene = ExtResource("8_fmk5b")
@@ -1075,7 +1101,6 @@ position = Vector2(-48, 192)
 collision_layer = 4321
 collision_mask = 4321
 num = SubResource("Resource_ftvp4")
-print_collision = false
 metadata/is_die = SubResource("Resource_1qtut")
 metadata/team_object = SubResource("Resource_ftvp4")
 
@@ -1089,28 +1114,35 @@ script = ExtResource("38_rrtfh")
 cell_info_res = SubResource("Resource_ph3ti")
 metadata/_custom_type_script = "uid://cicas0bkgf1up"
 
+[node name="ball4" parent="Tilemaps" instance=ExtResource("35_41idh")]
+position = Vector2(336, -96)
+collision_layer = 4209
+collision_mask = 4209
+linear_velocity = Vector2(4, 0)
+num = SubResource("Resource_yu40a")
+metadata/is_die = SubResource("Resource_00yp0")
+metadata/team_object = SubResource("Resource_yu40a")
+
 [node name="ball2" parent="Tilemaps" instance=ExtResource("35_41idh")]
 position = Vector2(336, 144)
+collision_layer = 4209
+collision_mask = 4209
 num = SubResource("Resource_43j8o")
-print_collision = false
 metadata/is_die = SubResource("Resource_ya7da")
 metadata/team_object = SubResource("Resource_43j8o")
 
 [node name="ball3" parent="Tilemaps" instance=ExtResource("35_41idh")]
 position = Vector2(-48, -48)
-collision_layer = 4257
-collision_mask = 4257
+collision_layer = 4273
+collision_mask = 4273
 num = SubResource("Resource_6xsba")
-print_collision = false
 metadata/is_die = SubResource("Resource_ia2xj")
 metadata/team_object = SubResource("Resource_6xsba")
 
 [node name="ball_purple" parent="Tilemaps" instance=ExtResource("35_41idh")]
-position = Vector2(240, -96)
-collision_layer = 4305
-collision_mask = 4305
+position = Vector2(144, -96)
+linear_velocity = Vector2(200, 0)
 num = SubResource("Resource_w08im")
-print_collision = false
 metadata/is_die = SubResource("Resource_mng47")
 metadata/team_object = SubResource("Resource_w08im")
 
