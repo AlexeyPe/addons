@@ -155,7 +155,6 @@ script = ExtResource("12_p0qbc")
 num_a = ExtResource("13_gn8mu")
 num_b = SubResource("Resource_y202s")
 condition = 1
-num_a_is_meta_emitter = null
 metadata/_custom_type_script = "uid://up8up6hch40i"
 
 [node name="APChainDelChildsArr" type="Node" parent="APDropZone/APChainIfNum" node_paths=PackedStringArray("nodes", "node_emitter")]
@@ -214,7 +213,6 @@ metadata/_custom_type_script = "uid://xix6u347hwe"
 [node name="SET_can_drop=true" type="Node" parent="APDropZone/build=changed/APChainAddChild" node_paths=PackedStringArray("node_emitter")]
 script = ExtResource("23_4yp7p")
 var_bool = SubResource("Resource_y8fmx")
-bool_is_meta = null
 node_emitter = NodePath("..")
 watch_signal = 0
 metadata/_custom_type_script = "uid://xv7plkxnebcm"
@@ -261,7 +259,6 @@ metadata/_custom_type_script = "uid://xix6u347hwe"
 [node name="SET_can_drop=false" type="Node" parent="APChainAddChild2" node_paths=PackedStringArray("node_emitter")]
 script = ExtResource("23_4yp7p")
 var_bool = SubResource("Resource_y8fmx")
-bool_is_meta = null
 new_value = false
 node_emitter = NodePath("..")
 watch_signal = 3
@@ -270,7 +267,6 @@ metadata/_custom_type_script = "uid://xv7plkxnebcm"
 [node name="SET_can_drop=true" type="Node" parent="APChainAddChild2" node_paths=PackedStringArray("node_emitter")]
 script = ExtResource("23_4yp7p")
 var_bool = SubResource("Resource_y8fmx")
-bool_is_meta = null
 node_emitter = NodePath("..")
 watch_signal = 0
 metadata/_custom_type_script = "uid://xv7plkxnebcm"

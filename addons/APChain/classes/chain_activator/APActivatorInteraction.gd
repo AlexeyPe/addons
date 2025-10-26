@@ -44,7 +44,7 @@ func target_emit_body(...args:Array):
 func target_emit_area(...args:Array):
 	if not enable: return
 	for body in overlapping_bodies_area2D.get_overlapping_bodies():
-		print("APActivatorInteraction overlapping_bodies:", body)
+		#print("APActivatorInteraction overlapping_bodies:", body)
 		for meta in get_meta_list():
 			remove_meta(meta)
 		for meta in body.get_meta_list():

@@ -27,10 +27,10 @@ func _rename_self():
 
 func _execute(...args:Array) -> void:
 	execution_started.emit()
-	print("APChainSetBool execute")
+	#print("APChainSetBool execute")
 	#print("set (bool %s) to %s"%[var_bool, new_value])
 	if !bool_is_meta.is_empty() and meta_owner:
-		print("APChainSetBool execute check meta ", bool_is_meta)
+		#print("APChainSetBool execute check meta ", bool_is_meta)
 		if meta_owner.has_meta(bool_is_meta):
 			var data = meta_owner.get_meta(bool_is_meta)
 			if data and data is VaRBool:

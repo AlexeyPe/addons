@@ -25,11 +25,11 @@ signal if_false
 func _execute(...args:Array) -> void:
 	execution_started.emit()
 	if !num_a_is_meta_emitter.is_empty():
-		print("APChainIfNum meta execute")
+		#print("APChainIfNum meta execute")
 		if node_emitter.has_meta(num_a_is_meta_emitter):
 			var meta = node_emitter.get_meta(num_a_is_meta_emitter)
 			if meta and meta is VaRNumber:
-				print("APChainIfNum meta execute set num_a ", meta)
+				#print("APChainIfNum meta execute set num_a ", meta)
 				num_a = meta
 				set_meta(num_a_is_meta_emitter, meta)
 			else: return

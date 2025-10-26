@@ -154,7 +154,7 @@ physics_material_override = SubResource("PhysicsMaterial_6xsba")
 gravity_scale = 0.0
 contact_monitor = true
 max_contacts_reported = 6
-linear_velocity = Vector2(73.4, 200)
+linear_velocity = Vector2(144.4, 74.33)
 linear_damp_mode = 1
 angular_damp_mode = 1
 angular_damp = 100.0
@@ -209,6 +209,7 @@ watch_signal = 2
 metadata/_custom_type_script = "uid://du8j36g8pf8k8"
 
 [node name="BodyLife" type="Sprite2D" parent="."]
+visible = false
 texture_filter = 4
 scale = Vector2(0.25, 0.25000003)
 texture = ExtResource("12_aahtj")
@@ -217,7 +218,6 @@ num = ExtResource("2_hsyp7")
 num_is_texture = Array[Texture]([null, ExtResource("9_cn5ba"), ExtResource("11_xd8ss"), ExtResource("12_aahtj"), ExtResource("13_8s2x3")])
 
 [node name="BodyDie" type="Sprite2D" parent="."]
-visible = false
 self_modulate = Color(1, 1, 1, 0.7058824)
 z_index = 1
 texture_filter = 4
@@ -232,6 +232,7 @@ visible = false
 modulate = Color(1, 1, 1, 0)
 z_index = 1
 material = SubResource("ShaderMaterial_41df4")
+position = Vector2(0, -24)
 scale = Vector2(0.25, 0.25000003)
 texture = ExtResource("17_dtgiy")
 
