@@ -1,4 +1,4 @@
-[gd_scene load_steps=44 format=3 uid="uid://bpn7vchp3v0o6"]
+[gd_scene load_steps=49 format=3 uid="uid://bpn7vchp3v0o6"]
 
 [ext_resource type="Resource" uid="uid://58pmfjua3f3c" path="res://scene/ball/object/is_die.tres" id="1_41df4"]
 [ext_resource type="Script" uid="uid://bt65n6o82yg6b" path="res://addons/VarRes/classes/utility/RigidBody2DVaRes.gd" id="1_kwmlm"]
@@ -34,6 +34,10 @@
 [ext_resource type="Resource" uid="uid://ccq6dphbjbpf6" path="res://data/gameplay/units/units_white.tres" id="32_rblx7"]
 [ext_resource type="Resource" uid="uid://c4bpyilbpdmw" path="res://data/gameplay/units/units_purple.tres" id="33_i8mmh"]
 [ext_resource type="Resource" uid="uid://cvmmidd5uwfbn" path="res://data/gameplay/units/units_yellow.tres" id="34_tggjb"]
+[ext_resource type="Resource" uid="uid://bbu6crs5k6ct6" path="res://data/gameplay/field_counters/fields_white.tres" id="35_5eue2"]
+[ext_resource type="Resource" uid="uid://cvpnw37xy7hya" path="res://data/gameplay/field_counters/fields_red.tres" id="36_h5ua5"]
+[ext_resource type="Resource" uid="uid://yjwdocjo8sh2" path="res://data/gameplay/field_counters/fields_purple.tres" id="37_s0fuh"]
+[ext_resource type="Resource" uid="uid://x3id5dx3yucu" path="res://data/gameplay/field_counters/fields_yellow.tres" id="38_rrtt6"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_6xsba"]
 friction = 0.0
@@ -145,6 +149,11 @@ _data = {
 &"RESET": SubResource("Animation_h6r1o"),
 &"on_die": SubResource("Animation_we3cd")
 }
+
+[sub_resource type="Resource" id="Resource_rblx7"]
+script = ExtResource("6_aahtj")
+value = 1
+metadata/_custom_type_script = "uid://8myr58nwfvfg"
 
 [node name="ball" type="RigidBody2D"]
 collision_layer = 4305
@@ -287,8 +296,10 @@ metadata/_custom_type_script = "uid://xix6u347hwe"
 
 [node name="APChainSetNum2" type="Node" parent="is_die=now_true" node_paths=PackedStringArray("node_emitter")]
 script = ExtResource("30_c5b2c")
+num_a = ExtResource("33_i8mmh")
 num_a_is_arr = Array[ExtResource("31_dtgiy")]([null, ExtResource("32_rblx7"), ExtResource("5_xd8ss"), ExtResource("33_i8mmh"), ExtResource("34_tggjb")])
 num_a_arr_index = ExtResource("2_hsyp7")
+num_a_arr_index_meta = null
 num_b = SubResource("Resource_dtgiy")
 operation = 2
 node_emitter = NodePath("..")
@@ -331,18 +342,40 @@ script = ExtResource("27_kwmlm")
 rigid_body_2D = NodePath("..")
 metadata/_custom_type_script = "uid://b5w7jmxkrwose"
 
-[node name="HasMeta=team_object" type="Node" parent="APActivatorInteraction" node_paths=PackedStringArray("node_emitter")]
+[node name="HasMeta=team_object" type="Node" parent="APActivatorInteraction" node_paths=PackedStringArray("meta_owner", "node_emitter")]
 script = ExtResource("28_mmg5j")
 meta_name = "team_object"
-meta_value_paste = ExtResource("2_hsyp7")
+meta_owner = NodePath("..")
 node_emitter = NodePath("..")
 watch_signal = 0
 metadata/_custom_type_script = "uid://btail58r0orri"
 
+[node name="APChainSetNum" type="Node" parent="APActivatorInteraction/HasMeta=team_object" node_paths=PackedStringArray("num_a_arr_index_meta_owner", "node_emitter")]
+script = ExtResource("30_c5b2c")
+num_a_is_arr = Array[ExtResource("31_dtgiy")]([null, ExtResource("35_5eue2"), ExtResource("36_h5ua5"), ExtResource("37_s0fuh"), ExtResource("38_rrtt6")])
+num_a_arr_index_meta = "team_object"
+num_a_arr_index_meta_owner = NodePath("../..")
+num_b = SubResource("Resource_rblx7")
+operation = 2
+node_emitter = NodePath("..")
+watch_signal = 0
+metadata/_custom_type_script = "uid://cldopw0r4n1wj"
+
+[node name="HasMeta=team_object" type="Node" parent="APActivatorInteraction/HasMeta=team_object/APChainSetNum" node_paths=PackedStringArray("meta_owner", "node_emitter")]
+script = ExtResource("28_mmg5j")
+meta_name = "team_object"
+meta_owner = NodePath("../../..")
+meta_value_paste = ExtResource("2_hsyp7")
+node_emitter = NodePath("..")
+watch_signal = 1
+metadata/_custom_type_script = "uid://btail58r0orri"
+
 [node name="APChainSetNum" type="Node" parent="." node_paths=PackedStringArray("node_emitter")]
 script = ExtResource("30_c5b2c")
+num_a = ExtResource("33_i8mmh")
 num_a_is_arr = Array[ExtResource("31_dtgiy")]([null, ExtResource("32_rblx7"), ExtResource("5_xd8ss"), ExtResource("33_i8mmh"), ExtResource("34_tggjb")])
 num_a_arr_index = ExtResource("2_hsyp7")
+num_a_arr_index_meta = null
 num_b = SubResource("Resource_dtgiy")
 operation = 1
 node_emitter = NodePath("..")

@@ -2,17 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b4dqq6o88p517"
-path="res://.godot/imported/field2.svg-1c14dd138e57b59ba9e77bc37270fa41.ctex"
+uid="uid://1rw0438kebug"
+path="res://.godot/imported/frame-spikes-2-fill-16px.png-a28d51546b6a309bf24f71380031beb5.ctex"
 metadata={
-"has_editor_variant": true,
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://scene/fields/field2.svg"
-dest_files=["res://.godot/imported/field2.svg-1c14dd138e57b59ba9e77bc37270fa41.ctex"]
+source_file="res://scene/field/frame-spikes-2-fill-16px.png"
+dest_files=["res://.godot/imported/frame-spikes-2-fill-16px.png-a28d51546b6a309bf24f71380031beb5.ctex"]
 
 [params]
 
@@ -39,6 +38,3 @@ process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
 detect_3d/compress_to=1
-svg/scale=1.0
-editor/scale_with_editor_scale=true
-editor/convert_colors_with_editor_theme=false

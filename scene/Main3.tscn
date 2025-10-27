@@ -28,14 +28,14 @@
 [ext_resource type="PackedScene" uid="uid://csgbo46w4e1c5" path="res://scene/UI/CardHand.tscn" id="24_2ehou"]
 [ext_resource type="PackedScene" uid="uid://ck4w0vjnl4qkd" path="res://scene/UI/notifications.tscn" id="25_keht4"]
 [ext_resource type="Shader" uid="uid://bnx70r4bgsw0y" path="res://addons/shadercollectionap/shader/grid/grid.gdshader" id="26_ne6fy"]
-[ext_resource type="Material" uid="uid://svr62spjy8px" path="res://scene/fields/GridMaterial.tres" id="27_d1wsa"]
-[ext_resource type="TileSet" uid="uid://dtotbe61qvlwk" path="res://scene/fields/VisualFields2.tres" id="28_hpvv2"]
+[ext_resource type="Material" uid="uid://svr62spjy8px" path="res://scene/field/GridMaterial.tres" id="27_d1wsa"]
+[ext_resource type="TileSet" uid="uid://dtotbe61qvlwk" path="res://scene/field/VisualFields2.tres" id="28_hpvv2"]
 [ext_resource type="Texture2D" uid="uid://cylt0yccij071" path="res://imgs/icons/types-outline.png" id="29_d44lc"]
-[ext_resource type="TileSet" uid="uid://ctx1yx25gyv50" path="res://scene/fields/fields_tileset.tres" id="30_iynh3"]
-[ext_resource type="Texture2D" uid="uid://cv5u50jtpbiqb" path="res://scene/fields/clip_texture/corner_1.tres" id="31_87kko"]
-[ext_resource type="Texture2D" uid="uid://dd0ws1t530ycd" path="res://scene/fields/clip_texture/wall.tres" id="32_he6an"]
-[ext_resource type="Texture2D" uid="uid://b4337huijb0tp" path="res://scene/fields/clip_texture/corner_2.tres" id="33_53ylk"]
-[ext_resource type="Texture2D" uid="uid://bn3uq1k1c5qjv" path="res://scene/fields/clip_texture/corners_invert.tres" id="34_ixwqa"]
+[ext_resource type="TileSet" uid="uid://ctx1yx25gyv50" path="res://scene/field/fields_tileset.tres" id="30_iynh3"]
+[ext_resource type="Texture2D" uid="uid://cv5u50jtpbiqb" path="res://scene/field/clip_texture/corner_1.tres" id="31_87kko"]
+[ext_resource type="Texture2D" uid="uid://dd0ws1t530ycd" path="res://scene/field/clip_texture/wall.tres" id="32_he6an"]
+[ext_resource type="Texture2D" uid="uid://b4337huijb0tp" path="res://scene/field/clip_texture/corner_2.tres" id="33_53ylk"]
+[ext_resource type="Texture2D" uid="uid://bn3uq1k1c5qjv" path="res://scene/field/clip_texture/corners_invert.tres" id="34_ixwqa"]
 [ext_resource type="PackedScene" uid="uid://bpn7vchp3v0o6" path="res://scene/ball/object/ball.tscn" id="35_41idh"]
 [ext_resource type="Script" uid="uid://8myr58nwfvfg" path="res://addons/VarRes/classes/numbers/VaRInt.gd" id="36_h6lfy"]
 [ext_resource type="Script" uid="uid://djmnu1e55mp0j" path="res://addons/VarRes/classes/bool/VaRBool.gd" id="37_2iqcl"]
@@ -385,7 +385,7 @@ expand_mode = 3
 
 [node name="Label2" type="Label" parent="UI/Counters/Counters/Fields/White"]
 layout_mode = 2
-text = "0"
+text = "8"
 label_settings = ExtResource("2_fcgbl")
 script = ExtResource("3_ndi7f")
 var_res = ExtResource("13_h0pva")
@@ -402,7 +402,7 @@ label_settings = ExtResource("2_fcgbl")
 
 [node name="Label2" type="Label" parent="UI/Counters/Counters/Fields/Red"]
 layout_mode = 2
-text = "0"
+text = "9"
 label_settings = ExtResource("2_fcgbl")
 script = ExtResource("3_ndi7f")
 var_res = ExtResource("14_wuh6h")
@@ -419,7 +419,7 @@ label_settings = ExtResource("2_fcgbl")
 
 [node name="Label2" type="Label" parent="UI/Counters/Counters/Fields/Purple"]
 layout_mode = 2
-text = "111"
+text = "0"
 label_settings = ExtResource("2_fcgbl")
 script = ExtResource("3_ndi7f")
 var_res = ExtResource("15_5n2dr")
@@ -436,7 +436,7 @@ label_settings = ExtResource("2_fcgbl")
 
 [node name="Label2" type="Label" parent="UI/Counters/Counters/Fields/Yellow"]
 layout_mode = 2
-text = "0"
+text = "11"
 label_settings = ExtResource("2_fcgbl")
 script = ExtResource("3_ndi7f")
 var_res = ExtResource("16_jm20i")
@@ -459,7 +459,7 @@ label_settings = ExtResource("2_fcgbl")
 
 [node name="Label2" type="Label" parent="UI/Counters/Counters/Units/White"]
 layout_mode = 2
-text = "1"
+text = "3"
 label_settings = ExtResource("2_fcgbl")
 script = ExtResource("3_ndi7f")
 var_res = ExtResource("17_f4rxr")
@@ -476,7 +476,7 @@ label_settings = ExtResource("2_fcgbl")
 
 [node name="Label2" type="Label" parent="UI/Counters/Counters/Units/Red"]
 layout_mode = 2
-text = "2"
+text = "6"
 label_settings = ExtResource("2_fcgbl")
 script = ExtResource("3_ndi7f")
 var_res = ExtResource("18_0f4br")
@@ -493,7 +493,7 @@ label_settings = ExtResource("2_fcgbl")
 
 [node name="Label2" type="Label" parent="UI/Counters/Counters/Units/Purple"]
 layout_mode = 2
-text = "1"
+text = "4"
 label_settings = ExtResource("2_fcgbl")
 script = ExtResource("3_ndi7f")
 var_res = ExtResource("19_ilk30")
@@ -510,7 +510,7 @@ label_settings = ExtResource("2_fcgbl")
 
 [node name="Label2" type="Label" parent="UI/Counters/Counters/Units/Yellow"]
 layout_mode = 2
-text = "1"
+text = "3"
 label_settings = ExtResource("2_fcgbl")
 script = ExtResource("3_ndi7f")
 var_res = ExtResource("20_oqdx0")

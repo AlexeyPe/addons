@@ -45,7 +45,7 @@ func get_max_value() -> int:
 
 func get_value() -> int: return value
 func set_value(new: int):
-	if value == new: return
+	#if value == new: return
 	if new >= get_min_value() and new <= get_max_value():
 		if value < new:
 			value = new

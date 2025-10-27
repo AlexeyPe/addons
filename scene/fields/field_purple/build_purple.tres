@@ -1,9 +1,0 @@
-[gd_resource type="Resource" script_class="VaRScene" load_steps=2 format=3 uid="uid://bjt174atjg6cl"]
-
-[ext_resource type="Script" uid="uid://dapuucp3gf6c8" path="res://addons/VarRes/classes/VaRScene.gd" id="1_vxnix"]
-
-[resource]
-resource_local_to_scene = true
-resource_name = "build_purple"
-script = ExtResource("1_vxnix")
-metadata/_custom_type_script = "uid://dapuucp3gf6c8"

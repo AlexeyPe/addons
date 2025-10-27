@@ -1,9 +1,9 @@
-[gd_scene load_steps=31 format=3 uid="uid://7bappgufejs0"]
+[gd_scene load_steps=38 format=3 uid="uid://7bappgufejs0"]
 
 [ext_resource type="Script" uid="uid://d2gijcutmpkko" path="res://addons/VarRes/classes/utility/StaticBody2DVaRes.gd" id="1_dcb7b"]
 [ext_resource type="Resource" uid="uid://fmqn72g7wvj0" path="res://data/gameplay/teams/team_object.tres" id="2_qi7cb"]
-[ext_resource type="Material" uid="uid://svr62spjy8px" path="res://scene/fields/GridMaterial.tres" id="3_770ey"]
-[ext_resource type="Texture2D" uid="uid://1rw0438kebug" path="res://scene/fields/frame-spikes-2-fill-16px.png" id="4_4xrso"]
+[ext_resource type="Material" uid="uid://svr62spjy8px" path="res://scene/field/GridMaterial.tres" id="3_770ey"]
+[ext_resource type="Texture2D" uid="uid://1rw0438kebug" path="res://scene/field/frame-spikes-2-fill-16px.png" id="4_4xrso"]
 [ext_resource type="Script" uid="uid://d4aoqudvdak1p" path="res://addons/VarRes/classes/utility/NinePatchRectVaRes.gd" id="5_4uxxu"]
 [ext_resource type="Script" uid="uid://dyjt63xqg1uru" path="res://addons/APChain/classes/chain/drag_and_drop/APDropZone.gd" id="6_odmc6"]
 [ext_resource type="Script" uid="uid://djmnu1e55mp0j" path="res://addons/VarRes/classes/bool/VaRBool.gd" id="7_d0akw"]
@@ -23,7 +23,13 @@
 [ext_resource type="Resource" uid="uid://dlnydceni78on" path="res://data/gameplay/teams/team_red.tres" id="21_d37j6"]
 [ext_resource type="Script" uid="uid://xix6u347hwe" path="res://addons/APChain/classes/chain/set/APChainSetCollisionEnable.gd" id="22_6e2r8"]
 [ext_resource type="Script" uid="uid://xv7plkxnebcm" path="res://addons/APChain/classes/chain/set/vares/APChainSetBool.gd" id="23_4yp7p"]
+[ext_resource type="Script" uid="uid://cldopw0r4n1wj" path="res://addons/APChain/classes/chain/set/vares/APChainSetNum.gd" id="24_2y784"]
+[ext_resource type="Script" uid="uid://ck2yuex0aket8" path="res://addons/VarRes/classes/numbers/VaRNumber.gd" id="25_odmc6"]
+[ext_resource type="Resource" uid="uid://bbu6crs5k6ct6" path="res://data/gameplay/field_counters/fields_white.tres" id="26_d0akw"]
 [ext_resource type="Script" uid="uid://b5w7jmxkrwose" path="res://addons/APChain/classes/chain_activator/APActivatorInteraction.gd" id="26_qi7cb"]
+[ext_resource type="Resource" uid="uid://cvpnw37xy7hya" path="res://data/gameplay/field_counters/fields_red.tres" id="27_u3x6p"]
+[ext_resource type="Resource" uid="uid://yjwdocjo8sh2" path="res://data/gameplay/field_counters/fields_purple.tres" id="28_eafjk"]
+[ext_resource type="Resource" uid="uid://x3id5dx3yucu" path="res://data/gameplay/field_counters/fields_yellow.tres" id="29_tng4i"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_j64cy"]
 size = Vector2(48, 48)
@@ -60,6 +66,11 @@ metadata/_custom_type_script = "uid://8myr58nwfvfg"
 script = ExtResource("7_d0akw")
 value = true
 metadata/_custom_type_script = "uid://djmnu1e55mp0j"
+
+[sub_resource type="Resource" id="Resource_odmc6"]
+script = ExtResource("14_yubtm")
+value = 1
+metadata/_custom_type_script = "uid://8myr58nwfvfg"
 
 [node name="FieldRed" type="StaticBody2D"]
 collision_layer = 32
@@ -256,6 +267,16 @@ _signal = "changed"
 resource = ExtResource("2_qi7cb")
 signal = "changed"
 metadata/_custom_type_script = "uid://u1gglou2n5jq"
+
+[node name="APChainSetNum" type="Node" parent="team_object=changed" node_paths=PackedStringArray("node_emitter")]
+script = ExtResource("24_2y784")
+num_a_is_arr = Array[ExtResource("25_odmc6")]([null, ExtResource("26_d0akw"), ExtResource("27_u3x6p"), ExtResource("28_eafjk"), ExtResource("29_tng4i")])
+num_a_arr_index = ExtResource("2_qi7cb")
+num_b = SubResource("Resource_odmc6")
+operation = 1
+node_emitter = NodePath("..")
+watch_signal = 0
+metadata/_custom_type_script = "uid://cldopw0r4n1wj"
 
 [node name="APActivatorInteractionKillBalls" type="Node" parent="." node_paths=PackedStringArray("overlapping_bodies_area2D")]
 script = ExtResource("26_qi7cb")
