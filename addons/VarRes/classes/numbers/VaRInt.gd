@@ -10,7 +10,7 @@ func is_max() -> bool:
 	return value == get_max_value()
 
 func _to_string() -> String:
-	return "%s %s"%[resource_path.get_basename().get_file(), value]
+	return "%s_%s"%[resource_name, value]
 
 func on_update_min_value_res(): emit_changed()
 func set_min_value_res(new:VaRInt):

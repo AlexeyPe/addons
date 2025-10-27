@@ -133,8 +133,6 @@ enable_drag = SubResource("Resource_eh51v")
 metadata/is_pack_card = ExtResource("6_f05fl")
 metadata/is_active_pack_card = ExtResource("6_3p47q")
 metadata/price_card = ExtResource("20_3p47q")
-metadata/build = null
-metadata/unit = null
 
 [node name="SubViewport" type="SubViewport" parent="."]
 transparent_bg = true

@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://dfht4fveoaaib"]
+[gd_scene load_steps=34 format=3 uid="uid://dfht4fveoaaib"]
 
 [ext_resource type="Texture2D" uid="uid://h14mo3pcwr6i" path="res://scene/objects/wall/round_grey_detailed.png" id="1_m8rlx"]
 [ext_resource type="Script" uid="uid://dj04ffy0nu74n" path="res://addons/APChain/classes/chain/audio/APChainAudioPlay.gd" id="2_g8gtm"]
@@ -19,6 +19,7 @@
 [ext_resource type="Script" uid="uid://cldopw0r4n1wj" path="res://addons/APChain/classes/chain/set/vares/APChainSetNum.gd" id="15_f1rq2"]
 [ext_resource type="Script" uid="uid://8myr58nwfvfg" path="res://addons/VarRes/classes/numbers/VaRInt.gd" id="16_subb2"]
 [ext_resource type="Script" uid="uid://up8up6hch40i" path="res://addons/APChain/classes/chain/if/APChainIfNum.gd" id="18_sn1rv"]
+[ext_resource type="Resource" uid="uid://dlnydceni78on" path="res://data/gameplay/teams/team_red.tres" id="19_xy14n"]
 [ext_resource type="Script" uid="uid://dfnv5lgi83cdo" path="res://addons/APChain/classes/chain/APChainAnimPlay.gd" id="20_pkce4"]
 [ext_resource type="Script" uid="uid://bein4dn8ts6bb" path="res://addons/APChain/classes/chain/childs/APChainDelChildsArr.gd" id="21_kxtcs"]
 [ext_resource type="Resource" uid="uid://4ok8jqiesqsv" path="res://data/gameplay/Money.tres" id="22_rpqh2"]
@@ -241,8 +242,9 @@ metadata/_custom_type_script = "uid://dujhj0672f2qk"
 [node name="ball_touched_building=if_true" type="Node" parent="."]
 script = ExtResource("5_273i7")
 _signal = "if_true"
-resource = ExtResource("11_heuk1")
+resource = ExtResource("19_xy14n")
 signal = "if_true"
+enable = false
 metadata/_custom_type_script = "uid://u1gglou2n5jq"
 
 [node name="APChainShake2D" type="Node" parent="ball_touched_building=if_true" node_paths=PackedStringArray("target_node_shake", "node_emitter")]

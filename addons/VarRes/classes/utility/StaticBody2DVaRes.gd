@@ -17,6 +17,9 @@ class_name StaticBody2DVaRes
 		num_is_modulate = new
 		update_body()
 
+@export_group("debug", "debug_")
+@export var debug_label_settings:LabelSettings
+
 var debug:CanvasLayer
 
 func on_changed_vars():
@@ -42,6 +45,10 @@ func _mouse_enter() -> void:
 	label.text = "%s, collision_layer:%s, collision_mask:%s"%[
 		name, collision_layer, collision_mask
 	]
+	for meta in get_meta_list():
+		label.text += "\n%s:%s"%[meta, get_meta(meta)]
+	label.label_settings = debug_label_settings
+	
 	get_tree().root.add_child(layer)
 
 func _mouse_exit() -> void:

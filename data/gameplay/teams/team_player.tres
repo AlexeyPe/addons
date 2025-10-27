@@ -11,10 +11,11 @@ metadata/_custom_type_script = "uid://8myr58nwfvfg"
 resource_name = "team_player"
 script = ExtResource("1_hfo42")
 min_value_res = SubResource("Resource_l6i7g")
-value = 2
+value = 3
 description = "За какую команду игрок играет.
-0 - Белые
-1 - Красные
-2 - Фиолетовые
-3 - Жёлтые"
+0 - Никакая
+1 - Белые
+2 - Красные
+3 - Фиолетовые
+4 - Жёлтые"
 metadata/_custom_type_script = "uid://8myr58nwfvfg"

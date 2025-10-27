@@ -61,16 +61,15 @@ func on_child_entered_tree(node: Node):
 				node.position.x = childs_size_x+center-node.get_combined_minimum_size().x*0.5
 
 func _can_drop_data(at_position: Vector2, data: Variant) -> bool:
-	if drop_node == null:
-		pass
 	return can_drop
 
 func _drop_data(at_position: Vector2, data: Variant) -> void:
 	#print("_drop_data(at_position:%s, data:%s)"%[at_position, data])
-	if data is APDragDataRes:
-		data.success = true
-		add_child(data.dragged_node)
-		data.dragged_node.position = at_position
+	if data is APDragDataControl:
+		#print("APDeckContainer _drop_data() APDragDataControl")
+		data.drop_success(false)
+		add_child(data)
+		data.position = at_position
 		_sort_children()
 
 func _child_order_changed():

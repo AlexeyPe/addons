@@ -343,8 +343,8 @@ text = "Фиолетовые"
 label_settings = SubResource("LabelSettings_ne6fy")
 script = ExtResource("3_ndi7f")
 var_res = ExtResource("9_8m5be")
-num_is = Array[String](["Белые", "Красные", "Фиолетовые", "Жёлтые"])
-num_is_font_color = Array[Color]([Color(1, 1, 1, 1), Color(1, 0.2901961, 0.2901961, 1), Color(0.8397716, 0.49030846, 0.909368, 1), Color(0.97150236, 0.8373624, 0, 1)])
+num_is = Array[String](["null", "Белые", "Красные", "Фиолетовые", "Жёлтые"])
+num_is_font_color = Array[Color]([Color(0, 0, 0, 1), Color(1, 1, 1, 1), Color(1, 0.2901961, 0.2901961, 1), Color(0.8397716, 0.49030846, 0.909368, 1), Color(0.97150236, 0.8373624, 0, 1)])
 metadata/_custom_type_script = "uid://cccrm8vuks5fs"
 
 [node name="UnitsAll" type="HBoxContainer" parent="UI/Counters/Counters"]
@@ -385,7 +385,7 @@ expand_mode = 3
 
 [node name="Label2" type="Label" parent="UI/Counters/Counters/Fields/White"]
 layout_mode = 2
-text = "8"
+text = "16"
 label_settings = ExtResource("2_fcgbl")
 script = ExtResource("3_ndi7f")
 var_res = ExtResource("13_h0pva")
@@ -402,7 +402,7 @@ label_settings = ExtResource("2_fcgbl")
 
 [node name="Label2" type="Label" parent="UI/Counters/Counters/Fields/Red"]
 layout_mode = 2
-text = "9"
+text = "18"
 label_settings = ExtResource("2_fcgbl")
 script = ExtResource("3_ndi7f")
 var_res = ExtResource("14_wuh6h")
@@ -419,7 +419,7 @@ label_settings = ExtResource("2_fcgbl")
 
 [node name="Label2" type="Label" parent="UI/Counters/Counters/Fields/Purple"]
 layout_mode = 2
-text = "0"
+text = "20"
 label_settings = ExtResource("2_fcgbl")
 script = ExtResource("3_ndi7f")
 var_res = ExtResource("15_5n2dr")
@@ -436,7 +436,7 @@ label_settings = ExtResource("2_fcgbl")
 
 [node name="Label2" type="Label" parent="UI/Counters/Counters/Fields/Yellow"]
 layout_mode = 2
-text = "11"
+text = "22"
 label_settings = ExtResource("2_fcgbl")
 script = ExtResource("3_ndi7f")
 var_res = ExtResource("16_jm20i")
@@ -459,7 +459,7 @@ label_settings = ExtResource("2_fcgbl")
 
 [node name="Label2" type="Label" parent="UI/Counters/Counters/Units/White"]
 layout_mode = 2
-text = "3"
+text = "5"
 label_settings = ExtResource("2_fcgbl")
 script = ExtResource("3_ndi7f")
 var_res = ExtResource("17_f4rxr")
@@ -493,7 +493,7 @@ label_settings = ExtResource("2_fcgbl")
 
 [node name="Label2" type="Label" parent="UI/Counters/Counters/Units/Purple"]
 layout_mode = 2
-text = "4"
+text = "3"
 label_settings = ExtResource("2_fcgbl")
 script = ExtResource("3_ndi7f")
 var_res = ExtResource("19_ilk30")

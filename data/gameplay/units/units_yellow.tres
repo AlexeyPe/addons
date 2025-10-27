@@ -10,5 +10,5 @@ metadata/_custom_type_script = "uid://8myr58nwfvfg"
 [resource]
 script = ExtResource("1_oea7h")
 min_value_res = SubResource("Resource_6h4vb")
-value = 0
+value = 3
 metadata/_custom_type_script = "uid://8myr58nwfvfg"
