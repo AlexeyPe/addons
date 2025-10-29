@@ -385,7 +385,7 @@ expand_mode = 3
 
 [node name="Label2" type="Label" parent="UI/Counters/Counters/Fields/White"]
 layout_mode = 2
-text = "16"
+text = "0"
 label_settings = ExtResource("2_fcgbl")
 script = ExtResource("3_ndi7f")
 var_res = ExtResource("13_h0pva")
@@ -402,7 +402,7 @@ label_settings = ExtResource("2_fcgbl")
 
 [node name="Label2" type="Label" parent="UI/Counters/Counters/Fields/Red"]
 layout_mode = 2
-text = "18"
+text = "0"
 label_settings = ExtResource("2_fcgbl")
 script = ExtResource("3_ndi7f")
 var_res = ExtResource("14_wuh6h")
@@ -419,7 +419,7 @@ label_settings = ExtResource("2_fcgbl")
 
 [node name="Label2" type="Label" parent="UI/Counters/Counters/Fields/Purple"]
 layout_mode = 2
-text = "20"
+text = "0"
 label_settings = ExtResource("2_fcgbl")
 script = ExtResource("3_ndi7f")
 var_res = ExtResource("15_5n2dr")
@@ -436,7 +436,7 @@ label_settings = ExtResource("2_fcgbl")
 
 [node name="Label2" type="Label" parent="UI/Counters/Counters/Fields/Yellow"]
 layout_mode = 2
-text = "22"
+text = "0"
 label_settings = ExtResource("2_fcgbl")
 script = ExtResource("3_ndi7f")
 var_res = ExtResource("16_jm20i")
@@ -459,7 +459,7 @@ label_settings = ExtResource("2_fcgbl")
 
 [node name="Label2" type="Label" parent="UI/Counters/Counters/Units/White"]
 layout_mode = 2
-text = "5"
+text = "0"
 label_settings = ExtResource("2_fcgbl")
 script = ExtResource("3_ndi7f")
 var_res = ExtResource("17_f4rxr")
@@ -476,7 +476,7 @@ label_settings = ExtResource("2_fcgbl")
 
 [node name="Label2" type="Label" parent="UI/Counters/Counters/Units/Red"]
 layout_mode = 2
-text = "6"
+text = "0"
 label_settings = ExtResource("2_fcgbl")
 script = ExtResource("3_ndi7f")
 var_res = ExtResource("18_0f4br")
@@ -493,7 +493,7 @@ label_settings = ExtResource("2_fcgbl")
 
 [node name="Label2" type="Label" parent="UI/Counters/Counters/Units/Purple"]
 layout_mode = 2
-text = "3"
+text = "0"
 label_settings = ExtResource("2_fcgbl")
 script = ExtResource("3_ndi7f")
 var_res = ExtResource("19_ilk30")
@@ -510,7 +510,7 @@ label_settings = ExtResource("2_fcgbl")
 
 [node name="Label2" type="Label" parent="UI/Counters/Counters/Units/Yellow"]
 layout_mode = 2
-text = "3"
+text = "0"
 label_settings = ExtResource("2_fcgbl")
 script = ExtResource("3_ndi7f")
 var_res = ExtResource("20_oqdx0")
@@ -1480,8 +1480,6 @@ texture = ExtResource("31_87kko")
 
 [node name="ball" parent="Tilemaps" instance=ExtResource("35_41idh")]
 position = Vector2(-48, 192)
-collision_layer = 4321
-collision_mask = 4321
 num = SubResource("Resource_ftvp4")
 metadata/is_die = SubResource("Resource_1qtut")
 metadata/team_object = SubResource("Resource_ftvp4")
@@ -1523,6 +1521,8 @@ metadata/team_object = SubResource("Resource_6xsba")
 
 [node name="ball_purple" parent="Tilemaps" instance=ExtResource("35_41idh")]
 position = Vector2(144, -96)
+collision_layer = 4305
+collision_mask = 4305
 linear_velocity = Vector2(200, 0)
 num = SubResource("Resource_w08im")
 metadata/is_die = SubResource("Resource_mng47")

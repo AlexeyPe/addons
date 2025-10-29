@@ -156,8 +156,8 @@ value = 1
 metadata/_custom_type_script = "uid://8myr58nwfvfg"
 
 [node name="ball" type="RigidBody2D"]
-collision_layer = 4305
-collision_mask = 4305
+collision_layer = 4321
+collision_mask = 4321
 input_pickable = true
 physics_material_override = SubResource("PhysicsMaterial_6xsba")
 gravity_scale = 0.0
@@ -212,7 +212,7 @@ metadata/_custom_type_script = "uid://du8j36g8pf8k8"
 [node name="BodyLife" type="Sprite2D" parent="."]
 texture_filter = 4
 scale = Vector2(0.25, 0.25000003)
-texture = ExtResource("12_aahtj")
+texture = ExtResource("9_cn5ba")
 script = ExtResource("10_bk5pk")
 num = ExtResource("2_hsyp7")
 num_is_texture = Array[Texture]([null, ExtResource("9_cn5ba"), ExtResource("11_xd8ss"), ExtResource("12_aahtj"), ExtResource("13_8s2x3")])
@@ -223,7 +223,7 @@ self_modulate = Color(1, 1, 1, 0.7058824)
 z_index = 1
 texture_filter = 4
 scale = Vector2(0.25, 0.25)
-texture = ExtResource("16_41df4")
+texture = ExtResource("14_8s2x3")
 script = ExtResource("10_bk5pk")
 num = ExtResource("2_hsyp7")
 num_is_texture = Array[Texture]([null, ExtResource("14_8s2x3"), ExtResource("15_mih5m"), ExtResource("16_41df4"), ExtResource("17_kwmlm")])
@@ -299,7 +299,6 @@ script = ExtResource("30_c5b2c")
 num_a = ExtResource("33_i8mmh")
 num_a_is_arr = Array[ExtResource("31_dtgiy")]([null, ExtResource("32_rblx7"), ExtResource("5_xd8ss"), ExtResource("33_i8mmh"), ExtResource("34_tggjb")])
 num_a_arr_index = ExtResource("2_hsyp7")
-num_a_arr_index_meta = null
 num_b = SubResource("Resource_dtgiy")
 operation = 2
 node_emitter = NodePath("..")
@@ -346,6 +345,7 @@ metadata/_custom_type_script = "uid://b5w7jmxkrwose"
 script = ExtResource("28_mmg5j")
 meta_name = "team_object"
 meta_owner = NodePath("..")
+enable = false
 node_emitter = NodePath("..")
 watch_signal = 0
 metadata/_custom_type_script = "uid://btail58r0orri"
@@ -372,10 +372,10 @@ metadata/_custom_type_script = "uid://btail58r0orri"
 
 [node name="APChainSetNum" type="Node" parent="." node_paths=PackedStringArray("node_emitter")]
 script = ExtResource("30_c5b2c")
-num_a = ExtResource("33_i8mmh")
+disable_when_editor = true
+num_a = ExtResource("32_rblx7")
 num_a_is_arr = Array[ExtResource("31_dtgiy")]([null, ExtResource("32_rblx7"), ExtResource("5_xd8ss"), ExtResource("33_i8mmh"), ExtResource("34_tggjb")])
 num_a_arr_index = ExtResource("2_hsyp7")
-num_a_arr_index_meta = null
 num_b = SubResource("Resource_dtgiy")
 operation = 1
 node_emitter = NodePath("..")

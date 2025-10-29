@@ -46,7 +46,7 @@ metadata/price_card = ExtResource("8_hmn1j")
 
 [node name="TextureRect" parent="SubViewport/PanelContainer" index="0"]
 texture = ExtResource("4_4dug4")
-num_is = Array[Texture]([ExtResource("4_jmrn4"), ExtResource("5_4dug4"), ExtResource("4_4dug4"), ExtResource("7_f34vj")])
+num_is = Array[Texture]([null, ExtResource("4_jmrn4"), ExtResource("5_4dug4"), ExtResource("4_4dug4"), ExtResource("7_f34vj")])
 
 [node name="APChainToggleBtns" parent="SubViewport/PanelContainer/ButtonSelectCardPack" index="0"]
 toggle_bool = SubResource("Resource_ymm2e")

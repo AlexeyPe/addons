@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://7bappgufejs0"]
+[gd_scene load_steps=25 format=3 uid="uid://7bappgufejs0"]
 
 [ext_resource type="Script" uid="uid://d2gijcutmpkko" path="res://addons/VarRes/classes/utility/StaticBody2DVaRes.gd" id="1_dcb7b"]
 [ext_resource type="Resource" uid="uid://fmqn72g7wvj0" path="res://data/gameplay/teams/team_object.tres" id="2_qi7cb"]
@@ -13,6 +13,7 @@
 [ext_resource type="Script" uid="uid://u1gglou2n5jq" path="res://addons/APChain/classes/chain_activator/APActivatorResource.gd" id="16_qv27a"]
 [ext_resource type="Script" uid="uid://dg3tbem26ogr7" path="res://addons/APChain/classes/chain/childs/APChainAddChild.gd" id="19_nywqj"]
 [ext_resource type="Script" uid="uid://b03dlfkxcckwp" path="res://addons/VarRes/classes/VarRes.gd" id="20_rg3yy"]
+[ext_resource type="Resource" uid="uid://cehqu7jl7rmu3" path="res://data/gameplay/teams/team_player.tres" id="21_673ey"]
 [ext_resource type="Resource" uid="uid://dlnydceni78on" path="res://data/gameplay/teams/team_red.tres" id="21_d37j6"]
 [ext_resource type="Script" uid="uid://xix6u347hwe" path="res://addons/APChain/classes/chain/set/APChainSetCollisionEnable.gd" id="22_6e2r8"]
 [ext_resource type="Script" uid="uid://xv7plkxnebcm" path="res://addons/APChain/classes/chain/set/vares/APChainSetBool.gd" id="23_4yp7p"]
@@ -27,7 +28,6 @@ size = Vector2(48, 48)
 resource_local_to_scene = true
 resource_name = "can_drop"
 script = ExtResource("7_d0akw")
-value = true
 metadata/_custom_type_script = "uid://djmnu1e55mp0j"
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ls341"]
@@ -85,14 +85,14 @@ num_is_modulate = Array[Color]([Color(0, 0, 0, 0), Color(1, 1, 1, 1), Color(1, 0
 metadata/_custom_type_script = "uid://d4aoqudvdak1p"
 metadata/_edit_use_anchors_ = true
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="AreaKillBalls" type="Area2D" parent="."]
 editor_description = "Для убийства юнитов"
 collision_layer = 112
 collision_mask = 112
 input_pickable = false
 monitorable = false
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D"]
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="AreaKillBalls"]
 visible = false
 shape = SubResource("RectangleShape2D_j64cy")
 metadata/team_object = ExtResource("2_qi7cb")
@@ -130,42 +130,6 @@ mouse_filter = 2
 visible = false
 shape = SubResource("RectangleShape2D_j64cy")
 
-[node name="APChainAddChild2" type="Node" parent="."]
-script = ExtResource("19_nywqj")
-set_metadata = Dictionary[String, ExtResource("20_rg3yy")]({
-"build_team": ExtResource("21_d37j6")
-})
-metadata/_custom_type_script = "uid://dg3tbem26ogr7"
-
-[node name="SetCollision=executed_good" type="Node" parent="APChainAddChild2" node_paths=PackedStringArray("collision_disable", "node_emitter")]
-script = ExtResource("22_6e2r8")
-collision_disable = [NodePath("../../CollisionShape2D")]
-node_emitter = NodePath("..")
-watch_signal = 3
-metadata/_custom_type_script = "uid://xix6u347hwe"
-
-[node name="SetCollision=added_child_exiting" type="Node" parent="APChainAddChild2" node_paths=PackedStringArray("collision_enable", "node_emitter")]
-script = ExtResource("22_6e2r8")
-collision_enable = [NodePath("../../CollisionShape2D")]
-node_emitter = NodePath("..")
-watch_signal = 0
-metadata/_custom_type_script = "uid://xix6u347hwe"
-
-[node name="SET_can_drop=false" type="Node" parent="APChainAddChild2" node_paths=PackedStringArray("node_emitter")]
-script = ExtResource("23_4yp7p")
-var_bool = SubResource("Resource_y8fmx")
-new_value = false
-node_emitter = NodePath("..")
-watch_signal = 3
-metadata/_custom_type_script = "uid://xv7plkxnebcm"
-
-[node name="SET_can_drop=true" type="Node" parent="APChainAddChild2" node_paths=PackedStringArray("node_emitter")]
-script = ExtResource("23_4yp7p")
-var_bool = SubResource("Resource_y8fmx")
-node_emitter = NodePath("..")
-watch_signal = 0
-metadata/_custom_type_script = "uid://xv7plkxnebcm"
-
 [node name="field_build=changed" type="Node" parent="."]
 script = ExtResource("16_qv27a")
 _signal = "changed"
@@ -199,13 +163,13 @@ node_emitter = NodePath("..")
 watch_signal = 0
 metadata/_custom_type_script = "uid://xix6u347hwe"
 
-[node name="APActivatorInteractionKillBalls" type="Node" parent="." node_paths=PackedStringArray("overlapping_bodies_area2D")]
+[node name="AreaKillBallsEnteredBody" type="Node" parent="." node_paths=PackedStringArray("overlapping_bodies_area2D")]
 script = ExtResource("26_qi7cb")
-overlapping_bodies_area2D = NodePath("../Area2D")
+overlapping_bodies_area2D = NodePath("../AreaKillBalls")
 overlapping_bodies_vares = ExtResource("2_qi7cb")
 metadata/_custom_type_script = "uid://b5w7jmxkrwose"
 
-[node name="APChainIfNum" type="Node" parent="APActivatorInteractionKillBalls" node_paths=PackedStringArray("node_emitter")]
+[node name="APChainIfNum" type="Node" parent="AreaKillBallsEnteredBody" node_paths=PackedStringArray("node_emitter")]
 script = ExtResource("12_p0qbc")
 num_b = ExtResource("2_qi7cb")
 condition = 1
@@ -214,7 +178,7 @@ node_emitter = NodePath("..")
 watch_signal = 0
 metadata/_custom_type_script = "uid://up8up6hch40i"
 
-[node name="APChainSetBool" type="Node" parent="APActivatorInteractionKillBalls/APChainIfNum" node_paths=PackedStringArray("meta_owner", "node_emitter")]
+[node name="APChainSetBool" type="Node" parent="AreaKillBallsEnteredBody/APChainIfNum" node_paths=PackedStringArray("meta_owner", "node_emitter")]
 script = ExtResource("23_4yp7p")
 bool_is_meta = "is_die"
 meta_owner = NodePath("../..")
@@ -234,3 +198,33 @@ meta_paste_to_vares = ExtResource("28_4xrso")
 node_emitter = NodePath("..")
 watch_signal = 0
 metadata/_custom_type_script = "uid://btail58r0orri"
+
+[node name="team_object=changed" type="Node" parent="."]
+script = ExtResource("16_qv27a")
+_signal = "changed"
+resource = ExtResource("2_qi7cb")
+signal = "changed"
+metadata/_custom_type_script = "uid://u1gglou2n5jq"
+
+[node name="APChainIfNum" type="Node" parent="team_object=changed" node_paths=PackedStringArray("node_emitter")]
+script = ExtResource("12_p0qbc")
+num_a = ExtResource("21_673ey")
+num_b = ExtResource("2_qi7cb")
+node_emitter = NodePath("..")
+watch_signal = 0
+metadata/_custom_type_script = "uid://up8up6hch40i"
+
+[node name="SET_can_drop=true" type="Node" parent="team_object=changed/APChainIfNum" node_paths=PackedStringArray("node_emitter")]
+script = ExtResource("23_4yp7p")
+var_bool = SubResource("Resource_y8fmx")
+node_emitter = NodePath("..")
+watch_signal = 0
+metadata/_custom_type_script = "uid://xv7plkxnebcm"
+
+[node name="SET_can_drop=false" type="Node" parent="team_object=changed/APChainIfNum" node_paths=PackedStringArray("node_emitter")]
+script = ExtResource("23_4yp7p")
+var_bool = SubResource("Resource_y8fmx")
+new_value = false
+node_emitter = NodePath("..")
+watch_signal = 1
+metadata/_custom_type_script = "uid://xv7plkxnebcm"

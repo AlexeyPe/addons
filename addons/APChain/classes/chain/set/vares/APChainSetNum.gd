@@ -2,6 +2,7 @@
 extends APChain
 class_name APChainSetNum
 
+@export var disable_when_editor:bool = false
 @export var num_a:VaRNumber
 @export_group("num_a settings", "num_a_")
 @export var num_a_is_arr:Array[VaRNumber]
@@ -28,6 +29,7 @@ func _rename_self():
 		printerr("APChainSetNum, num_a is empty, %s"%[get_path()])
 
 func _execute(...args:Array) -> void:
+	if disable_when_editor and Engine.is_editor_hint():return
 	execution_started.emit()
 	if num_a_is_arr.is_empty() == false:
 		if num_a_arr_index != null and num_a_is_arr.size() >= num_a_arr_index.get_value():

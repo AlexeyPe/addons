@@ -15,9 +15,6 @@ class_name RigidBody2DVaRes
 
 @export_group("VaRes Bool")
 
-@export_group("Print Debug")
-@export var print_collision:bool
-
 var debug:CanvasLayer = null
 
 func on_changed_vars():
