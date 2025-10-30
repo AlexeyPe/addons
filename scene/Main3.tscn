@@ -236,12 +236,12 @@ radius = 200.0
 
 [sub_resource type="Resource" id="Resource_ob58h"]
 script = ExtResource("7_8m5be")
-value = 0.1
+value = 0.05
 metadata/_custom_type_script = "uid://msh8p6ojhxex"
 
 [sub_resource type="Resource" id="Resource_3hqfm"]
 script = ExtResource("7_8m5be")
-value = -0.1
+value = -0.05
 metadata/_custom_type_script = "uid://msh8p6ojhxex"
 
 [node name="Main" type="Node"]

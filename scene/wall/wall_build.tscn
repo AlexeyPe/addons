@@ -1,16 +1,17 @@
-[gd_scene load_steps=34 format=3 uid="uid://dfht4fveoaaib"]
+[gd_scene load_steps=36 format=3 uid="uid://dfht4fveoaaib"]
 
-[ext_resource type="Texture2D" uid="uid://h14mo3pcwr6i" path="res://scene/objects/wall/round_grey_detailed.png" id="1_m8rlx"]
+[ext_resource type="Script" uid="uid://bt65n6o82yg6b" path="res://addons/VarRes/classes/utility/RigidBody2DVaRes.gd" id="1_ij66p"]
+[ext_resource type="Texture2D" uid="uid://h14mo3pcwr6i" path="res://scene/wall/round_grey_detailed.png" id="1_m8rlx"]
 [ext_resource type="Script" uid="uid://dj04ffy0nu74n" path="res://addons/APChain/classes/chain/audio/APChainAudioPlay.gd" id="2_g8gtm"]
 [ext_resource type="Resource" uid="uid://duba1x536ikob" path="res://scene/objects/is_now_spawning.tres" id="2_gqlfw"]
-[ext_resource type="AudioStream" uid="uid://dqq8qx5giulpj" path="res://scene/objects/wall/Place.tres" id="3_hfs6u"]
-[ext_resource type="AudioStream" uid="uid://xmfbkrbm231" path="res://scene/objects/wall/Damage.tres" id="4_lj18c"]
+[ext_resource type="LabelSettings" uid="uid://b3k8fh0kbyut2" path="res://UI_Resources/debug.tres" id="2_kput2"]
+[ext_resource type="AudioStream" uid="uid://dqq8qx5giulpj" path="res://scene/wall/Place.tres" id="3_hfs6u"]
+[ext_resource type="AudioStream" uid="uid://xmfbkrbm231" path="res://scene/wall/Damage.tres" id="4_lj18c"]
 [ext_resource type="Script" uid="uid://cccrm8vuks5fs" path="res://addons/VarRes/classes/UI/VaResLabel.gd" id="4_sclkb"]
 [ext_resource type="Script" uid="uid://u1gglou2n5jq" path="res://addons/APChain/classes/chain_activator/APActivatorResource.gd" id="5_273i7"]
-[ext_resource type="Resource" uid="uid://dko68hbsa7qr3" path="res://scene/objects/build_team.tres" id="5_sclkb"]
-[ext_resource type="AudioStream" uid="uid://brh8k437nirvb" path="res://scene/objects/wall/Destory.tres" id="5_sn1rv"]
+[ext_resource type="AudioStream" uid="uid://brh8k437nirvb" path="res://scene/wall/Destory.tres" id="5_sn1rv"]
 [ext_resource type="Shader" uid="uid://cdpofvwclxk2r" path="res://addons/shadercollectionap/transition.gdshader" id="6_sn1rv"]
-[ext_resource type="Resource" uid="uid://d2sb1jfqfn741" path="res://scene/objects/wall/wall_hp.tres" id="7_36ts5"]
+[ext_resource type="Resource" uid="uid://d2sb1jfqfn741" path="res://scene/wall/wall_hp.tres" id="7_36ts5"]
 [ext_resource type="Script" uid="uid://xv7plkxnebcm" path="res://addons/APChain/classes/chain/set/vares/APChainSetBool.gd" id="8_q0apd"]
 [ext_resource type="Script" uid="uid://dujhj0672f2qk" path="res://addons/APChain/classes/chain/meta/APChainAreaMeta.gd" id="9_hvpao"]
 [ext_resource type="Script" uid="uid://cwwtvvbcb8q70" path="res://addons/VarRes/classes/meta/condition/MetaCondition.gd" id="10_perul"]
@@ -19,11 +20,12 @@
 [ext_resource type="Script" uid="uid://cldopw0r4n1wj" path="res://addons/APChain/classes/chain/set/vares/APChainSetNum.gd" id="15_f1rq2"]
 [ext_resource type="Script" uid="uid://8myr58nwfvfg" path="res://addons/VarRes/classes/numbers/VaRInt.gd" id="16_subb2"]
 [ext_resource type="Script" uid="uid://up8up6hch40i" path="res://addons/APChain/classes/chain/if/APChainIfNum.gd" id="18_sn1rv"]
-[ext_resource type="Resource" uid="uid://dlnydceni78on" path="res://data/gameplay/teams/team_red.tres" id="19_xy14n"]
 [ext_resource type="Script" uid="uid://dfnv5lgi83cdo" path="res://addons/APChain/classes/chain/APChainAnimPlay.gd" id="20_pkce4"]
 [ext_resource type="Script" uid="uid://bein4dn8ts6bb" path="res://addons/APChain/classes/chain/childs/APChainDelChildsArr.gd" id="21_kxtcs"]
 [ext_resource type="Resource" uid="uid://4ok8jqiesqsv" path="res://data/gameplay/Money.tres" id="22_rpqh2"]
-[ext_resource type="Resource" uid="uid://drwp51oy6ohye" path="res://scene/objects/wall/wall_price.tres" id="23_xy14n"]
+[ext_resource type="Resource" uid="uid://drwp51oy6ohye" path="res://scene/wall/wall_price.tres" id="23_xy14n"]
+[ext_resource type="Script" uid="uid://b5w7jmxkrwose" path="res://addons/APChain/classes/chain_activator/APActivatorInteraction.gd" id="27_kput2"]
+[ext_resource type="Resource" uid="uid://fmqn72g7wvj0" path="res://data/gameplay/teams/team_object.tres" id="28_ekncy"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_pkce4"]
 resource_local_to_scene = true
@@ -59,16 +61,6 @@ outline_color = Color(0.13, 0.13, 0.13, 1)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_lj18c"]
 radius = 24.0
-
-[sub_resource type="Resource" id="Resource_13u1y"]
-script = ExtResource("16_subb2")
-value = 1
-metadata/_custom_type_script = "uid://8myr58nwfvfg"
-
-[sub_resource type="Resource" id="Resource_pkce4"]
-script = ExtResource("16_subb2")
-value = 0
-metadata/_custom_type_script = "uid://8myr58nwfvfg"
 
 [sub_resource type="Animation" id="Animation_pkce4"]
 length = 0.001
@@ -130,10 +122,28 @@ _data = {
 &"destroy": SubResource("Animation_sn1rv")
 }
 
-[node name="WallBuild" type="StaticBody2D"]
+[sub_resource type="Resource" id="Resource_13u1y"]
+script = ExtResource("16_subb2")
+value = 1
+metadata/_custom_type_script = "uid://8myr58nwfvfg"
+
+[sub_resource type="Resource" id="Resource_ij66p"]
+script = ExtResource("16_subb2")
+value = 0
+metadata/_custom_type_script = "uid://8myr58nwfvfg"
+
+[node name="WallBuild" type="RigidBody2D"]
 z_index = 1
-metadata/build_team = ExtResource("5_sclkb")
+input_pickable = true
+freeze = true
+freeze_mode = 1
+contact_monitor = true
+max_contacts_reported = 1
+script = ExtResource("1_ij66p")
+debug_label_settings = ExtResource("2_kput2")
+metadata/_custom_type_script = "uid://bt65n6o82yg6b"
 metadata/is_now_spawning = ExtResource("2_gqlfw")
+metadata/team_object = ExtResource("28_ekncy")
 
 [node name="Spawn" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_hfs6u")
@@ -239,60 +249,71 @@ node_emitter = NodePath("..")
 watch_signal = 2
 metadata/_custom_type_script = "uid://dujhj0672f2qk"
 
-[node name="ball_touched_building=if_true" type="Node" parent="."]
-script = ExtResource("5_273i7")
-_signal = "if_true"
-resource = ExtResource("19_xy14n")
-signal = "if_true"
-enable = false
-metadata/_custom_type_script = "uid://u1gglou2n5jq"
+[node name="Destroy" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_kxtcs")
+}
 
-[node name="APChainShake2D" type="Node" parent="ball_touched_building=if_true" node_paths=PackedStringArray("target_node_shake", "node_emitter")]
+[node name="BallTouched" type="Node" parent="." node_paths=PackedStringArray("rigid_body_2D")]
+script = ExtResource("27_kput2")
+rigid_body_2D = NodePath("..")
+wait_buffer = 0.1
+metadata/_custom_type_script = "uid://b5w7jmxkrwose"
+
+[node name="ball_team_is_field_team" type="Node" parent="BallTouched" node_paths=PackedStringArray("num_a_is_meta_owner", "node_emitter")]
+script = ExtResource("18_sn1rv")
+num_b = ExtResource("28_ekncy")
+num_a_is_meta = "team_object"
+num_a_is_meta_owner = NodePath("..")
+node_emitter = NodePath("..")
+watch_signal = 0
+metadata/_custom_type_script = "uid://up8up6hch40i"
+
+[node name="APChainShake2D" type="Node" parent="BallTouched/ball_team_is_field_team" node_paths=PackedStringArray("target_node_shake", "node_emitter")]
 script = ExtResource("12_lsj2r")
-target_node_shake = NodePath("../../Sprite2D")
+target_node_shake = NodePath("../../../Sprite2D")
 decay = 0.85
 max_offset = Vector2(10, 10)
 trauma_power = 1.5
 add_trauma = 0.75
 node_emitter = NodePath("..")
-watch_signal = 0
+watch_signal = 1
 metadata/_custom_type_script = "uid://du8j36g8pf8k8"
 
-[node name="SET_wall_hp" type="Node" parent="ball_touched_building=if_true" node_paths=PackedStringArray("node_emitter")]
+[node name="SET_wall_hp" type="Node" parent="BallTouched/ball_team_is_field_team" node_paths=PackedStringArray("node_emitter")]
 script = ExtResource("15_f1rq2")
 num_a = ExtResource("7_36ts5")
 num_b = SubResource("Resource_13u1y")
 operation = 2
 node_emitter = NodePath("..")
-watch_signal = 0
+watch_signal = 1
 metadata/_custom_type_script = "uid://cldopw0r4n1wj"
 
-[node name="APChainIfNum" type="Node" parent="ball_touched_building=if_true/SET_wall_hp" node_paths=PackedStringArray("node_emitter")]
+[node name="can_destroy" type="Node" parent="BallTouched/ball_team_is_field_team/SET_wall_hp" node_paths=PackedStringArray("node_emitter")]
 script = ExtResource("18_sn1rv")
 num_a = ExtResource("7_36ts5")
-num_b = SubResource("Resource_pkce4")
-condition = 5
+num_b = SubResource("Resource_ij66p")
 node_emitter = NodePath("..")
 watch_signal = 2
 metadata/_custom_type_script = "uid://up8up6hch40i"
 
-[node name="PlayDamage" type="Node" parent="ball_touched_building=if_true/SET_wall_hp/APChainIfNum" node_paths=PackedStringArray("player2D", "node_emitter")]
+[node name="PlayDamage" type="Node" parent="BallTouched/ball_team_is_field_team/SET_wall_hp/can_destroy" node_paths=PackedStringArray("player2D", "node_emitter")]
 script = ExtResource("2_g8gtm")
-player2D = NodePath("../../../../Damage")
+player2D = NodePath("../../../../../Damage")
 node_emitter = NodePath("..")
 watch_signal = 1
 metadata/_custom_type_script = "uid://dj04ffy0nu74n"
 
-[node name="PlayDestroy" type="Node" parent="ball_touched_building=if_true/SET_wall_hp/APChainIfNum" node_paths=PackedStringArray("player2D", "node_emitter")]
+[node name="PlayDestroy" type="Node" parent="BallTouched/ball_team_is_field_team/SET_wall_hp/can_destroy" node_paths=PackedStringArray("player2D", "node_emitter")]
 script = ExtResource("2_g8gtm")
-player2D = NodePath("../../../../Destory")
+player2D = NodePath("../../../../../Destory")
 node_emitter = NodePath("..")
 watch_signal = 0
 metadata/_custom_type_script = "uid://dj04ffy0nu74n"
 
-[node name="APChainAnimPlay" type="Node" parent="ball_touched_building=if_true/SET_wall_hp/APChainIfNum" node_paths=PackedStringArray("animation_player", "node_emitter")]
+[node name="APChainAnimPlay" type="Node" parent="BallTouched/ball_team_is_field_team/SET_wall_hp/can_destroy" node_paths=PackedStringArray("animation_player", "node_emitter")]
 script = ExtResource("20_pkce4")
-animation_player = NodePath("../../../../Destroy")
+animation_player = NodePath("../../../../../Destroy")
 speed = 2.0
 skip_if_play = true
 anim_name = 1
@@ -300,14 +321,9 @@ node_emitter = NodePath("..")
 watch_signal = 0
 metadata/_custom_type_script = "uid://dfnv5lgi83cdo"
 
-[node name="APChainDelChildsArr" type="Node" parent="ball_touched_building=if_true/SET_wall_hp/APChainIfNum/APChainAnimPlay" node_paths=PackedStringArray("nodes", "node_emitter")]
+[node name="APChainDelChildsArr" type="Node" parent="BallTouched/ball_team_is_field_team/SET_wall_hp/can_destroy/APChainAnimPlay" node_paths=PackedStringArray("nodes", "node_emitter")]
 script = ExtResource("21_kxtcs")
-nodes = [NodePath("../../../../..")]
+nodes = [NodePath("../../../../../..")]
 node_emitter = NodePath("..")
 watch_signal = 0
 metadata/_custom_type_script = "uid://bein4dn8ts6bb"
-
-[node name="Destroy" type="AnimationPlayer" parent="."]
-libraries = {
-&"": SubResource("AnimationLibrary_kxtcs")
-}

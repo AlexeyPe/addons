@@ -2,9 +2,9 @@
 
 [ext_resource type="PackedScene" uid="uid://bcap7c1i87f30" path="res://scene/objects/card/Card.tscn" id="1_tbxw8"]
 [ext_resource type="Shader" uid="uid://bso165sdn2g37" path="res://addons/APCards/shaders/2D-perspective.gdshader" id="2_uohim"]
-[ext_resource type="PackedScene" uid="uid://dfht4fveoaaib" path="res://scene/objects/wall/wall_build.tscn" id="6_mltky"]
+[ext_resource type="PackedScene" uid="uid://dfht4fveoaaib" path="res://scene/wall/wall_build.tscn" id="6_mltky"]
 [ext_resource type="Script" uid="uid://djmnu1e55mp0j" path="res://addons/VarRes/classes/bool/VaRBool.gd" id="7_syiw1"]
-[ext_resource type="Resource" uid="uid://drwp51oy6ohye" path="res://scene/objects/wall/wall_price.tres" id="8_syiw1"]
+[ext_resource type="Resource" uid="uid://drwp51oy6ohye" path="res://scene/wall/wall_price.tres" id="8_syiw1"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_d3wn7"]
 resource_local_to_scene = true

@@ -13,6 +13,11 @@ class_name APActivatorInteraction
 @export_subgroup("overlapping_bodies", "overlapping_bodies_")
 @export var overlapping_bodies_area2D:Area2D
 @export var overlapping_bodies_vares:VarRes
+@export_group("Wait", "wait_")
+## Проверяет что бы за это время не было более 1 вызова.[br]
+## Иногда при столкновении 2х RigidBody фиксируется более 1 сигнала, это плохо.
+@export var wait_buffer:float = 0.0
+var _now_wait_buffer:bool = false
 
 func _change_enable():
 	if enable:
@@ -35,6 +40,13 @@ func _change_enable():
 
 func target_emit_body(...args:Array):
 	if not enable: return
+	if wait_buffer > 0.0:
+		if _now_wait_buffer: return
+		else:
+			_now_wait_buffer = true
+			get_tree().create_timer(wait_buffer).timeout.connect(func():
+				_now_wait_buffer = false
+			)
 	for meta in get_meta_list():
 		remove_meta(meta)
 	for meta in args[0].get_meta_list():

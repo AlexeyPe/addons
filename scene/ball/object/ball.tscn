@@ -298,7 +298,6 @@ metadata/_custom_type_script = "uid://xix6u347hwe"
 [node name="APChainSetNum2" type="Node" parent="is_die=now_true" node_paths=PackedStringArray("node_emitter")]
 script = ExtResource("30_c5b2c")
 num_a = ExtResource("33_i8mmh")
-num_a_is_meta = null
 num_a_is_arr = Array[ExtResource("31_dtgiy")]([null, ExtResource("32_rblx7"), ExtResource("5_xd8ss"), ExtResource("33_i8mmh"), ExtResource("34_tggjb")])
 num_a_arr_index = ExtResource("2_hsyp7")
 num_b = SubResource("Resource_dtgiy")
@@ -355,7 +354,6 @@ metadata/_custom_type_script = "uid://btail58r0orri"
 
 [node name="APChainSetNum" type="Node" parent="APActivatorInteraction/HasMeta=team_object" node_paths=PackedStringArray("num_a_arr_index_meta_owner", "node_emitter")]
 script = ExtResource("30_c5b2c")
-num_a_is_meta = null
 num_a_is_arr = Array[ExtResource("31_dtgiy")]([null, ExtResource("35_5eue2"), ExtResource("36_h5ua5"), ExtResource("37_s0fuh"), ExtResource("38_rrtt6")])
 num_a_arr_index_meta = "team_object"
 num_a_arr_index_meta_owner = NodePath("../..")
@@ -374,11 +372,10 @@ node_emitter = NodePath("..")
 watch_signal = 1
 metadata/_custom_type_script = "uid://btail58r0orri"
 
-[node name="APChainSetNum" type="Node" parent="." node_paths=PackedStringArray("node_emitter")]
+[node name="unit_counter+" type="Node" parent="." node_paths=PackedStringArray("node_emitter")]
 script = ExtResource("30_c5b2c")
 disable_when_editor = true
 num_a = ExtResource("32_rblx7")
-num_a_is_meta = null
 num_a_is_arr = Array[ExtResource("31_dtgiy")]([null, ExtResource("32_rblx7"), ExtResource("5_xd8ss"), ExtResource("33_i8mmh"), ExtResource("34_tggjb")])
 num_a_arr_index = ExtResource("2_hsyp7")
 num_b = SubResource("Resource_dtgiy")

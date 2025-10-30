@@ -1,6 +1,6 @@
 [gd_resource type="AudioStreamRandomizer" load_steps=2 format=3 uid="uid://brh8k437nirvb"]
 
-[ext_resource type="AudioStream" uid="uid://c5yjk56slx12b" path="res://scene/objects/wall/662449__fullstacksound__boulder_castle-cut.mp3" id="1_jeuxe"]
+[ext_resource type="AudioStream" uid="uid://c5yjk56slx12b" path="res://scene/wall/662449__fullstacksound__boulder_castle-cut.mp3" id="1_jeuxe"]
 
 [resource]
 random_pitch = 1.05

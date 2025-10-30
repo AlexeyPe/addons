@@ -17,6 +17,7 @@ signal if_false
 	"a >= b",
 	"a <= b",
 ) var condition:int
+@export_group("Num A is", "num_a_")
 ## Оставить пустым что бы пропустить это выполнение.[br]
 ## Заменит num_a на мету из node_emitter.[br]
 ## Мета добавляется/перезаписывается в метаданные цепочки.
