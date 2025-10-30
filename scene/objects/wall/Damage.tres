@@ -1,9 +1,0 @@
-[gd_resource type="AudioStreamRandomizer" load_steps=2 format=3 uid="uid://xmfbkrbm231"]
-
-[ext_resource type="AudioStream" uid="uid://dugi0h1aa8xeg" path="res://scene/objects/wall/424997__gregorquendel__rocks-effects-source-recordings-05-cut.mp3" id="1_yfdnt"]
-
-[resource]
-random_pitch = 1.05
-random_volume_offset_db = 1.0
-streams_count = 1
-stream_0/stream = ExtResource("1_yfdnt")

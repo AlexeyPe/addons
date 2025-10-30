@@ -1,0 +1,385 @@
+[gd_scene load_steps=50 format=3 uid="uid://bpn7vchp3v0o6"]
+
+[ext_resource type="Resource" uid="uid://58pmfjua3f3c" path="res://scene/ball/object/is_die.tres" id="1_41df4"]
+[ext_resource type="Script" uid="uid://bt65n6o82yg6b" path="res://addons/VarRes/classes/utility/RigidBody2DVaRes.gd" id="1_kwmlm"]
+[ext_resource type="Resource" uid="uid://fmqn72g7wvj0" path="res://data/gameplay/teams/team_object.tres" id="2_hsyp7"]
+[ext_resource type="Script" uid="uid://c8qjdf1iq8aup" path="res://chain_ball.gd" id="3_gsoyy"]
+[ext_resource type="Script" uid="uid://uh8e7y0n0t5e" path="res://addons/APChain/classes/chain/APChainNumOp.gd" id="4_cn5ba"]
+[ext_resource type="Resource" uid="uid://q6vmqvs7sa6j" path="res://data/gameplay/units/units_red.tres" id="5_xd8ss"]
+[ext_resource type="Script" uid="uid://8myr58nwfvfg" path="res://addons/VarRes/classes/numbers/VaRInt.gd" id="6_aahtj"]
+[ext_resource type="Script" uid="uid://7mbjsugg8t15" path="res://addons/APController/classes/APContDirTargetRB2D.gd" id="7_8s2x3"]
+[ext_resource type="Script" uid="uid://du8j36g8pf8k8" path="res://addons/APChain/classes/chain/APChainShake.gd" id="8_mih5m"]
+[ext_resource type="Texture2D" uid="uid://c8tb361n7a6t1" path="res://scene/ball/ball-white.png" id="9_cn5ba"]
+[ext_resource type="Texture2D" uid="uid://dj1k42jvxdnen" path="res://imgs/circle.svg" id="9_h5ua5"]
+[ext_resource type="Script" path="res://addons/VarRes/classes/utility/Sprite2DVaRes.gd" id="10_bk5pk"]
+[ext_resource type="Texture2D" uid="uid://xe2ta4d0ybxb" path="res://scene/ball/ball-red.png" id="11_xd8ss"]
+[ext_resource type="Texture2D" uid="uid://ba6d2amdlnvs" path="res://scene/ball/ball-purple.png" id="12_aahtj"]
+[ext_resource type="Script" uid="uid://u1gglou2n5jq" path="res://addons/APChain/classes/chain_activator/APActivatorResource.gd" id="12_gh3y3"]
+[ext_resource type="Texture2D" uid="uid://dkitr57jteqky" path="res://scene/ball/ball-yellow.png" id="13_8s2x3"]
+[ext_resource type="Script" uid="uid://bqn6e76istclq" path="res://addons/APChain/classes/chain/set/APChainSetVisible.gd" id="13_c5b2c"]
+[ext_resource type="Texture2D" uid="uid://cqtx321wtmej7" path="res://scene/ball/ball-white-die.png" id="14_8s2x3"]
+[ext_resource type="Script" uid="uid://duly1h7lf3u3o" path="res://addons/APChain/classes/chain/set/APChainSetPhysics2D.gd" id="14_davvq"]
+[ext_resource type="Script" uid="uid://dfnv5lgi83cdo" path="res://addons/APChain/classes/chain/APChainAnimPlay.gd" id="15_6vl48"]
+[ext_resource type="Texture2D" uid="uid://ddflka3naw7gb" path="res://scene/ball/ball-red-die.png" id="15_mih5m"]
+[ext_resource type="Texture2D" uid="uid://cfcyaky53118e" path="res://scene/ball/ball-purple-die.png" id="16_41df4"]
+[ext_resource type="Resource" uid="uid://dtkw5uacj3oc5" path="res://data/gameplay/units/unit_deaths.tres" id="16_fnc5y"]
+[ext_resource type="Texture2D" uid="uid://cx7fttq7ienoo" path="res://scene/ball/mingcute--ghost-fill.svg" id="17_dtgiy"]
+[ext_resource type="Texture2D" uid="uid://mnjwql4xbnfx" path="res://scene/ball/ball-yellow-die.png" id="17_kwmlm"]
+[ext_resource type="Shader" uid="uid://b4xocinxdwelf" path="res://addons/shadercollectionap/shader/outline/Outline.gdshader" id="18_mih5m"]
+[ext_resource type="Texture2D" uid="uid://n4dics7e7f7l" path="res://scene/ball/game-icons--ring.svg" id="18_rblx7"]
+[ext_resource type="Script" uid="uid://xix6u347hwe" path="res://addons/APChain/classes/chain/set/APChainSetCollisionEnable.gd" id="27_gh3y3"]
+[ext_resource type="Script" uid="uid://b5w7jmxkrwose" path="res://addons/APChain/classes/chain_activator/APActivatorInteraction.gd" id="27_kwmlm"]
+[ext_resource type="Script" uid="uid://btail58r0orri" path="res://addons/APChain/classes/chain/meta/APChainHasMeta.gd" id="28_mmg5j"]
+[ext_resource type="Script" uid="uid://cldopw0r4n1wj" path="res://addons/APChain/classes/chain/set/vares/APChainSetNum.gd" id="30_c5b2c"]
+[ext_resource type="Script" uid="uid://ck2yuex0aket8" path="res://addons/VarRes/classes/numbers/VaRNumber.gd" id="31_dtgiy"]
+[ext_resource type="Resource" uid="uid://ccq6dphbjbpf6" path="res://data/gameplay/units/units_white.tres" id="32_rblx7"]
+[ext_resource type="Resource" uid="uid://c4bpyilbpdmw" path="res://data/gameplay/units/units_purple.tres" id="33_i8mmh"]
+[ext_resource type="Resource" uid="uid://cvmmidd5uwfbn" path="res://data/gameplay/units/units_yellow.tres" id="34_tggjb"]
+[ext_resource type="Resource" uid="uid://bbu6crs5k6ct6" path="res://data/gameplay/field_counters/fields_white.tres" id="35_5eue2"]
+[ext_resource type="Resource" uid="uid://cvpnw37xy7hya" path="res://data/gameplay/field_counters/fields_red.tres" id="36_h5ua5"]
+[ext_resource type="Resource" uid="uid://yjwdocjo8sh2" path="res://data/gameplay/field_counters/fields_purple.tres" id="37_s0fuh"]
+[ext_resource type="Resource" uid="uid://x3id5dx3yucu" path="res://data/gameplay/field_counters/fields_yellow.tres" id="38_rrtt6"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_6xsba"]
+friction = 0.0
+bounce = 1.0
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_ws0sv"]
+frequency = 0.0433
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_41df4"]
+shader = ExtResource("18_mih5m")
+shader_parameter/allow_out_of_bounds = true
+shader_parameter/outline_thickness = 1.0
+shader_parameter/outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_fh3cp"]
+radius = 15.0
+
+[sub_resource type="Resource" id="Resource_4xn3i"]
+script = ExtResource("6_aahtj")
+value = 1
+metadata/_custom_type_script = "uid://8myr58nwfvfg"
+
+[sub_resource type="Resource" id="Resource_dtgiy"]
+script = ExtResource("6_aahtj")
+value = 1
+metadata/_custom_type_script = "uid://8myr58nwfvfg"
+
+[sub_resource type="Animation" id="Animation_h6r1o"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MingcuteGhostFill:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("MingcuteGhostFill:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("MingcuteGhostFill:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_we3cd"]
+resource_name = "on_die"
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MingcuteGhostFill:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.33, 0.66, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(-3, -8), Vector2(3, -16), Vector2(0, -24)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("MingcuteGhostFill:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.82, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("MingcuteGhostFill:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_h6r1o"]
+_data = {
+&"RESET": SubResource("Animation_h6r1o"),
+&"on_die": SubResource("Animation_we3cd")
+}
+
+[sub_resource type="Resource" id="Resource_rblx7"]
+script = ExtResource("6_aahtj")
+value = 1
+metadata/_custom_type_script = "uid://8myr58nwfvfg"
+
+[node name="ball" type="RigidBody2D"]
+collision_layer = 4209
+collision_mask = 4209
+input_pickable = true
+physics_material_override = SubResource("PhysicsMaterial_6xsba")
+gravity_scale = 0.0
+contact_monitor = true
+max_contacts_reported = 6
+linear_velocity = Vector2(177.7, 23.33)
+linear_damp_mode = 1
+angular_damp_mode = 1
+angular_damp = 100.0
+script = ExtResource("1_kwmlm")
+num = ExtResource("2_hsyp7")
+num_is_collision_layer = Array[int]([0, 4321, 4209, 4305, 4273])
+num_is_collision_mask = Array[int]([0, 4321, 4209, 4305, 4273])
+metadata/_custom_type_script = "uid://bt65n6o82yg6b"
+metadata/is_die = ExtResource("1_41df4")
+metadata/team_object = ExtResource("2_hsyp7")
+
+[node name="chain_ball" type="Node" parent="." node_paths=PackedStringArray("node_emitter")]
+script = ExtResource("3_gsoyy")
+meta_to_field_id = Dictionary[String, int]({
+"free": 4,
+"purple": 5,
+"red": 1,
+"white": 2,
+"yellow": 3
+})
+unit_type = "red"
+enable = false
+node_emitter = NodePath("..")
+watch_signal = 2
+metadata/_custom_type_script = "uid://c8qjdf1iq8aup"
+
+[node name="APContDirTargetRB2D" type="Node" parent="." node_paths=PackedStringArray("body_2d", "node_scale")]
+script = ExtResource("7_8s2x3")
+body_2d = NodePath("..")
+node_scale = NodePath("../BodyLife")
+metadata/_custom_type_script = "uid://7mbjsugg8t15"
+
+[node name="APChainShake2D" type="Node" parent="." node_paths=PackedStringArray("target_node_shake", "node_emitter")]
+script = ExtResource("8_mih5m")
+target_node_shake = NodePath("../BodyLife")
+decay = 0.9
+max_offset = Vector2(2, 2)
+max_roll = 0.4
+trauma_power = 1.5
+add_trauma = 0.9
+noise = SubResource("FastNoiseLite_ws0sv")
+node_emitter = NodePath("..")
+watch_signal = 2
+metadata/_custom_type_script = "uid://du8j36g8pf8k8"
+
+[node name="BodyLife" type="Sprite2D" parent="."]
+texture_filter = 4
+scale = Vector2(0.25, 0.25000003)
+texture = ExtResource("11_xd8ss")
+script = ExtResource("10_bk5pk")
+num = ExtResource("2_hsyp7")
+num_is_texture = Array[Texture]([ExtResource("9_h5ua5"), ExtResource("9_cn5ba"), ExtResource("11_xd8ss"), ExtResource("12_aahtj"), ExtResource("13_8s2x3")])
+
+[node name="BodyDie" type="Sprite2D" parent="."]
+visible = false
+self_modulate = Color(1, 1, 1, 0.7058824)
+z_index = 1
+texture_filter = 4
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("15_mih5m")
+script = ExtResource("10_bk5pk")
+num = ExtResource("2_hsyp7")
+num_is_texture = Array[Texture]([null, ExtResource("14_8s2x3"), ExtResource("15_mih5m"), ExtResource("16_41df4"), ExtResource("17_kwmlm")])
+
+[node name="MingcuteGhostFill" type="Sprite2D" parent="."]
+visible = false
+modulate = Color(1, 1, 1, 0)
+z_index = 1
+material = SubResource("ShaderMaterial_41df4")
+scale = Vector2(0.25, 0.25000003)
+texture = ExtResource("17_dtgiy")
+
+[node name="GameIconsRing" type="Sprite2D" parent="MingcuteGhostFill"]
+modulate = Color(1, 1, 0.25490198, 1)
+position = Vector2(0, -57.6)
+scale = Vector2(1.28, 1.0666666)
+texture = ExtResource("18_rblx7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+z_index = 1
+shape = SubResource("CircleShape2D_fh3cp")
+
+[node name="is_die=now_true" type="Node" parent="."]
+script = ExtResource("12_gh3y3")
+_signal = "now_true"
+resource = ExtResource("1_41df4")
+call_init = true
+signal = "now_true"
+metadata/_custom_type_script = "uid://u1gglou2n5jq"
+
+[node name="APChainSetVisible" type="Node" parent="is_die=now_true" node_paths=PackedStringArray("nodes_visible_true", "nodes_visible_false", "node_emitter")]
+script = ExtResource("13_c5b2c")
+nodes_visible_true = [NodePath("../../BodyDie")]
+nodes_visible_false = [NodePath("../../BodyLife")]
+node_emitter = NodePath("..")
+watch_signal = 0
+metadata/_custom_type_script = "uid://bqn6e76istclq"
+
+[node name="APChainSetPhysics2D" type="Node" parent="is_die=now_true" node_paths=PackedStringArray("target_node", "node_emitter")]
+script = ExtResource("14_davvq")
+target_node = NodePath("../..")
+set_linear = true
+node_emitter = NodePath("..")
+watch_signal = 0
+metadata/_custom_type_script = "uid://duly1h7lf3u3o"
+
+[node name="APChainAnimPlay" type="Node" parent="is_die=now_true" node_paths=PackedStringArray("animation_player", "node_emitter")]
+script = ExtResource("15_6vl48")
+animation_player = NodePath("../../AnimationPlayer")
+anim_name = 1
+node_emitter = NodePath("..")
+watch_signal = 0
+metadata/_custom_type_script = "uid://dfnv5lgi83cdo"
+
+[node name="APChainNumOp" type="Node" parent="is_die=now_true" node_paths=PackedStringArray("node_emitter")]
+script = ExtResource("4_cn5ba")
+vares_target = ExtResource("16_fnc5y")
+vares_b = SubResource("Resource_4xn3i")
+node_emitter = NodePath("..")
+watch_signal = 0
+metadata/_custom_type_script = "uid://uh8e7y0n0t5e"
+
+[node name="SetCollision=activated" type="Node" parent="is_die=now_true" node_paths=PackedStringArray("collision_disable", "node_emitter")]
+script = ExtResource("27_gh3y3")
+collision_disable = [NodePath("../../CollisionShape2D")]
+node_emitter = NodePath("..")
+watch_signal = 0
+metadata/_custom_type_script = "uid://xix6u347hwe"
+
+[node name="APChainSetNum2" type="Node" parent="is_die=now_true" node_paths=PackedStringArray("node_emitter")]
+script = ExtResource("30_c5b2c")
+num_a = ExtResource("33_i8mmh")
+num_a_is_arr = Array[ExtResource("31_dtgiy")]([null, ExtResource("32_rblx7"), ExtResource("5_xd8ss"), ExtResource("33_i8mmh"), ExtResource("34_tggjb")])
+num_a_arr_index = ExtResource("2_hsyp7")
+num_b = SubResource("Resource_dtgiy")
+operation = 2
+node_emitter = NodePath("..")
+watch_signal = 0
+metadata/_custom_type_script = "uid://cldopw0r4n1wj"
+
+[node name="is_die=now_false" type="Node" parent="."]
+script = ExtResource("12_gh3y3")
+_signal = "now_false"
+resource = ExtResource("1_41df4")
+call_init = true
+signal = "now_false"
+metadata/_custom_type_script = "uid://u1gglou2n5jq"
+
+[node name="APChainSetVisible" type="Node" parent="is_die=now_false" node_paths=PackedStringArray("nodes_visible_true", "nodes_visible_false", "node_emitter")]
+script = ExtResource("13_c5b2c")
+nodes_visible_true = [NodePath("../../BodyLife")]
+nodes_visible_false = [NodePath("../../BodyDie")]
+node_emitter = NodePath("..")
+watch_signal = 0
+metadata/_custom_type_script = "uid://bqn6e76istclq"
+
+[node name="APChainAnimPlay2" type="Node" parent="is_die=now_false" node_paths=PackedStringArray("animation_player", "node_emitter")]
+script = ExtResource("15_6vl48")
+animation_player = NodePath("../../AnimationPlayer")
+anim_name = 0
+node_emitter = NodePath("..")
+watch_signal = 0
+metadata/_custom_type_script = "uid://dfnv5lgi83cdo"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+reset_on_save = false
+libraries = {
+&"": SubResource("AnimationLibrary_h6r1o")
+}
+
+[node name="APActivatorInteraction" type="Node" parent="." node_paths=PackedStringArray("rigid_body_2D")]
+editor_description = "Работает при столкновении шара со зданием или полем (или юнитом, но такого не должно происходить)"
+script = ExtResource("27_kwmlm")
+rigid_body_2D = NodePath("..")
+enable = false
+metadata/_custom_type_script = "uid://b5w7jmxkrwose"
+
+[node name="HasMeta=team_object" type="Node" parent="APActivatorInteraction" node_paths=PackedStringArray("meta_owner", "node_emitter")]
+script = ExtResource("28_mmg5j")
+meta_name = "team_object"
+meta_owner = NodePath("..")
+enable = false
+node_emitter = NodePath("..")
+watch_signal = 0
+metadata/_custom_type_script = "uid://btail58r0orri"
+
+[node name="APChainSetNum" type="Node" parent="APActivatorInteraction/HasMeta=team_object" node_paths=PackedStringArray("num_a_arr_index_meta_owner", "node_emitter")]
+script = ExtResource("30_c5b2c")
+num_a_is_arr = Array[ExtResource("31_dtgiy")]([null, ExtResource("35_5eue2"), ExtResource("36_h5ua5"), ExtResource("37_s0fuh"), ExtResource("38_rrtt6")])
+num_a_arr_index_meta = "team_object"
+num_a_arr_index_meta_owner = NodePath("../..")
+num_b = SubResource("Resource_rblx7")
+operation = 2
+node_emitter = NodePath("..")
+watch_signal = 0
+metadata/_custom_type_script = "uid://cldopw0r4n1wj"
+
+[node name="HasMeta=team_object" type="Node" parent="APActivatorInteraction/HasMeta=team_object/APChainSetNum" node_paths=PackedStringArray("meta_owner", "node_emitter")]
+script = ExtResource("28_mmg5j")
+meta_name = "team_object"
+meta_owner = NodePath("../../..")
+meta_value_paste = ExtResource("2_hsyp7")
+node_emitter = NodePath("..")
+watch_signal = 1
+metadata/_custom_type_script = "uid://btail58r0orri"
+
+[node name="unit_counter+" type="Node" parent="." node_paths=PackedStringArray("node_emitter")]
+script = ExtResource("30_c5b2c")
+disable_when_editor = true
+num_a = ExtResource("32_rblx7")
+num_a_is_arr = Array[ExtResource("31_dtgiy")]([null, ExtResource("32_rblx7"), ExtResource("5_xd8ss"), ExtResource("33_i8mmh"), ExtResource("34_tggjb")])
+num_a_arr_index = ExtResource("2_hsyp7")
+num_b = SubResource("Resource_dtgiy")
+operation = 1
+node_emitter = NodePath("..")
+watch_signal = 14
+metadata/_custom_type_script = "uid://cldopw0r4n1wj"

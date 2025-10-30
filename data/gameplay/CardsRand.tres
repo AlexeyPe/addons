@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://8myr58nwfvfg" path="res://addons/VarRes/classes/numbers/VaRInt.gd" id="1_dpw1s"]
 [ext_resource type="PackedScene" uid="uid://b76n5oe8qruln" path="res://scene/objects/unit/unit_card.tscn" id="2_0u5fd"]
-[ext_resource type="PackedScene" uid="uid://dydhud4jeqphy" path="res://scene/objects/wall/wall_card.tscn" id="3_et7r8"]
+[ext_resource type="PackedScene" uid="uid://dydhud4jeqphy" path="res://scene/wall/wall_card.tscn" id="3_et7r8"]
 [ext_resource type="PackedScene" uid="uid://bcap7c1i87f30" path="res://scene/objects/card/Card.tscn" id="4_dpw1s"]
 [ext_resource type="Script" uid="uid://c3heqian2igr6" path="res://addons/VarRes/classes/random/VaRRandomScene.gd" id="5_bdcwg"]
 

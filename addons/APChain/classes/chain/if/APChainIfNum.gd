@@ -17,15 +17,29 @@ signal if_false
 	"a >= b",
 	"a <= b",
 ) var condition:int
+@export_group("Num A is", "num_a_")
+## Оставить пустым что бы пропустить это выполнение.[br]
+## Заменит num_a на мету из node_emitter.[br]
+## Мета добавляется/перезаписывается в метаданные цепочки.
+@export var num_a_is_meta:String = ""
+@export var num_a_is_meta_owner:Node
 
 func _execute(...args:Array) -> void:
 	execution_started.emit()
-	if !num_a:
+	if num_a_is_meta.is_empty() == false and num_a_is_meta_owner != null:
+		if num_a_is_meta_owner.has_meta(num_a_is_meta):
+			var meta = num_a_is_meta_owner.get_meta(num_a_is_meta)
+			if meta is VaRNumber:
+				num_a = meta
+				#print("APChainIfNum num_a = meta")
+			else: return
+		else: return
+	if num_a == null:
 		executed_failed.emit()
-		printerr("APChainIfNum, num_a is null %s"%[])
-	if !num_b:
+		printerr("APChainIfNum, num_a is null %s"%[get_path()])
+	if num_b == null:
 		executed_failed.emit()
-		printerr("APChainIfNum, num_b is null %s"%[])
+		printerr("APChainIfNum, num_b is null %s"%[get_path()])
 	var check:bool = false
 	match condition:
 		0: # a == b

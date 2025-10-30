@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="VaRScene" load_steps=2 format=3 uid="uid://wf0ascvtsgtn"]
+
+[ext_resource type="Script" uid="uid://dapuucp3gf6c8" path="res://addons/VarRes/classes/VaRScene.gd" id="1_hauqy"]
+
+[resource]
+resource_local_to_scene = true
+resource_name = "field_build"
+script = ExtResource("1_hauqy")
+metadata/_custom_type_script = "uid://dapuucp3gf6c8"

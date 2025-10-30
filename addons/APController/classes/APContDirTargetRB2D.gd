@@ -2,7 +2,10 @@ extends APController
 class_name APContDirTargetRB2D
 # Controller Direction Target Ridig Body 2D
 
+## Тело по которому определяется направление
 @export var body_2d:RigidBody2D
+## Нода которую надо поворачивать.[br]
+## Обычно это [Sprite2D], коллизии не стоит трансформировать
 @export var node_scale:Node2D
 @export var invert:bool : set = set_invert
 
@@ -15,6 +18,10 @@ func set_invert(new:bool):
 var _invert:int = 1
 
 func _ready() -> void:
+	assert(
+		body_2d != null,
+		"APContDirTargetRB2D, body_2d is null, %s"%[get_path()]
+	)
 	if body_2d.linear_velocity.x > 0:
 		node_scale.scale.x = abs(node_scale.scale.x) * _invert
 	else:

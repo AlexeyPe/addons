@@ -10,7 +10,7 @@ func is_max() -> bool:
 	return value == get_max_value()
 
 func _to_string() -> String:
-	return "%s %s"%[resource_path.get_basename().get_file(), value]
+	return "%s_%s"%[resource_name, value]
 
 func on_update_min_value_res(): emit_changed()
 func set_min_value_res(new:VaRInt):
@@ -45,7 +45,7 @@ func get_max_value() -> int:
 
 func get_value() -> int: return value
 func set_value(new: int):
-	if value == new: return
+	#if value == new: return
 	if new >= get_min_value() and new <= get_max_value():
 		if value < new:
 			value = new
@@ -57,6 +57,8 @@ func set_value(new: int):
 			now_less.emit()
 
 ## Не переписывает max и min
-func paste(vares:VarRes):
-	if vares is VaRInt:
-		value = vares.value
+func paste(data:Variant):
+	if data is VaRInt:
+		value = data.value
+	elif data is int:
+		value = data

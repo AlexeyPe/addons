@@ -47,7 +47,7 @@
 [ext_resource type="AudioStream" uid="uid://dr3yimv6j8o3x" path="res://audio/ButtonError.tres" id="44_fc40o"]
 [ext_resource type="AudioStream" uid="uid://c38v7gxandina" path="res://audio/Rerol.tres" id="45_mh6vc"]
 [ext_resource type="PackedScene" uid="uid://b76n5oe8qruln" path="res://scene/objects/unit/unit_card.tscn" id="45_t7ygc"]
-[ext_resource type="PackedScene" uid="uid://dydhud4jeqphy" path="res://scene/objects/wall/wall_card.tscn" id="46_4cst2"]
+[ext_resource type="PackedScene" uid="uid://dydhud4jeqphy" path="res://scene/wall/wall_card.tscn" id="46_4cst2"]
 [ext_resource type="Script" uid="uid://dhamqitbrimqh" path="res://addons/APChain/classes/chain/if/APChainIfBool.gd" id="47_sxktb"]
 [ext_resource type="AudioStream" uid="uid://dridsfo8apuj7" path="res://audio/SelectCardsPack.tres" id="48_8m7k3"]
 [ext_resource type="AudioStream" uid="uid://bs0dt6d64esl7" path="res://audio/CardPackSelectFalse.tres" id="48_kpoiw"]

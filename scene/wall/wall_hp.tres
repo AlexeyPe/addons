@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="VaRInt" load_steps=3 format=3 uid="uid://d2sb1jfqfn741"]
+
+[ext_resource type="Script" uid="uid://8myr58nwfvfg" path="res://addons/VarRes/classes/numbers/VaRInt.gd" id="1_f56cx"]
+
+[sub_resource type="Resource" id="Resource_f56cx"]
+script = ExtResource("1_f56cx")
+value = 0
+metadata/_custom_type_script = "uid://8myr58nwfvfg"
+
+[resource]
+resource_local_to_scene = true
+resource_name = "wall_hp"
+script = ExtResource("1_f56cx")
+min_value_res = SubResource("Resource_f56cx")
+value = 2
+metadata/_custom_type_script = "uid://8myr58nwfvfg"

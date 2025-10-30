@@ -25,6 +25,8 @@ func check():
 	if value: now_true.emit()
 	else: now_false.emit()
 
-func paste(vares:VarRes):
-	if vares is VaRBool:
-		value = vares.value
+func paste(data:Variant):
+	if data is VaRBool:
+		value = data.value
+	elif data is bool:
+		value = data

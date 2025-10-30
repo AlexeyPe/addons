@@ -11,6 +11,7 @@ class_name APActivator
 signal activated
 
 func emit_activated(...args:Array) -> void: 
+	#print("emit_activated")
 	activated.emit()
 
 ## Переключает работу активатора

@@ -20,12 +20,13 @@ func check(node:Node) -> bool:
 		)
 		return false
 	if !node.has_meta(meta_name):
-		printerr(
-			"MetaConditionNum, node(%s) meta not found, %s"%[
-				node,
-				resource_path
-			]
-		)
+		#printerr(
+			#"MetaConditionNum, node(%s) meta(%s) not found, %s"%[
+				#node,
+				#meta_name,
+				#resource_path
+			#]
+		#)
 		return false
 	var meta_value
 	if node.get_meta(meta_name) is VaRNumber:
@@ -93,8 +94,9 @@ func check(node:Node) -> bool:
 				if_false.emit()
 				return false
 		_: return false
-func paste(vares:VarRes):
-	if vares is MetaConditionNum:
-		num = vares.num
-		condition = vares.condition
+
+func paste(data:Variant):
+	if data is MetaConditionNum:
+		num = data.num
+		condition = data.condition
 	else: printerr("MetaConditionNum func paste() need code")

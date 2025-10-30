@@ -1,0 +1,1650 @@
+[gd_scene load_steps=79 format=4 uid="uid://cpjve54sahjml"]
+
+[ext_resource type="Script" uid="uid://mjk4ctyfa82r" path="res://scene/main.gd" id="1_h5oyc"]
+[ext_resource type="LabelSettings" uid="uid://bs3a6ff5awow6" path="res://scene/UI/LabelSettings/MainLabel.tres" id="2_fcgbl"]
+[ext_resource type="Script" uid="uid://cccrm8vuks5fs" path="res://addons/VarRes/classes/UI/VaResLabel.gd" id="3_ndi7f"]
+[ext_resource type="Resource" uid="uid://cwbslfwrc5pwx" path="res://data/CameraZoom.tres" id="4_ndi7f"]
+[ext_resource type="Texture2D" uid="uid://8yci6v355lg4" path="res://imgs/icons/tabler--zoom-in.svg" id="5_njhnx"]
+[ext_resource type="Script" uid="uid://uh8e7y0n0t5e" path="res://addons/APChain/classes/chain/APChainNumOp.gd" id="6_oep7y"]
+[ext_resource type="Script" uid="uid://msh8p6ojhxex" path="res://addons/VarRes/classes/numbers/VaRFloat.gd" id="7_8m5be"]
+[ext_resource type="Script" uid="uid://b711j7wpabhvl" path="res://addons/VarRes/classes/utility/TileMapLayerVaRes.gd" id="7_mng47"]
+[ext_resource type="PackedScene" uid="uid://7bappgufejs0" path="res://scene/field/object/field.tscn" id="8_fmk5b"]
+[ext_resource type="Texture2D" uid="uid://cv0mjwnyvtu6f" path="res://imgs/icons/tabler--zoom-out.svg" id="8_oep7y"]
+[ext_resource type="Resource" uid="uid://cehqu7jl7rmu3" path="res://data/gameplay/teams/team_player.tres" id="9_8m5be"]
+[ext_resource type="Resource" uid="uid://bewvxbnhpn1k2" path="res://data/gameplay/units/units.tres" id="10_qctre"]
+[ext_resource type="Shader" uid="uid://b4xocinxdwelf" path="res://addons/shadercollectionap/shader/outline/Outline.gdshader" id="11_xn4m2"]
+[ext_resource type="Texture2D" uid="uid://7d05gyikgro2" path="res://imgs/icons/openmoji--white-large-square.svg" id="12_tdrm0"]
+[ext_resource type="Resource" uid="uid://bbu6crs5k6ct6" path="res://data/gameplay/field_counters/fields_white.tres" id="13_h0pva"]
+[ext_resource type="Resource" uid="uid://cvpnw37xy7hya" path="res://data/gameplay/field_counters/fields_red.tres" id="14_wuh6h"]
+[ext_resource type="Resource" uid="uid://yjwdocjo8sh2" path="res://data/gameplay/field_counters/fields_purple.tres" id="15_5n2dr"]
+[ext_resource type="Resource" uid="uid://x3id5dx3yucu" path="res://data/gameplay/field_counters/fields_yellow.tres" id="16_jm20i"]
+[ext_resource type="Resource" uid="uid://ccq6dphbjbpf6" path="res://data/gameplay/units/units_white.tres" id="17_f4rxr"]
+[ext_resource type="Resource" uid="uid://q6vmqvs7sa6j" path="res://data/gameplay/units/units_red.tres" id="18_0f4br"]
+[ext_resource type="Resource" uid="uid://c4bpyilbpdmw" path="res://data/gameplay/units/units_purple.tres" id="19_ilk30"]
+[ext_resource type="Resource" uid="uid://cvmmidd5uwfbn" path="res://data/gameplay/units/units_yellow.tres" id="20_oqdx0"]
+[ext_resource type="Resource" uid="uid://dtkw5uacj3oc5" path="res://data/gameplay/units/unit_deaths.tres" id="21_sy0wd"]
+[ext_resource type="Resource" uid="uid://4ok8jqiesqsv" path="res://data/gameplay/Money.tres" id="22_86hc1"]
+[ext_resource type="Resource" uid="uid://c4i68asmn7hno" path="res://data/CardPack/RerolQTY.tres" id="23_dtm77"]
+[ext_resource type="PackedScene" uid="uid://csgbo46w4e1c5" path="res://scene/UI/CardHand.tscn" id="24_2ehou"]
+[ext_resource type="PackedScene" uid="uid://ck4w0vjnl4qkd" path="res://scene/UI/notifications.tscn" id="25_keht4"]
+[ext_resource type="Shader" uid="uid://bnx70r4bgsw0y" path="res://addons/shadercollectionap/shader/grid/grid.gdshader" id="26_ne6fy"]
+[ext_resource type="Material" uid="uid://svr62spjy8px" path="res://scene/field/GridMaterial.tres" id="27_d1wsa"]
+[ext_resource type="TileSet" uid="uid://dtotbe61qvlwk" path="res://scene/field/VisualFields2.tres" id="28_hpvv2"]
+[ext_resource type="Texture2D" uid="uid://cylt0yccij071" path="res://imgs/icons/types-outline.png" id="29_d44lc"]
+[ext_resource type="TileSet" uid="uid://ctx1yx25gyv50" path="res://scene/field/fields_tileset.tres" id="30_iynh3"]
+[ext_resource type="Texture2D" uid="uid://cv5u50jtpbiqb" path="res://scene/field/clip_texture/corner_1.tres" id="31_87kko"]
+[ext_resource type="Texture2D" uid="uid://dd0ws1t530ycd" path="res://scene/field/clip_texture/wall.tres" id="32_he6an"]
+[ext_resource type="Texture2D" uid="uid://b4337huijb0tp" path="res://scene/field/clip_texture/corner_2.tres" id="33_53ylk"]
+[ext_resource type="Texture2D" uid="uid://bn3uq1k1c5qjv" path="res://scene/field/clip_texture/corners_invert.tres" id="34_ixwqa"]
+[ext_resource type="PackedScene" uid="uid://bpn7vchp3v0o6" path="res://scene/ball/object/ball.tscn" id="35_41idh"]
+[ext_resource type="Script" uid="uid://8myr58nwfvfg" path="res://addons/VarRes/classes/numbers/VaRInt.gd" id="36_h6lfy"]
+[ext_resource type="Script" uid="uid://djmnu1e55mp0j" path="res://addons/VarRes/classes/bool/VaRBool.gd" id="37_2iqcl"]
+[ext_resource type="Script" uid="uid://cicas0bkgf1up" path="res://addons/apbuild/classes/cell_info/APCellInfoNode.gd" id="38_rrtfh"]
+[ext_resource type="Script" uid="uid://co8mhqm73w3ve" path="res://addons/apbuild/classes/cell_info/APCellInfoRes.gd" id="39_7h27y"]
+[ext_resource type="Script" uid="uid://dvoxncb42t31a" path="res://addons/APController/classes/APContMouseDrag2D.gd" id="40_l5bvg"]
+[ext_resource type="Script" uid="uid://beulpxkd70k21" path="res://addons/APController/classes/AP_WASD_2D.gd" id="41_bc3bs"]
+[ext_resource type="Script" uid="uid://dikax674203i8" path="res://addons/VarRes/classes/camera/APCameraZoomIsNum.gd" id="42_b2atj"]
+[ext_resource type="Script" uid="uid://db7sp186hj8oq" path="res://addons/APChain/classes/chain_activator/APActivatorAction.gd" id="43_dpyot"]
+[ext_resource type="PackedScene" uid="uid://brgu1wss4gdmw" path="res://addons/apach/UI_demo/UI_panel_achievements_1.tscn" id="44_nlw5j"]
+[ext_resource type="Script" uid="uid://bsqxqxasuhg01" path="res://addons/VarRes/classes/UI/VaResSpinBox.gd" id="45_761ox"]
+[ext_resource type="Resource" uid="uid://bad72qp0q03km" path="res://addons/apach/UI_demo/res/gold-spent.tres" id="46_qeyou"]
+[ext_resource type="Resource" uid="uid://d220q6y3vwy1e" path="res://addons/apach/UI_demo/res/map-levels-complete.tres" id="47_o0lcy"]
+
+[sub_resource type="Resource" id="Resource_gs6uc"]
+script = ExtResource("7_8m5be")
+value = 0.2
+metadata/_custom_type_script = "uid://msh8p6ojhxex"
+
+[sub_resource type="Resource" id="Resource_lrb0k"]
+script = ExtResource("7_8m5be")
+value = -0.2
+metadata/_custom_type_script = "uid://msh8p6ojhxex"
+
+[sub_resource type="LabelSettings" id="LabelSettings_ne6fy"]
+resource_local_to_scene = true
+font_color = Color(0.8397716, 0.49030846, 0.909368, 1)
+outline_size = 7
+outline_color = Color(0.13, 0.13, 0.13, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_d1wsa"]
+shader = ExtResource("11_xn4m2")
+shader_parameter/allow_out_of_bounds = true
+shader_parameter/outline_thickness = 5.0
+shader_parameter/outline_color = Color(1, 1, 1, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_43j8o"]
+shader = ExtResource("26_ne6fy")
+shader_parameter/scale = Vector2(0.2, 0.2)
+shader_parameter/offset = Vector2(0, 0)
+shader_parameter/background_color = Color(0.2, 0.2, 0.2, 1)
+shader_parameter/checkered_color = Color(0, 0, 0, 0.3)
+shader_parameter/coarse_grid_color = Color(0.8, 0.8, 0.8, 1)
+shader_parameter/coarse_grid_line_width = Vector2(0.03, 0.03)
+shader_parameter/fine_grid_color = Color(0.8, 0.8, 0.8, 0.8)
+shader_parameter/fine_grid_subdivisions = 1.0
+shader_parameter/fine_grid_line_width = Vector2(0.03, 0.03)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dk2pn"]
+texture = ExtResource("29_d44lc")
+margins = Vector2i(2, 2)
+separation = Vector2i(0, 2)
+texture_region_size = Vector2i(48, 48)
+0:0/0 = 0
+0:0/0/modulate = Color(0.27999997, 1, 0.952, 1)
+1:0/0 = 0
+1:0/0/modulate = Color(0.64, 1, 0.27999997, 1)
+
+[sub_resource type="TileSet" id="TileSet_ia2xj"]
+tile_size = Vector2i(48, 48)
+sources/1 = SubResource("TileSetAtlasSource_dk2pn")
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_goqcv"]
+blend_mode = 2
+
+[sub_resource type="Resource" id="Resource_l6i7g"]
+script = ExtResource("36_h6lfy")
+value = 0
+metadata/_custom_type_script = "uid://8myr58nwfvfg"
+
+[sub_resource type="Resource" id="Resource_ftvp4"]
+resource_local_to_scene = true
+resource_name = "team_object"
+script = ExtResource("36_h6lfy")
+min_value_res = SubResource("Resource_l6i7g")
+value = 1
+description = "Команда объекта - здания/юнита.
+0 - Белые
+1 - Красные
+2 - Фиолетовые
+3 - Жёлтые"
+metadata/_custom_type_script = "uid://8myr58nwfvfg"
+
+[sub_resource type="Resource" id="Resource_1qtut"]
+resource_local_to_scene = true
+resource_name = "is_die_red"
+script = ExtResource("37_2iqcl")
+metadata/_custom_type_script = "uid://djmnu1e55mp0j"
+
+[sub_resource type="Resource" id="Resource_ph3ti"]
+script = ExtResource("39_7h27y")
+metadata/_custom_type_script = "uid://co8mhqm73w3ve"
+
+[sub_resource type="Resource" id="Resource_fmk5b"]
+script = ExtResource("36_h6lfy")
+value = 0
+metadata/_custom_type_script = "uid://8myr58nwfvfg"
+
+[sub_resource type="Resource" id="Resource_yu40a"]
+resource_local_to_scene = true
+resource_name = "team_object"
+script = ExtResource("36_h6lfy")
+min_value_res = SubResource("Resource_fmk5b")
+value = 2
+description = "Команда объекта - здания/юнита.
+0 - Ничья 
+1 - Белые
+2 - Красные
+3 - Фиолетовые
+4 - Жёлтые"
+metadata/_custom_type_script = "uid://8myr58nwfvfg"
+
+[sub_resource type="Resource" id="Resource_00yp0"]
+resource_local_to_scene = true
+resource_name = "is_die"
+script = ExtResource("37_2iqcl")
+metadata/_custom_type_script = "uid://djmnu1e55mp0j"
+
+[sub_resource type="Resource" id="Resource_43j8o"]
+resource_local_to_scene = true
+resource_name = "team_object"
+script = ExtResource("36_h6lfy")
+min_value_res = SubResource("Resource_l6i7g")
+value = 2
+description = "Команда объекта - здания/юнита.
+0 - Белые
+1 - Красные
+2 - Фиолетовые
+3 - Жёлтые"
+metadata/_custom_type_script = "uid://8myr58nwfvfg"
+
+[sub_resource type="Resource" id="Resource_ya7da"]
+resource_local_to_scene = true
+resource_name = "is_die"
+script = ExtResource("37_2iqcl")
+metadata/_custom_type_script = "uid://djmnu1e55mp0j"
+
+[sub_resource type="Resource" id="Resource_6xsba"]
+resource_local_to_scene = true
+resource_name = "team_object"
+script = ExtResource("36_h6lfy")
+min_value_res = SubResource("Resource_l6i7g")
+value = 4
+description = "Команда объекта - здания/юнита.
+0 - Белые
+1 - Красные
+2 - Фиолетовые
+3 - Жёлтые"
+metadata/_custom_type_script = "uid://8myr58nwfvfg"
+
+[sub_resource type="Resource" id="Resource_ia2xj"]
+resource_local_to_scene = true
+resource_name = "is_die"
+script = ExtResource("37_2iqcl")
+metadata/_custom_type_script = "uid://djmnu1e55mp0j"
+
+[sub_resource type="Resource" id="Resource_wwpfc"]
+script = ExtResource("36_h6lfy")
+value = 0
+metadata/_custom_type_script = "uid://8myr58nwfvfg"
+
+[sub_resource type="Resource" id="Resource_w08im"]
+resource_local_to_scene = true
+resource_name = "team_object"
+script = ExtResource("36_h6lfy")
+min_value_res = SubResource("Resource_wwpfc")
+value = 3
+description = "Команда объекта - здания/юнита.
+0 - Ничья 
+1 - Белые
+2 - Красные
+3 - Фиолетовые
+4 - Жёлтые"
+metadata/_custom_type_script = "uid://8myr58nwfvfg"
+
+[sub_resource type="Resource" id="Resource_mng47"]
+resource_local_to_scene = true
+resource_name = "is_die"
+script = ExtResource("37_2iqcl")
+metadata/_custom_type_script = "uid://djmnu1e55mp0j"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_x4yfu"]
+size = Vector2(2300, 100)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_764rb"]
+size = Vector2(100, 1400)
+
+[sub_resource type="InputEventAction" id="InputEventAction_ob58h"]
+action = &"move_camera"
+
+[sub_resource type="Resource" id="Resource_08k7p"]
+script = ExtResource("7_8m5be")
+value = 300.0
+metadata/_custom_type_script = "uid://msh8p6ojhxex"
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_pnqar"]
+radius = 200.0
+
+[sub_resource type="Resource" id="Resource_ob58h"]
+script = ExtResource("7_8m5be")
+value = 0.05
+metadata/_custom_type_script = "uid://msh8p6ojhxex"
+
+[sub_resource type="Resource" id="Resource_3hqfm"]
+script = ExtResource("7_8m5be")
+value = -0.05
+metadata/_custom_type_script = "uid://msh8p6ojhxex"
+
+[node name="Main" type="Node"]
+script = ExtResource("1_h5oyc")
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="Counters" type="MarginContainer" parent="UI"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_right = 4
+theme_override_constants/margin_bottom = 4
+
+[node name="Counters" type="VBoxContainer" parent="UI/Counters"]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="Zoom" type="HBoxContainer" parent="UI/Counters/Counters"]
+layout_mode = 2
+size_flags_horizontal = 0
+metadata/_edit_group_ = true
+
+[node name="Label" type="Label" parent="UI/Counters/Counters/Zoom"]
+layout_mode = 2
+text = "📹 Zoom"
+label_settings = ExtResource("2_fcgbl")
+
+[node name="Label2" type="Label" parent="UI/Counters/Counters/Zoom"]
+layout_mode = 2
+text = "0.8"
+label_settings = ExtResource("2_fcgbl")
+script = ExtResource("3_ndi7f")
+var_res = ExtResource("4_ndi7f")
+metadata/_custom_type_script = "uid://cccrm8vuks5fs"
+
+[node name="ButtonZoomPlus" type="Button" parent="UI/Counters/Counters/Zoom"]
+custom_minimum_size = Vector2(26, 26)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+focus_mode = 0
+mouse_default_cursor_shape = 2
+icon = ExtResource("5_njhnx")
+expand_icon = true
+
+[node name="APChainNumOp" type="Node" parent="UI/Counters/Counters/Zoom/ButtonZoomPlus" node_paths=PackedStringArray("node_emitter")]
+script = ExtResource("6_oep7y")
+vares_target = ExtResource("4_ndi7f")
+vares_b = SubResource("Resource_gs6uc")
+node_emitter = NodePath("..")
+watch_signal = 0
+metadata/_custom_type_script = "uid://uh8e7y0n0t5e"
+
+[node name="ButtonZoomMinus" type="Button" parent="UI/Counters/Counters/Zoom"]
+custom_minimum_size = Vector2(26, 26)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+focus_mode = 0
+mouse_default_cursor_shape = 2
+icon = ExtResource("8_oep7y")
+expand_icon = true
+
+[node name="APChainNumOp" type="Node" parent="UI/Counters/Counters/Zoom/ButtonZoomMinus" node_paths=PackedStringArray("node_emitter")]
+script = ExtResource("6_oep7y")
+vares_target = ExtResource("4_ndi7f")
+vares_b = SubResource("Resource_lrb0k")
+node_emitter = NodePath("..")
+watch_signal = 0
+metadata/_custom_type_script = "uid://uh8e7y0n0t5e"
+
+[node name="Team" type="HBoxContainer" parent="UI/Counters/Counters"]
+layout_mode = 2
+size_flags_horizontal = 0
+tooltip_text = "Количетсво билетов для переброса набора карточек"
+metadata/_edit_group_ = true
+
+[node name="Label" type="Label" parent="UI/Counters/Counters/Team"]
+layout_mode = 2
+text = "Команда:"
+label_settings = ExtResource("2_fcgbl")
+
+[node name="Label2" type="Label" parent="UI/Counters/Counters/Team"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.2901961, 0.2901961, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_offset_y = 1
+theme_override_constants/outline_size = 7
+theme_override_constants/shadow_outline_size = 12
+text = "Фиолетовые"
+label_settings = SubResource("LabelSettings_ne6fy")
+script = ExtResource("3_ndi7f")
+var_res = ExtResource("9_8m5be")
+num_is = Array[String](["null", "Белые", "Красные", "Фиолетовые", "Жёлтые"])
+num_is_font_color = Array[Color]([Color(0, 0, 0, 1), Color(1, 1, 1, 1), Color(1, 0.2901961, 0.2901961, 1), Color(0.8397716, 0.49030846, 0.909368, 1), Color(0.97150236, 0.8373624, 0, 1)])
+metadata/_custom_type_script = "uid://cccrm8vuks5fs"
+
+[node name="UnitsAll" type="HBoxContainer" parent="UI/Counters/Counters"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 0
+metadata/_edit_group_ = true
+
+[node name="Label" type="Label" parent="UI/Counters/Counters/UnitsAll"]
+layout_mode = 2
+text = "😶 Units"
+label_settings = ExtResource("2_fcgbl")
+
+[node name="Label2" type="Label" parent="UI/Counters/Counters/UnitsAll"]
+layout_mode = 2
+text = "0"
+label_settings = ExtResource("2_fcgbl")
+script = ExtResource("3_ndi7f")
+var_res = ExtResource("10_qctre")
+metadata/_custom_type_script = "uid://cccrm8vuks5fs"
+
+[node name="Fields" type="HBoxContainer" parent="UI/Counters/Counters"]
+layout_mode = 2
+size_flags_horizontal = 0
+tooltip_text = "Количество захваченной земли"
+mouse_filter = 0
+metadata/_edit_group_ = true
+
+[node name="White" type="HBoxContainer" parent="UI/Counters/Counters/Fields"]
+layout_mode = 2
+size_flags_horizontal = 0
+
+[node name="Label" type="TextureRect" parent="UI/Counters/Counters/Fields/White"]
+material = SubResource("ShaderMaterial_d1wsa")
+layout_mode = 2
+texture = ExtResource("12_tdrm0")
+expand_mode = 3
+
+[node name="Label2" type="Label" parent="UI/Counters/Counters/Fields/White"]
+layout_mode = 2
+text = "0"
+label_settings = ExtResource("2_fcgbl")
+script = ExtResource("3_ndi7f")
+var_res = ExtResource("13_h0pva")
+metadata/_custom_type_script = "uid://cccrm8vuks5fs"
+
+[node name="Red" type="HBoxContainer" parent="UI/Counters/Counters/Fields"]
+layout_mode = 2
+size_flags_horizontal = 0
+
+[node name="Label" type="Label" parent="UI/Counters/Counters/Fields/Red"]
+layout_mode = 2
+text = "🟥"
+label_settings = ExtResource("2_fcgbl")
+
+[node name="Label2" type="Label" parent="UI/Counters/Counters/Fields/Red"]
+layout_mode = 2
+text = "0"
+label_settings = ExtResource("2_fcgbl")
+script = ExtResource("3_ndi7f")
+var_res = ExtResource("14_wuh6h")
+metadata/_custom_type_script = "uid://cccrm8vuks5fs"
+
+[node name="Purple" type="HBoxContainer" parent="UI/Counters/Counters/Fields"]
+layout_mode = 2
+size_flags_horizontal = 0
+
+[node name="Label" type="Label" parent="UI/Counters/Counters/Fields/Purple"]
+layout_mode = 2
+text = "🟪"
+label_settings = ExtResource("2_fcgbl")
+
+[node name="Label2" type="Label" parent="UI/Counters/Counters/Fields/Purple"]
+layout_mode = 2
+text = "0"
+label_settings = ExtResource("2_fcgbl")
+script = ExtResource("3_ndi7f")
+var_res = ExtResource("15_5n2dr")
+metadata/_custom_type_script = "uid://cccrm8vuks5fs"
+
+[node name="Yellow" type="HBoxContainer" parent="UI/Counters/Counters/Fields"]
+layout_mode = 2
+size_flags_horizontal = 0
+
+[node name="Label" type="Label" parent="UI/Counters/Counters/Fields/Yellow"]
+layout_mode = 2
+text = "🟨"
+label_settings = ExtResource("2_fcgbl")
+
+[node name="Label2" type="Label" parent="UI/Counters/Counters/Fields/Yellow"]
+layout_mode = 2
+text = "0"
+label_settings = ExtResource("2_fcgbl")
+script = ExtResource("3_ndi7f")
+var_res = ExtResource("16_jm20i")
+metadata/_custom_type_script = "uid://cccrm8vuks5fs"
+
+[node name="Units" type="HBoxContainer" parent="UI/Counters/Counters"]
+layout_mode = 2
+size_flags_horizontal = 0
+tooltip_text = "Количество юнитов"
+metadata/_edit_group_ = true
+
+[node name="White" type="HBoxContainer" parent="UI/Counters/Counters/Units"]
+layout_mode = 2
+size_flags_horizontal = 0
+
+[node name="Label" type="Label" parent="UI/Counters/Counters/Units/White"]
+layout_mode = 2
+text = "⚪"
+label_settings = ExtResource("2_fcgbl")
+
+[node name="Label2" type="Label" parent="UI/Counters/Counters/Units/White"]
+layout_mode = 2
+text = "0"
+label_settings = ExtResource("2_fcgbl")
+script = ExtResource("3_ndi7f")
+var_res = ExtResource("17_f4rxr")
+metadata/_custom_type_script = "uid://cccrm8vuks5fs"
+
+[node name="Red" type="HBoxContainer" parent="UI/Counters/Counters/Units"]
+layout_mode = 2
+size_flags_horizontal = 0
+
+[node name="Label" type="Label" parent="UI/Counters/Counters/Units/Red"]
+layout_mode = 2
+text = "🔴"
+label_settings = ExtResource("2_fcgbl")
+
+[node name="Label2" type="Label" parent="UI/Counters/Counters/Units/Red"]
+layout_mode = 2
+text = "0"
+label_settings = ExtResource("2_fcgbl")
+script = ExtResource("3_ndi7f")
+var_res = ExtResource("18_0f4br")
+metadata/_custom_type_script = "uid://cccrm8vuks5fs"
+
+[node name="Purple" type="HBoxContainer" parent="UI/Counters/Counters/Units"]
+layout_mode = 2
+size_flags_horizontal = 0
+
+[node name="Label" type="Label" parent="UI/Counters/Counters/Units/Purple"]
+layout_mode = 2
+text = "🟣"
+label_settings = ExtResource("2_fcgbl")
+
+[node name="Label2" type="Label" parent="UI/Counters/Counters/Units/Purple"]
+layout_mode = 2
+text = "0"
+label_settings = ExtResource("2_fcgbl")
+script = ExtResource("3_ndi7f")
+var_res = ExtResource("19_ilk30")
+metadata/_custom_type_script = "uid://cccrm8vuks5fs"
+
+[node name="Yellow" type="HBoxContainer" parent="UI/Counters/Counters/Units"]
+layout_mode = 2
+size_flags_horizontal = 0
+
+[node name="Label" type="Label" parent="UI/Counters/Counters/Units/Yellow"]
+layout_mode = 2
+text = "🟡"
+label_settings = ExtResource("2_fcgbl")
+
+[node name="Label2" type="Label" parent="UI/Counters/Counters/Units/Yellow"]
+layout_mode = 2
+text = "0"
+label_settings = ExtResource("2_fcgbl")
+script = ExtResource("3_ndi7f")
+var_res = ExtResource("20_oqdx0")
+metadata/_custom_type_script = "uid://cccrm8vuks5fs"
+
+[node name="Deaths" type="HBoxContainer" parent="UI/Counters/Counters"]
+layout_mode = 2
+size_flags_horizontal = 0
+tooltip_text = "Количество смертей(общее)"
+metadata/_edit_group_ = true
+
+[node name="Label" type="Label" parent="UI/Counters/Counters/Deaths"]
+layout_mode = 2
+text = "💀 Deaths"
+label_settings = ExtResource("2_fcgbl")
+
+[node name="Label2" type="Label" parent="UI/Counters/Counters/Deaths"]
+layout_mode = 2
+text = "0"
+label_settings = ExtResource("2_fcgbl")
+script = ExtResource("3_ndi7f")
+var_res = ExtResource("21_sy0wd")
+metadata/_custom_type_script = "uid://cccrm8vuks5fs"
+
+[node name="Money" type="HBoxContainer" parent="UI/Counters/Counters"]
+layout_mode = 2
+size_flags_horizontal = 0
+tooltip_text = "Количество денег"
+metadata/_edit_group_ = true
+
+[node name="Label" type="Label" parent="UI/Counters/Counters/Money"]
+layout_mode = 2
+mouse_filter = 0
+text = "💎"
+label_settings = ExtResource("2_fcgbl")
+
+[node name="Label2" type="Label" parent="UI/Counters/Counters/Money"]
+layout_mode = 2
+text = "55"
+label_settings = ExtResource("2_fcgbl")
+script = ExtResource("3_ndi7f")
+var_res = ExtResource("22_86hc1")
+metadata/_custom_type_script = "uid://cccrm8vuks5fs"
+
+[node name="Tickets" type="HBoxContainer" parent="UI/Counters/Counters"]
+layout_mode = 2
+size_flags_horizontal = 0
+tooltip_text = "Количетсво билетов для переброса набора карточек"
+metadata/_edit_group_ = true
+
+[node name="Label" type="Label" parent="UI/Counters/Counters/Tickets"]
+layout_mode = 2
+text = "🎫"
+label_settings = ExtResource("2_fcgbl")
+
+[node name="Label2" type="Label" parent="UI/Counters/Counters/Tickets"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_offset_y = 1
+theme_override_constants/outline_size = 7
+theme_override_constants/shadow_outline_size = 12
+text = "2"
+label_settings = ExtResource("2_fcgbl")
+script = ExtResource("3_ndi7f")
+var_res = ExtResource("23_dtm77")
+metadata/_custom_type_script = "uid://cccrm8vuks5fs"
+
+[node name="CardHand" parent="UI" instance=ExtResource("24_2ehou")]
+metadata/_edit_lock_ = true
+
+[node name="Notifications" parent="UI" instance=ExtResource("25_keht4")]
+
+[node name="ColorRectGrid1" type="ColorRect" parent="."]
+visible = false
+material = SubResource("ShaderMaterial_43j8o")
+offset_right = 480.0
+offset_bottom = 480.0
+
+[node name="Tilemaps" type="Node2D" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="Tilemaps"]
+offset_left = -2.666667
+offset_top = -87.666664
+offset_right = 349.9371
+offset_bottom = 209.0
+mouse_filter = 2
+color = Color(4.428029e-06, 0.71770066, 0.9363188, 1)
+
+[node name="Visual" type="TileMapLayer" parent="Tilemaps"]
+modulate = Color(0.1760028, 0.9230832, 0.34097162, 1)
+texture_filter = 4
+material = ExtResource("27_d1wsa")
+tile_map_data = PackedByteArray("AAD0//7/BAAAAAAAAgD0////BAADAAAAAgD0/wAABAADAAAAAgD0/wEABAAAAAAAAAD1//7/BAADAAAAAQD1////BAAGAAAAAAD1/wAABAAGAAAAAwD1/wEABAADAAAAAAD2//7/BAADAAAAAQD2////BAAGAAAAAQD2/wAABAAGAAAAAgD2/wEABAADAAAAAAD3//7/BAAAAAAAAwD3////BAAGAAAAAwD3/wAABAAGAAAAAAD3/wEABAAAAAAAAQD4//3/BAAAAAAAAgD4//7/BAADAAAAAgD4////BAAGAAAAAgD4/wAABAADAAAAAAD4/wIABAAAAAAAAgD4/wMABAAAAAAAAAD5//3/BAADAAAAAQD5//7/BAAGAAAAAAD5////BAAGAAAAAwD5/wAABAADAAAAAAD5/wIABAAAAAAAAwD5/wMABAAAAAAAAQD6//3/BAADAAAAAQD6//7/BAAGAAAAAQD6////BAAGAAAAAgD6/wAABAADAAAAAAD7//3/BAAAAAAAAwD7//7/BAADAAAAAwD7////BAADAAAAAwD7/wAABAAAAAAAAQD8//7/BAAAAAAAAgD8////BAADAAAAAgD8/wAABAADAAAAAgD8/wEABAADAAAAAgD8/wIABAADAAAAAgD8/wMABAADAAAAAgD8/wQABAAAAAAAAAD9//3/BAAAAAAAAgD9//7/BAAGAAAAAgD9////BAADAAMAAAD9/wAABAADAAMAAAD9/wEABAADAAMAAAD9/wIABAADAAMAAAD9/wMABAADAAMAAAD9/wQABAADAAAAAAD+//3/BAADAAAAAQD+//7/BAADAAMAAAD+////BAADAAMAAAD+/wAABAADAAMAAAD+/wEABAADAAMAAAD+/wIABAADAAMAAAD+/wMABAADAAMAAAD+/wQABAAGAAAAAQD+/wUABAADAAAAAgD+/wYABAAAAAAAAAD///3/BAADAAAAAQD///7/BAADAAMAAAD/////BAADAAMAAAD//wAABAADAAMAAAD//wEABAADAAMAAAD//wIABAADAAMAAAD//wMABAADAAMAAAD//wQABAADAAMAAAD//wUABAADAAMAAAAAAP3/BAADAAAAAQAAAP7/BAADAAMAAAAAAP//BAADAAMAAAAAAAAABAAGAAAAAAAAAAEABAADAAAAAwAAAAIABAAGAAAAAwAAAAMABAADAAMAAAAAAAQABAADAAMAAAAAAAUABAAGAAAAAAAAAAYABAAAAAAAAQABAPv/BAAAAAAAAgABAPz/BAADAAAAAgABAP3/BAAGAAAAAgABAP7/BAADAAMAAAABAP//BAAGAAAAAAABAAAABAAAAAAAAQABAAIABAADAAAAAQABAAMABAADAAMAAAABAAQABAADAAMAAAABAAUABAADAAAAAAACAPv/BAADAAAAAQACAPz/BAADAAMAAAACAP7/BAAGAAAAAAACAP//BAAAAAAAAQACAAIABAADAAAAAQACAAMABAADAAMAAAACAAQABAADAAMAAAACAAUABAADAAAAAAADAPf/BAAAAAAAAgADAPj/BAAAAAAAAAADAPv/BAAAAAAAAwADAPz/BAAGAAAAAwADAP7/BAAGAAAAAQADAP//BAAAAAAAAAADAAIABAAAAAAAAwADAAMABAAGAAAAAwADAAQABAADAAMAAAADAAUABAAGAAAAAQADAAYABAAAAAAAAAAEAPT/BAAAAAAAAgAEAPX/BAADAAAAAgAEAPb/BAADAAAAAgAEAPf/BAAGAAAAAgAEAPj/BAADAAAAAAAEAPz/BAADAAAAAQAEAP3/BAADAAMAAAAEAP7/BAADAAMAAAAEAP//BAAGAAAAAQAEAAAABAAAAAAAAAAEAAIABAAAAAAAAgAEAAMABAAGAAAAAgAEAAQABAADAAMAAAAEAAUABAADAAMAAAAEAAYABAADAAAAAAAFAPT/BAADAAAAAQAFAPX/BAADAAMAAAAFAPb/BAADAAMAAAAFAPf/BAADAAMAAAAFAPj/BAADAAAAAAAFAPz/BAAAAAAAAwAFAP3/BAAGAAAAAwAFAP7/BAADAAMAAAAFAP//BAADAAMAAAAFAAAABAADAAAAAAAFAAEABAAAAAAAAgAFAAIABAAGAAAAAgAFAAMABAADAAMAAAAFAAQABAADAAMAAAAFAAUABAADAAMAAAAFAAYABAADAAAAAAAGAPT/BAADAAAAAQAGAPX/BAADAAMAAAAGAPb/BAAGAAAAAAAGAPf/BAAGAAAAAwAGAPj/BAADAAAAAAAGAP3/BAADAAAAAQAGAP7/BAADAAMAAAAGAP//BAADAAMAAAAGAAAABAAGAAAAAQAGAAEABAAGAAAAAgAGAAIABAADAAMAAAAGAAMABAADAAMAAAAGAAQABAADAAMAAAAGAAUABAAGAAAAAAAGAAYABAAAAAAAAQAHAPT/BAADAAAAAQAHAPX/BAADAAMAAAAHAPb/BAADAAAAAAAHAPf/BAADAAAAAQAHAPj/BAADAAAAAAAHAP3/BAAAAAAAAwAHAP7/BAAGAAAAAwAHAP//BAADAAMAAAAHAAAABAADAAMAAAAHAAEABAADAAMAAAAHAAIABAADAAMAAAAHAAMABAAGAAAAAAAHAAQABAAGAAAAAwAHAAUABAADAAAAAAAIAPT/BAADAAAAAQAIAPX/BAADAAMAAAAIAPb/BAAGAAAAAQAIAPf/BAAAAAMAAAAIAPj/BAAAAAAAAQAIAP7/BAADAAAAAQAIAP//BAADAAMAAAAIAAAABAADAAMAAAAIAAEABAADAAMAAAAIAAIABAAGAAAAAAAIAAMABAAAAAMAAQAIAAQABAAGAAAAAgAIAAUABAAGAAAAAQAIAAYABAAAAAAAAAAJAPT/BAAAAAAAAwAJAPX/BAADAAAAAwAJAPb/BAADAAAAAwAJAPf/BAAAAAAAAQAJAP7/BAADAAAAAQAJAP//BAADAAMAAAAJAAAABAADAAMAAAAJAAEABAAGAAAAAAAJAAIABAAAAAAAAQAJAAMABAAAAAAAAwAJAAQABAAGAAAAAwAJAAUABAADAAMAAAAJAAYABAADAAAAAAAKAP3/BAAAAAAAAgAKAP7/BAAGAAAAAgAKAP//BAADAAMAAAAKAAAABAAGAAAAAAAKAAEABAAAAAAAAQAKAAQABAADAAAAAQAKAAUABAADAAMAAAAKAAYABAADAAAAAAALAP3/BAADAAAAAQALAP7/BAADAAMAAAALAP//BAAGAAAAAAALAAAABAAAAAAAAQALAAQABAAAAAAAAwALAAUABAADAAAAAwALAAYABAAAAAAAAQAMAPz/BAAAAAAAAgAMAP3/BAAGAAAAAgAMAP7/BAADAAMAAAAMAP//BAADAAAAAAANAPz/BAADAAAAAQANAP3/BAADAAMAAAANAP7/BAADAAMAAAANAP//BAADAAAAAAAOAPz/BAAAAAAAAwAOAP3/BAADAAAAAwAOAP7/BAADAAAAAwAOAP//BAAAAAAAAQAQAAAABAAAAAAAAgAQAAEABAADAAAAAgAQAAIABAADAAAAAgAQAAMABAADAAAAAgAQAAQABAADAAAAAgAQAAUABAADAAAAAgAQAAYABAAAAAAAAAARAP//BAAAAAAAAgARAAAABAAGAAAAAgARAAEABAADAAMAAAARAAIABAADAAMAAAARAAMABAADAAMAAAARAAQABAADAAMAAAARAAUABAADAAMAAAARAAYABAADAAAAAAASAP//BAADAAAAAQASAAAABAADAAMAAAASAAEABAADAAMAAAASAAIABAADAAMAAAASAAMABAADAAMAAAASAAQABAADAAMAAAASAAUABAAGAAAAAAASAAYABAAAAAAAAQATAP//BAAAAAAAAwATAAAABAAGAAAAAwATAAEABAADAAMAAAATAAIABAADAAMAAAATAAMABAADAAMAAAATAAQABAAGAAAAAAATAAUABAAAAAAAAQAUAAAABAAAAAAAAwAUAAEABAADAAAAAwAUAAIABAAGAAAAAwAUAAMABAADAAMAAAAUAAQABAADAAAAAAAVAAAABAAAAAAAAgAVAAEABAADAAAAAgAVAAIABAAGAAAAAgAVAAMABAADAAMAAAAVAAQABAADAAAAAAAWAAAABAADAAAAAQAWAAEABAADAAMAAAAWAAIABAADAAMAAAAWAAMABAAGAAAAAAAWAAQABAAAAAAAAQAXAAAABAADAAAAAQAXAAEABAADAAMAAAAXAAIABAAGAAAAAAAXAAMABAAAAAAAAQAYAAAABAAAAAAAAwAYAAEABAADAAAAAwAYAAIABAAAAAAAAQADAP3/BAADAAMAAAACAP3/BAADAAMAAAD//wYABAADAAAAAAAMAAMABAAAAAAAAgANAAMABAAAAAAAAwANAAQABAAAAAAAAQAMAAQABAAAAAAAAAA=")
+tile_set = ExtResource("28_hpvv2")
+navigation_enabled = false
+
+[node name="Type" type="TileMapLayer" parent="Tilemaps"]
+visible = false
+z_index = 2
+position = Vector2(24, 24)
+tile_map_data = PackedByteArray("AAADAAIAAQAAAAAAAAADAAEAAQAAAAAAAAACAAEAAQAAAAAAAAABAAEAAQAAAAAAAAAAAAEAAQAAAAAAAAAAAAAAAQAAAAAAAAABAAAAAQAAAAAAAAACAAAAAQAAAAAAAAADAAAAAQAAAAAAAAAEAAAAAQAAAAAAAAAEAAEAAQAAAAAAAAAFAAAAAQAAAAAAAAADAP//AQAAAAAAAAACAP//AQAAAAAAAAABAP//AQAAAAAAAAACAP7/AQAAAAAAAAADAAQAAQABAAAAAAADAAUAAQABAAAAAAAEAAUAAQABAAAAAAAEAAQAAQABAAAAAAAEAAMAAQABAAAAAAAEAAIAAQABAAAAAAADAAMAAQABAAAAAAAFAAMAAQABAAAAAAAFAAQAAQABAAAAAAAFAAUAAQABAAAAAAAGAAQAAQABAAAAAAAHAAQAAQABAAAAAAAIAAQAAQABAAAAAAAIAAMAAQABAAAAAAAIAAUAAQABAAAAAAAJAAUAAQABAAAAAAAJAAQAAQABAAAAAAAKAAQAAQABAAAAAAAKAAUAAQABAAAAAAAMAAMAAQABAAAAAAD4/wIAAQABAAAAAAD//wUAAQABAAAAAAD+/wUAAQABAAAAAAD+/wQAAQABAAAAAAD//wQAAQABAAAAAAAAAAQAAQABAAAAAAABAAQAAQABAAAAAAACAAQAAQABAAAAAAACAAMAAQABAAAAAAABAAMAAQABAAAAAAAAAAMAAQABAAAAAAAAAAIAAQABAAAAAAABAAIAAQABAAAAAAACAAIAAQABAAAAAAD//wIAAQABAAAAAAD+/wIAAQABAAAAAAD+/wMAAQABAAAAAAD//wMAAQABAAAAAAD9/wMAAQABAAAAAAD8/wMAAQABAAAAAAD8/wIAAQABAAAAAAD9/wIAAQABAAAAAAD9/wEAAQABAAAAAAD8/wEAAQABAAAAAAD8/wAAAQABAAAAAAD9/wAAAQABAAAAAAD+/wEAAQABAAAAAAD//wEAAQABAAAAAAD//wAAAQABAAAAAAD+/wAAAQABAAAAAAD9////AQABAAAAAAD8////AQABAAAAAAD8//7/AQABAAAAAAD9//7/AQABAAAAAAD+//7/AQABAAAAAAD+////AQABAAAAAAD/////AQABAAAAAAD///7/AQABAAAAAAD///3/AQABAAAAAAD+//3/AQABAAAAAAD9//3/AQABAAAAAAAAAP3/AQABAAAAAAAAAP7/AQABAAAAAAAAAP//AQABAAAAAAABAP7/AQABAAAAAAABAP3/AQABAAAAAAABAPz/AQABAAAAAAABAPv/AQABAAAAAAACAPv/AQABAAAAAAACAPz/AQABAAAAAAACAP3/AQABAAAAAAADAP3/AQABAAAAAAADAPz/AQABAAAAAAADAP7/AQABAAAAAAAEAP7/AQABAAAAAAAEAP3/AQABAAAAAAAEAPz/AQABAAAAAAAEAP//AQABAAAAAAAFAP//AQABAAAAAAAFAP7/AQABAAAAAAAFAP3/AQABAAAAAAAGAP3/AQABAAAAAAAGAP7/AQABAAAAAAAGAP//AQABAAAAAAAGAAAAAQABAAAAAAAGAAEAAQABAAAAAAAGAAIAAQABAAAAAAAFAAIAAQABAAAAAAAGAAMAAQABAAAAAAAFAAEAAQABAAAAAAAHAAIAAQABAAAAAAAHAAEAAQABAAAAAAAHAAAAAQABAAAAAAAHAP//AQABAAAAAAAHAP7/AQABAAAAAAAIAP7/AQABAAAAAAAIAP//AQABAAAAAAAIAAAAAQABAAAAAAAIAAEAAQABAAAAAAAJAAAAAQABAAAAAAAJAP//AQABAAAAAAAJAP7/AQABAAAAAAAKAP7/AQABAAAAAAAKAP//AQABAAAAAAAKAP3/AQABAAAAAAALAP3/AQABAAAAAAALAP7/AQABAAAAAAAMAP7/AQABAAAAAAAMAP3/AQABAAAAAAAMAPz/AQABAAAAAAANAP3/AQABAAAAAAANAP7/AQABAAAAAAANAPz/AQABAAAAAAD4////AQABAAAAAAD4//7/AQABAAAAAAD4//3/AQABAAAAAAD5//3/AQABAAAAAAD6//3/AQABAAAAAAD6//7/AQABAAAAAAD6////AQABAAAAAAD5////AQABAAAAAAD3////AQABAAAAAAD2////AQABAAAAAAD2/wAAAQABAAAAAAD1/wAAAQABAAAAAAD0/wAAAQABAAAAAAD0////AQABAAAAAAD0//7/AQABAAAAAAD1//7/AQABAAAAAAD2//7/AQABAAAAAAAQAAUAAQABAAAAAAARAAUAAQABAAAAAAARAAQAAQABAAAAAAAQAAQAAQABAAAAAAARAAMAAQABAAAAAAARAAIAAQABAAAAAAAQAAMAAQABAAAAAAAQAAIAAQABAAAAAAAQAAEAAQABAAAAAAAQAAAAAQABAAAAAAARAAAAAQABAAAAAAARAAEAAQABAAAAAAARAP//AQABAAAAAAASAP//AQABAAAAAAASAAAAAQABAAAAAAASAAEAAQABAAAAAAASAAIAAQABAAAAAAASAAMAAQABAAAAAAASAAQAAQABAAAAAAATAAMAAQABAAAAAAATAAIAAQABAAAAAAAUAAIAAQABAAAAAAATAAEAAQABAAAAAAATAAAAAQABAAAAAAAUAAMAAQABAAAAAAAVAAMAAQABAAAAAAAVAAIAAQABAAAAAAAVAAEAAQABAAAAAAAVAAAAAQABAAAAAAAWAAAAAQABAAAAAAAWAAEAAQABAAAAAAAWAAIAAQABAAAAAAAXAAEAAQABAAAAAAAXAAAAAQABAAAAAAADAPf/AQABAAAAAAAEAPf/AQABAAAAAAAFAPf/AQABAAAAAAAGAPf/AQABAAAAAAAHAPf/AQABAAAAAAAEAPT/AQABAAAAAAAEAPX/AQABAAAAAAAEAPb/AQABAAAAAAAFAPT/AQABAAAAAAAFAPX/AQABAAAAAAAFAPb/AQABAAAAAAAGAPT/AQABAAAAAAAGAPX/AQABAAAAAAAHAPT/AQABAAAAAAAHAPX/AQABAAAAAAAIAPT/AQABAAAAAAAIAPX/AQABAAAAAAAIAPb/AQABAAAAAAA=")
+tile_set = SubResource("TileSet_ia2xj")
+
+[node name="Clip" type="CanvasGroup" parent="Tilemaps"]
+clip_children = 1
+
+[node name="Fields" type="TileMapLayer" parent="Tilemaps/Clip"]
+self_modulate = Color(0, 0, 0, 0)
+texture_filter = 1
+position = Vector2(24, 24)
+tile_map_data = PackedByteArray("AAD+/wQAAgABAAAAAAD//wQAAgABAAAAAAD//wMAAgABAAAAAAD//wIAAgABAAAAAAD+/wIAAgABAAAAAAD9/wMAAgABAAAAAAD+/wMAAgABAAAAAAD9/wIAAgABAAAAAAAFAAEAAgACAAAAAAAFAAIAAgACAAAAAAAFAAMAAgACAAAAAAAGAAMAAgACAAAAAAAGAAIAAgACAAAAAAAGAAEAAgACAAAAAAAHAAEAAgACAAAAAAAHAAIAAgACAAAAAAD+//3/AgAEAAAAAAD+//7/AgAEAAAAAAD9//7/AgAEAAAAAAD9////AgAEAAAAAAD+////AgAEAAAAAAD9//3/AgAEAAAAAAD///3/AgAEAAAAAAD///7/AgAEAAAAAAD/////AgAEAAAAAAAFAP7/AgADAAAAAAAEAP7/AgADAAAAAAAEAP//AgADAAAAAAAFAP//AgADAAAAAAAGAP7/AgADAAAAAAAGAP3/AgACAAAAAAAFAP3/AgADAAAAAAAEAP3/AgADAAAAAAAGAP//AgADAAAAAAD//wUAAgAAAAAAAAD+/wUAAgAAAAAAAAAAAAQAAgAAAAAAAAAAAAMAAgAAAAAAAAAAAAIAAgAAAAAAAAABAAIAAgAAAAAAAAABAAMAAgAAAAAAAAABAAQAAgAAAAAAAAACAAQAAgAAAAAAAAACAAMAAgAAAAAAAAACAAIAAgAAAAAAAAADAAMAAgAAAAAAAAADAAQAAgAAAAAAAAADAAUAAgAAAAAAAAAEAAUAAgAAAAAAAAAFAAUAAgAAAAAAAAAFAAQAAgAAAAAAAAAEAAQAAgAAAAAAAAAEAAMAAgAAAAAAAAAEAAIAAgAAAAAAAAAGAAQAAgAAAAAAAAAHAAQAAgAAAAAAAAAIAAQAAgAAAAAAAAAJAAQAAgAAAAAAAAAIAAUAAgAAAAAAAAAJAAUAAgAAAAAAAAAKAAUAAgAAAAAAAAAKAAQAAgAAAAAAAAAIAAMAAgAAAAAAAAAIAAEAAgAAAAAAAAAIAAAAAgAAAAAAAAAHAAAAAgAAAAAAAAAGAAAAAgAAAAAAAAAIAP//AgAAAAAAAAAIAP7/AgAAAAAAAAAHAP//AgAAAAAAAAAHAP7/AgAAAAAAAAAJAP//AgAAAAAAAAAJAAAAAgAAAAAAAAAJAP7/AgAAAAAAAAAKAP7/AgAAAAAAAAAKAP//AgAAAAAAAAAKAP3/AgAAAAAAAAALAP3/AgAAAAAAAAAMAP3/AgAAAAAAAAALAP7/AgAAAAAAAAAMAP7/AgAAAAAAAAANAP7/AgAAAAAAAAANAP3/AgAAAAAAAAANAPz/AgAAAAAAAAAMAPz/AgAAAAAAAAADAP7/AgAAAAAAAAADAP3/AgADAAAAAAADAPz/AgAAAAAAAAAEAPz/AgAAAAAAAAACAPz/AgAAAAAAAAABAPz/AgAAAAAAAAABAPv/AgAAAAAAAAACAPv/AgAAAAAAAAACAP3/AgADAAAAAAABAP3/AgAEAAAAAQAAAP3/AgAEAAAAAAAAAP7/AgAAAAAAAAABAP7/AgAAAAAAAAAAAP//AgAAAAAAAAD//wAAAgAAAAAAAAD//wEAAgAAAAAAAAD+/wEAAgAAAAAAAAD+/wAAAgAAAAAAAAD9/wAAAgAAAAAAAAD9/wEAAgAAAAAAAAD8/wEAAgAAAAAAAAD8/wAAAgAAAAAAAAD8////AgAAAAAAAAD8//7/AgAAAAAAAAD8/wIAAgAAAAAAAAD8/wMAAgAAAAAAAAA=")
+tile_set = ExtResource("30_iynh3")
+script = ExtResource("7_mng47")
+scene = ExtResource("8_fmk5b")
+tile_offset = Vector2(24, 24)
+metadata/_custom_type_script = "uid://b711j7wpabhvl"
+
+[node name="Node2D" type="Node2D" parent="Tilemaps/Clip"]
+
+[node name="corner-ru-1" type="Sprite2D" parent="Tilemaps/Clip/Node2D"]
+modulate = Color(0, 0, 0, 1)
+self_modulate = Color(0, 0, 0, 1)
+texture_filter = 1
+material = SubResource("CanvasItemMaterial_goqcv")
+position = Vector2(-71.999985, 216.00002)
+rotation = -3.1415925
+texture = ExtResource("31_87kko")
+
+[node name="corner-ru-4" type="Sprite2D" parent="Tilemaps/Clip/Node2D"]
+modulate = Color(0, 0, 0, 1)
+self_modulate = Color(0, 0, 0, 1)
+texture_filter = 1
+material = SubResource("CanvasItemMaterial_goqcv")
+position = Vector2(168.00003, -72.00001)
+rotation = -3.1415925
+texture = ExtResource("31_87kko")
+
+[node name="corner-ru-5" type="Sprite2D" parent="Tilemaps/Clip/Node2D"]
+modulate = Color(0, 0, 0, 1)
+self_modulate = Color(0, 0, 0, 1)
+texture_filter = 1
+material = SubResource("CanvasItemMaterial_goqcv")
+position = Vector2(216.00005, -24.00001)
+rotation = -3.1415925
+texture = ExtResource("31_87kko")
+
+[node name="corner-ru-6" type="Sprite2D" parent="Tilemaps/Clip/Node2D"]
+modulate = Color(0, 0, 0, 1)
+self_modulate = Color(0, 0, 0, 1)
+texture_filter = 1
+material = SubResource("CanvasItemMaterial_goqcv")
+position = Vector2(312.00006, 23.999992)
+rotation = -3.1415925
+texture = ExtResource("31_87kko")
+
+[node name="wall-r-1" type="Sprite2D" parent="Tilemaps/Clip/Node2D"]
+modulate = Color(0, 0, 0, 1)
+self_modulate = Color(0, 0, 0, 1)
+texture_filter = 1
+material = SubResource("CanvasItemMaterial_goqcv")
+position = Vector2(-71.999985, 264)
+rotation = -1.5707964
+texture = ExtResource("32_he6an")
+
+[node name="wall-r-2" type="Sprite2D" parent="Tilemaps/Clip/Node2D"]
+modulate = Color(0, 0, 0, 1)
+self_modulate = Color(0, 0, 0, 1)
+texture_filter = 1
+material = SubResource("CanvasItemMaterial_goqcv")
+position = Vector2(-168, 167.99998)
+rotation = -1.5707964
+texture = ExtResource("32_he6an")
+
+[node name="wall-r-3" type="Sprite2D" parent="Tilemaps/Clip/Node2D"]
+modulate = Color(0, 0, 0, 1)
+self_modulate = Color(0, 0, 0, 1)
+texture_filter = 1
+material = SubResource("CanvasItemMaterial_goqcv")
+position = Vector2(-168.00002, 120)
+rotation = -1.5707964
+texture = ExtResource("32_he6an")
+
+[node name="wall-r-4" type="Sprite2D" parent="Tilemaps/Clip/Node2D"]
+modulate = Color(0, 0, 0, 1)
+self_modulate = Color(0, 0, 0, 1)
+texture_filter = 1
+material = SubResource("CanvasItemMaterial_goqcv")
+position = Vector2(-168, 71.99999)
+rotation = -1.5707964
+texture = ExtResource("32_he6an")
+
+[node name="wall-r-5" type="Sprite2D" parent="Tilemaps/Clip/Node2D"]
+modulate = Color(0, 0, 0, 1)
+self_modulate = Color(0, 0, 0, 1)
+texture_filter = 1
+material = SubResource("CanvasItemMaterial_goqcv")
+position = Vector2(-168, 23.999992)
+rotation = -1.5707964
+texture = ExtResource("32_he6an")
+
+[node name="wall-r-6" type="Sprite2D" parent="Tilemaps/Clip/Node2D"]
+modulate = Color(0, 0, 0, 1)
+self_modulate = Color(0, 0, 0, 1)
+texture_filter = 1
+material = SubResource("CanvasItemMaterial_goqcv")
+position = Vector2(-168, -24.000008)
+rotation = -1.5707964
+texture = ExtResource("32_he6an")
+
+[node name="wall-r-7" type="Sprite2D" parent="Tilemaps/Clip/Node2D"]
+modulate = Color(0, 0, 0, 1)
+self_modulate = Color(0, 0, 0, 1)
+texture_filter = 1
+material = SubResource("CanvasItemMaterial_goqcv")
+position = Vector2(72, -168)
+rotation = -1.5707964
+texture = ExtResource("32_he6an")
+
+[node name="wall-l-1" type="Sprite2D" parent="Tilemaps/Clip/Node2D"]
+modulate = Color(0, 0, 0, 1)
+self_modulate = Color(0, 0, 0, 1)
+texture_filter = 1
+material = SubResource("CanvasItemMaterial_goqcv")
+position = Vector2(696, -72)
+rotation = 1.5707964
+texture = ExtResource("32_he6an")
+
+[node name="wall-l-3" type="Sprite2D" parent="Tilemaps/Clip/Node2D"]
+modulate = Color(0, 0, 0, 1)
+self_modulate = Color(0, 0, 0, 1)
+texture_filter = 1
+material = SubResource("CanvasItemMaterial_goqcv")
+position = Vector2(552, 264)
+rotation = 1.5707964
+texture = ExtResource("32_he6an")
+
+[node name="wall-l-4" type="Sprite2D" parent="Tilemaps/Clip/Node2D"]
+modulate = Color(0, 0, 0, 1)
+self_modulate = Color(0, 0, 0, 1)
+texture_filter = 1
+material = SubResource("CanvasItemMaterial_goqcv")
+position = Vector2(23.999992, 71.999985)
+rotation = 1.5707964
+texture = ExtResource("32_he6an")
+
+[node name="wall-l-2" type="Sprite2D" parent="Tilemaps/Clip/Node2D"]
+modulate = Color(0, 0, 0, 1)
+self_modulate = Color(0, 0, 0, 1)
+texture_filter = 1
+material = SubResource("CanvasItemMaterial_goqcv")
+position = Vector2(696, -120)
+rotation = 1.5707964
+texture = ExtResource("32_he6an")
+
+[node name="wall-u-1" type="Sprite2D" parent="Tilemaps/Clip/Node2D"]
+modulate = Color(0, 0, 0, 1)
+self_modulate = Color(0, 0, 0, 1)
+texture_filter = 1
+material = SubResource("CanvasItemMaterial_goqcv")
+position = Vector2(24, -120)
+texture = ExtResource("32_he6an")
+
+[node name="wall-u-2" type="Sprite2D" parent="Tilemaps/Clip/Node2D"]
+modulate = Color(0, 0, 0, 1)
+self_modulate = Color(0, 0, 0, 1)
+texture_filter = 1
+material = SubResource("CanvasItemMaterial_goqcv")
+position = Vector2(-24, -120)
+texture = ExtResource("32_he6an")
+
+[node name="wall-u-8" type="Sprite2D" parent="Tilemaps/Clip/Node2D"]
+modulate = Color(0, 0, 0, 1)
+self_modulate = Color(0, 0, 0, 1)
+texture_filter = 1
+material = SubResource("CanvasItemMaterial_goqcv")
+position = Vector2(72, 120)
+texture = ExtResource("32_he6an")
+
+[node name="wall-u-9" type="Sprite2D" parent="Tilemaps/Clip/Node2D"]
+modulate = Color(0, 0, 0, 1)
+self_modulate = Color(0, 0, 0, 1)
+texture_filter = 1
+material = SubResource("CanvasItemMaterial_goqcv")
+position = Vector2(120, 120)
+texture = ExtResource("32_he6an")
+
+[node name="wall-u-4" type="Sprite2D" parent="Tilemaps/Clip/Node2D"]
+modulate = Color(0, 0, 0, 1)
+self_modulate = Color(0, 0, 0, 1)
+texture_filter = 1
+material = SubResource("CanvasItemMaterial_goqcv")
+position = Vector2(120, -216)
+texture = ExtResource("32_he6an")
+
+[node name="wall-u-6" type="Sprite2D" parent="Tilemaps/Clip/Node2D"]
+modulate = Color(0, 0, 0, 1)
+self_modulate = Color(0, 0, 0, 1)
+texture_filter = 1
+material = SubResource("CanvasItemMaterial_goqcv")
+position = Vector2(216, -168)
+texture = ExtResource("32_he6an")
+
+[node name="wall-u-7" type="Sprite2D" parent="Tilemaps/Clip/Node2D"]
+modulate = Color(0, 0, 0, 1)
+self_modulate = Color(0, 0, 0, 1)
+texture_filter = 1
+material = SubResource("CanvasItemMaterial_goqcv")
+position = Vector2(312, -120)
+texture = ExtResource("32_he6an")
+
+[node name="wall-u-10" type="Sprite2D" parent="Tilemaps/Clip/Node2D"]
+modulate = Color(0, 0, 0, 1)
+self_modulate = Color(0, 0, 0, 1)
+texture_filter = 1
+material = SubResource("CanvasItemMaterial_goqcv")
+position = Vector2(408, -72)
+texture = ExtResource("32_he6an")
+
+[node name="wall-u-11" type="Sprite2D" parent="Tilemaps/Clip/Node2D"]
+modulate = Color(0, 0, 0, 1)
+self_modulate = Color(0, 0, 0, 1)
+texture_filter = 1
+material = SubResource("CanvasItemMaterial_goqcv")
+position = Vector2(456, -72)
+texture = ExtResource("32_he6an")
+
+[node name="wall-u-12" type="Sprite2D" parent="Tilemaps/Clip/Node2D"]
+modulate = Color(0, 0, 0, 1)
+self_modulate = Color(0, 0, 0, 1)
+texture_filter = 1
+material = SubResource("CanvasItemMaterial_goqcv")
+position = Vector2(552, -120)
+texture = ExtResource("32_he6an")
+
+[node name="wall-u-13" type="Sprite2D" parent="Tilemaps/Clip/Node2D"]
+modulate = Color(0, 0, 0, 1)
+self_modulate = Color(0, 0, 0, 1)
+texture_filter = 1
+material = SubResource("CanvasItemMaterial_goqcv")
+position = Vector2(648, -168)
+texture = ExtResource("32_he6an")
+
+[node name="wall-u-5" type="Sprite2D" parent="Tilemaps/Clip/Node2D"]
+modulate = Color(0, 0, 0, 1)
+self_modulate = Color(0, 0, 0, 1)
+texture_filter = 1
+material = SubResource("CanvasItemMaterial_goqcv")
+position = Vector2(504, 216)
+texture = ExtResource("32_he6an")
+
+[node name="wall-u-3" type="Sprite2D" parent="Tilemaps/Clip/Node2D"]
+modulate = Color(0, 0, 0, 1)
+self_modulate = Color(0, 0, 0, 1)
+texture_filter = 1
+material = SubResource("CanvasItemMaterial_goqcv")
+position = Vector2(-72, -120)
+texture = ExtResource("32_he6an")
+
+[node name="corner2-lu-1" type="Sprite2D" parent="Tilemaps/Clip/Node2D"]
+modulate = Color(0, 0, 0, 1)
+self_modulate = Color(0, 0, 0, 1)
+texture_filter = 1
+material = SubResource("CanvasItemMaterial_goqcv")
+position = Vector2(-120, -120)
+texture = ExtResource("33_53ylk")
+
+[node name="corner2-lu-4" type="Sprite2D" parent="Tilemaps/Clip/Node2D"]
+modulate = Color(0, 0, 0, 1)
+self_modulate = Color(0, 0, 0, 1)
+texture_filter = 1
+material = SubResource("CanvasItemMaterial_goqcv")
+position = Vector2(504, -120)
+texture = ExtResource("33_53ylk")
+
+[node name="corner2-lu-6" type="Sprite2D" parent="Tilemaps/Clip/Node2D"]
+modulate = Color(0, 0, 0, 1)
+self_modulate = Color(0, 0, 0, 1)
+texture_filter = 1
+material = SubResource("CanvasItemMaterial_goqcv")
+position = Vector2(216, 120)
+texture = ExtResource("33_53ylk")
+
+[node name="corner2-lu-7" type="Sprite2D" parent="Tilemaps/Clip/Node2D"]
+modulate = Color(0.39181867, 0.39181864, 0.39181864, 1)
+texture_filter = 1
+material = SubResource("CanvasItemMaterial_goqcv")
+position = Vector2(264, 72)
+texture = ExtResource("33_53ylk")
+
+[node name="corner2-lu-5" type="Sprite2D" parent="Tilemaps/Clip/Node2D"]
+modulate = Color(0, 0, 0, 1)
+self_modulate = Color(0, 0, 0, 1)
+texture_filter = 1
+material = SubResource("CanvasItemMaterial_goqcv")
+position = Vector2(600, -168)
+texture = ExtResource("33_53ylk")
+
+[node name="corner2-lu-2" type="Sprite2D" parent="Tilemaps/Clip/Node2D"]
+modulate = Color(0, 0, 0, 1)
+self_modulate = Color(0, 0, 0, 1)
+texture_filter = 1
+material = SubResource("CanvasItemMaterial_goqcv")
+position = Vector2(-168, -72)
+texture = ExtResource("33_53ylk")
+
+[node name="corner2-lu-3" type="Sprite2D" parent="Tilemaps/Clip/Node2D"]
+modulate = Color(0, 0, 0, 1)
+self_modulate = Color(0, 0, 0, 1)
+texture_filter = 1
+material = SubResource("CanvasItemMaterial_goqcv")
+position = Vector2(72, -216)
+texture = ExtResource("33_53ylk")
+
+[node name="corner2-ld-1" type="Sprite2D" parent="Tilemaps/Clip/Node2D"]
+modulate = Color(0, 0, 0, 1)
+self_modulate = Color(0, 0, 0, 1)
+texture_filter = 1
+material = SubResource("CanvasItemMaterial_goqcv")
+position = Vector2(-168, 216)
+rotation = -1.5707964
+texture = ExtResource("33_53ylk")
+
+[node name="corner2-ld-2" type="Sprite2D" parent="Tilemaps/Clip/Node2D"]
+modulate = Color(0, 0, 0, 1)
+self_modulate = Color(0, 0, 0, 1)
+texture_filter = 1
+material = SubResource("CanvasItemMaterial_goqcv")
+position = Vector2(-72, 312)
+rotation = -1.5707964
+texture = ExtResource("33_53ylk")
+
+[node name="corner2-ld-3" type="Sprite2D" parent="Tilemaps/Clip/Node2D"]
+modulate = Color(0, 0, 0, 1)
+self_modulate = Color(0, 0, 0, 1)
+texture_filter = 1
+material = SubResource("CanvasItemMaterial_goqcv")
+position = Vector2(168, 312)
+rotation = -1.5707964
+texture = ExtResource("33_53ylk")
+
+[node name="corner2-ld-5" type="Sprite2D" parent="Tilemaps/Clip/Node2D"]
+modulate = Color(0, 0, 0, 1)
+self_modulate = Color(0, 0, 0, 1)
+texture_filter = 1
+material = SubResource("CanvasItemMaterial_goqcv")
+position = Vector2(167.99998, -23.999977)
+rotation = -1.5707964
+texture = ExtResource("33_53ylk")
+
+[node name="corner2-ld-6" type="Sprite2D" parent="Tilemaps/Clip/Node2D"]
+modulate = Color(0, 0, 0, 1)
+self_modulate = Color(0, 0, 0, 1)
+texture_filter = 1
+material = SubResource("CanvasItemMaterial_goqcv")
+position = Vector2(215.99998, 24.000023)
+rotation = -1.5707964
+texture = ExtResource("33_53ylk")
+
+[node name="corner2-ld-4" type="Sprite2D" parent="Tilemaps/Clip/Node2D"]
+modulate = Color(0, 0, 0, 1)
+self_modulate = Color(0, 0, 0, 1)
+texture_filter = 1
+material = SubResource("CanvasItemMaterial_goqcv")
+position = Vector2(407.99997, 312)
+rotation = -1.5707964
+texture = ExtResource("33_53ylk")
+
+[node name="corner2-rd-1" type="Sprite2D" parent="Tilemaps/Clip/Node2D"]
+modulate = Color(0, 0, 0, 1)
+self_modulate = Color(0, 0, 0, 1)
+texture_filter = 1
+material = SubResource("CanvasItemMaterial_goqcv")
+position = Vector2(24, 312)
+rotation = 3.1415925
+texture = ExtResource("33_53ylk")
+
+[node name="corner2-rd-2" type="Sprite2D" parent="Tilemaps/Clip/Node2D"]
+modulate = Color(0, 0, 0, 1)
+self_modulate = Color(0, 0, 0, 1)
+texture_filter = 1
+material = SubResource("CanvasItemMaterial_goqcv")
+position = Vector2(312, 312.00003)
+rotation = 3.1415925
+texture = ExtResource("33_53ylk")
+
+[node name="corner2-rd-5" type="Sprite2D" parent="Tilemaps/Clip/Node2D"]
+modulate = Color(0, 0, 0, 1)
+self_modulate = Color(0, 0, 0, 1)
+texture_filter = 1
+material = SubResource("CanvasItemMaterial_goqcv")
+position = Vector2(119.999985, -23.999971)
+rotation = 3.1415925
+texture = ExtResource("33_53ylk")
+
+[node name="corner2-rd-6" type="Sprite2D" parent="Tilemaps/Clip/Node2D"]
+modulate = Color(0, 0, 0, 1)
+self_modulate = Color(0, 0, 0, 1)
+texture_filter = 1
+material = SubResource("CanvasItemMaterial_goqcv")
+position = Vector2(71.999985, 24.000029)
+rotation = 3.1415925
+texture = ExtResource("33_53ylk")
+
+[node name="corner2-rd-3" type="Sprite2D" parent="Tilemaps/Clip/Node2D"]
+modulate = Color(0, 0, 0, 1)
+self_modulate = Color(0, 0, 0, 1)
+texture_filter = 1
+material = SubResource("CanvasItemMaterial_goqcv")
+position = Vector2(552, 312)
+rotation = 3.1415925
+texture = ExtResource("33_53ylk")
+
+[node name="corner2-rd-7" type="Sprite2D" parent="Tilemaps/Clip/Node2D"]
+modulate = Color(0, 0, 0, 1)
+self_modulate = Color(0, 0, 0, 1)
+texture_filter = 1
+material = SubResource("CanvasItemMaterial_goqcv")
+position = Vector2(456, 119.999985)
+rotation = 3.1415925
+texture = ExtResource("33_53ylk")
+
+[node name="corner2-rd-8" type="Sprite2D" parent="Tilemaps/Clip/Node2D"]
+modulate = Color(0, 0, 0, 1)
+self_modulate = Color(0, 0, 0, 1)
+texture_filter = 1
+material = SubResource("CanvasItemMaterial_goqcv")
+position = Vector2(504, 71.999985)
+rotation = 3.1415925
+texture = ExtResource("33_53ylk")
+
+[node name="corners_invert" type="Sprite2D" parent="Tilemaps/Clip/Node2D"]
+modulate = Color(0, 0, 0, 1)
+self_modulate = Color(0, 0, 0, 1)
+texture_filter = 1
+material = SubResource("CanvasItemMaterial_goqcv")
+position = Vector2(408, 168)
+rotation = 1.5707964
+texture = ExtResource("34_ixwqa")
+
+[node name="corner2-rd-9" type="Sprite2D" parent="Tilemaps/Clip/Node2D"]
+modulate = Color(0, 0, 0, 1)
+self_modulate = Color(0, 0, 0, 1)
+texture_filter = 1
+material = SubResource("CanvasItemMaterial_goqcv")
+position = Vector2(552, 23.999985)
+rotation = 3.1415925
+texture = ExtResource("33_53ylk")
+
+[node name="corner2-rd-4" type="Sprite2D" parent="Tilemaps/Clip/Node2D"]
+modulate = Color(0, 0, 0, 1)
+self_modulate = Color(0, 0, 0, 1)
+texture_filter = 1
+material = SubResource("CanvasItemMaterial_goqcv")
+position = Vector2(695.99994, -23.999977)
+rotation = 3.1415925
+texture = ExtResource("33_53ylk")
+
+[node name="corner2-ru-1" type="Sprite2D" parent="Tilemaps/Clip/Node2D"]
+modulate = Color(0, 0, 0, 1)
+self_modulate = Color(0, 0, 0, 1)
+texture_filter = 1
+material = SubResource("CanvasItemMaterial_goqcv")
+position = Vector2(552, 216)
+rotation = 1.5707964
+texture = ExtResource("33_53ylk")
+
+[node name="corner2-ru-7" type="Sprite2D" parent="Tilemaps/Clip/Node2D"]
+modulate = Color(0, 0, 0, 1)
+self_modulate = Color(0, 0, 0, 1)
+texture_filter = 1
+material = SubResource("CanvasItemMaterial_goqcv")
+position = Vector2(456, 168.00003)
+rotation = 1.5707964
+texture = ExtResource("33_53ylk")
+
+[node name="corner2-ru-3" type="Sprite2D" parent="Tilemaps/Clip/Node2D"]
+modulate = Color(0, 0, 0, 1)
+self_modulate = Color(0, 0, 0, 1)
+texture_filter = 1
+material = SubResource("CanvasItemMaterial_goqcv")
+position = Vector2(696, -167.99998)
+rotation = 1.5707964
+texture = ExtResource("33_53ylk")
+
+[node name="corner2-ru-2" type="Sprite2D" parent="Tilemaps/Clip/Node2D"]
+modulate = Color(0, 0, 0, 1)
+self_modulate = Color(0, 0, 0, 1)
+texture_filter = 1
+material = SubResource("CanvasItemMaterial_goqcv")
+position = Vector2(168, -215.99997)
+rotation = 1.5707964
+texture = ExtResource("33_53ylk")
+
+[node name="corner2-ru-4" type="Sprite2D" parent="Tilemaps/Clip/Node2D"]
+modulate = Color(0, 0, 0, 1)
+self_modulate = Color(0, 0, 0, 1)
+texture_filter = 1
+material = SubResource("CanvasItemMaterial_goqcv")
+position = Vector2(264, -167.99997)
+rotation = 1.5707964
+texture = ExtResource("33_53ylk")
+
+[node name="corner2-ru-6" type="Sprite2D" parent="Tilemaps/Clip/Node2D"]
+modulate = Color(0, 0, 0, 1)
+self_modulate = Color(0, 0, 0, 1)
+texture_filter = 1
+material = SubResource("CanvasItemMaterial_goqcv")
+position = Vector2(168, 120.00002)
+rotation = 1.5707964
+texture = ExtResource("33_53ylk")
+
+[node name="corner2-ru-5" type="Sprite2D" parent="Tilemaps/Clip/Node2D"]
+modulate = Color(0, 0, 0, 1)
+self_modulate = Color(0, 0, 0, 1)
+texture_filter = 1
+material = SubResource("CanvasItemMaterial_goqcv")
+position = Vector2(360, -119.99999)
+rotation = 1.5707964
+texture = ExtResource("33_53ylk")
+
+[node name="wall-d-1" type="Sprite2D" parent="Tilemaps/Clip/Node2D"]
+modulate = Color(0, 0, 0, 1)
+self_modulate = Color(0, 0, 0, 1)
+texture_filter = 1
+material = SubResource("CanvasItemMaterial_goqcv")
+position = Vector2(-119.999985, 216)
+rotation = 3.1415925
+texture = ExtResource("32_he6an")
+
+[node name="wall-d-2" type="Sprite2D" parent="Tilemaps/Clip/Node2D"]
+modulate = Color(0, 0, 0, 1)
+self_modulate = Color(0, 0, 0, 1)
+texture_filter = 1
+material = SubResource("CanvasItemMaterial_goqcv")
+position = Vector2(-23.999994, 312)
+rotation = 3.1415925
+texture = ExtResource("32_he6an")
+
+[node name="wall-d-3" type="Sprite2D" parent="Tilemaps/Clip/Node2D"]
+modulate = Color(0, 0, 0, 1)
+self_modulate = Color(0, 0, 0, 1)
+texture_filter = 1
+material = SubResource("CanvasItemMaterial_goqcv")
+position = Vector2(72.00001, 264)
+rotation = 3.1415925
+texture = ExtResource("32_he6an")
+
+[node name="wall-d-4" type="Sprite2D" parent="Tilemaps/Clip/Node2D"]
+modulate = Color(0, 0, 0, 1)
+self_modulate = Color(0, 0, 0, 1)
+texture_filter = 1
+material = SubResource("CanvasItemMaterial_goqcv")
+position = Vector2(120.00001, 264)
+rotation = 3.1415925
+texture = ExtResource("32_he6an")
+
+[node name="wall-d-12" type="Sprite2D" parent="Tilemaps/Clip/Node2D"]
+modulate = Color(0, 0, 0, 1)
+self_modulate = Color(0, 0, 0, 1)
+texture_filter = 1
+material = SubResource("CanvasItemMaterial_goqcv")
+position = Vector2(264, 23.99997)
+rotation = 3.1415925
+texture = ExtResource("32_he6an")
+
+[node name="wall-d-5" type="Sprite2D" parent="Tilemaps/Clip/Node2D"]
+modulate = Color(0, 0, 0, 1)
+self_modulate = Color(0, 0, 0, 1)
+texture_filter = 1
+material = SubResource("CanvasItemMaterial_goqcv")
+position = Vector2(216, 312.00003)
+rotation = 3.1415925
+texture = ExtResource("32_he6an")
+
+[node name="wall-d-6" type="Sprite2D" parent="Tilemaps/Clip/Node2D"]
+modulate = Color(0, 0, 0, 1)
+self_modulate = Color(0, 0, 0, 1)
+texture_filter = 1
+material = SubResource("CanvasItemMaterial_goqcv")
+position = Vector2(264, 312.00003)
+rotation = 3.1415925
+texture = ExtResource("32_he6an")
+
+[node name="wall-d-7" type="Sprite2D" parent="Tilemaps/Clip/Node2D"]
+modulate = Color(0, 0, 0, 1)
+self_modulate = Color(0, 0, 0, 1)
+texture_filter = 1
+material = SubResource("CanvasItemMaterial_goqcv")
+position = Vector2(360, 264.00003)
+rotation = 3.1415925
+texture = ExtResource("32_he6an")
+
+[node name="wall-d-8" type="Sprite2D" parent="Tilemaps/Clip/Node2D"]
+modulate = Color(0, 0, 0, 1)
+self_modulate = Color(0, 0, 0, 1)
+texture_filter = 1
+material = SubResource("CanvasItemMaterial_goqcv")
+position = Vector2(455.99997, 312.00003)
+rotation = 3.1415925
+texture = ExtResource("32_he6an")
+
+[node name="wall-d-10" type="Sprite2D" parent="Tilemaps/Clip/Node2D"]
+modulate = Color(0, 0, 0, 1)
+self_modulate = Color(0, 0, 0, 1)
+texture_filter = 1
+material = SubResource("CanvasItemMaterial_goqcv")
+position = Vector2(647.99994, -24.000013)
+rotation = 3.1415925
+texture = ExtResource("32_he6an")
+
+[node name="wall-d-11" type="Sprite2D" parent="Tilemaps/Clip/Node2D"]
+modulate = Color(0, 0, 0, 1)
+self_modulate = Color(0, 0, 0, 1)
+texture_filter = 1
+material = SubResource("CanvasItemMaterial_goqcv")
+position = Vector2(599.99994, -24.000011)
+rotation = 3.1415925
+texture = ExtResource("32_he6an")
+
+[node name="wall-d-9" type="Sprite2D" parent="Tilemaps/Clip/Node2D"]
+modulate = Color(0, 0, 0, 1)
+self_modulate = Color(0, 0, 0, 1)
+texture_filter = 1
+material = SubResource("CanvasItemMaterial_goqcv")
+position = Vector2(503.99997, 312)
+rotation = 3.1415925
+texture = ExtResource("32_he6an")
+
+[node name="corner-ld-1" type="Sprite2D" parent="Tilemaps/Clip/Node2D"]
+modulate = Color(0, 0, 0, 1)
+self_modulate = Color(0, 0, 0, 1)
+texture_filter = 1
+material = SubResource("CanvasItemMaterial_goqcv")
+position = Vector2(-119.999985, -72)
+rotation = -1.5707964
+texture = ExtResource("31_87kko")
+
+[node name="corner-rd-1" type="Sprite2D" parent="Tilemaps/Clip/Node2D"]
+modulate = Color(0, 0, 0, 1)
+self_modulate = Color(0, 0, 0, 1)
+texture_filter = 1
+material = SubResource("CanvasItemMaterial_goqcv")
+position = Vector2(168, -168)
+texture = ExtResource("31_87kko")
+
+[node name="corner-rd-6" type="Sprite2D" parent="Tilemaps/Clip/Node2D"]
+modulate = Color(0, 0, 0, 1)
+self_modulate = Color(0, 0, 0, 1)
+texture_filter = 1
+material = SubResource("CanvasItemMaterial_goqcv")
+position = Vector2(359.99997, 216.00002)
+texture = ExtResource("31_87kko")
+
+[node name="corner-rd-3" type="Sprite2D" parent="Tilemaps/Clip/Node2D"]
+modulate = Color(0, 0, 0, 1)
+self_modulate = Color(0, 0, 0, 1)
+texture_filter = 1
+material = SubResource("CanvasItemMaterial_goqcv")
+position = Vector2(455.99997, 216)
+texture = ExtResource("31_87kko")
+
+[node name="corner-rd-2" type="Sprite2D" parent="Tilemaps/Clip/Node2D"]
+modulate = Color(0, 0, 0, 1)
+self_modulate = Color(0, 0, 0, 1)
+texture_filter = 1
+material = SubResource("CanvasItemMaterial_goqcv")
+position = Vector2(264, -120)
+texture = ExtResource("31_87kko")
+
+[node name="corner-rd-7" type="Sprite2D" parent="Tilemaps/Clip/Node2D"]
+modulate = Color(0, 0, 0, 1)
+self_modulate = Color(0, 0, 0, 1)
+texture_filter = 1
+material = SubResource("CanvasItemMaterial_goqcv")
+position = Vector2(360, -72)
+texture = ExtResource("31_87kko")
+
+[node name="corner-rd-4" type="Sprite2D" parent="Tilemaps/Clip/Node2D"]
+modulate = Color(0, 0, 0, 1)
+self_modulate = Color(0, 0, 0, 1)
+texture_filter = 1
+material = SubResource("CanvasItemMaterial_goqcv")
+position = Vector2(167.99997, 168)
+texture = ExtResource("31_87kko")
+
+[node name="corner-rd-5" type="Sprite2D" parent="Tilemaps/Clip/Node2D"]
+modulate = Color(0, 0, 0, 1)
+self_modulate = Color(0, 0, 0, 1)
+texture_filter = 1
+material = SubResource("CanvasItemMaterial_goqcv")
+position = Vector2(23.999977, 120)
+texture = ExtResource("31_87kko")
+
+[node name="corner-ld-2" type="Sprite2D" parent="Tilemaps/Clip/Node2D"]
+modulate = Color(0, 0, 0, 1)
+self_modulate = Color(0, 0, 0, 1)
+texture_filter = 1
+material = SubResource("CanvasItemMaterial_goqcv")
+position = Vector2(72.000015, -120)
+rotation = -1.5707964
+texture = ExtResource("31_87kko")
+
+[node name="corner-ld-5" type="Sprite2D" parent="Tilemaps/Clip/Node2D"]
+modulate = Color(0, 0, 0, 1)
+self_modulate = Color(0, 0, 0, 1)
+texture_filter = 1
+material = SubResource("CanvasItemMaterial_goqcv")
+position = Vector2(216, 168)
+rotation = -1.5707964
+texture = ExtResource("31_87kko")
+
+[node name="corner-ld-6" type="Sprite2D" parent="Tilemaps/Clip/Node2D"]
+modulate = Color(0, 0, 0, 1)
+self_modulate = Color(0, 0, 0, 1)
+texture_filter = 1
+material = SubResource("CanvasItemMaterial_goqcv")
+position = Vector2(264, 120)
+rotation = -1.5707964
+texture = ExtResource("31_87kko")
+
+[node name="corner-ld-7" type="Sprite2D" parent="Tilemaps/Clip/Node2D"]
+modulate = Color(0, 0, 0, 1)
+self_modulate = Color(0, 0, 0, 1)
+texture_filter = 1
+material = SubResource("CanvasItemMaterial_goqcv")
+position = Vector2(312, 71.99999)
+rotation = -1.5707964
+texture = ExtResource("31_87kko")
+
+[node name="corner-ld-3" type="Sprite2D" parent="Tilemaps/Clip/Node2D"]
+modulate = Color(0, 0, 0, 1)
+self_modulate = Color(0, 0, 0, 1)
+texture_filter = 1
+material = SubResource("CanvasItemMaterial_goqcv")
+position = Vector2(504, -71.99999)
+rotation = -1.5707964
+texture = ExtResource("31_87kko")
+
+[node name="corner-ld-8" type="Sprite2D" parent="Tilemaps/Clip/Node2D"]
+modulate = Color(0, 0, 0, 1)
+self_modulate = Color(0, 0, 0, 1)
+texture_filter = 1
+material = SubResource("CanvasItemMaterial_goqcv")
+position = Vector2(408, 216)
+rotation = -1.5707964
+texture = ExtResource("31_87kko")
+
+[node name="corner-ld-4" type="Sprite2D" parent="Tilemaps/Clip/Node2D"]
+modulate = Color(0, 0, 0, 1)
+self_modulate = Color(0, 0, 0, 1)
+texture_filter = 1
+material = SubResource("CanvasItemMaterial_goqcv")
+position = Vector2(600, -119.99999)
+rotation = -1.5707964
+texture = ExtResource("31_87kko")
+
+[node name="corner-ru-2" type="Sprite2D" parent="Tilemaps/Clip/Node2D"]
+modulate = Color(0, 0, 0, 1)
+self_modulate = Color(0, 0, 0, 1)
+texture_filter = 1
+material = SubResource("CanvasItemMaterial_goqcv")
+position = Vector2(168.00002, 264)
+rotation = -3.1415925
+texture = ExtResource("31_87kko")
+
+[node name="corner-ru-3" type="Sprite2D" parent="Tilemaps/Clip/Node2D"]
+modulate = Color(0, 0, 0, 1)
+self_modulate = Color(0, 0, 0, 1)
+texture_filter = 1
+material = SubResource("CanvasItemMaterial_goqcv")
+position = Vector2(408, 264)
+rotation = -3.1415925
+texture = ExtResource("31_87kko")
+
+[node name="corner-lu-2" type="Sprite2D" parent="Tilemaps/Clip/Node2D"]
+modulate = Color(0, 0, 0, 1)
+self_modulate = Color(0, 0, 0, 1)
+texture_filter = 1
+material = SubResource("CanvasItemMaterial_goqcv")
+position = Vector2(24.000015, 264)
+rotation = 1.5707964
+texture = ExtResource("31_87kko")
+
+[node name="corner-lu-8" type="Sprite2D" parent="Tilemaps/Clip/Node2D"]
+modulate = Color(0, 0, 0, 1)
+self_modulate = Color(0, 0, 0, 1)
+texture_filter = 1
+material = SubResource("CanvasItemMaterial_goqcv")
+position = Vector2(408.00006, 119.99999)
+rotation = 1.5707964
+texture = ExtResource("31_87kko")
+
+[node name="corner-lu-9" type="Sprite2D" parent="Tilemaps/Clip/Node2D"]
+modulate = Color(0, 0, 0, 1)
+self_modulate = Color(0, 0, 0, 1)
+texture_filter = 1
+material = SubResource("CanvasItemMaterial_goqcv")
+position = Vector2(456.0001, 71.99999)
+rotation = 1.5707964
+texture = ExtResource("31_87kko")
+
+[node name="corner-lu-10" type="Sprite2D" parent="Tilemaps/Clip/Node2D"]
+modulate = Color(0, 0, 0, 1)
+self_modulate = Color(0, 0, 0, 1)
+texture_filter = 1
+material = SubResource("CanvasItemMaterial_goqcv")
+position = Vector2(504.0001, 23.999992)
+rotation = 1.5707964
+texture = ExtResource("31_87kko")
+
+[node name="corner-lu-11" type="Sprite2D" parent="Tilemaps/Clip/Node2D"]
+modulate = Color(0, 0, 0, 1)
+self_modulate = Color(0, 0, 0, 1)
+texture_filter = 1
+material = SubResource("CanvasItemMaterial_goqcv")
+position = Vector2(552.0001, -24.000008)
+rotation = 1.5707964
+texture = ExtResource("31_87kko")
+
+[node name="corner-lu-4" type="Sprite2D" parent="Tilemaps/Clip/Node2D"]
+modulate = Color(0, 0, 0, 1)
+self_modulate = Color(0, 0, 0, 1)
+texture_filter = 1
+material = SubResource("CanvasItemMaterial_goqcv")
+position = Vector2(120.00003, -71.99999)
+rotation = 1.5707964
+texture = ExtResource("31_87kko")
+
+[node name="corner-lu-5" type="Sprite2D" parent="Tilemaps/Clip/Node2D"]
+modulate = Color(0, 0, 0, 1)
+self_modulate = Color(0, 0, 0, 1)
+texture_filter = 1
+material = SubResource("CanvasItemMaterial_goqcv")
+position = Vector2(72.00003, -23.99999)
+rotation = 1.5707964
+texture = ExtResource("31_87kko")
+
+[node name="corner-lu-6" type="Sprite2D" parent="Tilemaps/Clip/Node2D"]
+modulate = Color(0, 0, 0, 1)
+self_modulate = Color(0, 0, 0, 1)
+texture_filter = 1
+material = SubResource("CanvasItemMaterial_goqcv")
+position = Vector2(24.00003, 24.000008)
+rotation = 1.5707964
+texture = ExtResource("31_87kko")
+
+[node name="corner-lu-3" type="Sprite2D" parent="Tilemaps/Clip/Node2D"]
+modulate = Color(0, 0, 0, 1)
+self_modulate = Color(0, 0, 0, 1)
+texture_filter = 1
+material = SubResource("CanvasItemMaterial_goqcv")
+position = Vector2(312.00003, 263.99997)
+rotation = 1.5707964
+texture = ExtResource("31_87kko")
+
+[node name="corner-lu-7" type="Sprite2D" parent="Tilemaps/Clip/Node2D"]
+modulate = Color(0, 0, 0, 1)
+self_modulate = Color(0, 0, 0, 1)
+texture_filter = 1
+material = SubResource("CanvasItemMaterial_goqcv")
+position = Vector2(360, 167.99998)
+rotation = 1.5707964
+texture = ExtResource("31_87kko")
+
+[node name="ball" parent="Tilemaps" instance=ExtResource("35_41idh")]
+position = Vector2(-48, 192)
+collision_layer = 4321
+collision_mask = 4321
+num = SubResource("Resource_ftvp4")
+metadata/is_die = SubResource("Resource_1qtut")
+metadata/team_object = SubResource("Resource_ftvp4")
+
+[node name="Polygon2D" type="Polygon2D" parent="Tilemaps"]
+visible = false
+clip_children = 1
+polygon = PackedVector2Array(-162, 212, -148, 216, -89, 215, -72, 231, -73, 297, -54, 312, 12, 311, 23, 298, 23, 278, 40, 263, 156, 265, 165, 278, 167, 301, 183, 311, 298, 311, 311, 296, 315, 275, 329, 264, 395, 266, 408, 280, 409, 298, 422, 310, 531, 311, 546, 305, 552, 294, 553, 235, 538, 217, 469, 216, 456, 201, 450, 171, 418, 170, 407, 181, 406, 203, 394, 214, 372, 214, 362, 200, 361, 183, 368, 171, 389, 169, 406, 160, 407, 143, -105, -119, -119, -105, -123, -85, -141, -74, -159, -69, -168, -53, -169, 197)
+
+[node name="APCellInfoNode" type="Node" parent="Tilemaps"]
+script = ExtResource("38_rrtfh")
+cell_info_res = SubResource("Resource_ph3ti")
+metadata/_custom_type_script = "uid://cicas0bkgf1up"
+
+[node name="ball4" parent="Tilemaps" instance=ExtResource("35_41idh")]
+position = Vector2(336, -96)
+linear_velocity = Vector2(4, 0)
+num = SubResource("Resource_yu40a")
+metadata/is_die = SubResource("Resource_00yp0")
+metadata/team_object = SubResource("Resource_yu40a")
+
+[node name="ball2" parent="Tilemaps" instance=ExtResource("35_41idh")]
+position = Vector2(336, 144)
+num = SubResource("Resource_43j8o")
+metadata/is_die = SubResource("Resource_ya7da")
+metadata/team_object = SubResource("Resource_43j8o")
+
+[node name="ball3" parent="Tilemaps" instance=ExtResource("35_41idh")]
+position = Vector2(-48, -48)
+collision_layer = 4273
+collision_mask = 4273
+num = SubResource("Resource_6xsba")
+metadata/is_die = SubResource("Resource_ia2xj")
+metadata/team_object = SubResource("Resource_6xsba")
+
+[node name="ball_purple" parent="Tilemaps" instance=ExtResource("35_41idh")]
+position = Vector2(144, -96)
+collision_layer = 4305
+collision_mask = 4305
+linear_velocity = Vector2(200, 0)
+num = SubResource("Resource_w08im")
+metadata/is_die = SubResource("Resource_mng47")
+metadata/team_object = SubResource("Resource_w08im")
+
+[node name="World" type="Node2D" parent="."]
+
+[node name="CameraLimit" type="StaticBody2D" parent="World"]
+position = Vector2(1400, -608)
+collision_layer = 8
+
+[node name="Top" type="CollisionShape2D" parent="World/CameraLimit"]
+position = Vector2(-1092, -16)
+shape = SubResource("RectangleShape2D_x4yfu")
+
+[node name="Bottom" type="CollisionShape2D" parent="World/CameraLimit"]
+position = Vector2(-1092, 1284)
+shape = SubResource("RectangleShape2D_x4yfu")
+
+[node name="Left" type="CollisionShape2D" parent="World/CameraLimit"]
+position = Vector2(-2092, 676)
+shape = SubResource("RectangleShape2D_764rb")
+
+[node name="Right" type="CollisionShape2D" parent="World/CameraLimit"]
+position = Vector2(8, 683)
+shape = SubResource("RectangleShape2D_764rb")
+
+[node name="Camera" type="CharacterBody2D" parent="World"]
+visible = false
+position = Vector2(168, 64)
+collision_layer = 4
+collision_mask = 8
+
+[node name="APContMouseDrag2D" type="Node" parent="World/Camera" node_paths=PackedStringArray("body")]
+script = ExtResource("40_l5bvg")
+body = NodePath("..")
+action_move = SubResource("InputEventAction_ob58h")
+metadata/_custom_type_script = "uid://dvoxncb42t31a"
+
+[node name="AP_WASD_2D" type="Node" parent="World/Camera" node_paths=PackedStringArray("character_body")]
+script = ExtResource("41_bc3bs")
+character_body = NodePath("..")
+move_speed = SubResource("Resource_08k7p")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Camera"]
+visible = false
+shape = SubResource("CircleShape2D_pnqar")
+
+[node name="Camera2D" type="Camera2D" parent="World/Camera"]
+zoom = Vector2(0.8, 0.8)
+limit_left = -700
+limit_top = -600
+limit_right = 1400
+limit_bottom = 700
+position_smoothing_speed = 10.0
+editor_draw_limits = true
+
+[node name="APCameraZoomIsNum" type="Node" parent="World/Camera/Camera2D" node_paths=PackedStringArray("camera")]
+script = ExtResource("42_b2atj")
+camera = NodePath("..")
+vares_target = ExtResource("4_ndi7f")
+metadata/_custom_type_script = "uid://dikax674203i8"
+
+[node name="zoom_plus" type="Node" parent="World/Camera/Camera2D"]
+script = ExtResource("43_dpyot")
+_action = "zoom_plus"
+action = "zoom_plus"
+metadata/_custom_type_script = "uid://db7sp186hj8oq"
+
+[node name="APChainNumOp" type="Node" parent="World/Camera/Camera2D/zoom_plus" node_paths=PackedStringArray("node_emitter")]
+script = ExtResource("6_oep7y")
+vares_target = ExtResource("4_ndi7f")
+vares_b = SubResource("Resource_ob58h")
+node_emitter = NodePath("..")
+watch_signal = 0
+metadata/_custom_type_script = "uid://uh8e7y0n0t5e"
+
+[node name="zoom_minus" type="Node" parent="World/Camera/Camera2D"]
+script = ExtResource("43_dpyot")
+_action = "zoom_minus"
+action = "zoom_minus"
+metadata/_custom_type_script = "uid://db7sp186hj8oq"
+
+[node name="APChainNumOp2" type="Node" parent="World/Camera/Camera2D/zoom_minus" node_paths=PackedStringArray("node_emitter")]
+script = ExtResource("6_oep7y")
+vares_target = ExtResource("4_ndi7f")
+vares_b = SubResource("Resource_3hqfm")
+node_emitter = NodePath("..")
+watch_signal = 0
+metadata/_custom_type_script = "uid://uh8e7y0n0t5e"
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer"]
+layout_mode = 2
+
+[node name="Panel-Achievements" parent="CenterContainer/VBoxContainer" instance=ExtResource("44_nlw5j")]
+layout_mode = 2
+
+[node name="VaResSpinBox" type="SpinBox" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+min_value = -999900000000000.0
+max_value = 999900000000000.0
+value = 9.0
+prefix = "gold-spent"
+script = ExtResource("45_761ox")
+var_res = ExtResource("46_qeyou")
+prefix_is_var_res = true
+metadata/_custom_type_script = "uid://bsqxqxasuhg01"
+
+[node name="VaResSpinBox2" type="SpinBox" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+min_value = -999900000000000.0
+max_value = 999900000000000.0
+value = 1.0
+prefix = "map-levels-complete"
+script = ExtResource("45_761ox")
+var_res = ExtResource("47_o0lcy")
+prefix_is_var_res = true
+metadata/_custom_type_script = "uid://bsqxqxasuhg01"

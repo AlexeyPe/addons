@@ -12,10 +12,13 @@ signal added_child_exiting
 func _execute(...args:Array) -> void:
 	execution_started.emit()
 	if scene == null or scene.is_empty():
+		if scene != null:
+			print("APChainAddChild ", scene)
 		executed.emit()
 		executed_failed.emit()
 		return
 	var child:Node = scene.value.instantiate()
+	#print("APChainAddChild add ", child.name)
 	target_parent.add_child(child, force_readable_name)
 	if !child.tree_exiting.is_connected(added_child_exiting_emit):
 		child.tree_exiting.connect(added_child_exiting_emit)
