@@ -5,6 +5,8 @@ class_name APChainSetNum
 @export var disable_when_editor:bool = false
 @export var num_a:VaRNumber
 @export_group("num_a settings", "num_a_")
+@export var num_a_is_meta:String = ""
+@export var num_a_is_meta_owner:Node
 @export var num_a_is_arr:Array[VaRNumber]
 @export var num_a_arr_index:VaRNumber
 @export var num_a_arr_index_meta:String
@@ -15,6 +17,7 @@ class_name APChainSetNum
 	"a = b",
 	"a += b",
 	"a -= b",
+	"b = a",
 ) var operation:int
 
 @export_tool_button("Rename node") var _rename = _rename_self
@@ -31,7 +34,12 @@ func _rename_self():
 func _execute(...args:Array) -> void:
 	if disable_when_editor and Engine.is_editor_hint():return
 	execution_started.emit()
-	if num_a_is_arr.is_empty() == false:
+	if num_a_is_meta.is_empty() == false and num_a_is_meta_owner:
+		if !num_a_is_meta_owner.has_meta(num_a_is_meta):return
+		var meta = num_a_is_meta_owner.get_meta(num_a_is_meta)
+		if meta == null or !(meta is VaRNumber): return
+		num_a = meta
+	elif num_a_is_arr.is_empty() == false:
 		if num_a_arr_index != null and num_a_is_arr.size() >= num_a_arr_index.get_value():
 			num_a = num_a_is_arr[num_a_arr_index.get_value()]
 		elif !num_a_arr_index_meta.is_empty() and num_a_arr_index_meta_owner:
@@ -57,6 +65,8 @@ func _execute(...args:Array) -> void:
 			num_a.set_value(num_a.get_value() + num_b.get_value())
 		2: # a -= b
 			num_a.set_value(num_a.get_value() - num_b.get_value())
+		3: # b = a
+			num_b.set_value(num_a.get_value())
 		_:
 			push_error("APChainSetNum, operation(%s) not found, %s"%[operation, get_path()])
 			executed_failed.emit()

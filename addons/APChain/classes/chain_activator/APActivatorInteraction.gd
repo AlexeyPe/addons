@@ -50,7 +50,6 @@ func target_emit_area(...args:Array):
 		for meta in body.get_meta_list():
 			set_meta(meta, body.get_meta(meta))
 		activated.emit()
-		
 
 func _ready() -> void:
 	_change_enable()

@@ -33,10 +33,10 @@ func replace():
 		child.position = cell * tile_set.tile_size
 		child.position += tile_offset
 		var data:TileData = get_cell_tile_data(cell)
-		add_child(child)
 		if data:
 			var meta:VaRInt = child.get_meta("team_object")
 			meta.set_value(data.get_custom_data("team_object"))
+		add_child(child)
 
 func _ready() -> void:
 	clear_replace()

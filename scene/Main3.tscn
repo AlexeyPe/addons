@@ -1480,6 +1480,8 @@ texture = ExtResource("31_87kko")
 
 [node name="ball" parent="Tilemaps" instance=ExtResource("35_41idh")]
 position = Vector2(-48, 192)
+collision_layer = 4321
+collision_mask = 4321
 num = SubResource("Resource_ftvp4")
 metadata/is_die = SubResource("Resource_1qtut")
 metadata/team_object = SubResource("Resource_ftvp4")
@@ -1496,8 +1498,6 @@ metadata/_custom_type_script = "uid://cicas0bkgf1up"
 
 [node name="ball4" parent="Tilemaps" instance=ExtResource("35_41idh")]
 position = Vector2(336, -96)
-collision_layer = 4209
-collision_mask = 4209
 linear_velocity = Vector2(4, 0)
 num = SubResource("Resource_yu40a")
 metadata/is_die = SubResource("Resource_00yp0")
@@ -1505,8 +1505,6 @@ metadata/team_object = SubResource("Resource_yu40a")
 
 [node name="ball2" parent="Tilemaps" instance=ExtResource("35_41idh")]
 position = Vector2(336, 144)
-collision_layer = 4209
-collision_mask = 4209
 num = SubResource("Resource_43j8o")
 metadata/is_die = SubResource("Resource_ya7da")
 metadata/team_object = SubResource("Resource_43j8o")

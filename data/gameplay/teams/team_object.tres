@@ -12,7 +12,7 @@ resource_local_to_scene = true
 resource_name = "team_object"
 script = ExtResource("1_cwmov")
 min_value_res = SubResource("Resource_fmk5b")
-value = 1
+value = 2
 description = "Команда объекта - здания/юнита.
 0 - Ничья 
 1 - Белые

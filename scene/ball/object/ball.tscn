@@ -1,4 +1,4 @@
-[gd_scene load_steps=49 format=3 uid="uid://bpn7vchp3v0o6"]
+[gd_scene load_steps=50 format=3 uid="uid://bpn7vchp3v0o6"]
 
 [ext_resource type="Resource" uid="uid://58pmfjua3f3c" path="res://scene/ball/object/is_die.tres" id="1_41df4"]
 [ext_resource type="Script" uid="uid://bt65n6o82yg6b" path="res://addons/VarRes/classes/utility/RigidBody2DVaRes.gd" id="1_kwmlm"]
@@ -10,6 +10,7 @@
 [ext_resource type="Script" uid="uid://7mbjsugg8t15" path="res://addons/APController/classes/APContDirTargetRB2D.gd" id="7_8s2x3"]
 [ext_resource type="Script" uid="uid://du8j36g8pf8k8" path="res://addons/APChain/classes/chain/APChainShake.gd" id="8_mih5m"]
 [ext_resource type="Texture2D" uid="uid://c8tb361n7a6t1" path="res://scene/ball/ball-white.png" id="9_cn5ba"]
+[ext_resource type="Texture2D" uid="uid://dj1k42jvxdnen" path="res://imgs/circle.svg" id="9_h5ua5"]
 [ext_resource type="Script" path="res://addons/VarRes/classes/utility/Sprite2DVaRes.gd" id="10_bk5pk"]
 [ext_resource type="Texture2D" uid="uid://xe2ta4d0ybxb" path="res://scene/ball/ball-red.png" id="11_xd8ss"]
 [ext_resource type="Texture2D" uid="uid://ba6d2amdlnvs" path="res://scene/ball/ball-purple.png" id="12_aahtj"]
@@ -156,8 +157,8 @@ value = 1
 metadata/_custom_type_script = "uid://8myr58nwfvfg"
 
 [node name="ball" type="RigidBody2D"]
-collision_layer = 4321
-collision_mask = 4321
+collision_layer = 4209
+collision_mask = 4209
 input_pickable = true
 physics_material_override = SubResource("PhysicsMaterial_6xsba")
 gravity_scale = 0.0
@@ -212,10 +213,10 @@ metadata/_custom_type_script = "uid://du8j36g8pf8k8"
 [node name="BodyLife" type="Sprite2D" parent="."]
 texture_filter = 4
 scale = Vector2(0.25, 0.25000003)
-texture = ExtResource("9_cn5ba")
+texture = ExtResource("11_xd8ss")
 script = ExtResource("10_bk5pk")
 num = ExtResource("2_hsyp7")
-num_is_texture = Array[Texture]([null, ExtResource("9_cn5ba"), ExtResource("11_xd8ss"), ExtResource("12_aahtj"), ExtResource("13_8s2x3")])
+num_is_texture = Array[Texture]([ExtResource("9_h5ua5"), ExtResource("9_cn5ba"), ExtResource("11_xd8ss"), ExtResource("12_aahtj"), ExtResource("13_8s2x3")])
 
 [node name="BodyDie" type="Sprite2D" parent="."]
 visible = false
@@ -223,7 +224,7 @@ self_modulate = Color(1, 1, 1, 0.7058824)
 z_index = 1
 texture_filter = 4
 scale = Vector2(0.25, 0.25)
-texture = ExtResource("14_8s2x3")
+texture = ExtResource("15_mih5m")
 script = ExtResource("10_bk5pk")
 num = ExtResource("2_hsyp7")
 num_is_texture = Array[Texture]([null, ExtResource("14_8s2x3"), ExtResource("15_mih5m"), ExtResource("16_41df4"), ExtResource("17_kwmlm")])
@@ -297,6 +298,7 @@ metadata/_custom_type_script = "uid://xix6u347hwe"
 [node name="APChainSetNum2" type="Node" parent="is_die=now_true" node_paths=PackedStringArray("node_emitter")]
 script = ExtResource("30_c5b2c")
 num_a = ExtResource("33_i8mmh")
+num_a_is_meta = null
 num_a_is_arr = Array[ExtResource("31_dtgiy")]([null, ExtResource("32_rblx7"), ExtResource("5_xd8ss"), ExtResource("33_i8mmh"), ExtResource("34_tggjb")])
 num_a_arr_index = ExtResource("2_hsyp7")
 num_b = SubResource("Resource_dtgiy")
@@ -339,6 +341,7 @@ libraries = {
 editor_description = "Работает при столкновении шара со зданием или полем (или юнитом, но такого не должно происходить)"
 script = ExtResource("27_kwmlm")
 rigid_body_2D = NodePath("..")
+enable = false
 metadata/_custom_type_script = "uid://b5w7jmxkrwose"
 
 [node name="HasMeta=team_object" type="Node" parent="APActivatorInteraction" node_paths=PackedStringArray("meta_owner", "node_emitter")]
@@ -352,6 +355,7 @@ metadata/_custom_type_script = "uid://btail58r0orri"
 
 [node name="APChainSetNum" type="Node" parent="APActivatorInteraction/HasMeta=team_object" node_paths=PackedStringArray("num_a_arr_index_meta_owner", "node_emitter")]
 script = ExtResource("30_c5b2c")
+num_a_is_meta = null
 num_a_is_arr = Array[ExtResource("31_dtgiy")]([null, ExtResource("35_5eue2"), ExtResource("36_h5ua5"), ExtResource("37_s0fuh"), ExtResource("38_rrtt6")])
 num_a_arr_index_meta = "team_object"
 num_a_arr_index_meta_owner = NodePath("../..")
@@ -374,6 +378,7 @@ metadata/_custom_type_script = "uid://btail58r0orri"
 script = ExtResource("30_c5b2c")
 disable_when_editor = true
 num_a = ExtResource("32_rblx7")
+num_a_is_meta = null
 num_a_is_arr = Array[ExtResource("31_dtgiy")]([null, ExtResource("32_rblx7"), ExtResource("5_xd8ss"), ExtResource("33_i8mmh"), ExtResource("34_tggjb")])
 num_a_arr_index = ExtResource("2_hsyp7")
 num_b = SubResource("Resource_dtgiy")
