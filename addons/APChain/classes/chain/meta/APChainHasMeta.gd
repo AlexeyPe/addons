@@ -20,14 +20,16 @@ func _rename_self():
 		name = "HasMeta=%s"%[meta_name]
 
 func _execute(...args:Array) -> void:
-	if not meta_name.is_empty():
-		if meta_owner.has_meta(meta_name):
-			if meta_paste_to_vares:
-				meta_paste_to_vares.paste(meta_owner.get_meta(meta_name))
-			if meta_value_paste:
-				var data = meta_owner.get_meta(meta_name)
-				if data is VarRes:
-					data.paste(meta_value_paste)
-			has_meta_true.emit()
-		else:
-			has_meta_false.emit()
+	if meta_name.is_empty(): 
+		printerr("APChainHasMeta meta_name.is_empty")
+		return
+	if meta_owner.has_meta(meta_name) == false:
+		has_meta_false.emit()
+		return
+	if meta_paste_to_vares:
+		meta_paste_to_vares.paste(meta_owner.get_meta(meta_name))
+	if meta_value_paste:
+		var data = meta_owner.get_meta(meta_name)
+		if data is VarRes:
+			data.paste(meta_value_paste)
+	has_meta_true.emit()

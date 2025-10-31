@@ -27,7 +27,6 @@ func _execute(...args:Array) -> void:
 						#]
 					#)
 					continue
-				print("reparent")
 				child.reparent(new_parent)
 				childs_move.append(child)
 				break

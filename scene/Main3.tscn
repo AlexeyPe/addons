@@ -1,4 +1,4 @@
-[gd_scene load_steps=79 format=4 uid="uid://cpjve54sahjml"]
+[gd_scene load_steps=90 format=4 uid="uid://cpjve54sahjml"]
 
 [ext_resource type="Script" uid="uid://mjk4ctyfa82r" path="res://scene/main.gd" id="1_h5oyc"]
 [ext_resource type="LabelSettings" uid="uid://bs3a6ff5awow6" path="res://scene/UI/LabelSettings/MainLabel.tres" id="2_fcgbl"]
@@ -47,8 +47,13 @@
 [ext_resource type="Script" uid="uid://db7sp186hj8oq" path="res://addons/APChain/classes/chain_activator/APActivatorAction.gd" id="43_dpyot"]
 [ext_resource type="PackedScene" uid="uid://brgu1wss4gdmw" path="res://addons/apach/UI_demo/UI_panel_achievements_1.tscn" id="44_nlw5j"]
 [ext_resource type="Script" uid="uid://bsqxqxasuhg01" path="res://addons/VarRes/classes/UI/VaResSpinBox.gd" id="45_761ox"]
+[ext_resource type="Script" uid="uid://u1gglou2n5jq" path="res://addons/APChain/classes/chain_activator/APActivatorResource.gd" id="46_oep7y"]
 [ext_resource type="Resource" uid="uid://bad72qp0q03km" path="res://addons/apach/UI_demo/res/gold-spent.tres" id="46_qeyou"]
+[ext_resource type="Script" uid="uid://dg3tbem26ogr7" path="res://addons/APChain/classes/chain/childs/APChainAddChild.gd" id="47_8m5be"]
 [ext_resource type="Resource" uid="uid://d220q6y3vwy1e" path="res://addons/apach/UI_demo/res/map-levels-complete.tres" id="47_o0lcy"]
+[ext_resource type="Resource" uid="uid://becjtrflen3qt" path="res://data/gameplay/DropUnit.tres" id="48_8m5be"]
+[ext_resource type="Resource" uid="uid://cprqqf4p6twy3" path="res://data/gameplay/DropCoords.tres" id="48_qctre"]
+[ext_resource type="Script" uid="uid://b03dlfkxcckwp" path="res://addons/VarRes/classes/VarRes.gd" id="49_qctre"]
 
 [sub_resource type="Resource" id="Resource_gs6uc"]
 script = ExtResource("7_8m5be")
@@ -125,6 +130,12 @@ resource_name = "is_die_red"
 script = ExtResource("37_2iqcl")
 metadata/_custom_type_script = "uid://djmnu1e55mp0j"
 
+[sub_resource type="Resource" id="Resource_qctre"]
+resource_local_to_scene = true
+resource_name = "is_now_spawning"
+script = ExtResource("37_2iqcl")
+metadata/_custom_type_script = "uid://djmnu1e55mp0j"
+
 [sub_resource type="Resource" id="Resource_ph3ti"]
 script = ExtResource("39_7h27y")
 metadata/_custom_type_script = "uid://co8mhqm73w3ve"
@@ -154,6 +165,12 @@ resource_name = "is_die"
 script = ExtResource("37_2iqcl")
 metadata/_custom_type_script = "uid://djmnu1e55mp0j"
 
+[sub_resource type="Resource" id="Resource_xn4m2"]
+resource_local_to_scene = true
+resource_name = "is_now_spawning"
+script = ExtResource("37_2iqcl")
+metadata/_custom_type_script = "uid://djmnu1e55mp0j"
+
 [sub_resource type="Resource" id="Resource_43j8o"]
 resource_local_to_scene = true
 resource_name = "team_object"
@@ -173,6 +190,12 @@ resource_name = "is_die"
 script = ExtResource("37_2iqcl")
 metadata/_custom_type_script = "uid://djmnu1e55mp0j"
 
+[sub_resource type="Resource" id="Resource_tdrm0"]
+resource_local_to_scene = true
+resource_name = "is_now_spawning"
+script = ExtResource("37_2iqcl")
+metadata/_custom_type_script = "uid://djmnu1e55mp0j"
+
 [sub_resource type="Resource" id="Resource_6xsba"]
 resource_local_to_scene = true
 resource_name = "team_object"
@@ -189,6 +212,12 @@ metadata/_custom_type_script = "uid://8myr58nwfvfg"
 [sub_resource type="Resource" id="Resource_ia2xj"]
 resource_local_to_scene = true
 resource_name = "is_die"
+script = ExtResource("37_2iqcl")
+metadata/_custom_type_script = "uid://djmnu1e55mp0j"
+
+[sub_resource type="Resource" id="Resource_h0pva"]
+resource_local_to_scene = true
+resource_name = "is_now_spawning"
 script = ExtResource("37_2iqcl")
 metadata/_custom_type_script = "uid://djmnu1e55mp0j"
 
@@ -214,6 +243,12 @@ metadata/_custom_type_script = "uid://8myr58nwfvfg"
 [sub_resource type="Resource" id="Resource_mng47"]
 resource_local_to_scene = true
 resource_name = "is_die"
+script = ExtResource("37_2iqcl")
+metadata/_custom_type_script = "uid://djmnu1e55mp0j"
+
+[sub_resource type="Resource" id="Resource_wuh6h"]
+resource_local_to_scene = true
+resource_name = "is_now_spawning"
 script = ExtResource("37_2iqcl")
 metadata/_custom_type_script = "uid://djmnu1e55mp0j"
 
@@ -243,6 +278,11 @@ metadata/_custom_type_script = "uid://msh8p6ojhxex"
 script = ExtResource("7_8m5be")
 value = -0.05
 metadata/_custom_type_script = "uid://msh8p6ojhxex"
+
+[sub_resource type="Resource" id="Resource_5n2dr"]
+script = ExtResource("37_2iqcl")
+value = true
+metadata/_custom_type_script = "uid://djmnu1e55mp0j"
 
 [node name="Main" type="Node"]
 script = ExtResource("1_h5oyc")
@@ -1485,6 +1525,7 @@ collision_mask = 4321
 num = SubResource("Resource_ftvp4")
 metadata/is_die = SubResource("Resource_1qtut")
 metadata/team_object = SubResource("Resource_ftvp4")
+metadata/is_now_spawning = SubResource("Resource_qctre")
 
 [node name="Polygon2D" type="Polygon2D" parent="Tilemaps"]
 visible = false
@@ -1502,12 +1543,14 @@ linear_velocity = Vector2(4, 0)
 num = SubResource("Resource_yu40a")
 metadata/is_die = SubResource("Resource_00yp0")
 metadata/team_object = SubResource("Resource_yu40a")
+metadata/is_now_spawning = SubResource("Resource_xn4m2")
 
 [node name="ball2" parent="Tilemaps" instance=ExtResource("35_41idh")]
 position = Vector2(336, 144)
 num = SubResource("Resource_43j8o")
 metadata/is_die = SubResource("Resource_ya7da")
 metadata/team_object = SubResource("Resource_43j8o")
+metadata/is_now_spawning = SubResource("Resource_tdrm0")
 
 [node name="ball3" parent="Tilemaps" instance=ExtResource("35_41idh")]
 position = Vector2(-48, -48)
@@ -1516,6 +1559,7 @@ collision_mask = 4273
 num = SubResource("Resource_6xsba")
 metadata/is_die = SubResource("Resource_ia2xj")
 metadata/team_object = SubResource("Resource_6xsba")
+metadata/is_now_spawning = SubResource("Resource_h0pva")
 
 [node name="ball_purple" parent="Tilemaps" instance=ExtResource("35_41idh")]
 position = Vector2(144, -96)
@@ -1525,6 +1569,7 @@ linear_velocity = Vector2(200, 0)
 num = SubResource("Resource_w08im")
 metadata/is_die = SubResource("Resource_mng47")
 metadata/team_object = SubResource("Resource_w08im")
+metadata/is_now_spawning = SubResource("Resource_wuh6h")
 
 [node name="World" type="Node2D" parent="."]
 
@@ -1611,6 +1656,26 @@ vares_b = SubResource("Resource_3hqfm")
 node_emitter = NodePath("..")
 watch_signal = 0
 metadata/_custom_type_script = "uid://uh8e7y0n0t5e"
+
+[node name="DropUnit=changed" type="Node" parent="World"]
+script = ExtResource("46_oep7y")
+_signal = "changed"
+resource = ExtResource("48_8m5be")
+signal = "changed"
+metadata/_custom_type_script = "uid://u1gglou2n5jq"
+
+[node name="APChainAddChild" type="Node" parent="World/DropUnit=changed" node_paths=PackedStringArray("target_parent", "node_emitter")]
+script = ExtResource("47_8m5be")
+target_parent = NodePath("../..")
+scene = ExtResource("48_8m5be")
+set_metadata = Dictionary[String, ExtResource("49_qctre")]({
+"is_now_spawning": SubResource("Resource_5n2dr"),
+"team_object": ExtResource("9_8m5be")
+})
+child_position = ExtResource("48_qctre")
+node_emitter = NodePath("..")
+watch_signal = 0
+metadata/_custom_type_script = "uid://dg3tbem26ogr7"
 
 [node name="CenterContainer" type="CenterContainer" parent="."]
 visible = false

@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="VaRScene" load_steps=2 format=3 uid="uid://becjtrflen3qt"]
+
+[ext_resource type="Script" uid="uid://dapuucp3gf6c8" path="res://addons/VarRes/classes/VaRScene.gd" id="1_emjng"]
+
+[resource]
+resource_name = "DropUnit"
+script = ExtResource("1_emjng")
+metadata/_custom_type_script = "uid://dapuucp3gf6c8"

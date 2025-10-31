@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="VaRVector2" load_steps=2 format=3 uid="uid://cprqqf4p6twy3"]
+
+[ext_resource type="Script" uid="uid://te0304a38ope" path="res://addons/VarRes/classes/VaRVector2.gd" id="1_vc0iu"]
+
+[resource]
+script = ExtResource("1_vc0iu")
+description = "Координаты куда бросили карточку"
+metadata/_custom_type_script = "uid://te0304a38ope"

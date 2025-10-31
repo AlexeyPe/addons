@@ -1,9 +1,0 @@
-[gd_resource type="Resource" script_class="VaRScene" load_steps=2 format=3 uid="uid://c5uqor1qvqiov"]
-
-[ext_resource type="Script" uid="uid://dapuucp3gf6c8" path="res://addons/VarRes/classes/VaRScene.gd" id="1_yauqj"]
-
-[resource]
-resource_local_to_scene = true
-resource_name = "build"
-script = ExtResource("1_yauqj")
-metadata/_custom_type_script = "uid://dapuucp3gf6c8"

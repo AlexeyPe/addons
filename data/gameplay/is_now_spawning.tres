@@ -1,9 +1,9 @@
 [gd_resource type="Resource" script_class="VaRBool" load_steps=2 format=3 uid="uid://duba1x536ikob"]
 
-[ext_resource type="Script" uid="uid://djmnu1e55mp0j" path="res://addons/VarRes/classes/bool/VaRBool.gd" id="1_8055h"]
+[ext_resource type="Script" uid="uid://djmnu1e55mp0j" path="res://addons/VarRes/classes/bool/VaRBool.gd" id="1_lce8t"]
 
 [resource]
 resource_local_to_scene = true
 resource_name = "is_now_spawning"
-script = ExtResource("1_8055h")
+script = ExtResource("1_lce8t")
 metadata/_custom_type_script = "uid://djmnu1e55mp0j"

@@ -8,6 +8,7 @@ signal added_child_exiting
 @export var scene:VaRScene
 @export var force_readable_name:bool = false
 @export var set_metadata:Dictionary[String, VarRes]
+@export var child_position:VaRVector2
 
 func _execute(...args:Array) -> void:
 	execution_started.emit()
@@ -20,6 +21,11 @@ func _execute(...args:Array) -> void:
 	var child:Node = scene.value.instantiate()
 	#print("APChainAddChild add ", child.name)
 	target_parent.add_child(child, force_readable_name)
+	if child_position != null and child is Node2D:
+		if target_parent is Node2D:
+			child.position = target_parent.to_local(child_position.get_value())
+		else:
+			child.position = child_position.get_value()
 	if !child.tree_exiting.is_connected(added_child_exiting_emit):
 		child.tree_exiting.connect(added_child_exiting_emit)
 	if !set_metadata.is_empty():

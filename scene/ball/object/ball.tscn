@@ -1,17 +1,17 @@
-[gd_scene load_steps=50 format=3 uid="uid://bpn7vchp3v0o6"]
+[gd_scene load_steps=53 format=3 uid="uid://bpn7vchp3v0o6"]
 
 [ext_resource type="Resource" uid="uid://58pmfjua3f3c" path="res://scene/ball/object/is_die.tres" id="1_41df4"]
 [ext_resource type="Script" uid="uid://bt65n6o82yg6b" path="res://addons/VarRes/classes/utility/RigidBody2DVaRes.gd" id="1_kwmlm"]
 [ext_resource type="Resource" uid="uid://fmqn72g7wvj0" path="res://data/gameplay/teams/team_object.tres" id="2_hsyp7"]
-[ext_resource type="Script" uid="uid://c8qjdf1iq8aup" path="res://chain_ball.gd" id="3_gsoyy"]
 [ext_resource type="Script" uid="uid://uh8e7y0n0t5e" path="res://addons/APChain/classes/chain/APChainNumOp.gd" id="4_cn5ba"]
+[ext_resource type="Resource" uid="uid://duba1x536ikob" path="res://data/gameplay/is_now_spawning.tres" id="4_utosa"]
 [ext_resource type="Resource" uid="uid://q6vmqvs7sa6j" path="res://data/gameplay/units/units_red.tres" id="5_xd8ss"]
 [ext_resource type="Script" uid="uid://8myr58nwfvfg" path="res://addons/VarRes/classes/numbers/VaRInt.gd" id="6_aahtj"]
 [ext_resource type="Script" uid="uid://7mbjsugg8t15" path="res://addons/APController/classes/APContDirTargetRB2D.gd" id="7_8s2x3"]
 [ext_resource type="Script" uid="uid://du8j36g8pf8k8" path="res://addons/APChain/classes/chain/APChainShake.gd" id="8_mih5m"]
 [ext_resource type="Texture2D" uid="uid://c8tb361n7a6t1" path="res://scene/ball/ball-white.png" id="9_cn5ba"]
 [ext_resource type="Texture2D" uid="uid://dj1k42jvxdnen" path="res://imgs/circle.svg" id="9_h5ua5"]
-[ext_resource type="Script" path="res://addons/VarRes/classes/utility/Sprite2DVaRes.gd" id="10_bk5pk"]
+[ext_resource type="Script" uid="uid://bgxr4wfhuukv" path="res://addons/VarRes/classes/utility/Sprite2DVaRes.gd" id="10_bk5pk"]
 [ext_resource type="Texture2D" uid="uid://xe2ta4d0ybxb" path="res://scene/ball/ball-red.png" id="11_xd8ss"]
 [ext_resource type="Texture2D" uid="uid://ba6d2amdlnvs" path="res://scene/ball/ball-purple.png" id="12_aahtj"]
 [ext_resource type="Script" uid="uid://u1gglou2n5jq" path="res://addons/APChain/classes/chain_activator/APActivatorResource.gd" id="12_gh3y3"]
@@ -39,6 +39,9 @@
 [ext_resource type="Resource" uid="uid://cvpnw37xy7hya" path="res://data/gameplay/field_counters/fields_red.tres" id="36_h5ua5"]
 [ext_resource type="Resource" uid="uid://yjwdocjo8sh2" path="res://data/gameplay/field_counters/fields_purple.tres" id="37_s0fuh"]
 [ext_resource type="Resource" uid="uid://x3id5dx3yucu" path="res://data/gameplay/field_counters/fields_yellow.tres" id="38_rrtt6"]
+[ext_resource type="AudioStream" uid="uid://dqq8qx5giulpj" path="res://scene/wall/Place.tres" id="40_6vhcq"]
+[ext_resource type="Script" uid="uid://dj04ffy0nu74n" path="res://addons/APChain/classes/chain/audio/APChainAudioPlay.gd" id="41_qjon1"]
+[ext_resource type="Script" uid="uid://xv7plkxnebcm" path="res://addons/APChain/classes/chain/set/vares/APChainSetBool.gd" id="42_hfxcm"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_6xsba"]
 friction = 0.0
@@ -175,21 +178,7 @@ num_is_collision_mask = Array[int]([0, 4321, 4209, 4305, 4273])
 metadata/_custom_type_script = "uid://bt65n6o82yg6b"
 metadata/is_die = ExtResource("1_41df4")
 metadata/team_object = ExtResource("2_hsyp7")
-
-[node name="chain_ball" type="Node" parent="." node_paths=PackedStringArray("node_emitter")]
-script = ExtResource("3_gsoyy")
-meta_to_field_id = Dictionary[String, int]({
-"free": 4,
-"purple": 5,
-"red": 1,
-"white": 2,
-"yellow": 3
-})
-unit_type = "red"
-enable = false
-node_emitter = NodePath("..")
-watch_signal = 2
-metadata/_custom_type_script = "uid://c8qjdf1iq8aup"
+metadata/is_now_spawning = ExtResource("4_utosa")
 
 [node name="APContDirTargetRB2D" type="Node" parent="." node_paths=PackedStringArray("body_2d", "node_scale")]
 script = ExtResource("7_8s2x3")
@@ -383,3 +372,30 @@ operation = 1
 node_emitter = NodePath("..")
 watch_signal = 14
 metadata/_custom_type_script = "uid://cldopw0r4n1wj"
+
+[node name="Spawn" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("40_6vhcq")
+volume_db = 5.0
+pitch_scale = 0.95
+
+[node name="is_now_spawning=now_true" type="Node" parent="."]
+script = ExtResource("12_gh3y3")
+_signal = "now_true"
+resource = ExtResource("4_utosa")
+signal = "now_true"
+metadata/_custom_type_script = "uid://u1gglou2n5jq"
+
+[node name="APChainAudioPlay" type="Node" parent="is_now_spawning=now_true" node_paths=PackedStringArray("player", "node_emitter")]
+script = ExtResource("41_qjon1")
+player = NodePath("../../Spawn")
+node_emitter = NodePath("..")
+watch_signal = 0
+metadata/_custom_type_script = "uid://dj04ffy0nu74n"
+
+[node name="SET_is_now_spawning=false" type="Node" parent="is_now_spawning=now_true" node_paths=PackedStringArray("node_emitter")]
+script = ExtResource("42_hfxcm")
+var_bool = ExtResource("4_utosa")
+new_value = false
+node_emitter = NodePath("..")
+watch_signal = 0
+metadata/_custom_type_script = "uid://xv7plkxnebcm"

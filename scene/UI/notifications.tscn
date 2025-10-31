@@ -1,11 +1,12 @@
-[gd_scene load_steps=8 format=3 uid="uid://ck4w0vjnl4qkd"]
+[gd_scene load_steps=9 format=3 uid="uid://ck4w0vjnl4qkd"]
 
 [ext_resource type="Texture2D" uid="uid://cglxi3v4nei02" path="res://imgs/UI/button/button_red.png" id="1_namij"]
 [ext_resource type="Texture2D" uid="uid://b07iujhfuayin" path="res://imgs/icons/fluent-emoji-flat--gem-stone.png" id="2_hjgcb"]
 [ext_resource type="Script" uid="uid://u1gglou2n5jq" path="res://addons/APChain/classes/chain_activator/APActivatorResource.gd" id="3_gwmsk"]
-[ext_resource type="Resource" uid="uid://dmwcplu0r2ovs" path="res://scene/objects/drop_not_enough_money.tres" id="4_0g1ky"]
+[ext_resource type="Resource" uid="uid://bbdayxddihvth" path="res://data/UI/NotifyNeedBalance.tres" id="4_0g1ky"]
 [ext_resource type="Script" uid="uid://bqn6e76istclq" path="res://addons/APChain/classes/chain/set/APChainSetVisible.gd" id="5_cqnaf"]
 [ext_resource type="Script" uid="uid://dj04ffy0nu74n" path="res://addons/APChain/classes/chain/audio/APChainAudioPlay.gd" id="7_0g1ky"]
+[ext_resource type="Script" uid="uid://xv7plkxnebcm" path="res://addons/APChain/classes/chain/set/vares/APChainSetBool.gd" id="7_eutfn"]
 [ext_resource type="AudioStream" uid="uid://dr3yimv6j8o3x" path="res://audio/ButtonError.tres" id="8_eutfn"]
 
 [node name="Notifications" type="Control"]
@@ -65,29 +66,44 @@ texture = ExtResource("2_hjgcb")
 expand_mode = 1
 stretch_mode = 5
 
-[node name="notify_need_balance=now_true" type="Node" parent="VBoxContainer/need_balance"]
+[node name="NotifyNeedBalance=now_true" type="Node" parent="VBoxContainer/need_balance"]
 script = ExtResource("3_gwmsk")
-_signal = "if_false"
+_signal = "now_true"
 resource = ExtResource("4_0g1ky")
-signal = "if_false"
+signal = "now_true"
 metadata/_custom_type_script = "uid://u1gglou2n5jq"
 
-[node name="APChainSetVisible" type="Node" parent="VBoxContainer/need_balance/notify_need_balance=now_true" node_paths=PackedStringArray("nodes_visible_true", "node_emitter")]
+[node name="APChainSetVisible" type="Node" parent="VBoxContainer/need_balance/NotifyNeedBalance=now_true" node_paths=PackedStringArray("nodes_visible_true", "node_emitter")]
 script = ExtResource("5_cqnaf")
 nodes_visible_true = [NodePath("../..")]
-wait = null
 node_emitter = NodePath("..")
 watch_signal = 0
 metadata/_custom_type_script = "uid://bqn6e76istclq"
 
-[node name="APChainAudioPlay" type="Node" parent="VBoxContainer/need_balance/notify_need_balance=now_true" node_paths=PackedStringArray("player", "node_emitter")]
+[node name="APChainAudioPlay" type="Node" parent="VBoxContainer/need_balance/NotifyNeedBalance=now_true" node_paths=PackedStringArray("player", "node_emitter")]
 script = ExtResource("7_0g1ky")
 player = NodePath("../../../../Error")
 node_emitter = NodePath("..")
 watch_signal = 0
 metadata/_custom_type_script = "uid://dj04ffy0nu74n"
 
-[node name="APChainSetVisible2" type="Node" parent="VBoxContainer/need_balance/notify_need_balance=now_true" node_paths=PackedStringArray("nodes_visible_false", "node_emitter")]
+[node name="APChainSetBool" type="Node" parent="VBoxContainer/need_balance/NotifyNeedBalance=now_true" node_paths=PackedStringArray("node_emitter")]
+script = ExtResource("7_eutfn")
+var_bool = ExtResource("4_0g1ky")
+new_value = false
+wait = 1.0
+node_emitter = NodePath("..")
+watch_signal = 0
+metadata/_custom_type_script = "uid://xv7plkxnebcm"
+
+[node name="NotifyNeedBalance=now_false" type="Node" parent="VBoxContainer/need_balance"]
+script = ExtResource("3_gwmsk")
+_signal = "now_false"
+resource = ExtResource("4_0g1ky")
+signal = "now_false"
+metadata/_custom_type_script = "uid://u1gglou2n5jq"
+
+[node name="APChainSetVisible" type="Node" parent="VBoxContainer/need_balance/NotifyNeedBalance=now_false" node_paths=PackedStringArray("nodes_visible_false", "node_emitter")]
 script = ExtResource("5_cqnaf")
 nodes_visible_false = [NodePath("../..")]
 wait = 1.0

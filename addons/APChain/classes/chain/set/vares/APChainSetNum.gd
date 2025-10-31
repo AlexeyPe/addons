@@ -18,6 +18,8 @@ class_name APChainSetNum
 	"a += b",
 	"a -= b",
 	"b = a",
+	"b += a",
+	"b -= a",
 ) var operation:int
 
 @export_tool_button("Rename node") var _rename = _rename_self
@@ -67,6 +69,10 @@ func _execute(...args:Array) -> void:
 			num_a.set_value(num_a.get_value() - num_b.get_value())
 		3: # b = a
 			num_b.set_value(num_a.get_value())
+		4: # b += a
+			num_b.set_value(num_b.get_value() + num_a.get_value())
+		5: # b -= a
+			num_b.set_value(num_b.get_value() - num_a.get_value())
 		_:
 			push_error("APChainSetNum, operation(%s) not found, %s"%[operation, get_path()])
 			executed_failed.emit()

@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://7bappgufejs0"]
+[gd_scene load_steps=37 format=3 uid="uid://7bappgufejs0"]
 
 [ext_resource type="Script" uid="uid://bt65n6o82yg6b" path="res://addons/VarRes/classes/utility/RigidBody2DVaRes.gd" id="1_31jrl"]
 [ext_resource type="Resource" uid="uid://fmqn72g7wvj0" path="res://data/gameplay/teams/team_object.tres" id="2_qi7cb"]
@@ -8,18 +8,23 @@
 [ext_resource type="Script" uid="uid://d4aoqudvdak1p" path="res://addons/VarRes/classes/utility/NinePatchRectVaRes.gd" id="5_4uxxu"]
 [ext_resource type="Script" uid="uid://dyjt63xqg1uru" path="res://addons/APChain/classes/chain/drag_and_drop/APDropZone.gd" id="6_odmc6"]
 [ext_resource type="Script" uid="uid://djmnu1e55mp0j" path="res://addons/VarRes/classes/bool/VaRBool.gd" id="7_d0akw"]
+[ext_resource type="Resource" uid="uid://cprqqf4p6twy3" path="res://data/gameplay/DropCoords.tres" id="9_770ey"]
 [ext_resource type="Shader" uid="uid://bvvll4jp3kavo" path="res://addons/shadercollectionap/shader/outline/outline-dotted.gdshader" id="11_u3w2t"]
 [ext_resource type="Script" uid="uid://up8up6hch40i" path="res://addons/APChain/classes/chain/if/APChainIfNum.gd" id="12_p0qbc"]
 [ext_resource type="Script" uid="uid://u1gglou2n5jq" path="res://addons/APChain/classes/chain_activator/APActivatorResource.gd" id="16_qv27a"]
 [ext_resource type="Script" uid="uid://dg3tbem26ogr7" path="res://addons/APChain/classes/chain/childs/APChainAddChild.gd" id="19_nywqj"]
+[ext_resource type="Resource" uid="uid://becjtrflen3qt" path="res://data/gameplay/DropUnit.tres" id="20_4xrso"]
 [ext_resource type="Script" uid="uid://cldopw0r4n1wj" path="res://addons/APChain/classes/chain/set/vares/APChainSetNum.gd" id="20_qi7cb"]
 [ext_resource type="Script" uid="uid://b03dlfkxcckwp" path="res://addons/VarRes/classes/VarRes.gd" id="20_rg3yy"]
+[ext_resource type="Resource" uid="uid://4ok8jqiesqsv" path="res://data/gameplay/Money.tres" id="21_4uxxu"]
 [ext_resource type="Resource" uid="uid://cehqu7jl7rmu3" path="res://data/gameplay/teams/team_player.tres" id="21_673ey"]
 [ext_resource type="Script" uid="uid://ck2yuex0aket8" path="res://addons/VarRes/classes/numbers/VaRNumber.gd" id="21_770ey"]
 [ext_resource type="Resource" uid="uid://bbu6crs5k6ct6" path="res://data/gameplay/field_counters/fields_white.tres" id="22_4xrso"]
 [ext_resource type="Script" uid="uid://xix6u347hwe" path="res://addons/APChain/classes/chain/set/APChainSetCollisionEnable.gd" id="22_6e2r8"]
 [ext_resource type="Resource" uid="uid://cvpnw37xy7hya" path="res://data/gameplay/field_counters/fields_red.tres" id="23_4uxxu"]
 [ext_resource type="Script" uid="uid://xv7plkxnebcm" path="res://addons/APChain/classes/chain/set/vares/APChainSetBool.gd" id="23_4yp7p"]
+[ext_resource type="Script" uid="uid://bdidilem4ibp3" path="res://addons/APChain/classes/chain/drag_and_drop/APChainSetDropSuccess.gd" id="23_odmc6"]
+[ext_resource type="Resource" uid="uid://bbdayxddihvth" path="res://data/UI/NotifyNeedBalance.tres" id="24_d0akw"]
 [ext_resource type="Resource" uid="uid://yjwdocjo8sh2" path="res://data/gameplay/field_counters/fields_purple.tres" id="24_odmc6"]
 [ext_resource type="Resource" uid="uid://x3id5dx3yucu" path="res://data/gameplay/field_counters/fields_yellow.tres" id="25_d0akw"]
 [ext_resource type="Script" uid="uid://b5w7jmxkrwose" path="res://addons/APChain/classes/chain_activator/APActivatorInteraction.gd" id="26_qi7cb"]
@@ -125,6 +130,9 @@ mouse_filter = 1
 script = ExtResource("6_odmc6")
 can_drop = SubResource("Resource_y8fmx")
 metadata_container = NodePath("../DropCard")
+when_drop_set_vector = ExtResource("9_770ey")
+when_drop_set_success = false
+when_drop_set_can_drop = false
 visible_true = [NodePath("outline")]
 visible_false = [NodePath("outline")]
 metadata/_custom_type_script = "uid://dyjt63xqg1uru"
@@ -216,12 +224,80 @@ metadata/_custom_type_script = "uid://b5w7jmxkrwose"
 
 [node name="APChainHasMeta" type="Node" parent="DropCard" node_paths=PackedStringArray("meta_owner", "node_emitter")]
 script = ExtResource("27_770ey")
-meta_name = "build"
+meta_name = "price_card"
 meta_owner = NodePath("..")
+node_emitter = NodePath("..")
+watch_signal = 0
+metadata/_custom_type_script = "uid://btail58r0orri"
+
+[node name="can_pay_drop" type="Node" parent="DropCard/APChainHasMeta" node_paths=PackedStringArray("num_a_is_meta_owner", "node_emitter")]
+script = ExtResource("12_p0qbc")
+num_b = ExtResource("21_4uxxu")
+condition = 5
+num_a_is_meta = "price_card"
+num_a_is_meta_owner = NodePath("../..")
+node_emitter = NodePath("..")
+watch_signal = 0
+metadata/_custom_type_script = "uid://up8up6hch40i"
+
+[node name="HasMeta=build" type="Node" parent="DropCard/APChainHasMeta/can_pay_drop" node_paths=PackedStringArray("meta_owner", "node_emitter")]
+script = ExtResource("27_770ey")
+meta_name = "build"
+meta_owner = NodePath("../../..")
 meta_paste_to_vares = ExtResource("28_4xrso")
 node_emitter = NodePath("..")
 watch_signal = 0
 metadata/_custom_type_script = "uid://btail58r0orri"
+
+[node name="HasMeta=unit" type="Node" parent="DropCard/APChainHasMeta/can_pay_drop" node_paths=PackedStringArray("meta_owner", "node_emitter")]
+script = ExtResource("27_770ey")
+meta_name = "unit"
+meta_owner = NodePath("../../..")
+meta_paste_to_vares = ExtResource("20_4xrso")
+node_emitter = NodePath("..")
+watch_signal = 0
+metadata/_custom_type_script = "uid://btail58r0orri"
+
+[node name="SET_can_drop=true" type="Node" parent="DropCard/APChainHasMeta/can_pay_drop/HasMeta=unit" node_paths=PackedStringArray("node_emitter")]
+script = ExtResource("23_4yp7p")
+var_bool = SubResource("Resource_y8fmx")
+node_emitter = NodePath("..")
+watch_signal = 0
+metadata/_custom_type_script = "uid://xv7plkxnebcm"
+
+[node name="APChainSetNum" type="Node" parent="DropCard/APChainHasMeta/can_pay_drop" node_paths=PackedStringArray("num_a_is_meta_owner", "node_emitter")]
+script = ExtResource("20_qi7cb")
+num_a_is_meta = "price_card"
+num_a_is_meta_owner = NodePath("../../..")
+num_b = ExtResource("21_4uxxu")
+operation = 5
+node_emitter = NodePath("..")
+watch_signal = 0
+metadata/_custom_type_script = "uid://cldopw0r4n1wj"
+
+[node name="APChainSetDropSuccess" type="Node" parent="DropCard/APChainHasMeta/can_pay_drop" node_paths=PackedStringArray("drop_zone", "node_emitter")]
+script = ExtResource("23_odmc6")
+drop_zone = NodePath("../../../../APDropZone")
+node_emitter = NodePath("..")
+watch_signal = 0
+metadata/_custom_type_script = "uid://bdidilem4ibp3"
+
+[node name="APChainSetDropSuccess2" type="Node" parent="DropCard/APChainHasMeta/can_pay_drop" node_paths=PackedStringArray("drop_zone", "node_emitter")]
+script = ExtResource("23_odmc6")
+drop_zone = NodePath("../../../../APDropZone")
+success = false
+can_drop = true
+node_emitter = NodePath("..")
+watch_signal = 1
+metadata/_custom_type_script = "uid://bdidilem4ibp3"
+
+[node name="APChainSetBool" type="Node" parent="DropCard/APChainHasMeta/can_pay_drop" node_paths=PackedStringArray("node_emitter")]
+script = ExtResource("23_4yp7p")
+var_bool = ExtResource("24_d0akw")
+skip_if_equal = false
+node_emitter = NodePath("..")
+watch_signal = 1
+metadata/_custom_type_script = "uid://xv7plkxnebcm"
 
 [node name="team_object=changed" type="Node" parent="."]
 script = ExtResource("16_qv27a")
