@@ -17,6 +17,7 @@ class_name RigidBody2DVaRes
 
 @export_group("Debug", "debug_")
 @export var debug_label_settings:LabelSettings
+@export var debug_enable:bool = false
 
 var debug:CanvasLayer = null
 
@@ -33,6 +34,7 @@ func _ready() -> void:
 	update_rigidbody()
 
 func _mouse_enter() -> void:
+	if !debug_enable: return
 	var layer = CanvasLayer.new()
 	var label = Label.new()
 	layer.add_child(label)
@@ -46,5 +48,5 @@ func _mouse_enter() -> void:
 	get_tree().root.add_child(layer)
 
 func _mouse_exit() -> void:
-	if debug:
+	if debug_enable and debug:
 		debug.queue_free()

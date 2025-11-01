@@ -8,6 +8,7 @@ value = 0
 metadata/_custom_type_script = "uid://8myr58nwfvfg"
 
 [resource]
+resource_name = "units_yellow"
 script = ExtResource("1_oea7h")
 min_value_res = SubResource("Resource_6h4vb")
 value = 0

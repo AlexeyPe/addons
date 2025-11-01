@@ -1,0 +1,402 @@
+[gd_scene load_steps=45 format=3 uid="uid://lruopyb4i525"]
+
+[ext_resource type="Script" uid="uid://bt65n6o82yg6b" path="res://addons/VarRes/classes/utility/RigidBody2DVaRes.gd" id="1_gidta"]
+[ext_resource type="LabelSettings" uid="uid://b3k8fh0kbyut2" path="res://UI_Resources/debug.tres" id="2_yjg0o"]
+[ext_resource type="Resource" uid="uid://duba1x536ikob" path="res://data/gameplay/is_now_spawning.tres" id="3_0cu10"]
+[ext_resource type="Resource" uid="uid://fmqn72g7wvj0" path="res://data/gameplay/teams/team_object.tres" id="4_viqfs"]
+[ext_resource type="AudioStream" uid="uid://dqq8qx5giulpj" path="res://scene/wall/Place.tres" id="5_hlmbq"]
+[ext_resource type="AudioStream" uid="uid://xmfbkrbm231" path="res://scene/wall/Damage.tres" id="6_raidc"]
+[ext_resource type="AudioStream" uid="uid://brh8k437nirvb" path="res://scene/wall/Destory.tres" id="7_b14ul"]
+[ext_resource type="Shader" uid="uid://cdpofvwclxk2r" path="res://addons/shadercollectionap/transition.gdshader" id="8_3sc3x"]
+[ext_resource type="Texture2D" uid="uid://co27q0maog4o5" path="res://scene/castle/catle-red.png" id="9_3bdgr"]
+[ext_resource type="Script" uid="uid://cccrm8vuks5fs" path="res://addons/VarRes/classes/UI/VaResLabel.gd" id="10_7yrni"]
+[ext_resource type="Script" uid="uid://bgxr4wfhuukv" path="res://addons/VarRes/classes/utility/Sprite2DVaRes.gd" id="10_kf80a"]
+[ext_resource type="Texture2D" uid="uid://d3ock8w00x5i3" path="res://scene/castle/catle-white.png" id="11_hhvjp"]
+[ext_resource type="Resource" uid="uid://d2sb1jfqfn741" path="res://scene/wall/wall_hp.tres" id="11_vk7fl"]
+[ext_resource type="Script" uid="uid://u1gglou2n5jq" path="res://addons/APChain/classes/chain_activator/APActivatorResource.gd" id="12_bnopg"]
+[ext_resource type="Texture2D" uid="uid://cictyt62t2pu1" path="res://scene/castle/catle-purple.png" id="12_q6ar8"]
+[ext_resource type="Script" uid="uid://dj04ffy0nu74n" path="res://addons/APChain/classes/chain/audio/APChainAudioPlay.gd" id="13_3tkra"]
+[ext_resource type="Texture2D" uid="uid://rkaycuvuqarl" path="res://scene/castle/catle-yellow.png" id="13_px0s4"]
+[ext_resource type="Script" uid="uid://xv7plkxnebcm" path="res://addons/APChain/classes/chain/set/vares/APChainSetBool.gd" id="14_73fss"]
+[ext_resource type="Script" uid="uid://dujhj0672f2qk" path="res://addons/APChain/classes/chain/meta/APChainAreaMeta.gd" id="15_u8cxu"]
+[ext_resource type="Script" uid="uid://b5w7jmxkrwose" path="res://addons/APChain/classes/chain_activator/APActivatorInteraction.gd" id="16_wfwoo"]
+[ext_resource type="Script" uid="uid://up8up6hch40i" path="res://addons/APChain/classes/chain/if/APChainIfNum.gd" id="17_eklp7"]
+[ext_resource type="Script" uid="uid://du8j36g8pf8k8" path="res://addons/APChain/classes/chain/APChainShake.gd" id="18_j74bj"]
+[ext_resource type="Script" uid="uid://cldopw0r4n1wj" path="res://addons/APChain/classes/chain/set/vares/APChainSetNum.gd" id="19_qejcq"]
+[ext_resource type="Script" uid="uid://8myr58nwfvfg" path="res://addons/VarRes/classes/numbers/VaRInt.gd" id="20_l8lix"]
+[ext_resource type="Script" uid="uid://dfnv5lgi83cdo" path="res://addons/APChain/classes/chain/APChainAnimPlay.gd" id="21_scwa6"]
+[ext_resource type="Script" uid="uid://bein4dn8ts6bb" path="res://addons/APChain/classes/chain/childs/APChainDelChildsArr.gd" id="22_roy31"]
+[ext_resource type="Resource" uid="uid://d3qmvgy18caw0" path="res://data/gameplay/CastleCount.tres" id="26_1nmpc"]
+[ext_resource type="Resource" uid="uid://4ok8jqiesqsv" path="res://data/gameplay/Money.tres" id="27_hhvjp"]
+[ext_resource type="Resource" uid="uid://cehqu7jl7rmu3" path="res://data/gameplay/teams/team_player.tres" id="27_px0s4"]
+[ext_resource type="Texture2D" uid="uid://b07iujhfuayin" path="res://imgs/icons/fluent-emoji-flat--gem-stone.png" id="28_hhvjp"]
+[ext_resource type="Script" uid="uid://cg1hxk7i11oi3" path="res://addons/APChain/classes/chain/APChainParticles.gd" id="28_q6ar8"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_pkce4"]
+resource_local_to_scene = true
+shader = ExtResource("8_3sc3x")
+shader_parameter/use_sprite_alpha = true
+shader_parameter/use_transition_texture = false
+shader_parameter/transition_type = 0
+shader_parameter/position = Vector2(0.5, 0.5)
+shader_parameter/invert = true
+shader_parameter/grid_size = Vector2(4, 4)
+shader_parameter/rotation_angle = 0.0
+shader_parameter/stagger = Vector2(0, 0)
+shader_parameter/stagger_frequency = Vector2i(2, 2)
+shader_parameter/flip_frequency = Vector2i(1, 1)
+shader_parameter/basic_feather = 0.0
+shader_parameter/use_mask_size = false
+shader_parameter/mask_size = Vector2(100, 100)
+shader_parameter/edges = 6
+shader_parameter/shape_feather = 0.1
+shader_parameter/sectors = 1
+shader_parameter/clock_feather = 0.0
+shader_parameter/progress = 1.0
+shader_parameter/progress_bias = Vector2(0, 0)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_m8rlx"]
+radius = 22.0
+
+[sub_resource type="LabelSettings" id="LabelSettings_273i7"]
+resource_local_to_scene = true
+font_size = 12
+outline_size = 7
+outline_color = Color(0.13, 0.13, 0.13, 1)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_lj18c"]
+radius = 24.0
+
+[sub_resource type="Animation" id="Animation_pkce4"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:material:shader_parameter/progress")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("hp:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_sn1rv"]
+resource_name = "destroy"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:material:shader_parameter/progress")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [1.0, 0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("hp:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_kxtcs"]
+_data = {
+&"RESET": SubResource("Animation_pkce4"),
+&"destroy": SubResource("Animation_sn1rv")
+}
+
+[sub_resource type="Resource" id="Resource_13u1y"]
+script = ExtResource("20_l8lix")
+value = 1
+metadata/_custom_type_script = "uid://8myr58nwfvfg"
+
+[sub_resource type="Resource" id="Resource_ij66p"]
+script = ExtResource("20_l8lix")
+value = 0
+metadata/_custom_type_script = "uid://8myr58nwfvfg"
+
+[sub_resource type="Resource" id="Resource_ivxqj"]
+script = ExtResource("20_l8lix")
+value = 1
+metadata/_custom_type_script = "uid://8myr58nwfvfg"
+
+[sub_resource type="Resource" id="Resource_px0s4"]
+script = ExtResource("20_l8lix")
+value = 1
+metadata/_custom_type_script = "uid://8myr58nwfvfg"
+
+[sub_resource type="Resource" id="Resource_1nmpc"]
+script = ExtResource("20_l8lix")
+value = 1
+metadata/_custom_type_script = "uid://8myr58nwfvfg"
+
+[sub_resource type="Curve" id="Curve_q6ar8"]
+_data = [Vector2(0.5, 1), 0.0, -2.0, 0, 1, Vector2(1, 0), -2.0, 0.0, 1, 0]
+point_count = 2
+metadata/_snap_enabled = true
+
+[node name="BuildCastle" type="RigidBody2D"]
+z_index = 1
+input_pickable = true
+freeze = true
+freeze_mode = 1
+contact_monitor = true
+max_contacts_reported = 1
+script = ExtResource("1_gidta")
+debug_label_settings = ExtResource("2_yjg0o")
+debug_enable = null
+metadata/_custom_type_script = "uid://bt65n6o82yg6b"
+metadata/is_now_spawning = ExtResource("3_0cu10")
+metadata/team_object = ExtResource("4_viqfs")
+
+[node name="Spawn" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_hlmbq")
+volume_db = 5.0
+pitch_scale = 0.95
+
+[node name="Damage" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_raidc")
+pitch_scale = 0.9
+max_distance = 350.0
+bus = &"Field"
+
+[node name="Destory" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("7_b14ul")
+volume_db = 2.0
+max_distance = 350.0
+bus = &"Field"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 4
+material = SubResource("ShaderMaterial_pkce4")
+position = Vector2(0, -5)
+scale = Vector2(0.43956044, 0.4395606)
+texture = ExtResource("9_3bdgr")
+script = ExtResource("10_kf80a")
+num = ExtResource("4_viqfs")
+num_is_texture = Array[Texture]([null, ExtResource("11_hhvjp"), ExtResource("9_3bdgr"), ExtResource("12_q6ar8"), ExtResource("13_px0s4")])
+metadata/_custom_type_script = "uid://bgxr4wfhuukv"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+shape = SubResource("CircleShape2D_m8rlx")
+debug_color = Color(0.91, 0, 0.7280002, 0.6039216)
+
+[node name="hp" type="Label" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -38.5
+offset_top = -9.5
+offset_right = 38.5
+offset_bottom = 7.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(1, 0.2901961, 0.2901961, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_offset_y = 1
+theme_override_constants/outline_size = 7
+theme_override_constants/shadow_outline_size = 12
+text = "2"
+label_settings = SubResource("LabelSettings_273i7")
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("10_7yrni")
+var_res = ExtResource("11_vk7fl")
+metadata/_custom_type_script = "uid://cccrm8vuks5fs"
+
+[node name="is_now_spawning=now_true" type="Node" parent="."]
+script = ExtResource("12_bnopg")
+_signal = "now_true"
+resource = ExtResource("3_0cu10")
+signal = "now_true"
+metadata/_custom_type_script = "uid://u1gglou2n5jq"
+
+[node name="APChainAudioPlay" type="Node" parent="is_now_spawning=now_true" node_paths=PackedStringArray("player", "node_emitter")]
+script = ExtResource("13_3tkra")
+player = NodePath("../../Spawn")
+node_emitter = NodePath("..")
+watch_signal = 0
+metadata/_custom_type_script = "uid://dj04ffy0nu74n"
+
+[node name="SET_is_now_spawning=false" type="Node" parent="is_now_spawning=now_true" node_paths=PackedStringArray("node_emitter")]
+script = ExtResource("14_73fss")
+var_bool = ExtResource("3_0cu10")
+new_value = false
+node_emitter = NodePath("..")
+watch_signal = 0
+metadata/_custom_type_script = "uid://xv7plkxnebcm"
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 240
+collision_mask = 240
+monitorable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+visible = false
+shape = SubResource("CircleShape2D_lj18c")
+debug_color = Color(0, 0.5950001, 0.7, 0.32941177)
+
+[node name="APChainAreaMeta" type="Node" parent="Area2D" node_paths=PackedStringArray("node_emitter")]
+script = ExtResource("15_u8cxu")
+node_emitter = NodePath("..")
+watch_signal = 2
+metadata/_custom_type_script = "uid://dujhj0672f2qk"
+
+[node name="Destroy" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_kxtcs")
+}
+
+[node name="BallTouched" type="Node" parent="." node_paths=PackedStringArray("rigid_body_2D")]
+script = ExtResource("16_wfwoo")
+rigid_body_2D = NodePath("..")
+wait_buffer = 0.1
+metadata/_custom_type_script = "uid://b5w7jmxkrwose"
+
+[node name="ball_team_is_field_team" type="Node" parent="BallTouched" node_paths=PackedStringArray("num_a_is_meta_owner", "node_emitter")]
+script = ExtResource("17_eklp7")
+num_b = ExtResource("4_viqfs")
+num_a_is_meta = "team_object"
+num_a_is_meta_owner = NodePath("..")
+node_emitter = NodePath("..")
+watch_signal = 0
+metadata/_custom_type_script = "uid://up8up6hch40i"
+
+[node name="APChainShake2D" type="Node" parent="BallTouched/ball_team_is_field_team" node_paths=PackedStringArray("target_node_shake", "node_emitter")]
+script = ExtResource("18_j74bj")
+target_node_shake = NodePath("../../../Sprite2D")
+decay = 0.85
+max_offset = Vector2(10, 10)
+trauma_power = 1.5
+add_trauma = 0.75
+node_emitter = NodePath("..")
+watch_signal = 1
+metadata/_custom_type_script = "uid://du8j36g8pf8k8"
+
+[node name="SET_wall_hp" type="Node" parent="BallTouched/ball_team_is_field_team" node_paths=PackedStringArray("node_emitter")]
+script = ExtResource("19_qejcq")
+num_a = ExtResource("11_vk7fl")
+num_b = SubResource("Resource_13u1y")
+operation = 2
+node_emitter = NodePath("..")
+watch_signal = 1
+metadata/_custom_type_script = "uid://cldopw0r4n1wj"
+
+[node name="can_destroy" type="Node" parent="BallTouched/ball_team_is_field_team/SET_wall_hp" node_paths=PackedStringArray("node_emitter")]
+script = ExtResource("17_eklp7")
+num_a = ExtResource("11_vk7fl")
+num_b = SubResource("Resource_ij66p")
+node_emitter = NodePath("..")
+watch_signal = 2
+metadata/_custom_type_script = "uid://up8up6hch40i"
+
+[node name="PlayDamage" type="Node" parent="BallTouched/ball_team_is_field_team/SET_wall_hp/can_destroy" node_paths=PackedStringArray("player2D", "node_emitter")]
+script = ExtResource("13_3tkra")
+player2D = NodePath("../../../../../Damage")
+node_emitter = NodePath("..")
+watch_signal = 1
+metadata/_custom_type_script = "uid://dj04ffy0nu74n"
+
+[node name="PlayDestroy" type="Node" parent="BallTouched/ball_team_is_field_team/SET_wall_hp/can_destroy" node_paths=PackedStringArray("player2D", "node_emitter")]
+script = ExtResource("13_3tkra")
+player2D = NodePath("../../../../../Destory")
+node_emitter = NodePath("..")
+watch_signal = 0
+metadata/_custom_type_script = "uid://dj04ffy0nu74n"
+
+[node name="APChainAnimPlay" type="Node" parent="BallTouched/ball_team_is_field_team/SET_wall_hp/can_destroy" node_paths=PackedStringArray("animation_player", "node_emitter")]
+script = ExtResource("21_scwa6")
+animation_player = NodePath("../../../../../Destroy")
+speed = 2.0
+skip_if_play = true
+anim_name = 1
+node_emitter = NodePath("..")
+watch_signal = 0
+metadata/_custom_type_script = "uid://dfnv5lgi83cdo"
+
+[node name="SET_castle_count" type="Node" parent="BallTouched/ball_team_is_field_team/SET_wall_hp/can_destroy/APChainAnimPlay" node_paths=PackedStringArray("node_emitter")]
+script = ExtResource("19_qejcq")
+num_a = ExtResource("26_1nmpc")
+num_b = SubResource("Resource_ivxqj")
+operation = 2
+node_emitter = NodePath("..")
+watch_signal = 0
+metadata/_custom_type_script = "uid://cldopw0r4n1wj"
+
+[node name="APChainDelChildsArr" type="Node" parent="BallTouched/ball_team_is_field_team/SET_wall_hp/can_destroy/APChainAnimPlay/SET_castle_count" node_paths=PackedStringArray("nodes", "node_emitter")]
+script = ExtResource("22_roy31")
+nodes = [NodePath("../../../../../../..")]
+node_emitter = NodePath("..")
+watch_signal = 2
+metadata/_custom_type_script = "uid://bein4dn8ts6bb"
+
+[node name="ball_team_is_player" type="Node" parent="BallTouched/ball_team_is_field_team" node_paths=PackedStringArray("num_a_is_meta_owner", "node_emitter")]
+script = ExtResource("17_eklp7")
+num_b = ExtResource("27_px0s4")
+num_a_is_meta = "team_object"
+num_a_is_meta_owner = NodePath("../..")
+node_emitter = NodePath("..")
+watch_signal = 0
+metadata/_custom_type_script = "uid://up8up6hch40i"
+
+[node name="SET_Money" type="Node" parent="BallTouched/ball_team_is_field_team/ball_team_is_player" node_paths=PackedStringArray("node_emitter")]
+script = ExtResource("19_qejcq")
+num_a = ExtResource("27_hhvjp")
+num_b = SubResource("Resource_px0s4")
+operation = 1
+node_emitter = NodePath("..")
+watch_signal = 0
+metadata/_custom_type_script = "uid://cldopw0r4n1wj"
+
+[node name="APChainParticles" type="Node" parent="BallTouched/ball_team_is_field_team/ball_team_is_player/SET_Money" node_paths=PackedStringArray("cpu_particle2D", "node_emitter")]
+script = ExtResource("28_q6ar8")
+cpu_particle2D = NodePath("../../../../../CPUParticles2D")
+set_amount = true
+new_amount = SubResource("Resource_1nmpc")
+node_emitter = NodePath("..")
+watch_signal = 2
+metadata/_custom_type_script = "uid://cg1hxk7i11oi3"
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+emitting = false
+amount = 1
+texture = ExtResource("28_hhvjp")
+lifetime = 0.4
+one_shot = true
+explosiveness = 0.81
+direction = Vector2(0, -100)
+spread = 57.0
+gravity = Vector2(0, 333)
+initial_velocity_min = 133.0
+initial_velocity_max = 222.0
+scale_amount_min = 0.5
+scale_amount_max = 0.6
+scale_amount_curve = SubResource("Curve_q6ar8")

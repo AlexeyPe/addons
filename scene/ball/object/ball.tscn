@@ -1,4 +1,4 @@
-[gd_scene load_steps=53 format=3 uid="uid://bpn7vchp3v0o6"]
+[gd_scene load_steps=54 format=3 uid="uid://bpn7vchp3v0o6"]
 
 [ext_resource type="Resource" uid="uid://58pmfjua3f3c" path="res://scene/ball/object/is_die.tres" id="1_41df4"]
 [ext_resource type="Script" uid="uid://bt65n6o82yg6b" path="res://addons/VarRes/classes/utility/RigidBody2DVaRes.gd" id="1_kwmlm"]
@@ -49,6 +49,12 @@ bounce = 1.0
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_ws0sv"]
 frequency = 0.0433
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_qxuth"]
+shader = ExtResource("18_mih5m")
+shader_parameter/allow_out_of_bounds = true
+shader_parameter/outline_thickness = 2.0
+shader_parameter/outline_color = Color(0, 0, 0, 1)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_41df4"]
 shader = ExtResource("18_mih5m")
@@ -175,6 +181,7 @@ script = ExtResource("1_kwmlm")
 num = ExtResource("2_hsyp7")
 num_is_collision_layer = Array[int]([0, 4321, 4209, 4305, 4273])
 num_is_collision_mask = Array[int]([0, 4321, 4209, 4305, 4273])
+debug_enable = null
 metadata/_custom_type_script = "uid://bt65n6o82yg6b"
 metadata/is_die = ExtResource("1_41df4")
 metadata/team_object = ExtResource("2_hsyp7")
@@ -201,6 +208,7 @@ metadata/_custom_type_script = "uid://du8j36g8pf8k8"
 
 [node name="BodyLife" type="Sprite2D" parent="."]
 texture_filter = 4
+material = SubResource("ShaderMaterial_qxuth")
 scale = Vector2(0.25, 0.25000003)
 texture = ExtResource("11_xd8ss")
 script = ExtResource("10_bk5pk")

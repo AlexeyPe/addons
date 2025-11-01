@@ -13,8 +13,9 @@ signal added_child_exiting
 func _execute(...args:Array) -> void:
 	execution_started.emit()
 	if scene == null or scene.is_empty():
-		if scene != null:
-			print("APChainAddChild ", scene)
+		#if scene != null:
+			#print("APChainAddChild ", scene)
+			#pass
 		executed.emit()
 		executed_failed.emit()
 		return

@@ -36,13 +36,17 @@ func replace():
 		if data:
 			var meta:VaRInt = child.get_meta("team_object")
 			meta.set_value(data.get_custom_data("team_object"))
+			var new_build = data.get_custom_data("build")
+			if new_build != null and new_build is PackedScene:
+				child.get_meta("field_build").value = new_build
 		add_child(child)
 
 func _ready() -> void:
 	clear_replace()
-	if Engine.is_editor_hint() and view_replace:
-		replace()
-		self_modulate = MODULATE
+	if Engine.is_editor_hint():
+		if view_replace:
+			replace()
+			self_modulate = MODULATE
 		return
 	self_modulate = MODULATE
 	replace()

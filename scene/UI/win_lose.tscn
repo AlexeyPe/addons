@@ -1,0 +1,147 @@
+[gd_scene load_steps=25 format=3 uid="uid://fvm7uskgpe35"]
+
+[ext_resource type="Texture2D" uid="uid://bsxyx76fssova" path="res://imgs/UI/frame/CardPack.png" id="1_1obwb"]
+[ext_resource type="LabelSettings" uid="uid://b244nxw7eexv6" path="res://scene/UI/LabelSettings/MainLabelH1_3.tres" id="2_wnnff"]
+[ext_resource type="Texture2D" uid="uid://decg5levc7kjv" path="res://imgs/UI/button/button_grey.png" id="3_tiq3u"]
+[ext_resource type="Script" uid="uid://bkhpbr28koejc" path="res://addons/VarRes/classes/utility/ButtonReloadVaRes.gd" id="4_rtdkc"]
+[ext_resource type="LabelSettings" uid="uid://cb6mtt0ein3am" path="res://scene/UI/LabelSettings/L_p_shad1.tres" id="4_tiq3u"]
+[ext_resource type="Script" uid="uid://b03dlfkxcckwp" path="res://addons/VarRes/classes/VarRes.gd" id="5_8vqmr"]
+[ext_resource type="Script" uid="uid://u1gglou2n5jq" path="res://addons/APChain/classes/chain_activator/APActivatorResource.gd" id="5_knk8l"]
+[ext_resource type="Resource" uid="uid://d3qmvgy18caw0" path="res://data/gameplay/CastleCount.tres" id="6_t51xw"]
+[ext_resource type="Script" uid="uid://up8up6hch40i" path="res://addons/APChain/classes/chain/if/APChainIfNum.gd" id="7_cm15j"]
+[ext_resource type="Resource" uid="uid://4ok8jqiesqsv" path="res://data/gameplay/Money.tres" id="7_jjnso"]
+[ext_resource type="Resource" uid="uid://bewvxbnhpn1k2" path="res://data/gameplay/units/units.tres" id="8_gq7v4"]
+[ext_resource type="Script" uid="uid://8myr58nwfvfg" path="res://addons/VarRes/classes/numbers/VaRInt.gd" id="8_vs1k7"]
+[ext_resource type="Resource" uid="uid://c4bpyilbpdmw" path="res://data/gameplay/units/units_purple.tres" id="9_mdbuy"]
+[ext_resource type="Script" uid="uid://bqn6e76istclq" path="res://addons/APChain/classes/chain/set/APChainSetVisible.gd" id="9_vs1k7"]
+[ext_resource type="Resource" uid="uid://q6vmqvs7sa6j" path="res://data/gameplay/units/units_red.tres" id="10_2588h"]
+[ext_resource type="Resource" uid="uid://ccq6dphbjbpf6" path="res://data/gameplay/units/units_white.tres" id="11_cb3ek"]
+[ext_resource type="Resource" uid="uid://cvmmidd5uwfbn" path="res://data/gameplay/units/units_yellow.tres" id="12_5iuiy"]
+[ext_resource type="Resource" uid="uid://dtkw5uacj3oc5" path="res://data/gameplay/units/unit_deaths.tres" id="13_l17gt"]
+[ext_resource type="Resource" uid="uid://yjwdocjo8sh2" path="res://data/gameplay/field_counters/fields_purple.tres" id="14_7asj8"]
+[ext_resource type="Resource" uid="uid://cvpnw37xy7hya" path="res://data/gameplay/field_counters/fields_red.tres" id="15_d7xrg"]
+[ext_resource type="Resource" uid="uid://bbu6crs5k6ct6" path="res://data/gameplay/field_counters/fields_white.tres" id="16_118c5"]
+[ext_resource type="Resource" uid="uid://x3id5dx3yucu" path="res://data/gameplay/field_counters/fields_yellow.tres" id="17_d81k6"]
+[ext_resource type="Resource" uid="uid://c4i68asmn7hno" path="res://data/CardPack/RerolQTY.tres" id="18_jjnso"]
+
+[sub_resource type="Resource" id="Resource_rtdkc"]
+script = ExtResource("8_vs1k7")
+value = 1
+metadata/_custom_type_script = "uid://8myr58nwfvfg"
+
+[node name="WinLose" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -194.0
+offset_top = -118.0
+offset_right = 194.0
+offset_bottom = 118.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_1obwb")
+patch_margin_left = 64
+patch_margin_top = 44
+patch_margin_right = 60
+patch_margin_bottom = 52
+
+[node name="MarginContainer" type="MarginContainer" parent="NinePatchRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_top = 14
+theme_override_constants/margin_right = 4
+theme_override_constants/margin_bottom = 14
+
+[node name="VBoxContainer" type="VBoxContainer" parent="NinePatchRect/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 18
+alignment = 1
+
+[node name="Label" type="Label" parent="NinePatchRect/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Вы победили!"
+label_settings = ExtResource("2_wnnff")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="NinePatchRect/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(122, 34)
+layout_mode = 2
+size_flags_horizontal = 4
+texture = ExtResource("3_tiq3u")
+patch_margin_left = 12
+patch_margin_top = 16
+patch_margin_right = 12
+patch_margin_bottom = 16
+
+[node name="ButtonReloadVaRes" type="Button" parent="NinePatchRect/MarginContainer/VBoxContainer/NinePatchRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+mouse_default_cursor_shape = 2
+flat = true
+script = ExtResource("4_rtdkc")
+reset_vares = Array[ExtResource("5_8vqmr")]([ExtResource("6_t51xw"), ExtResource("7_jjnso"), ExtResource("8_gq7v4"), ExtResource("9_mdbuy"), ExtResource("10_2588h"), ExtResource("11_cb3ek"), ExtResource("12_5iuiy"), ExtResource("13_l17gt"), ExtResource("14_7asj8"), ExtResource("15_d7xrg"), ExtResource("16_118c5"), ExtResource("17_d81k6"), ExtResource("18_jjnso")])
+metadata/_custom_type_script = "uid://bkhpbr28koejc"
+
+[node name="Label" type="Label" parent="NinePatchRect/MarginContainer/VBoxContainer/NinePatchRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Новая игра"
+label_settings = ExtResource("4_tiq3u")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="castle_count=changed" type="Node" parent="."]
+script = ExtResource("5_knk8l")
+_signal = "changed"
+resource = ExtResource("6_t51xw")
+signal = "changed"
+metadata/_custom_type_script = "uid://u1gglou2n5jq"
+
+[node name="APChainIfNum" type="Node" parent="castle_count=changed" node_paths=PackedStringArray("node_emitter")]
+script = ExtResource("7_cm15j")
+num_a = ExtResource("6_t51xw")
+num_b = SubResource("Resource_rtdkc")
+node_emitter = NodePath("..")
+watch_signal = 0
+metadata/_custom_type_script = "uid://up8up6hch40i"
+
+[node name="APChainSetVisible" type="Node" parent="castle_count=changed/APChainIfNum" node_paths=PackedStringArray("nodes_visible_true", "node_emitter")]
+script = ExtResource("9_vs1k7")
+nodes_visible_true = [NodePath("../../../NinePatchRect")]
+node_emitter = NodePath("..")
+watch_signal = 0
+metadata/_custom_type_script = "uid://bqn6e76istclq"
+
+[node name="APChainSetVisible2" type="Node" parent="castle_count=changed/APChainIfNum" node_paths=PackedStringArray("nodes_visible_false", "node_emitter")]
+script = ExtResource("9_vs1k7")
+nodes_visible_false = [NodePath("../../../NinePatchRect")]
+node_emitter = NodePath("..")
+watch_signal = 1
+metadata/_custom_type_script = "uid://bqn6e76istclq"

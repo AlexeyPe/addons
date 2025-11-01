@@ -75,6 +75,7 @@ num_is_collision_mask = Array[int]([4096, 16, 128, 32, 64])
 debug_label_settings = ExtResource("3_4xrso")
 metadata/_custom_type_script = "uid://bt65n6o82yg6b"
 metadata/team_object = ExtResource("2_qi7cb")
+metadata/field_build = ExtResource("28_4xrso")
 
 [node name="NinePatchRect" type="NinePatchRect" parent="."]
 modulate = Color(1, 0.2901961, 0.2901961, 1)
@@ -405,6 +406,39 @@ metadata/_custom_type_script = "uid://xv7plkxnebcm"
 script = ExtResource("23_4yp7p")
 var_bool = SubResource("Resource_y8fmx")
 new_value = false
+node_emitter = NodePath("..")
+watch_signal = 1
+metadata/_custom_type_script = "uid://xv7plkxnebcm"
+
+[node name="APChainAddChild2" type="Node" parent="." node_paths=PackedStringArray("target_parent", "node_emitter")]
+script = ExtResource("19_nywqj")
+target_parent = NodePath("..")
+scene = ExtResource("28_4xrso")
+set_metadata = Dictionary[String, ExtResource("20_rg3yy")]({
+"is_now_spawning": SubResource("Resource_btp3e"),
+"team_object": ExtResource("2_qi7cb")
+})
+node_emitter = NodePath("..")
+watch_signal = 16
+metadata/_custom_type_script = "uid://dg3tbem26ogr7"
+
+[node name="APChainSetCollisionEnable" type="Node" parent="APChainAddChild2" node_paths=PackedStringArray("collision_disable", "node_emitter")]
+script = ExtResource("22_6e2r8")
+collision_disable = [NodePath("../../CollisionShape2D")]
+node_emitter = NodePath("..")
+watch_signal = 3
+metadata/_custom_type_script = "uid://xix6u347hwe"
+
+[node name="APChainSetCollisionEnable2" type="Node" parent="APChainAddChild2" node_paths=PackedStringArray("collision_enable", "node_emitter")]
+script = ExtResource("22_6e2r8")
+collision_enable = [NodePath("../../CollisionShape2D")]
+node_emitter = NodePath("..")
+watch_signal = 0
+metadata/_custom_type_script = "uid://xix6u347hwe"
+
+[node name="SET_can_drop=true" type="Node" parent="APChainAddChild2/APChainSetCollisionEnable2" node_paths=PackedStringArray("node_emitter")]
+script = ExtResource("23_4yp7p")
+var_bool = SubResource("Resource_y8fmx")
 node_emitter = NodePath("..")
 watch_signal = 1
 metadata/_custom_type_script = "uid://xv7plkxnebcm"

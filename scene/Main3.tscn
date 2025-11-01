@@ -1,4 +1,4 @@
-[gd_scene load_steps=90 format=4 uid="uid://cpjve54sahjml"]
+[gd_scene load_steps=91 format=4 uid="uid://cpjve54sahjml"]
 
 [ext_resource type="Script" uid="uid://mjk4ctyfa82r" path="res://scene/main.gd" id="1_h5oyc"]
 [ext_resource type="LabelSettings" uid="uid://bs3a6ff5awow6" path="res://scene/UI/LabelSettings/MainLabel.tres" id="2_fcgbl"]
@@ -28,6 +28,7 @@
 [ext_resource type="PackedScene" uid="uid://csgbo46w4e1c5" path="res://scene/UI/CardHand.tscn" id="24_2ehou"]
 [ext_resource type="PackedScene" uid="uid://ck4w0vjnl4qkd" path="res://scene/UI/notifications.tscn" id="25_keht4"]
 [ext_resource type="Shader" uid="uid://bnx70r4bgsw0y" path="res://addons/shadercollectionap/shader/grid/grid.gdshader" id="26_ne6fy"]
+[ext_resource type="PackedScene" uid="uid://fvm7uskgpe35" path="res://scene/UI/win_lose.tscn" id="26_xn4m2"]
 [ext_resource type="Material" uid="uid://svr62spjy8px" path="res://scene/field/GridMaterial.tres" id="27_d1wsa"]
 [ext_resource type="TileSet" uid="uid://dtotbe61qvlwk" path="res://scene/field/VisualFields2.tres" id="28_hpvv2"]
 [ext_resource type="Texture2D" uid="uid://cylt0yccij071" path="res://imgs/icons/types-outline.png" id="29_d44lc"]
@@ -589,7 +590,7 @@ label_settings = ExtResource("2_fcgbl")
 
 [node name="Label2" type="Label" parent="UI/Counters/Counters/Money"]
 layout_mode = 2
-text = "55"
+text = "4"
 label_settings = ExtResource("2_fcgbl")
 script = ExtResource("3_ndi7f")
 var_res = ExtResource("22_86hc1")
@@ -626,6 +627,8 @@ metadata/_edit_lock_ = true
 
 [node name="Notifications" parent="UI" instance=ExtResource("25_keht4")]
 
+[node name="WinLose" parent="UI" instance=ExtResource("26_xn4m2")]
+
 [node name="ColorRectGrid1" type="ColorRect" parent="."]
 visible = false
 material = SubResource("ShaderMaterial_43j8o")
@@ -661,10 +664,9 @@ tile_set = SubResource("TileSet_ia2xj")
 clip_children = 1
 
 [node name="Fields" type="TileMapLayer" parent="Tilemaps/Clip"]
-self_modulate = Color(0, 0, 0, 0)
 texture_filter = 1
 position = Vector2(24, 24)
-tile_map_data = PackedByteArray("AAD+/wQAAgABAAAAAAD//wQAAgABAAAAAAD//wMAAgABAAAAAAD//wIAAgABAAAAAAD+/wIAAgABAAAAAAD9/wMAAgABAAAAAAD+/wMAAgABAAAAAAD9/wIAAgABAAAAAAAFAAEAAgACAAAAAAAFAAIAAgACAAAAAAAFAAMAAgACAAAAAAAGAAMAAgACAAAAAAAGAAIAAgACAAAAAAAGAAEAAgACAAAAAAAHAAEAAgACAAAAAAAHAAIAAgACAAAAAAD+//3/AgAEAAAAAAD+//7/AgAEAAAAAAD9//7/AgAEAAAAAAD9////AgAEAAAAAAD+////AgAEAAAAAAD9//3/AgAEAAAAAAD///3/AgAEAAAAAAD///7/AgAEAAAAAAD/////AgAEAAAAAAAFAP7/AgADAAAAAAAEAP7/AgADAAAAAAAEAP//AgADAAAAAAAFAP//AgADAAAAAAAGAP7/AgADAAAAAAAGAP3/AgACAAAAAAAFAP3/AgADAAAAAAAEAP3/AgADAAAAAAAGAP//AgADAAAAAAD//wUAAgAAAAAAAAD+/wUAAgAAAAAAAAAAAAQAAgAAAAAAAAAAAAMAAgAAAAAAAAAAAAIAAgAAAAAAAAABAAIAAgAAAAAAAAABAAMAAgAAAAAAAAABAAQAAgAAAAAAAAACAAQAAgAAAAAAAAACAAMAAgAAAAAAAAACAAIAAgAAAAAAAAADAAMAAgAAAAAAAAADAAQAAgAAAAAAAAADAAUAAgAAAAAAAAAEAAUAAgAAAAAAAAAFAAUAAgAAAAAAAAAFAAQAAgAAAAAAAAAEAAQAAgAAAAAAAAAEAAMAAgAAAAAAAAAEAAIAAgAAAAAAAAAGAAQAAgAAAAAAAAAHAAQAAgAAAAAAAAAIAAQAAgAAAAAAAAAJAAQAAgAAAAAAAAAIAAUAAgAAAAAAAAAJAAUAAgAAAAAAAAAKAAUAAgAAAAAAAAAKAAQAAgAAAAAAAAAIAAMAAgAAAAAAAAAIAAEAAgAAAAAAAAAIAAAAAgAAAAAAAAAHAAAAAgAAAAAAAAAGAAAAAgAAAAAAAAAIAP//AgAAAAAAAAAIAP7/AgAAAAAAAAAHAP//AgAAAAAAAAAHAP7/AgAAAAAAAAAJAP//AgAAAAAAAAAJAAAAAgAAAAAAAAAJAP7/AgAAAAAAAAAKAP7/AgAAAAAAAAAKAP//AgAAAAAAAAAKAP3/AgAAAAAAAAALAP3/AgAAAAAAAAAMAP3/AgAAAAAAAAALAP7/AgAAAAAAAAAMAP7/AgAAAAAAAAANAP7/AgAAAAAAAAANAP3/AgAAAAAAAAANAPz/AgAAAAAAAAAMAPz/AgAAAAAAAAADAP7/AgAAAAAAAAADAP3/AgADAAAAAAADAPz/AgAAAAAAAAAEAPz/AgAAAAAAAAACAPz/AgAAAAAAAAABAPz/AgAAAAAAAAABAPv/AgAAAAAAAAACAPv/AgAAAAAAAAACAP3/AgADAAAAAAABAP3/AgAEAAAAAQAAAP3/AgAEAAAAAAAAAP7/AgAAAAAAAAABAP7/AgAAAAAAAAAAAP//AgAAAAAAAAD//wAAAgAAAAAAAAD//wEAAgAAAAAAAAD+/wEAAgAAAAAAAAD+/wAAAgAAAAAAAAD9/wAAAgAAAAAAAAD9/wEAAgAAAAAAAAD8/wEAAgAAAAAAAAD8/wAAAgAAAAAAAAD8////AgAAAAAAAAD8//7/AgAAAAAAAAD8/wIAAgAAAAAAAAD8/wMAAgAAAAAAAAA=")
+tile_map_data = PackedByteArray("AAD+/wQAAgABAAAAAAD//wQAAgABAAAAAAD//wMAAgABAAAAAAD//wIAAgABAAAAAAD+/wIAAgABAAAAAAD9/wMAAgABAAAAAQD+/wMAAgABAAAAAAD9/wIAAgABAAAAAAAFAAEAAgACAAAAAQAFAAIAAgACAAAAAAAFAAMAAgACAAAAAAAGAAMAAgACAAAAAAAGAAIAAgACAAAAAAAGAAEAAgACAAAAAAAHAAEAAgACAAAAAAAHAAIAAgACAAAAAAD+//3/AgAEAAAAAAD+//7/AgAEAAAAAAD9//7/AgAEAAAAAAD9////AgAEAAAAAAD+////AgAEAAAAAAD9//3/AgAEAAAAAAD///3/AgAEAAAAAAD///7/AgAEAAAAAAD/////AgAEAAAAAAAFAP7/AgADAAAAAAAEAP7/AgADAAAAAAAEAP//AgADAAAAAgAFAP//AgADAAAAAAAGAP7/AgADAAAAAAAGAP3/AgACAAAAAAAFAP3/AgADAAAAAAAEAP3/AgADAAAAAAAGAP//AgADAAAAAAD//wUAAgAAAAAAAAD+/wUAAgAAAAAAAAAAAAQAAgAAAAAAAAAAAAMAAgAAAAAAAAAAAAIAAgAAAAAAAAABAAIAAgAAAAAAAAABAAMAAgAAAAAAAAABAAQAAgAAAAAAAAACAAQAAgAAAAAAAAACAAMAAgAAAAAAAAACAAIAAgAAAAAAAAADAAMAAgAAAAAAAAADAAQAAgAAAAAAAAADAAUAAgAAAAAAAAAEAAUAAgAAAAAAAAAFAAUAAgAAAAAAAAAFAAQAAgAAAAAAAAAEAAQAAgAAAAAAAAAEAAMAAgAAAAAAAAAEAAIAAgAAAAAAAAAGAAQAAgAAAAAAAAAHAAQAAgAAAAAAAAAIAAQAAgAAAAAAAAAJAAQAAgAAAAAAAAAIAAUAAgAAAAAAAAAJAAUAAgAAAAAAAAAKAAUAAgAAAAAAAAAKAAQAAgAAAAAAAAAIAAMAAgAAAAAAAAAIAAEAAgAAAAAAAAAIAAAAAgAAAAAAAAAHAAAAAgAAAAAAAAAGAAAAAgAAAAAAAAAIAP//AgAAAAAAAAAIAP7/AgAAAAAAAAAHAP//AgAAAAAAAAAHAP7/AgAAAAAAAAAJAP//AgAAAAAAAAAJAAAAAgAAAAAAAAAJAP7/AgAAAAAAAAAKAP7/AgAAAAAAAAAKAP//AgAAAAAAAAAKAP3/AgAAAAAAAAALAP3/AgAAAAAAAAAMAP3/AgAAAAAAAAALAP7/AgAAAAAAAAAMAP7/AgAAAAAAAAANAP7/AgAAAAAAAAANAP3/AgAAAAAAAAANAPz/AgAAAAAAAAAMAPz/AgAAAAAAAAADAP7/AgAAAAAAAAADAP3/AgADAAAAAAADAPz/AgAAAAAAAAAEAPz/AgAAAAAAAAACAPz/AgAAAAAAAAABAPz/AgAAAAAAAAABAPv/AgAAAAAAAAACAPv/AgAAAAAAAAACAP3/AgADAAAAAAABAP3/AgAEAAAAAQAAAP3/AgAAAAAAAAAAAP7/AgAAAAAAAAABAP7/AgAAAAAAAAAAAP//AgAAAAAAAAD//wAAAgAAAAAAAAD//wEAAgAAAAAAAAD+/wEAAgAAAAAAAAD+/wAAAgAAAAAAAAD9/wAAAgAAAAAAAAD9/wEAAgAAAAAAAAD8/wEAAgAAAAAAAAD8/wAAAgAAAAAAAAD8////AgAAAAAAAAD8//7/AgAAAAAAAAD8/wIAAgAAAAAAAAD8/wMAAgAAAAAAAAA=")
 tile_set = ExtResource("30_iynh3")
 script = ExtResource("7_mng47")
 scene = ExtResource("8_fmk5b")
@@ -1523,6 +1525,7 @@ position = Vector2(-48, 192)
 collision_layer = 4321
 collision_mask = 4321
 num = SubResource("Resource_ftvp4")
+debug_enable = false
 metadata/is_die = SubResource("Resource_1qtut")
 metadata/team_object = SubResource("Resource_ftvp4")
 metadata/is_now_spawning = SubResource("Resource_qctre")
@@ -1541,6 +1544,7 @@ metadata/_custom_type_script = "uid://cicas0bkgf1up"
 position = Vector2(336, -96)
 linear_velocity = Vector2(4, 0)
 num = SubResource("Resource_yu40a")
+debug_enable = false
 metadata/is_die = SubResource("Resource_00yp0")
 metadata/team_object = SubResource("Resource_yu40a")
 metadata/is_now_spawning = SubResource("Resource_xn4m2")
@@ -1548,6 +1552,7 @@ metadata/is_now_spawning = SubResource("Resource_xn4m2")
 [node name="ball2" parent="Tilemaps" instance=ExtResource("35_41idh")]
 position = Vector2(336, 144)
 num = SubResource("Resource_43j8o")
+debug_enable = false
 metadata/is_die = SubResource("Resource_ya7da")
 metadata/team_object = SubResource("Resource_43j8o")
 metadata/is_now_spawning = SubResource("Resource_tdrm0")
@@ -1557,6 +1562,7 @@ position = Vector2(-48, -48)
 collision_layer = 4273
 collision_mask = 4273
 num = SubResource("Resource_6xsba")
+debug_enable = false
 metadata/is_die = SubResource("Resource_ia2xj")
 metadata/team_object = SubResource("Resource_6xsba")
 metadata/is_now_spawning = SubResource("Resource_h0pva")
@@ -1567,6 +1573,7 @@ collision_layer = 4305
 collision_mask = 4305
 linear_velocity = Vector2(200, 0)
 num = SubResource("Resource_w08im")
+debug_enable = false
 metadata/is_die = SubResource("Resource_mng47")
 metadata/team_object = SubResource("Resource_w08im")
 metadata/is_now_spawning = SubResource("Resource_wuh6h")
