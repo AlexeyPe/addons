@@ -80,15 +80,6 @@ shader_parameter/outline_color = Color(1, 1, 1, 1)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_43j8o"]
 shader = ExtResource("26_ne6fy")
-shader_parameter/scale = Vector2(0.2, 0.2)
-shader_parameter/offset = Vector2(0, 0)
-shader_parameter/background_color = Color(0.2, 0.2, 0.2, 1)
-shader_parameter/checkered_color = Color(0, 0, 0, 0.3)
-shader_parameter/coarse_grid_color = Color(0.8, 0.8, 0.8, 1)
-shader_parameter/coarse_grid_line_width = Vector2(0.03, 0.03)
-shader_parameter/fine_grid_color = Color(0.8, 0.8, 0.8, 0.8)
-shader_parameter/fine_grid_subdivisions = 1.0
-shader_parameter/fine_grid_line_width = Vector2(0.03, 0.03)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dk2pn"]
 texture = ExtResource("29_d44lc")
